@@ -1,58 +1,63 @@
-import { BarChart3, CloudSun, Home, Swords, Target, Trophy } from "lucide-react";
+import Link from "next/link";
+import {
+  BarChart3,
+  CloudSun,
+  Home,
+  LineChart,
+  Swords,
+  Target,
+  Trophy,
+} from "lucide-react";
 
 const navItems = [
-  { label: "Dashboard", icon: Home },
-  { label: "Top Hitters", icon: Target },
-  { label: "Pitchers", icon: Swords },
-  { label: "Weather", icon: CloudSun },
-  { label: "Breakdown", icon: BarChart3 },
-  { label: "Rankings", icon: Trophy },
+  { label: "Dashboard", href: "/", icon: Home },
+  { label: "Top Hitters", href: "/hitters", icon: Target },
+  { label: "Games", href: "/games", icon: Trophy },
+  { label: "Pitchers", href: "/pitchers", icon: Swords },
+  { label: "Weather", href: "/weather", icon: CloudSun },
+  { label: "Trends", href: "/", icon: LineChart },
+  { label: "Breakdown", href: "/", icon: BarChart3 },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen">
-      <aside className="fixed left-0 top-0 hidden h-screen w-72 border-r border-cyan-300/10 bg-slate-950/80 p-5 backdrop-blur-xl lg:block">
-        <div className="mb-8">
-          <div className="text-3xl font-black tracking-tight neon-text">Alpha Wagerz</div>
-          <div className="mt-1 text-xs font-bold uppercase tracking-[0.28em] text-cyan-200/60">
-            Model Terminal
-          </div>
+      <aside className="fixed left-0 top-0 hidden h-screen w-56 border-r border-cyan-300/10 bg-slate-950/90 p-3 backdrop-blur-xl lg:block">
+        <div className="mb-7 px-2 pt-2">
+          <div className="text-2xl font-black tracking-tight neon-text">ALPHA</div>
+          <div className="text-2xl font-black tracking-tight text-white">WAGERZ</div>
         </div>
 
         <nav className="space-y-2">
           {navItems.map((item, index) => {
             const Icon = item.icon;
+
             return (
-              <div
+              <Link
                 key={item.label}
-                className={`flex items-center gap-3 rounded-2xl border px-4 py-3 text-sm font-bold transition ${
+                href={item.href}
+                className={`flex items-center gap-3 rounded-xl border px-3 py-3 text-sm font-bold transition ${
                   index === 0
-                    ? "border-cyan-300/30 bg-cyan-300/10 text-white shadow-[0_0_18px_rgba(35,216,255,0.12)]"
-                    : "border-white/5 bg-white/[0.03] text-slate-400 hover:border-pink-300/25 hover:text-white"
+                    ? "border-cyan-300/35 bg-cyan-300/15 text-white shadow-[0_0_18px_rgba(35,216,255,0.16)]"
+                    : "border-white/5 bg-white/[0.025] text-slate-400 hover:border-pink-300/25 hover:text-white"
                 }`}
               >
-                <Icon size={18} />
+                <Icon size={17} />
                 {item.label}
-              </div>
+              </Link>
             );
           })}
         </nav>
 
-        <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-pink-300/20 bg-pink-500/10 p-4">
-          <div className="text-xs font-black uppercase tracking-[0.2em] text-pink-200">
-            V1 Engine
-          </div>
-          <div className="mt-2 text-sm text-slate-300">
-            Statcast, weather, park, bullpen, arsenal and matchup modeling active.
-          </div>
+        <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-cyan-300/15 bg-white/[0.035] p-3">
+          <div className="text-sm font-black text-white">Model Engine</div>
+          <div className="text-xs text-slate-400">v1.0.0</div>
+          <div className="mt-2 text-xs font-bold text-emerald-300">● All Systems Active</div>
         </div>
       </aside>
 
-      <main className="lg:pl-72">
-        <div className="mx-auto max-w-[1600px] px-4 py-5 sm:px-6 lg:px-8">
-          {children}
-        </div>
+      <main className="lg:pl-56">
+        <div className="mx-auto max-w-[1500px] px-3 py-3">{children}</div>
       </main>
     </div>
   );
