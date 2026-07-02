@@ -4,15 +4,17 @@ import { TeamLogo } from "@/components/TeamLogo";
 function LogoGlow({ team }: { team: string }) {
   return (
     <div className="relative flex h-11 w-11 items-center justify-center">
-      {/* Outer glow */}
-      <div className="absolute inset-0 rounded-xl bg-white/35 blur-xl" />
+      <div className="absolute inset-0 rounded-xl bg-white/50 blur-xl" />
 
-      {/* Glass puck */}
-      <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-white/35 bg-white/30 shadow-[0_0_20px_rgba(255,255,255,0.25),inset_0_1px_2px_rgba(255,255,255,0.45)] backdrop-blur-md">
+      <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-white/50 bg-white/45 shadow-[0_0_24px_rgba(255,255,255,0.35)]">
         <TeamLogo team={team} size={28} />
       </div>
     </div>
   );
+}
+
+function sortValue(game: Record<string, any>) {
+  return game.game_time_sort || "99:99";
 }
 
 export function GameTicker({
@@ -22,11 +24,15 @@ export function GameTicker({
   games: Record<string, any>[];
   selectedGameId?: string;
 }) {
+  const sortedGames = [...games].sort((a, b) =>
+    sortValue(a).localeCompare(sortValue(b))
+  );
+
   return (
     <div className="mb-4">
-      <div className="table-scroll">
+      <div className="table-scroll mt-2 pb-2">
         <div className="flex min-w-max gap-2">
-          {games.map((game) => {
+          {sortedGames.map((game) => {
             const active = String(game.game_id) === String(selectedGameId);
 
             return (
@@ -45,8 +51,8 @@ export function GameTicker({
                   <LogoGlow team={game.home_team} />
                 </div>
 
-                <div className="mt-2 text-center text-xs font-bold text-white">
-                  {game.game_time || game.start_time || "Scheduled"}
+                <div className="mt-2 text-center text-sm font-black tracking-wide text-white">
+                  {game.game_time || "--:--"}
                 </div>
               </Link>
             );

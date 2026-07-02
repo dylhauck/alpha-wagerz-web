@@ -1,6 +1,14 @@
 import { AppShell } from "@/components/AppShell";
 import { PitcherTable } from "@/components/pitchers/PitcherTable";
 import { getAllPitchers } from "@/lib/data/modelData";
+import Image from "next/image";
+
+const today = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 
 export default function PitchersPage() {
   const pitchers = getAllPitchers()
@@ -9,14 +17,21 @@ export default function PitchersPage() {
 
   return (
     <AppShell>
-      <div className="mb-6">
-        <div className="text-xs font-black uppercase tracking-[0.32em] text-cyan-200/70">
-          Alpha Pitcher Model
-        </div>
-        <h1 className="mt-2 text-5xl font-black neon-text">Pitchers</h1>
-        <p className="mt-3 text-slate-400">
-          Pitch score, K upside, HR vulnerability, fly-ball and barrel profile.
-        </p>
+      <div className="mb-3 pt-8 flex flex-col items-center">
+              <div className="flex h-[92px] w-full items-center justify-center overflow-hidden">
+                <Image
+                  src="/follow-alpha.png"
+                  alt="Follow The Alpha"
+                  width={640}
+                  height={180}
+                  priority
+                  className="h-auto w-[560px] max-w-full object-contain"
+                />
+              </div>
+            
+              <div className="-mt-2 text-center text-xs font-bold uppercase tracking-[0.3em] text-slate-400">
+                {today}
+              </div>
       </div>
 
       <PitcherTable pitchers={pitchers} />

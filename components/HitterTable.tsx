@@ -1,101 +1,234 @@
+"use client";
+
+import { useMemo, useRef, useState } from "react";
 import { StatCell } from "./StatCell";
-import { ScoreBadge } from "./ScoreBadge";
 
 export type HitterRow = Record<string, any>;
+type SortDirection = "desc" | "asc";
+
+const TABLE_MIN_WIDTH = 1780;
+
+const columns = [
+  ["Player", "Player"],
+  ["Game", "game"],
+  ["Likely", "Likely"],
+  ["Alpha", "Test Score"],
+  ["Matchup", "Matchup"],
+  ["Ceiling", "Ceiling"],
+  ["Zone Fit", "Zone Fit"],
+  ["HR Form", "HR Form"],
+  ["kHR", "kHR"],
+  ["PIT", "Pitches"],
+  ["BIP", "BIP"],
+  ["ISO", "ISO"],
+  ["xwOBA", "xwOBA"],
+  ["xCON", "xwOBAcon"],
+  ["SwStr%", "SwStr%"],
+  ["PullBrl%", "PulledBrl%"],
+  ["Brl/BIP%", "Brl/BIP%"],
+  ["FB%", "FB%"],
+  ["HH%", "HH%"],
+  ["LA", "LA"],
+] as const;
+
+function sortValue(value: any) {
+  if (value === "" || value === null || value === undefined) return -999999;
+
+  const numeric = Number(value);
+  if (!Number.isNaN(numeric)) return numeric;
+
+  return String(value).toLowerCase();
+}
+
+function HeaderButton({
+  label,
+  active,
+  direction,
+  onClick,
+  className = "",
+}: {
+  label: string;
+  active: boolean;
+  direction: SortDirection;
+  onClick: () => void;
+  className?: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`flex h-10 w-full items-center justify-center whitespace-nowrap px-2 text-center text-[11px] font-black uppercase tracking-[0.12em] transition ${
+        active ? "text-white" : "text-slate-500 hover:text-cyan-200"
+      } ${className}`}
+    >
+      {label}
+      {active ? (
+        <span className="ml-1 text-[10px] text-cyan-200">
+          {direction === "desc" ? "▼" : "▲"}
+        </span>
+      ) : null}
+    </button>
+  );
+}
+
+function PlainCell({ value }: { value: any }) {
+  return (
+    <div className="flex h-8 w-full items-center justify-center rounded-md border border-white/10 bg-white/[0.04] px-1 text-xs font-black text-slate-200">
+      {value || "—"}
+    </div>
+  );
+}
+
+function StatWrap({
+  value,
+  statKey,
+  suffix,
+}: {
+  value: any;
+  statKey: any;
+  suffix?: string;
+}) {
+  return (
+    <div className="flex h-8 w-full items-center justify-center">
+      <StatCell value={value} statKey={statKey} suffix={suffix} compact />
+    </div>
+  );
+}
 
 export function HitterTable({ hitters }: { hitters: HitterRow[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const topScrollRef = useRef<HTMLDivElement>(null);
+
+  const [sortKey, setSortKey] = useState<string>("Likely");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+
+  function handleSort(key: string) {
+    if (sortKey === key) {
+      setSortDirection((current) => (current === "desc" ? "asc" : "desc"));
+      return;
+    }
+
+    setSortKey(key);
+    setSortDirection("desc");
+  }
+
+  const sortedHitters = useMemo(() => {
+    return [...hitters].sort((a, b) => {
+      const aValue = sortValue(a[sortKey]);
+      const bValue = sortValue(b[sortKey]);
+
+      if (typeof aValue === "number" && typeof bValue === "number") {
+        return sortDirection === "desc" ? bValue - aValue : aValue - bValue;
+      }
+
+      return sortDirection === "desc"
+        ? String(bValue).localeCompare(String(aValue))
+        : String(aValue).localeCompare(String(bValue));
+    });
+  }, [hitters, sortKey, sortDirection]);
+
+  function syncScrollLeft(value: number) {
+    if (scrollRef.current) scrollRef.current.scrollLeft = value;
+    if (topScrollRef.current) topScrollRef.current.scrollLeft = value;
+  }
+
   return (
     <section className="glass rounded-3xl p-4">
-      <div className="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-        <div>
-          <h2 className="text-xl font-black text-white">Top HR Targets</h2>
-          <p className="text-sm text-slate-400">
-            Real Alpha Wagerz model output ranked by Likely score.
-          </p>
-        </div>
-
-        <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          {hitters.length} hitters loaded
+      <div className="mb-4 flex flex-col justify-center">
+        <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
+          {`${hitters.length} TOTAL HITTERS LOADED FOR TODAY'S SLATE`}
         </div>
       </div>
 
-      <div className="table-scroll">
-        <table className="w-full min-w-[2300px] border-separate border-spacing-y-2 text-left">
+      <div
+        ref={topScrollRef}
+        className="table-scroll mb-2 overflow-x-auto pb-2"
+        onScroll={(e) => syncScrollLeft(e.currentTarget.scrollLeft)}
+      >
+        <div style={{ width: TABLE_MIN_WIDTH }} className="h-1" />
+      </div>
+
+      <div
+        ref={scrollRef}
+        className="overflow-x-auto"
+        onScroll={(e) => syncScrollLeft(e.currentTarget.scrollLeft)}
+      >
+        <table
+          className="w-full border-separate border-spacing-y-2 text-left"
+          style={{ minWidth: TABLE_MIN_WIDTH }}
+        >
+          <colgroup>
+            <col className="w-[64px]" />
+            <col className="w-[230px]" />
+            <col className="w-[260px]" />
+            {columns.slice(2).map(([label]) => (
+              <col key={label} className="w-[78px]" />
+            ))}
+          </colgroup>
+
           <thead>
             <tr className="text-xs uppercase tracking-[0.16em] text-slate-500">
-              <th className="sticky left-0 z-20 bg-[#0b1020] px-3 py-2">Rank</th>
-              <th className="sticky left-[64px] z-20 bg-[#0b1020] px-3 py-2">Player</th>
-              <th className="px-3 py-2">Game</th>
-              <th className="px-3 py-2">Likely</th>
-              <th className="px-3 py-2">Test</th>
-              <th className="px-3 py-2">Matchup</th>
-              <th className="px-3 py-2">Ceiling</th>
-              <th className="px-3 py-2">Zone</th>
-              <th className="px-3 py-2">HR Form</th>
-              <th className="px-3 py-2">kHR</th>
-              <th className="px-3 py-2">Pitches</th>
-              <th className="px-3 py-2">BIP</th>
-              <th className="px-3 py-2">ISO</th>
-              <th className="px-3 py-2">xwOBA</th>
-              <th className="px-3 py-2">xwOBAcon</th>
-              <th className="px-3 py-2">SwStr</th>
-              <th className="px-3 py-2">Pulled Brl</th>
-              <th className="px-3 py-2">Brl/BIP</th>
-              <th className="px-3 py-2">Sweet Spot</th>
-              <th className="px-3 py-2">FB</th>
-              <th className="px-3 py-2">HH</th>
-              <th className="px-3 py-2">LA</th>
-              <th className="px-3 py-2">Arsenal</th>
-              <th className="px-3 py-2">Fastball</th>
-              <th className="px-3 py-2">Breaking</th>
-              <th className="px-3 py-2">Offspeed</th>
-              <th className="px-3 py-2">xHR</th>
+              <th className="sticky left-0 z-20 bg-[#0b1020]">
+                <div className="flex h-10 items-center justify-center px-2">
+                  Rank
+                </div>
+              </th>
+
+              {columns.map(([label, key], index) => (
+                <th
+                  key={`${label}-${index}`}
+                  className={`bg-[#0b1020] ${
+                    index === 0 ? "sticky left-[64px] z-20" : ""
+                  }`}
+                >
+                  <HeaderButton
+                    label={label}
+                    active={sortKey === key}
+                    direction={sortDirection}
+                    onClick={() => handleSort(key)}
+                  />
+                </th>
+              ))}
             </tr>
           </thead>
 
           <tbody>
-            {hitters.map((hitter, index) => (
+            {sortedHitters.map((hitter, index) => (
               <tr
                 key={`${hitter.game_id}-${hitter.Player}-${index}`}
                 className="rounded-2xl bg-white/[0.035] text-sm"
               >
-                <td className="sticky left-0 z-10 rounded-l-2xl bg-[#11182c] px-3 py-3 font-black text-cyan-200">
+                <td className="sticky left-0 z-10 rounded-l-2xl bg-[#11182c] px-3 py-3 text-center font-black text-cyan-200">
                   #{index + 1}
                 </td>
 
                 <td className="sticky left-[64px] z-10 bg-[#11182c] px-3 py-3">
-                  <div className="font-black text-white">{hitter.Player}</div>
-                  <div className="text-xs text-slate-500">{hitter.team}</div>
+                  <div className="truncate font-black text-white">{hitter.Player}</div>
+                  <div className="truncate text-xs text-slate-500">{hitter.team}</div>
                 </td>
 
-                <td className="px-3 py-3 text-slate-300">{hitter.game}</td>
-                <td className="px-3 py-3"><ScoreBadge value={hitter.Likely} /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["Test Score"]} statKey="Test Score" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter.Matchup} statKey="Matchup" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter.Ceiling} statKey="Ceiling" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["Zone Fit"]} statKey="Zone Fit" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["HR Form"]} statKey="HR Form" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter.kHR} statKey="kHR" /></td>
+                <td className="px-3 py-3 text-sm text-slate-300">{hitter.game}</td>
 
-                <td className="px-3 py-3">{hitter.Pitches || "—"}</td>
-                <td className="px-3 py-3">{hitter.BIP || "—"}</td>
+                <td className="px-1 py-3"><StatWrap value={hitter.Likely} statKey="Likely" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["Test Score"]} statKey="Test Score" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.Matchup} statKey="Matchup" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.Ceiling} statKey="Ceiling" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["Zone Fit"]} statKey="Zone Fit" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["HR Form"]} statKey="HR Form" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.kHR} statKey="kHR" /></td>
 
-                <td className="px-3 py-3"><StatCell value={hitter.ISO} statKey="ISO" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter.xwOBA} statKey="xwOBA" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter.xwOBAcon} statKey="xwOBAcon" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["SwStr%"]} statKey="SwStr%" suffix="%" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["PulledBrl%"]} statKey="PulledBrl%" suffix="%" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["Brl/BIP%"]} statKey="Brl/BIP%" suffix="%" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["Sweet Spot%"]} statKey="Sweet Spot%" suffix="%" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["FB%"]} statKey="FB%" suffix="%" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["HH%"]} statKey="HH%" suffix="%" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter.LA} statKey="LA" /></td>
+                <td className="px-1 py-3"><PlainCell value={hitter.Pitches} /></td>
+                <td className="px-1 py-3"><PlainCell value={hitter.BIP} /></td>
 
-                <td className="px-3 py-3"><StatCell value={hitter["Arsenal Score"]} statKey="Arsenal Score" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["Fastball Matchup"]} statKey="Fastball Matchup" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["Breaking Ball Matchup"]} statKey="Breaking Ball Matchup" /></td>
-                <td className="px-3 py-3"><StatCell value={hitter["Offspeed Matchup"]} statKey="Offspeed Matchup" /></td>
-                <td className="rounded-r-2xl px-3 py-3"><StatCell value={hitter["xHR Matchup"]} statKey="xHR Matchup" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.ISO} statKey="ISO" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.xwOBA} statKey="xwOBA" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.xwOBAcon} statKey="xwOBAcon" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["SwStr%"]} statKey="SwStr%" suffix="%" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["PulledBrl%"]} statKey="PulledBrl%" suffix="%" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["Brl/BIP%"]} statKey="Brl/BIP%" suffix="%" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["FB%"]} statKey="FB%" suffix="%" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["HH%"]} statKey="HH%" suffix="%" /></td>
+                <td className="rounded-r-2xl px-1 py-3"><StatWrap value={hitter.LA} statKey="LA" /></td>
               </tr>
             ))}
           </tbody>

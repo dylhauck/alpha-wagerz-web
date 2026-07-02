@@ -71,7 +71,7 @@ export function SelectedGameDashboard({ game }: { game: Record<string, any> }) {
       <section className="glass rounded-3xl p-5">
         <div className="mb-4 text-center">
           <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
-            MLB Matchup Analysis
+            MLB Slate Summary
           </div>
           <h1 className="mt-2 overflow-visible pb-2 text-center text-3xl font-black leading-tight neon-text sm:text-5xl">
   {game.game}

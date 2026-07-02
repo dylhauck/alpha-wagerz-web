@@ -1,3 +1,6 @@
+"use client";
+
+import { useMemo, useState } from "react";
 import { StatCell } from "@/components/StatCell";
 import { TeamLogo } from "@/components/TeamLogo";
 
@@ -22,6 +25,8 @@ const columns = [
   ["Likely", "Likely"],
 ] as const;
 
+type SortDirection = "desc" | "asc";
+
 const gridStyle = {
   gridTemplateColumns: "minmax(190px, 1.9fr) repeat(18, minmax(0, 1fr))",
 } as const;
@@ -36,11 +41,41 @@ function formatPlain(value: unknown) {
   return numeric.toFixed(2).replace(/\.00$/, "");
 }
 
-function HeaderCell({ label }: { label: string }) {
+function numericValue(value: unknown) {
+  if (value === "" || value === null || value === undefined) return -999999;
+
+  const numeric = Number(value);
+  return Number.isNaN(numeric) ? -999999 : numeric;
+}
+
+function HeaderCell({
+  label,
+  active,
+  direction,
+  onClick,
+}: {
+  label: string;
+  active?: boolean;
+  direction?: SortDirection;
+  onClick?: () => void;
+}) {
   return (
-    <div className="flex h-8 w-full items-center justify-center rounded-md border border-white/10 bg-white/[0.045] px-1 text-center text-[9px] font-black uppercase leading-none tracking-[0.03em] text-slate-300">
+    <button
+      type="button"
+      onClick={onClick}
+      className={`flex h-8 w-full items-center justify-center rounded-md border px-1 text-center text-[9px] font-black uppercase leading-none tracking-[0.03em] transition ${
+        active
+          ? "border-cyan-300/50 bg-cyan-300/15 text-white"
+          : "border-white/10 bg-white/[0.045] text-slate-300 hover:border-pink-300/40 hover:text-white"
+      }`}
+    >
       {label}
-    </div>
+      {active ? (
+        <span className="ml-1 text-[8px] text-cyan-200">
+          {direction === "desc" ? "▼" : "▲"}
+        </span>
+      ) : null}
+    </button>
   );
 }
 
@@ -104,11 +139,31 @@ export function GameHitterTable({
   team: string;
   hitters: Record<string, any>[];
 }) {
-  const sorted = [...hitters].sort(
-    (a, b) => Number(b.Likely || 0) - Number(a.Likely || 0)
-  );
+  const [sortKey, setSortKey] = useState<string>("Likely");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
 
-  const topTarget = sorted[0];
+  function handleSort(key: string) {
+    if (sortKey === key) {
+      setSortDirection((current) => (current === "desc" ? "asc" : "desc"));
+      return;
+    }
+
+    setSortKey(key);
+    setSortDirection("desc");
+  }
+
+  const sorted = useMemo(() => {
+    return [...hitters].sort((a, b) => {
+      const aValue = numericValue(a[sortKey]);
+      const bValue = numericValue(b[sortKey]);
+
+      return sortDirection === "desc" ? bValue - aValue : aValue - bValue;
+    });
+  }, [hitters, sortKey, sortDirection]);
+
+  const topTarget = [...hitters].sort(
+    (a, b) => Number(b.Likely || 0) - Number(a.Likely || 0)
+  )[0];
 
   return (
     <section className="glass rounded-3xl p-4">
@@ -133,9 +188,21 @@ export function GameHitterTable({
 
       <div className="grid gap-1">
         <div className="grid gap-1" style={gridStyle}>
-          <HeaderCell label="Player" />
-          {columns.map(([label]) => (
-            <HeaderCell key={label} label={label} />
+          <HeaderCell
+            label="Player"
+            active={sortKey === "Likely"}
+            direction={sortDirection}
+            onClick={() => handleSort("Likely")}
+          />
+
+          {columns.map(([label, key]) => (
+            <HeaderCell
+              key={key}
+              label={label}
+              active={sortKey === key}
+              direction={sortDirection}
+              onClick={() => handleSort(key)}
+            />
           ))}
         </div>
 
@@ -143,7 +210,7 @@ export function GameHitterTable({
           <div
             key={`${team}-${hitter.Player}-${index}`}
             className="grid items-center gap-1 rounded-xl border border-white/10 bg-white/[0.03]"
-style={gridStyle}
+            style={gridStyle}
           >
             <PlayerCell hitter={hitter} rank={index + 1} />
 
