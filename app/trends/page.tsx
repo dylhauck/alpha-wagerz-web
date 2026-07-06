@@ -1,12 +1,12 @@
 import { AppShell } from "@/components/AppShell";
-import { WeatherDashboard } from "@/components/weather/WeatherDashboard";
-import { getAllGames } from "@/lib/data/modelData";
+import { ProjectionsDashboard } from "@/components/trends/ProjectionsDashboard";
+import { getGameProjections } from "@/lib/data/modelData";
 import Image from "next/image";
 
 export const dynamic = "force-dynamic";
 
-export default function WeatherPage() {
-  const games = getAllGames();
+export default function TrendsPage() {
+  const projections = getGameProjections();
 
   const today = new Date().toLocaleDateString("en-US", {
     weekday: "long",
@@ -34,7 +34,7 @@ export default function WeatherPage() {
         </div>
       </div>
 
-      <WeatherDashboard games={games} />
+      <ProjectionsDashboard projections={projections} />
     </AppShell>
   );
 }

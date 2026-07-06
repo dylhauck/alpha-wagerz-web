@@ -3,17 +3,17 @@ import { PitcherTable } from "@/components/pitchers/PitcherTable";
 import { getAllPitchers } from "@/lib/data/modelData";
 import Image from "next/image";
 
-const today = new Date().toLocaleDateString("en-US", {
+export default function PitchersPage() {
+  const pitchers = getAllPitchers()
+    .filter((p) => p.Pitcher)
+    .sort((a, b) => Number(b["Strikeout Score"] || 0) - Number(a["Strikeout Score"] || 0));
+
+    const today = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
     day: "numeric",
     year: "numeric",
   });
-
-export default function PitchersPage() {
-  const pitchers = getAllPitchers()
-    .filter((p) => p.Pitcher)
-    .sort((a, b) => Number(b["Strikeout Score"] || 0) - Number(a["Strikeout Score"] || 0));
 
   return (
     <AppShell>

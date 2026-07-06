@@ -4,6 +4,12 @@ import path from "path";
 export type AnyRecord = Record<string, any>;
 
 const DATA_FILE = path.join(process.cwd(), "public", "data", "all_games.json");
+const PROJECTIONS_FILE = path.join(
+  process.cwd(),
+  "public",
+  "data",
+  "game_projections.json"
+);
 
 export function getAllGames(): AnyRecord[] {
   if (!fs.existsSync(DATA_FILE)) return [];
@@ -67,4 +73,16 @@ export function getAllPitchers() {
   }
 
   return pitchers;
+}
+
+export function getGameProjections(): AnyRecord[] {
+  if (!fs.existsSync(PROJECTIONS_FILE)) return [];
+
+  const raw = fs.readFileSync(PROJECTIONS_FILE, "utf-8");
+
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return [];
+  }
 }

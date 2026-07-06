@@ -18,7 +18,7 @@ const navItems = [
   { label: "Alpha Hitters", href: "/hitters", icon: Target },
   { label: "Alpha Pitchers", href: "/pitchers", icon: Swords },
   { label: "Weather Edge Report", href: "/weather", icon: CloudSun },
-  { label: "Game Trends", href: "/trends", icon: LineChart },
+  { label: "Alpha Projections", href: "/trends", icon: LineChart },
   { label: "Analysis Breakdown", href: "/breakdown", icon: BarChart3 },
 ];
 
