@@ -41,13 +41,13 @@ type StatRule = {
 };
 
 const rules: Partial<Record<StatKey, StatRule>> = {
-  Likely: { min: 35, max: 90, direction: "higher-good" },
-  "Test Score": { min: 35, max: 90, direction: "higher-good" },
-  Matchup: { min: 35, max: 90, direction: "higher-good" },
-  Ceiling: { min: 35, max: 95, direction: "higher-good" },
-  "Zone Fit": { min: 35, max: 90, direction: "higher-good" },
-  "HR Form": { min: 25, max: 95, direction: "higher-good" },
-  kHR: { min: 35, max: 90, direction: "higher-good" },
+  Likely: { min: 25, max: 80, direction: "higher-good" },
+  "Test Score": { min: 25, max: 80, direction: "higher-good" },
+  Matchup: { min: 25, max: 80, direction: "higher-good" },
+  Ceiling: { min: 25, max: 85, direction: "higher-good" },
+  "Zone Fit": { min: 25, max: 80, direction: "higher-good" },
+  "HR Form": { min: 25, max: 85, direction: "higher-good" },
+  kHR: { min: 25, max: 80, direction: "higher-good" },
 
   ISO: { min: 0.080, max: 0.260, direction: "higher-good" },
   xwOBA: { min: 0.270, max: 0.400, direction: "higher-good" },
