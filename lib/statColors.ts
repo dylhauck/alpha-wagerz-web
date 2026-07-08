@@ -41,24 +41,33 @@ type StatRule = {
 };
 
 const rules: Partial<Record<StatKey, StatRule>> = {
-  Likely: { min: 20, max: 85, direction: "higher-good" },
-  "Test Score": { min: 20, max: 90, direction: "higher-good" },
-  Matchup: { min: 20, max: 90, direction: "higher-good" },
-  Ceiling: { min: 20, max: 100, direction: "higher-good" },
-  "Zone Fit": { min: 0, max: 100, direction: "higher-good" },
-  "HR Form": { min: 0, max: 100, direction: "higher-good" },
-  kHR: { min: 0, max: 100, direction: "higher-good" },
+  Likely: { min: 35, max: 90, direction: "higher-good" },
+  "Test Score": { min: 35, max: 90, direction: "higher-good" },
+  Matchup: { min: 35, max: 90, direction: "higher-good" },
+  Ceiling: { min: 35, max: 95, direction: "higher-good" },
+  "Zone Fit": { min: 35, max: 90, direction: "higher-good" },
+  "HR Form": { min: 25, max: 95, direction: "higher-good" },
+  kHR: { min: 35, max: 90, direction: "higher-good" },
 
-  ISO: { min: 0.05, max: 0.36, direction: "higher-good" },
-  xwOBA: { min: 0.23, max: 0.48, direction: "higher-good" },
-  xwOBAcon: { min: 0.25, max: 0.62, direction: "higher-good" },
-  "Brl/BIP%": { min: 1, max: 13, direction: "higher-good" },
-  "PulledBrl%": { min: 1, max: 9, direction: "higher-good" },
-  "Sweet Spot%": { min: 15, max: 45, direction: "higher-good" },
-  "FB%": { min: 18, max: 55, direction: "higher-good" },
-  "HH%": { min: 20, max: 60, direction: "higher-good" },
-  LA: { min: 0, max: 40, direction: "range-good", goodRange: [12, 28] },
-  "SwStr%": { min: 4, max: 24, direction: "lower-good" },
+  ISO: { min: 0.080, max: 0.260, direction: "higher-good" },
+  xwOBA: { min: 0.270, max: 0.400, direction: "higher-good" },
+  xwOBAcon: { min: 0.280, max: 0.430, direction: "higher-good" },
+
+  "PulledBrl%": { min: 1.0, max: 9.0, direction: "higher-good" },
+  "Brl/BIP%": { min: 2.0, max: 14.0, direction: "higher-good" },
+  "Sweet Spot%": { min: 26, max: 38, direction: "higher-good" },
+
+  // 30% should be yellow/green, not red
+  "FB%": { min: 14, max: 34, direction: "higher-good" },
+
+  // 50%+ should be strong green
+  "HH%": { min: 28, max: 55, direction: "higher-good" },
+
+  // Lower is better for hitter whiff rate
+  "SwStr%": { min: 4, max: 16, direction: "lower-good" },
+
+  // Best launch-angle band is roughly 12–22
+  LA: { min: 0, max: 55, direction: "higher-good"},
 
   "Arsenal Score": { min: 20, max: 90, direction: "higher-good" },
   "Fastball Matchup": { min: 20, max: 90, direction: "higher-good" },
