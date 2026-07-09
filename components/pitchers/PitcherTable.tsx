@@ -216,18 +216,17 @@ export function PitcherTable({ pitchers }: { pitchers: Record<string, any>[] }) 
                   <StatWrap value={p["Strikeout Score"]} statKey="Likely" />
                 </td>
                 <td className="px-1 py-3">
-                  <StatWrap value={p["HR Vulnerability"]} statKey="xHR Matchup" />
+                <StatWrap value={p["HR Vulnerability"]} statKey="HR Vulnerability" />
                 </td>
                 <td className="px-1 py-3">
-                  <StatWrap value={p["Fly Ball Profile"]} statKey="FB%" />
+                <StatWrap value={p["Fly Ball Profile"]} statKey="Fly Ball Profile" />
                 </td>
                 <td className="px-1 py-3">
-                  <StatWrap value={p["Barrel Profile"]} statKey="Brl/BIP%" />
+                <StatWrap value={p["Barrel Profile"]} statKey="Barrel Profile" />
                 </td>
                 <td className="px-1 py-3">
-                  <StatWrap value={p.xwOBA} statKey="xwOBA" />
+                <StatWrap value={p.xwOBA} statKey="Pitcher xwOBA" />
                 </td>
-
                 <td className="px-1 py-3"><PlainCell value={p["CSW%"]} suffix="%" /></td>
                 <td className="px-1 py-3"><PlainCell value={p["SwStr%"]} suffix="%" /></td>
                 <td className="px-1 py-3"><PlainCell value={p["Ball%"]} suffix="%" /></td>

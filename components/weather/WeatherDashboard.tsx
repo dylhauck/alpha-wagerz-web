@@ -246,7 +246,9 @@ export function WeatherDashboard({ games }: { games: Record<string, any>[] }) {
           <div>
             <div className="mb-4 text-center">
               <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">Weather Edge</div>
-              <h1 className="mt-2 text-3xl font-black neon-text sm:text-5xl">{game.game}</h1>
+              <h1 className="mx-auto mt-2 max-w-[1100px] pb-3 text-3xl font-black leading-[1.08] neon-text sm:text-5xl xl:text-6xl">
+  {game.game}
+</h1>
               <div className="mt-2 text-sm text-slate-400">{game.venue}</div>
             </div>
 

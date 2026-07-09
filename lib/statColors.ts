@@ -29,7 +29,8 @@ export type StatKey =
 |   "Strikeout Score"
 |   "HR Vulnerability"
 |   "Barrel Profile"
-|   "Fly Ball Profile";
+|   "Fly Ball Profile"
+|    "Pitcher xwOBA";
 
 type Direction = "higher-good" | "lower-good" | "range-good";
 
@@ -83,8 +84,9 @@ const rules: Partial<Record<StatKey, StatRule>> = {
   "Pitch Score": { min: 20, max: 90, direction: "higher-good" },
   "Strikeout Score": { min: 20, max: 90, direction: "higher-good" },
   "HR Vulnerability": { min: 20, max: 90, direction: "lower-good" },
-  "Barrel Profile": { min: 0, max: 35, direction: "lower-good" },
   "Fly Ball Profile": { min: 25, max: 80, direction: "lower-good" },
+  "Barrel Profile": { min: 0, max: 35, direction: "lower-good" },
+  "Pitcher xwOBA": { min: 0.240, max: 0.390, direction: "lower-good" },
 };
 
 function clamp(value: number, min = 0, max = 1) {
