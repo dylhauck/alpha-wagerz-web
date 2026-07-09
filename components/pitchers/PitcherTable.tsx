@@ -227,12 +227,12 @@ export function PitcherTable({ pitchers }: { pitchers: Record<string, any>[] }) 
                 <td className="px-1 py-3">
                 <StatWrap value={p.xwOBA} statKey="Pitcher xwOBA" />
                 </td>
-                <td className="px-1 py-3"><PlainCell value={p["CSW%"]} suffix="%" /></td>
-                <td className="px-1 py-3"><PlainCell value={p["SwStr%"]} suffix="%" /></td>
-                <td className="px-1 py-3"><PlainCell value={p["Ball%"]} suffix="%" /></td>
-                <td className="px-1 py-3"><PlainCell value={p["Brl/BIP%"]} suffix="%" /></td>
-                <td className="px-1 py-3"><PlainCell value={p["HH%"]} suffix="%" /></td>
-                <td className="rounded-r-2xl px-1 py-3"><PlainCell value={p["HR/9"]} /></td>
+                <td className="px-1 py-3"><StatWrap value={p["CSW%"]} statKey="CSW%" suffix="%" /></td>
+                <td className="px-1 py-3"><StatWrap value={p["SwStr%"]} statKey="Pitcher SwStr%" suffix="%" /></td>
+                <td className="px-1 py-3"><StatWrap value={p["Ball%"]} statKey="Ball%" suffix="%" /></td>
+                <td className="px-1 py-3"><StatWrap value={p["Brl/BIP%"]} statKey="Pitcher Brl/BIP%" suffix="%" /></td>
+                <td className="px-1 py-3"><StatWrap value={p["HH%"]} statKey="Pitcher HH%" suffix="%" /></td>
+                <td className="rounded-r-2xl px-1 py-3"><StatWrap value={p["HR/9"]} statKey="HR/9" /></td>
               </tr>
             ))}
           </tbody>

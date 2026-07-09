@@ -30,7 +30,13 @@ export type StatKey =
 |   "HR Vulnerability"
 |   "Barrel Profile"
 |   "Fly Ball Profile"
-|    "Pitcher xwOBA";
+|    "Pitcher xwOBA"
+| "CSW%"
+| "Pitcher SwStr%"
+| "Ball%"
+| "Pitcher Brl/BIP%"
+| "Pitcher HH%"
+| "HR/9";
 
 type Direction = "higher-good" | "lower-good" | "range-good";
 
@@ -42,7 +48,7 @@ type StatRule = {
 };
 
 const rules: Partial<Record<StatKey, StatRule>> = {
-  Likely: { min: 25, max: 80, direction: "higher-good" },
+  Likely: { min: 10, max: 30, direction: "higher-good" },
   "Test Score": { min: 25, max: 80, direction: "higher-good" },
   Matchup: { min: 25, max: 80, direction: "higher-good" },
   Ceiling: { min: 25, max: 85, direction: "higher-good" },
@@ -87,6 +93,13 @@ const rules: Partial<Record<StatKey, StatRule>> = {
   "Fly Ball Profile": { min: 20, max: 50, direction: "lower-good" },
   "Barrel Profile": { min: 10, max: 30, direction: "lower-good" },
   "Pitcher xwOBA": { min: 0.240, max: 0.390, direction: "lower-good" },
+
+  "CSW%": { min: 22, max: 34, direction: "higher-good" },
+"Pitcher SwStr%": { min: 7, max: 16, direction: "higher-good" },
+"Ball%": { min: 28, max: 40, direction: "lower-good" },
+"Pitcher Brl/BIP%": { min: 2, max: 14, direction: "lower-good" },
+"Pitcher HH%": { min: 25, max: 50, direction: "lower-good" },
+"HR/9": { min: 0.3, max: 2.0, direction: "lower-good" },
 };
 
 function clamp(value: number, min = 0, max = 1) {
