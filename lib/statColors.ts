@@ -68,7 +68,7 @@ const rules: Partial<Record<StatKey, StatRule>> = {
   "SwStr%": { min: 4, max: 16, direction: "lower-good" },
 
   // Best launch-angle band is roughly 12–22
-  LA: { min: 0, max: 55, direction: "higher-good"},
+  LA: { min: 0, max: 30, direction: "higher-good"},
 
   "Arsenal Score": { min: 20, max: 90, direction: "higher-good" },
   "Fastball Matchup": { min: 20, max: 90, direction: "higher-good" },
@@ -84,8 +84,8 @@ const rules: Partial<Record<StatKey, StatRule>> = {
   "Pitch Score": { min: 20, max: 90, direction: "higher-good" },
   "Strikeout Score": { min: 20, max: 90, direction: "higher-good" },
   "HR Vulnerability": { min: 20, max: 90, direction: "lower-good" },
-  "Fly Ball Profile": { min: 25, max: 80, direction: "lower-good" },
-  "Barrel Profile": { min: 0, max: 35, direction: "lower-good" },
+  "Fly Ball Profile": { min: 20, max: 50, direction: "lower-good" },
+  "Barrel Profile": { min: 10, max: 30, direction: "lower-good" },
   "Pitcher xwOBA": { min: 0.240, max: 0.390, direction: "lower-good" },
 };
 
