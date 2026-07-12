@@ -12,6 +12,32 @@ function marketText(value: any) {
   return value > 0 ? `+${value}` : value;
 }
 
+function getThrowHand(value: unknown) {
+  const hand = String(value || "")
+    .trim()
+    .toUpperCase();
+
+  if (hand.startsWith("L")) return "L";
+  if (hand.startsWith("R")) return "R";
+
+  return "";
+}
+
+function ThrowHandBadge({ throws }: { throws: unknown }) {
+  const hand = getThrowHand(throws);
+
+  if (!hand) return null;
+
+  return (
+    <span
+      title={`${hand}-handed pitcher`}
+      className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-cyan-300/25 bg-cyan-300/10 text-[10px] font-black text-cyan-200"
+    >
+      {hand}
+    </span>
+  );
+}
+
 function EdgePill({ label }: { label: string }) {
   return (
     <div className="rounded-full border border-pink-300/25 bg-pink-300/10 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-pink-200">
@@ -163,7 +189,13 @@ export function GameProjectionCard({ projection }: { projection: Record<string, 
 
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           <div className="rounded-xl border border-cyan-300/10 bg-cyan-300/10 p-3">
-            <div className="text-sm font-black text-white">{projection.away_pitcher}</div>
+            <div className="flex items-center gap-2">
+              <div className="text-sm font-black text-white">
+                {projection.away_pitcher}
+              </div>
+
+              <ThrowHandBadge throws={projection.away_pitcher_throws} />
+            </div>
             <div className="text-xs text-slate-400">
               Market: {fmt(projection.away_pitcher_k_line)} · Model:{" "}
               {fmt(projection.away_projected_ks)} K
@@ -174,7 +206,13 @@ export function GameProjectionCard({ projection }: { projection: Record<string, 
           </div>
 
           <div className="rounded-xl border border-pink-300/10 bg-pink-300/10 p-3">
-            <div className="text-sm font-black text-white">{projection.home_pitcher}</div>
+            <div className="flex items-center gap-2">
+              <div className="text-sm font-black text-white">
+                {projection.home_pitcher}
+              </div>
+
+              <ThrowHandBadge throws={projection.home_pitcher_throws} />
+            </div>
             <div className="text-xs text-slate-400">
               Market: {fmt(projection.home_pitcher_k_line)} · Model:{" "}
               {fmt(projection.home_projected_ks)} K

@@ -15,7 +15,7 @@ const columns = [
   ["Alpha", "Pitch Score"],
   ["K Score", "Strikeout Score"],
   ["HR Vuln", "HR Vulnerability"],
-  ["FB%", "Fly Ball Profile"],
+  ["FB%", "FB%"],
   ["Brl%", "Barrel Profile"],
   ["xwOBA", "xwOBA"],
   ["CSW%", "CSW%"],
@@ -31,6 +31,41 @@ function sortValue(value: any) {
   const numeric = Number(value);
   if (!Number.isNaN(numeric)) return numeric;
   return String(value).toLowerCase();
+}
+
+function getThrowHand(value: unknown) {
+  const hand = String(value || "")
+  .trim()
+  .toUpperCase();
+
+  if (hand.startsWith("L")) {
+    return "L";
+  }
+
+  if (hand.startsWith("R")) {
+    return "R";
+  }
+
+  return "";
+
+}
+
+function ThrowHandBadge({ throws }: { throws: unknown }) {
+
+  const hand = getThrowHand(throws);
+
+  if (!hand) return null;
+
+  return (
+
+    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-cyan-300/25 bg-cyan-300/10 text-[10px] font-black text-cyan-200">
+
+      {hand}
+
+    </span>
+
+  );
+
 }
 
 function HeaderButton({
@@ -197,9 +232,13 @@ export function PitcherTable({ pitchers }: { pitchers: Record<string, any>[] }) 
                 className="rounded-2xl bg-white/[0.035] text-sm"
               >
                 <td className="sticky left-0 z-10 rounded-l-2xl bg-[#11182c] px-3 py-3">
-                  <div className="truncate font-black text-white">
-                    {p.Pitcher || "TBD"}
-                  </div>
+                  <div className="flex min-w-0 items-center gap-2">
+  <div className="truncate font-black text-white">
+    {p.Pitcher || "TBD"}
+  </div>
+
+  <ThrowHandBadge throws={p.Throws} />
+</div>
                   <div className="truncate text-xs text-slate-500">
                     {p["Pitcher Notes"] || ""}
                   </div>
@@ -210,16 +249,17 @@ export function PitcherTable({ pitchers }: { pitchers: Record<string, any>[] }) 
                 <td className="px-3 py-3 text-sm text-slate-300">{p.Opponent}</td>
 
                 <td className="px-1 py-3">
-                  <StatWrap value={p["Pitch Score"]} statKey="Likely" />
+                  <StatWrap value={p["Pitch Score"]} statKey="Pitch Score" />
                 </td>
                 <td className="px-1 py-3">
-                  <StatWrap value={p["Strikeout Score"]} statKey="Likely" />
+                  <StatWrap
+                  value={p["Strikeout Score"]} statKey="Strikeout Score"/>
                 </td>
                 <td className="px-1 py-3">
                 <StatWrap value={p["HR Vulnerability"]} statKey="HR Vulnerability" />
                 </td>
                 <td className="px-1 py-3">
-                <StatWrap value={p["Fly Ball Profile"]} statKey="Fly Ball Profile" />
+                <StatWrap value={p["FB%"]} statKey="Pitcher FB%" suffix="%" />
                 </td>
                 <td className="px-1 py-3">
                 <StatWrap value={p["Barrel Profile"]} statKey="Barrel Profile" />

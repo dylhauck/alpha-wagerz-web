@@ -8,6 +8,29 @@ function getTopTarget(hitters: Record<string, any>[] = []) {
   return [...hitters].sort((a, b) => Number(b.Likely || 0) - Number(a.Likely || 0))[0];
 }
 
+function getThrowHand(value: unknown) {
+  const hand = String(value || "")
+    .trim()
+    .toUpperCase();
+
+  if (hand.startsWith("L")) return "L";
+  if (hand.startsWith("R")) return "R";
+
+  return "";
+}
+
+function ThrowHandBadge({ throws }: { throws: unknown }) {
+  const hand = getThrowHand(throws);
+
+  if (!hand) return null;
+
+  return (
+    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-cyan-300/25 bg-cyan-300/10 text-[10px] font-black text-cyan-200">
+      {hand}
+    </span>
+  );
+}
+
 function PitcherCard({ pitcher }: { pitcher?: Record<string, any> }) {
   if (!pitcher) {
     return (
@@ -19,7 +42,14 @@ function PitcherCard({ pitcher }: { pitcher?: Record<string, any> }) {
 
   return (
     <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-4">
-      <div className="text-sm font-black text-white">{pitcher.Pitcher || "TBD"}</div>
+      <div className="flex items-center gap-2">
+        <div className="text-sm font-black text-white">
+          {pitcher.Pitcher || "TBD"}
+        </div>
+
+        <ThrowHandBadge throws={pitcher.Throws} />
+      </div>
+
       <div className="text-xs text-slate-500">
         {pitcher.Team} vs {pitcher.Opponent}
       </div>
@@ -36,21 +66,30 @@ function PitcherCard({ pitcher }: { pitcher?: Record<string, any> }) {
           <div className="mb-1 text-[10px] font-black uppercase tracking-[0.12em] text-slate-500">
             K Score
           </div>
-          <StatCell value={pitcher["Strikeout Score"]} statKey="Strikeout Score" />
+          <StatCell
+            value={pitcher["Strikeout Score"]}
+            statKey="Strikeout Score"
+          />
         </div>
 
         <div>
           <div className="mb-1 text-[10px] font-black uppercase tracking-[0.12em] text-slate-500">
             HR Vuln
           </div>
-          <StatCell value={pitcher["HR Vulnerability"]} statKey="HR Vulnerability" />
+          <StatCell
+            value={pitcher["HR Vulnerability"]}
+            statKey="HR Vulnerability"
+          />
         </div>
 
         <div>
           <div className="mb-1 text-[10px] font-black uppercase tracking-[0.12em] text-slate-500">
             Barrel
           </div>
-          <StatCell value={pitcher["Barrel Profile"]} statKey="Barrel Profile" />
+          <StatCell
+            value={pitcher["Barrel Profile"]}
+            statKey="Barrel Profile"
+          />
         </div>
       </div>
     </div>

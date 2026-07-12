@@ -26,17 +26,18 @@ export type StatKey =
   | "Bullpen"
   | "Team"
   | "Pitch Score"
-|   "Strikeout Score"
-|   "HR Vulnerability"
-|   "Barrel Profile"
-|   "Fly Ball Profile"
-|    "Pitcher xwOBA"
-| "CSW%"
-| "Pitcher SwStr%"
-| "Ball%"
-| "Pitcher Brl/BIP%"
-| "Pitcher HH%"
-| "HR/9";
+  | "Strikeout Score"
+  | "HR Vulnerability"
+  | "Barrel Profile"
+  | "Fly Ball Profile"
+  | "Pitcher xwOBA"
+  | "Pitcher FB%"
+  | "CSW%"
+  | "Pitcher SwStr%"
+  | "Ball%"
+  | "Pitcher Brl/BIP%"
+  | "Pitcher HH%"
+  | "HR/9";
 
 type Direction = "higher-good" | "lower-good" | "range-good";
 
@@ -48,58 +49,245 @@ type StatRule = {
 };
 
 const rules: Partial<Record<StatKey, StatRule>> = {
-  Likely: { min: 10, max: 30, direction: "higher-good" },
-  "Test Score": { min: 25, max: 80, direction: "higher-good" },
-  Matchup: { min: 25, max: 80, direction: "higher-good" },
-  Ceiling: { min: 25, max: 85, direction: "higher-good" },
-  "Zone Fit": { min: 25, max: 80, direction: "higher-good" },
-  "HR Form": { min: 25, max: 85, direction: "higher-good" },
-  kHR: { min: 25, max: 80, direction: "higher-good" },
+  Likely: {
+    min: 10,
+    max: 30,
+    direction: "higher-good",
+  },
 
-  ISO: { min: 0.080, max: 0.260, direction: "higher-good" },
-  xwOBA: { min: 0.270, max: 0.400, direction: "higher-good" },
-  xwOBAcon: { min: 0.280, max: 0.430, direction: "higher-good" },
+  "Test Score": {
+    min: 25,
+    max: 80,
+    direction: "higher-good",
+  },
 
-  "PulledBrl%": { min: 1.0, max: 9.0, direction: "higher-good" },
-  "Brl/BIP%": { min: 2.0, max: 14.0, direction: "higher-good" },
-  "Sweet Spot%": { min: 26, max: 38, direction: "higher-good" },
+  Matchup: {
+    min: 25,
+    max: 80,
+    direction: "higher-good",
+  },
 
-  // 30% should be yellow/green, not red
-  "FB%": { min: 14, max: 34, direction: "higher-good" },
+  Ceiling: {
+    min: 25,
+    max: 85,
+    direction: "higher-good",
+  },
 
-  // 50%+ should be strong green
-  "HH%": { min: 28, max: 55, direction: "higher-good" },
+  "Zone Fit": {
+    min: 25,
+    max: 80,
+    direction: "higher-good",
+  },
 
-  // Lower is better for hitter whiff rate
-  "SwStr%": { min: 4, max: 16, direction: "lower-good" },
+  "HR Form": {
+    min: 25,
+    max: 85,
+    direction: "higher-good",
+  },
 
-  // Best launch-angle band is roughly 12–22
-  LA: { min: 0, max: 30, direction: "higher-good"},
+  kHR: {
+    min: 25,
+    max: 80,
+    direction: "higher-good",
+  },
 
-  "Arsenal Score": { min: 20, max: 90, direction: "higher-good" },
-  "Fastball Matchup": { min: 20, max: 90, direction: "higher-good" },
-  "Breaking Ball Matchup": { min: 20, max: 90, direction: "higher-good" },
-  "Offspeed Matchup": { min: 20, max: 90, direction: "higher-good" },
-  "xHR Matchup": { min: 0, max: 8, direction: "higher-good" },
+  ISO: {
+    min: 0.08,
+    max: 0.26,
+    direction: "higher-good",
+  },
 
-  Weather: { min: 35, max: 80, direction: "higher-good" },
-  Park: { min: 35, max: 80, direction: "higher-good" },
-  Bullpen: { min: 25, max: 85, direction: "higher-good" },
-  Team: { min: 25, max: 85, direction: "higher-good" },
+  xwOBA: {
+    min: 0.27,
+    max: 0.4,
+    direction: "higher-good",
+  },
 
-  "Pitch Score": { min: 20, max: 90, direction: "higher-good" },
-  "Strikeout Score": { min: 20, max: 90, direction: "higher-good" },
-  "HR Vulnerability": { min: 20, max: 90, direction: "lower-good" },
-  "Fly Ball Profile": { min: 20, max: 50, direction: "lower-good" },
-  "Barrel Profile": { min: 10, max: 30, direction: "lower-good" },
-  "Pitcher xwOBA": { min: 0.240, max: 0.390, direction: "lower-good" },
+  xwOBAcon: {
+    min: 0.28,
+    max: 0.43,
+    direction: "higher-good",
+  },
 
-  "CSW%": { min: 22, max: 34, direction: "higher-good" },
-"Pitcher SwStr%": { min: 7, max: 16, direction: "higher-good" },
-"Ball%": { min: 28, max: 40, direction: "lower-good" },
-"Pitcher Brl/BIP%": { min: 2, max: 14, direction: "lower-good" },
-"Pitcher HH%": { min: 25, max: 50, direction: "lower-good" },
-"HR/9": { min: 0.3, max: 2.0, direction: "lower-good" },
+  "PulledBrl%": {
+    min: 1,
+    max: 9,
+    direction: "higher-good",
+  },
+
+  "Brl/BIP%": {
+    min: 2,
+    max: 14,
+    direction: "higher-good",
+  },
+
+  "Sweet Spot%": {
+    min: 26,
+    max: 38,
+    direction: "higher-good",
+  },
+
+  // Hitter fly-ball rate: higher is better for home-run targeting.
+  "FB%": {
+    min: 14,
+    max: 34,
+    direction: "higher-good",
+  },
+
+  // Hitter hard-hit rate: higher is better.
+  "HH%": {
+    min: 28,
+    max: 55,
+    direction: "higher-good",
+  },
+
+  // Hitter swinging-strike rate: lower is better.
+  "SwStr%": {
+    min: 4,
+    max: 16,
+    direction: "lower-good",
+  },
+
+  LA: {
+    min: 0,
+    max: 30,
+    direction: "higher-good",
+  },
+
+  "Arsenal Score": {
+    min: 20,
+    max: 90,
+    direction: "higher-good",
+  },
+
+  "Fastball Matchup": {
+    min: 20,
+    max: 90,
+    direction: "higher-good",
+  },
+
+  "Breaking Ball Matchup": {
+    min: 20,
+    max: 90,
+    direction: "higher-good",
+  },
+
+  "Offspeed Matchup": {
+    min: 20,
+    max: 90,
+    direction: "higher-good",
+  },
+
+  "xHR Matchup": {
+    min: 0,
+    max: 8,
+    direction: "higher-good",
+  },
+
+  Weather: {
+    min: 35,
+    max: 80,
+    direction: "higher-good",
+  },
+
+  Park: {
+    min: 35,
+    max: 80,
+    direction: "higher-good",
+  },
+
+  Bullpen: {
+    min: 25,
+    max: 85,
+    direction: "higher-good",
+  },
+
+  Team: {
+    min: 25,
+    max: 85,
+    direction: "higher-good",
+  },
+
+  "Pitch Score": {
+    min: 20,
+    max: 90,
+    direction: "higher-good",
+  },
+
+  "Strikeout Score": {
+    min: 20,
+    max: 90,
+    direction: "higher-good",
+  },
+
+  "HR Vulnerability": {
+    min: 20,
+    max: 90,
+    direction: "lower-good",
+  },
+
+  // Derived matchup score, not the raw FB%.
+  "Fly Ball Profile": {
+    min: 20,
+    max: 70,
+    direction: "lower-good",
+  },
+
+  // Derived matchup score.
+  "Barrel Profile": {
+    min: 20,
+    max: 90,
+    direction: "lower-good",
+  },
+
+  "Pitcher xwOBA": {
+    min: 0.24,
+    max: 0.39,
+    direction: "lower-good",
+  },
+
+  // Raw pitcher FB%. Lower is better for the pitcher.
+  "Pitcher FB%": {
+    min: 15,
+    max: 45,
+    direction: "lower-good",
+  },
+
+  "CSW%": {
+    min: 22,
+    max: 34,
+    direction: "higher-good",
+  },
+
+  "Pitcher SwStr%": {
+    min: 7,
+    max: 16,
+    direction: "higher-good",
+  },
+
+  "Ball%": {
+    min: 28,
+    max: 40,
+    direction: "lower-good",
+  },
+
+  "Pitcher Brl/BIP%": {
+    min: 2,
+    max: 14,
+    direction: "lower-good",
+  },
+
+  "Pitcher HH%": {
+    min: 25,
+    max: 50,
+    direction: "lower-good",
+  },
+
+  "HR/9": {
+    min: 0.3,
+    max: 2,
+    direction: "lower-good",
+  },
 };
 
 function clamp(value: number, min = 0, max = 1) {
@@ -109,7 +297,10 @@ function clamp(value: number, min = 0, max = 1) {
 function scoreToPercent(value: number, rule: StatRule) {
   if (rule.direction === "range-good" && rule.goodRange) {
     const [low, high] = rule.goodRange;
-    if (value >= low && value <= high) return 1;
+
+    if (value >= low && value <= high) {
+      return 1;
+    }
 
     const distance =
       value < low
@@ -120,23 +311,49 @@ function scoreToPercent(value: number, rule: StatRule) {
   }
 
   const raw = (value - rule.min) / (rule.max - rule.min);
-  return rule.direction === "lower-good" ? clamp(1 - raw) : clamp(raw);
+
+  return rule.direction === "lower-good"
+    ? clamp(1 - raw)
+    : clamp(raw);
 }
 
 function colorForPercent(pct: number) {
-  if (pct >= 0.9) return ["#047857", "#22c55e"];
-  if (pct >= 0.78) return ["#15803d", "#84cc16"];
-  if (pct >= 0.64) return ["#4d7c0f", "#a3e635"];
-  if (pct >= 0.5) return ["#854d0e", "#eab308"];
-  if (pct >= 0.36) return ["#9a3412", "#f97316"];
-  if (pct >= 0.2) return ["#991b1b", "#ef4444"];
+  if (pct >= 0.9) {
+    return ["#047857", "#22c55e"];
+  }
+
+  if (pct >= 0.78) {
+    return ["#15803d", "#84cc16"];
+  }
+
+  if (pct >= 0.64) {
+    return ["#4d7c0f", "#a3e635"];
+  }
+
+  if (pct >= 0.5) {
+    return ["#854d0e", "#eab308"];
+  }
+
+  if (pct >= 0.36) {
+    return ["#9a3412", "#f97316"];
+  }
+
+  if (pct >= 0.2) {
+    return ["#991b1b", "#ef4444"];
+  }
+
   return ["#7f1d1d", "#be123c"];
 }
 
 export function getHeatStyle(value: unknown, statKey: StatKey) {
   const numeric = Number(value);
 
-  if (value === "" || value === null || value === undefined || Number.isNaN(numeric)) {
+  if (
+    value === ""
+    || value === null
+    || value === undefined
+    || Number.isNaN(numeric)
+  ) {
     return {
       background: "rgba(148, 163, 184, 0.12)",
       borderColor: "rgba(148, 163, 184, 0.20)",
@@ -144,7 +361,14 @@ export function getHeatStyle(value: unknown, statKey: StatKey) {
     };
   }
 
-  const rule = rules[statKey] ?? { min: 0, max: 100, direction: "higher-good" as const };
+  const rule =
+    rules[statKey]
+    ?? {
+      min: 0,
+      max: 100,
+      direction: "higher-good" as const,
+    };
+
   const pct = scoreToPercent(numeric, rule);
   const [from, to] = colorForPercent(pct);
 
