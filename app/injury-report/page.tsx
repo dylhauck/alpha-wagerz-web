@@ -4,8 +4,10 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
 import { AppShell } from "@/components/AppShell";
-
+import { PlayerProfileModal } from "@/components/players/PlayerProfileModal";
 type InjuryPlayer = {
+  player_id?: string | number;
+  team_id?: string | number;
   team: string;
   player: string;
   position?: string;
@@ -88,11 +90,25 @@ function getInjuryLabel(player: InjuryPlayer) {
   return "Undisclosed";
 }
 
+function isPitcherPosition(position?: string) {
+  const normalized = (position || "").trim().toUpperCase();
+
+  return ["P", "SP", "RP", "LHP", "RHP"].includes(normalized);
+}
+
 export default function InjuryReportPage() {
   const [report, setReport] = useState<InjuryReport | null>(null);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<"ALL" | "DTD" | "OUT">("ALL");
+
+  const [selectedPlayer, setSelectedPlayer] = useState<{
+  playerId?: string | number;
+  playerName: string;
+  teamName: string;
+  teamId?: string | number;
+  playerType: "hitter" | "pitcher";
+} | null>(null);
 
   const today = new Date().toLocaleDateString("en-US", {
     weekday: "long",
@@ -270,9 +286,23 @@ export default function InjuryReportPage() {
                       className="border-t border-white/[0.06]"
                     >
                       <td className="px-5 py-4">
-                        <div className="font-black text-white">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setSelectedPlayer({
+                              playerId: player.player_id,
+                              playerName: player.player,
+                              teamName: player.team,
+                              teamId: player.team_id,
+                              playerType: isPitcherPosition(player.position)
+                                ? "pitcher"
+                                : "hitter",
+                            })
+                          }
+                          className="font-black text-white transition hover:text-cyan-300 hover:underline"
+                        >
                           {player.player}
-                        </div>
+                        </button>
 
                         {player.source_type === "suspension" && (
                           <div className="mt-1 text-[11px] font-black uppercase tracking-widest text-amber-300">
@@ -320,6 +350,10 @@ export default function InjuryReportPage() {
           </div>
         </section>
       </div>
+      <PlayerProfileModal
+        player={selectedPlayer}
+        onClose={() => setSelectedPlayer(null)}
+      />
     </AppShell>
   );
 }

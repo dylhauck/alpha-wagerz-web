@@ -310,8 +310,13 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
             <div className="space-y-6">
               <section>
                 <h3 className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-cyan-200">
-                  {viewLabels[view]} · Team Hitting
-                </h3>
+  {view === "vsLHP"
+    ? "vs LHP"
+    : view === "vsRHP"
+      ? "vs RHP"
+      : viewLabels[view]}{" "}
+  · Team Hitting
+</h3>
                 <StatGrid stats={teamStats?.hitting} order={hitterOrder} />
               </section>
 

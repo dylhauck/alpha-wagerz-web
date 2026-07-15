@@ -64,14 +64,58 @@ async function fetchJson(url: string): Promise<AnyRecord> {
 }
 
 function statSplits(payload: AnyRecord) {
-  for (const group of payload?.stats ?? []) {
-    if (Array.isArray(group?.splits)) return group.splits as AnyRecord[];
-  }
-  return [];
+  const groups = Array.isArray(payload?.stats)
+    ? payload.stats
+    : [];
+
+  return groups.flatMap((group: AnyRecord) =>
+    Array.isArray(group?.splits)
+      ? group.splits
+      : [],
+  );
 }
 
 function firstStat(payload: AnyRecord) {
-  return statSplits(payload)?.[0]?.stat ?? {};
+  const split = statSplits(payload).find(
+    (item: AnyRecord) =>
+      item?.stat &&
+      Object.keys(item.stat).length > 0,
+  );
+
+  return split?.stat ?? {};
+}
+
+function situationStat(
+  payload: AnyRecord,
+  sitCode: "vl" | "vr",
+) {
+  const splits = statSplits(payload);
+
+  const wantedTerms =
+    sitCode === "vl"
+      ? ["vs left", "left-handed", "left handed"]
+      : ["vs right", "right-handed", "right handed"];
+
+  const matchingSplit = splits.find((split: AnyRecord) => {
+    const searchable = [
+      split?.code,
+      split?.description,
+      split?.split?.code,
+      split?.split?.description,
+      split?.sitCode,
+      split?.sitCodes,
+    ]
+      .map((value) => clean(value).toLowerCase())
+      .join(" ");
+
+    if (searchable.includes(sitCode)) return true;
+
+    return wantedTerms.some((term) =>
+      searchable.includes(term),
+    );
+  });
+
+  return matchingSplit?.stat ?? firstStat(payload);
 }
 
 function num(value: unknown) {
@@ -97,20 +141,22 @@ function safeRate(numerator: number, denominator: number, digits = 3) {
 }
 
 function normalizeHitting(stat: AnyRecord) {
+  if (!stat || Object.keys(stat).length === 0) return {};
+
   return {
-    G: stat.gamesPlayed ?? stat.games ?? null,
-    PA: stat.plateAppearances ?? null,
-    AB: stat.atBats ?? null,
-    R: stat.runs ?? null,
-    H: stat.hits ?? null,
-    "2B": stat.doubles ?? null,
-    "3B": stat.triples ?? null,
-    HR: stat.homeRuns ?? null,
-    RBI: stat.rbi ?? null,
-    BB: stat.baseOnBalls ?? stat.walks ?? null,
-    SO: stat.strikeOuts ?? stat.strikeouts ?? null,
-    SB: stat.stolenBases ?? null,
-    CS: stat.caughtStealing ?? null,
+    G: stat.gamesPlayed ?? stat.games ?? 0,
+    PA: stat.plateAppearances ?? 0,
+    AB: stat.atBats ?? 0,
+    R: stat.runs ?? 0,
+    H: stat.hits ?? 0,
+    "2B": stat.doubles ?? 0,
+    "3B": stat.triples ?? 0,
+    HR: stat.homeRuns ?? 0,
+    RBI: stat.rbi ?? 0,
+    BB: stat.baseOnBalls ?? stat.walks ?? 0,
+    SO: stat.strikeOuts ?? stat.strikeouts ?? 0,
+    SB: stat.stolenBases ?? 0,
+    CS: stat.caughtStealing ?? 0,
     AVG: stat.avg ?? null,
     OBP: stat.obp ?? null,
     SLG: stat.slg ?? null,
@@ -207,7 +253,18 @@ function aggregatePitching(splits: AnyRecord[]) {
     strikeouts += num(stat.strikeOuts ?? stat.strikeouts);
     walks += num(stat.baseOnBalls ?? stat.walks);
     hr += num(stat.homeRuns ?? stat.homeRunsAllowed);
-    bf += num(stat.battersFaced);
+    const splitBattersFaced =
+  num(stat.battersFaced) ||
+  num(stat.plateAppearances) ||
+  (
+    num(stat.atBats) +
+    num(stat.baseOnBalls ?? stat.walks) +
+    num(stat.hitByPitch) +
+    num(stat.sacFlies) +
+    num(stat.sacBunts)
+  );
+
+bf += splitBattersFaced;
   }
 
   const innings = outs / 3;
@@ -288,13 +345,108 @@ async function resolveTeamId(teamName: string, season: number) {
   return team?.id ?? null;
 }
 
-async function resolvePlayerId(playerName: string, season: number) {
+async function resolvePlayerId(
+  playerName: string,
+  teamName: string,
+  season: number,
+) {
   if (!playerName) return null;
-  const payload = await fetchJson(`${MLB_BASE}/sports/1/players?season=${season}`);
-  const target = normalizedName(playerName);
-  return (payload?.people ?? []).find(
-    (candidate: AnyRecord) => normalizedName(candidate?.fullName) === target,
-  )?.id ?? null;
+
+  const targetName = normalizedName(playerName);
+  const targetTeam = normalizedName(teamName);
+
+  const seasonsToCheck = [
+    season,
+    season - 1,
+    season - 2,
+  ];
+
+  for (const lookupSeason of seasonsToCheck) {
+    try {
+      const payload = await fetchJson(
+        `${MLB_BASE}/sports/1/players?season=${lookupSeason}&hydrate=currentTeam`,
+      );
+
+      const candidates = (payload?.people ?? []).filter(
+        (candidate: AnyRecord) =>
+          normalizedName(candidate?.fullName) === targetName,
+      );
+
+      if (candidates.length === 1) {
+        return Number(candidates[0]?.id) || null;
+      }
+
+      if (candidates.length > 1 && targetTeam) {
+        const teamMatch = candidates.find((candidate: AnyRecord) => {
+          const possibleTeamNames = [
+            candidate?.currentTeam?.name,
+            candidate?.currentTeam?.teamName,
+            candidate?.currentTeam?.clubName,
+            candidate?.currentTeam?.shortName,
+            candidate?.currentTeam?.locationName,
+          ];
+
+          return possibleTeamNames.some(
+            (name) => normalizedName(name) === targetTeam,
+          );
+        });
+
+        if (teamMatch?.id) {
+          return Number(teamMatch.id);
+        }
+      }
+
+      if (candidates[0]?.id) {
+        return Number(candidates[0].id);
+      }
+    } catch (error) {
+      console.warn(
+        `Unable to search players for season ${lookupSeason}:`,
+        error,
+      );
+    }
+  }
+
+  try {
+    const searchParams = new URLSearchParams({
+      names: playerName,
+      hydrate: "currentTeam",
+    });
+
+    const payload = await fetchJson(
+      `${MLB_BASE}/people/search?${searchParams.toString()}`,
+    );
+
+    const candidates = (payload?.people ?? []).filter(
+      (candidate: AnyRecord) =>
+        normalizedName(candidate?.fullName) === targetName,
+    );
+
+    if (targetTeam) {
+      const teamMatch = candidates.find((candidate: AnyRecord) => {
+        const possibleTeamNames = [
+          candidate?.currentTeam?.name,
+          candidate?.currentTeam?.teamName,
+          candidate?.currentTeam?.clubName,
+          candidate?.currentTeam?.shortName,
+          candidate?.currentTeam?.locationName,
+        ];
+
+        return possibleTeamNames.some(
+          (name) => normalizedName(name) === targetTeam,
+        );
+      });
+
+      if (teamMatch?.id) {
+        return Number(teamMatch.id);
+      }
+    }
+
+    return Number(candidates[0]?.id) || null;
+  } catch (error) {
+    console.warn(`Unable to search MLB player ${playerName}:`, error);
+    return null;
+  }
 }
 
 async function getPerson(playerId: number) {
@@ -307,15 +459,36 @@ async function getPlayerStats(
   group: Group,
   stats: string,
   season: number,
-  options: { startDate?: string; endDate?: string; sitCode?: string; opposingPlayerId?: number } = {},
+  options: {
+    startDate?: string;
+    endDate?: string;
+    sitCode?: string;
+    opposingPlayerId?: number;
+    omitSeason?: boolean;
+    teamId?: number;
+  } = {},
 ) {
   const params = new URLSearchParams({ stats, group });
-  if (stats !== "career") params.set("season", String(season));
+
+  if (stats !== "career" && !options.omitSeason) {
+    params.set("season", String(season));
+  }
+
   if (options.startDate) params.set("startDate", options.startDate);
   if (options.endDate) params.set("endDate", options.endDate);
   if (options.sitCode) params.set("sitCodes", options.sitCode);
-  if (options.opposingPlayerId) params.set("opposingPlayerId", String(options.opposingPlayerId));
-  return fetchJson(`${MLB_BASE}/people/${playerId}/stats?${params.toString()}`);
+
+  if (options.opposingPlayerId) {
+    params.set("opposingPlayerId", String(options.opposingPlayerId));
+  }
+
+  if (options.teamId) {
+    params.set("teamId", String(options.teamId));
+  }
+
+  return fetchJson(
+    `${MLB_BASE}/people/${playerId}/stats?${params.toString()}`,
+  );
 }
 
 async function getPlayerGameLog(playerId: number, group: Group, season: number) {
@@ -328,11 +501,141 @@ async function getTeamGameLog(teamId: number, group: Group, season: number) {
   return fetchJson(`${MLB_BASE}/teams/${teamId}/stats?${params.toString()}`);
 }
 
-async function getTeamSplit(teamId: number, group: Group, season: number, sitCode: string, startDate?: string, endDate?: string) {
-  const params = new URLSearchParams({ stats: "statSplits", group, season: String(season), sitCodes: sitCode });
-  if (startDate) params.set("startDate", startDate);
-  if (endDate) params.set("endDate", endDate);
-  return fetchJson(`${MLB_BASE}/teams/${teamId}/stats?${params.toString()}`);
+async function getTeamSplit(
+  teamId: number,
+  group: Group,
+  season: number,
+  sitCode: "vl" | "vr",
+) {
+  const params = new URLSearchParams({
+    stats: "statSplits",
+    group,
+    season: String(season),
+    sitCodes: sitCode,
+  });
+
+  return fetchJson(
+    `${MLB_BASE}/teams/${teamId}/stats?${params.toString()}`,
+  );
+}
+
+async function getTeamRosterPlayerIds(
+  teamId: number,
+  season: number,
+  group: Group,
+) {
+  const params = new URLSearchParams({
+    rosterType: "fullSeason",
+    season: String(season),
+    hydrate: "person",
+  });
+
+  const payload = await fetchJson(
+    `${MLB_BASE}/teams/${teamId}/roster?${params.toString()}`,
+  );
+
+  const entries = Array.isArray(payload?.roster)
+    ? payload.roster
+    : [];
+
+  const ids = entries
+    .filter((entry: AnyRecord) => {
+      const positionCode = clean(
+        entry?.position?.code ??
+          entry?.person?.primaryPosition?.code,
+      ).toUpperCase();
+
+      const positionType = clean(
+        entry?.position?.type ??
+          entry?.person?.primaryPosition?.type,
+      ).toLowerCase();
+
+      const isPitcher =
+        positionCode === "1" ||
+        positionType === "pitcher";
+
+      return group === "pitching"
+        ? isPitcher
+        : !isPitcher;
+    })
+    .map((entry: AnyRecord) =>
+      Number(entry?.person?.id ?? 0),
+    )
+    .filter((id: number) => id > 0);
+
+  return [...new Set(ids)];
+}
+
+async function mapInBatches<T, R>(
+  items: T[],
+  batchSize: number,
+  callback: (item: T) => Promise<R>,
+) {
+  const results: R[] = [];
+
+  for (let index = 0; index < items.length; index += batchSize) {
+    const batch = items.slice(index, index + batchSize);
+    const batchResults = await Promise.all(batch.map(callback));
+    results.push(...batchResults);
+  }
+
+  return results;
+}
+
+async function buildTeamPlayerSplit(
+  teamId: number,
+  season: number,
+  group: Group,
+  sitCode: "vl" | "vr",
+  startDate: string,
+  endDate: string,
+  playerIds: number[],
+) {
+  const playerSplits = await mapInBatches(
+    playerIds,
+    8,
+    async (playerId) => {
+      try {
+        const payload = await getPlayerStats(
+          playerId,
+          group,
+          "statSplits",
+          season,
+          {
+            startDate,
+            endDate,
+            sitCode,
+            teamId,
+          },
+        );
+
+        const stat = firstStat(payload);
+
+        if (!stat || Object.keys(stat).length === 0) {
+          return null;
+        }
+
+        return {
+          person: { id: playerId },
+          stat,
+        };
+      } catch (error) {
+        console.warn(
+          `Unable to load ${group} ${sitCode} split for player ${playerId}:`,
+          error,
+        );
+        return null;
+      }
+    },
+  );
+
+  const validSplits: AnyRecord[] = playerSplits.filter(
+  (split) => split !== null,
+) as AnyRecord[];
+
+return group === "pitching"
+  ? aggregatePitching(validSplits)
+  : aggregateHitting(validSplits);
 }
 
 async function getScheduleContext(teamId: number, group: Group) {
@@ -382,24 +685,37 @@ async function buildPlayerViews(playerId: number, group: Group, teamId: number, 
     result.home[range] = aggregate(group, filterGameLogs(gameLog, { startDate, endDate, venue: "home", teamId }));
     result.away[range] = aggregate(group, filterGameLogs(gameLog, { startDate, endDate, venue: "away", teamId }));
 
-    for (const [view, sitCode] of [["vsLHP", "vl"], ["vsRHP", "vr"]] as const) {
-      if (range === "career") {
-        result[view][range] = {};
-      } else {
-        try {
-          const payload = await getPlayerStats(playerId, group, "statSplits", season, {
-            startDate,
-            endDate: startDate ? endDate : undefined,
-            sitCode,
-          });
-          result[view][range] = group === "pitching"
-            ? normalizePitching(firstStat(payload))
-            : normalizeHitting(firstStat(payload));
-        } catch {
-          result[view][range] = {};
-        }
-      }
-    }
+    for (const [view, sitCode] of [
+      ["vsLHP", "vl"],
+      ["vsRHP", "vr"],
+    ] as const) {
+      try {
+        const isCareer = range === "career";
+
+        const payload = await getPlayerStats(
+          playerId,
+          group,
+          "statSplits",
+          season,
+          {
+            startDate: isCareer ? undefined : startDate,
+            endDate:
+            !isCareer && startDate
+            ? endDate
+            : undefined,
+          sitCode,
+          omitSeason: isCareer,
+          },
+        );
+
+    result[view][range] =
+      group === "pitching"
+        ? normalizePitching(firstStat(payload))
+        : normalizeHitting(firstStat(payload));
+  } catch {
+    result[view][range] = {};
+  }
+}
 
     const vsTeam = aggregate(
       group,
@@ -433,16 +749,35 @@ async function buildPlayerViews(playerId: number, group: Group, teamId: number, 
 
 async function buildTeamViews(teamId: number, season: number) {
   const endDate = dateOnly(new Date());
-  const ranges: Exclude<RangeKey, "career">[] = ["season", "last7", "last14", "last30"];
-  const [hittingLog, pitchingLog] = await Promise.all([
+
+  const ranges: Exclude<RangeKey, "career">[] = [
+    "season",
+    "last7",
+    "last14",
+    "last30",
+  ];
+
+  const [
+    hittingLog,
+    pitchingLog,
+    hitterIds,
+    pitcherIds,
+  ] = await Promise.all([
     getTeamGameLog(teamId, "hitting", season),
     getTeamGameLog(teamId, "pitching", season),
+    getTeamRosterPlayerIds(teamId, season, "hitting"),
+    getTeamRosterPlayerIds(teamId, season, "pitching"),
   ]);
+
   const hittingSplits = statSplits(hittingLog);
   const pitchingSplits = statSplits(pitchingLog);
 
   const result: Record<Exclude<ViewKey, "matchup">, AnyRecord> = {
-    vsLHP: {}, vsRHP: {}, overall: {}, home: {}, away: {},
+    vsLHP: {},
+    vsRHP: {},
+    overall: {},
+    home: {},
+    away: {},
   };
 
   for (const range of ranges) {
@@ -450,23 +785,96 @@ async function buildTeamViews(teamId: number, season: number) {
 
     for (const venue of ["overall", "home", "away"] as const) {
       result[venue][range] = {
-        hitting: aggregateHitting(filterGameLogs(hittingSplits, { startDate, endDate, venue, teamId })),
-        pitching: aggregatePitching(filterGameLogs(pitchingSplits, { startDate, endDate, venue, teamId })),
+        hitting: aggregateHitting(
+          filterGameLogs(hittingSplits, {
+            startDate,
+            endDate,
+            venue,
+            teamId,
+          }),
+        ),
+        pitching: aggregatePitching(
+          filterGameLogs(pitchingSplits, {
+            startDate,
+            endDate,
+            venue,
+            teamId,
+          }),
+        ),
       };
     }
 
-    for (const [view, sitCode] of [["vsLHP", "vl"], ["vsRHP", "vr"]] as const) {
+    for (const [view, sitCode] of [
+      ["vsLHP", "vl"],
+      ["vsRHP", "vr"],
+    ] as const) {
       try {
+        if (range === "season") {
+          const [hitting, pitching] = await Promise.all([
+            getTeamSplit(teamId, "hitting", season, sitCode),
+            getTeamSplit(teamId, "pitching", season, sitCode),
+          ]);
+
+          result[view][range] = {
+            hitting: normalizeHitting(
+              situationStat(hitting, sitCode),
+            ),
+            pitching: normalizePitching(
+              situationStat(pitching, sitCode),
+            ),
+          };
+
+          continue;
+        }
+
+        if (!startDate) {
+          result[view][range] = {
+            hitting: {},
+            pitching: {},
+          };
+          continue;
+        }
+
         const [hitting, pitching] = await Promise.all([
-          getTeamSplit(teamId, "hitting", season, sitCode, startDate, startDate ? endDate : undefined),
-          getTeamSplit(teamId, "pitching", season, sitCode, startDate, startDate ? endDate : undefined),
+          buildTeamPlayerSplit(
+            teamId,
+            season,
+            "hitting",
+            sitCode,
+            startDate,
+            endDate,
+            hitterIds,
+          ),
+          buildTeamPlayerSplit(
+            teamId,
+            season,
+            "pitching",
+            sitCode,
+            startDate,
+            endDate,
+            pitcherIds,
+          ),
         ]);
+
+        // A player-by-player aggregation cannot infer the team's unique
+        // game count, so use the already-calculated team game-log total.
+        hitting.G = result.overall[range]?.hitting?.G ?? hitting.G;
+        pitching.G = result.overall[range]?.pitching?.G ?? pitching.G;
+
         result[view][range] = {
-          hitting: normalizeHitting(firstStat(hitting)),
-          pitching: normalizePitching(firstStat(pitching)),
+          hitting,
+          pitching,
         };
-      } catch {
-        result[view][range] = { hitting: {}, pitching: {} };
+      } catch (error) {
+        console.error(
+          `Unable to load ${view} ${range} team splits:`,
+          error,
+        );
+
+        result[view][range] = {
+          hitting: {},
+          pitching: {},
+        };
       }
     }
   }
@@ -485,7 +893,11 @@ export async function GET(request: NextRequest) {
     let playerId = Number(params.get("playerId") || 0);
     let teamId = Number(params.get("teamId") || 0);
 
-    if (!playerId) playerId = Number(await resolvePlayerId(playerName, season));
+    if (!playerId) {
+      playerId = Number(
+        await resolvePlayerId(playerName, teamName, season),
+      );
+    }
     if (!playerId) {
       return NextResponse.json({ error: `Unable to resolve MLB player ID for ${playerName || "player"}.` }, { status: 404 });
     }
