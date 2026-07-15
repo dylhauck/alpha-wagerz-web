@@ -2,6 +2,8 @@
 
 import { useMemo, useRef, useState } from "react";
 import { StatCell } from "./StatCell";
+import { PlayerNameButton } from "@/components/players/PlayerNameButton";
+import { PlayerProfileModal } from "@/components/players/PlayerProfileModal";
 
 export type HitterRow = Record<string, any>;
 type SortDirection = "desc" | "asc";
@@ -101,6 +103,7 @@ export function HitterTable({ hitters }: { hitters: HitterRow[] }) {
 
   const [sortKey, setSortKey] = useState<string>("Likely");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+  const [selectedPlayer, setSelectedPlayer] = useState<Record<string, any> | null>(null);
 
   function handleSort(key: string) {
     if (sortKey === key) {
@@ -133,7 +136,8 @@ export function HitterTable({ hitters }: { hitters: HitterRow[] }) {
   }
 
   return (
-    <section className="glass rounded-3xl p-4">
+    <>
+      <section className="glass rounded-3xl p-4">
       <div className="mb-4 flex flex-col justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
           {`${hitters.length} TOTAL HITTERS LOADED FOR TODAY'S SLATE`}
@@ -203,7 +207,26 @@ export function HitterTable({ hitters }: { hitters: HitterRow[] }) {
                 </td>
 
                 <td className="sticky left-[64px] z-10 bg-[#11182c] px-3 py-3">
-                  <div className="truncate font-black text-white">{hitter.Player}</div>
+                  <PlayerNameButton
+                    name={hitter.Player || "—"}
+                    onClick={() =>
+                      setSelectedPlayer({
+                        playerId:
+                          hitter.player_id ||
+                          hitter.playerId ||
+                          hitter.mlb_id ||
+                          hitter.mlbId,
+                        playerName: hitter.Player || "",
+                        teamName: hitter.team || hitter.Team || "",
+                        teamId:
+                          hitter.team_id ||
+                          hitter.teamId ||
+                          hitter.mlb_team_id,
+                        playerType: "hitter",
+                      })
+                    }
+                    className="block w-full"
+                  />
                   <div className="truncate text-xs text-slate-500">{hitter.team}</div>
                 </td>
 
@@ -235,5 +258,11 @@ export function HitterTable({ hitters }: { hitters: HitterRow[] }) {
         </table>
       </div>
     </section>
+
+      <PlayerProfileModal
+        player={selectedPlayer as any}
+        onClose={() => setSelectedPlayer(null)}
+      />
+    </>
   );
 }

@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import { StatCell } from "@/components/StatCell";
 import { TeamLogo } from "@/components/TeamLogo";
+import { PlayerNameButton } from "@/components/players/PlayerNameButton";
+import { PlayerProfileModal } from "@/components/players/PlayerProfileModal";
 
 const columns = [
   ["Alpha", "Test Score"],
@@ -82,9 +84,11 @@ function HeaderCell({
 function PlayerCell({
   hitter,
   rank,
+  onPlayerClick,
 }: {
   hitter: Record<string, any>;
   rank: number;
+  onPlayerClick: () => void;
 }) {
   return (
     <div className="flex min-w-0 items-center gap-2 px-2 py-1.5">
@@ -93,7 +97,11 @@ function PlayerCell({
       </div>
 
       <div className="min-w-0">
-        <div className="truncate text-sm font-black text-white">{hitter.Player}</div>
+        <PlayerNameButton
+          name={hitter.Player || "—"}
+          onClick={onPlayerClick}
+          className="block w-full text-sm"
+        />
         <div className="text-[11px] font-bold text-slate-500">
           {hitter.Bats ? `Bats ${hitter.Bats}` : "Bats —"}
         </div>
@@ -141,6 +149,7 @@ export function GameHitterTable({
 }) {
   const [sortKey, setSortKey] = useState<string>("Likely");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+  const [selectedPlayer, setSelectedPlayer] = useState<Record<string, any> | null>(null);
 
   function handleSort(key: string) {
     if (sortKey === key) {
@@ -165,8 +174,26 @@ export function GameHitterTable({
     (a, b) => Number(b.Likely || 0) - Number(a.Likely || 0)
   )[0];
 
+  function openPlayer(hitter: Record<string, any>) {
+    setSelectedPlayer({
+      playerId:
+        hitter.player_id ||
+        hitter.playerId ||
+        hitter.mlb_id ||
+        hitter.mlbId,
+      playerName: hitter.Player || "",
+      teamName: team || hitter.team || hitter.Team || "",
+      teamId:
+        hitter.team_id ||
+        hitter.teamId ||
+        hitter.mlb_team_id,
+      playerType: "hitter",
+    });
+  }
+
   return (
-    <section className="glass rounded-3xl p-4">
+    <>
+      <section className="glass rounded-3xl p-4">
       <div className="mb-4 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <TeamLogo team={team} size={46} />
@@ -182,7 +209,15 @@ export function GameHitterTable({
           <div className="text-[10px] font-black uppercase tracking-[0.18em] text-emerald-200">
             Top Target
           </div>
-          <div className="text-sm font-black text-white">{topTarget?.Player || "—"}</div>
+          {topTarget ? (
+            <PlayerNameButton
+              name={topTarget.Player || "—"}
+              onClick={() => openPlayer(topTarget)}
+              className="block text-sm"
+            />
+          ) : (
+            <div className="text-sm font-black text-white">—</div>
+          )}
         </div>
       </div>
 
@@ -212,7 +247,11 @@ export function GameHitterTable({
             className="grid items-center gap-1 rounded-xl border border-white/10 bg-white/[0.03]"
             style={gridStyle}
           >
-            <PlayerCell hitter={hitter} rank={index + 1} />
+            <PlayerCell
+              hitter={hitter}
+              rank={index + 1}
+              onPlayerClick={() => openPlayer(hitter)}
+            />
 
             {columns.map(([, key]) => (
               <RowValue key={key} value={hitter[key]} statKey={key} />
@@ -220,6 +259,12 @@ export function GameHitterTable({
           </div>
         ))}
       </div>
-    </section>
+      </section>
+
+      <PlayerProfileModal
+        player={selectedPlayer as any}
+        onClose={() => setSelectedPlayer(null)}
+      />
+    </>
   );
 }

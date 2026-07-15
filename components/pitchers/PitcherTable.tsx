@@ -2,6 +2,8 @@
 
 import { useMemo, useRef, useState } from "react";
 import { StatCell } from "@/components/StatCell";
+import { PlayerNameButton } from "@/components/players/PlayerNameButton";
+import { PlayerProfileModal } from "@/components/players/PlayerProfileModal";
 
 type SortDirection = "desc" | "asc";
 
@@ -139,6 +141,8 @@ export function PitcherTable({ pitchers }: { pitchers: Record<string, any>[] }) 
 
   const [sortKey, setSortKey] = useState<string>("Pitch Score");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+  const [selectedPlayer, setSelectedPlayer] =
+  useState<Record<string, any> | null>(null);
 
   function handleSort(key: string) {
     if (sortKey === key) {
@@ -171,6 +175,7 @@ export function PitcherTable({ pitchers }: { pitchers: Record<string, any>[] }) 
   }, [pitchers, sortKey, sortDirection]);
 
   return (
+    <>
     <section className="glass rounded-3xl p-4">
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
@@ -233,9 +238,26 @@ export function PitcherTable({ pitchers }: { pitchers: Record<string, any>[] }) 
               >
                 <td className="sticky left-0 z-10 rounded-l-2xl bg-[#11182c] px-3 py-3">
                   <div className="flex min-w-0 items-center gap-2">
-  <div className="truncate font-black text-white">
-    {p.Pitcher || "TBD"}
-  </div>
+<PlayerNameButton
+  name={p.Pitcher || "TBD"}
+  onClick={() =>
+    setSelectedPlayer({
+      playerId:
+        p.player_id ||
+        p.playerId ||
+        p.mlb_id ||
+        p.mlbId,
+      playerName: p.Pitcher || "",
+      teamName: p.Team || "",
+      teamId:
+        p.team_id ||
+        p.teamId ||
+        p.mlb_team_id,
+      playerType: "pitcher",
+    })
+  }
+  className="block min-w-0 truncate font-black text-white"
+/>
 
   <ThrowHandBadge throws={p.Throws} />
 </div>
@@ -279,5 +301,10 @@ export function PitcherTable({ pitchers }: { pitchers: Record<string, any>[] }) 
         </table>
       </div>
     </section>
+    <PlayerProfileModal
+        player={selectedPlayer as any}
+        onClose={() => setSelectedPlayer(null)}
+      />
+    </>
   );
 }
