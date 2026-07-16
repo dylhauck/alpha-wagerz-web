@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   BarChart3,
+  CalendarDays,
   CloudSun,
   Home,
   LineChart,
@@ -14,16 +15,24 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { label: "Slate Summary", href: "/", icon: Home },
-  { label: "Alpha Hitters", href: "/hitters", icon: Target },
-  { label: "Alpha Pitchers", href: "/pitchers", icon: Swords },
-  { label: "Weather Edge Report", href: "/weather", icon: CloudSun },
-  { label: "Alpha Projections", href: "/projections", icon: LineChart },
-  { label: "Injury Report", href: "/injury-report", icon: BarChart3 },
+  { label: "Slate Summary", path: "", icon: Home },
+  { label: "Alpha Hitters", path: "/hitters", icon: Target },
+  { label: "Alpha Pitchers", path: "/pitchers", icon: Swords },
+  { label: "Weather Edge Report", path: "/weather", icon: CloudSun },
+  { label: "Alpha Projections", path: "/projections", icon: LineChart },
+  { label: "Injury Report", path: "/injury-report", icon: BarChart3 },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+
+  const isTomorrowSection =
+    pathname === "/tomorrow" ||
+    pathname.startsWith("/tomorrow/");
+
+  const slateBasePath = isTomorrowSection
+    ? "/tomorrow"
+    : "";
 
   return (
     <div className="min-h-screen">
@@ -42,12 +51,22 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <nav className="space-y-2">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = pathname === item.href;
+
+            const href =
+              item.path === ""
+                ? slateBasePath || "/"
+                : `${slateBasePath}${item.path}`;
+
+            const isActive =
+              item.path === ""
+                ? pathname === href
+                : pathname === href ||
+                  pathname.startsWith(`${href}/`);
 
             return (
               <Link
   key={item.label}
-  href={item.href}
+  href={href}
   className={`relative flex items-center gap-3 overflow-hidden rounded-xl border px-3 py-3 text-sm font-bold transition ${
     isActive
       ? "border-cyan-300/35 bg-cyan-300/15 text-white shadow-[0_0_18px_rgba(35,216,255,0.16)]"
@@ -65,13 +84,55 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           })}
         </nav>
 
-        <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-cyan-300/15 bg-white/[0.035] p-3">
-          <div className="text-sm font-black text-white">Model Engine</div>
-          <div className="text-xs text-slate-400">v1.0.0</div>
-          <div className="mt-2 text-xs font-bold text-emerald-300">
-            ● All Systems Active
-          </div>
-        </div>
+        <div className="absolute bottom-3 left-3 right-3 space-y-2">
+  <Link
+    href="/"
+    className={`relative flex items-center gap-3 overflow-hidden rounded-xl border px-3 py-3 text-sm font-bold transition ${
+      pathname === "/"
+        ? "border-cyan-300/35 bg-cyan-300/15 text-white shadow-[0_0_18px_rgba(35,216,255,0.16)]"
+        : "border-white/5 bg-white/[0.025] text-slate-400 hover:border-cyan-300/25 hover:text-white"
+    }`}
+  >
+    {pathname === "/" ? (
+      <span className="absolute bottom-2 left-0 top-2 w-1 rounded-r-full bg-gradient-to-b from-cyan-300 to-pink-400 shadow-[0_0_12px_rgba(35,216,255,0.75)]" />
+    ) : null}
+
+    <CalendarDays size={17} />
+    Today&apos;s Slate
+  </Link>
+
+  <Link
+    href="/tomorrow"
+    className={`relative flex items-center gap-3 overflow-hidden rounded-xl border px-3 py-3 text-sm font-bold transition ${
+      pathname === "/tomorrow" ||
+      pathname.startsWith("/tomorrow/")
+        ? "border-cyan-300/35 bg-cyan-300/15 text-white shadow-[0_0_18px_rgba(35,216,255,0.16)]"
+        : "border-white/5 bg-white/[0.025] text-slate-400 hover:border-pink-300/25 hover:text-white"
+    }`}
+  >
+    {pathname === "/tomorrow" ||
+    pathname.startsWith("/tomorrow/") ? (
+      <span className="absolute bottom-2 left-0 top-2 w-1 rounded-r-full bg-gradient-to-b from-cyan-300 to-pink-400 shadow-[0_0_12px_rgba(35,216,255,0.75)]" />
+    ) : null}
+
+    <CalendarDays size={17} />
+    Tomorrow&apos;s Slate
+  </Link>
+
+  <div className="rounded-xl border border-cyan-300/15 bg-white/[0.035] p-3">
+    <div className="text-sm font-black text-white">
+      Model Engine
+    </div>
+
+    <div className="text-xs text-slate-400">
+      v1.0.0
+    </div>
+
+    <div className="mt-2 text-xs font-bold text-emerald-300">
+      ● All Systems Active
+    </div>
+  </div>
+</div>
       </aside>
 
       <main className="lg:pl-56">

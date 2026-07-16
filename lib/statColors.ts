@@ -136,8 +136,8 @@ const rules: Partial<Record<StatKey, StatRule>> = {
 
   // Hitter hard-hit rate: higher is better.
   "HH%": {
-    min: 28,
-    max: 55,
+    min: 15,
+    max: 60,
     direction: "higher-good",
   },
 

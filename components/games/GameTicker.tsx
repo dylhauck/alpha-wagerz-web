@@ -20,9 +20,11 @@ function sortValue(game: Record<string, any>) {
 export function GameTicker({
   games,
   selectedGameId,
+  basePath = "/",
 }: {
   games: Record<string, any>[];
-  selectedGameId?: string;
+  selectedGameId?: string | number;
+  basePath?: string;
 }) {
   const sortedGames = [...games].sort((a, b) =>
     sortValue(a).localeCompare(sortValue(b))
@@ -38,7 +40,7 @@ export function GameTicker({
             return (
               <Link
                 key={game.game_id}
-                href={`/?game=${game.game_id}`}
+                href={`${basePath}?game=${game.game_id}`}
                 className={`min-w-[150px] rounded-xl border bg-slate-950/80 px-3 py-2 transition ${
                   active
                     ? "border-cyan-300/70 bg-cyan-300/15 shadow-[0_0_20px_rgba(35,216,255,0.25)]"
