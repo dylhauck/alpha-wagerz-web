@@ -78,13 +78,12 @@ export default function TomorrowWeatherPage() {
         <div className="-mt-2 text-center text-xs font-bold uppercase tracking-[0.3em] text-slate-400">
           {tomorrow}
         </div>
-
-        <div className="mt-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          Tomorrow&apos;s Weather Edge Report
-        </div>
       </div>
 
-      <WeatherDashboard games={games} />
+      <WeatherDashboard
+  games={games}
+  slateLabel="Tomorrow's Slate"
+/>
     </AppShell>
   );
 }

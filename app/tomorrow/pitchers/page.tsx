@@ -132,13 +132,12 @@ export default function TomorrowPitchersPage() {
         <div className="-mt-2 text-center text-xs font-bold uppercase tracking-[0.3em] text-slate-400">
           {tomorrow}
         </div>
-
-        <div className="mt-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          Tomorrow&apos;s Pitchers
-        </div>
       </div>
 
-      <PitcherTable pitchers={pitchers} />
+      <PitcherTable
+  pitchers={pitchers}
+  slateLabel="Tomorrow's Slate"
+/>
     </AppShell>
   );
 }

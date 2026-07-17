@@ -8,8 +8,10 @@ type Projection = Record<string, any>;
 
 export function ProjectionsDashboard({
   projections,
+  slateLabel = "Today's Slate",
 }: {
-  projections: Projection[];
+  projections: Record<string, any>[];
+  slateLabel?: string;
 }) {
   const [selectedId, setSelectedId] = useState(
     String(projections[0]?.game_id || "")
@@ -35,7 +37,7 @@ export function ProjectionsDashboard({
     <section className="glass rounded-3xl p-4">
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          {`${projections.length} ALPHA PROJECTIONS LOADED FOR TODAY'S SLATE`}
+          {`${projections.length} ALPHA PROJECTIONS LOADED FOR ${slateLabel.toUpperCase()}`}
         </div>
       </div>
 
