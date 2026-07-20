@@ -50,8 +50,8 @@ type StatRule = {
 
 const rules: Partial<Record<StatKey, StatRule>> = {
   Likely: {
-    min: 10,
-    max: 30,
+    min: 40,
+    max: 95,
     direction: "higher-good",
   },
 
@@ -210,7 +210,7 @@ const rules: Partial<Record<StatKey, StatRule>> = {
 
   "Pitch Score": {
     min: 20,
-    max: 90,
+    max: 50,
     direction: "higher-good",
   },
 

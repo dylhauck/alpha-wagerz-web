@@ -30,6 +30,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     pathname === "/tomorrow" ||
     pathname.startsWith("/tomorrow/");
 
+  const isTodaySection =
+  pathname === "/" ||
+  navItems.some(
+    (item) =>
+      item.path !== "" &&
+      (pathname === item.path ||
+        pathname.startsWith(`${item.path}/`))
+  );
+
   const slateBasePath = isTomorrowSection
     ? "/tomorrow"
     : "";
@@ -88,7 +97,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   <Link
     href="/"
     className={`relative flex items-center gap-3 overflow-hidden rounded-xl border px-3 py-3 text-sm font-bold transition ${
-      pathname === "/"
+      isTodaySection
         ? "border-cyan-300/35 bg-cyan-300/15 text-white shadow-[0_0_18px_rgba(35,216,255,0.16)]"
         : "border-white/5 bg-white/[0.025] text-slate-400 hover:border-cyan-300/25 hover:text-white"
     }`}

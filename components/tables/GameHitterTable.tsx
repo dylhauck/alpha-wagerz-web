@@ -195,31 +195,40 @@ export function GameHitterTable({
     <>
       <section className="glass rounded-3xl p-4">
       <div className="mb-4 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <TeamLogo team={team} size={46} />
-          <div>
-            <h2 className="text-xl font-black text-white">{title}</h2>
-            <div className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
-              {sorted.length} hitters loaded
-            </div>
-          </div>
-        </div>
+  <div className="flex items-center gap-3">
+    <div className="relative flex h-14 w-14 shrink-0 items-center justify-center">
+      <div className="absolute inset-0 rounded-2xl bg-white/70 blur-xl" />
 
-        <div className="hidden rounded-2xl border border-emerald-300/20 bg-emerald-400/10 px-4 py-2 sm:block">
-          <div className="text-[10px] font-black uppercase tracking-[0.18em] text-emerald-200">
-            Top Target
-          </div>
-          {topTarget ? (
-            <PlayerNameButton
-              name={topTarget.Player || "—"}
-              onClick={() => openPlayer(topTarget)}
-              className="block text-sm"
-            />
-          ) : (
-            <div className="text-sm font-black text-white">—</div>
-          )}
-        </div>
+      <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-xl border border-white/60 bg-white/60 shadow-[0_0_24px_rgba(255,255,255,0.45),inset_0_2px_3px_rgba(255,255,255,0.8)] backdrop-blur-md">
+        <TeamLogo team={team} size={46} />
       </div>
+    </div>
+
+    <div>
+      <h2 className="text-xl font-black text-white">{title}</h2>
+
+      <div className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
+        {sorted.length} hitters loaded
+      </div>
+    </div>
+  </div>
+
+  <div className="hidden rounded-2xl border border-emerald-300/20 bg-emerald-400/10 px-4 py-2 sm:block">
+    <div className="text-[10px] font-black uppercase tracking-[0.18em] text-emerald-200">
+      Top Target
+    </div>
+
+    {topTarget ? (
+      <PlayerNameButton
+        name={topTarget.Player || "—"}
+        onClick={() => openPlayer(topTarget)}
+        className="block text-sm"
+      />
+    ) : (
+      <div className="text-sm font-black text-white">—</div>
+    )}
+  </div>
+</div>
 
       <div className="grid gap-1">
         <div className="grid gap-1" style={gridStyle}>
