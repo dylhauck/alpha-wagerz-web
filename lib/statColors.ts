@@ -50,8 +50,8 @@ type StatRule = {
 
 const rules: Partial<Record<StatKey, StatRule>> = {
   Likely: {
-    min: 40,
-    max: 95,
+    min: 25,
+    max: 75,
     direction: "higher-good",
   },
 
