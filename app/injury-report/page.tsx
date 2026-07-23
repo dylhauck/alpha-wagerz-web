@@ -224,7 +224,7 @@ export default function InjuryReportPage() {
             />
 
             <div className="flex gap-2">
-              {(["ALL", "OUT", "DTD"] as const).map((item) => (
+              {(["ALL", "OUT"] as const).map((item) => (
                 <button
                   key={item}
                   type="button"

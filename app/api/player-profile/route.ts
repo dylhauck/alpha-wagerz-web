@@ -6,6 +6,7 @@ type AnyRecord = Record<string, any>;
 type Group = "hitting" | "pitching";
 type RangeKey = "season" | "last7" | "last14" | "last30" | "career";
 type ViewKey = "vsLHP" | "vsRHP" | "matchup" | "overall" | "home" | "away";
+type ScheduleGame = { gamePk: number; gameDate: string };
 
 const MLB_BASE = "https://statsapi.mlb.com/api/v1";
 const CACHE_TTL_MS = 15 * 60 * 1000;
@@ -169,9 +170,23 @@ function normalizeHitting(stat: AnyRecord) {
 }
 
 function normalizePitching(stat: AnyRecord) {
+  if (!stat || Object.keys(stat).length === 0) return {};
+
   const outs = parseInningsToOuts(stat.inningsPitched);
   const innings = outs / 3;
   const strikeouts = num(stat.strikeOuts ?? stat.strikeouts);
+  const walks = num(stat.baseOnBalls ?? stat.walks);
+  const hits = num(stat.hits);
+  const homeRuns = num(stat.homeRuns ?? stat.homeRunsAllowed);
+  const battersFaced =
+    num(stat.battersFaced) ||
+    num(stat.plateAppearances) ||
+    num(stat.atBats) +
+      walks +
+      num(stat.hitByPitch) +
+      num(stat.sacFlies) +
+      num(stat.sacBunts);
+
   return {
     G: stat.gamesPlayed ?? stat.games ?? null,
     GS: stat.gamesStarted ?? null,
@@ -187,12 +202,34 @@ function normalizePitching(stat: AnyRecord) {
       stat.strikeoutsPer9Inn ??
       stat.strikeoutsPer9Innings ??
       (innings ? Number(((strikeouts * 9) / innings).toFixed(2)) : null),
-    "BB/9": stat.walksPer9Inn ?? stat.walksPer9Innings ?? null,
-    "H/9": stat.hitsPer9Inn ?? stat.hitsPer9Innings ?? null,
-    "HR/9": stat.homeRunsPer9 ?? stat.homeRunsPer9Inn ?? null,
-    "K%": stat.strikeoutPercentage ?? null,
-    "BB%": stat.walkPercentage ?? null,
-    "OPP AVG": stat.avg ?? stat.opponentAvg ?? null,
+    "BB/9":
+      stat.walksPer9Inn ??
+      stat.walksPer9Innings ??
+      (innings ? Number(((walks * 9) / innings).toFixed(2)) : null),
+    "H/9":
+      stat.hitsPer9Inn ??
+      stat.hitsPer9Innings ??
+      (innings ? Number(((hits * 9) / innings).toFixed(2)) : null),
+    "HR/9":
+      stat.homeRunsPer9 ??
+      stat.homeRunsPer9Inn ??
+      (innings ? Number(((homeRuns * 9) / innings).toFixed(2)) : null),
+    "K%":
+      stat.strikeoutPercentage ??
+      (battersFaced
+        ? Number(((strikeouts / battersFaced) * 100).toFixed(1))
+        : null),
+    "BB%":
+      stat.walkPercentage ??
+      (battersFaced
+        ? Number(((walks / battersFaced) * 100).toFixed(1))
+        : null),
+    "OPP AVG":
+      stat.avg ??
+      stat.opponentAvg ??
+      (battersFaced
+        ? safeRate(hits, Math.max(1, battersFaced - walks))
+        : null),
   };
 }
 
@@ -464,6 +501,7 @@ async function getPlayerStats(
     endDate?: string;
     sitCode?: string;
     opposingPlayerId?: number;
+    opposingTeamId?: number;
     omitSeason?: boolean;
     teamId?: number;
   } = {},
@@ -482,6 +520,10 @@ async function getPlayerStats(
     params.set("opposingPlayerId", String(options.opposingPlayerId));
   }
 
+  if (options.opposingTeamId) {
+    params.set("opposingTeamId", String(options.opposingTeamId));
+  }
+
   if (options.teamId) {
     params.set("teamId", String(options.teamId));
   }
@@ -494,6 +536,59 @@ async function getPlayerStats(
 async function getPlayerGameLog(playerId: number, group: Group, season: number) {
   const params = new URLSearchParams({ stats: "gameLog", group, season: String(season), hydrate: "game" });
   return fetchJson(`${MLB_BASE}/people/${playerId}/stats?${params.toString()}`);
+}
+
+async function getPlayerCareerGameLogSplits(
+  playerId: number,
+  group: Group,
+  currentSeason: number,
+) {
+  let seasons: number[] = [];
+
+  try {
+    const yearByYear = await getPlayerStats(
+      playerId,
+      group,
+      "yearByYear",
+      currentSeason,
+      { omitSeason: true },
+    );
+
+    seasons = statSplits(yearByYear)
+      .map((split: AnyRecord) => Number(split?.season ?? 0))
+      .filter(
+        (seasonNumber: number) =>
+          Number.isInteger(seasonNumber) &&
+          seasonNumber > 0 &&
+          seasonNumber <= currentSeason,
+      );
+  } catch (error) {
+    console.warn(`Unable to load career seasons for player ${playerId}:`, error);
+  }
+
+  seasons = [...new Set(seasons)];
+  if (!seasons.includes(currentSeason)) seasons.push(currentSeason);
+  seasons.sort((a, b) => a - b);
+
+  const seasonLogs = await mapInBatches(
+    seasons,
+    4,
+    async (seasonNumber: number) => {
+      try {
+        return statSplits(
+          await getPlayerGameLog(playerId, group, seasonNumber),
+        );
+      } catch (error) {
+        console.warn(
+          `Unable to load ${seasonNumber} game log for player ${playerId}:`,
+          error,
+        );
+        return [] as AnyRecord[];
+      }
+    },
+  );
+
+  return seasonLogs.flat();
 }
 
 async function getTeamGameLog(teamId: number, group: Group, season: number) {
@@ -519,51 +614,302 @@ async function getTeamSplit(
   );
 }
 
-async function getTeamRosterPlayerIds(
+
+type HittingAccumulator = {
+  games: Set<number>;
+  pa: number;
+  ab: number;
+  runs: number;
+  hits: number;
+  doubles: number;
+  triples: number;
+  homeRuns: number;
+  rbi: number;
+  walks: number;
+  strikeouts: number;
+  stolenBases: number;
+  caughtStealing: number;
+  hitByPitch: number;
+  sacFlies: number;
+};
+
+type PitchingAccumulator = {
+  games: Set<number>;
+  starts: Set<number>;
+  outs: number;
+  earnedRuns: number;
+  hits: number;
+  strikeouts: number;
+  walks: number;
+  homeRuns: number;
+  battersFaced: number;
+};
+
+type HandednessAccumulator = {
+  hitting: {
+    vl: HittingAccumulator;
+    vr: HittingAccumulator;
+  };
+  pitching: {
+    vl: PitchingAccumulator;
+    vr: PitchingAccumulator;
+  };
+};
+
+function createHittingAccumulator(): HittingAccumulator {
+  return {
+    games: new Set<number>(),
+    pa: 0,
+    ab: 0,
+    runs: 0,
+    hits: 0,
+    doubles: 0,
+    triples: 0,
+    homeRuns: 0,
+    rbi: 0,
+    walks: 0,
+    strikeouts: 0,
+    stolenBases: 0,
+    caughtStealing: 0,
+    hitByPitch: 0,
+    sacFlies: 0,
+  };
+}
+
+function createPitchingAccumulator(): PitchingAccumulator {
+  return {
+    games: new Set<number>(),
+    starts: new Set<number>(),
+    outs: 0,
+    earnedRuns: 0,
+    hits: 0,
+    strikeouts: 0,
+    walks: 0,
+    homeRuns: 0,
+    battersFaced: 0,
+  };
+}
+
+function createHandednessAccumulator(): HandednessAccumulator {
+  return {
+    hitting: {
+      vl: createHittingAccumulator(),
+      vr: createHittingAccumulator(),
+    },
+    pitching: {
+      vl: createPitchingAccumulator(),
+      vr: createPitchingAccumulator(),
+    },
+  };
+}
+
+function normalizeHandCode(value: unknown): "L" | "R" | "" {
+  const code = clean(value).toUpperCase();
+  return code === "L" || code === "R" ? code : "";
+}
+
+function pitcherHandFromPlay(play: AnyRecord): "L" | "R" | "" {
+  const possibleValues = [
+    play?.matchup?.pitchHand?.code,
+    play?.matchup?.pitchHand?.description,
+    play?.matchup?.pitcher?.pitchHand?.code,
+    play?.matchup?.pitcher?.pitchHand?.description,
+  ];
+
+  for (const value of possibleValues) {
+    const normalized = clean(value).toUpperCase();
+
+    if (
+      normalized === "L" ||
+      normalized === "LEFT" ||
+      normalized === "LEFT-HANDED"
+    ) {
+      return "L";
+    }
+
+    if (
+      normalized === "R" ||
+      normalized === "RIGHT" ||
+      normalized === "RIGHT-HANDED"
+    ) {
+      return "R";
+    }
+  }
+
+  return "";
+}
+
+function eventTypeOf(play: AnyRecord) {
+  return clean(play?.result?.eventType).toLowerCase();
+}
+
+function isWalkEvent(eventType: string) {
+  return eventType === "walk" || eventType === "intent_walk";
+}
+
+function isStrikeoutEvent(eventType: string) {
+  return eventType === "strikeout" || eventType === "strikeout_double_play";
+}
+
+function isHitEvent(eventType: string) {
+  return ["single", "double", "triple", "home_run"].includes(eventType);
+}
+
+function isAtBatEvent(eventType: string) {
+  return ![
+    "walk",
+    "intent_walk",
+    "hit_by_pitch",
+    "sac_fly",
+    "sac_bunt",
+    "catcher_interf",
+    "catcher_interference",
+  ].includes(eventType);
+}
+
+function countRunsOnPlay(play: AnyRecord) {
+  const runners = Array.isArray(play?.runners) ? play.runners : [];
+
+  return runners.filter(
+    (runner: AnyRecord) =>
+      runner?.movement?.isScoringEvent === true ||
+      runner?.movement?.end === "score",
+  ).length;
+}
+
+function countRunnerEvent(play: AnyRecord, names: string[]) {
+  const runners = Array.isArray(play?.runners) ? play.runners : [];
+
+  return runners.filter((runner: AnyRecord) => {
+    const eventType = clean(
+      runner?.details?.eventType ??
+        runner?.details?.event ??
+        runner?.movement?.reason,
+    ).toLowerCase();
+
+    return names.includes(eventType);
+  }).length;
+}
+
+function finalizeHitting(acc: HittingAccumulator) {
+  const singles = acc.hits - acc.doubles - acc.triples - acc.homeRuns;
+  const totalBases =
+    singles +
+    acc.doubles * 2 +
+    acc.triples * 3 +
+    acc.homeRuns * 4;
+
+  const avg = safeRate(acc.hits, acc.ab);
+  const obp = safeRate(
+    acc.hits + acc.walks + acc.hitByPitch,
+    acc.ab + acc.walks + acc.hitByPitch + acc.sacFlies,
+  );
+  const slg = safeRate(totalBases, acc.ab);
+
+  return {
+    G: acc.games.size,
+    PA: acc.pa,
+    AB: acc.ab,
+    R: acc.runs,
+    H: acc.hits,
+    "2B": acc.doubles,
+    "3B": acc.triples,
+    HR: acc.homeRuns,
+    RBI: acc.rbi,
+    BB: acc.walks,
+    SO: acc.strikeouts,
+    SB: acc.stolenBases,
+    CS: acc.caughtStealing,
+    AVG: avg,
+    OBP: obp,
+    SLG: slg,
+    OPS:
+      obp !== null && slg !== null
+        ? Number((obp + slg).toFixed(3))
+        : null,
+    ISO:
+      avg !== null && slg !== null
+        ? Number((slg - avg).toFixed(3))
+        : null,
+  };
+}
+
+function finalizePitching(acc: PitchingAccumulator) {
+  const innings = acc.outs / 3;
+
+  return {
+    G: acc.games.size,
+    GS: acc.starts.size,
+    IP: outsToInnings(acc.outs),
+    W: null,
+    L: null,
+    ERA:
+      innings
+        ? Number(((acc.earnedRuns * 9) / innings).toFixed(2))
+        : null,
+    WHIP:
+      innings
+        ? Number(((acc.walks + acc.hits) / innings).toFixed(3))
+        : null,
+    K: acc.strikeouts,
+    BB: acc.walks,
+    HR: acc.homeRuns,
+    "K/9":
+      innings
+        ? Number(((acc.strikeouts * 9) / innings).toFixed(2))
+        : null,
+    "BB/9":
+      innings
+        ? Number(((acc.walks * 9) / innings).toFixed(2))
+        : null,
+    "H/9":
+      innings
+        ? Number(((acc.hits * 9) / innings).toFixed(2))
+        : null,
+    "HR/9":
+      innings
+        ? Number(((acc.homeRuns * 9) / innings).toFixed(2))
+        : null,
+    "K%":
+      acc.battersFaced
+        ? Number(((acc.strikeouts / acc.battersFaced) * 100).toFixed(1))
+        : null,
+    "BB%":
+      acc.battersFaced
+        ? Number(((acc.walks / acc.battersFaced) * 100).toFixed(1))
+        : null,
+    "OPP AVG": safeRate(
+      acc.hits,
+      Math.max(1, acc.battersFaced - acc.walks),
+    ),
+  };
+}
+
+async function getTeamGamesForRange(
   teamId: number,
-  season: number,
-  group: Group,
-) {
+  startDate: string,
+  endDate: string,
+): Promise<ScheduleGame[]> {
   const params = new URLSearchParams({
-    rosterType: "fullSeason",
-    season: String(season),
-    hydrate: "person",
+    sportId: "1",
+    teamId: String(teamId),
+    startDate,
+    endDate,
+    gameType: "R",
   });
 
   const payload = await fetchJson(
-    `${MLB_BASE}/teams/${teamId}/roster?${params.toString()}`,
+    `${MLB_BASE}/schedule?${params.toString()}`,
   );
 
-  const entries = Array.isArray(payload?.roster)
-    ? payload.roster
-    : [];
-
-  const ids = entries
-    .filter((entry: AnyRecord) => {
-      const positionCode = clean(
-        entry?.position?.code ??
-          entry?.person?.primaryPosition?.code,
-      ).toUpperCase();
-
-      const positionType = clean(
-        entry?.position?.type ??
-          entry?.person?.primaryPosition?.type,
-      ).toLowerCase();
-
-      const isPitcher =
-        positionCode === "1" ||
-        positionType === "pitcher";
-
-      return group === "pitching"
-        ? isPitcher
-        : !isPitcher;
-    })
-    .map((entry: AnyRecord) =>
-      Number(entry?.person?.id ?? 0),
+  return (payload?.dates ?? [])
+    .flatMap((dateEntry: AnyRecord) =>
+      (dateEntry?.games ?? []).map((game: AnyRecord) => ({
+        gamePk: Number(game?.gamePk ?? 0),
+        gameDate: clean(game?.officialDate ?? dateEntry?.date),
+      })),
     )
-    .filter((id: number) => id > 0);
-
-  return [...new Set(ids)];
+    .filter((game: ScheduleGame) => game.gamePk > 0) as ScheduleGame[];
 }
 
 async function mapInBatches<T, R>(
@@ -582,60 +928,417 @@ async function mapInBatches<T, R>(
   return results;
 }
 
-async function buildTeamPlayerSplit(
+async function getTeamGameFeeds(
   teamId: number,
-  season: number,
-  group: Group,
-  sitCode: "vl" | "vr",
   startDate: string,
   endDate: string,
-  playerIds: number[],
 ) {
-  const playerSplits = await mapInBatches(
-    playerIds,
-    8,
-    async (playerId) => {
-      try {
-        const payload = await getPlayerStats(
-          playerId,
-          group,
-          "statSplits",
-          season,
-          {
-            startDate,
-            endDate,
-            sitCode,
-            teamId,
-          },
-        );
+  const games = await getTeamGamesForRange(teamId, startDate, endDate);
 
-        const stat = firstStat(payload);
+  return mapInBatches(games, 4, async (game) => {
+    try {
+      const feed = await fetchJson(
+        `${MLB_BASE}/game/${game.gamePk}/feed/live`,
+      );
 
-        if (!stat || Object.keys(stat).length === 0) {
-          return null;
+      return {
+        gamePk: game.gamePk,
+        gameDate: game.gameDate,
+        feed,
+      };
+    } catch (error) {
+      console.warn(
+        `Unable to load play-by-play for game ${game.gamePk}:`,
+        error,
+      );
+      return null;
+    }
+  }).then((feeds) =>
+    feeds.filter(
+      (
+        item,
+      ): item is {
+        gamePk: number;
+        gameDate: string;
+        feed: AnyRecord;
+      } => item !== null,
+    ),
+  );
+}
+
+function buildTeamHandednessFromFeeds(
+  teamId: number,
+  feeds: Array<{
+    gamePk: number;
+    gameDate: string;
+    feed: AnyRecord;
+  }>,
+  startDate: string,
+) {
+  const result = createHandednessAccumulator();
+
+  for (const { gamePk, gameDate, feed } of feeds) {
+    if (gameDate < startDate) continue;
+
+    const homeTeamId = Number(feed?.gameData?.teams?.home?.id ?? 0);
+    const awayTeamId = Number(feed?.gameData?.teams?.away?.id ?? 0);
+    const teamIsHome = homeTeamId === teamId;
+    const teamIsAway = awayTeamId === teamId;
+
+    if (!teamIsHome && !teamIsAway) continue;
+
+    const plays = Array.isArray(feed?.liveData?.plays?.allPlays)
+      ? feed.liveData.plays.allPlays
+      : [];
+
+    const firstPitcherByHalf = new Map<string, number>();
+    const previousOutsByHalf = new Map<string, number>();
+
+    for (const play of plays) {
+      const inning = Number(play?.about?.inning ?? 0);
+      const half = clean(play?.about?.halfInning).toLowerCase();
+      const halfKey = `${inning}-${half}`;
+      const battingTeamId = half === "top" ? awayTeamId : homeTeamId;
+      const pitchingTeamId = half === "top" ? homeTeamId : awayTeamId;
+
+      const batterHand = normalizeHandCode(play?.matchup?.batSide?.code);
+      const pitcherHand = pitcherHandFromPlay(play);
+      const pitcherId = Number(play?.matchup?.pitcher?.id ?? 0);
+
+      if (pitcherId && !firstPitcherByHalf.has(halfKey)) {
+        firstPitcherByHalf.set(halfKey, pitcherId);
+      }
+
+      const currentOuts = Number(play?.count?.outs ?? 0);
+      const previousOuts = previousOutsByHalf.get(halfKey) ?? 0;
+      const outsOnPlay =
+        currentOuts >= previousOuts
+          ? currentOuts - previousOuts
+          : currentOuts;
+      previousOutsByHalf.set(halfKey, currentOuts);
+
+      const eventType = eventTypeOf(play);
+      const runs = countRunsOnPlay(play);
+      const rbi = num(play?.result?.rbi);
+      const stolenBases = countRunnerEvent(play, [
+        "stolen_base_2b",
+        "stolen_base_3b",
+        "stolen_base_home",
+        "stolen base 2b",
+        "stolen base 3b",
+        "stolen base home",
+      ]);
+      const caughtStealing = countRunnerEvent(play, [
+        "caught_stealing_2b",
+        "caught_stealing_3b",
+        "caught_stealing_home",
+        "pickoff_caught_stealing_2b",
+        "pickoff_caught_stealing_3b",
+        "pickoff_caught_stealing_home",
+      ]);
+
+      if (battingTeamId === teamId && pitcherHand) {
+        const key = pitcherHand === "L" ? "vl" : "vr";
+        const acc = result.hitting[key];
+
+        acc.games.add(gamePk);
+        acc.pa += 1;
+        if (isAtBatEvent(eventType)) acc.ab += 1;
+        acc.runs += runs;
+        acc.rbi += rbi;
+        acc.stolenBases += stolenBases;
+        acc.caughtStealing += caughtStealing;
+
+        if (isHitEvent(eventType)) {
+          acc.hits += 1;
+          if (eventType === "double") acc.doubles += 1;
+          if (eventType === "triple") acc.triples += 1;
+          if (eventType === "home_run") acc.homeRuns += 1;
         }
 
-        return {
-          person: { id: playerId },
-          stat,
-        };
-      } catch (error) {
-        console.warn(
-          `Unable to load ${group} ${sitCode} split for player ${playerId}:`,
-          error,
-        );
-        return null;
+        if (isWalkEvent(eventType)) acc.walks += 1;
+        if (isStrikeoutEvent(eventType)) acc.strikeouts += 1;
+        if (eventType === "hit_by_pitch") acc.hitByPitch += 1;
+        if (eventType === "sac_fly") acc.sacFlies += 1;
       }
+
+      if (pitchingTeamId === teamId && batterHand) {
+        const key = batterHand === "L" ? "vl" : "vr";
+        const acc = result.pitching[key];
+
+        acc.games.add(gamePk);
+        acc.outs += Math.max(0, outsOnPlay);
+        acc.earnedRuns += runs;
+        acc.battersFaced += 1;
+
+        if (
+          pitcherId &&
+          firstPitcherByHalf.get(halfKey) === pitcherId
+        ) {
+          acc.starts.add(gamePk);
+        }
+
+        if (isHitEvent(eventType)) acc.hits += 1;
+        if (isStrikeoutEvent(eventType)) acc.strikeouts += 1;
+        if (isWalkEvent(eventType)) acc.walks += 1;
+        if (eventType === "home_run") acc.homeRuns += 1;
+      }
+    }
+  }
+
+  return {
+    vsLHP: {
+      hitting: finalizeHitting(result.hitting.vl),
+      pitching: finalizePitching(result.pitching.vl),
     },
-  );
+    vsRHP: {
+      hitting: finalizeHitting(result.hitting.vr),
+      pitching: finalizePitching(result.pitching.vr),
+    },
+  };
+}
 
-  const validSplits: AnyRecord[] = playerSplits.filter(
-  (split) => split !== null,
-) as AnyRecord[];
+function buildPlayerHandednessFromFeeds(
+  playerId: number,
+  group: Group,
+  feeds: Array<{
+    gamePk: number;
+    gameDate: string;
+    feed: AnyRecord;
+  }>,
+  startDate: string,
+) {
+  const accumulators = createHandednessAccumulator();
 
-return group === "pitching"
-  ? aggregatePitching(validSplits)
-  : aggregateHitting(validSplits);
+  for (const { gamePk, gameDate, feed } of feeds) {
+    if (gameDate < startDate) continue;
+
+    const plays = Array.isArray(feed?.liveData?.plays?.allPlays)
+      ? feed.liveData.plays.allPlays
+      : [];
+
+    const firstPitcherByHalf = new Map<string, number>();
+    const previousOutsByHalf = new Map<string, number>();
+
+    for (const play of plays) {
+      const batterId = Number(play?.matchup?.batter?.id ?? 0);
+      const pitcherId = Number(play?.matchup?.pitcher?.id ?? 0);
+      const batterHand = normalizeHandCode(play?.matchup?.batSide?.code);
+      const pitcherHand = pitcherHandFromPlay(play);
+      const eventType = eventTypeOf(play);
+
+      const inning = Number(play?.about?.inning ?? 0);
+      const half = clean(play?.about?.halfInning).toLowerCase();
+      const halfKey = `${inning}-${half}`;
+
+      if (pitcherId && !firstPitcherByHalf.has(halfKey)) {
+        firstPitcherByHalf.set(halfKey, pitcherId);
+      }
+
+      const currentOuts = Number(play?.count?.outs ?? 0);
+      const previousOuts = previousOutsByHalf.get(halfKey) ?? 0;
+      const outsOnPlay =
+        currentOuts >= previousOuts
+          ? currentOuts - previousOuts
+          : currentOuts;
+      previousOutsByHalf.set(halfKey, currentOuts);
+
+      if (group === "hitting" && batterId === playerId && pitcherHand) {
+        const key = pitcherHand === "L" ? "vl" : "vr";
+        const acc = accumulators.hitting[key];
+
+        acc.games.add(gamePk);
+        acc.pa += 1;
+        if (isAtBatEvent(eventType)) acc.ab += 1;
+        if (isHitEvent(eventType)) {
+          acc.hits += 1;
+          if (eventType === "double") acc.doubles += 1;
+          if (eventType === "triple") acc.triples += 1;
+          if (eventType === "home_run") acc.homeRuns += 1;
+        }
+        if (isWalkEvent(eventType)) acc.walks += 1;
+        if (isStrikeoutEvent(eventType)) acc.strikeouts += 1;
+        if (eventType === "hit_by_pitch") acc.hitByPitch += 1;
+        if (eventType === "sac_fly") acc.sacFlies += 1;
+
+        acc.rbi += num(play?.result?.rbi);
+
+        const runners = Array.isArray(play?.runners) ? play.runners : [];
+        acc.runs += runners.filter(
+          (runner: AnyRecord) =>
+            Number(runner?.details?.runner?.id ?? 0) === playerId &&
+            (runner?.movement?.isScoringEvent === true ||
+              runner?.movement?.end === "score"),
+        ).length;
+
+        acc.stolenBases += runners.filter((runner: AnyRecord) => {
+          if (Number(runner?.details?.runner?.id ?? 0) !== playerId) return false;
+          const runnerEvent = clean(
+            runner?.details?.eventType ?? runner?.details?.event,
+          ).toLowerCase();
+          return runnerEvent.startsWith("stolen_base");
+        }).length;
+
+        acc.caughtStealing += runners.filter((runner: AnyRecord) => {
+          if (Number(runner?.details?.runner?.id ?? 0) !== playerId) return false;
+          const runnerEvent = clean(
+            runner?.details?.eventType ?? runner?.details?.event,
+          ).toLowerCase();
+          return runnerEvent.includes("caught_stealing");
+        }).length;
+      }
+
+      if (group === "pitching" && pitcherId === playerId && batterHand) {
+        const key = batterHand === "L" ? "vl" : "vr";
+        const acc = accumulators.pitching[key];
+
+        acc.games.add(gamePk);
+        acc.battersFaced += 1;
+        acc.outs += Math.max(0, outsOnPlay);
+
+        if (firstPitcherByHalf.get(halfKey) === playerId) {
+          acc.starts.add(gamePk);
+        }
+
+        if (isHitEvent(eventType)) acc.hits += 1;
+        if (isStrikeoutEvent(eventType)) acc.strikeouts += 1;
+        if (isWalkEvent(eventType)) acc.walks += 1;
+        if (eventType === "home_run") acc.homeRuns += 1;
+
+        const runners = Array.isArray(play?.runners) ? play.runners : [];
+        acc.earnedRuns += runners.filter(
+          (runner: AnyRecord) =>
+            (runner?.movement?.isScoringEvent === true ||
+              runner?.movement?.end === "score") &&
+            runner?.details?.earned !== false,
+        ).length;
+      }
+    }
+  }
+
+  return {
+    vsLHP:
+      group === "pitching"
+        ? finalizePitching(accumulators.pitching.vl)
+        : finalizeHitting(accumulators.hitting.vl),
+    vsRHP:
+      group === "pitching"
+        ? finalizePitching(accumulators.pitching.vr)
+        : finalizeHitting(accumulators.hitting.vr),
+  };
+}
+
+function buildHitterVsPitcherFromFeeds(
+  hitterId: number,
+  pitcherId: number,
+  feeds: Array<{
+    gamePk: number;
+    gameDate: string;
+    feed: AnyRecord;
+  }>,
+  startDate: string,
+) {
+  const acc = createHittingAccumulator();
+
+  for (const { gamePk, gameDate, feed } of feeds) {
+    if (gameDate < startDate) continue;
+
+    const plays = Array.isArray(feed?.liveData?.plays?.allPlays)
+      ? feed.liveData.plays.allPlays
+      : [];
+
+    for (const play of plays) {
+      const playPitcherId = Number(
+        play?.matchup?.pitcher?.id ?? 0,
+      );
+
+      if (playPitcherId !== pitcherId) continue;
+
+      const batterId = Number(
+        play?.matchup?.batter?.id ?? 0,
+      );
+
+      const eventType = eventTypeOf(play);
+
+      if (batterId === hitterId) {
+        acc.games.add(gamePk);
+        acc.pa += 1;
+
+        if (isAtBatEvent(eventType)) {
+          acc.ab += 1;
+        }
+
+        if (isHitEvent(eventType)) {
+          acc.hits += 1;
+
+          if (eventType === "double") {
+            acc.doubles += 1;
+          }
+
+          if (eventType === "triple") {
+            acc.triples += 1;
+          }
+
+          if (eventType === "home_run") {
+            acc.homeRuns += 1;
+          }
+        }
+
+        if (isWalkEvent(eventType)) {
+          acc.walks += 1;
+        }
+
+        if (isStrikeoutEvent(eventType)) {
+          acc.strikeouts += 1;
+        }
+
+        if (eventType === "hit_by_pitch") {
+          acc.hitByPitch += 1;
+        }
+
+        if (eventType === "sac_fly") {
+          acc.sacFlies += 1;
+        }
+
+        acc.rbi += num(play?.result?.rbi);
+      }
+
+      const runners = Array.isArray(play?.runners)
+        ? play.runners
+        : [];
+
+      for (const runner of runners) {
+        const runnerId = Number(
+          runner?.details?.runner?.id ?? 0,
+        );
+
+        if (runnerId !== hitterId) continue;
+
+        if (
+          runner?.movement?.isScoringEvent === true ||
+          runner?.movement?.end === "score"
+        ) {
+          acc.runs += 1;
+        }
+
+        const runnerEvent = clean(
+          runner?.details?.eventType ??
+            runner?.details?.event ??
+            runner?.movement?.reason,
+        ).toLowerCase();
+
+        if (runnerEvent.startsWith("stolen_base")) {
+          acc.stolenBases += 1;
+        }
+
+        if (runnerEvent.includes("caught_stealing")) {
+          acc.caughtStealing += 1;
+        }
+      }
+    }
+  }
+
+  return finalizeHitting(acc);
 }
 
 async function getScheduleContext(teamId: number, group: Group) {
@@ -664,81 +1367,241 @@ async function getScheduleContext(teamId: number, group: Group) {
   };
 }
 
-async function buildPlayerViews(playerId: number, group: Group, teamId: number, season: number, matchup: AnyRecord) {
+async function buildPlayerViews(
+  playerId: number,
+  group: Group,
+  teamId: number,
+  season: number,
+  matchup: AnyRecord,
+) {
   const endDate = dateOnly(new Date());
-  const ranges: RangeKey[] = ["season", "last7", "last14", "last30", "career"];
-  const gameLog = statSplits(await getPlayerGameLog(playerId, group, season));
-  const career = group === "pitching"
-    ? normalizePitching(firstStat(await getPlayerStats(playerId, group, "career", season)))
-    : normalizeHitting(firstStat(await getPlayerStats(playerId, group, "career", season)));
+  const seasonStart = `${season}-01-01`;
+  const ranges: RangeKey[] = [
+    "season",
+    "last7",
+    "last14",
+    "last30",
+    "career",
+  ];
+
+  const [gameLogPayload, careerPayload, careerGameLog, seasonFeeds] =
+    await Promise.all([
+      getPlayerGameLog(playerId, group, season),
+      getPlayerStats(playerId, group, "career", season),
+      getPlayerCareerGameLogSplits(playerId, group, season),
+      group === "hitting" && teamId
+        ? getTeamGameFeeds(teamId, seasonStart, endDate)
+        : Promise.resolve([]),
+    ]);
+
+  const gameLog = statSplits(gameLogPayload);
+  const career =
+    group === "pitching"
+      ? normalizePitching(firstStat(careerPayload))
+      : normalizeHitting(firstStat(careerPayload));
 
   const result: Record<ViewKey, AnyRecord> = {
-    vsLHP: {}, vsRHP: {}, matchup: {}, overall: {}, home: {}, away: {},
+    vsLHP: {},
+    vsRHP: {},
+    matchup: {},
+    overall: {},
+    home: {},
+    away: {},
   };
 
-  for (const range of ranges) {
-    const startDate = rangeStart(range);
+  result.overall.season = aggregate(
+    group,
+    filterGameLogs(gameLog, {
+      endDate,
+      venue: "overall",
+      teamId,
+    }),
+  );
+  result.overall.career = career;
 
-    result.overall[range] = range === "career"
-      ? career
-      : aggregate(group, filterGameLogs(gameLog, { startDate, endDate, venue: "overall", teamId }));
-    result.home[range] = aggregate(group, filterGameLogs(gameLog, { startDate, endDate, venue: "home", teamId }));
-    result.away[range] = aggregate(group, filterGameLogs(gameLog, { startDate, endDate, venue: "away", teamId }));
+  result.home.season = aggregate(
+    group,
+    filterGameLogs(gameLog, {
+      endDate,
+      venue: "home",
+      teamId,
+    }),
+  );
+  result.away.season = aggregate(
+    group,
+    filterGameLogs(gameLog, {
+      endDate,
+      venue: "away",
+      teamId,
+    }),
+  );
+  result.home.career = aggregate(
+    group,
+    filterGameLogs(careerGameLog, {
+      endDate,
+      venue: "home",
+      teamId,
+    }),
+  );
+  result.away.career = aggregate(
+    group,
+    filterGameLogs(careerGameLog, {
+      endDate,
+      venue: "away",
+      teamId,
+    }),
+  );
 
-    for (const [view, sitCode] of [
-      ["vsLHP", "vl"],
-      ["vsRHP", "vr"],
-    ] as const) {
-      try {
-        const isCareer = range === "career";
+  if (group === "hitting") {
+  const seasonHandedness = buildPlayerHandednessFromFeeds(
+    playerId,
+    group,
+    seasonFeeds,
+    seasonStart,
+  );
 
-        const payload = await getPlayerStats(
-          playerId,
-          group,
-          "statSplits",
-          season,
-          {
-            startDate: isCareer ? undefined : startDate,
-            endDate:
-            !isCareer && startDate
-            ? endDate
-            : undefined,
-          sitCode,
-          omitSeason: isCareer,
-          },
-        );
+  result.vsLHP.season = seasonHandedness.vsLHP;
+  result.vsRHP.season = seasonHandedness.vsRHP;
 
-    result[view][range] =
-      group === "pitching"
-        ? normalizePitching(firstStat(payload))
-        : normalizeHitting(firstStat(payload));
-  } catch {
-    result[view][range] = {};
+  try {
+    const [careerVsLHP, careerVsRHP] = await Promise.all([
+      getPlayerStats(playerId, group, "statSplits", season, {
+        sitCode: "vl",
+        omitSeason: true,
+      }),
+      getPlayerStats(playerId, group, "statSplits", season, {
+        sitCode: "vr",
+        omitSeason: true,
+      }),
+    ]);
+
+    result.vsLHP.career = normalizeHitting(
+      situationStat(careerVsLHP, "vl"),
+    );
+
+    result.vsRHP.career = normalizeHitting(
+      situationStat(careerVsRHP, "vr"),
+    );
+  } catch (error) {
+    console.error(
+      `Unable to load career handedness splits for player ${playerId}:`,
+      error,
+    );
+
+    result.vsLHP.career = {};
+    result.vsRHP.career = {};
   }
 }
 
-    const vsTeam = aggregate(
+  for (const range of ["last7", "last14", "last30"] as const) {
+    const startDate = rangeStart(range) ?? endDate;
+
+    result.overall[range] = aggregate(
       group,
       filterGameLogs(gameLog, {
         startDate,
         endDate,
-        opponentTeamId: matchup?.opponentTeamId,
+        venue: "overall",
+        teamId,
+      }),
+    );
+    result.home[range] = aggregate(
+      group,
+      filterGameLogs(gameLog, {
+        startDate,
+        endDate,
+        venue: "home",
+        teamId,
+      }),
+    );
+    result.away[range] = aggregate(
+      group,
+      filterGameLogs(gameLog, {
+        startDate,
+        endDate,
+        venue: "away",
         teamId,
       }),
     );
 
-    if (group === "hitting" && matchup?.opponentPitcherId) {
-      try {
-        const payload = await getPlayerStats(playerId, group, "vsPlayer", season, {
-          opposingPlayerId: matchup.opponentPitcherId,
-        });
-        result.matchup[range] = {
-          vsPitcher: normalizeHitting(firstStat(payload)),
-          vsTeam,
-        };
-      } catch {
-        result.matchup[range] = { vsPitcher: {}, vsTeam };
+    if (group === "hitting") {
+      const handedness = buildPlayerHandednessFromFeeds(
+        playerId,
+        group,
+        seasonFeeds,
+        startDate,
+      );
+      result.vsLHP[range] = handedness.vsLHP;
+      result.vsRHP[range] = handedness.vsRHP;
+    }
+  }
+
+  for (const range of ranges) {
+    const startDate = rangeStart(range);
+    let vsTeam: AnyRecord = {};
+
+    if (matchup?.opponentTeamId) {
+      const sourceSplits =
+        range === "career" ? careerGameLog : gameLog;
+
+      vsTeam = aggregate(
+        group,
+        filterGameLogs(sourceSplits, {
+          startDate: range === "career" ? undefined : startDate,
+          endDate,
+          opponentTeamId: matchup.opponentTeamId,
+          teamId,
+        }),
+      );
+    }
+
+        if (group === "hitting" && matchup?.opponentPitcherId) {
+      let vsPitcher: AnyRecord = {};
+
+      if (range === "career") {
+        try {
+          const payload = await getPlayerStats(
+            playerId,
+            group,
+            "vsPlayer",
+            season,
+            {
+              opposingPlayerId: Number(
+                matchup.opponentPitcherId,
+              ),
+              omitSeason: true,
+            },
+          );
+
+          vsPitcher = normalizeHitting(
+            firstStat(payload),
+          );
+        } catch (error) {
+          console.error(
+            `Unable to load career matchup against pitcher ${matchup.opponentPitcherId}:`,
+            error,
+          );
+
+          vsPitcher = {};
+        }
+      } else {
+        const matchupStartDate =
+          range === "season"
+            ? seasonStart
+            : startDate ?? seasonStart;
+
+        vsPitcher = buildHitterVsPitcherFromFeeds(
+          playerId,
+          Number(matchup.opponentPitcherId),
+          seasonFeeds,
+          matchupStartDate,
+        );
       }
+
+      result.matchup[range] = {
+        vsPitcher,
+        vsTeam,
+      };
     } else {
       result.matchup[range] = { vsTeam };
     }
@@ -757,16 +1620,12 @@ async function buildTeamViews(teamId: number, season: number) {
     "last30",
   ];
 
-  const [
-    hittingLog,
-    pitchingLog,
-    hitterIds,
-    pitcherIds,
-  ] = await Promise.all([
+  const last30Start = rangeStart("last30") ?? endDate;
+
+  const [hittingLog, pitchingLog, gameFeeds] = await Promise.all([
     getTeamGameLog(teamId, "hitting", season),
     getTeamGameLog(teamId, "pitching", season),
-    getTeamRosterPlayerIds(teamId, season, "hitting"),
-    getTeamRosterPlayerIds(teamId, season, "pitching"),
+    getTeamGameFeeds(teamId, last30Start, endDate),
   ]);
 
   const hittingSplits = statSplits(hittingLog);
@@ -804,12 +1663,12 @@ async function buildTeamViews(teamId: number, season: number) {
       };
     }
 
-    for (const [view, sitCode] of [
-      ["vsLHP", "vl"],
-      ["vsRHP", "vr"],
-    ] as const) {
-      try {
-        if (range === "season") {
+    if (range === "season") {
+      for (const [view, sitCode] of [
+        ["vsLHP", "vl"],
+        ["vsRHP", "vr"],
+      ] as const) {
+        try {
           const [hitting, pitching] = await Promise.all([
             getTeamSplit(teamId, "hitting", season, sitCode),
             getTeamSplit(teamId, "pitching", season, sitCode),
@@ -823,60 +1682,42 @@ async function buildTeamViews(teamId: number, season: number) {
               situationStat(pitching, sitCode),
             ),
           };
+        } catch (error) {
+          console.error(
+            `Unable to load ${view} season team splits:`,
+            error,
+          );
 
-          continue;
-        }
-
-        if (!startDate) {
           result[view][range] = {
             hitting: {},
             pitching: {},
           };
-          continue;
         }
-
-        const [hitting, pitching] = await Promise.all([
-          buildTeamPlayerSplit(
-            teamId,
-            season,
-            "hitting",
-            sitCode,
-            startDate,
-            endDate,
-            hitterIds,
-          ),
-          buildTeamPlayerSplit(
-            teamId,
-            season,
-            "pitching",
-            sitCode,
-            startDate,
-            endDate,
-            pitcherIds,
-          ),
-        ]);
-
-        // A player-by-player aggregation cannot infer the team's unique
-        // game count, so use the already-calculated team game-log total.
-        hitting.G = result.overall[range]?.hitting?.G ?? hitting.G;
-        pitching.G = result.overall[range]?.pitching?.G ?? pitching.G;
-
-        result[view][range] = {
-          hitting,
-          pitching,
-        };
-      } catch (error) {
-        console.error(
-          `Unable to load ${view} ${range} team splits:`,
-          error,
-        );
-
-        result[view][range] = {
-          hitting: {},
-          pitching: {},
-        };
       }
+
+      continue;
     }
+
+    if (!startDate) {
+      result.vsLHP[range] = {
+        hitting: {},
+        pitching: {},
+      };
+      result.vsRHP[range] = {
+        hitting: {},
+        pitching: {},
+      };
+      continue;
+    }
+
+    const rollingSplits = buildTeamHandednessFromFeeds(
+      teamId,
+      gameFeeds,
+      startDate,
+    );
+
+    result.vsLHP[range] = rollingSplits.vsLHP;
+    result.vsRHP[range] = rollingSplits.vsRHP;
   }
 
   return result;

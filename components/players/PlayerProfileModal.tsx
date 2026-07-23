@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 
 type TimeRange = "season" | "last7" | "last14" | "last30" | "career";
 type ProfileTab = "player" | "team";
-type ViewKey = "vsLHP" | "vsRHP" | "matchup" | "overall" | "home" | "away";
+type ViewKey = "matchup" | "overall" | "home" | "away";
 
 type PlayerSelection = {
   playerId?: string | number;
@@ -40,21 +40,33 @@ const pitcherOrder = [
 
 function displayValue(value: unknown) {
   if (value === null || value === undefined || value === "") return "—";
+
   if (typeof value === "number") {
     if (Number.isInteger(value)) return String(value);
     return value.toFixed(3).replace(/0+$/, "").replace(/\.$/, "");
   }
+
   return String(value);
 }
 
-function StatGrid({ stats, order }: { stats?: Record<string, unknown>; order: string[] }) {
+function StatGrid({
+  stats,
+  order,
+}: {
+  stats?: Record<string, unknown>;
+  order: string[];
+}) {
   return (
     <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
       {order.map((key) => (
-        <div key={key} className="rounded-xl border border-white/10 bg-white/[0.035] px-3 py-3">
+        <div
+          key={key}
+          className="rounded-xl border border-white/10 bg-white/[0.035] px-3 py-3"
+        >
           <div className="text-[10px] font-black uppercase tracking-[0.14em] text-slate-500">
             {key}
           </div>
+
           <div className="mt-1 text-lg font-black text-white">
             {displayValue(stats?.[key])}
           </div>
@@ -64,10 +76,8 @@ function StatGrid({ stats, order }: { stats?: Record<string, unknown>; order: st
   );
 }
 
-function labelsFor(isPitcher: boolean): Record<ViewKey, string> {
+function labelsFor(): Record<ViewKey, string> {
   return {
-    vsLHP: isPitcher ? "vs LH" : "vs LHP",
-    vsRHP: isPitcher ? "vs RH" : "vs RHP",
     matchup: "Matchup",
     overall: "Overall",
     home: "Home",
@@ -75,7 +85,10 @@ function labelsFor(isPitcher: boolean): Record<ViewKey, string> {
   };
 }
 
-export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps) {
+export function PlayerProfileModal({
+  player,
+  onClose,
+}: PlayerProfileModalProps) {
   const [tab, setTab] = useState<ProfileTab>("player");
   const [range, setRange] = useState<TimeRange>("season");
   const [view, setView] = useState<ViewKey>("overall");
@@ -99,18 +112,35 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
       playerType: player.playerType || "hitter",
     });
 
-    if (player.playerId) params.set("playerId", String(player.playerId));
-    if (player.teamId) params.set("teamId", String(player.teamId));
+    if (player.playerId) {
+      params.set("playerId", String(player.playerId));
+    }
 
-    fetch(`/api/player-profile?${params.toString()}`, { cache: "no-store" })
+    if (player.teamId) {
+      params.set("teamId", String(player.teamId));
+    }
+
+    fetch(`/api/player-profile?${params.toString()}`, {
+      cache: "no-store",
+    })
       .then(async (response) => {
         const payload = await response.json();
-        if (!response.ok) throw new Error(payload?.error || "Unable to load player profile.");
+
+        if (!response.ok) {
+          throw new Error(
+            payload?.error || "Unable to load player profile.",
+          );
+        }
+
         return payload;
       })
       .then(setData)
       .catch((reason) => {
-        setError(reason instanceof Error ? reason.message : "Unable to load player profile.");
+        setError(
+          reason instanceof Error
+            ? reason.message
+            : "Unable to load player profile.",
+        );
       })
       .finally(() => setLoading(false));
   }, [player]);
@@ -131,13 +161,18 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
     };
   }, [onClose, player]);
 
-  useEffect(() => {
-    if (tab === "team" && range === "career") setRange("season");
-    if (tab === "team" && view === "matchup") setView("overall");
-  }, [range, tab, view]);
-
   const isPitcher = data?.player?.type === "pitching";
-  const viewLabels = labelsFor(isPitcher);
+  const viewLabels = labelsFor();
+
+  useEffect(() => {
+  if (tab === "team" && range === "career") {
+    setRange("season");
+  }
+
+  if (tab === "team" && view === "matchup") {
+    setView("overall");
+  }
+}, [range, tab, view]);
 
   const availableRanges = useMemo<TimeRange[]>(
     () =>
@@ -147,13 +182,13 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
     [tab],
   );
 
-  const availableViews = useMemo<ViewKey[]>(
-    () =>
-      tab === "player"
-        ? ["vsLHP", "vsRHP", "matchup", "overall", "home", "away"]
-        : ["vsLHP", "vsRHP", "overall", "home", "away"],
-    [tab],
-  );
+  const availableViews = useMemo<ViewKey[]>(() => {
+    if (tab === "team") {
+      return ["overall", "home", "away"];
+    }
+
+    return ["matchup", "overall", "home", "away"];
+  }, [tab]);
 
   const playerStats = data?.playerStats?.[view]?.[range] ?? {};
   const teamStats = data?.teamStats?.[view]?.[range] ?? {};
@@ -164,7 +199,9 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-3 backdrop-blur-md sm:p-6"
       onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
+        if (event.target === event.currentTarget) {
+          onClose();
+        }
       }}
     >
       <div className="flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-[28px] border border-cyan-300/20 bg-[#0b1020] shadow-2xl shadow-black/60">
@@ -175,13 +212,15 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
             </div>
 
             <div className="mt-2">
-              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
                 <div className="text-sm font-bold text-slate-400">
                   {data?.player?.team || player.teamName || "—"}
-                  {data?.player?.position ? ` · ${data.player.position}` : ""}
+                  {data?.player?.position
+                    ? ` · ${data.player.position}`
+                    : ""}
                 </div>
 
-                <div className="flex flex-wrap gap-2 lg:mr-16 lg:justify-end">
+                <div className="flex flex-1 justify-center gap-2">
                   {availableViews.map((value) => (
                     <button
                       key={value}
@@ -204,7 +243,8 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
                 <span>Throws {data?.player?.throws || "—"}</span>
               </div>
 
-              {view === "matchup" && data?.matchup?.opponentTeamName ? (
+              {view === "matchup" &&
+              data?.matchup?.opponentTeamName ? (
                 <div className="mt-2 text-xs font-bold text-slate-500">
                   Today: vs {data.matchup.opponentTeamName}
                   {data?.matchup?.opponentPitcherName
@@ -282,7 +322,11 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
                       ? ` · ${data.matchup.opponentPitcherName}`
                       : ""}
                   </h3>
-                  <StatGrid stats={playerStats?.vsPitcher} order={hitterOrder} />
+
+                  <StatGrid
+                    stats={playerStats?.vsPitcher}
+                    order={hitterOrder}
+                  />
                 </section>
               ) : null}
 
@@ -293,6 +337,7 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
                     ? ` · ${data.matchup.opponentTeamName}`
                     : ""}
                 </h3>
+
                 <StatGrid
                   stats={playerStats?.vsTeam}
                   order={isPitcher ? pitcherOrder : hitterOrder}
@@ -304,27 +349,34 @@ export function PlayerProfileModal({ player, onClose }: PlayerProfileModalProps)
               <h3 className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-slate-400">
                 {viewLabels[view]} · {rangeLabels[range]} Player Stats
               </h3>
-              <StatGrid stats={playerStats} order={isPitcher ? pitcherOrder : hitterOrder} />
+
+              <StatGrid
+                stats={playerStats}
+                order={isPitcher ? pitcherOrder : hitterOrder}
+              />
             </section>
           ) : (
             <div className="space-y-6">
               <section>
                 <h3 className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-cyan-200">
-  {view === "vsLHP"
-    ? "vs LHP"
-    : view === "vsRHP"
-      ? "vs RHP"
-      : viewLabels[view]}{" "}
-  · Team Hitting
-</h3>
-                <StatGrid stats={teamStats?.hitting} order={hitterOrder} />
+                  {viewLabels[view]} · Team Hitting
+                </h3>
+
+                <StatGrid
+                  stats={teamStats?.hitting}
+                  order={hitterOrder}
+                />
               </section>
 
               <section>
                 <h3 className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-pink-200">
                   {viewLabels[view]} · Team Pitching
                 </h3>
-                <StatGrid stats={teamStats?.pitching} order={pitcherOrder} />
+
+                <StatGrid
+                  stats={teamStats?.pitching}
+                  order={pitcherOrder}
+                />
               </section>
             </div>
           )}

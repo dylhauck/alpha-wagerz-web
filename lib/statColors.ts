@@ -57,13 +57,13 @@ const rules: Partial<Record<StatKey, StatRule>> = {
 
   "Test Score": {
     min: 25,
-    max: 80,
+    max: 70,
     direction: "higher-good",
   },
 
   Matchup: {
-    min: 25,
-    max: 80,
+    min: 30,
+    max: 70,
     direction: "higher-good",
   },
 
@@ -75,36 +75,36 @@ const rules: Partial<Record<StatKey, StatRule>> = {
 
   "Zone Fit": {
     min: 25,
-    max: 80,
+    max: 65,
     direction: "higher-good",
   },
 
   "HR Form": {
     min: 25,
-    max: 85,
+    max: 70,
     direction: "higher-good",
   },
 
   kHR: {
     min: 25,
-    max: 80,
+    max: 60,
     direction: "higher-good",
   },
 
   ISO: {
-    min: 0.08,
-    max: 0.26,
+    min: 0.05,
+    max: 0.19,
     direction: "higher-good",
   },
 
   xwOBA: {
-    min: 0.27,
-    max: 0.4,
+    min: 0.15,
+    max: 0.43,
     direction: "higher-good",
   },
 
   xwOBAcon: {
-    min: 0.28,
+    min: 0.15,
     max: 0.43,
     direction: "higher-good",
   },
@@ -143,8 +143,8 @@ const rules: Partial<Record<StatKey, StatRule>> = {
 
   // Hitter swinging-strike rate: lower is better.
   "SwStr%": {
-    min: 4,
-    max: 16,
+    min: 1,
+    max: 25,
     direction: "lower-good",
   },
 
