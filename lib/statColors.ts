@@ -56,32 +56,32 @@ const rules: Partial<Record<StatKey, StatRule>> = {
   },
 
   "Test Score": {
-    min: 25,
-    max: 70,
+    min: 30,
+    max: 60,
     direction: "higher-good",
   },
 
   Matchup: {
     min: 30,
-    max: 70,
+    max: 60,
     direction: "higher-good",
   },
 
   Ceiling: {
     min: 25,
-    max: 85,
+    max: 70,
     direction: "higher-good",
   },
 
   "Zone Fit": {
     min: 25,
-    max: 65,
+    max: 60,
     direction: "higher-good",
   },
 
   "HR Form": {
-    min: 25,
-    max: 70,
+    min: 20,
+    max: 60,
     direction: "higher-good",
   },
 
@@ -222,7 +222,7 @@ const rules: Partial<Record<StatKey, StatRule>> = {
 
   "HR Vulnerability": {
     min: 20,
-    max: 90,
+    max: 45,
     direction: "lower-good",
   },
 
