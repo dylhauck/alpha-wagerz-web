@@ -1,18 +1,32 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import {
   BarChart3,
   CalendarDays,
+  ChevronDown,
   CloudSun,
   Home,
   LineChart,
   Swords,
   Target,
-  Trophy,
 } from "lucide-react";
+
+type Sport = "MLB" | "NFL" | "NBA" | "NHL";
+
+const sports: {
+  label: Sport;
+  emoji: string;
+  path: string;
+}[] = [
+  { label: "MLB", emoji: "⚾", path: "/" },
+  { label: "NFL", emoji: "🏈", path: "/nfl" },
+  { label: "NBA", emoji: "🏀", path: "/nba" },
+  { label: "NHL", emoji: "🏒", path: "/nhl" },
+];
 
 const navItems = [
   { label: "Slate Summary", path: "", icon: Home },
@@ -25,6 +39,26 @@ const navItems = [
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+
+  const router = useRouter();
+  const [sportsOpen, setSportsOpen] = useState(false);
+
+  const activeSport: Sport =
+  pathname.startsWith("/nfl")
+    ? "NFL"
+    : pathname.startsWith("/nba")
+    ? "NBA"
+    : pathname.startsWith("/nhl")
+    ? "NHL"
+    : "MLB";
+
+const selectedSport =
+  sports.find((sport) => sport.label === activeSport) ?? sports[0];
+
+function handleSportChange(sport: (typeof sports)[number]) {
+  setSportsOpen(false);
+  router.push(sport.path);
+}
 
   const isTomorrowSection =
     pathname === "/tomorrow" ||
@@ -56,6 +90,54 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             className="h-auto w-[190px] object-contain"
           />
         </div>
+        
+        <div className="relative mb-3">
+  <button
+    type="button"
+    onClick={() => setSportsOpen((open) => !open)}
+    className="relative flex w-full items-center justify-between overflow-hidden rounded-xl border border-cyan-300/35 bg-cyan-300/10 px-3 py-3 text-sm font-bold text-white shadow-[0_0_18px_rgba(35,216,255,0.12)] transition hover:bg-cyan-300/15"
+    aria-expanded={sportsOpen}
+    aria-haspopup="listbox"
+  >
+    <span className="absolute bottom-2 left-0 top-2 w-1 rounded-r-full bg-gradient-to-b from-cyan-300 to-pink-400 shadow-[0_0_12px_rgba(35,216,255,0.75)]" />
+
+    <span className="flex items-center gap-3">
+      <span className="text-base">{selectedSport.emoji}</span>
+      <span>{selectedSport.label}</span>
+    </span>
+
+    <ChevronDown
+      size={17}
+      className={`transition-transform ${
+        sportsOpen ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  {sportsOpen && (
+    <div className="absolute left-0 right-0 top-full z-[9999] mt-2 overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#08101f] shadow-2xl backdrop-blur-none">
+      {sports.map((sport) => {
+        const isSelected = sport.label === activeSport;
+
+        return (
+          <button
+            key={sport.label}
+            type="button"
+            onClick={() => handleSportChange(sport)}
+            className={`flex w-full items-center gap-3 px-3 py-3 text-left text-sm font-bold transition ${
+              isSelected
+  ? "bg-cyan-300/15 text-white"
+  : "bg-[#08101f] text-slate-400 hover:bg-[#111c31] hover:text-white"
+            }`}
+          >
+            <span className="text-base">{sport.emoji}</span>
+            <span>{sport.label}</span>
+          </button>
+        );
+      })}
+    </div>
+  )}
+</div>
 
         <nav className="space-y-2">
           {navItems.map((item) => {
