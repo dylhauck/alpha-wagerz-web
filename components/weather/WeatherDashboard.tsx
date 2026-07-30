@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { GameSelector } from "@/components/games/GameSelector";
 
 function formatTemp(value: any) {
@@ -224,11 +224,52 @@ export function WeatherDashboard({
   games: Record<string, any>[];
   slateLabel?: string;
 }) {
-  const [selectedId, setSelectedId] = useState(String(games[0]?.game_id || ""));
+const sortedGames = useMemo(() => {
+  return [...games].sort((a, b) => {
+    const aTime = new Date(
+      a.game_datetime_utc ||
+        a.game_datetime ||
+        a.commence_time ||
+        a.game_date_utc ||
+        0
+    ).getTime();
 
-  const game = useMemo(() => {
-    return games.find((g) => String(g.game_id) === selectedId) || games[0];
-  }, [games, selectedId]);
+    const bTime = new Date(
+      b.game_datetime_utc ||
+        b.game_datetime ||
+        b.commence_time ||
+        b.game_date_utc ||
+        0
+    ).getTime();
+
+    return aTime - bTime;
+  });
+}, [games]);
+
+const [selectedId, setSelectedId] = useState("");
+
+useEffect(() => {
+  if (!sortedGames.length) {
+    setSelectedId("");
+    return;
+  }
+
+  const selectedGameStillExists = sortedGames.some(
+    (game) => String(game.game_id) === selectedId
+  );
+
+  if (!selectedId || !selectedGameStillExists) {
+    setSelectedId(String(sortedGames[0].game_id));
+  }
+}, [sortedGames, selectedId]);
+
+const game = useMemo(() => {
+  return (
+    sortedGames.find(
+      (g) => String(g.game_id) === selectedId
+    ) || sortedGames[0]
+  );
+}, [sortedGames, selectedId]);
 
   if (!games.length) {
     return <section className="glass rounded-3xl p-6 text-center text-slate-400">No weather loaded.</section>;
@@ -241,11 +282,11 @@ export function WeatherDashboard({
     <section className="glass rounded-3xl p-4">
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          {`${games.length} WEATHER REPORTS LOADED FOR ${slateLabel.toUpperCase()}`}
+          {`${sortedGames.length} WEATHER REPORTS LOADED FOR ${slateLabel.toUpperCase()}`}
         </div>
       </div>
 
-      <GameSelector games={games} selectedGameId={selectedId} onSelect={setSelectedId} />
+      <GameSelector games={sortedGames} selectedGameId={selectedId} onSelect={setSelectedId} />
 
       <div className="rounded-3xl border border-cyan-300/15 bg-white/[0.035] p-5">
         <div className="grid gap-6 xl:grid-cols-[1fr_450px] xl:items-stretch">
