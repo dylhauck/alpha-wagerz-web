@@ -1,5 +1,6 @@
 "use client";
 
+import { Search, X } from "lucide-react";
 import { useMemo, useRef, useState } from "react";
 import { StatCell } from "@/components/StatCell";
 import { PlayerNameButton } from "@/components/players/PlayerNameButton";
@@ -149,6 +150,7 @@ export function PitcherTable({
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [selectedPlayer, setSelectedPlayer] =
   useState<Record<string, any> | null>(null);
+  const [search, setSearch] = useState("");
 
   function handleSort(key: string) {
     if (sortKey === key) {
@@ -165,20 +167,34 @@ export function PitcherTable({
     if (topScrollRef.current) topScrollRef.current.scrollLeft = value;
   }
 
-  const sortedPitchers = useMemo(() => {
-    return [...pitchers].sort((a, b) => {
-      const aValue = sortValue(a[sortKey]);
-      const bValue = sortValue(b[sortKey]);
+  const filteredPitchers = useMemo(() => {
+  const term = search.trim().toLowerCase();
 
-      if (typeof aValue === "number" && typeof bValue === "number") {
-        return sortDirection === "desc" ? bValue - aValue : aValue - bValue;
-      }
+  if (!term) return pitchers;
 
+  return pitchers.filter((pitcher) =>
+    String(pitcher.Pitcher || "")
+      .toLowerCase()
+      .includes(term)
+  );
+}, [pitchers, search]);
+
+const sortedPitchers = useMemo(() => {
+  return [...filteredPitchers].sort((a, b) => {
+    const aValue = sortValue(a[sortKey]);
+    const bValue = sortValue(b[sortKey]);
+
+    if (typeof aValue === "number" && typeof bValue === "number") {
       return sortDirection === "desc"
-        ? String(bValue).localeCompare(String(aValue))
-        : String(aValue).localeCompare(String(bValue));
-    });
-  }, [pitchers, sortKey, sortDirection]);
+        ? bValue - aValue
+        : aValue - bValue;
+    }
+
+    return sortDirection === "desc"
+      ? String(bValue).localeCompare(String(aValue))
+      : String(aValue).localeCompare(String(bValue));
+  });
+}, [filteredPitchers, sortKey, sortDirection]);
 
   return (
     <>
@@ -188,6 +204,30 @@ export function PitcherTable({
           {`${pitchers.length} TOTAL PITCHERS LOADED FOR ${slateLabel.toUpperCase()}`}
         </div>
       </div>
+      <div className="mt-4 flex justify-center">
+  <div className="relative w-full max-w-md">
+    <Search
+      size={18}
+      className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
+    />
+
+    <input
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      placeholder="Search player..."
+      className="w-full rounded-xl border border-cyan-300/20 bg-[#0d1527] py-3 pl-10 pr-10 text-sm font-semibold text-white outline-none transition focus:border-cyan-300/60"
+    />
+
+    {search && (
+      <button
+        onClick={() => setSearch("")}
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"
+      >
+        <X size={16} />
+      </button>
+    )}
+  </div>
+</div>
 
       <div
         ref={topScrollRef}

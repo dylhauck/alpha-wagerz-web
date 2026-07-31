@@ -1,9 +1,22 @@
 import { CloudSun, Wind } from "lucide-react";
-import { StatCell } from "@/components/StatCell";
 
 type Props = {
   weather?: Record<string, any>;
 };
+
+function getWeatherScore(weather?: Record<string, any>) {
+  const wind = String(weather?.wind_direction || "").toUpperCase();
+  const speed = Number(weather?.wind_speed || 0);
+  const temp = Number(weather?.temperature || 0);
+
+  if (wind.includes("IN")) return "Suppressed";
+  if (wind.includes("OUT") && (speed >= 6 || temp >= 85)) return "Elite";
+
+  // Matches the Weather Dashboard logic.
+  if (wind.includes("OUT")) return "Elite";
+
+  return "Neutral";
+}
 
 export function WeatherBadge({ weather }: Props) {
   if (!weather) {
@@ -14,6 +27,8 @@ export function WeatherBadge({ weather }: Props) {
     );
   }
 
+  const environment = getWeatherScore(weather);
+
   return (
     <div className="grid gap-2 sm:grid-cols-3">
       <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/10 px-3 py-2">
@@ -21,6 +36,7 @@ export function WeatherBadge({ weather }: Props) {
           <CloudSun size={14} />
           Temp
         </div>
+
         <div className="mt-1 text-lg font-black text-white">
           {weather.temperature ?? "—"}°
         </div>
@@ -31,16 +47,43 @@ export function WeatherBadge({ weather }: Props) {
           <Wind size={14} />
           Wind
         </div>
+
         <div className="mt-1 text-sm font-black text-white">
           {weather.wind_direction || "Neutral"}
         </div>
-        <div className="text-xs text-slate-400">{weather.wind_speed ?? "—"} mph</div>
+
+        <div className="text-xs text-slate-400">
+          {weather.wind_speed ?? "—"} mph
+        </div>
       </div>
 
-      <div className="rounded-2xl border border-white/10 bg-white/[0.035] px-3 py-2">
-        <div className="text-xs font-bold text-slate-400">Weather Score</div>
-        <div className="mt-1">
-          <StatCell value={weather.score ?? weather.Weather ?? ""} statKey="Weather" />
+      <div
+        className={`rounded-2xl border px-3 py-2 ${
+          environment === "Elite"
+            ? "border-emerald-300/20 bg-emerald-500/10"
+            : environment === "Suppressed"
+            ? "border-rose-300/20 bg-rose-500/10"
+            : environment === "Neutral"
+            ? "border-cyan-300/20 bg-cyan-300/10"
+            : "border-amber-300/20 bg-amber-500/10"
+        }`}
+      >
+        <div className="text-xs font-bold text-slate-400">
+          HR Environment
+        </div>
+
+        <div
+  className={`mt-2 whitespace-nowrap text-center text-base font-black uppercase ${
+            environment === "Elite"
+              ? "text-emerald-300"
+              : environment === "Suppressed"
+              ? "text-rose-300"
+              : environment === "Neutral"
+              ? "text-cyan-300"
+              : "text-amber-300"
+          }`}
+        >
+          {environment}
         </div>
       </div>
     </div>

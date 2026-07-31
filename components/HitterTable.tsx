@@ -1,5 +1,6 @@
 "use client";
 
+import { Search, X } from "lucide-react";
 import { useMemo, useRef, useState } from "react";
 import { StatCell } from "./StatCell";
 import { PlayerNameButton } from "@/components/players/PlayerNameButton";
@@ -110,6 +111,7 @@ function StatWrap({
   const [sortKey, setSortKey] = useState<string>("Likely");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [selectedPlayer, setSelectedPlayer] = useState<Record<string, any> | null>(null);
+  const [search, setSearch] = useState("");
 
   function handleSort(key: string) {
     if (sortKey === key) {
@@ -121,20 +123,34 @@ function StatWrap({
     setSortDirection("desc");
   }
 
-  const sortedHitters = useMemo(() => {
-    return [...hitters].sort((a, b) => {
-      const aValue = sortValue(a[sortKey]);
-      const bValue = sortValue(b[sortKey]);
+  const filteredHitters = useMemo(() => {
+  const term = search.trim().toLowerCase();
 
-      if (typeof aValue === "number" && typeof bValue === "number") {
-        return sortDirection === "desc" ? bValue - aValue : aValue - bValue;
-      }
+  if (!term) return hitters;
 
+  return hitters.filter((hitter) =>
+    String(hitter.Player || "")
+      .toLowerCase()
+      .includes(term)
+  );
+}, [hitters, search]);
+
+const sortedHitters = useMemo(() => {
+  return [...filteredHitters].sort((a, b) => {
+    const aValue = sortValue(a[sortKey]);
+    const bValue = sortValue(b[sortKey]);
+
+    if (typeof aValue === "number" && typeof bValue === "number") {
       return sortDirection === "desc"
-        ? String(bValue).localeCompare(String(aValue))
-        : String(aValue).localeCompare(String(bValue));
-    });
-  }, [hitters, sortKey, sortDirection]);
+        ? bValue - aValue
+        : aValue - bValue;
+    }
+
+    return sortDirection === "desc"
+      ? String(bValue).localeCompare(String(aValue))
+      : String(aValue).localeCompare(String(bValue));
+  });
+}, [filteredHitters, sortKey, sortDirection]);
 
   function syncScrollLeft(value: number) {
     if (scrollRef.current) scrollRef.current.scrollLeft = value;
@@ -144,11 +160,35 @@ function StatWrap({
   return (
     <>
       <section className="glass rounded-3xl p-4">
-      <div className="mb-4 flex flex-col justify-center">
+      <div className="mb-4 flex flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
           {`${hitters.length} TOTAL HITTERS LOADED FOR ${slateLabel.toUpperCase()}`}
         </div>
       </div>
+      <div className="mt-4 flex justify-center">
+  <div className="relative w-full max-w-md">
+    <Search
+      size={18}
+      className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
+    />
+
+    <input
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      placeholder="Search player..."
+      className="w-full rounded-xl border border-cyan-300/20 bg-[#0d1527] py-3 pl-10 pr-10 text-sm font-semibold text-white outline-none transition focus:border-cyan-300/60"
+    />
+
+    {search && (
+      <button
+        onClick={() => setSearch("")}
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"
+      >
+        <X size={16} />
+      </button>
+    )}
+  </div>
+</div>
 
       <div
         ref={topScrollRef}
