@@ -14,7 +14,6 @@ const TABLE_MIN_WIDTH = 1780;
 const columns = [
   ["Player", "Player"],
   ["Game", "game"],
-  ["Likely", "Likely"],
   ["Alpha", "Test Score"],
   ["Matchup", "Matchup"],
   ["Ceiling", "Ceiling"],
@@ -86,14 +85,16 @@ function StatWrap({
   value,
   statKey,
   suffix,
+  trend,
 }: {
   value: any;
   statKey: any;
   suffix?: string;
+  trend?: string | null;
 }) {
   return (
     <div className="flex h-8 w-full items-center justify-center">
-      <StatCell value={value} statKey={statKey} suffix={suffix} compact />
+      <StatCell value={value} statKey={statKey} suffix={suffix} compact trend={trend} />
     </div>
   );
 }
@@ -283,7 +284,7 @@ const sortedHitters = useMemo(() => {
                 <td className="px-1 py-3"><StatWrap value={hitter.Matchup} statKey="Matchup" /></td>
                 <td className="px-1 py-3"><StatWrap value={hitter.Ceiling} statKey="Ceiling" /></td>
                 <td className="px-1 py-3"><StatWrap value={hitter["Zone Fit"]} statKey="Zone Fit" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter["HR Form"]} statKey="HR Form" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["HR Form"]} statKey="HR Form" trend={hitter["HR Form Trend"]} /></td>
                 <td className="px-1 py-3"><StatWrap value={hitter.kHR} statKey="kHR" /></td>
 
                 <td className="px-1 py-3"><PlainCell value={hitter.Pitches} /></td>

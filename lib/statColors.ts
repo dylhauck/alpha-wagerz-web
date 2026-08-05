@@ -57,7 +57,7 @@ const rules: Partial<Record<StatKey, StatRule>> = {
 
   "Test Score": {
     min: 30,
-    max: 60,
+    max: 70,
     direction: "higher-good",
   },
 
@@ -75,13 +75,13 @@ const rules: Partial<Record<StatKey, StatRule>> = {
 
   "Zone Fit": {
     min: 25,
-    max: 60,
+    max: 65,
     direction: "higher-good",
   },
 
   "HR Form": {
     min: 20,
-    max: 60,
+    max: 90,
     direction: "higher-good",
   },
 

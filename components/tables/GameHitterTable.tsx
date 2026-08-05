@@ -121,9 +121,11 @@ function PlainCell({ value }: { value: unknown }) {
 function RowValue({
   value,
   statKey,
+  trend,
 }: {
   value: unknown;
   statKey: any;
+  trend?: string | null;
 }) {
   const suffix = String(statKey).includes("%") ? "%" : undefined;
 
@@ -133,7 +135,7 @@ function RowValue({
 
   return (
     <div className="flex h-8 w-full items-center justify-center">
-      <StatCell value={value as any} statKey={statKey} suffix={suffix} compact />
+      <StatCell value={value as any} statKey={statKey} suffix={suffix} compact trend={trend} />
     </div>
   );
 }
@@ -263,7 +265,7 @@ export function GameHitterTable({
             />
 
             {columns.map(([, key]) => (
-              <RowValue key={key} value={hitter[key]} statKey={key} />
+              <RowValue key={key} value={hitter[key]} statKey={key} trend={ key === "HR Form" ? hitter["HR Form Trend"] : undefined} />
             ))}
           </div>
         ))}
