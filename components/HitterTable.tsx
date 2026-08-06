@@ -14,6 +14,7 @@ const TABLE_MIN_WIDTH = 1780;
 const columns = [
   ["Player", "Player"],
   ["Game", "game"],
+  ["Likely", "Likely"],
   ["Alpha", "Test Score"],
   ["Matchup", "Matchup"],
   ["Ceiling", "Ceiling"],

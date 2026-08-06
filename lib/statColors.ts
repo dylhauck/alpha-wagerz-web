@@ -62,8 +62,8 @@ const rules: Partial<Record<StatKey, StatRule>> = {
   },
 
   Matchup: {
-    min: 30,
-    max: 60,
+    min: 35,
+    max: 55,
     direction: "higher-good",
   },
 
