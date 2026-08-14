@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { StatCell } from "@/components/StatCell";
+import type { RelativeHeatRange, StatKey } from "@/lib/statColors";
 import { TeamLogo } from "@/components/TeamLogo";
 import { PlayerNameButton } from "@/components/players/PlayerNameButton";
 import { PlayerProfileModal } from "@/components/players/PlayerProfileModal";
@@ -26,6 +27,45 @@ const columns = [
   ["LA", "LA"],
   ["Likely", "Likely"],
 ] as const;
+
+
+const relativeStatKeys: StatKey[] = [
+  "Test Score",
+  "Matchup",
+  "Ceiling",
+  "Zone Fit",
+  "HR Form",
+  "kHR",
+  "ISO",
+  "xwOBA",
+  "xwOBAcon",
+  "SwStr%",
+  "PulledBrl%",
+  "Brl/BIP%",
+  "FB%",
+  "HH%",
+  "LA",
+  "Likely",
+];
+
+function buildRanges(hitters: Record<string, any>[]) {
+  const ranges: Partial<Record<StatKey, RelativeHeatRange>> = {};
+
+  for (const statKey of relativeStatKeys) {
+    const values = hitters
+      .map((hitter) => Number(hitter[statKey]))
+      .filter((value) => Number.isFinite(value) && value !== 0);
+
+    if (!values.length) continue;
+
+    ranges[statKey] = {
+      min: Math.min(...values),
+      max: Math.max(...values),
+    };
+  }
+
+  return ranges;
+}
 
 type SortDirection = "desc" | "asc";
 
@@ -122,10 +162,12 @@ function RowValue({
   value,
   statKey,
   trend,
+  relativeRange,
 }: {
   value: unknown;
-  statKey: any;
+  statKey: StatKey | "Pitches" | "BIP";
   trend?: string | null;
+  relativeRange?: RelativeHeatRange | null;
 }) {
   const suffix = String(statKey).includes("%") ? "%" : undefined;
 
@@ -135,10 +177,18 @@ function RowValue({
 
   return (
     <div className="flex h-8 w-full items-center justify-center">
-      <StatCell value={value as any} statKey={statKey} suffix={suffix} compact trend={trend} />
+      <StatCell
+        value={value as any}
+        statKey={statKey}
+        suffix={suffix}
+        compact
+        trend={trend}
+        relativeRange={relativeRange}
+      />
     </div>
   );
 }
+
 
 export function GameHitterTable({
   title,
@@ -152,6 +202,8 @@ export function GameHitterTable({
   const [sortKey, setSortKey] = useState<string>("Likely");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [selectedPlayer, setSelectedPlayer] = useState<Record<string, any> | null>(null);
+
+  const teamRanges = useMemo(() => buildRanges(hitters), [hitters]);
 
   function handleSort(key: string) {
     if (sortKey === key) {
@@ -265,7 +317,13 @@ export function GameHitterTable({
             />
 
             {columns.map(([, key]) => (
-              <RowValue key={key} value={hitter[key]} statKey={key} trend={ key === "HR Form" ? hitter["HR Form Trend"] : undefined} />
+              <RowValue
+                key={key}
+                value={hitter[key]}
+                statKey={key}
+                trend={key === "HR Form" ? hitter["HR Form Trend"] : undefined}
+                relativeRange={teamRanges[key as StatKey] ?? null}
+              />
             ))}
           </div>
         ))}

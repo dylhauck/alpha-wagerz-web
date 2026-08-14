@@ -3,6 +3,7 @@
 import { Search, X } from "lucide-react";
 import { useMemo, useRef, useState } from "react";
 import { StatCell } from "./StatCell";
+import type { RelativeHeatRange, StatKey } from "@/lib/statColors";
 import { PlayerNameButton } from "@/components/players/PlayerNameButton";
 import { PlayerProfileModal } from "@/components/players/PlayerProfileModal";
 
@@ -87,17 +88,90 @@ function StatWrap({
   statKey,
   suffix,
   trend,
+  relativeRange,
 }: {
   value: any;
-  statKey: any;
+  statKey: StatKey;
   suffix?: string;
   trend?: string | null;
+  relativeRange?: RelativeHeatRange | null;
 }) {
   return (
     <div className="flex h-8 w-full items-center justify-center">
-      <StatCell value={value} statKey={statKey} suffix={suffix} compact trend={trend} />
+      <StatCell
+        value={value}
+        statKey={statKey}
+        suffix={suffix}
+        compact
+        trend={trend}
+        relativeRange={relativeRange}
+      />
     </div>
   );
+}
+
+
+const relativeStatKeys: StatKey[] = [
+  "Likely",
+  "Test Score",
+  "Matchup",
+  "Ceiling",
+  "Zone Fit",
+  "HR Form",
+  "kHR",
+  "ISO",
+  "xwOBA",
+  "xwOBAcon",
+  "SwStr%",
+  "PulledBrl%",
+  "Brl/BIP%",
+  "FB%",
+  "HH%",
+  "LA",
+];
+
+function teamKey(hitter: HitterRow) {
+  return String(
+    hitter.team ||
+    hitter.Team ||
+    hitter.team_name ||
+    hitter.teamName ||
+    "Unknown",
+  );
+}
+
+function buildTeamRanges(hitters: HitterRow[]) {
+  const grouped = new Map<string, HitterRow[]>();
+
+  for (const hitter of hitters) {
+    const key = teamKey(hitter);
+    const rows = grouped.get(key) ?? [];
+    rows.push(hitter);
+    grouped.set(key, rows);
+  }
+
+  const ranges = new Map<string, Partial<Record<StatKey, RelativeHeatRange>>>();
+
+  for (const [team, rows] of grouped.entries()) {
+    const teamRanges: Partial<Record<StatKey, RelativeHeatRange>> = {};
+
+    for (const statKey of relativeStatKeys) {
+      const values = rows
+        .map((row) => Number(row[statKey]))
+        .filter((value) => Number.isFinite(value) && value !== 0);
+
+      if (!values.length) continue;
+
+      teamRanges[statKey] = {
+        min: Math.min(...values),
+        max: Math.max(...values),
+      };
+    }
+
+    ranges.set(team, teamRanges);
+  }
+
+  return ranges;
 }
 
   export function HitterTable({
@@ -153,6 +227,14 @@ const sortedHitters = useMemo(() => {
       : String(aValue).localeCompare(String(bValue));
   });
 }, [filteredHitters, sortKey, sortDirection]);
+
+const teamRanges = useMemo(() => {
+  return buildTeamRanges(hitters);
+}, [hitters]);
+
+function rangeFor(hitter: HitterRow, statKey: StatKey) {
+  return teamRanges.get(teamKey(hitter))?.[statKey] ?? null;
+}
 
   function syncScrollLeft(value: number) {
     if (scrollRef.current) scrollRef.current.scrollLeft = value;
@@ -280,26 +362,26 @@ const sortedHitters = useMemo(() => {
 
                 <td className="px-3 py-3 text-sm text-slate-300">{hitter.game}</td>
 
-                <td className="px-1 py-3"><StatWrap value={hitter.Likely} statKey="Likely" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter["Test Score"]} statKey="Test Score" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter.Matchup} statKey="Matchup" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter.Ceiling} statKey="Ceiling" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter["Zone Fit"]} statKey="Zone Fit" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter["HR Form"]} statKey="HR Form" trend={hitter["HR Form Trend"]} /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter.kHR} statKey="kHR" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.Likely} statKey="Likely" relativeRange={rangeFor(hitter, "Likely")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["Test Score"]} statKey="Test Score" relativeRange={rangeFor(hitter, "Test Score")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.Matchup} statKey="Matchup" relativeRange={rangeFor(hitter, "Matchup")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.Ceiling} statKey="Ceiling" relativeRange={rangeFor(hitter, "Ceiling")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["Zone Fit"]} statKey="Zone Fit" relativeRange={rangeFor(hitter, "Zone Fit")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["HR Form"]} statKey="HR Form" trend={hitter["HR Form Trend"]} relativeRange={rangeFor(hitter, "HR Form")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.kHR} statKey="kHR" relativeRange={rangeFor(hitter, "kHR")} /></td>
 
                 <td className="px-1 py-3"><PlainCell value={hitter.Pitches} /></td>
                 <td className="px-1 py-3"><PlainCell value={hitter.BIP} /></td>
 
-                <td className="px-1 py-3"><StatWrap value={hitter.ISO} statKey="ISO" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter.xwOBA} statKey="xwOBA" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter.xwOBAcon} statKey="xwOBAcon" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter["SwStr%"]} statKey="SwStr%" suffix="%" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter["PulledBrl%"]} statKey="PulledBrl%" suffix="%" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter["Brl/BIP%"]} statKey="Brl/BIP%" suffix="%" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter["FB%"]} statKey="FB%" suffix="%" /></td>
-                <td className="px-1 py-3"><StatWrap value={hitter["HH%"]} statKey="HH%" suffix="%" /></td>
-                <td className="rounded-r-2xl px-1 py-3"><StatWrap value={hitter.LA} statKey="LA" /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.ISO} statKey="ISO" relativeRange={rangeFor(hitter, "ISO")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.xwOBA} statKey="xwOBA" relativeRange={rangeFor(hitter, "xwOBA")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter.xwOBAcon} statKey="xwOBAcon" relativeRange={rangeFor(hitter, "xwOBAcon")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["SwStr%"]} statKey="SwStr%" suffix="%" relativeRange={rangeFor(hitter, "SwStr%")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["PulledBrl%"]} statKey="PulledBrl%" suffix="%" relativeRange={rangeFor(hitter, "PulledBrl%")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["Brl/BIP%"]} statKey="Brl/BIP%" suffix="%" relativeRange={rangeFor(hitter, "Brl/BIP%")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["FB%"]} statKey="FB%" suffix="%" relativeRange={rangeFor(hitter, "FB%")} /></td>
+                <td className="px-1 py-3"><StatWrap value={hitter["HH%"]} statKey="HH%" suffix="%" relativeRange={rangeFor(hitter, "HH%")} /></td>
+                <td className="rounded-r-2xl px-1 py-3"><StatWrap value={hitter.LA} statKey="LA" relativeRange={rangeFor(hitter, "LA")} /></td>
               </tr>
             ))}
           </tbody>

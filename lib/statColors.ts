@@ -39,7 +39,10 @@ export type StatKey =
   | "Pitcher HH%"
   | "HR/9";
 
-type Direction = "higher-good" | "lower-good" | "range-good";
+export type Direction =
+  | "higher-good"
+  | "lower-good"
+  | "range-good";
 
 type StatRule = {
   min: number;
@@ -127,21 +130,18 @@ const rules: Partial<Record<StatKey, StatRule>> = {
     direction: "higher-good",
   },
 
-  // Hitter fly-ball rate: higher is better for home-run targeting.
   "FB%": {
     min: 14,
     max: 34,
     direction: "higher-good",
   },
 
-  // Hitter hard-hit rate: higher is better.
   "HH%": {
     min: 15,
     max: 60,
     direction: "higher-good",
   },
 
-  // Hitter swinging-strike rate: lower is better.
   "SwStr%": {
     min: 1,
     max: 25,
@@ -226,14 +226,12 @@ const rules: Partial<Record<StatKey, StatRule>> = {
     direction: "lower-good",
   },
 
-  // Derived matchup score, not the raw FB%.
   "Fly Ball Profile": {
     min: 20,
     max: 70,
     direction: "lower-good",
   },
 
-  // Derived matchup score.
   "Barrel Profile": {
     min: 20,
     max: 90,
@@ -246,7 +244,6 @@ const rules: Partial<Record<StatKey, StatRule>> = {
     direction: "lower-good",
   },
 
-  // Raw pitcher FB%. Lower is better for the pitcher.
   "Pitcher FB%": {
     min: 15,
     max: 45,
@@ -290,33 +287,62 @@ const rules: Partial<Record<StatKey, StatRule>> = {
   },
 };
 
-function clamp(value: number, min = 0, max = 1) {
-  return Math.max(min, Math.min(max, value));
+function clamp(
+  value: number,
+  min = 0,
+  max = 1,
+) {
+  return Math.max(
+    min,
+    Math.min(max, value),
+  );
 }
 
-function scoreToPercent(value: number, rule: StatRule) {
-  if (rule.direction === "range-good" && rule.goodRange) {
+function scoreToPercent(
+  value: number,
+  rule: StatRule,
+) {
+  if (
+    rule.direction === "range-good" &&
+    rule.goodRange
+  ) {
     const [low, high] = rule.goodRange;
 
-    if (value >= low && value <= high) {
+    if (
+      value >= low &&
+      value <= high
+    ) {
       return 1;
     }
 
     const distance =
       value < low
-        ? Math.abs(value - low) / Math.max(1, low - rule.min)
-        : Math.abs(value - high) / Math.max(1, rule.max - high);
+        ? Math.abs(value - low) /
+          Math.max(1, low - rule.min)
+        : Math.abs(value - high) /
+          Math.max(1, rule.max - high);
 
     return clamp(1 - distance);
   }
 
-  const raw = (value - rule.min) / (rule.max - rule.min);
+  const raw =
+    (value - rule.min) /
+    (rule.max - rule.min);
 
   return rule.direction === "lower-good"
     ? clamp(1 - raw)
     : clamp(raw);
 }
 
+/*
+ * Original Alpha Wagerz heat palette.
+ *
+ * This is used by BOTH:
+ * - normal/global heat colors
+ * - per-team relative heat colors
+ *
+ * That keeps the visual appearance identical.
+ */
 function colorForPercent(pct: number) {
   if (pct >= 0.9) {
     return ["#047857", "#22c55e"];
@@ -345,36 +371,160 @@ function colorForPercent(pct: number) {
   return ["#7f1d1d", "#be123c"];
 }
 
-export function getHeatStyle(value: unknown, statKey: StatKey) {
+/*
+ * Original/global heat coloring.
+ */
+export function getHeatStyle(
+  value: unknown,
+  statKey: StatKey,
+) {
   const numeric = Number(value);
 
   if (
-    value === ""
-    || value === null
-    || value === undefined
-    || Number.isNaN(numeric)
+    value === "" ||
+    value === null ||
+    value === undefined ||
+    Number.isNaN(numeric)
   ) {
     return {
-      background: "rgba(148, 163, 184, 0.12)",
-      borderColor: "rgba(148, 163, 184, 0.20)",
+      background:
+        "rgba(148, 163, 184, 0.12)",
+      borderColor:
+        "rgba(148, 163, 184, 0.20)",
       color: "#cbd5e1",
     };
   }
 
   const rule =
-    rules[statKey]
-    ?? {
+    rules[statKey] ?? {
       min: 0,
       max: 100,
-      direction: "higher-good" as const,
+      direction:
+        "higher-good" as const,
     };
 
-  const pct = scoreToPercent(numeric, rule);
-  const [from, to] = colorForPercent(pct);
+  const pct =
+    scoreToPercent(
+      numeric,
+      rule,
+    );
+
+  const [from, to] =
+    colorForPercent(pct);
 
   return {
-    background: `linear-gradient(135deg, ${from}, ${to})`,
-    borderColor: "rgba(255,255,255,0.18)",
+    background:
+      `linear-gradient(135deg, ${from}, ${to})`,
+    borderColor:
+      "rgba(255,255,255,0.18)",
+    color: "#ffffff",
+  };
+}
+
+/*
+ * Range calculated from the players
+ * on ONE TEAM.
+ */
+export type RelativeHeatRange = {
+  min: number;
+  max: number;
+};
+
+/*
+ * Allows StatCell to determine whether
+ * high or low values are better.
+ */
+export function getStatDirection(
+  statKey: StatKey,
+): Direction {
+  return (
+    rules[statKey]?.direction ??
+    "higher-good"
+  );
+}
+
+/*
+ * Per-team relative heat coloring.
+ *
+ * IMPORTANT:
+ * This changes ONLY how the percentile
+ * is calculated.
+ *
+ * It uses the SAME colorForPercent()
+ * palette as the original heat system.
+ */
+export function getRelativeHeatStyle(
+  value: unknown,
+  minValue: number,
+  maxValue: number,
+  lowerIsBetter = false,
+) {
+  const numeric = Number(value);
+
+  if (
+    value === "" ||
+    value === null ||
+    value === undefined ||
+    Number.isNaN(numeric)
+  ) {
+    return {
+      background:
+        "rgba(148, 163, 184, 0.12)",
+      borderColor:
+        "rgba(148, 163, 184, 0.20)",
+      color: "#cbd5e1",
+    };
+  }
+
+  if (
+    !Number.isFinite(minValue) ||
+    !Number.isFinite(maxValue)
+  ) {
+    return getHeatStyle(
+      value,
+      "Likely",
+    );
+  }
+
+  /*
+   * Start in the middle if every player
+   * on the team has the same value.
+   */
+  let pct = 0.5;
+
+  if (maxValue !== minValue) {
+    pct =
+      (numeric - minValue) /
+      (maxValue - minValue);
+  }
+
+  pct = clamp(pct);
+
+  /*
+   * Example:
+   *
+   * SwStr%
+   * 1.36 = team best
+   * 9.00 = team worst
+   *
+   * Lower is therefore greener.
+   */
+  if (lowerIsBetter) {
+    pct = 1 - pct;
+  }
+
+  /*
+   * THIS is the important part:
+   * use the exact original palette.
+   */
+  const [from, to] =
+    colorForPercent(pct);
+
+  return {
+    background:
+      `linear-gradient(135deg, ${from}, ${to})`,
+    borderColor:
+      "rgba(255,255,255,0.18)",
     color: "#ffffff",
   };
 }

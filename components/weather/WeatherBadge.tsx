@@ -31,8 +31,8 @@ export function WeatherBadge({ weather }: Props) {
 
   return (
     <div className="grid gap-2 sm:grid-cols-3">
-      <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/10 px-3 py-2">
-        <div className="flex items-center gap-2 text-xs font-bold text-cyan-100">
+      <div className="flex flex-col items-center justify-center rounded-2xl border border-cyan-300/15 bg-cyan-300/10 px-3 py-2 text-center">
+        <div className="flex items-center justify-center gap-2 text-xs font-bold text-cyan-100">
           <CloudSun size={14} />
           Temp
         </div>
@@ -42,8 +42,8 @@ export function WeatherBadge({ weather }: Props) {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-pink-300/15 bg-pink-300/10 px-3 py-2">
-        <div className="flex items-center gap-2 text-xs font-bold text-pink-100">
+      <div className="flex flex-col items-center justify-center rounded-2xl border border-pink-300/15 bg-pink-300/10 px-3 py-2 text-center">
+        <div className="flex items-center justify-center gap-2 text-xs font-bold text-pink-100">
           <Wind size={14} />
           Wind
         </div>
@@ -58,7 +58,7 @@ export function WeatherBadge({ weather }: Props) {
       </div>
 
       <div
-        className={`rounded-2xl border px-3 py-2 ${
+        className={`flex flex-col items-center justify-center rounded-2xl border px-3 py-2 text-center ${
           environment === "Elite"
             ? "border-emerald-300/20 bg-emerald-500/10"
             : environment === "Suppressed"
@@ -73,7 +73,7 @@ export function WeatherBadge({ weather }: Props) {
         </div>
 
         <div
-  className={`mt-2 whitespace-nowrap text-center text-base font-black uppercase ${
+          className={`mt-2 whitespace-nowrap text-center text-base font-black uppercase ${
             environment === "Elite"
               ? "text-emerald-300"
               : environment === "Suppressed"

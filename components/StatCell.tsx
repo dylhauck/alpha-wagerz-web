@@ -1,4 +1,10 @@
-import { getHeatStyle, StatKey } from "@/lib/statColors";
+import {
+  getHeatStyle,
+  getRelativeHeatStyle,
+  RelativeHeatRange,
+  getStatDirection,
+  StatKey,
+} from "@/lib/statColors";
 import {
   ArrowDown,
   ArrowUp,
@@ -13,6 +19,7 @@ type StatCellProps = {
   suffix?: string;
   compact?: boolean;
   trend?: TrendDirection | string | null;
+  relativeRange?: RelativeHeatRange | null;
 };
 
 function isMissing(
@@ -93,6 +100,7 @@ export function StatCell({
   suffix,
   compact = false,
   trend,
+  relativeRange,
 }: StatCellProps) {
   const displayValue = formatValue(value);
 
@@ -102,6 +110,13 @@ export function StatCell({
         borderColor: "rgba(148, 163, 184, 0.20)",
         color: "#cbd5e1",
       }
+    : relativeRange
+      ? getRelativeHeatStyle(
+        value,
+        relativeRange.min,
+        relativeRange.max,
+        getStatDirection(statKey) === "lower-good",
+      )
     : getHeatStyle(value, statKey);
 
   const showTrend =

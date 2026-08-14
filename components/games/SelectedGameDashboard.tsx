@@ -245,19 +245,19 @@ export function SelectedGameDashboard({
 
             <WeatherBadge weather={game.weather} />
 
-            <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.035] p-3 text-sm text-slate-300">
-              <div>
-                Conditions: {game.weather?.conditions || "—"}
-              </div>
+            <div className="mt-4 flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.035] p-3 text-center text-sm text-slate-300">
+  <div>
+    Conditions: {game.weather?.conditions || "—"}
+  </div>
 
-              <div>
-                Humidity: {game.weather?.humidity || "—"}%
-              </div>
+  <div>
+    Humidity: {game.weather?.humidity || "—"}%
+  </div>
 
-              <div>
-                Roof: {game.weather?.roof || game.roof || "open"}
-              </div>
-            </div>
+  <div>
+    Roof: {game.weather?.roof || game.roof || "open"}
+  </div>
+</div>
           </div>
 
           <div className="glass rounded-3xl p-4">
