@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Alpha Wagerz",
-  description: "Premium baseball betting analytics dashboard",
+  description: "Premium sports analytics dashboard",
 };
 
 export default function RootLayout({
