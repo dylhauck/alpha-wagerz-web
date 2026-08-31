@@ -53,9 +53,11 @@ type NFLGame = {
   home_abbr?: string;
 
   venue?: string;
-
   game_datetime?: string;
   game_datetime_utc?: string;
+
+  game_date?: string;
+  game_time?: string;
 
   week?: number | string;
   season?: number | string;
@@ -99,6 +101,45 @@ function formatNumber(
 }
 
 function formatGameTime(game: NFLGame) {
+  if (game.game_date && game.game_time) {
+    const [year, month, day] =
+      game.game_date
+        .split("-")
+        .map(Number);
+
+    const [hour, minute] =
+      game.game_time
+        .split(":")
+        .map(Number);
+
+    if (
+      Number.isFinite(year) &&
+      Number.isFinite(month) &&
+      Number.isFinite(day) &&
+      Number.isFinite(hour) &&
+      Number.isFinite(minute)
+    ) {
+      const date = new Date(
+        year,
+        month - 1,
+        day,
+        hour,
+        minute,
+      );
+
+      return date.toLocaleString(
+        "en-US",
+        {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+        },
+      );
+    }
+  }
+
   const raw =
     game.game_datetime_utc ||
     game.game_datetime;
@@ -113,13 +154,63 @@ function formatGameTime(game: NFLGame) {
     return "TBD";
   }
 
-  return date.toLocaleString("en-US", {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-  });
+  return date.toLocaleString(
+    "en-US",
+    {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+    },
+  );
+}
+
+function formatGameCardTime(game: NFLGame) {
+  if (game.game_time) {
+    const [hourString, minuteString] =
+      game.game_time.split(":");
+
+    const hour = Number(hourString);
+    const minute = Number(minuteString);
+
+    if (
+      Number.isFinite(hour) &&
+      Number.isFinite(minute)
+    ) {
+      const period =
+        hour >= 12 ? "PM" : "AM";
+
+      const displayHour =
+        hour % 12 || 12;
+
+      return `${displayHour}:${String(
+        minute,
+      ).padStart(2, "0")} ${period}`;
+    }
+  }
+
+  const raw =
+    game.game_datetime_utc ||
+    game.game_datetime;
+
+  if (!raw) {
+    return "TBD";
+  }
+
+  const date = new Date(raw);
+
+  if (Number.isNaN(date.getTime())) {
+    return "TBD";
+  }
+
+  return date.toLocaleTimeString(
+    "en-US",
+    {
+      hour: "numeric",
+      minute: "2-digit",
+    },
+  );
 }
 
 function getPlayerName(player: NFLPlayer) {
@@ -401,6 +492,28 @@ function PlayerMatchupTable({
   );
 }
 
+function NFLLogoGlow({
+  team,
+  teams,
+}: {
+  team: string;
+  teams: NFLTeam[];
+}) {
+  return (
+    <div className="relative flex h-11 w-11 items-center justify-center">
+      <div className="absolute inset-0 rounded-xl bg-white/50 blur-xl" />
+
+      <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-white/50 bg-white/45 shadow-[0_0_24px_rgba(255,255,255,0.35)]">
+        <NFLTeamLogo
+          team={team}
+          teams={teams}
+          size={28}
+        />
+      </div>
+    </div>
+  );
+}
+
 function GameSelector({
   games,
   teams,
@@ -413,67 +526,63 @@ function GameSelector({
   onSelect: (id: string) => void;
 }) {
   return (
-    <div className="mb-5 overflow-x-auto pb-2">
-      <div className="flex min-w-max gap-2">
-        {games.map((game) => {
-          const id = String(
-            game.game_id,
-          );
+    <div className="mb-4">
+      <div className="table-scroll mt-2 pb-2">
+        <div className="flex min-w-max gap-2">
+          {games.map((game) => {
+            const id = String(
+              game.game_id,
+            );
 
-          const selected =
-            id === selectedId;
+            const selected =
+              id === selectedId;
 
-          const awayCode =
-            game.away_abbr ||
-            game.away_team;
+            const awayCode =
+              game.away_abbr ||
+              game.away_team;
 
-          const homeCode =
-            game.home_abbr ||
-            game.home_team;
+            const homeCode =
+              game.home_abbr ||
+              game.home_team;
 
-          return (
-            <button
-              key={id}
-              type="button"
-              onClick={() =>
-                onSelect(id)
-              }
-              className={`min-w-[175px] rounded-2xl border px-4 py-3 text-left transition ${
-                selected
-                  ? "border-cyan-300/50 bg-cyan-300/15 shadow-[0_0_22px_rgba(35,216,255,0.14)]"
-                  : "border-white/10 bg-white/[0.035] hover:border-pink-300/30"
-              }`}
-            >
-              <div className="flex items-center justify-between gap-3">
-                <NFLTeamLogo
-                  team={awayCode}
-                  teams={teams}
-                  size={34}
-                />
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() =>
+                  onSelect(id)
+                }
+                className={`min-w-[150px] rounded-xl border bg-slate-950/80 px-3 py-2 transition ${
+                  selected
+                    ? "border-cyan-300/70 bg-cyan-300/15 shadow-[0_0_20px_rgba(35,216,255,0.25)]"
+                    : "border-white/10 bg-white/[0.035] hover:border-pink-300/40"
+                }`}
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <NFLLogoGlow
+                    team={awayCode}
+                    teams={teams}
+                  />
 
-                <span className="text-xs font-black text-slate-500">
-                  @
-                </span>
+                  <span className="text-xs font-black text-slate-400">
+                    @
+                  </span>
 
-                <NFLTeamLogo
-                  team={homeCode}
-                  teams={teams}
-                  size={34}
-                />
-              </div>
+                  <NFLLogoGlow
+                    team={homeCode}
+                    teams={teams}
+                  />
+                </div>
 
-              <div className="mt-2 text-center text-xs font-black text-white">
-                {awayCode}
-                {" @ "}
-                {homeCode}
-              </div>
-
-              <div className="mt-1 text-center text-[10px] font-bold text-slate-500">
-                {formatGameTime(game)}
-              </div>
-            </button>
-          );
-        })}
+                <div className="mt-2 text-center text-sm font-black tracking-wide text-white">
+                  {formatGameCardTime(
+                    game,
+                  )}
+                </div>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

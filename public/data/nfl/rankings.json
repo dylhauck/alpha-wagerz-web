@@ -1,0 +1,143 @@
+{
+  "generated_at": "2026-08-31T06:46:42.224761+00:00",
+  "model": "nfl_rankings",
+  "model_version": "1.0",
+  "philosophy": {
+    "independent_projection": true,
+    "sportsbook_used_for_projection": false,
+    "forced_picks": false,
+    "ranking_score_weights": {
+      "confidence": 0.7,
+      "edge_strength": 0.3
+    }
+  },
+  "thresholds": {
+    "best_bet": {
+      "minimum_confidence": 80.0,
+      "minimum_edge_strength": 1.25
+    },
+    "strong_play": {
+      "minimum_confidence": 70.0,
+      "minimum_edge_strength": 1.0
+    },
+    "lean": {
+      "minimum_confidence": 50.0,
+      "minimum_edge_strength": 0.5
+    }
+  },
+  "counts": {
+    "game_bets": 1,
+    "player_props": 0,
+    "all_candidates": 1,
+    "best_bets": 0,
+    "strong_plays": 0,
+    "leans": 1,
+    "passes": 0
+  },
+  "best_bets": [],
+  "strong_plays": [],
+  "leans": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "LEAN",
+      "ranking_score": 63.99,
+      "confidence": 53.7,
+      "upstream_label": "LEAN",
+      "edge_strength": 2.64,
+      "edge": 0.066,
+      "market_type": "moneyline",
+      "game_id": "2026_01_NE_SEA",
+      "matchup": "NE @ SEA",
+      "away_team": "NE",
+      "home_team": "SEA",
+      "team": "",
+      "pick": "NE",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_01_NE_SEA",
+        "away_team": "NE",
+        "home_team": "SEA",
+        "market": "moneyline",
+        "selection": "NE",
+        "edge": 0.066,
+        "confidence_score": 53.7,
+        "confidence_label": "LEAN"
+      }
+    }
+  ],
+  "passes": [],
+  "ranked_recommendations": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "LEAN",
+      "ranking_score": 63.99,
+      "confidence": 53.7,
+      "upstream_label": "LEAN",
+      "edge_strength": 2.64,
+      "edge": 0.066,
+      "market_type": "moneyline",
+      "game_id": "2026_01_NE_SEA",
+      "matchup": "NE @ SEA",
+      "away_team": "NE",
+      "home_team": "SEA",
+      "team": "",
+      "pick": "NE",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_01_NE_SEA",
+        "away_team": "NE",
+        "home_team": "SEA",
+        "market": "moneyline",
+        "selection": "NE",
+        "edge": 0.066,
+        "confidence_score": 53.7,
+        "confidence_label": "LEAN"
+      }
+    }
+  ],
+  "game_bets": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "LEAN",
+      "ranking_score": 63.99,
+      "confidence": 53.7,
+      "upstream_label": "LEAN",
+      "edge_strength": 2.64,
+      "edge": 0.066,
+      "market_type": "moneyline",
+      "game_id": "2026_01_NE_SEA",
+      "matchup": "NE @ SEA",
+      "away_team": "NE",
+      "home_team": "SEA",
+      "team": "",
+      "pick": "NE",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_01_NE_SEA",
+        "away_team": "NE",
+        "home_team": "SEA",
+        "market": "moneyline",
+        "selection": "NE",
+        "edge": 0.066,
+        "confidence_score": 53.7,
+        "confidence_label": "LEAN"
+      }
+    }
+  ],
+  "player_props": []
+}

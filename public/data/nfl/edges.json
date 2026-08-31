@@ -1,0 +1,97 @@
+{
+  "games": [
+    {
+      "game_id": "2026_01_NE_SEA",
+      "away_team": "NE",
+      "home_team": "SEA",
+      "model_projection": {
+        "away_points": "",
+        "home_points": "",
+        "total": 45.7,
+        "home_margin": "",
+        "away_win_probability": 0.45,
+        "home_win_probability": 0.55,
+        "projection_confidence": 50.7
+      },
+      "market": {
+        "game_id": "2026_01_NE_SEA",
+        "season": 2026,
+        "week": 1,
+        "game_type": "REG",
+        "game_date": "2026-09-09",
+        "game_time": "20:20",
+        "away_team": "NE",
+        "home_team": "SEA",
+        "moneyline": {
+          "away": 150.0,
+          "home": -180.0,
+          "away_implied_probability": 0.4,
+          "home_implied_probability": 0.6429,
+          "away_no_vig_probability": 0.3836,
+          "home_no_vig_probability": 0.6164
+        },
+        "spread": {
+          "away": 3.5,
+          "home": -3.5,
+          "raw_spread_line": 3.5
+        },
+        "game_total": 44.5,
+        "team_totals": {
+          "away": 20.5,
+          "home": 24.0,
+          "source": "derived_from_spread_and_total"
+        },
+        "available_markets": [
+          "moneyline",
+          "spread",
+          "game_total",
+          "team_total"
+        ],
+        "source": {
+          "provider": "nflverse_slate",
+          "sportsbook": "consensus/closing",
+          "note": "Normalized from the sportsbook fields already present in the NFL slate. Projection models do not consume this file."
+        }
+      },
+      "recommendations": [
+        {
+          "market": "moneyline",
+          "selection": "NE",
+          "edge": 0.066,
+          "confidence_score": 53.7,
+          "confidence_label": "LEAN"
+        }
+      ],
+      "best_bet": {
+        "market": "moneyline",
+        "selection": "NE",
+        "edge": 0.066,
+        "confidence_score": 53.7,
+        "confidence_label": "LEAN"
+      }
+    }
+  ],
+  "ranked_bets": [
+    {
+      "game_id": "2026_01_NE_SEA",
+      "away_team": "NE",
+      "home_team": "SEA",
+      "market": "moneyline",
+      "selection": "NE",
+      "edge": 0.066,
+      "confidence_score": 53.7,
+      "confidence_label": "LEAN"
+    }
+  ],
+  "counts": {
+    "games": 1,
+    "bets": 1,
+    "missing_projection": 0
+  },
+  "model": {
+    "name": "Alpha Wagerz NFL Edge & Confidence Engine",
+    "version": "1.0",
+    "sportsbook_lines_used_only_for_edge": true,
+    "projection_models_remain_independent": true
+  }
+}

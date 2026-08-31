@@ -1,0 +1,72 @@
+{
+  "games": [
+    {
+      "game_id": "2026_01_SF_LA",
+      "away_team": "SF",
+      "home_team": "LAR",
+      "model_projection": {
+        "away_points": "",
+        "home_points": "",
+        "total": 48.4,
+        "home_margin": "",
+        "away_win_probability": 0.344,
+        "home_win_probability": 0.6559999999999999,
+        "projection_confidence": 54.4
+      },
+      "market": {
+        "game_id": "2026_01_SF_LA",
+        "season": 2026,
+        "week": 1,
+        "game_type": "REG",
+        "game_date": "2026-09-10",
+        "game_time": "20:35",
+        "away_team": "SF",
+        "home_team": "LAR",
+        "moneyline": {
+          "away": 164.0,
+          "home": -198.0,
+          "away_implied_probability": 0.3788,
+          "home_implied_probability": 0.6644,
+          "away_no_vig_probability": 0.3631,
+          "home_no_vig_probability": 0.6369
+        },
+        "spread": {
+          "away": 3.5,
+          "home": -3.5,
+          "raw_spread_line": 3.5
+        },
+        "game_total": 48.5,
+        "team_totals": {
+          "away": 22.5,
+          "home": 26.0,
+          "source": "derived_from_spread_and_total"
+        },
+        "available_markets": [
+          "moneyline",
+          "spread",
+          "game_total",
+          "team_total"
+        ],
+        "source": {
+          "provider": "nflverse_slate",
+          "sportsbook": "consensus/closing",
+          "note": "Normalized from the sportsbook fields already present in the NFL slate. Projection models do not consume this file."
+        }
+      },
+      "recommendations": [],
+      "best_bet": ""
+    }
+  ],
+  "ranked_bets": [],
+  "counts": {
+    "games": 1,
+    "bets": 0,
+    "missing_projection": 0
+  },
+  "model": {
+    "name": "Alpha Wagerz NFL Edge & Confidence Engine",
+    "version": "1.0",
+    "sportsbook_lines_used_only_for_edge": true,
+    "projection_models_remain_independent": true
+  }
+}

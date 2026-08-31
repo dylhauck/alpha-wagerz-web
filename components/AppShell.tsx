@@ -46,22 +46,22 @@ const mlbNavItems: NavItem[] = [
     icon: Home,
   },
   {
-    label: "Alpha Hitters",
+    label: "Hitters",
     path: "/hitters",
     icon: Target,
   },
   {
-    label: "Alpha Pitchers",
+    label: "Pitchers",
     path: "/pitchers",
     icon: Swords,
   },
   {
-    label: "Weather Edge Report",
+    label: "Weather Report",
     path: "/weather",
     icon: CloudSun,
   },
   {
-    label: "Alpha Projections",
+    label: "Projections",
     path: "/projections",
     icon: LineChart,
   },
@@ -89,13 +89,18 @@ const nflNavItems: NavItem[] = [
     icon: Shield,
   },
   {
-    label: "Alpha Projections",
+    label: "Weather Report",
+    path: "/weather",
+    icon: CloudSun,
+  },
+  {
+    label: "Projections",
     path: "/projections",
     icon: LineChart,
   },
   {
     label: "Injury Report",
-    path: "/injury-report",
+    path: "/injuries",
     icon: BarChart3,
   },
 ];

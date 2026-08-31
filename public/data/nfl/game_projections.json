@@ -1,0 +1,241 @@
+{
+  "games": [
+    {
+      "game_id": "2026_01_NE_SEA",
+      "away_team": "NE",
+      "home_team": "SEA",
+      "away_projection": {
+        "projected_points": 22.2,
+        "components": {
+          "base_scoring": 22.5,
+          "efficiency_adjustment": 0.13,
+          "matchup_adjustment": 0.29,
+          "home_field_adjustment": -0.75,
+          "pre_injury_projection": 22.17,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 22.17,
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
+        },
+        "injury_context": {
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "key_absences": []
+        },
+        "weather_context": {
+          "available": true,
+          "roof": "outdoor",
+          "stadium": "Lumen Field",
+          "weather": {
+            "forecast_time": "2026-09-09T20:00",
+            "temperature_f": 60.4,
+            "feels_like_f": 57.4,
+            "humidity_pct": 62.0,
+            "precip_probability_pct": 10.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.4,
+            "wind_gust_mph": 14.1,
+            "weather_code": 2,
+            "conditions": "Partly Cloudy"
+          },
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
+        },
+        "matchup_rating": 2.7,
+        "matchup_label": "Neutral",
+        "passing_matchup": {
+          "rating": 18.7,
+          "label": "Strong"
+        },
+        "rushing_matchup": {
+          "rating": -17.4,
+          "label": "Poor"
+        }
+      },
+      "home_projection": {
+        "projected_points": 23.5,
+        "components": {
+          "base_scoring": 22.5,
+          "efficiency_adjustment": 0.12,
+          "matchup_adjustment": 0.15,
+          "home_field_adjustment": 0.75,
+          "pre_injury_projection": 23.52,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 23.52,
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
+        },
+        "injury_context": {
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "key_absences": []
+        },
+        "weather_context": {
+          "available": true,
+          "roof": "outdoor",
+          "stadium": "Lumen Field",
+          "weather": {
+            "forecast_time": "2026-09-09T20:00",
+            "temperature_f": 60.4,
+            "feels_like_f": 57.4,
+            "humidity_pct": 62.0,
+            "precip_probability_pct": 10.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.4,
+            "wind_gust_mph": 14.1,
+            "weather_code": 2,
+            "conditions": "Partly Cloudy"
+          },
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
+        },
+        "matchup_rating": 1.5,
+        "matchup_label": "Neutral",
+        "passing_matchup": {
+          "rating": 7.6,
+          "label": "Favorable"
+        },
+        "rushing_matchup": {
+          "rating": -6.2,
+          "label": "Difficult"
+        }
+      },
+      "projected_score": {
+        "away": 22.2,
+        "home": 23.5
+      },
+      "projected_total": 45.7,
+      "expected_margin": 1.3,
+      "projected_winner": "SEA",
+      "win_probability": {
+        "away": 45.0,
+        "home": 55.0
+      },
+      "projection_confidence": 50.7,
+      "injury_context": {
+        "away": {
+          "team_context": {
+            "team": "NE",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "home": {
+          "team_context": {
+            "team": "SEA",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        }
+      },
+      "weather_context": {
+        "game_id": "2026_01_NE_SEA",
+        "away_team": "NE",
+        "home_team": "SEA",
+        "stadium": "Lumen Field",
+        "latitude": 47.5952,
+        "longitude": -122.3316,
+        "roof": "outdoor",
+        "kickoff": "2026-09-09T20:20",
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-09-09T20:00",
+          "temperature_f": 60.4,
+          "feels_like_f": 57.4,
+          "humidity_pct": 62.0,
+          "precip_probability_pct": 10.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.4,
+          "wind_gust_mph": 14.1,
+          "weather_code": 2,
+          "conditions": "Partly Cloudy"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
+      },
+      "model": {
+        "uses_sportsbook_lines": false,
+        "description": "Independent Alpha Wagerz NFL game projection"
+      }
+    }
+  ],
+  "league_baselines": {
+    "points_per_game": 22.5,
+    "points_allowed_per_game": 22.5,
+    "offensive_epa": 0.00571875,
+    "defensive_epa": 0.00659375,
+    "offensive_success": 43.95,
+    "defensive_success": 43.978125,
+    "offensive_ypp": 5.406875,
+    "defensive_ypp": 5.4109375,
+    "offensive_explosive": 9.546875,
+    "defensive_explosive": 9.559375,
+    "offensive_third_down": 39.875,
+    "defensive_third_down": 39.95625,
+    "offensive_red_zone": 19.075,
+    "defensive_red_zone": 19.325,
+    "offensive_turnovers": 1.0953125,
+    "defensive_takeaways": 1.0965625
+  },
+  "model": {
+    "name": "Alpha Wagerz NFL Projection Model",
+    "version": "1.0",
+    "sportsbook_independent": true
+  }
+}
