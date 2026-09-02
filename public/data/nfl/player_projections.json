@@ -78,15 +78,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -138,6 +138,150 @@
           "catch_rate": 100.0,
           "yards_per_target": 2.0,
           "yards_per_reception": 2.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0040556",
+      "player": "Corey Kiner",
+      "team": "NE",
+      "opponent": "SEA",
+      "position": "RB",
+      "game_id": "2026_01_NE_SEA",
+      "projection": {
+        "rushing": {
+          "carries": 2.9,
+          "yards": 13.2,
+          "touchdowns": 0.0
+        },
+        "receiving": {
+          "targets": 0.8,
+          "receptions": 0.5,
+          "yards": 4.1,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 1.73,
+        "ppr": 2.23
+      },
+      "environment": {
+        "projected_team_points": 22.2,
+        "projected_game_total": 45.7,
+        "win_probability": 45.0,
+        "scoring_factor": 0.987,
+        "total_factor": 1.016
+      },
+      "matchup": {
+        "overall_rating": 2.7,
+        "passing_rating": 18.7,
+        "rushing_rating": -17.4,
+        "overall_factor": 1.008,
+        "passing_factor": 1.075,
+        "rushing_factor": 0.93
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "NE",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lumen Field",
+        "weather": {
+          "forecast_time": "2026-09-09T20:00",
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 4,
+        "label": "Moderate"
+      },
+      "baseline": {
+        "games": 4,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 12.0,
+          "yards": 58.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 3.0,
+          "yards_per_game": 14.5,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 4.83,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 3.0,
+          "receptions": 2.0,
+          "yards": 15.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 0.75,
+          "receptions_per_game": 0.5,
+          "yards_per_game": 3.75,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 66.7,
+          "yards_per_target": 5.0,
+          "yards_per_reception": 7.5,
           "touchdown_rate": 0.0
         }
       },
@@ -222,15 +366,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -366,15 +510,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -427,150 +571,6 @@
           "yards_per_target": 9.32,
           "yards_per_reception": 10.78,
           "touchdown_rate": 5.4
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0039757",
-      "player": "Terrell Jennings",
-      "team": "NE",
-      "opponent": "SEA",
-      "position": "RB",
-      "game_id": "2026_01_NE_SEA",
-      "projection": {
-        "rushing": {
-          "carries": 3.8,
-          "yards": 11.1,
-          "touchdowns": 0.16
-        },
-        "receiving": {
-          "targets": 0.2,
-          "receptions": 0.2,
-          "yards": 1.6,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 2.23,
-        "ppr": 2.43
-      },
-      "environment": {
-        "projected_team_points": 22.2,
-        "projected_game_total": 45.7,
-        "win_probability": 45.0,
-        "scoring_factor": 0.987,
-        "total_factor": 1.016
-      },
-      "matchup": {
-        "overall_rating": 2.7,
-        "passing_rating": 18.7,
-        "rushing_rating": -17.4,
-        "overall_factor": 1.008,
-        "passing_factor": 1.075,
-        "rushing_factor": 0.93
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NE",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "outdoor",
-        "stadium": "Lumen Field",
-        "weather": {
-          "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
-        },
-        "classification": "NEUTRAL",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 6,
-        "label": "Moderate"
-      },
-      "baseline": {
-        "games": 6,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 23.0,
-          "yards": 73.0,
-          "touchdowns": 1.0,
-          "carries_per_game": 3.83,
-          "yards_per_game": 12.17,
-          "touchdowns_per_game": 0.17,
-          "yards_per_carry": 3.17,
-          "touchdown_rate": 4.3
-        },
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 1.0,
-          "yards": 9.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.17,
-          "receptions_per_game": 0.17,
-          "yards_per_game": 1.5,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 100.0,
-          "yards_per_target": 9.0,
-          "yards_per_reception": 9.0,
-          "touchdown_rate": 0.0
         }
       },
       "model": {
@@ -654,15 +654,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -793,15 +793,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -932,15 +932,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -1071,15 +1071,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -1210,15 +1210,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -1349,15 +1349,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -1488,15 +1488,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -1549,145 +1549,6 @@
           "yards_per_target": 25.0,
           "yards_per_reception": 25.0,
           "touchdown_rate": 33.3
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0038608",
-      "player": "Kayshon Boutte",
-      "team": "NE",
-      "opponent": "SEA",
-      "position": "WR",
-      "game_id": "2026_01_NE_SEA",
-      "projection": {
-        "receiving": {
-          "targets": 3.4,
-          "receptions": 2.4,
-          "yards": 43.5,
-          "touchdowns": 0.46
-        }
-      },
-      "fantasy": {
-        "standard": 7.11,
-        "ppr": 9.51
-      },
-      "environment": {
-        "projected_team_points": 22.2,
-        "projected_game_total": 45.7,
-        "win_probability": 45.0,
-        "scoring_factor": 0.987,
-        "total_factor": 1.016
-      },
-      "matchup": {
-        "overall_rating": 2.7,
-        "passing_rating": 18.7,
-        "rushing_rating": -17.4,
-        "overall_factor": 1.008,
-        "passing_factor": 1.075,
-        "rushing_factor": 0.93
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NE",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "outdoor",
-        "stadium": "Lumen Field",
-        "weather": {
-          "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
-        },
-        "classification": "NEUTRAL",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 14,
-        "label": "Strong"
-      },
-      "baseline": {
-        "games": 14,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 46.0,
-          "receptions": 33.0,
-          "yards": 551.0,
-          "touchdowns": 6.0,
-          "targets_per_game": 3.29,
-          "receptions_per_game": 2.36,
-          "yards_per_game": 39.36,
-          "touchdowns_per_game": 0.43,
-          "catch_rate": 71.7,
-          "yards_per_target": 11.98,
-          "yards_per_reception": 16.7,
-          "touchdown_rate": 13.0
         }
       },
       "model": {
@@ -1766,15 +1627,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -1905,15 +1766,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -2044,15 +1905,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -2189,15 +2050,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -2334,15 +2195,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -2479,15 +2340,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -2623,15 +2484,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -2767,15 +2628,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -2911,15 +2772,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -3055,15 +2916,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -3199,15 +3060,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -3343,15 +3204,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -3482,15 +3343,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -3621,15 +3482,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -3760,15 +3621,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -3820,145 +3681,6 @@
           "catch_rate": 57.1,
           "yards_per_target": 4.43,
           "yards_per_reception": 7.75,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0036232",
-      "player": "Harrison Bryant",
-      "team": "SEA",
-      "opponent": "NE",
-      "position": "TE",
-      "game_id": "2026_01_NE_SEA",
-      "projection": {
-        "receiving": {
-          "targets": 1.2,
-          "receptions": 0.5,
-          "yards": 1.4,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 0.14,
-        "ppr": 0.64
-      },
-      "environment": {
-        "projected_team_points": 23.5,
-        "projected_game_total": 45.7,
-        "win_probability": 55.0,
-        "scoring_factor": 1.044,
-        "total_factor": 1.016
-      },
-      "matchup": {
-        "overall_rating": 1.5,
-        "passing_rating": 7.6,
-        "rushing_rating": -6.2,
-        "overall_factor": 1.004,
-        "passing_factor": 1.03,
-        "rushing_factor": 0.975
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "SEA",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "outdoor",
-        "stadium": "Lumen Field",
-        "weather": {
-          "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
-        },
-        "classification": "NEUTRAL",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 5,
-        "label": "Moderate"
-      },
-      "baseline": {
-        "games": 5,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 6.0,
-          "receptions": 2.0,
-          "yards": 7.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 1.2,
-          "receptions_per_game": 0.4,
-          "yards_per_game": 1.4,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 33.3,
-          "yards_per_target": 1.17,
-          "yards_per_reception": 3.5,
           "touchdown_rate": 0.0
         }
       },
@@ -4038,15 +3760,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -4099,145 +3821,6 @@
           "yards_per_target": 0.0,
           "yards_per_reception": 0.0,
           "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0035891",
-      "player": "Cody White",
-      "team": "SEA",
-      "opponent": "NE",
-      "position": "WR",
-      "game_id": "2026_01_NE_SEA",
-      "projection": {
-        "receiving": {
-          "targets": 0.5,
-          "receptions": 0.4,
-          "yards": 11.6,
-          "touchdowns": 0.13
-        }
-      },
-      "fantasy": {
-        "standard": 1.94,
-        "ppr": 2.34
-      },
-      "environment": {
-        "projected_team_points": 23.5,
-        "projected_game_total": 45.7,
-        "win_probability": 55.0,
-        "scoring_factor": 1.044,
-        "total_factor": 1.016
-      },
-      "matchup": {
-        "overall_rating": 1.5,
-        "passing_rating": 7.6,
-        "rushing_rating": -6.2,
-        "overall_factor": 1.004,
-        "passing_factor": 1.03,
-        "rushing_factor": 0.975
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "SEA",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "outdoor",
-        "stadium": "Lumen Field",
-        "weather": {
-          "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
-        },
-        "classification": "NEUTRAL",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 8,
-        "label": "Good"
-      },
-      "baseline": {
-        "games": 8,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 4.0,
-          "receptions": 3.0,
-          "yards": 90.0,
-          "touchdowns": 1.0,
-          "targets_per_game": 0.5,
-          "receptions_per_game": 0.38,
-          "yards_per_game": 11.25,
-          "touchdowns_per_game": 0.12,
-          "catch_rate": 75.0,
-          "yards_per_target": 22.5,
-          "yards_per_reception": 30.0,
-          "touchdown_rate": 25.0
         }
       },
       "model": {
@@ -4316,15 +3899,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -4455,15 +4038,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -4594,15 +4177,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -4733,15 +4316,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -4872,15 +4455,15 @@
         "stadium": "Lumen Field",
         "weather": {
           "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
+          "temperature_f": 63.1,
+          "feels_like_f": 61.8,
+          "humidity_pct": 68.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
+          "wind_mph": 4.7,
+          "wind_gust_mph": 12.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "classification": "NEUTRAL",
         "severity_score": 0.0,
@@ -4938,156 +4521,17 @@
       "model": {
         "sportsbook_independent": true
       }
-    },
-    {
-      "player_id": "00-0037745",
-      "player": "Velus Jones Jr.",
-      "team": "SEA",
-      "opponent": "NE",
-      "position": "WR",
-      "game_id": "2026_01_NE_SEA",
-      "projection": {
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 0.0,
-        "ppr": 0.0
-      },
-      "environment": {
-        "projected_team_points": 23.5,
-        "projected_game_total": 45.7,
-        "win_probability": 55.0,
-        "scoring_factor": 1.044,
-        "total_factor": 1.016
-      },
-      "matchup": {
-        "overall_rating": 1.5,
-        "passing_rating": 7.6,
-        "rushing_rating": -6.2,
-        "overall_factor": 1.004,
-        "passing_factor": 1.03,
-        "rushing_factor": 0.975
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "SEA",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "outdoor",
-        "stadium": "Lumen Field",
-        "weather": {
-          "forecast_time": "2026-09-09T20:00",
-          "temperature_f": 60.4,
-          "feels_like_f": 57.4,
-          "humidity_pct": 62.0,
-          "precip_probability_pct": 10.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 14.1,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
-        },
-        "classification": "NEUTRAL",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 4.0,
-          "yards": 32.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 4.0,
-          "yards_per_game": 32.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 8.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
     }
   ],
   "counts": {
-    "total": 36,
+    "total": 32,
     "QB": 4,
     "RB": 10,
-    "WR": 14,
-    "TE": 8
+    "WR": 11,
+    "TE": 7
   },
   "diagnostics": {
-    "slate_players": 59,
+    "slate_players": 55,
     "missing_player_metrics": 23,
     "missing_game_projection": 0,
     "missing_matchup_metrics": 0,

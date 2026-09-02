@@ -1963,7 +1963,7 @@ function SkillPlayerTable({
   );
 }
 
-export default function NFLPlayersPage() {
+export default function NFLNextPlayersPage() {
   const [
     seasonPlayers,
     setSeasonPlayers,
@@ -2046,7 +2046,7 @@ export default function NFLPlayersPage() {
           ),
 
           fetch(
-            "/data/nfl/slate.json",
+            "/data/nfl/next/slate.json",
             {
               cache: "no-store",
             },
@@ -2683,7 +2683,7 @@ export default function NFLPlayersPage() {
           <div className="mt-2 text-sm text-slate-500">
             {dataView ===
             "matchup"
-              ? "No players on the current slate match these filters."
+              ? "No players on the next slate match these filters."
               : "No NFL players match the selected filters."}
           </div>
         </section>

@@ -524,7 +524,7 @@ function WeatherReportCard({
   );
 }
 
-export default function NFLWeatherPage() {
+export default function NFLNextWeatherPage() {
   const [games, setGames] =
     useState<WeatherGame[]>([]);
 
@@ -590,7 +590,7 @@ export default function NFLWeatherPage() {
       try {
         const response =
           await fetch(
-            "/data/nfl/weather.json",
+            "/data/nfl/next/weather.json",
             {
               cache: "no-store",
             },
@@ -691,7 +691,7 @@ export default function NFLWeatherPage() {
             {sortedGames.length === 1
               ? "Report"
               : "Reports"}{" "}
-            Loaded For Today&apos;s Slate
+            Loaded For Next Slate
           </div>
         </div>
       ) : null}

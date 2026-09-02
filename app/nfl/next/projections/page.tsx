@@ -910,7 +910,7 @@ function RecommendationSection({
   );
 }
 
-export default function NFLProjectionsPage() {
+export default function NFLNextProjectionsPage() {
   const [rankings, setRankings] =
     useState<any>({});
 
@@ -950,21 +950,21 @@ export default function NFLProjectionsPage() {
           teamsRes,
         ] = await Promise.all([
           fetch(
-            "/data/nfl/rankings.json",
+            "/data/nfl/next/rankings.json",
             {
               cache: "no-store",
             },
           ),
 
           fetch(
-            "/data/nfl/game_projections.json",
+            "/data/nfl/next/game_projections.json",
             {
               cache: "no-store",
             },
           ),
 
           fetch(
-            "/data/nfl/slate.json",
+            "/data/nfl/next/slate.json",
             {
               cache: "no-store",
             },
@@ -1340,7 +1340,7 @@ export default function NFLProjectionsPage() {
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
           {games.length} NFL Games
-          Loaded For Current Slate
+          Loaded For Next Slate
         </div>
       </div>
 

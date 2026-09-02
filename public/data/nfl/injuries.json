@@ -1,22 +1,35 @@
 {
   "season": 2026,
-  "week": "",
-  "injury_report_week": "",
-  "roster_week": "",
-  "updated_at": "2026-08-31T05:04:29.693051+00:00",
-  "injuries": [],
-  "counts": {
-    "total": 0,
-    "teams": 0,
-    "official_report_rows": 0,
-    "reserve_rows_added": 0
-  },
+  "generated_at": "2026-09-02T06:18:09.785471+00:00",
   "source": {
-    "provider": "nflreadpy",
-    "dataset": "nflverse",
-    "functions": [
-      "load_injuries",
-      "load_rosters_weekly"
-    ]
-  }
+    "primary": "ESPN Site API",
+    "fallback": "processed NFL roster reserve designations",
+    "league_url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries",
+    "team_url_template": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/{team_id}/injuries",
+    "errors": []
+  },
+  "injury_count": 0,
+  "team_count": 0,
+  "provider_counts": {
+    "espn_raw": 0,
+    "roster_reserve_raw": 0,
+    "final": 0
+  },
+  "status_counts": {
+    "OUT": 0,
+    "DOUBTFUL": 0,
+    "QUESTIONABLE": 0,
+    "IR": 0,
+    "PUP": 0,
+    "NFI": 0,
+    "INJURY": 0,
+    "OTHER": 0
+  },
+  "source_counts": {
+    "ESPN": 0,
+    "NFL roster": 0,
+    "OTHER": 0
+  },
+  "teams": {},
+  "injuries": []
 }

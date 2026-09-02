@@ -595,7 +595,7 @@ function GameSelector({
   );
 }
 
-export default function NFLPage() {
+export default function NFLNextPage() {
   const [games, setGames] =
     useState<NFLGame[]>([]);
 
@@ -618,7 +618,7 @@ export default function NFLPage() {
           teamsResponse,
         ] = await Promise.all([
           fetch(
-            "/data/nfl/slate.json",
+            "/data/nfl/next/slate.json",
             {
               cache: "no-store",
             },
@@ -744,7 +744,7 @@ export default function NFLPage() {
     <div className="space-y-5">
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          {games.length} NFL Games Loaded For Current Slate
+          {games.length} NFL Games Loaded For Next Slate
         </div>
       </div>
 

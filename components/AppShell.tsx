@@ -17,7 +17,7 @@ import {
   Shield,
 } from "lucide-react";
 
-type Sport = "MLB" | "NFL" | "NBA" | "NHL";
+type Sport = "MLB" | "NFL" | "NBA" | "NHL" | "WNBA" | "MLS" | "UFC";
 
 type NavItem = {
   label: string;
@@ -37,6 +37,9 @@ const sports: {
   { label: "NFL", emoji: "🏈", path: "/nfl" },
   { label: "NBA", emoji: "🏀", path: "/nba" },
   { label: "NHL", emoji: "🏒", path: "/nhl" },
+  { label: "WNBA", emoji: "🏀", path: "/wnba" },
+  { label: "MLS", emoji: "⚽", path: "/mls" },
+  { label: "UFC", emoji: "🥊", path: "/ufc" },
 ];
 
 const mlbNavItems: NavItem[] = [
@@ -234,12 +237,12 @@ export function AppShell({
    */
   const currentSlateLabel =
     activeSport === "NFL"
-      ? "Today's Slate"
+      ? "Next Slate"
       : "Today's Slate";
 
   const nextSlateLabel =
     activeSport === "NFL"
-      ? "Next Slate"
+      ? "Future Slate"
       : "Tomorrow's Slate";
 
   return (

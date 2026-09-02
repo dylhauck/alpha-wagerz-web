@@ -1047,7 +1047,7 @@ function defaultSortForView(
   };
 }
 
-export default function NFLTeamsPage() {
+export default function NFLNextTeamsPage() {
   const [payload, setPayload] =
     useState<TeamRankingsPayload | null>(
       null,

@@ -535,7 +535,7 @@ function InjuryTable({
   );
 }
 
-export default function NFLInjuryReportPage() {
+export default function NFLNextInjuryReportPage() {
   const [rows, setRows] =
     useState<Injury[]>([]);
 
@@ -573,7 +573,7 @@ export default function NFLInjuryReportPage() {
           ),
 
           fetch(
-            "/data/nfl/slate.json",
+            "/data/nfl/next/slate.json",
             {
               cache: "no-store",
             },
@@ -862,7 +862,7 @@ export default function NFLInjuryReportPage() {
           {rows.length === 1
             ? "Injury"
             : "Injuries"}{" "}
-          Loaded For Current Slate
+          Loaded For Next Slate
         </div>
       </div>
 
@@ -891,7 +891,7 @@ export default function NFLInjuryReportPage() {
           </h1>
 
           <p className="mt-1 text-sm text-slate-400">
-            Current injury status
+            Injury status
             for the selected matchup.
           </p>
         </div>

@@ -1582,6 +1582,136 @@
       }
     },
     {
+      "player_id": "00-0036849",
+      "player": "Tutu Atwell",
+      "team": "LAR",
+      "opponent": "SF",
+      "position": "WR",
+      "game_id": "2026_01_SF_LA",
+      "projection": {
+        "receiving": {
+          "targets": 1.9,
+          "receptions": 0.8,
+          "yards": 28.4,
+          "touchdowns": 0.16
+        }
+      },
+      "fantasy": {
+        "standard": 3.8,
+        "ppr": 4.6
+      },
+      "environment": {
+        "projected_team_points": 26.3,
+        "projected_game_total": 48.4,
+        "win_probability": 65.6,
+        "scoring_factor": 1.169,
+        "total_factor": 1.076
+      },
+      "matchup": {
+        "overall_rating": 22.4,
+        "passing_rating": 35.7,
+        "rushing_rating": 12.0,
+        "overall_factor": 1.067,
+        "passing_factor": 1.143,
+        "rushing_factor": 1.048
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "LAR",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "fixed",
+        "stadium": "SoFi Stadium",
+        "weather": {
+          "conditions": "Indoor"
+        },
+        "classification": "INDOOR",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 8,
+        "label": "Good"
+      },
+      "baseline": {
+        "games": 8,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 15.0,
+          "receptions": 6.0,
+          "yards": 192.0,
+          "touchdowns": 1.0,
+          "targets_per_game": 1.88,
+          "receptions_per_game": 0.75,
+          "yards_per_game": 24.0,
+          "touchdowns_per_game": 0.12,
+          "catch_rate": 40.0,
+          "yards_per_target": 12.8,
+          "yards_per_reception": 32.0,
+          "touchdown_rate": 6.7
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
       "player_id": "00-0038359",
       "player": "Xavier Smith",
       "team": "LAR",
@@ -2344,141 +2474,6 @@
       },
       "baseline": {
         "games": 7,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0038678",
-      "player": "Jordan Mims",
-      "team": "SF",
-      "opponent": "LAR",
-      "position": "RB",
-      "game_id": "2026_01_SF_LA",
-      "projection": {
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 0.0,
-        "ppr": 0.0
-      },
-      "environment": {
-        "projected_team_points": 22.1,
-        "projected_game_total": 48.4,
-        "win_probability": 34.4,
-        "scoring_factor": 0.982,
-        "total_factor": 1.076
-      },
-      "matchup": {
-        "overall_rating": 2.6,
-        "passing_rating": 8.8,
-        "rushing_rating": -7.2,
-        "overall_factor": 1.008,
-        "passing_factor": 1.035,
-        "rushing_factor": 0.971
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "SF",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
         "passing": {
           "completions": 0.0,
           "attempts": 0.0,
@@ -3440,6 +3435,136 @@
       }
     },
     {
+      "player_id": "00-0035719",
+      "player": "Deebo Samuel Sr.",
+      "team": "SF",
+      "opponent": "LAR",
+      "position": "WR",
+      "game_id": "2026_01_SF_LA",
+      "projection": {
+        "receiving": {
+          "targets": 6.9,
+          "receptions": 5.0,
+          "yards": 52.6,
+          "touchdowns": 0.32
+        }
+      },
+      "fantasy": {
+        "standard": 7.18,
+        "ppr": 12.18
+      },
+      "environment": {
+        "projected_team_points": 22.1,
+        "projected_game_total": 48.4,
+        "win_probability": 34.4,
+        "scoring_factor": 0.982,
+        "total_factor": 1.076
+      },
+      "matchup": {
+        "overall_rating": 2.6,
+        "passing_rating": 8.8,
+        "rushing_rating": -7.2,
+        "overall_factor": 1.008,
+        "passing_factor": 1.035,
+        "rushing_factor": 0.971
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "SF",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "fixed",
+        "stadium": "SoFi Stadium",
+        "weather": {
+          "conditions": "Indoor"
+        },
+        "classification": "INDOOR",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 16,
+        "label": "Strong"
+      },
+      "baseline": {
+        "games": 16,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 17.0,
+          "yards": 75.0,
+          "touchdowns": 1.0,
+          "carries_per_game": 1.06,
+          "yards_per_game": 4.69,
+          "touchdowns_per_game": 0.06,
+          "yards_per_carry": 4.41,
+          "touchdown_rate": 5.9
+        },
+        "receiving": {
+          "targets": 99.0,
+          "receptions": 72.0,
+          "yards": 727.0,
+          "touchdowns": 5.0,
+          "targets_per_game": 6.19,
+          "receptions_per_game": 4.5,
+          "yards_per_game": 45.44,
+          "touchdowns_per_game": 0.31,
+          "catch_rate": 72.7,
+          "yards_per_target": 7.34,
+          "yards_per_reception": 10.1,
+          "touchdown_rate": 5.1
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
       "player_id": "00-0032775",
       "player": "Demarcus Robinson",
       "team": "SF",
@@ -3692,136 +3817,6 @@
           "catch_rate": 66.7,
           "yards_per_target": 8.67,
           "yards_per_reception": 13.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0034867",
-      "player": "Malik Turner",
-      "team": "SF",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_01_SF_LA",
-      "projection": {
-        "receiving": {
-          "targets": 0.6,
-          "receptions": 0.2,
-          "yards": 0.0,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 0.0,
-        "ppr": 0.2
-      },
-      "environment": {
-        "projected_team_points": 22.1,
-        "projected_game_total": 48.4,
-        "win_probability": 34.4,
-        "scoring_factor": 0.982,
-        "total_factor": 1.076
-      },
-      "matchup": {
-        "overall_rating": 2.6,
-        "passing_rating": 8.8,
-        "rushing_rating": -7.2,
-        "overall_factor": 1.008,
-        "passing_factor": 1.035,
-        "rushing_factor": 0.971
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "SF",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 2,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 2,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.5,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
           "touchdown_rate": 0.0
         }
       },
@@ -4093,13 +4088,13 @@
   "counts": {
     "total": 31,
     "QB": 4,
-    "RB": 7,
-    "WR": 11,
+    "RB": 6,
+    "WR": 12,
     "TE": 9
   },
   "diagnostics": {
-    "slate_players": 58,
-    "missing_player_metrics": 27,
+    "slate_players": 52,
+    "missing_player_metrics": 21,
     "missing_game_projection": 0,
     "missing_matchup_metrics": 0,
     "missing_injury_context": 0,
