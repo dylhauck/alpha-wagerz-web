@@ -34,6 +34,7 @@ type NFLGame = {
 type Injury = {
   player_id?: string;
   player_name?: string;
+  player?: string;
   name?: string;
 
   team?: string;
@@ -45,6 +46,9 @@ type Injury = {
   injury?: string;
   description?: string;
   detail?: string;
+
+  estimated_return_date?: string;
+  source_updated?: string;
 
   source?: string;
 };
@@ -422,9 +426,6 @@ function InjuryTable({
           />
 
           <div>
-            <div className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200/70">
-              Team Injury Report
-            </div>
 
             <h2 className="mt-1 text-xl font-black text-white">
               {team}
@@ -447,7 +448,7 @@ function InjuryTable({
         </div>
       ) : (
         <div className="table-scroll overflow-x-auto">
-          <table className="min-w-[900px] w-full text-left">
+          <table className="min-w-[1080px] w-full text-left">
             <thead className="bg-white/[0.04]">
               <tr className="border-b border-white/10 text-[10px] font-black uppercase tracking-[0.14em] text-slate-500">
                 <th className="px-4 py-3">
@@ -467,6 +468,10 @@ function InjuryTable({
                 </th>
 
                 <th className="px-4 py-3">
+                  Est. Return
+                </th>
+
+                <th className="px-4 py-3">
                   Detail
                 </th>
               </tr>
@@ -477,6 +482,7 @@ function InjuryTable({
                 (row, index) => {
                   const name =
                     row.player_name ||
+                    row.player ||
                     row.name ||
                     "Unknown Player";
 
@@ -516,6 +522,11 @@ function InjuryTable({
                       <td className="px-4 py-4 text-sm font-bold text-slate-300">
                         {row.injury ||
                           row.description ||
+                          "Undisclosed"}
+                      </td>
+
+                      <td className="whitespace-nowrap px-4 py-4 text-sm font-bold text-slate-300">
+                        {row.estimated_return_date ||
                           "—"}
                       </td>
 
@@ -720,10 +731,12 @@ export default function NFLNextInjuryReportPage() {
               ) ||
               (
                 a.player_name ||
+                a.player ||
                 a.name ||
                 ""
               ).localeCompare(
                 b.player_name ||
+                  b.player ||
                   b.name ||
                   "",
               )
@@ -890,7 +903,7 @@ export default function NFLNextInjuryReportPage() {
             {selectedHome}
           </h1>
 
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-sm font-bold text-slate-400">
             Injury status
             for the selected matchup.
           </p>

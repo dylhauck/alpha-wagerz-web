@@ -34,6 +34,7 @@ type NFLGame = {
 type Injury = {
   player_id?: string;
   player_name?: string;
+  player?: string;
   name?: string;
 
   team?: string;
@@ -45,6 +46,8 @@ type Injury = {
   injury?: string;
   description?: string;
   detail?: string;
+
+  estimated_return_date?: string;
 
   source?: string;
 };
@@ -422,9 +425,6 @@ function InjuryTable({
           />
 
           <div>
-            <div className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200/70">
-              Team Injury Report
-            </div>
 
             <h2 className="mt-1 text-xl font-black text-white">
               {team}
@@ -467,6 +467,10 @@ function InjuryTable({
                 </th>
 
                 <th className="px-4 py-3">
+                  Est. Return
+                </th>
+
+                <th className="px-4 py-3">
                   Detail
                 </th>
               </tr>
@@ -477,6 +481,7 @@ function InjuryTable({
                 (row, index) => {
                   const name =
                     row.player_name ||
+                    row.player ||
                     row.name ||
                     "Unknown Player";
 
@@ -519,10 +524,15 @@ function InjuryTable({
                           "—"}
                       </td>
 
+                      <td className="px-4 py-4 text-sm font-bold text-slate-300">
+  {row.estimated_return_date || "—"}
+</td>
+
                       <td className="max-w-xl px-4 py-4 text-sm text-slate-400">
                         {row.detail ||
                           "—"}
                       </td>
+
                     </tr>
                   );
                 },
@@ -890,9 +900,9 @@ export default function NFLInjuryReportPage() {
             {selectedHome}
           </h1>
 
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-sm font-bold text-slate-400">
             Current injury status
-            for the selected matchup.
+            for the selected matchup
           </p>
         </div>
 

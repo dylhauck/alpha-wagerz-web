@@ -2,49 +2,140 @@
   "games": [
     {
       "game_id": "2026_01_SF_LA",
+      "event_id": 71387370,
       "season": 2026,
       "week": 1,
       "game_type": "REG",
       "game_date": "2026-09-10",
       "game_time": "20:35",
+      "commence_time": "2026-09-11T00:35:00Z",
       "away_team": "SF",
       "home_team": "LAR",
       "moneyline": {
-        "away": 164.0,
-        "home": -198.0,
-        "away_implied_probability": 0.3788,
-        "home_implied_probability": 0.6644,
-        "away_no_vig_probability": 0.3631,
-        "home_no_vig_probability": 0.6369
+        "away": 172.0,
+        "home": -205.0,
+        "away_implied_probability": 0.3676,
+        "home_implied_probability": 0.6721,
+        "away_no_vig_probability": 0.3536,
+        "home_no_vig_probability": 0.6464
       },
       "spread": {
         "away": 3.5,
         "home": -3.5,
-        "raw_spread_line": 3.5
+        "away_price": -102.0,
+        "home_price": -120.0
       },
       "game_total": 48.5,
+      "game_total_prices": {
+        "over": -105.0,
+        "under": -115.0
+      },
       "team_totals": {
         "away": 22.5,
-        "home": 26.0,
-        "source": "derived_from_spread_and_total"
+        "home": 26.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 22.5,
+          "over_price": -111.0,
+          "under_price": -115.0
+        },
+        "home": {
+          "line": 26.5,
+          "over_price": -120.0,
+          "under_price": -106.0
+        },
+        "source": "sportsbook"
       },
       "available_markets": [
         "moneyline",
         "spread",
         "game_total",
-        "team_total"
+        "team_total",
+        "implied_team_total"
       ],
       "source": {
-        "provider": "nflverse_slate",
-        "sportsbook": "consensus/closing",
-        "note": "Normalized from the sportsbook fields already present in the NFL slate. Projection models do not consume this file."
-      }
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": 172.0,
+              "home": -205.0
+            },
+            "spread": {
+              "away": 3.5,
+              "home": -3.5,
+              "away_price": -102.0,
+              "home_price": -120.0
+            },
+            "game_total": {
+              "line": 48.5,
+              "over_price": -105.0,
+              "under_price": -115.0
+            },
+            "team_total": {
+              "home": {
+                "line": 26.5,
+                "over_price": -120.0,
+                "under_price": -106.0
+              },
+              "away": {
+                "line": 22.5,
+                "over_price": -111.0,
+                "under_price": -115.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": 170.0,
+              "home": -208.0
+            },
+            "spread": {
+              "away": 3.5,
+              "home": -3.5,
+              "away_price": -102.0,
+              "home_price": -119.0
+            },
+            "game_total": {
+              "line": 48.5,
+              "over_price": -109.0,
+              "under_price": -112.0
+            },
+            "team_total": {
+              "home": {
+                "line": 36.5,
+                "over_price": 500.0,
+                "under_price": -714.0
+              },
+              "away": {
+                "line": 31.5,
+                "over_price": 500.0,
+                "under_price": -714.0
+              }
+            }
+          }
+        }
+      ]
     }
   ],
   "counts": {
     "games": 1,
-    "live_games": 0,
-    "fallback_games": 1,
+    "live_games": 1,
+    "fallback_games": 0,
     "moneyline": 1,
     "spread": 1,
     "game_total": 1,

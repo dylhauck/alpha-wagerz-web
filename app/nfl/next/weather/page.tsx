@@ -680,6 +680,11 @@ export default function NFLNextWeatherPage() {
   const selectedGame =
     sortedGames[selectedIndex] || null;
 
+  const selectedAway =
+    selectedGame?.away_team || "AWAY";
+
+  const selectedHome =
+    selectedGame?.home_team || "HOME";
 
   return (
     <div className="space-y-5">
@@ -746,6 +751,25 @@ export default function NFLNextWeatherPage() {
               </div>
             </div>
           </section>
+
+          {selectedGame ? (
+            <section className="glass rounded-3xl p-5">
+              <div className="text-center">
+                <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
+                  NFL Weather Report
+                </div>
+
+                <h1 className="mx-auto mt-2 pb-2 text-3xl font-black leading-tight neon-text sm:text-5xl">
+                  {selectedAway} @{" "}
+                  {selectedHome}
+                </h1>
+
+                <p className="mt-1 text-sm font-bold text-slate-400">
+                  Game-day weather conditions and projected on-field impact
+                </p>
+              </div>
+            </section>
+          ) : null}
 
           {selectedGame ? (
             <WeatherReportCard

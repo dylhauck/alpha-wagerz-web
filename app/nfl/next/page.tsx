@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { NFLTeamLogo } from "@/components/nfl/NFLTeamLogo";
+import PlayerPropsModal from "@/components/nfl/PlayerPropsModal";
 import {
   CalendarDays,
   Clock3,
@@ -70,6 +71,240 @@ type NFLGame = {
     home?: NFLPlayer[];
   };
 };
+
+type NFLOddsGame = {
+  event_id?: string | number;
+  game_id?: string | number;
+  away_team?: string;
+  home_team?: string;
+};
+
+type SelectedPlayer = {
+  playerName: string;
+  playerId?: string | null;
+  team?: string | null;
+  position?: string | null;
+};
+
+type PositionFilter =
+  | "ALL"
+  | "QB"
+  | "RB"
+  | "WR"
+  | "TE";
+
+type SortDirection =
+  | "asc"
+  | "desc";
+
+type PlayerSortKey =
+  | "player"
+  | "position"
+  | keyof Pick<
+      NFLPlayer,
+      | "games_vs_opponent"
+      | "pass_yards_per_game"
+      | "pass_tds_per_game"
+      | "interceptions_per_game"
+      | "carries_per_game"
+      | "rush_yards_per_game"
+      | "rush_tds_per_game"
+      | "targets_per_game"
+      | "receptions_per_game"
+      | "receiving_yards_per_game"
+      | "receiving_tds_per_game"
+      | "fantasy_points_per_game"
+    >;
+
+type PlayerColumn = {
+  key: PlayerSortKey;
+  label: string;
+  decimals?: number;
+  align?: "left" | "center";
+};
+
+const POSITION_FILTERS: PositionFilter[] = [
+  "QB",
+  "RB",
+  "WR",
+  "TE",
+];
+
+const ALL_COLUMNS: PlayerColumn[] = [
+  {
+    key: "player",
+    label: "Player",
+    align: "left",
+  },
+  {
+    key: "position",
+    label: "Pos",
+    align: "center",
+  },
+  {
+    key: "games_vs_opponent",
+    label: "Games vs Opp",
+    decimals: 0,
+    align: "center",
+  },
+  {
+    key: "fantasy_points_per_game",
+    label: "Fantasy/G",
+    align: "center",
+  },
+];
+
+const QB_COLUMNS: PlayerColumn[] = [
+  {
+    key: "player",
+    label: "Player",
+    align: "left",
+  },
+  {
+    key: "position",
+    label: "Pos",
+    align: "center",
+  },
+  {
+    key: "games_vs_opponent",
+    label: "Games vs Opp",
+    decimals: 0,
+    align: "center",
+  },
+  {
+    key: "pass_yards_per_game",
+    label: "Pass Yds/G",
+    align: "center",
+  },
+  {
+    key: "pass_tds_per_game",
+    label: "Pass TD/G",
+    align: "center",
+  },
+  {
+    key: "interceptions_per_game",
+    label: "INT/G",
+    align: "center",
+  },
+  {
+    key: "rush_yards_per_game",
+    label: "Rush Yds/G",
+    align: "center",
+  },
+  {
+    key: "rush_tds_per_game",
+    label: "Rush TD/G",
+    align: "center",
+  },
+  {
+    key: "fantasy_points_per_game",
+    label: "Fantasy/G",
+    align: "center",
+  },
+];
+
+const RB_COLUMNS: PlayerColumn[] = [
+  {
+    key: "player",
+    label: "Player",
+    align: "left",
+  },
+  {
+    key: "position",
+    label: "Pos",
+    align: "center",
+  },
+  {
+    key: "games_vs_opponent",
+    label: "Games vs Opp",
+    decimals: 0,
+    align: "center",
+  },
+  {
+    key: "carries_per_game",
+    label: "Carries/G",
+    align: "center",
+  },
+  {
+    key: "rush_yards_per_game",
+    label: "Rush Yds/G",
+    align: "center",
+  },
+  {
+    key: "rush_tds_per_game",
+    label: "Rush TD/G",
+    align: "center",
+  },
+  {
+    key: "targets_per_game",
+    label: "Targets/G",
+    align: "center",
+  },
+  {
+    key: "receptions_per_game",
+    label: "Rec/G",
+    align: "center",
+  },
+  {
+    key: "receiving_yards_per_game",
+    label: "Rec Yds/G",
+    align: "center",
+  },
+  {
+    key: "receiving_tds_per_game",
+    label: "Rec TD/G",
+    align: "center",
+  },
+  {
+    key: "fantasy_points_per_game",
+    label: "Fantasy/G",
+    align: "center",
+  },
+];
+
+const RECEIVER_COLUMNS: PlayerColumn[] = [
+  {
+    key: "player",
+    label: "Player",
+    align: "left",
+  },
+  {
+    key: "position",
+    label: "Pos",
+    align: "center",
+  },
+  {
+    key: "games_vs_opponent",
+    label: "Games vs Opp",
+    decimals: 0,
+    align: "center",
+  },
+  {
+    key: "targets_per_game",
+    label: "Targets/G",
+    align: "center",
+  },
+  {
+    key: "receptions_per_game",
+    label: "Rec/G",
+    align: "center",
+  },
+  {
+    key: "receiving_yards_per_game",
+    label: "Rec Yds/G",
+    align: "center",
+  },
+  {
+    key: "receiving_tds_per_game",
+    label: "Rec TD/G",
+    align: "center",
+  },
+  {
+    key: "fantasy_points_per_game",
+    label: "Fantasy/G",
+    align: "center",
+  },
+];
 
 function safeNumber(value: unknown) {
   const numeric = Number(value);
@@ -221,6 +456,146 @@ function getPlayerName(player: NFLPlayer) {
   );
 }
 
+function normalizePosition(
+  value?: string,
+): PositionFilter | "" {
+  const position =
+    String(value || "")
+      .trim()
+      .toUpperCase();
+
+  if (
+    position === "QB" ||
+    position === "RB" ||
+    position === "WR" ||
+    position === "TE"
+  ) {
+    return position;
+  }
+
+  return "";
+}
+
+function columnsForPosition(
+  position: PositionFilter,
+) {
+  if (position === "QB") {
+    return QB_COLUMNS;
+  }
+
+  if (position === "RB") {
+    return RB_COLUMNS;
+  }
+
+  if (
+    position === "WR" ||
+    position === "TE"
+  ) {
+    return RECEIVER_COLUMNS;
+  }
+
+  return ALL_COLUMNS;
+}
+
+function playerSortValue(
+  player: NFLPlayer,
+  key: PlayerSortKey,
+): string | number | null {
+  if (key === "player") {
+    return getPlayerName(player);
+  }
+
+  if (key === "position") {
+    return normalizePosition(
+      player.position,
+    );
+  }
+
+  const value = player[key];
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return null;
+  }
+
+  const numeric = Number(value);
+
+  return Number.isFinite(numeric)
+    ? numeric
+    : null;
+}
+
+function comparePlayerValues(
+  a: string | number | null,
+  b: string | number | null,
+  direction: SortDirection,
+) {
+  const aMissing =
+    a === null ||
+    a === undefined ||
+    a === "";
+
+  const bMissing =
+    b === null ||
+    b === undefined ||
+    b === "";
+
+  if (aMissing && bMissing) {
+    return 0;
+  }
+
+  if (aMissing) {
+    return 1;
+  }
+
+  if (bMissing) {
+    return -1;
+  }
+
+  let comparison = 0;
+
+  if (
+    typeof a === "number" &&
+    typeof b === "number"
+  ) {
+    comparison = a - b;
+  } else {
+    comparison = String(a).localeCompare(
+      String(b),
+      undefined,
+      {
+        numeric: true,
+        sensitivity: "base",
+      },
+    );
+  }
+
+  return direction === "asc"
+    ? comparison
+    : -comparison;
+}
+
+function defaultSortForPosition(
+  position: PositionFilter,
+): {
+  key: PlayerSortKey;
+  direction: SortDirection;
+} {
+  if (position === "ALL") {
+    return {
+      key: "player",
+      direction: "asc",
+    };
+  }
+
+  return {
+    key: "fantasy_points_per_game",
+    direction: "desc",
+  };
+}
+
 function TeamMatchupCard({
   team,
   teams,
@@ -277,224 +652,363 @@ function TeamMatchupCard({
   );
 }
 
-function StatBox({
-  label,
-  value,
+function PositionButton({
+  position,
+  active,
+  onClick,
 }: {
-  label: string;
-  value: string;
+  position: PositionFilter;
+  active: boolean;
+  onClick: () => void;
 }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-center">
-      <div className="text-[9px] font-black uppercase tracking-[0.12em] text-slate-500">
-        {label}
-      </div>
-
-      <div className="mt-1 text-sm font-black text-white">
-        {value}
-      </div>
-    </div>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`rounded-xl border px-5 py-3 text-sm font-black transition ${
+        active
+          ? "border-cyan-300/50 bg-cyan-300/15 text-cyan-100 shadow-[0_0_18px_rgba(35,216,255,0.12)]"
+          : "border-white/10 bg-white/[0.025] text-slate-500 hover:border-white/20 hover:text-white"
+      }`}
+    >
+      {position}
+    </button>
   );
 }
 
-function QuarterbackRow({
-  player,
+function SortablePlayerHeader({
+  column,
+  sortKey,
+  sortDirection,
+  onSort,
 }: {
-  player: NFLPlayer;
+  column: PlayerColumn;
+  sortKey: PlayerSortKey;
+  sortDirection: SortDirection;
+  onSort: (key: PlayerSortKey) => void;
 }) {
+  const active =
+    sortKey === column.key;
+
   return (
-    <div className="grid gap-2 rounded-2xl border border-white/10 bg-white/[0.025] p-3 lg:grid-cols-[190px_repeat(7,minmax(82px,1fr))]">
-      <div className="min-w-0">
-        <div className="truncate font-black text-white">
-          {getPlayerName(player)}
-        </div>
+    <th
+      className={`whitespace-nowrap px-4 py-3 ${
+        column.align === "center"
+          ? "text-center"
+          : "text-left"
+      }`}
+    >
+      <button
+        type="button"
+        onClick={() =>
+          onSort(column.key)
+        }
+        className={`inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.12em] transition ${
+          active
+            ? "text-cyan-200"
+            : "text-slate-500 hover:text-white"
+        }`}
+      >
+        <span>{column.label}</span>
 
-        <div className="text-xs font-bold text-slate-500">
-          QB
-        </div>
-      </div>
-
-      <StatBox
-        label="Games vs Opp"
-        value={formatNumber(
-          player.games_vs_opponent,
-          0,
-        )}
-      />
-
-      <StatBox
-        label="Pass Yds/G"
-        value={formatNumber(
-          player.pass_yards_per_game,
-        )}
-      />
-
-      <StatBox
-        label="Pass TD/G"
-        value={formatNumber(
-          player.pass_tds_per_game,
-        )}
-      />
-
-      <StatBox
-        label="INT/G"
-        value={formatNumber(
-          player.interceptions_per_game,
-        )}
-      />
-
-      <StatBox
-        label="Rush Yds/G"
-        value={formatNumber(
-          player.rush_yards_per_game,
-        )}
-      />
-
-      <StatBox
-        label="Rush TD/G"
-        value={formatNumber(
-          player.rush_tds_per_game,
-        )}
-      />
-
-      <StatBox
-        label="Fantasy/G"
-        value={formatNumber(
-          player.fantasy_points_per_game,
-        )}
-      />
-    </div>
-  );
-}
-
-function SkillPlayerRow({
-  player,
-}: {
-  player: NFLPlayer;
-}) {
-  return (
-    <div className="grid gap-2 rounded-2xl border border-white/10 bg-white/[0.025] p-3 lg:grid-cols-[190px_repeat(7,minmax(82px,1fr))]">
-      <div className="min-w-0">
-        <div className="truncate font-black text-white">
-          {getPlayerName(player)}
-        </div>
-
-        <div className="text-xs font-bold text-slate-500">
-          {player.position || "—"}
-        </div>
-      </div>
-
-      <StatBox
-        label="Games vs Opp"
-        value={formatNumber(
-          player.games_vs_opponent,
-          0,
-        )}
-      />
-
-      <StatBox
-        label="Carries/G"
-        value={formatNumber(
-          player.carries_per_game,
-        )}
-      />
-
-      <StatBox
-        label="Rush Yds/G"
-        value={formatNumber(
-          player.rush_yards_per_game,
-        )}
-      />
-
-      <StatBox
-        label="Targets/G"
-        value={formatNumber(
-          player.targets_per_game,
-        )}
-      />
-
-      <StatBox
-        label="Rec/G"
-        value={formatNumber(
-          player.receptions_per_game,
-        )}
-      />
-
-      <StatBox
-        label="Rec Yds/G"
-        value={formatNumber(
-          player.receiving_yards_per_game,
-        )}
-      />
-
-      <StatBox
-        label="Fantasy/G"
-        value={formatNumber(
-          player.fantasy_points_per_game,
-        )}
-      />
-    </div>
+        <span
+          className={
+            active
+              ? "opacity-100"
+              : "opacity-35"
+          }
+        >
+          {active
+            ? sortDirection === "asc"
+              ? "▲"
+              : "▼"
+            : "↕"}
+        </span>
+      </button>
+    </th>
   );
 }
 
 function PlayerMatchupTable({
   title,
   players,
+  onPlayerClick,
 }: {
   title: string;
   players: NFLPlayer[];
+  onPlayerClick: (player: NFLPlayer) => void;
 }) {
-  const quarterbacks = players.filter(
-    (player) =>
-      String(
-        player.position || "",
-      ).toUpperCase() === "QB",
-  );
+  const [
+    positionFilter,
+    setPositionFilter,
+  ] =
+    useState<PositionFilter>("ALL");
 
-  const skillPlayers = players.filter(
-    (player) =>
-      String(
-        player.position || "",
-      ).toUpperCase() !== "QB",
-  );
+  const [sortKey, setSortKey] =
+    useState<PlayerSortKey>("player");
+
+  const [
+    sortDirection,
+    setSortDirection,
+  ] =
+    useState<SortDirection>("asc");
+
+  const columns =
+    useMemo(
+      () =>
+        columnsForPosition(
+          positionFilter,
+        ),
+      [positionFilter],
+    );
+
+  const filteredPlayers =
+    useMemo(() => {
+      if (positionFilter === "ALL") {
+        return players.filter((player) =>
+          Boolean(
+            normalizePosition(
+              player.position,
+            ),
+          ),
+        );
+      }
+
+      return players.filter(
+        (player) =>
+          normalizePosition(
+            player.position,
+          ) === positionFilter,
+      );
+    }, [
+      players,
+      positionFilter,
+    ]);
+
+  const sortedPlayers =
+    useMemo(
+      () =>
+        [...filteredPlayers].sort(
+          (a, b) => {
+            const comparison =
+              comparePlayerValues(
+                playerSortValue(
+                  a,
+                  sortKey,
+                ),
+                playerSortValue(
+                  b,
+                  sortKey,
+                ),
+                sortDirection,
+              );
+
+            if (comparison !== 0) {
+              return comparison;
+            }
+
+            return getPlayerName(
+              a,
+            ).localeCompare(
+              getPlayerName(b),
+            );
+          },
+        ),
+      [
+        filteredPlayers,
+        sortKey,
+        sortDirection,
+      ],
+    );
+
+  function handlePositionChange(
+    position: PositionFilter,
+  ) {
+    setPositionFilter(position);
+
+    const nextSort =
+      defaultSortForPosition(
+        position,
+      );
+
+    setSortKey(nextSort.key);
+    setSortDirection(
+      nextSort.direction,
+    );
+  }
+
+  function handleSort(
+    key: PlayerSortKey,
+  ) {
+    if (key === sortKey) {
+      setSortDirection(
+        (current) =>
+          current === "asc"
+            ? "desc"
+            : "asc",
+      );
+
+      return;
+    }
+
+    setSortKey(key);
+
+    if (
+      key === "player" ||
+      key === "position"
+    ) {
+      setSortDirection("asc");
+    } else {
+      setSortDirection("desc");
+    }
+  }
 
   return (
-    <section className="glass rounded-3xl p-4">
-      <div className="mb-4">
+    <section className="glass overflow-hidden rounded-3xl">
+      <div className="p-5">
         <div className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200/70">
-          Opponent History
+          Matchup History
         </div>
 
         <h2 className="mt-1 text-xl font-black text-white">
           {title}
         </h2>
+
+        <div className="mt-5 flex flex-wrap justify-center gap-2">
+          {POSITION_FILTERS.map(
+            (position) => (
+              <PositionButton
+                key={position}
+                position={position}
+                active={
+                  positionFilter ===
+                  position
+                }
+                onClick={() =>
+                  handlePositionChange(
+                    position,
+                  )
+                }
+              />
+            ),
+          )}
+        </div>
       </div>
 
-      <div className="space-y-2">
-        {quarterbacks.map(
-          (player, index) => (
-            <QuarterbackRow
-              key={`qb-${player.player_id || getPlayerName(player)}-${index}`}
-              player={player}
-            />
-          ),
-        )}
+      {sortedPlayers.length ? (
+        <div className="table-scroll overflow-x-auto border-t border-white/10">
+          <table className="w-full min-w-[920px]">
+            <thead className="bg-white/[0.04]">
+              <tr className="border-b border-white/10">
+                {columns.map(
+                  (column) => (
+                    <SortablePlayerHeader
+                      key={column.key}
+                      column={column}
+                      sortKey={sortKey}
+                      sortDirection={
+                        sortDirection
+                      }
+                      onSort={
+                        handleSort
+                      }
+                    />
+                  ),
+                )}
+              </tr>
+            </thead>
 
-        {skillPlayers.map(
-          (player, index) => (
-            <SkillPlayerRow
-              key={`skill-${player.player_id || getPlayerName(player)}-${index}`}
-              player={player}
-            />
-          ),
-        )}
+            <tbody>
+              {sortedPlayers.map(
+                (player, index) => (
+                  <tr
+                    key={
+                      player.player_id ||
+                      `${getPlayerName(
+                        player,
+                      )}-${index}`
+                    }
+                    className="border-b border-white/[0.06] transition last:border-b-0 hover:bg-white/[0.025]"
+                  >
+                    {columns.map(
+                      (column) => {
+                        if (
+                          column.key ===
+                          "player"
+                        ) {
+                          return (
+                            <td
+                              key={
+                                column.key
+                              }
+                              className="min-w-[220px] px-4 py-4"
+                            >
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  onPlayerClick(
+                                    player,
+                                  )
+                                }
+                                className="font-black text-white transition hover:text-cyan-200 hover:underline"
+                              >
+                                {getPlayerName(
+                                  player,
+                                )}
+                              </button>
+                            </td>
+                          );
+                        }
 
-        {!players.length ? (
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 text-center text-sm text-slate-500">
-            Player matchup data not loaded yet.
-          </div>
-        ) : null}
-      </div>
+                        if (
+                          column.key ===
+                          "position"
+                        ) {
+                          return (
+                            <td
+                              key={
+                                column.key
+                              }
+                              className="px-4 py-4 text-center text-sm font-black text-slate-300"
+                            >
+                              {normalizePosition(
+                                player.position,
+                              ) || "—"}
+                            </td>
+                          );
+                        }
+
+                        return (
+                          <td
+                            key={
+                              column.key
+                            }
+                            className="px-4 py-4 text-center text-sm font-black text-white"
+                          >
+                            {formatNumber(
+                              player[
+                                column.key
+                              ],
+                              column.decimals ??
+                                1,
+                            )}
+                          </td>
+                        );
+                      },
+                    )}
+                  </tr>
+                ),
+              )}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div className="border-t border-white/10 p-6 text-center text-sm text-slate-500">
+          {players.length
+            ? `No ${positionFilter} players loaded for this matchup.`
+            : "Player matchup data not loaded yet."}
+        </div>
+      )}
     </section>
   );
 }
@@ -602,6 +1116,16 @@ export default function NFLNextPage() {
   const [teams, setTeams] =
     useState<NFLTeam[]>([]);
 
+  const [oddsGames, setOddsGames] =
+    useState<NFLOddsGame[]>([]);
+
+  const [
+    selectedPlayer,
+    setSelectedPlayer,
+  ] = useState<SelectedPlayer | null>(
+    null,
+  );
+
   const [
     selectedGameId,
     setSelectedGameId,
@@ -616,6 +1140,7 @@ export default function NFLNextPage() {
         const [
           slateResponse,
           teamsResponse,
+          oddsResponse,
         ] = await Promise.all([
           fetch(
             "/data/nfl/next/slate.json",
@@ -626,6 +1151,13 @@ export default function NFLNextPage() {
 
           fetch(
             "/data/nfl/teams.json",
+            {
+              cache: "no-store",
+            },
+          ),
+
+          fetch(
+            "/data/nfl/next/odds.json",
             {
               cache: "no-store",
             },
@@ -659,6 +1191,17 @@ export default function NFLNextPage() {
           );
         }
 
+        if (oddsResponse.ok) {
+          const oddsPayload =
+            await oddsResponse.json();
+
+          setOddsGames(
+            Array.isArray(oddsPayload)
+              ? oddsPayload
+              : oddsPayload.games || [],
+          );
+        }
+
         if (loadedGames.length) {
           setSelectedGameId(
             String(
@@ -669,6 +1212,7 @@ export default function NFLNextPage() {
       } catch {
         setGames([]);
         setTeams([]);
+        setOddsGames([]);
       } finally {
         setLoading(false);
       }
@@ -694,6 +1238,39 @@ export default function NFLNextPage() {
       games,
       selectedGameId,
     ]);
+
+  const selectedOddsGame =
+    useMemo(() => {
+      if (!selectedGame) {
+        return null;
+      }
+
+      const gameId = String(
+        selectedGame.game_id || "",
+      );
+
+      return (
+        oddsGames.find(
+          (game) =>
+            String(game.game_id || "") ===
+            gameId,
+        ) || null
+      );
+    }, [oddsGames, selectedGame]);
+
+  function handlePlayerClick(
+    player: NFLPlayer,
+  ) {
+    setSelectedPlayer({
+      playerName: getPlayerName(player),
+      playerId:
+        player.player_id != null
+          ? String(player.player_id)
+          : null,
+      team: player.team || null,
+      position: player.position || null,
+    });
+  }
 
   if (loading) {
     return (
@@ -771,7 +1348,7 @@ export default function NFLNextPage() {
                 `${selectedGame.away_team} @ ${selectedGame.home_team}`}
             </h1>
 
-            <div className="mt-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-slate-400">
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-bold text-slate-400">
               <span className="flex items-center gap-2">
                 <CalendarDays
                   size={15}
@@ -856,11 +1433,39 @@ export default function NFLNextPage() {
       <PlayerMatchupTable
         title={`${awayCode} Players vs ${homeCode}`}
         players={awayPlayers}
+        onPlayerClick={handlePlayerClick}
       />
 
       <PlayerMatchupTable
         title={`${homeCode} Players vs ${awayCode}`}
         players={homePlayers}
+        onPlayerClick={handlePlayerClick}
+      />
+
+      <PlayerPropsModal
+        open={Boolean(selectedPlayer)}
+        onClose={() => setSelectedPlayer(null)}
+        playerName={
+          selectedPlayer?.playerName || null
+        }
+        playerId={
+          selectedPlayer?.playerId || null
+        }
+        team={selectedPlayer?.team || null}
+        position={
+          selectedPlayer?.position || null
+        }
+        eventId={
+          selectedOddsGame?.event_id != null
+            ? String(selectedOddsGame.event_id)
+            : null
+        }
+        gameId={
+          selectedGame.game_id != null
+            ? String(selectedGame.game_id)
+            : null
+        }
+        slate="next"
       />
     </div>
   );

@@ -1,20 +1,100 @@
 {
-  "generated_at": "2026-09-02T05:46:28.981310+00:00",
+  "generated_at": "2026-09-09T06:48:49.957089+00:00",
   "provider": "odds_api_io",
   "base_url": "https://api.odds-api.io/v3",
   "sport": "american-football",
   "league": "usa-nfl",
   "bookmaker_preference": [
     "FanDuel",
-    "DraftKings",
-    "BetMGM",
-    "Caesars"
+    "DraftKings"
   ],
-  "games": [],
+  "games": [
+    {
+      "event_id": 71387370,
+      "game_id": "2026_01_SF_LA",
+      "season": 2026,
+      "week": 1,
+      "game_type": "REG",
+      "game_date": "2026-09-10",
+      "game_time": "20:35",
+      "commence_time": "2026-09-11T00:35:00Z",
+      "away_team": "SF",
+      "home_team": "LAR",
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": 172.0,
+              "home": -205.0
+            },
+            "spread": {
+              "away": 3.5,
+              "home": -3.5,
+              "away_price": -102.0,
+              "home_price": -120.0
+            },
+            "game_total": {
+              "line": 48.5,
+              "over_price": -105.0,
+              "under_price": -115.0
+            },
+            "team_total": {
+              "home": {
+                "line": 26.5,
+                "over_price": -120.0,
+                "under_price": -106.0
+              },
+              "away": {
+                "line": 22.5,
+                "over_price": -111.0,
+                "under_price": -115.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": 170.0,
+              "home": -208.0
+            },
+            "spread": {
+              "away": 3.5,
+              "home": -3.5,
+              "away_price": -102.0,
+              "home_price": -119.0
+            },
+            "game_total": {
+              "line": 48.5,
+              "over_price": -109.0,
+              "under_price": -112.0
+            },
+            "team_total": {
+              "home": {
+                "line": 36.5,
+                "over_price": 500.0,
+                "under_price": -714.0
+              },
+              "away": {
+                "line": 31.5,
+                "over_price": 500.0,
+                "under_price": -714.0
+              }
+            }
+          }
+        }
+      ],
+      "player_props": []
+    }
+  ],
   "counts": {
     "matched_events": 1,
-    "games": 0,
-    "failed_events": 1,
+    "games": 1,
+    "failed_events": 0,
     "player_props": 0
   }
 }

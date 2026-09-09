@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import {
   BarChart3,
+  BookOpen,
   CalendarDays,
   ChevronDown,
   CloudSun,
@@ -17,7 +18,14 @@ import {
   Shield,
 } from "lucide-react";
 
-type Sport = "MLB" | "NFL" | "NBA" | "NHL" | "WNBA" | "MLS" | "UFC";
+type Sport =
+  | "MLB"
+  | "NFL"
+  | "NBA"
+  | "NHL"
+  | "WNBA"
+  | "MLS"
+  | "UFC";
 
 type NavItem = {
   label: string;
@@ -33,13 +41,41 @@ const sports: {
   emoji: string;
   path: string;
 }[] = [
-  { label: "MLB", emoji: "⚾", path: "/" },
-  { label: "NFL", emoji: "🏈", path: "/nfl" },
-  { label: "NBA", emoji: "🏀", path: "/nba" },
-  { label: "NHL", emoji: "🏒", path: "/nhl" },
-  { label: "WNBA", emoji: "🏀", path: "/wnba" },
-  { label: "MLS", emoji: "⚽", path: "/mls" },
-  { label: "UFC", emoji: "🥊", path: "/ufc" },
+  {
+    label: "MLB",
+    emoji: "⚾",
+    path: "/",
+  },
+  {
+    label: "NFL",
+    emoji: "🏈",
+    path: "/nfl",
+  },
+  {
+    label: "NBA",
+    emoji: "🏀",
+    path: "/nba",
+  },
+  {
+    label: "NHL",
+    emoji: "🏒",
+    path: "/nhl",
+  },
+  {
+    label: "WNBA",
+    emoji: "🏀",
+    path: "/wnba",
+  },
+  {
+    label: "MLS",
+    emoji: "⚽",
+    path: "/mls",
+  },
+  {
+    label: "UFC",
+    emoji: "🥊",
+    path: "/ufc",
+  },
 ];
 
 const mlbNavItems: NavItem[] = [
@@ -72,6 +108,11 @@ const mlbNavItems: NavItem[] = [
     label: "Injury Report",
     path: "/injury-report",
     icon: BarChart3,
+  },
+  {
+    label: "How To",
+    path: "/how-to",
+    icon: BookOpen,
   },
 ];
 
@@ -106,6 +147,11 @@ const nflNavItems: NavItem[] = [
     path: "/injuries",
     icon: BarChart3,
   },
+  {
+    label: "How To",
+    path: "/how-to",
+    icon: BookOpen,
+  },
 ];
 
 const placeholderNavItems: NavItem[] = [
@@ -134,6 +180,12 @@ export function AppShell({
         ? "NBA"
         : pathname.startsWith("/nhl")
           ? "NHL"
+          : pathname.startsWith("/wnba")
+            ? "WNBA"
+            : pathname.startsWith("/mls")
+              ? "MLS"
+              : pathname.startsWith("/ufc")
+                ? "UFC"
           : "MLB";
 
   const selectedSport =
@@ -425,10 +477,10 @@ export function AppShell({
       </aside>
 
       <main className="lg:pl-56">
-  <div className="mx-auto max-w-[1500px] px-3 pb-3 pt-0">
-    {children}
-  </div>
-</main>
+        <div className="mx-auto max-w-[1500px] px-3 pb-3 pt-0">
+          {children}
+        </div>
+      </main>
     </div>
   );
 }

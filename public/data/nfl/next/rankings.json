@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T05:46:29.003242+00:00",
+  "generated_at": "2026-09-09T06:15:07.692712+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -26,19 +26,118 @@
     }
   },
   "counts": {
-    "game_bets": 0,
+    "game_bets": 1,
     "player_props": 0,
-    "all_candidates": 0,
-    "best_bets": 0,
+    "all_candidates": 1,
+    "best_bets": 1,
     "strong_plays": 0,
     "leans": 0,
     "passes": 0
   },
-  "best_bets": [],
+  "best_bets": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "BEST BET",
+      "ranking_score": 88.8,
+      "confidence": 84.0,
+      "upstream_label": "ELITE",
+      "edge_strength": 14.4,
+      "edge": 21.6,
+      "market_type": "game_total",
+      "game_id": "2026_01_SF_LA",
+      "matchup": "SF @ LAR",
+      "away_team": "SF",
+      "home_team": "LAR",
+      "team": "",
+      "pick": "OVER 24.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_01_SF_LA",
+        "away_team": "SF",
+        "home_team": "LAR",
+        "market": "game_total",
+        "selection": "OVER 24.5",
+        "edge": 21.6,
+        "confidence_score": 84.0,
+        "confidence_label": "ELITE"
+      }
+    }
+  ],
   "strong_plays": [],
   "leans": [],
   "passes": [],
-  "ranked_recommendations": [],
-  "game_bets": [],
+  "ranked_recommendations": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "BEST BET",
+      "ranking_score": 88.8,
+      "confidence": 84.0,
+      "upstream_label": "ELITE",
+      "edge_strength": 14.4,
+      "edge": 21.6,
+      "market_type": "game_total",
+      "game_id": "2026_01_SF_LA",
+      "matchup": "SF @ LAR",
+      "away_team": "SF",
+      "home_team": "LAR",
+      "team": "",
+      "pick": "OVER 24.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_01_SF_LA",
+        "away_team": "SF",
+        "home_team": "LAR",
+        "market": "game_total",
+        "selection": "OVER 24.5",
+        "edge": 21.6,
+        "confidence_score": 84.0,
+        "confidence_label": "ELITE"
+      }
+    }
+  ],
+  "game_bets": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "BEST BET",
+      "ranking_score": 88.8,
+      "confidence": 84.0,
+      "upstream_label": "ELITE",
+      "edge_strength": 14.4,
+      "edge": 21.6,
+      "market_type": "game_total",
+      "game_id": "2026_01_SF_LA",
+      "matchup": "SF @ LAR",
+      "away_team": "SF",
+      "home_team": "LAR",
+      "team": "",
+      "pick": "OVER 24.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_01_SF_LA",
+        "away_team": "SF",
+        "home_team": "LAR",
+        "market": "game_total",
+        "selection": "OVER 24.5",
+        "edge": 21.6,
+        "confidence_score": 84.0,
+        "confidence_label": "ELITE"
+      }
+    }
+  ],
   "player_props": []
 }

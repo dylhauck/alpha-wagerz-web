@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-
+import { useEffect, useMemo, useState } from "react";
 import { NFLTeamLogo } from "@/components/nfl/NFLTeamLogo";
 
 type NFLTeam = {
@@ -27,52 +22,35 @@ type NFLGame = {
   game_time?: string;
 };
 
-type RankedRow = {
-  ranking_type?:
-    | "game_bet"
-    | "player_prop"
-    | string;
-
-  tier?: string;
-  ranking_score?: number;
-  confidence?: number;
-  edge_strength?: number;
-  edge?: number;
-
-  market_type?: string;
-  prop_type?: string;
-
-  game_id?: string;
-  matchup?: string;
-
-  away_team?: string;
-  home_team?: string;
-
-  player_name?: string;
-  team?: string;
-  position?: string;
-
-  pick?: string;
-  line?: number | string;
-  odds?: number | string;
-  sportsbook?: string;
-  projection?: number | string;
-};
-
 type ProjectionGame = {
   game_id?: string | number;
-
   away_team?: string;
   home_team?: string;
+
+  away_projection?: {
+    projected_points?: number;
+  };
+
+  home_projection?: {
+    projected_points?: number;
+  };
+
+  projected_score?: {
+    away?: number;
+    home?: number;
+  };
 
   away_projected_points?: number;
   home_projected_points?: number;
-
   projected_away_points?: number;
   projected_home_points?: number;
 
   projected_total?: number;
+
+  expected_margin?: number;
   projected_margin?: number;
+
+  projected_winner?: string;
 
   projection_confidence?: number;
   confidence?: number;
@@ -86,27 +64,65 @@ type ProjectionGame = {
   home_win_probability?: number;
 };
 
-function rows(
-  payload: any,
-  key: string,
-): RankedRow[] {
-  return Array.isArray(payload?.[key])
-    ? payload[key]
-    : [];
-}
+type MarketGame = {
+  game_id?: string | number;
+  event_id?: string | number;
+  away_team?: string;
+  home_team?: string;
 
-function projectionGames(
-  payload: any,
-): ProjectionGame[] {
+  moneyline?: {
+    away?: number;
+    home?: number;
+    away_implied_probability?: number;
+    home_implied_probability?: number;
+    away_no_vig_probability?: number;
+    home_no_vig_probability?: number;
+  };
+
+  spread?: {
+    away?: number;
+    home?: number;
+    away_price?: number;
+    home_price?: number;
+    raw_spread_line?: number;
+  };
+
+  game_total?: number;
+
+  game_total_prices?: {
+    over?: number;
+    under?: number;
+  };
+
+  team_totals?: {
+    away?: number;
+    home?: number;
+    source?: string;
+  };
+
+  available_markets?: string[];
+
+  source?: {
+    provider?: string;
+    sportsbook?: string;
+    sportsbook_key?: string;
+    last_update?: string;
+  };
+};
+
+type PickTone = "cyan" | "pink" | "neutral";
+
+const SLATE_PATH = "/data/nfl/slate.json";
+const PROJECTION_PATH = "/data/nfl/game_projections.json";
+const MARKET_PATH = "/data/nfl/market.json";
+const PAGE_TITLE = "Current Slate";
+
+function getGames<T>(payload: any): T[] {
   if (Array.isArray(payload)) {
     return payload;
   }
 
-  for (const key of [
-    "games",
-    "projections",
-    "data",
-  ]) {
+  for (const key of ["games", "projections", "data"]) {
     if (Array.isArray(payload?.[key])) {
       return payload[key];
     }
@@ -115,19 +131,15 @@ function projectionGames(
   return [];
 }
 
-function slateGames(
-  payload: any,
-): NFLGame[] {
-  if (Array.isArray(payload)) {
-    return payload;
+function num(value: unknown) {
+  if (
+    value === null ||
+    value === undefined ||
+    value === ""
+  ) {
+    return null;
   }
 
-  return Array.isArray(payload?.games)
-    ? payload.games
-    : [];
-}
-
-function num(value: unknown) {
   const n = Number(value);
 
   return Number.isFinite(n)
@@ -135,15 +147,19 @@ function num(value: unknown) {
     : null;
 }
 
-function fmt(
-  value: unknown,
-  digits = 1,
-) {
+function fmt(value: unknown, digits = 1) {
+  const n = num(value);
+  return n === null ? "—" : n.toFixed(digits);
+}
+
+function signed(value: unknown, digits = 1) {
   const n = num(value);
 
-  return n === null
-    ? "—"
-    : n.toFixed(digits);
+  if (n === null) {
+    return "—";
+  }
+
+  return `${n > 0 ? "+" : ""}${n.toFixed(digits)}`;
 }
 
 function percent(value: unknown) {
@@ -153,225 +169,95 @@ function percent(value: unknown) {
     return "—";
   }
 
-  const normalized =
-    n <= 1 ? n * 100 : n;
-
+  const normalized = n <= 1 ? n * 100 : n;
   return `${normalized.toFixed(1)}%`;
 }
 
-function signed(
-  value: unknown,
-  digits = 1,
-) {
+function odds(value: unknown) {
   const n = num(value);
 
   if (n === null) {
     return "—";
   }
 
-  return `${n > 0 ? "+" : ""}${n.toFixed(
-    digits,
-  )}`;
+  const rounded = Math.round(n);
+  return rounded > 0 ? `+${rounded}` : String(rounded);
 }
 
-function americanOdds(
-  probability: unknown,
-) {
-  const raw = num(probability);
+function normalizeTeam(value?: string) {
+  const team = String(value || "").trim().toUpperCase();
 
-  if (raw === null) {
-    return "—";
-  }
-
-  const p =
-    raw > 1
-      ? raw / 100
-      : raw;
-
-  if (p <= 0 || p >= 1) {
-    return "—";
-  }
-
-  const odds =
-    p >= 0.5
-      ? -100 * (p / (1 - p))
-      : 100 * ((1 - p) / p);
-
-  const rounded =
-    Math.round(odds);
-
-  return rounded > 0
-    ? `+${rounded}`
-    : String(rounded);
-}
-
-function normalizeTeamCode(
-  value?: string,
-) {
-  return String(value || "")
-    .trim()
-    .toUpperCase();
-}
-
-function sameTeam(
-  a?: string,
-  b?: string,
-) {
-  const left =
-    normalizeTeamCode(a);
-
-  const right =
-    normalizeTeamCode(b);
-
-  if (left === right) {
-    return true;
-  }
-
-  const aliases: Record<
-    string,
-    string
-  > = {
+  const aliases: Record<string, string> = {
     JAC: "JAX",
     JAX: "JAX",
     LA: "LAR",
     LAR: "LAR",
     WSH: "WAS",
     WAS: "WAS",
+    OAK: "LV",
+    SD: "LAC",
+    STL: "LAR",
   };
 
-  return (
-    aliases[left] &&
-    aliases[left] === aliases[right]
-  );
+  return aliases[team] || team;
 }
 
-function gameMatches(
-  row: RankedRow,
-  game: ProjectionGame | NFLGame,
+function sameTeam(a?: string, b?: string) {
+  return normalizeTeam(a) === normalizeTeam(b);
+}
+
+function sameGame(
+  a: { game_id?: string | number; away_team?: string; home_team?: string },
+  b: { game_id?: string | number; away_team?: string; home_team?: string },
 ) {
   if (
-    row.game_id &&
-    game.game_id &&
-    String(row.game_id) ===
-      String(game.game_id)
+    a.game_id !== undefined &&
+    b.game_id !== undefined &&
+    String(a.game_id) === String(b.game_id)
   ) {
     return true;
   }
 
   return (
-    sameTeam(
-      row.away_team,
-      game.away_team,
-    ) &&
-    sameTeam(
-      row.home_team,
-      game.home_team,
-    )
+    sameTeam(a.away_team, b.away_team) &&
+    sameTeam(a.home_team, b.home_team)
   );
 }
 
-function marketKind(
-  row: RankedRow,
-):
-  | "spread"
-  | "moneyline"
-  | "total"
-  | "other" {
-  const value = String(
-    row.market_type || "",
-  ).toLowerCase();
-
-  if (
-    value.includes("spread") ||
-    value.includes("handicap")
-  ) {
-    return "spread";
-  }
-
-  if (
-    value.includes("moneyline") ||
-    value === "ml" ||
-    value.includes("money_line")
-  ) {
-    return "moneyline";
-  }
-
-  if (
-    value.includes("total") ||
-    value.includes("over_under") ||
-    value.includes("over/under") ||
-    value === "ou"
-  ) {
-    return "total";
-  }
-
-  return "other";
-}
-
-function formatGameCardTime(
-  game?: NFLGame,
-) {
+function formatGameCardTime(game?: NFLGame) {
   if (!game) {
     return "TBD";
   }
 
   if (game.game_time) {
-    const [
-      hourString,
-      minuteString,
-    ] =
-      game.game_time.split(":");
+    const [hourString, minuteString] = game.game_time.split(":");
+    const hour = Number(hourString);
+    const minute = Number(minuteString);
 
-    const hour =
-      Number(hourString);
+    if (Number.isFinite(hour) && Number.isFinite(minute)) {
+      const period = hour >= 12 ? "PM" : "AM";
+      const displayHour = hour % 12 || 12;
 
-    const minute =
-      Number(minuteString);
-
-    if (
-      Number.isFinite(hour) &&
-      Number.isFinite(minute)
-    ) {
-      const period =
-        hour >= 12
-          ? "PM"
-          : "AM";
-
-      const displayHour =
-        hour % 12 || 12;
-
-      return `${displayHour}:${String(
-        minute,
-      ).padStart(2, "0")} ${period}`;
+      return `${displayHour}:${String(minute).padStart(2, "0")} ${period}`;
     }
   }
 
-  const raw =
-    game.game_datetime_utc ||
-    game.game_datetime;
+  const raw = game.game_datetime_utc || game.game_datetime;
 
   if (!raw) {
     return "TBD";
   }
 
-  const date =
-    new Date(raw);
+  const date = new Date(raw);
 
-  if (
-    Number.isNaN(
-      date.getTime(),
-    )
-  ) {
+  if (Number.isNaN(date.getTime())) {
     return "TBD";
   }
 
-  return date.toLocaleTimeString(
-    "en-US",
-    {
-      hour: "numeric",
-      minute: "2-digit",
-    },
-  );
+  return date.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+  });
 }
 
 function NFLLogoGlow({
@@ -384,13 +270,8 @@ function NFLLogoGlow({
   return (
     <div className="relative flex h-11 w-11 items-center justify-center">
       <div className="absolute inset-0 rounded-xl bg-white/50 blur-xl" />
-
       <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-white/50 bg-white/45 shadow-[0_0_24px_rgba(255,255,255,0.35)]">
-        <NFLTeamLogo
-          team={team}
-          teams={teams}
-          size={28}
-        />
+        <NFLTeamLogo team={team} teams={teams} size={28} />
       </div>
     </div>
   );
@@ -408,160 +289,45 @@ function GameSelector({
   onSelect: (id: string) => void;
 }) {
   return (
-    <div className="table-scroll mt-2 pb-2">
-      <div className="flex min-w-max gap-2">
-        {games.map(
-          (game, index) => {
+    <section className="glass rounded-3xl px-5 py-4">
+      <div className="table-scroll mt-2 pb-2">
+        <div className="flex min-w-max gap-2">
+          {games.map((game, index) => {
             const id = String(
               game.game_id ??
                 `${game.away_team}-${game.home_team}-${index}`,
             );
 
-            const selected =
-              id === selectedId;
-
-            const awayCode =
-              game.away_abbr ||
-              game.away_team ||
-              "AWAY";
-
-            const homeCode =
-              game.home_abbr ||
-              game.home_team ||
-              "HOME";
+            const active = id === selectedId;
+            const away = game.away_abbr || game.away_team || "AWAY";
+            const home = game.home_abbr || game.home_team || "HOME";
 
             return (
               <button
                 key={id}
                 type="button"
-                onClick={() =>
-                  onSelect(id)
-                }
+                onClick={() => onSelect(id)}
                 className={`min-w-[150px] rounded-xl border bg-slate-950/80 px-3 py-2 transition ${
-                  selected
+                  active
                     ? "border-cyan-300/70 bg-cyan-300/15 shadow-[0_0_20px_rgba(35,216,255,0.25)]"
                     : "border-white/10 bg-white/[0.035] hover:border-pink-300/40"
                 }`}
               >
                 <div className="flex items-center justify-center gap-2">
-                  <NFLLogoGlow
-                    team={awayCode}
-                    teams={teams}
-                  />
-
-                  <span className="text-xs font-black text-slate-400">
-                    @
-                  </span>
-
-                  <NFLLogoGlow
-                    team={homeCode}
-                    teams={teams}
-                  />
+                  <NFLLogoGlow team={away} teams={teams} />
+                  <span className="text-xs font-black text-slate-400">@</span>
+                  <NFLLogoGlow team={home} teams={teams} />
                 </div>
 
                 <div className="mt-2 text-center text-sm font-black tracking-wide text-white">
-                  {formatGameCardTime(
-                    game,
-                  )}
+                  {formatGameCardTime(game)}
                 </div>
               </button>
             );
-          },
-        )}
-      </div>
-    </div>
-  );
-}
-
-function MarketCard({
-  title,
-  accent,
-  marketRow,
-  modelValue,
-  modelSubtext,
-}: {
-  title: string;
-  accent:
-    | "cyan"
-    | "pink"
-    | "violet";
-  marketRow?: RankedRow;
-  modelValue: string;
-  modelSubtext: string;
-}) {
-  const accentClasses = {
-    cyan: {
-      border:
-        "border-cyan-300/20",
-      bg: "bg-cyan-300/[0.045]",
-      label:
-        "text-cyan-200/70",
-    },
-    pink: {
-      border:
-        "border-pink-300/20",
-      bg: "bg-pink-500/[0.045]",
-      label:
-        "text-pink-200/70",
-    },
-    violet: {
-      border:
-        "border-violet-300/20",
-      bg: "bg-violet-500/[0.045]",
-      label:
-        "text-violet-200/70",
-    },
-  }[accent];
-
-  return (
-    <div
-      className={`rounded-2xl border ${accentClasses.border} ${accentClasses.bg} p-5`}
-    >
-      <div
-        className={`text-[10px] font-black uppercase tracking-[0.2em] ${accentClasses.label}`}
-      >
-        {title}
-      </div>
-
-      <div className="mt-2 text-2xl font-black text-white">
-        {marketRow?.pick ||
-          modelValue}
-      </div>
-
-      <div className="mt-1 text-xs font-bold text-slate-500">
-        {marketRow
-          ? `${String(
-              marketRow.sportsbook ??
-                "Sportsbook",
-            )} • ${String(
-              marketRow.line ??
-                "Line —",
-            )} • ${String(
-              marketRow.odds ??
-                "Odds —",
-            )}`
-          : modelSubtext}
-      </div>
-
-      {marketRow ? (
-        <div className="mt-4 grid grid-cols-2 gap-2">
-          <SmallStat
-            label="Projection"
-            value={fmt(
-              marketRow.projection,
-            )}
-          />
-
-          <SmallStat
-            label="Edge"
-            value={fmt(
-              marketRow.edge,
-              2,
-            )}
-          />
+          })}
         </div>
-      ) : null}
-    </div>
+      </div>
+    </section>
   );
 }
 
@@ -570,371 +336,539 @@ function TeamProjection({
   teams,
   points,
   winProbability,
-  align = "left",
+  side,
 }: {
   team: string;
   teams: NFLTeam[];
   points: unknown;
   winProbability: unknown;
-  align?: "left" | "right";
+  side: "away" | "home";
 }) {
-  const right =
-    align === "right";
+  const home = side === "home";
 
   return (
     <div
-      className={`flex min-w-0 items-center gap-4 ${
-        right
-          ? "justify-end text-right"
-          : ""
+      className={`flex items-center gap-4 ${
+        home ? "justify-end text-right" : ""
       }`}
     >
-      {!right ? (
-        <NFLTeamLogo
-          team={team}
-          teams={teams}
-          size={64}
-        />
+      {!home ? (
+        <NFLTeamLogo team={team} teams={teams} size={64} />
       ) : null}
 
-      <div className="min-w-0">
-        <div className="text-xs font-black uppercase tracking-[0.18em] text-slate-500">
-          {right
-            ? "Home"
-            : "Away"}
+      <div>
+        <div className="text-[10px] font-black uppercase tracking-[0.18em] text-slate-500">
+          {home ? "Home" : "Away"}
         </div>
 
-        <div className="mt-1 text-xl font-black text-white">
-          {team}
-        </div>
+        <div className="mt-1 text-xl font-black text-white">{team}</div>
 
         <div className="mt-1 text-4xl font-black neon-text">
           {fmt(points)}
         </div>
 
         <div className="mt-1 text-sm font-bold text-slate-400">
-          Win{" "}
-          {percent(
-            winProbability,
-          )}
+          Win {percent(winProbability)}
         </div>
       </div>
 
-      {right ? (
-        <NFLTeamLogo
-          team={team}
-          teams={teams}
-          size={64}
-        />
+      {home ? (
+        <NFLTeamLogo team={team} teams={teams} size={64} />
       ) : null}
     </div>
   );
 }
 
-function SummaryCard({
+function StatCell({
   label,
   value,
-  accent = "cyan",
-}: {
-  label: string;
-  value: number;
-  accent?:
-    | "cyan"
-    | "pink"
-    | "amber";
-}) {
-  const valueClass =
-    accent === "pink"
-      ? "text-pink-200"
-      : accent === "amber"
-        ? "text-amber-200"
-        : "text-cyan-200";
-
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-5">
-      <div className="text-[10px] font-black uppercase tracking-[0.18em] text-slate-500">
-        {label}
-      </div>
-
-      <div
-        className={`mt-2 text-3xl font-black ${valueClass}`}
-      >
-        {value}
-      </div>
-    </div>
-  );
-}
-
-function SmallStat({
-  label,
-  value,
+  subtext,
 }: {
   label: string;
   value: string;
+  subtext?: string;
 }) {
   return (
-    <div className="rounded-xl border border-white/[0.06] bg-black/20 p-3">
-      <div className="text-[9px] font-black uppercase tracking-[0.14em] text-slate-500">
+    <div className="rounded-xl border border-white/[0.07] bg-black/20 p-3">
+      <div className="text-[9px] font-black uppercase tracking-[0.15em] text-slate-500">
         {label}
       </div>
-
-      <div className="mt-1 truncate text-sm font-black text-white">
-        {value}
-      </div>
+      <div className="mt-1 text-base font-black text-white">{value}</div>
+      {subtext ? (
+        <div className="mt-1 text-[11px] font-bold text-slate-500">
+          {subtext}
+        </div>
+      ) : null}
     </div>
   );
 }
 
-function Empty({
-  text,
+function PickBadge({
+  pick,
+  tone,
 }: {
-  text: string;
+  pick: string;
+  tone: PickTone;
 }) {
+  const classes =
+    tone === "pink"
+      ? "border-pink-300/25 bg-pink-300/10 text-pink-200"
+      : tone === "cyan"
+        ? "border-cyan-300/25 bg-cyan-300/10 text-cyan-200"
+        : "border-white/10 bg-white/[0.04] text-slate-300";
+
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 text-sm text-slate-400">
-      {text}
+    <div className={`rounded-xl border p-4 text-center ${classes}`}>
+      <div className="text-[9px] font-black uppercase tracking-[0.2em] opacity-70">
+        Alpha Pick
+      </div>
+      <div className="mt-1 text-xl font-black">{pick}</div>
     </div>
   );
 }
 
-function tierClass(
-  tier?: string,
-) {
-  switch (
-    (tier || "").toUpperCase()
-  ) {
-    case "BEST BET":
-      return "border-cyan-300/30 bg-cyan-300/10 text-cyan-200";
-
-    case "STRONG PLAY":
-      return "border-pink-300/30 bg-pink-500/10 text-pink-200";
-
-    case "LEAN":
-      return "border-amber-300/30 bg-amber-400/10 text-amber-200";
-
-    default:
-      return "border-white/10 bg-white/[0.04] text-slate-300";
-  }
-}
-
-function labelFor(
-  row: RankedRow,
-) {
-  if (
-    row.ranking_type ===
-    "player_prop"
-  ) {
-    return (
-      row.prop_type ||
-      "Player Prop"
-    ).replaceAll("_", " ");
-  }
-
-  return (
-    row.market_type ||
-    "Game Bet"
-  ).replaceAll("_", " ");
-}
-
-function RecommendationSection({
+function MarketSection({
+  eyebrow,
   title,
-  subtitle,
-  rows,
-  teams,
+  description,
+  children,
 }: {
+  eyebrow: string;
   title: string;
-  subtitle: string;
-  rows: RankedRow[];
-  teams: NFLTeam[];
+  description: string;
+  children: React.ReactNode;
 }) {
   return (
-    <section className="glass rounded-3xl p-5">
-      <div className="mb-4">
-        <div className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200/70">
-          Alpha Edge Rankings
+    <section className="glass rounded-3xl p-5 sm:p-6">
+      <div className="mb-5">
+        <div className="text-xs font-black uppercase tracking-[0.24em] text-cyan-200/70">
+          {eyebrow}
         </div>
-
-        <h2 className="mt-1 text-xl font-black text-white">
-          {title}
-        </h2>
-
-        <p className="mt-1 text-sm text-slate-400">
-          {subtitle}
-        </p>
+        <h2 className="mt-1 text-2xl font-black text-white">{title}</h2>
+        <p className="mt-1 text-sm text-slate-400">{description}</p>
       </div>
-
-      {rows.length === 0 ? (
-        <Empty
-          text={`No ${title.toLowerCase()} qualify on this slate.`}
-        />
-      ) : (
-        <div className="grid gap-3 xl:grid-cols-2">
-          {rows.map(
-            (row, index) => (
-              <article
-                key={`${row.game_id}-${row.player_name || row.pick}-${index}`}
-                className="rounded-2xl border border-white/10 bg-white/[0.025] p-4"
-              >
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span
-                        className={`rounded-full border px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.14em] ${tierClass(
-                          row.tier,
-                        )}`}
-                      >
-                        {row.tier ||
-                          title}
-                      </span>
-
-                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-slate-400">
-                        {row.ranking_type ===
-                        "player_prop"
-                          ? "Player Prop"
-                          : "Game Bet"}
-                      </span>
-                    </div>
-
-                    <h3 className="mt-3 text-lg font-black text-white">
-                      {row.player_name
-                        ? `${row.player_name} — `
-                        : ""}
-                      {row.pick ||
-                        "Model Recommendation"}
-                    </h3>
-
-                    <div className="mt-1 text-sm capitalize text-slate-400">
-                      {labelFor(
-                        row,
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="text-right">
-                    <div className="text-[10px] font-black uppercase tracking-[0.15em] text-slate-500">
-                      Confidence
-                    </div>
-
-                    <div className="mt-1 text-xl font-black text-cyan-200">
-                      {fmt(
-                        row.confidence,
-                        1,
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {(
-                  row.away_team ||
-                  row.home_team
-                ) ? (
-                  <div className="mt-4 flex items-center gap-2 text-sm font-black text-white">
-                    <NFLTeamLogo
-                      team={
-                        row.away_team ||
-                        ""
-                      }
-                      teams={teams}
-                      size={28}
-                    />
-
-                    <span>
-                      {row.away_team ||
-                        "—"}
-                    </span>
-
-                    <span className="text-slate-600">
-                      @
-                    </span>
-
-                    <NFLTeamLogo
-                      team={
-                        row.home_team ||
-                        ""
-                      }
-                      teams={teams}
-                      size={28}
-                    />
-
-                    <span>
-                      {row.home_team ||
-                        "—"}
-                    </span>
-                  </div>
-                ) : null}
-
-                <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
-                  <SmallStat
-                    label="Projection"
-                    value={fmt(
-                      row.projection,
-                    )}
-                  />
-
-                  <SmallStat
-                    label="Book Line"
-                    value={String(
-                      row.line ?? "—",
-                    )}
-                  />
-
-                  <SmallStat
-                    label="Odds"
-                    value={String(
-                      row.odds ?? "—",
-                    )}
-                  />
-
-                  <SmallStat
-                    label="Edge"
-                    value={fmt(
-                      row.edge,
-                      2,
-                    )}
-                  />
-
-                  <SmallStat
-                    label="Sportsbook"
-                    value={String(
-                      row.sportsbook ??
-                        "—",
-                    )}
-                  />
-                </div>
-              </article>
-            ),
-          )}
-        </div>
-      )}
+      {children}
     </section>
   );
 }
 
+function GameTotalCard({
+  line,
+  projection,
+  overPrice,
+  underPrice,
+  sportsbook,
+}: {
+  line: number | null;
+  projection: number | null;
+  overPrice: number | null;
+  underPrice: number | null;
+  sportsbook: string;
+}) {
+  const difference =
+    line !== null && projection !== null ? projection - line : null;
+
+  const pick =
+    line === null
+      ? "NO LINE"
+      : projection === null
+        ? "NO PROJECTION"
+        : difference === 0
+          ? "PASS"
+          : difference! > 0
+            ? `OVER ${fmt(line)}`
+            : `UNDER ${fmt(line)}`;
+
+  const tone: PickTone =
+    pick.startsWith("OVER")
+      ? "cyan"
+      : pick.startsWith("UNDER")
+        ? "pink"
+        : "neutral";
+
+  return (
+    <div className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.045] p-5">
+      <div className="grid gap-3 sm:grid-cols-4">
+        <StatCell
+          label="Sportsbook Line"
+          value={line === null ? "—" : fmt(line)}
+          subtext={sportsbook}
+        />
+        <StatCell
+          label="Alpha Projection"
+          value={projection === null ? "—" : fmt(projection)}
+        />
+        <StatCell
+          label="Difference"
+          value={difference === null ? "—" : signed(difference)}
+        />
+        <StatCell
+          label="O / U Odds"
+          value={
+            overPrice === null && underPrice === null
+              ? "—"
+              : `O ${odds(overPrice)} / U ${odds(underPrice)}`
+          }
+        />
+      </div>
+
+      <div className="mt-3">
+        <PickBadge pick={pick} tone={tone} />
+      </div>
+    </div>
+  );
+}
+
+function TeamTotalCard({
+  team,
+  teams,
+  line,
+  projection,
+  sportsbook,
+}: {
+  team: string;
+  teams: NFLTeam[];
+  line: number | null;
+  projection: number | null;
+  sportsbook: string;
+}) {
+  const difference =
+    line !== null && projection !== null ? projection - line : null;
+
+  const pick =
+    line === null
+      ? "NO LINE"
+      : projection === null
+        ? "NO PROJECTION"
+        : difference === 0
+          ? "PASS"
+          : difference! > 0
+            ? `OVER ${fmt(line)}`
+            : `UNDER ${fmt(line)}`;
+
+  const tone: PickTone =
+    pick.startsWith("OVER")
+      ? "cyan"
+      : pick.startsWith("UNDER")
+        ? "pink"
+        : "neutral";
+
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
+      <div className="mb-4 flex items-center gap-3">
+        <NFLTeamLogo team={team} teams={teams} size={40} />
+        <div>
+          <div className="text-[10px] font-black uppercase tracking-[0.17em] text-slate-500">
+            Team Total
+          </div>
+          <div className="text-xl font-black text-white">{team}</div>
+        </div>
+      </div>
+
+      <div className="grid gap-2 sm:grid-cols-3">
+        <StatCell
+          label="Sportsbook Line"
+          value={line === null ? "—" : fmt(line)}
+          subtext={sportsbook}
+        />
+        <StatCell
+          label="Alpha Projection"
+          value={projection === null ? "—" : fmt(projection)}
+        />
+        <StatCell
+          label="Difference"
+          value={difference === null ? "—" : signed(difference)}
+        />
+      </div>
+
+      <div className="mt-3">
+        <PickBadge pick={pick} tone={tone} />
+      </div>
+    </div>
+  );
+}
+
+function SpreadCard({
+  away,
+  home,
+  teams,
+  awaySpread,
+  homeSpread,
+  awayPrice,
+  homePrice,
+  awayPoints,
+  homePoints,
+  sportsbook,
+}: {
+  away: string;
+  home: string;
+  teams: NFLTeam[];
+  awaySpread: number | null;
+  homeSpread: number | null;
+  awayPrice: number | null;
+  homePrice: number | null;
+  awayPoints: number | null;
+  homePoints: number | null;
+  sportsbook: string;
+}) {
+  const projectedHomeMargin =
+    awayPoints !== null && homePoints !== null
+      ? homePoints - awayPoints
+      : null;
+
+  const marketHomeMargin =
+    awaySpread !== null
+      ? awaySpread
+      : homeSpread !== null
+        ? -homeSpread
+        : null;
+
+  const marginEdge =
+    projectedHomeMargin !== null && marketHomeMargin !== null
+      ? projectedHomeMargin - marketHomeMargin
+      : null;
+
+  let pick = "NO LINE";
+  let tone: PickTone = "neutral";
+
+  if (
+    awaySpread !== null &&
+    homeSpread !== null &&
+    projectedHomeMargin !== null &&
+    marketHomeMargin !== null
+  ) {
+    if (Math.abs(projectedHomeMargin - marketHomeMargin) < 0.0001) {
+      pick = "PASS";
+    } else if (projectedHomeMargin > marketHomeMargin) {
+      pick = `${home} ${signed(homeSpread)}`;
+      tone = "pink";
+    } else {
+      pick = `${away} ${signed(awaySpread)}`;
+      tone = "cyan";
+    }
+  }
+
+  return (
+    <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.04] p-5">
+      <div className="grid gap-3 md:grid-cols-2">
+        <div className="rounded-xl border border-white/[0.07] bg-black/20 p-4">
+          <div className="text-[10px] font-black uppercase tracking-[0.17em] text-slate-500">
+            Sportsbook Spread
+          </div>
+
+          <div className="mt-3 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <NFLTeamLogo team={away} teams={teams} size={30} />
+              <span className="font-black text-white">
+                {away} {awaySpread === null ? "—" : signed(awaySpread)}
+              </span>
+            </div>
+            <span className="text-sm font-black text-slate-400">
+              {odds(awayPrice)}
+            </span>
+          </div>
+
+          <div className="mt-3 flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <NFLTeamLogo team={home} teams={teams} size={30} />
+              <span className="font-black text-white">
+                {home} {homeSpread === null ? "—" : signed(homeSpread)}
+              </span>
+            </div>
+            <span className="text-sm font-black text-slate-400">
+              {odds(homePrice)}
+            </span>
+          </div>
+
+          <div className="mt-3 text-[11px] font-bold text-slate-500">
+            {sportsbook}
+          </div>
+        </div>
+
+        <div className="grid gap-2 sm:grid-cols-2">
+          <StatCell
+            label="Alpha Score"
+            value={`${away} ${fmt(awayPoints)} • ${home} ${fmt(homePoints)}`}
+          />
+          <StatCell
+            label="Alpha Margin"
+            value={
+              projectedHomeMargin === null
+                ? "—"
+                : projectedHomeMargin > 0
+                  ? `${home} by ${fmt(projectedHomeMargin)}`
+                  : projectedHomeMargin < 0
+                    ? `${away} by ${fmt(Math.abs(projectedHomeMargin))}`
+                    : "PICK"
+            }
+          />
+          <StatCell
+            label="Market Margin"
+            value={
+              marketHomeMargin === null
+                ? "—"
+                : marketHomeMargin > 0
+                  ? `${home} by ${fmt(marketHomeMargin)}`
+                  : marketHomeMargin < 0
+                    ? `${away} by ${fmt(Math.abs(marketHomeMargin))}`
+                    : "PICK"
+            }
+          />
+          <StatCell
+            label="Margin Edge"
+            value={marginEdge === null ? "—" : signed(marginEdge)}
+          />
+        </div>
+      </div>
+
+      <div className="mt-3">
+        <PickBadge pick={pick} tone={tone} />
+      </div>
+    </div>
+  );
+}
+
+function MoneylineCard({
+  away,
+  home,
+  teams,
+  awayOdds,
+  homeOdds,
+  awayMarketProbability,
+  homeMarketProbability,
+  awayModelProbability,
+  homeModelProbability,
+  sportsbook,
+}: {
+  away: string;
+  home: string;
+  teams: NFLTeam[];
+  awayOdds: number | null;
+  homeOdds: number | null;
+  awayMarketProbability: number | null;
+  homeMarketProbability: number | null;
+  awayModelProbability: number | null;
+  homeModelProbability: number | null;
+  sportsbook: string;
+}) {
+  const awayModel =
+    awayModelProbability === null
+      ? null
+      : awayModelProbability > 1
+        ? awayModelProbability / 100
+        : awayModelProbability;
+
+  const homeModel =
+    homeModelProbability === null
+      ? null
+      : homeModelProbability > 1
+        ? homeModelProbability / 100
+        : homeModelProbability;
+
+  const awayEdge =
+    awayModel !== null && awayMarketProbability !== null
+      ? awayModel - awayMarketProbability
+      : null;
+
+  const homeEdge =
+    homeModel !== null && homeMarketProbability !== null
+      ? homeModel - homeMarketProbability
+      : null;
+
+  let pick = "NO LINE";
+  let tone: PickTone = "neutral";
+
+  // Alpha's moneyline pick is the team the MODEL predicts to win.
+  // Sportsbook odds and probability edge are displayed for context only;
+  // they do not determine Alpha's selection.
+  if (awayModel !== null && homeModel !== null) {
+    if (Math.abs(awayModel - homeModel) < 0.0001) {
+      pick = "PASS";
+    } else if (awayModel > homeModel) {
+      pick =
+        awayOdds !== null
+          ? `${away} ML ${odds(awayOdds)}`
+          : `${away} ML`;
+      tone = "cyan";
+    } else {
+      pick =
+        homeOdds !== null
+          ? `${home} ML ${odds(homeOdds)}`
+          : `${home} ML`;
+      tone = "pink";
+    }
+  }
+
+  return (
+    <div className="rounded-2xl border border-pink-300/20 bg-pink-300/[0.04] p-5">
+      <div className="grid gap-3 md:grid-cols-2">
+        {[
+          {
+            team: away,
+            line: awayOdds,
+            market: awayMarketProbability,
+            model: awayModel,
+            edge: awayEdge,
+          },
+          {
+            team: home,
+            line: homeOdds,
+            market: homeMarketProbability,
+            model: homeModel,
+            edge: homeEdge,
+          },
+        ].map((row) => (
+          <div
+            key={row.team}
+            className="rounded-xl border border-white/[0.07] bg-black/20 p-4"
+          >
+            <div className="flex items-center gap-3">
+              <NFLTeamLogo team={row.team} teams={teams} size={34} />
+              <div className="text-lg font-black text-white">
+                {row.team} ML {odds(row.line)}
+              </div>
+            </div>
+
+            <div className="mt-3 grid grid-cols-3 gap-2">
+              <StatCell
+                label="Market Prob."
+                value={percent(row.market)}
+              />
+              <StatCell
+                label="Alpha Prob."
+                value={percent(row.model)}
+              />
+              <StatCell
+                label="Probability Edge"
+                value={
+                  row.edge === null
+                    ? "—"
+                    : `${row.edge > 0 ? "+" : ""}${(row.edge * 100).toFixed(1)}%`
+                }
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-3 text-[11px] font-bold text-slate-500">
+        Market probability uses the no-vig probability when available • {sportsbook}
+      </div>
+
+      <div className="mt-3">
+        <PickBadge pick={pick} tone={tone} />
+      </div>
+    </div>
+  );
+}
+
 export default function NFLProjectionsPage() {
-  const [rankings, setRankings] =
-    useState<any>({});
-
-  const [
-    gameProjections,
-    setGameProjections,
-  ] =
-    useState<
-      ProjectionGame[]
-    >([]);
-
-  const [games, setGames] =
-    useState<NFLGame[]>([]);
-
-  const [teams, setTeams] =
-    useState<NFLTeam[]>([]);
-
-  const [
-    selectedGameId,
-    setSelectedGameId,
-  ] = useState("");
-
-  const [loading, setLoading] =
-    useState(true);
+  const [games, setGames] = useState<NFLGame[]>([]);
+  const [projections, setProjections] = useState<ProjectionGame[]>([]);
+  const [markets, setMarkets] = useState<MarketGame[]>([]);
+  const [teams, setTeams] = useState<NFLTeam[]>([]);
+  const [selectedGameId, setSelectedGameId] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -943,112 +877,51 @@ export default function NFLProjectionsPage() {
       setLoading(true);
 
       try {
-        const [
-          rankingRes,
-          projectionRes,
-          slateRes,
-          teamsRes,
-        ] = await Promise.all([
-          fetch(
-            "/data/nfl/rankings.json",
-            {
-              cache: "no-store",
-            },
-          ),
+        const [slateRes, projectionRes, marketRes, teamsRes] =
+          await Promise.all([
+            fetch(SLATE_PATH, { cache: "no-store" }),
+            fetch(PROJECTION_PATH, { cache: "no-store" }),
+            fetch(MARKET_PATH, { cache: "no-store" }),
+            fetch("/data/nfl/teams.json", { cache: "no-store" }),
+          ]);
 
-          fetch(
-            "/data/nfl/game_projections.json",
-            {
-              cache: "no-store",
-            },
-          ),
+        const slatePayload = slateRes.ok ? await slateRes.json() : {};
+        const projectionPayload = projectionRes.ok
+          ? await projectionRes.json()
+          : {};
+        const marketPayload = marketRes.ok ? await marketRes.json() : {};
+        const teamsPayload = teamsRes.ok ? await teamsRes.json() : [];
 
-          fetch(
-            "/data/nfl/slate.json",
-            {
-              cache: "no-store",
-            },
-          ),
+        if (cancelled) {
+          return;
+        }
 
-          fetch(
-            "/data/nfl/teams.json",
-            {
-              cache: "no-store",
-            },
-          ),
-        ]);
+        const loadedGames = getGames<NFLGame>(slatePayload);
 
-        const rankingPayload =
-          rankingRes.ok
-            ? await rankingRes.json()
-            : {};
+        setGames(loadedGames);
+        setProjections(getGames<ProjectionGame>(projectionPayload));
+        setMarkets(getGames<MarketGame>(marketPayload));
+        setTeams(
+          Array.isArray(teamsPayload)
+            ? teamsPayload
+            : Array.isArray(teamsPayload?.teams)
+              ? teamsPayload.teams
+              : [],
+        );
 
-        const projectionPayload =
-          projectionRes.ok
-            ? await projectionRes.json()
-            : {};
-
-        const slatePayload =
-          slateRes.ok
-            ? await slateRes.json()
-            : [];
-
-        const teamsPayload =
-          teamsRes.ok
-            ? await teamsRes.json()
-            : [];
-
-        if (!cancelled) {
-          const loadedGames =
-            slateGames(
-              slatePayload,
-            );
-
-          setRankings(
-            rankingPayload,
-          );
-
-          setGameProjections(
-            projectionGames(
-              projectionPayload,
+        if (loadedGames.length) {
+          setSelectedGameId(
+            String(
+              loadedGames[0].game_id ??
+                `${loadedGames[0].away_team}-${loadedGames[0].home_team}-0`,
             ),
           );
-
-          setGames(
-            loadedGames,
-          );
-
-          setTeams(
-            Array.isArray(
-              teamsPayload,
-            )
-              ? teamsPayload
-              : Array.isArray(
-                    teamsPayload?.teams,
-                  )
-                ? teamsPayload.teams
-                : [],
-          );
-
-          if (
-            loadedGames.length
-          ) {
-            setSelectedGameId(
-              String(
-                loadedGames[0]
-                  .game_id ??
-                  `${loadedGames[0].away_team}-${loadedGames[0].home_team}-0`,
-              ),
-            );
-          }
         }
       } catch {
         if (!cancelled) {
-          setRankings({});
-          setGameProjections(
-            [],
-          );
           setGames([]);
+          setProjections([]);
+          setMarkets([]);
           setTeams([]);
         }
       } finally {
@@ -1065,157 +938,52 @@ export default function NFLProjectionsPage() {
     };
   }, []);
 
-  const bestBets =
-    useMemo(
-      () =>
-        rows(
-          rankings,
-          "best_bets",
-        ),
-      [rankings],
+  const selectedGame = useMemo(() => {
+    if (!games.length) {
+      return null;
+    }
+
+    return (
+      games.find((game, index) => {
+        const id = String(
+          game.game_id ?? `${game.away_team}-${game.home_team}-${index}`,
+        );
+        return id === selectedGameId;
+      }) || games[0]
     );
+  }, [games, selectedGameId]);
 
-  const strongPlays =
-    useMemo(
-      () =>
-        rows(
-          rankings,
-          "strong_plays",
-        ),
-      [rankings],
-    );
+  const selectedProjection = useMemo(() => {
+    if (!selectedGame) {
+      return null;
+    }
 
-  const leans =
-    useMemo(
-      () =>
-        rows(
-          rankings,
-          "leans",
-        ),
-      [rankings],
-    );
-
-  const allRankedRows =
-    useMemo(
-      () => [
-        ...bestBets,
-        ...strongPlays,
-        ...leans,
-      ],
-      [
-        bestBets,
-        strongPlays,
-        leans,
-      ],
-    );
-
-  const selectedSlateGame =
-    useMemo(() => {
-      if (!games.length) {
-        return null;
-      }
-
-      return (
-        games.find(
-          (game, index) =>
-            String(
-              game.game_id ??
-                `${game.away_team}-${game.home_team}-${index}`,
-            ) ===
-            selectedGameId,
-        ) || games[0]
-      );
-    }, [
-      games,
-      selectedGameId,
-    ]);
-
-  const selectedProjection =
-    useMemo(() => {
-      if (
-        !selectedSlateGame
-      ) {
-        return null;
-      }
-
-      return (
-        gameProjections.find(
-          (game) =>
-            gameMatches(
-              {
-                game_id:
-                  String(
-                    game.game_id ??
-                      "",
-                  ),
-                away_team:
-                  game.away_team,
-                home_team:
-                  game.home_team,
-              },
-              selectedSlateGame,
-            ),
-        ) ||
-        gameProjections.find(
-          (game) =>
-            sameTeam(
-              game.away_team,
-              selectedSlateGame.away_team,
-            ) &&
-            sameTeam(
-              game.home_team,
-              selectedSlateGame.home_team,
-            ),
-        ) ||
-        null
-      );
-    }, [
-      gameProjections,
-      selectedSlateGame,
-    ]);
-
-  const selectedRows =
-    useMemo(() => {
-      if (
-        !selectedSlateGame
-      ) {
-        return [];
-      }
-
-      return allRankedRows.filter(
+    return (
+      projections.find((row) => sameGame(row, selectedGame)) ||
+      projections.find(
         (row) =>
-          row.ranking_type !==
-            "player_prop" &&
-          gameMatches(
-            row,
-            selectedSlateGame,
-          ),
-      );
-    }, [
-      allRankedRows,
-      selectedSlateGame,
-    ]);
-
-  const selectedSpread =
-    selectedRows.find(
-      (row) =>
-        marketKind(row) ===
-        "spread",
+          sameTeam(row.away_team, selectedGame.away_team) &&
+          sameTeam(row.home_team, selectedGame.home_team),
+      ) ||
+      null
     );
+  }, [projections, selectedGame]);
 
-  const selectedMoneyline =
-    selectedRows.find(
-      (row) =>
-        marketKind(row) ===
-        "moneyline",
-    );
+  const selectedMarket = useMemo(() => {
+    if (!selectedGame) {
+      return null;
+    }
 
-  const selectedTotal =
-    selectedRows.find(
-      (row) =>
-        marketKind(row) ===
-        "total",
+    return (
+      markets.find((row) => sameGame(row, selectedGame)) ||
+      markets.find(
+        (row) =>
+          sameTeam(row.away_team, selectedGame.away_team) &&
+          sameTeam(row.home_team, selectedGame.home_team),
+      ) ||
+      null
     );
+  }, [markets, selectedGame]);
 
   if (loading) {
     return (
@@ -1225,303 +993,263 @@ export default function NFLProjectionsPage() {
     );
   }
 
-  if (
-    !selectedSlateGame
-  ) {
+  if (!selectedGame) {
     return (
       <section className="glass rounded-3xl p-8 text-center">
         <div className="text-lg font-black text-white">
           No NFL Projection Data
         </div>
-
         <div className="mt-2 text-sm text-slate-400">
-          NFL slate and projection
-          data have not been generated
-          yet.
+          NFL slate and projection data have not been generated yet.
         </div>
       </section>
     );
   }
 
-  const awayCode =
-    selectedSlateGame.away_abbr ||
-    selectedSlateGame.away_team ||
+  const away =
+    selectedGame.away_abbr ||
+    selectedGame.away_team ||
     selectedProjection?.away_team ||
     "AWAY";
 
-  const homeCode =
-    selectedSlateGame.home_abbr ||
-    selectedSlateGame.home_team ||
+  const home =
+    selectedGame.home_abbr ||
+    selectedGame.home_team ||
     selectedProjection?.home_team ||
     "HOME";
 
   const awayPoints =
-    selectedProjection
-      ?.away_projected_points ??
-    selectedProjection
-      ?.projected_away_points;
+    num(
+      selectedProjection?.away_projection?.projected_points ??
+        selectedProjection?.projected_score?.away ??
+        selectedProjection?.away_projected_points ??
+        selectedProjection?.projected_away_points,
+    );
 
   const homePoints =
-    selectedProjection
-      ?.home_projected_points ??
-    selectedProjection
-      ?.projected_home_points;
+    num(
+      selectedProjection?.home_projection?.projected_points ??
+        selectedProjection?.projected_score?.home ??
+        selectedProjection?.home_projected_points ??
+        selectedProjection?.projected_home_points,
+    );
 
   const projectedTotal =
-    selectedProjection
-      ?.projected_total ??
-    (num(awayPoints) !== null &&
-    num(homePoints) !== null
-      ? Number(awayPoints) +
-        Number(homePoints)
+    num(selectedProjection?.projected_total) ??
+    (awayPoints !== null && homePoints !== null
+      ? awayPoints + homePoints
       : null);
 
   const projectedMargin =
-    selectedProjection
-      ?.projected_margin ??
-    (num(awayPoints) !== null &&
-    num(homePoints) !== null
-      ? Number(homePoints) -
-        Number(awayPoints)
+    num(
+      selectedProjection?.expected_margin ??
+        selectedProjection?.projected_margin,
+    ) ??
+    (awayPoints !== null && homePoints !== null
+      ? homePoints - awayPoints
       : null);
 
   const awayWin =
-    selectedProjection
-      ?.win_probability?.away ??
-    selectedProjection
-      ?.away_win_probability;
+    num(
+      selectedProjection?.win_probability?.away ??
+        selectedProjection?.away_win_probability,
+    );
 
   const homeWin =
-    selectedProjection
-      ?.win_probability?.home ??
-    selectedProjection
-      ?.home_win_probability;
+    num(
+      selectedProjection?.win_probability?.home ??
+        selectedProjection?.home_win_probability,
+    );
 
-  const favoredTeam =
-    num(projectedMargin) === null
-      ? "—"
-      : Number(
-            projectedMargin,
-          ) > 0
-        ? homeCode
-        : Number(
-              projectedMargin,
-            ) < 0
-          ? awayCode
-          : "PICK";
+  const sportsbook =
+    selectedMarket?.source?.sportsbook || "Sportsbook";
 
-  const modelSpread =
-    num(projectedMargin) === null
-      ? "—"
-      : Number(
-            projectedMargin,
-          ) === 0
-        ? "PICK"
-        : `${favoredTeam} ${signed(
-            -Math.abs(
-              Number(
-                projectedMargin,
-              ),
-            ),
-          )}`;
+  const totalLine = num(selectedMarket?.game_total);
+  const awayTeamTotal = num(selectedMarket?.team_totals?.away);
+  const homeTeamTotal = num(selectedMarket?.team_totals?.home);
 
-  const modelMoneyline =
-    num(homeWin) === null &&
-    num(awayWin) === null
-      ? "—"
-      : `${awayCode} ${americanOdds(
-          awayWin,
-        )} / ${homeCode} ${americanOdds(
-          homeWin,
-        )}`;
+  const awaySpread = num(selectedMarket?.spread?.away);
+  const homeSpread = num(selectedMarket?.spread?.home);
+  const awaySpreadPrice = num(selectedMarket?.spread?.away_price);
+  const homeSpreadPrice = num(selectedMarket?.spread?.home_price);
+
+  const awayMoneyline = num(selectedMarket?.moneyline?.away);
+  const homeMoneyline = num(selectedMarket?.moneyline?.home);
+
+  const awayMarketProbability =
+    num(selectedMarket?.moneyline?.away_no_vig_probability) ??
+    num(selectedMarket?.moneyline?.away_implied_probability);
+
+  const homeMarketProbability =
+    num(selectedMarket?.moneyline?.home_no_vig_probability) ??
+    num(selectedMarket?.moneyline?.home_implied_probability);
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 pt-4">
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          {games.length} NFL Games
-          Loaded For Current Slate
+          {games.length} NFL Games Loaded For {PAGE_TITLE}
         </div>
       </div>
 
-      <section className="glass rounded-3xl p-4">
-        <GameSelector
-          games={games}
-          teams={teams}
-          selectedId={
-            selectedGameId
-          }
-          onSelect={
-            setSelectedGameId
-          }
-        />
-      </section>
+      <GameSelector
+        games={games}
+        teams={teams}
+        selectedId={selectedGameId}
+        onSelect={setSelectedGameId}
+      />
 
       <section className="glass overflow-hidden rounded-3xl">
-        <div className="border-b border-white/10 p-5 text-center">
+        <div className="border-b border-white/10 p-6 text-center">
           <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
-            Alpha Wagerz NFL
+            Alpha Game Projections
           </div>
 
           <h1 className="mx-auto mt-2 pb-2 text-3xl font-black leading-tight neon-text sm:text-5xl">
-            {awayCode} @ {homeCode}
+            {away} @ {home}
           </h1>
 
           <div className="mt-1 text-sm font-bold text-slate-400">
-            Model projection and
-            sportsbook market comparison
+            Sportsbook lines compared directly with Alpha&apos;s independent model
           </div>
         </div>
 
-        <div className="p-5">
-          <div className="grid gap-4 xl:grid-cols-[1fr_auto_1fr] xl:items-center">
+        <div className="p-5 sm:p-6">
+          <div className="grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
             <TeamProjection
-              team={awayCode}
+              team={away}
               teams={teams}
               points={awayPoints}
-              winProbability={
-                awayWin
-              }
+              winProbability={awayWin}
+              side="away"
             />
 
-            <div className="hidden xl:block">
+            <div className="hidden md:block">
               <div className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-lg font-black text-slate-400">
                 @
               </div>
             </div>
 
             <TeamProjection
-              team={homeCode}
+              team={home}
               teams={teams}
               points={homePoints}
-              winProbability={
-                homeWin
-              }
-              align="right"
+              winProbability={homeWin}
+              side="home"
             />
           </div>
 
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
-            <MarketCard
-              title="Spread"
-              accent="cyan"
-              marketRow={
-                selectedSpread
-              }
-              modelValue={
-                modelSpread
-              }
-              modelSubtext={`Model margin ${signed(
-                projectedMargin,
-              )} home`}
-            />
-
-            <MarketCard
-              title="Moneyline"
-              accent="pink"
-              marketRow={
-                selectedMoneyline
-              }
-              modelValue={
-                modelMoneyline
-              }
-              modelSubtext={`${awayCode} ${percent(
-                awayWin,
-              )} • ${homeCode} ${percent(
-                homeWin,
-              )}`}
-            />
-
-            <MarketCard
-              title="Over / Under"
-              accent="violet"
-              marketRow={
-                selectedTotal
-              }
-              modelValue={
-                fmt(
-                  projectedTotal,
-                )
-              }
-              modelSubtext="Model projected total"
-            />
-          </div>
-
-          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <SmallStat
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <StatCell
               label="Projected Total"
-              value={fmt(
-                projectedTotal,
-              )}
+              value={fmt(projectedTotal)}
             />
-
-            <SmallStat
+            <StatCell
               label="Projected Margin"
-              value={signed(
-                projectedMargin,
-              )}
+              value={
+                projectedMargin === null
+                  ? "—"
+                  : projectedMargin > 0
+                    ? `${home} by ${fmt(projectedMargin)}`
+                    : projectedMargin < 0
+                      ? `${away} by ${fmt(Math.abs(projectedMargin))}`
+                      : "PICK"
+              }
             />
-
-            <SmallStat
-              label={`${awayCode} Win`}
-              value={percent(
-                awayWin,
-              )}
-            />
-
-            <SmallStat
-              label={`${homeCode} Win`}
-              value={percent(
-                homeWin,
-              )}
-            />
+            <StatCell label={`${away} Win`} value={percent(awayWin)} />
+            <StatCell label={`${home} Win`} value={percent(homeWin)} />
           </div>
         </div>
       </section>
 
-      <section className="grid gap-3 md:grid-cols-3">
-        <SummaryCard
-          label="Best Bets"
-          value={
-            bestBets.length
-          }
+      <MarketSection
+        eyebrow="Game Market"
+        title="Game Total"
+        description="Compare the sportsbook total with Alpha's projected combined score."
+      >
+        <GameTotalCard
+          line={totalLine}
+          projection={projectedTotal}
+          overPrice={num(selectedMarket?.game_total_prices?.over)}
+          underPrice={num(selectedMarket?.game_total_prices?.under)}
+          sportsbook={sportsbook}
         />
+      </MarketSection>
 
-        <SummaryCard
-          label="Strong Plays"
-          value={
-            strongPlays.length
-          }
-          accent="pink"
-        />
+      <MarketSection
+        eyebrow="Team Markets"
+        title="Team Totals"
+        description="The market-implied team totals are compared with Alpha's projected points for each team."
+      >
+        <div className="grid gap-3 lg:grid-cols-2">
+          <TeamTotalCard
+            team={away}
+            teams={teams}
+            line={awayTeamTotal}
+            projection={awayPoints}
+            sportsbook={sportsbook}
+          />
+          <TeamTotalCard
+            team={home}
+            teams={teams}
+            line={homeTeamTotal}
+            projection={homePoints}
+            sportsbook={sportsbook}
+          />
+        </div>
+      </MarketSection>
 
-        <SummaryCard
-          label="Leans"
-          value={leans.length}
-          accent="amber"
+      <MarketSection
+        eyebrow="Side Market"
+        title="Spread"
+        description="Alpha compares its projected scoring margin with the sportsbook spread and identifies the side the model favors against the number."
+      >
+        <SpreadCard
+          away={away}
+          home={home}
+          teams={teams}
+          awaySpread={awaySpread}
+          homeSpread={homeSpread}
+          awayPrice={awaySpreadPrice}
+          homePrice={homeSpreadPrice}
+          awayPoints={awayPoints}
+          homePoints={homePoints}
+          sportsbook={sportsbook}
         />
+      </MarketSection>
+
+      <MarketSection
+        eyebrow="Winner Market"
+        title="Moneyline"
+        description="Alpha compares its win probability with the sportsbook's no-vig market probability and favors the side with the stronger probability edge."
+      >
+        <MoneylineCard
+          away={away}
+          home={home}
+          teams={teams}
+          awayOdds={awayMoneyline}
+          homeOdds={homeMoneyline}
+          awayMarketProbability={awayMarketProbability}
+          homeMarketProbability={homeMarketProbability}
+          awayModelProbability={awayWin}
+          homeModelProbability={homeWin}
+          sportsbook={sportsbook}
+        />
+      </MarketSection>
+
+      <section className="rounded-3xl border border-white/10 bg-white/[0.025] p-5">
+        <div className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200/70">
+          How To Read This Page
+        </div>
+        <p className="mt-2 text-sm leading-6 text-slate-400">
+          Sportsbook lines come from the NFL market file. Alpha projections remain
+          independent of those sportsbook numbers. OVER or UNDER means the Alpha
+          projection is above or below the displayed total. The spread pick is based
+          on Alpha&apos;s projected scoring margin versus the market spread. The
+          moneyline pick compares Alpha&apos;s win probability with the market&apos;s
+          no-vig probability. These are model opinions, not guaranteed outcomes.
+        </p>
       </section>
-
-      <RecommendationSection
-        title="Best Bets"
-        subtitle="Highest-confidence qualifying model edges."
-        rows={bestBets}
-        teams={teams}
-      />
-
-      <RecommendationSection
-        title="Strong Plays"
-        subtitle="Strong edges that clear the secondary ranking threshold."
-        rows={strongPlays}
-        teams={teams}
-      />
-
-      <RecommendationSection
-        title="Leans"
-        subtitle="Lower-confidence qualifying edges worth monitoring."
-        rows={leans}
-        teams={teams}
-      />
     </div>
   );
 }

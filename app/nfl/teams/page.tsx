@@ -579,15 +579,11 @@ function TeamRankingsTable({
       <div className="border-b border-white/10 p-5">
         <div className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200/70">
           {view === "overall"
-            ? "League Standings"
+            ? ""
             : view === "offense"
               ? "Offensive Rankings"
               : "Defensive Rankings"}
         </div>
-
-        <h2 className="mt-1 text-2xl font-black text-white">
-          NFL Team Rankings
-        </h2>
 
         {view !== "overall" ? (
           <p className="mt-2 text-sm text-slate-400">
@@ -1286,7 +1282,6 @@ export default function NFLTeamsPage() {
       <section className="glass rounded-3xl p-5">
         <div className="text-center">
           <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
-            Alpha Wagerz NFL
           </div>
 
           <h1 className="mt-2 text-3xl font-black neon-text sm:text-5xl">

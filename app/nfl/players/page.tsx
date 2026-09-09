@@ -13,6 +13,8 @@ import {
   Trophy,
 } from "lucide-react";
 
+import PlayerPropsModal from "@/components/nfl/PlayerPropsModal";
+
 type DataView =
   | "season"
   | "career"
@@ -350,6 +352,32 @@ type NFLPlayer = {
   fantasy_points_ppr_per_game?: number;
 };
 
+type NFLSlateGame = {
+  game_id?: string | number;
+  away_team?: string;
+  home_team?: string;
+  away_abbr?: string;
+  home_abbr?: string;
+  players?: {
+    away?: NFLPlayer[];
+    home?: NFLPlayer[];
+  };
+};
+
+type NFLOddsGame = {
+  event_id?: string | number;
+  game_id?: string | number;
+  away_team?: string;
+  home_team?: string;
+};
+
+type SelectedPlayer = {
+  playerName: string;
+  playerId?: string | null;
+  team?: string | null;
+  position?: string | null;
+};
+
 function safeNumber(
   value: unknown,
 ) {
@@ -459,14 +487,17 @@ function divide(
 
 function PlayerCell({
   player,
+  onClick,
 }: {
   player: NFLPlayer;
+  onClick: (player: NFLPlayer) => void;
 }) {
   return (
     <div className="min-w-0">
       <button
         type="button"
-        className="max-w-full truncate text-left text-sm font-black text-white transition hover:text-cyan-200"
+        onClick={() => onClick(player)}
+        className="max-w-full truncate text-left text-sm font-black text-white transition hover:text-cyan-200 hover:underline"
       >
         {getPlayerName(player)}
       </button>
@@ -1023,10 +1054,12 @@ function QuarterbackTable({
   players,
   view,
   mode,
+  onPlayerClick,
 }: {
   players: NFLPlayer[];
   view: DataView;
   mode: StatMode;
+  onPlayerClick: (player: NFLPlayer) => void;
 }) {
   const matchup =
     view === "matchup";
@@ -1383,6 +1416,7 @@ function QuarterbackTable({
                   >
                     <PlayerCell
                       player={player}
+                      onClick={onPlayerClick}
                     />
 
                     <TeamCell
@@ -1498,10 +1532,12 @@ function SkillPlayerTable({
   players,
   view,
   mode,
+  onPlayerClick,
 }: {
   players: NFLPlayer[];
   view: DataView;
   mode: StatMode;
+  onPlayerClick: (player: NFLPlayer) => void;
 }) {
   const matchup =
     view === "matchup";
@@ -1858,6 +1894,7 @@ function SkillPlayerTable({
                   >
                     <PlayerCell
                       player={player}
+                      onClick={onPlayerClick}
                     />
 
                     <TeamCell
@@ -1992,6 +2029,19 @@ export default function NFLPlayersPage() {
     [],
   );
 
+  const [slateGames, setSlateGames] =
+    useState<NFLSlateGame[]>([]);
+
+  const [oddsGames, setOddsGames] =
+    useState<NFLOddsGame[]>([]);
+
+  const [
+    selectedPlayer,
+    setSelectedPlayer,
+  ] = useState<SelectedPlayer | null>(
+    null,
+  );
+
   const [loading, setLoading] =
     useState(true);
 
@@ -2030,6 +2080,7 @@ export default function NFLPlayersPage() {
           careerResponse,
           slateResponse,
           rosterResponse,
+          oddsResponse,
         ] = await Promise.all([
           fetch(
             "/data/nfl/player_stats.json",
@@ -2054,6 +2105,13 @@ export default function NFLPlayersPage() {
 
           fetch(
             "/data/nfl/rosters.json",
+            {
+              cache: "no-store",
+            },
+          ),
+
+          fetch(
+            "/data/nfl/odds.json",
             {
               cache: "no-store",
             },
@@ -2130,6 +2188,8 @@ export default function NFLPlayersPage() {
               : slatePayload.games ||
                 [];
 
+          setSlateGames(games);
+
           const loadedMatchups:
             NFLPlayer[] = [];
 
@@ -2154,6 +2214,17 @@ export default function NFLPlayersPage() {
             loadedMatchups,
           );
         }
+
+        if (oddsResponse.ok) {
+          const oddsPayload =
+            await oddsResponse.json();
+
+          setOddsGames(
+            Array.isArray(oddsPayload)
+              ? oddsPayload
+              : oddsPayload.games || [],
+          );
+        }
       } catch (error) {
         console.error(
           "Failed to load NFL player data:",
@@ -2166,6 +2237,76 @@ export default function NFLPlayersPage() {
 
     loadData();
   }, []);
+
+  function findGameForPlayer(
+    player: SelectedPlayer,
+  ) {
+    const team = String(
+      player.team || "",
+    )
+      .trim()
+      .toUpperCase();
+
+    if (!team) {
+      return null;
+    }
+
+    return (
+      slateGames.find((game) => {
+        const away = String(
+          game.away_abbr ||
+            game.away_team ||
+            "",
+        )
+          .trim()
+          .toUpperCase();
+
+        const home = String(
+          game.home_abbr ||
+            game.home_team ||
+            "",
+        )
+          .trim()
+          .toUpperCase();
+
+        return team === away || team === home;
+      }) || null
+    );
+  }
+
+  function findOddsGame(
+    game: NFLSlateGame | null,
+  ) {
+    if (!game) {
+      return null;
+    }
+
+    const gameId = String(
+      game.game_id || "",
+    );
+
+    return (
+      oddsGames.find(
+        (oddsGame) =>
+          String(oddsGame.game_id || "") ===
+          gameId,
+      ) || null
+    );
+  }
+
+  function handlePlayerClick(
+    player: NFLPlayer,
+  ) {
+    setSelectedPlayer({
+      playerName: getPlayerName(player),
+      playerId:
+        player.player_id != null
+          ? String(player.player_id)
+          : null,
+      team: player.team || null,
+      position: player.position || null,
+    });
+  }
 
   const activePlayers =
     useMemo(() => {
@@ -2390,6 +2531,14 @@ export default function NFLPlayersPage() {
       : dataView === "career"
         ? "Career"
         : "Current Matchup";
+
+  const selectedSlateGame =
+    selectedPlayer
+      ? findGameForPlayer(selectedPlayer)
+      : null;
+
+  const selectedOddsGame =
+    findOddsGame(selectedSlateGame);
 
   if (loading) {
     return (
@@ -2642,6 +2791,7 @@ export default function NFLPlayersPage() {
             }
             view={dataView}
             mode={statMode}
+            onPlayerClick={handlePlayerClick}
           />
         </section>
       ) : null}
@@ -2670,6 +2820,7 @@ export default function NFLPlayersPage() {
             }
             view={dataView}
             mode={statMode}
+            onPlayerClick={handlePlayerClick}
           />
         </section>
       ) : null}
@@ -2688,6 +2839,33 @@ export default function NFLPlayersPage() {
           </div>
         </section>
       ) : null}
+
+
+      <PlayerPropsModal
+        open={Boolean(selectedPlayer)}
+        onClose={() => setSelectedPlayer(null)}
+        playerName={
+          selectedPlayer?.playerName || null
+        }
+        playerId={
+          selectedPlayer?.playerId || null
+        }
+        team={selectedPlayer?.team || null}
+        position={
+          selectedPlayer?.position || null
+        }
+        eventId={
+          selectedOddsGame?.event_id != null
+            ? String(selectedOddsGame.event_id)
+            : null
+        }
+        gameId={
+          selectedSlateGame?.game_id != null
+            ? String(selectedSlateGame.game_id)
+            : null
+        }
+        slate="current"
+      />
     </div>
   );
 }

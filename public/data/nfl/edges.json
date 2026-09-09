@@ -7,67 +7,97 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 45.7,
+        "total": 42.0,
         "home_margin": "",
-        "away_win_probability": 0.45,
-        "home_win_probability": 0.55,
+        "away_win_probability": 0.431,
+        "home_win_probability": 0.569,
         "projection_confidence": 50.7
       },
       "market": {
         "game_id": "2026_01_NE_SEA",
+        "event_id": 71515752,
         "season": 2026,
         "week": 1,
         "game_type": "REG",
         "game_date": "2026-09-09",
         "game_time": "20:20",
+        "commence_time": "2026-09-10T00:20:00Z",
         "away_team": "NE",
         "home_team": "SEA",
         "moneyline": {
-          "away": 150.0,
-          "home": -180.0,
-          "away_implied_probability": 0.4,
-          "home_implied_probability": 0.6429,
-          "away_no_vig_probability": 0.3836,
-          "home_no_vig_probability": 0.6164
+          "away": "",
+          "home": "",
+          "away_implied_probability": "",
+          "home_implied_probability": "",
+          "away_no_vig_probability": "",
+          "home_no_vig_probability": ""
         },
         "spread": {
-          "away": 3.5,
-          "home": -3.5,
-          "raw_spread_line": 3.5
+          "away": "",
+          "home": "",
+          "away_price": "",
+          "home_price": ""
         },
-        "game_total": 44.5,
+        "game_total": 19.5,
+        "game_total_prices": {
+          "over": 1.002,
+          "under": 31.0
+        },
         "team_totals": {
-          "away": 20.5,
-          "home": 24.0,
-          "source": "derived_from_spread_and_total"
+          "away": "",
+          "home": "",
+          "source": "derived_from_live_spread_and_total"
         },
         "available_markets": [
-          "moneyline",
-          "spread",
-          "game_total",
-          "team_total"
+          "game_total"
         ],
         "source": {
-          "provider": "nflverse_slate",
-          "sportsbook": "consensus/closing",
-          "note": "Normalized from the sportsbook fields already present in the NFL slate. Projection models do not consume this file."
-        }
+          "provider": "the_odds_api",
+          "sportsbook": "FanDuel",
+          "sportsbook_key": "FanDuel",
+          "last_update": "",
+          "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+        },
+        "bookmakers": [
+          {
+            "key": "FanDuel",
+            "title": "FanDuel",
+            "markets": {
+              "game_total": {
+                "line": 19.5,
+                "over_price": 1.002,
+                "under_price": 31.0
+              }
+            }
+          },
+          {
+            "key": "DraftKings",
+            "title": "DraftKings",
+            "markets": {
+              "game_total": {
+                "line": 44.5,
+                "over_price": 1.92,
+                "under_price": 1.89
+              }
+            }
+          }
+        ]
       },
       "recommendations": [
         {
-          "market": "moneyline",
-          "selection": "NE",
-          "edge": 0.066,
-          "confidence_score": 53.7,
-          "confidence_label": "LEAN"
+          "market": "game_total",
+          "selection": "OVER 19.5",
+          "edge": 22.5,
+          "confidence_score": 82.7,
+          "confidence_label": "ELITE"
         }
       ],
       "best_bet": {
-        "market": "moneyline",
-        "selection": "NE",
-        "edge": 0.066,
-        "confidence_score": 53.7,
-        "confidence_label": "LEAN"
+        "market": "game_total",
+        "selection": "OVER 19.5",
+        "edge": 22.5,
+        "confidence_score": 82.7,
+        "confidence_label": "ELITE"
       }
     }
   ],
@@ -76,11 +106,11 @@
       "game_id": "2026_01_NE_SEA",
       "away_team": "NE",
       "home_team": "SEA",
-      "market": "moneyline",
-      "selection": "NE",
-      "edge": 0.066,
-      "confidence_score": 53.7,
-      "confidence_label": "LEAN"
+      "market": "game_total",
+      "selection": "OVER 19.5",
+      "edge": 22.5,
+      "confidence_score": 82.7,
+      "confidence_label": "ELITE"
     }
   ],
   "counts": {

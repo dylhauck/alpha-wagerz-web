@@ -7,60 +7,115 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 48.4,
+        "total": 46.1,
         "home_margin": "",
-        "away_win_probability": 0.344,
-        "home_win_probability": 0.6559999999999999,
+        "away_win_probability": 0.33399999999999996,
+        "home_win_probability": 0.6659999999999999,
         "projection_confidence": 54.4
       },
       "market": {
         "game_id": "2026_01_SF_LA",
+        "event_id": 71387370,
         "season": 2026,
         "week": 1,
         "game_type": "REG",
         "game_date": "2026-09-10",
         "game_time": "20:35",
+        "commence_time": "2026-09-11T00:35:00Z",
         "away_team": "SF",
         "home_team": "LAR",
         "moneyline": {
-          "away": 164.0,
-          "home": -198.0,
-          "away_implied_probability": 0.3788,
-          "home_implied_probability": 0.6644,
-          "away_no_vig_probability": 0.3631,
-          "home_no_vig_probability": 0.6369
+          "away": "",
+          "home": "",
+          "away_implied_probability": "",
+          "home_implied_probability": "",
+          "away_no_vig_probability": "",
+          "home_no_vig_probability": ""
         },
         "spread": {
-          "away": 3.5,
-          "home": -3.5,
-          "raw_spread_line": 3.5
+          "away": "",
+          "home": "",
+          "away_price": "",
+          "home_price": ""
         },
-        "game_total": 48.5,
+        "game_total": 24.5,
+        "game_total_prices": {
+          "over": 1.01,
+          "under": 18.0
+        },
         "team_totals": {
-          "away": 22.5,
-          "home": 26.0,
-          "source": "derived_from_spread_and_total"
+          "away": "",
+          "home": "",
+          "source": "derived_from_live_spread_and_total"
         },
         "available_markets": [
-          "moneyline",
-          "spread",
-          "game_total",
-          "team_total"
+          "game_total"
         ],
         "source": {
-          "provider": "nflverse_slate",
-          "sportsbook": "consensus/closing",
-          "note": "Normalized from the sportsbook fields already present in the NFL slate. Projection models do not consume this file."
-        }
+          "provider": "the_odds_api",
+          "sportsbook": "FanDuel",
+          "sportsbook_key": "FanDuel",
+          "last_update": "",
+          "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+        },
+        "bookmakers": [
+          {
+            "key": "FanDuel",
+            "title": "FanDuel",
+            "markets": {
+              "game_total": {
+                "line": 24.5,
+                "over_price": 1.01,
+                "under_price": 18.0
+              }
+            }
+          },
+          {
+            "key": "DraftKings",
+            "title": "DraftKings",
+            "markets": {
+              "game_total": {
+                "line": 48.5,
+                "over_price": 1.92,
+                "under_price": 1.89
+              }
+            }
+          }
+        ]
       },
-      "recommendations": [],
-      "best_bet": ""
+      "recommendations": [
+        {
+          "market": "game_total",
+          "selection": "OVER 24.5",
+          "edge": 21.6,
+          "confidence_score": 84.0,
+          "confidence_label": "ELITE"
+        }
+      ],
+      "best_bet": {
+        "market": "game_total",
+        "selection": "OVER 24.5",
+        "edge": 21.6,
+        "confidence_score": 84.0,
+        "confidence_label": "ELITE"
+      }
     }
   ],
-  "ranked_bets": [],
+  "ranked_bets": [
+    {
+      "game_id": "2026_01_SF_LA",
+      "away_team": "SF",
+      "home_team": "LAR",
+      "market": "game_total",
+      "selection": "OVER 24.5",
+      "edge": 21.6,
+      "confidence_score": 84.0,
+      "confidence_label": "ELITE"
+    }
+  ],
   "counts": {
     "games": 1,
-    "bets": 0,
+    "bets": 1,
     "missing_projection": 0
   },
   "model": {
