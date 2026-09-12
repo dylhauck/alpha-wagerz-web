@@ -1,55 +1,72 @@
 {
   "games": [
     {
-      "game_id": "2026_01_SF_LA",
-      "away_team": "SF",
-      "home_team": "LAR",
+      "game_id": "2026_01_DEN_KC",
+      "away_team": "DEN",
+      "home_team": "KC",
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 46.1,
+        "total": 38.0,
         "home_margin": "",
-        "away_win_probability": 0.33399999999999996,
-        "home_win_probability": 0.6659999999999999,
-        "projection_confidence": 54.4
+        "away_win_probability": 0.531,
+        "home_win_probability": 0.469,
+        "projection_confidence": 52.4
       },
       "market": {
-        "game_id": "2026_01_SF_LA",
-        "event_id": 71387370,
+        "game_id": "2026_01_DEN_KC",
+        "event_id": 71474268,
         "season": 2026,
         "week": 1,
         "game_type": "REG",
-        "game_date": "2026-09-10",
-        "game_time": "20:35",
-        "commence_time": "2026-09-11T00:35:00Z",
-        "away_team": "SF",
-        "home_team": "LAR",
+        "game_date": "2026-09-14",
+        "game_time": "20:15",
+        "commence_time": "2026-09-15T00:15:00Z",
+        "away_team": "DEN",
+        "home_team": "KC",
         "moneyline": {
-          "away": "",
-          "home": "",
-          "away_implied_probability": "",
-          "home_implied_probability": "",
-          "away_no_vig_probability": "",
-          "home_no_vig_probability": ""
+          "away": 114.0,
+          "home": -134.0,
+          "away_implied_probability": 0.4673,
+          "home_implied_probability": 0.5726,
+          "away_no_vig_probability": 0.4493,
+          "home_no_vig_probability": 0.5507
         },
         "spread": {
-          "away": "",
-          "home": "",
-          "away_price": "",
-          "home_price": ""
+          "away": 2.5,
+          "home": -2.5,
+          "away_price": -110.0,
+          "home_price": -110.0
         },
-        "game_total": 24.5,
+        "game_total": 43.5,
         "game_total_prices": {
-          "over": 1.01,
-          "under": 18.0
+          "over": -112.0,
+          "under": -108.0
         },
         "team_totals": {
-          "away": "",
-          "home": "",
-          "source": "derived_from_live_spread_and_total"
+          "away": 20.5,
+          "home": 22.5,
+          "source": "sportsbook"
+        },
+        "posted_team_totals": {
+          "away": {
+            "line": 20.5,
+            "over_price": -122.0,
+            "under_price": -104.0
+          },
+          "home": {
+            "line": 22.5,
+            "over_price": -128.0,
+            "under_price": 100.0
+          },
+          "source": "sportsbook"
         },
         "available_markets": [
-          "game_total"
+          "moneyline",
+          "spread",
+          "game_total",
+          "team_total",
+          "implied_team_total"
         ],
         "source": {
           "provider": "the_odds_api",
@@ -63,10 +80,32 @@
             "key": "FanDuel",
             "title": "FanDuel",
             "markets": {
+              "moneyline": {
+                "away": 114.0,
+                "home": -134.0
+              },
+              "spread": {
+                "away": 2.5,
+                "home": -2.5,
+                "away_price": -110.0,
+                "home_price": -110.0
+              },
               "game_total": {
-                "line": 24.5,
-                "over_price": 1.01,
-                "under_price": 18.0
+                "line": 43.5,
+                "over_price": -112.0,
+                "under_price": -108.0
+              },
+              "team_total": {
+                "home": {
+                  "line": 22.5,
+                  "over_price": -128.0,
+                  "under_price": 100.0
+                },
+                "away": {
+                  "line": 20.5,
+                  "over_price": -122.0,
+                  "under_price": -104.0
+                }
               }
             }
           },
@@ -74,10 +113,20 @@
             "key": "DraftKings",
             "title": "DraftKings",
             "markets": {
+              "moneyline": {
+                "away": 120.0,
+                "home": -143.0
+              },
+              "spread": {
+                "away": 2.5,
+                "home": -2.5,
+                "away_price": -105.0,
+                "home_price": -116.0
+              },
               "game_total": {
-                "line": 48.5,
-                "over_price": 1.92,
-                "under_price": 1.89
+                "line": 43.5,
+                "over_price": -116.0,
+                "under_price": -105.0
               }
             }
           }
@@ -86,36 +135,53 @@
       "recommendations": [
         {
           "market": "game_total",
-          "selection": "OVER 24.5",
-          "edge": 21.6,
-          "confidence_score": 84.0,
-          "confidence_label": "ELITE"
+          "selection": "UNDER 43.5",
+          "edge": 5.5,
+          "confidence_score": 63.0,
+          "confidence_label": "GOOD"
+        },
+        {
+          "market": "moneyline",
+          "selection": "DEN",
+          "edge": 0.082,
+          "confidence_score": 62.6,
+          "confidence_label": "GOOD"
         }
       ],
       "best_bet": {
         "market": "game_total",
-        "selection": "OVER 24.5",
-        "edge": 21.6,
-        "confidence_score": 84.0,
-        "confidence_label": "ELITE"
+        "selection": "UNDER 43.5",
+        "edge": 5.5,
+        "confidence_score": 63.0,
+        "confidence_label": "GOOD"
       }
     }
   ],
   "ranked_bets": [
     {
-      "game_id": "2026_01_SF_LA",
-      "away_team": "SF",
-      "home_team": "LAR",
+      "game_id": "2026_01_DEN_KC",
+      "away_team": "DEN",
+      "home_team": "KC",
       "market": "game_total",
-      "selection": "OVER 24.5",
-      "edge": 21.6,
-      "confidence_score": 84.0,
-      "confidence_label": "ELITE"
+      "selection": "UNDER 43.5",
+      "edge": 5.5,
+      "confidence_score": 63.0,
+      "confidence_label": "GOOD"
+    },
+    {
+      "game_id": "2026_01_DEN_KC",
+      "away_team": "DEN",
+      "home_team": "KC",
+      "market": "moneyline",
+      "selection": "DEN",
+      "edge": 0.082,
+      "confidence_score": 62.6,
+      "confidence_label": "GOOD"
     }
   ],
   "counts": {
     "games": 1,
-    "bets": 1,
+    "bets": 2,
     "missing_projection": 0
   },
   "model": {

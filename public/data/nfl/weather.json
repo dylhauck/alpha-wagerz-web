@@ -1,28 +1,364 @@
 {
-  "generated_at": "2026-09-09T06:15:07.037833+00:00",
+  "generated_at": "2026-09-12T17:12:13.519505+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_01_NE_SEA",
-      "away_team": "NE",
-      "home_team": "SEA",
-      "stadium": "Lumen Field",
-      "latitude": 47.5952,
-      "longitude": -122.3316,
+      "game_id": "2026_01_CHI_CAR",
+      "away_team": "CHI",
+      "home_team": "CAR",
+      "stadium": "Bank of America Stadium",
+      "latitude": 35.2258,
+      "longitude": -80.8528,
       "roof": "outdoor",
-      "kickoff": "2026-09-09T20:20",
+      "kickoff": "2026-09-13T13:00",
       "available": true,
       "weather": {
-        "forecast_time": "2026-09-09T20:00",
-        "temperature_f": 67.6,
-        "feels_like_f": 66.5,
-        "humidity_pct": 58.0,
-        "precip_probability_pct": 5.0,
+        "forecast_time": "2026-09-13T13:00",
+        "temperature_f": 88.4,
+        "feels_like_f": 94.2,
+        "humidity_pct": 49.0,
+        "precip_probability_pct": 1.0,
         "precipitation_in": 0.0,
-        "wind_mph": 4.3,
-        "wind_gust_mph": 6.9,
+        "wind_mph": 7.1,
+        "wind_gust_mph": 11.4,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_01_TB_CIN",
+      "away_team": "TB",
+      "home_team": "CIN",
+      "stadium": "Paycor Stadium",
+      "latitude": 39.0954,
+      "longitude": -84.516,
+      "roof": "outdoor",
+      "kickoff": "2026-09-13T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-13T13:00",
+        "temperature_f": 85.0,
+        "feels_like_f": 93.5,
+        "humidity_pct": 59.0,
+        "precip_probability_pct": 2.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 3.5,
+        "wind_gust_mph": 7.4,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_01_NO_DET",
+      "away_team": "NO",
+      "home_team": "DET",
+      "stadium": "Ford Field",
+      "latitude": 42.34,
+      "longitude": -83.0456,
+      "roof": "fixed",
+      "kickoff": "2026-09-13T13:00",
+      "available": true,
+      "weather": {
+        "conditions": "Indoor"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "INDOOR"
+      }
+    },
+    {
+      "game_id": "2026_01_BUF_HOU",
+      "away_team": "BUF",
+      "home_team": "HOU",
+      "stadium": "NRG Stadium",
+      "latitude": 29.6847,
+      "longitude": -95.4107,
+      "roof": "retractable",
+      "kickoff": "2026-09-13T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-13T13:00",
+        "temperature_f": 88.4,
+        "feels_like_f": 94.2,
+        "humidity_pct": 62.0,
+        "precip_probability_pct": 14.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 10.3,
+        "wind_gust_mph": 14.3,
         "weather_code": 3,
         "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.45,
+        "passing_factor": 0.992,
+        "rushing_factor": 1.002,
+        "scoring_factor": 0.994,
+        "kicking_factor": 0.991,
+        "classification": "MINOR"
+      }
+    },
+    {
+      "game_id": "2026_01_BAL_IND",
+      "away_team": "BAL",
+      "home_team": "IND",
+      "stadium": "Lucas Oil Stadium",
+      "latitude": 39.7601,
+      "longitude": -86.1639,
+      "roof": "retractable",
+      "kickoff": "2026-09-13T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-13T13:00",
+        "temperature_f": 79.4,
+        "feels_like_f": 87.0,
+        "humidity_pct": 72.0,
+        "precip_probability_pct": 3.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 2.6,
+        "wind_gust_mph": 5.1,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_01_CLE_JAX",
+      "away_team": "CLE",
+      "home_team": "JAX",
+      "stadium": "EverBank Stadium",
+      "latitude": 30.3239,
+      "longitude": -81.6373,
+      "roof": "outdoor",
+      "kickoff": "2026-09-13T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-13T13:00",
+        "temperature_f": 84.9,
+        "feels_like_f": 96.7,
+        "humidity_pct": 81.0,
+        "precip_probability_pct": 6.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 5.4,
+        "wind_gust_mph": 8.1,
+        "weather_code": 1,
+        "conditions": "Mainly Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_01_ATL_PIT",
+      "away_team": "ATL",
+      "home_team": "PIT",
+      "stadium": "Acrisure Stadium",
+      "latitude": 40.4468,
+      "longitude": -80.0158,
+      "roof": "outdoor",
+      "kickoff": "2026-09-13T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-13T13:00",
+        "temperature_f": 79.7,
+        "feels_like_f": 87.1,
+        "humidity_pct": 72.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 5.2,
+        "wind_gust_mph": 9.6,
+        "weather_code": 1,
+        "conditions": "Mainly Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_01_NYJ_TEN",
+      "away_team": "NYJ",
+      "home_team": "TEN",
+      "stadium": "Nissan Stadium",
+      "latitude": 36.1665,
+      "longitude": -86.7713,
+      "roof": "outdoor",
+      "kickoff": "2026-09-13T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-13T13:00",
+        "temperature_f": 93.8,
+        "feels_like_f": 101.2,
+        "humidity_pct": 37.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 2.3,
+        "wind_gust_mph": 6.9,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_01_ARI_LAC",
+      "away_team": "ARI",
+      "home_team": "LAC",
+      "stadium": "SoFi Stadium",
+      "latitude": 33.9535,
+      "longitude": -118.3392,
+      "roof": "fixed",
+      "kickoff": "2026-09-13T16:25",
+      "available": true,
+      "weather": {
+        "conditions": "Indoor"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "INDOOR"
+      }
+    },
+    {
+      "game_id": "2026_01_MIA_LV",
+      "away_team": "MIA",
+      "home_team": "LV",
+      "stadium": "Allegiant Stadium",
+      "latitude": 36.0908,
+      "longitude": -115.183,
+      "roof": "fixed",
+      "kickoff": "2026-09-13T16:25",
+      "available": true,
+      "weather": {
+        "conditions": "Indoor"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "INDOOR"
+      }
+    },
+    {
+      "game_id": "2026_01_GB_MIN",
+      "away_team": "GB",
+      "home_team": "MIN",
+      "stadium": "U.S. Bank Stadium",
+      "latitude": 44.9736,
+      "longitude": -93.2575,
+      "roof": "fixed",
+      "kickoff": "2026-09-13T16:25",
+      "available": true,
+      "weather": {
+        "conditions": "Indoor"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "INDOOR"
+      }
+    },
+    {
+      "game_id": "2026_01_WAS_PHI",
+      "away_team": "WAS",
+      "home_team": "PHI",
+      "stadium": "Lincoln Financial Field",
+      "latitude": 39.9008,
+      "longitude": -75.1675,
+      "roof": "outdoor",
+      "kickoff": "2026-09-13T16:25",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-13T16:00",
+        "temperature_f": 81.4,
+        "feels_like_f": 87.5,
+        "humidity_pct": 69.0,
+        "precip_probability_pct": 2.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 5.9,
+        "wind_gust_mph": 11.9,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_01_DAL_NYG",
+      "away_team": "DAL",
+      "home_team": "NYG",
+      "stadium": "MetLife Stadium",
+      "latitude": 40.8135,
+      "longitude": -74.0745,
+      "roof": "outdoor",
+      "kickoff": "2026-09-13T20:20",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-13T20:00",
+        "temperature_f": 74.7,
+        "feels_like_f": 82.0,
+        "humidity_pct": 90.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 3.8,
+        "wind_gust_mph": 6.5,
+        "weather_code": 0,
+        "conditions": "Clear"
       },
       "context": {
         "severity_score": 0.0,

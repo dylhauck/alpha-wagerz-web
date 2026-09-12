@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   BarChart3,
   BookOpen,
@@ -16,6 +16,8 @@ import {
   Target,
   Users,
   Shield,
+  Menu,
+  X,
 } from "lucide-react";
 
 type Sport =
@@ -172,6 +174,13 @@ export function AppShell({
 
   const [sportsOpen, setSportsOpen] =
     useState(false);
+  const [mobileNavOpen, setMobileNavOpen] =
+    useState(false);
+
+  useEffect(() => {
+    setMobileNavOpen(false);
+    setSportsOpen(false);
+  }, [pathname]);
 
   const activeSport: Sport =
     pathname.startsWith("/nfl")
@@ -297,19 +306,23 @@ export function AppShell({
       ? "Future Slate"
       : "Tomorrow's Slate";
 
-  return (
-    <div className="min-h-screen">
-      <aside className="fixed left-0 top-0 hidden h-screen w-56 border-r border-cyan-300/10 bg-slate-950/90 p-3 backdrop-blur-xl lg:block">
-        <div className="mb-5 flex justify-center pt-3">
-          <Image
-            src="/awlogo2.png"
-            alt="Alpha Wagerz"
-            width={190}
-            height={190}
-            priority
-            className="h-auto w-[190px] object-contain"
-          />
-        </div>
+  function renderSidebarContent(
+    mobile = false,
+  ) {
+    return (
+      <>
+        {!mobile && (
+          <div className="mb-5 flex items-center justify-center pt-3">
+            <Image
+              src="/awlogo2.png"
+              alt="Alpha Wagerz"
+              width={190}
+              height={190}
+              priority
+              className="h-auto w-[190px] object-contain"
+            />
+          </div>
+        )}
 
         <div className="relative mb-3">
           <button
@@ -346,7 +359,11 @@ export function AppShell({
           </button>
 
           {sportsOpen && (
-            <div className="absolute left-0 right-0 top-full z-[9999] mt-2 overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#08101f] shadow-2xl backdrop-blur-none">
+            <div
+              className={`left-0 right-0 z-50 mt-2 overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#08101f] shadow-2xl ${
+                mobile ? "relative" : "absolute top-full"
+              }`}
+            >
               {sports.map((sport) => {
                 const isSelected =
                   sport.label ===
@@ -356,11 +373,16 @@ export function AppShell({
                   <button
                     key={sport.label}
                     type="button"
-                    onClick={() =>
+                    onClick={() => {
                       handleSportChange(
                         sport,
-                      )
-                    }
+                      );
+                      if (mobile) {
+                        setMobileNavOpen(
+                          false,
+                        );
+                      }
+                    }}
                     className={`flex w-full items-center gap-3 px-3 py-3 text-left text-sm font-bold transition ${
                       isSelected
                         ? "bg-cyan-300/15 text-white"
@@ -402,6 +424,11 @@ export function AppShell({
               <Link
                 key={item.label}
                 href={href}
+                onClick={() => {
+                  if (mobile) {
+                    setMobileNavOpen(false);
+                  }
+                }}
                 className={`relative flex items-center gap-3 overflow-hidden rounded-xl border px-3 py-3 text-sm font-bold transition ${
                   isActive
                     ? "border-cyan-300/35 bg-cyan-300/15 text-white shadow-[0_0_18px_rgba(35,216,255,0.16)]"
@@ -420,11 +447,22 @@ export function AppShell({
           })}
         </nav>
 
-        <div className="absolute bottom-3 left-3 right-3 space-y-2">
+        <div
+          className={
+            mobile
+              ? "mt-5 space-y-2 pb-5"
+              : "absolute bottom-3 left-3 right-3 space-y-2"
+          }
+        >
           <Link
             href={
               currentSlateBase || "/"
             }
+            onClick={() => {
+              if (mobile) {
+                setMobileNavOpen(false);
+              }
+            }}
             className={`relative flex items-center gap-3 overflow-hidden rounded-xl border px-3 py-3 text-sm font-bold transition ${
               isCurrentSlateSection
                 ? "border-cyan-300/35 bg-cyan-300/15 text-white shadow-[0_0_18px_rgba(35,216,255,0.16)]"
@@ -444,6 +482,11 @@ export function AppShell({
             activeSport === "NFL") && (
             <Link
               href={nextSlateBase}
+              onClick={() => {
+                if (mobile) {
+                  setMobileNavOpen(false);
+                }
+              }}
               className={`relative flex items-center gap-3 overflow-hidden rounded-xl border px-3 py-3 text-sm font-bold transition ${
                 isNextSection
                   ? "border-cyan-300/35 bg-cyan-300/15 text-white shadow-[0_0_18px_rgba(35,216,255,0.16)]"
@@ -474,7 +517,66 @@ export function AppShell({
             </div>
           </div>
         </div>
+      </>
+    );
+  }
+
+  return (
+    <div className="min-h-screen">
+      <aside className="fixed left-0 top-0 hidden h-screen w-56 border-r border-cyan-300/10 bg-slate-950/90 p-3 backdrop-blur-xl lg:block">
+        {renderSidebarContent(false)}
       </aside>
+
+      <header className="sticky top-0 z-[9999] isolate border-b border-cyan-300/10 bg-slate-950/95 px-3 py-2 backdrop-blur-xl lg:hidden">
+        <div className="mx-auto flex max-w-[1500px] items-center justify-between">
+          <Link
+            href={
+              activeSport === "NFL"
+                ? "/nfl"
+                : activeSport === "MLB"
+                  ? "/"
+                  : selectedSport.path
+            }
+            className="flex items-center"
+            aria-label="Alpha Wagerz home"
+            onClick={() => setMobileNavOpen(false)}
+          >
+            <Image
+              src="/awlogo2.png"
+              alt="Alpha Wagerz"
+              width={140}
+              height={60}
+              priority
+              className="h-11 w-auto object-contain"
+            />
+          </Link>
+
+          <button
+            type="button"
+            onPointerUp={(e) => {
+              e.preventDefault();
+              setMobileNavOpen((open) => !open);
+            }}
+            className="relative z-[10000] flex h-11 w-11 shrink-0 cursor-pointer touch-manipulation items-center justify-center rounded-xl border border-cyan-300/25 bg-cyan-300/10 text-cyan-100 shadow-[0_0_18px_rgba(35,216,255,0.12)] transition active:scale-95 pointer-events-auto"
+            aria-label={mobileNavOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={mobileNavOpen}
+            aria-controls="alpha-mobile-menu"
+          >
+            {mobileNavOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </header>
+
+      {mobileNavOpen && (
+        <div
+          id="alpha-mobile-menu"
+          className="relative z-[9998] border-b border-cyan-300/10 bg-[#08101f] px-3 pb-4 pt-3 shadow-2xl lg:hidden"
+        >
+          <div className="mx-auto max-h-[calc(100dvh-80px)] max-w-[1500px] overflow-y-auto rounded-2xl border border-cyan-300/15 bg-slate-950 p-3">
+            {renderSidebarContent(true)}
+          </div>
+        </div>
+      )}
 
       <main className="lg:pl-56">
         <div className="mx-auto max-w-[1500px] px-3 pb-3 pt-0">

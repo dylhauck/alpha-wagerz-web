@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { StatCell } from "@/components/StatCell";
 import type { RelativeHeatRange, StatKey } from "@/lib/statColors";
 import { TeamLogo } from "@/components/TeamLogo";
@@ -105,7 +105,7 @@ function HeaderCell({
     <button
       type="button"
       onClick={onClick}
-      className={`flex h-8 w-full items-center justify-center rounded-md border px-1 text-center text-[9px] font-black uppercase leading-none tracking-[0.03em] transition ${
+      className={`flex h-8 w-full touch-manipulation items-center justify-center rounded-md border px-1 text-center text-[9px] font-black uppercase leading-none tracking-[0.03em] transition ${
         active
           ? "border-cyan-300/50 bg-cyan-300/15 text-white"
           : "border-white/10 bg-white/[0.045] text-slate-300 hover:border-pink-300/40 hover:text-white"
@@ -247,7 +247,7 @@ export function GameHitterTable({
 
   return (
     <>
-      <section className="glass rounded-3xl p-4">
+      <section className="glass rounded-3xl p-3 sm:p-4">
       <div className="mb-4 flex items-center justify-between gap-4">
   <div className="flex items-center gap-3">
     <div className="relative flex h-14 w-14 shrink-0 items-center justify-center">
@@ -259,7 +259,7 @@ export function GameHitterTable({
     </div>
 
     <div>
-      <h2 className="text-xl font-black text-white">{title}</h2>
+      <h2 className="text-lg font-black leading-tight text-white sm:text-xl">{title}</h2>
 
       <div className="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">
         {sorted.length} hitters loaded
@@ -284,7 +284,69 @@ export function GameHitterTable({
   </div>
 </div>
 
-      <div className="grid gap-1">
+      {/* Mobile/tablet: same click-the-column sorting as desktop. */}
+      <div className="lg:hidden">
+        <div className="overflow-x-auto pb-2">
+          <div
+            className="grid w-max min-w-max gap-1"
+            style={{
+              gridTemplateColumns: `205px repeat(${columns.length}, 86px)`,
+            }}
+          >
+            <div className="sticky left-0 z-30 bg-[#0b1221]">
+              <div className="flex h-8 items-center justify-center rounded-md border border-cyan-300/25 bg-cyan-300/10 px-2 text-[10px] font-black uppercase tracking-[0.08em] text-cyan-100">
+                Player
+              </div>
+            </div>
+
+            {columns.map(([label, key]) => (
+              <HeaderCell
+                key={`mobile-header-${key}`}
+                label={label}
+                active={sortKey === key}
+                direction={sortDirection}
+                onClick={() => handleSort(key)}
+              />
+            ))}
+
+            {sorted.map((hitter, index) => (
+              <Fragment key={`mobile-row-${team}-${hitter.Player}-${index}`}>
+                <div
+                  key={`mobile-player-${team}-${hitter.Player}-${index}`}
+                  className="sticky left-0 z-20 h-14 overflow-hidden rounded-xl border border-white/10 bg-[#11182c] shadow-[8px_0_14px_rgba(5,11,23,0.9)]"
+                >
+                  <PlayerCell
+                    hitter={hitter}
+                    rank={index + 1}
+                    onPlayerClick={() => openPlayer(hitter)}
+                  />
+                </div>
+
+                {columns.map(([, key]) => (
+                  <div
+                    key={`mobile-${team}-${hitter.Player}-${key}-${index}`}
+                    className="flex h-14 items-center rounded-xl border border-white/10 bg-white/[0.03] px-1"
+                  >
+                    <RowValue
+                      value={hitter[key]}
+                      statKey={key}
+                      trend={key === "HR Form" ? hitter["HR Form Trend"] : undefined}
+                      relativeRange={teamRanges[key as StatKey] ?? null}
+                    />
+                  </div>
+                ))}
+              </Fragment>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-1 text-center text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
+          Swipe for more stats · tap any category to sort
+        </div>
+      </div>
+
+      {/* Desktop: preserve the existing layout exactly. */}
+      <div className="hidden gap-1 lg:grid">
         <div className="grid gap-1" style={gridStyle}>
           <HeaderCell
             label="Player"
