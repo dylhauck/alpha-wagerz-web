@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T15:18:40.101895+00:00",
+  "generated_at": "2026-09-16T19:59:49.107130+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -31,8 +31,8 @@
     "all_candidates": 2,
     "best_bets": 0,
     "strong_plays": 1,
-    "leans": 0,
-    "passes": 1
+    "leans": 1,
+    "passes": 0
   },
   "best_bets": [],
   "strong_plays": [
@@ -69,23 +69,22 @@
       }
     }
   ],
-  "leans": [],
-  "passes": [
+  "leans": [
     {
       "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 50.63,
-      "confidence": 44.9,
-      "upstream_label": "PASS",
-      "edge_strength": 1.92,
-      "edge": 0.048,
+      "tier": "LEAN",
+      "ranking_score": 71.23,
+      "confidence": 58.9,
+      "upstream_label": "LEAN",
+      "edge_strength": 3.0,
+      "edge": 0.075,
       "market_type": "moneyline",
       "game_id": "2026_02_DET_BUF",
       "matchup": "DET @ BUF",
       "away_team": "DET",
       "home_team": "BUF",
       "team": "",
-      "pick": "BUF",
+      "pick": "DET",
       "line": "",
       "odds": "",
       "sportsbook": "",
@@ -97,13 +96,14 @@
         "away_team": "DET",
         "home_team": "BUF",
         "market": "moneyline",
-        "selection": "BUF",
-        "edge": 0.048,
-        "confidence_score": 44.9,
-        "confidence_label": "PASS"
+        "selection": "DET",
+        "edge": 0.075,
+        "confidence_score": 58.9,
+        "confidence_label": "LEAN"
       }
     }
   ],
+  "passes": [],
   "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
@@ -135,6 +135,38 @@
         "edge": 7.1,
         "confidence_score": 76.3,
         "confidence_label": "STRONG"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "LEAN",
+      "ranking_score": 71.23,
+      "confidence": 58.9,
+      "upstream_label": "LEAN",
+      "edge_strength": 3.0,
+      "edge": 0.075,
+      "market_type": "moneyline",
+      "game_id": "2026_02_DET_BUF",
+      "matchup": "DET @ BUF",
+      "away_team": "DET",
+      "home_team": "BUF",
+      "team": "",
+      "pick": "DET",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_02_DET_BUF",
+        "away_team": "DET",
+        "home_team": "BUF",
+        "market": "moneyline",
+        "selection": "DET",
+        "edge": 0.075,
+        "confidence_score": 58.9,
+        "confidence_label": "LEAN"
       }
     }
   ],
@@ -173,19 +205,19 @@
     },
     {
       "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 50.63,
-      "confidence": 44.9,
-      "upstream_label": "PASS",
-      "edge_strength": 1.92,
-      "edge": 0.048,
+      "tier": "LEAN",
+      "ranking_score": 71.23,
+      "confidence": 58.9,
+      "upstream_label": "LEAN",
+      "edge_strength": 3.0,
+      "edge": 0.075,
       "market_type": "moneyline",
       "game_id": "2026_02_DET_BUF",
       "matchup": "DET @ BUF",
       "away_team": "DET",
       "home_team": "BUF",
       "team": "",
-      "pick": "BUF",
+      "pick": "DET",
       "line": "",
       "odds": "",
       "sportsbook": "",
@@ -197,10 +229,10 @@
         "away_team": "DET",
         "home_team": "BUF",
         "market": "moneyline",
-        "selection": "BUF",
-        "edge": 0.048,
-        "confidence_score": 44.9,
-        "confidence_label": "PASS"
+        "selection": "DET",
+        "edge": 0.075,
+        "confidence_score": 58.9,
+        "confidence_label": "LEAN"
       }
     }
   ],
