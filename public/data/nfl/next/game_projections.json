@@ -2546,7 +2546,7 @@
       "away_team": "MIA",
       "home_team": "SF",
       "away_projection": {
-        "projected_points": 21.2,
+        "projected_points": 21.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.06,
@@ -2556,8 +2556,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 21.48,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.28
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -2566,27 +2566,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Levi's Stadium",
-          "weather": {
-            "forecast_time": "2026-09-20T16:00",
-            "temperature_f": 75.5,
-            "feels_like_f": 72.0,
-            "humidity_pct": 43.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.5,
-            "wind_gust_mph": 9.4,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -2.9,
         "matchup_label": "Neutral",
@@ -2600,7 +2589,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 25.2,
+        "projected_points": 25.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.76,
@@ -2610,8 +2599,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 25.5,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.33
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -2620,27 +2609,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Levi's Stadium",
-          "weather": {
-            "forecast_time": "2026-09-20T16:00",
-            "temperature_f": 75.5,
-            "feels_like_f": 72.0,
-            "humidity_pct": 43.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.5,
-            "wind_gust_mph": 9.4,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 18.1,
         "matchup_label": "Strong",
@@ -2654,10 +2632,10 @@
         }
       },
       "projected_score": {
-        "away": 21.2,
-        "home": 25.2
+        "away": 21.5,
+        "home": 25.5
       },
-      "projected_total": 46.4,
+      "projected_total": 47.0,
       "expected_margin": 4.0,
       "projected_winner": "SF",
       "win_probability": {
@@ -2728,27 +2706,8 @@
         "longitude": -121.97,
         "roof": "outdoor",
         "kickoff": "2026-09-20T16:25",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-20T16:00",
-          "temperature_f": 75.5,
-          "feels_like_f": 72.0,
-          "humidity_pct": 43.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 10.5,
-          "wind_gust_mph": 9.4,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 1.0,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "scoring_factor": 0.987,
-          "kicking_factor": 0.98,
-          "classification": "MINOR"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,

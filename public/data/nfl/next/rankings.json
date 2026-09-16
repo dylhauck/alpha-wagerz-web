@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T20:22:34.649408+00:00",
+  "generated_at": "2026-09-16T20:40:22.702582+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -26,13 +26,13 @@
     }
   },
   "counts": {
-    "game_bets": 22,
+    "game_bets": 23,
     "player_props": 0,
-    "all_candidates": 22,
+    "all_candidates": 23,
     "best_bets": 7,
     "strong_plays": 0,
     "leans": 7,
-    "passes": 8
+    "passes": 9
   },
   "best_bets": [
     {
@@ -741,6 +741,38 @@
         "selection": "UNDER 44.5",
         "edge": 1.7,
         "confidence_score": 32.3,
+        "confidence_label": "PASS"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 31.7,
+      "confidence": 31.0,
+      "upstream_label": "PASS",
+      "edge_strength": 1.0,
+      "edge": 1.5,
+      "market_type": "game_total",
+      "game_id": "2026_02_MIA_SF",
+      "matchup": "MIA @ SF",
+      "away_team": "MIA",
+      "home_team": "SF",
+      "team": "",
+      "pick": "OVER 45.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_02_MIA_SF",
+        "away_team": "MIA",
+        "home_team": "SF",
+        "market": "game_total",
+        "selection": "OVER 45.5",
+        "edge": 1.5,
+        "confidence_score": 31.0,
         "confidence_label": "PASS"
       }
     }
@@ -1897,6 +1929,38 @@
         "selection": "UNDER 44.5",
         "edge": 1.7,
         "confidence_score": 32.3,
+        "confidence_label": "PASS"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 31.7,
+      "confidence": 31.0,
+      "upstream_label": "PASS",
+      "edge_strength": 1.0,
+      "edge": 1.5,
+      "market_type": "game_total",
+      "game_id": "2026_02_MIA_SF",
+      "matchup": "MIA @ SF",
+      "away_team": "MIA",
+      "home_team": "SF",
+      "team": "",
+      "pick": "OVER 45.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_02_MIA_SF",
+        "away_team": "MIA",
+        "home_team": "SF",
+        "market": "game_total",
+        "selection": "OVER 45.5",
+        "edge": 1.5,
+        "confidence_score": 31.0,
         "confidence_label": "PASS"
       }
     }

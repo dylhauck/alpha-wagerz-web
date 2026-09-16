@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T20:22:30.516831+00:00",
+  "generated_at": "2026-09-16T20:40:16.882863+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -374,27 +374,8 @@
       "longitude": -121.97,
       "roof": "outdoor",
       "kickoff": "2026-09-20T16:25",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-09-20T16:00",
-        "temperature_f": 75.5,
-        "feels_like_f": 72.0,
-        "humidity_pct": 43.0,
-        "precip_probability_pct": 0.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 10.5,
-        "wind_gust_mph": 9.4,
-        "weather_code": 3,
-        "conditions": "Overcast"
-      },
-      "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
-      }
+      "available": false,
+      "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
     },
     {
       "game_id": "2026_02_IND_KC",
