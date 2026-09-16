@@ -2352,10 +2352,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "AT&T Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-09-20T16:00",
+            "temperature_f": 98.9,
+            "feels_like_f": 98.7,
+            "humidity_pct": 25.0,
+            "precip_probability_pct": 4.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.8,
+            "wind_gust_mph": 6.7,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2395,10 +2406,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "AT&T Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-09-20T16:00",
+            "temperature_f": 98.9,
+            "feels_like_f": 98.7,
+            "humidity_pct": 25.0,
+            "precip_probability_pct": 4.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.8,
+            "wind_gust_mph": 6.7,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2492,8 +2514,27 @@
         "longitude": -97.0945,
         "roof": "retractable",
         "kickoff": "2026-09-20T16:25",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-09-20T16:00",
+          "temperature_f": 98.9,
+          "feels_like_f": 98.7,
+          "humidity_pct": 25.0,
+          "precip_probability_pct": 4.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.8,
+          "wind_gust_mph": 6.7,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
