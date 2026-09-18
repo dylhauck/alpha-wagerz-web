@@ -2760,7 +2760,7 @@
       "away_team": "IND",
       "home_team": "KC",
       "away_projection": {
-        "projected_points": 20.8,
+        "projected_points": 21.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.15,
@@ -2770,8 +2770,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 21.31,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.55
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -2780,27 +2780,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "GEHA Field at Arrowhead Stadium",
-          "weather": {
-            "forecast_time": "2026-09-20T20:00",
-            "temperature_f": 69.5,
-            "feels_like_f": 72.1,
-            "humidity_pct": 93.0,
-            "precip_probability_pct": 53.0,
-            "precipitation_in": 0.13,
-            "wind_mph": 9.5,
-            "wind_gust_mph": 13.2,
-            "weather_code": 81,
-            "conditions": "Rain Showers"
-          },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -3.3,
         "matchup_label": "Neutral",
@@ -2814,7 +2803,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.5,
+        "projected_points": 24.1,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.34,
@@ -2824,8 +2813,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 24.12,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.63
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -2834,27 +2823,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "GEHA Field at Arrowhead Stadium",
-          "weather": {
-            "forecast_time": "2026-09-20T20:00",
-            "temperature_f": 69.5,
-            "feels_like_f": 72.1,
-            "humidity_pct": 93.0,
-            "precip_probability_pct": 53.0,
-            "precipitation_in": 0.13,
-            "wind_mph": 9.5,
-            "wind_gust_mph": 13.2,
-            "weather_code": 81,
-            "conditions": "Rain Showers"
-          },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 6.7,
         "matchup_label": "Favorable",
@@ -2868,15 +2846,15 @@
         }
       },
       "projected_score": {
-        "away": 20.8,
-        "home": 23.5
+        "away": 21.3,
+        "home": 24.1
       },
-      "projected_total": 44.3,
-      "expected_margin": 2.7,
+      "projected_total": 45.4,
+      "expected_margin": 2.8,
       "projected_winner": "KC",
       "win_probability": {
-        "away": 39.8,
-        "home": 60.2
+        "away": 39.4,
+        "home": 60.6
       },
       "projection_confidence": 51.8,
       "injury_context": {
@@ -2942,27 +2920,8 @@
         "longitude": -94.4839,
         "roof": "outdoor",
         "kickoff": "2026-09-20T20:20",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-20T20:00",
-          "temperature_f": 69.5,
-          "feels_like_f": 72.1,
-          "humidity_pct": 93.0,
-          "precip_probability_pct": 53.0,
-          "precipitation_in": 0.13,
-          "wind_mph": 9.5,
-          "wind_gust_mph": 13.2,
-          "weather_code": 81,
-          "conditions": "Rain Showers"
-        },
-        "context": {
-          "severity_score": 2.0,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "scoring_factor": 0.974,
-          "kicking_factor": 0.96,
-          "classification": "MODERATE"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,

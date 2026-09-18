@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T19:26:18.058997+00:00",
+  "generated_at": "2026-09-18T20:08:49.249990+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -405,27 +405,8 @@
       "longitude": -94.4839,
       "roof": "outdoor",
       "kickoff": "2026-09-20T20:20",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-09-20T20:00",
-        "temperature_f": 69.5,
-        "feels_like_f": 72.1,
-        "humidity_pct": 93.0,
-        "precip_probability_pct": 53.0,
-        "precipitation_in": 0.13,
-        "wind_mph": 9.5,
-        "wind_gust_mph": 13.2,
-        "weather_code": 81,
-        "conditions": "Rain Showers"
-      },
-      "context": {
-        "severity_score": 2.0,
-        "passing_factor": 0.964,
-        "rushing_factor": 1.01,
-        "scoring_factor": 0.974,
-        "kicking_factor": 0.96,
-        "classification": "MODERATE"
-      }
+      "available": false,
+      "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
     }
   ]
 }
