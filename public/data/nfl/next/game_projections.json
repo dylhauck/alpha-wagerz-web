@@ -1,20 +1,20 @@
 {
   "games": [
     {
-      "game_id": "2026_02_NYG_LA",
-      "away_team": "NYG",
-      "home_team": "LAR",
+      "game_id": "2026_03_ATL_GB",
+      "away_team": "ATL",
+      "home_team": "GB",
       "away_projection": {
-        "projected_points": 21.8,
+        "projected_points": 19.9,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": -0.03,
-          "matchup_adjustment": 0.03,
+          "efficiency_adjustment": -0.76,
+          "matchup_adjustment": -1.13,
           "home_field_adjustment": -0.75,
-          "pre_injury_projection": 21.75,
+          "pre_injury_projection": 19.86,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 21.75,
+          "post_injury_projection": 19.86,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
@@ -26,40 +26,49 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "fixed",
-          "stadium": "SoFi Stadium",
+          "roof": "outdoor",
+          "stadium": "Lambeau Field",
           "weather": {
-            "conditions": "Indoor"
+            "forecast_time": "2026-09-24T20:00",
+            "temperature_f": 56.3,
+            "feels_like_f": 53.8,
+            "humidity_pct": 75.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.0,
+            "wind_gust_mph": 5.1,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "INDOOR",
+          "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
           "passing_factor": 1.0,
           "rushing_factor": 1.0,
           "kicking_factor": 1.0
         },
-        "matchup_rating": 0.4,
-        "matchup_label": "Neutral",
+        "matchup_rating": -14.0,
+        "matchup_label": "Difficult",
         "passing_matchup": {
-          "rating": -1.5,
-          "label": "Neutral"
+          "rating": -18.2,
+          "label": "Poor"
         },
         "rushing_matchup": {
-          "rating": 3.2,
-          "label": "Neutral"
+          "rating": -11.2,
+          "label": "Difficult"
         }
       },
       "home_projection": {
-        "projected_points": 25.9,
+        "projected_points": 23.4,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": 1.05,
-          "matchup_adjustment": 1.63,
+          "efficiency_adjustment": 0.03,
+          "matchup_adjustment": 0.09,
           "home_field_adjustment": 0.75,
-          "pre_injury_projection": 25.93,
+          "pre_injury_projection": 23.37,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 25.93,
+          "post_injury_projection": 23.37,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
@@ -71,45 +80,54 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "fixed",
-          "stadium": "SoFi Stadium",
+          "roof": "outdoor",
+          "stadium": "Lambeau Field",
           "weather": {
-            "conditions": "Indoor"
+            "forecast_time": "2026-09-24T20:00",
+            "temperature_f": 56.3,
+            "feels_like_f": 53.8,
+            "humidity_pct": 75.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.0,
+            "wind_gust_mph": 5.1,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "INDOOR",
+          "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
           "passing_factor": 1.0,
           "rushing_factor": 1.0,
           "kicking_factor": 1.0
         },
-        "matchup_rating": 20.1,
-        "matchup_label": "Strong",
+        "matchup_rating": 0.9,
+        "matchup_label": "Neutral",
         "passing_matchup": {
-          "rating": 20.1,
-          "label": "Strong"
+          "rating": 8.1,
+          "label": "Favorable"
         },
         "rushing_matchup": {
-          "rating": 26.6,
-          "label": "Strong"
+          "rating": -9.3,
+          "label": "Difficult"
         }
       },
       "projected_score": {
-        "away": 21.8,
-        "home": 25.9
+        "away": 19.9,
+        "home": 23.4
       },
-      "projected_total": 47.7,
-      "expected_margin": 4.1,
-      "projected_winner": "LAR",
+      "projected_total": 43.3,
+      "expected_margin": 3.5,
+      "projected_winner": "GB",
       "win_probability": {
-        "away": 34.7,
-        "home": 65.3
+        "away": 36.9,
+        "home": 63.1
       },
-      "projection_confidence": 53.6,
+      "projection_confidence": 52.6,
       "injury_context": {
         "away": {
           "team_context": {
-            "team": "NYG",
+            "team": "ATL",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -135,7 +153,7 @@
         },
         "home": {
           "team_context": {
-            "team": "LAR",
+            "team": "GB",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -161,17 +179,26 @@
         }
       },
       "weather_context": {
-        "game_id": "2026_02_NYG_LA",
-        "away_team": "NYG",
-        "home_team": "LAR",
-        "stadium": "SoFi Stadium",
-        "latitude": 33.9535,
-        "longitude": -118.3392,
-        "roof": "fixed",
-        "kickoff": "2026-09-21T20:15",
+        "game_id": "2026_03_ATL_GB",
+        "away_team": "ATL",
+        "home_team": "GB",
+        "stadium": "Lambeau Field",
+        "latitude": 44.5013,
+        "longitude": -88.0622,
+        "roof": "outdoor",
+        "kickoff": "2026-09-24T20:15",
         "available": true,
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "context": {
           "severity_score": 0.0,
@@ -179,7 +206,7 @@
           "rushing_factor": 1.0,
           "scoring_factor": 1.0,
           "kicking_factor": 1.0,
-          "classification": "INDOOR"
+          "classification": "NEUTRAL"
         }
       },
       "model": {
@@ -191,20 +218,20 @@
   "league_baselines": {
     "points_per_game": 22.5,
     "points_allowed_per_game": 22.5,
-    "offensive_epa": 0.0074375000000000005,
-    "defensive_epa": 0.0088125,
-    "offensive_success": 44.048,
-    "defensive_success": 44.09453125,
-    "offensive_ypp": 5.4303125,
-    "defensive_ypp": 5.43921875,
-    "offensive_explosive": 9.5675,
-    "defensive_explosive": 9.5774375,
-    "offensive_third_down": 40.005375,
-    "defensive_third_down": 40.056625,
-    "offensive_red_zone": 19.8855625,
-    "defensive_red_zone": 20.11753125,
-    "offensive_turnovers": 1.1149375,
-    "defensive_takeaways": 1.11453125
+    "offensive_epa": 0.005812499999999999,
+    "defensive_epa": 0.005218749999999999,
+    "offensive_success": 43.92340625,
+    "defensive_success": 43.875,
+    "offensive_ypp": 5.41803125,
+    "defensive_ypp": 5.4137812499999995,
+    "offensive_explosive": 9.51175,
+    "defensive_explosive": 9.5105625,
+    "offensive_third_down": 40.12890625,
+    "defensive_third_down": 40.08825,
+    "offensive_red_zone": 19.3679375,
+    "defensive_red_zone": 19.6945,
+    "offensive_turnovers": 1.0943125,
+    "defensive_takeaways": 1.0975
   },
   "model": {
     "name": "Alpha Wagerz NFL Projection Model",

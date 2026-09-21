@@ -1,19 +1,28 @@
 {
-  "generated_at": "2026-09-20T09:37:59.592004+00:00",
+  "generated_at": "2026-09-21T10:22:44.309521+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_02_NYG_LA",
-      "away_team": "NYG",
-      "home_team": "LAR",
-      "stadium": "SoFi Stadium",
-      "latitude": 33.9535,
-      "longitude": -118.3392,
-      "roof": "fixed",
-      "kickoff": "2026-09-21T20:15",
+      "game_id": "2026_03_ATL_GB",
+      "away_team": "ATL",
+      "home_team": "GB",
+      "stadium": "Lambeau Field",
+      "latitude": 44.5013,
+      "longitude": -88.0622,
+      "roof": "outdoor",
+      "kickoff": "2026-09-24T20:15",
       "available": true,
       "weather": {
-        "conditions": "Indoor"
+        "forecast_time": "2026-09-24T20:00",
+        "temperature_f": 56.3,
+        "feels_like_f": 53.8,
+        "humidity_pct": 75.0,
+        "precip_probability_pct": 1.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 5.0,
+        "wind_gust_mph": 5.1,
+        "weather_code": 3,
+        "conditions": "Overcast"
       },
       "context": {
         "severity_score": 0.0,
@@ -21,7 +30,7 @@
         "rushing_factor": 1.0,
         "scoring_factor": 1.0,
         "kicking_factor": 1.0,
-        "classification": "INDOOR"
+        "classification": "NEUTRAL"
       }
     }
   ]

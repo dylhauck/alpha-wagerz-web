@@ -1,49 +1,49 @@
 {
   "players": [
     {
-      "player_id": "00-0026498",
-      "player": "Matthew Stafford",
-      "team": "LAR",
-      "opponent": "NYG",
+      "player_id": "00-0033662",
+      "player": "Cooper Rush",
+      "team": "ATL",
+      "opponent": "GB",
       "position": "QB",
-      "game_id": "2026_02_NYG_LA",
+      "game_id": "2026_03_ATL_GB",
       "projection": {
         "passing": {
-          "attempts": 25.5,
-          "completions": 15.4,
-          "yards": 170.7,
-          "touchdowns": 0.0,
+          "attempts": 19.4,
+          "completions": 10.5,
+          "yards": 105.5,
+          "touchdowns": 0.41,
           "interceptions": 0.0
         },
         "rushing": {
-          "carries": 2.0,
-          "yards": -1.1,
+          "carries": 1.0,
+          "yards": 9.5,
           "touchdowns": 0.0
         }
       },
       "fantasy": {
-        "standard": 6.72,
-        "ppr": 6.72
+        "standard": 6.81,
+        "ppr": 6.81
       },
       "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
       },
       "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
       },
       "injury_context": {
         "team": {
           "team_context": {
-            "team": "LAR",
+            "team": "ATL",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -74,183 +74,56 @@
       },
       "weather_context": {
         "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
-        "classification": "INDOOR",
+        "classification": "NEUTRAL",
         "severity_score": 0.0,
         "passing_factor": 1.0,
         "rushing_factor": 1.0,
         "kicking_factor": 1.0
       },
       "sample": {
-        "games": 1,
+        "games": 2,
         "label": "Small"
       },
       "baseline": {
-        "games": 1,
+        "games": 2,
         "passing": {
-          "completions": 15.0,
-          "attempts": 25.0,
-          "yards": 155.0,
-          "touchdowns": 0.0,
+          "completions": 22.0,
+          "attempts": 39.0,
+          "yards": 229.0,
+          "touchdowns": 1.0,
           "interceptions": 0.0,
-          "attempts_per_game": 25.0,
-          "completions_per_game": 15.0,
-          "yards_per_game": 155.0,
-          "touchdowns_per_game": 0.0,
+          "attempts_per_game": 19.5,
+          "completions_per_game": 11.0,
+          "yards_per_game": 114.5,
+          "touchdowns_per_game": 0.5,
           "interceptions_per_game": 0.0,
-          "completion_rate": 60.0,
-          "yards_per_attempt": 6.2,
-          "touchdown_rate": 0.0,
+          "completion_rate": 56.4,
+          "yards_per_attempt": 5.87,
+          "touchdown_rate": 2.6,
           "interception_rate": 0.0
         },
         "rushing": {
           "carries": 2.0,
-          "yards": -1.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 2.0,
-          "yards_per_game": -1.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": -0.5,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0039107",
-      "player": "Stetson Bennett",
-      "team": "LAR",
-      "opponent": "NYG",
-      "position": "QB",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "passing": {
-          "attempts": 3.1,
-          "completions": 2.1,
-          "yards": 14.3,
-          "touchdowns": 0.0,
-          "interceptions": 0.0
-        },
-        "rushing": {
-          "carries": 1.0,
-          "yards": 10.0,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 1.57,
-        "ppr": 1.57
-      },
-      "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "LAR",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 2.0,
-          "attempts": 3.0,
-          "yards": 13.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 3.0,
-          "completions_per_game": 2.0,
-          "yards_per_game": 13.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 66.7,
-          "yards_per_attempt": 4.33,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 1.0,
-          "yards": 9.0,
+          "yards": 20.0,
           "touchdowns": 0.0,
           "carries_per_game": 1.0,
-          "yards_per_game": 9.0,
+          "yards_per_game": 10.0,
           "touchdowns_per_game": 0.0,
-          "yards_per_carry": 9.0,
+          "yards_per_carry": 10.0,
           "touchdown_rate": 0.0
         },
         "receiving": {
@@ -273,48 +146,49 @@
       }
     },
     {
-      "player_id": "00-0039738",
-      "player": "Blake Corum",
-      "team": "LAR",
-      "opponent": "NYG",
-      "position": "RB",
-      "game_id": "2026_02_NYG_LA",
+      "player_id": "00-0041194",
+      "player": "Jack Strand",
+      "team": "ATL",
+      "opponent": "GB",
+      "position": "QB",
+      "game_id": "2026_03_ATL_GB",
       "projection": {
-        "rushing": {
-          "carries": 10.6,
-          "yards": 63.4,
-          "touchdowns": 0.0
+        "passing": {
+          "attempts": 14.9,
+          "completions": 7.7,
+          "yards": 54.3,
+          "touchdowns": 0.0,
+          "interceptions": 0.0
         },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
+        "rushing": {
+          "carries": 2.0,
+          "yards": 15.3,
           "touchdowns": 0.0
         }
       },
       "fantasy": {
-        "standard": 6.34,
-        "ppr": 6.34
+        "standard": 3.7,
+        "ppr": 3.7
       },
       "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
       },
       "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
       },
       "injury_context": {
         "team": {
           "team_context": {
-            "team": "LAR",
+            "team": "ATL",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -345,12 +219,21 @@
       },
       "weather_context": {
         "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
-        "classification": "INDOOR",
+        "classification": "NEUTRAL",
         "severity_score": 0.0,
         "passing_factor": 1.0,
         "rushing_factor": 1.0,
@@ -362,6 +245,150 @@
       },
       "baseline": {
         "games": 1,
+        "passing": {
+          "completions": 8.0,
+          "attempts": 15.0,
+          "yards": 59.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 15.0,
+          "completions_per_game": 8.0,
+          "yards_per_game": 59.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 53.3,
+          "yards_per_attempt": 3.93,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 2.0,
+          "yards": 16.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 2.0,
+          "yards_per_game": 16.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 8.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 0.0,
+          "receptions": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 0.0,
+          "receptions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 0.0,
+          "yards_per_target": 0.0,
+          "yards_per_reception": 0.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0038542",
+      "player": "Bijan Robinson",
+      "team": "ATL",
+      "opponent": "GB",
+      "position": "RB",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "rushing": {
+          "carries": 17.5,
+          "yards": 70.1,
+          "touchdowns": 0.0
+        },
+        "receiving": {
+          "targets": 7.3,
+          "receptions": 5.7,
+          "yards": 47.7,
+          "touchdowns": 0.41
+        }
+      },
+      "fantasy": {
+        "standard": 14.24,
+        "ppr": 19.94
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "ATL",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
         "passing": {
           "completions": 0.0,
           "attempts": 0.0,
@@ -379,158 +406,167 @@
           "interception_rate": 0.0
         },
         "rushing": {
-          "carries": 10.0,
-          "yards": 54.0,
+          "carries": 37.0,
+          "yards": 155.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 18.5,
+          "yards_per_game": 77.5,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 4.19,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 14.0,
+          "receptions": 11.0,
+          "yards": 99.0,
+          "touchdowns": 1.0,
+          "targets_per_game": 7.0,
+          "receptions_per_game": 5.5,
+          "yards_per_game": 49.5,
+          "touchdowns_per_game": 0.5,
+          "catch_rate": 78.6,
+          "yards_per_target": 7.07,
+          "yards_per_reception": 9.0,
+          "touchdown_rate": 7.1
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0037746",
+      "player": "Brian Robinson",
+      "team": "ATL",
+      "opponent": "GB",
+      "position": "RB",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "rushing": {
+          "carries": 9.5,
+          "yards": 37.1,
+          "touchdowns": 0.0
+        },
+        "receiving": {
+          "targets": 1.0,
+          "receptions": 0.9,
+          "yards": 7.7,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 4.48,
+        "ppr": 5.38
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "ATL",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 20.0,
+          "yards": 82.0,
           "touchdowns": 0.0,
           "carries_per_game": 10.0,
-          "yards_per_game": 54.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 5.4,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0037840",
-      "player": "Kyren Williams",
-      "team": "LAR",
-      "opponent": "NYG",
-      "position": "RB",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "rushing": {
-          "carries": 11.7,
-          "yards": 48.1,
-          "touchdowns": 1.27
-        },
-        "receiving": {
-          "targets": 2.9,
-          "receptions": 2.6,
-          "yards": 24.7,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 14.9,
-        "ppr": 17.5
-      },
-      "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "LAR",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 11.0,
-          "yards": 41.0,
-          "touchdowns": 1.0,
-          "carries_per_game": 11.0,
           "yards_per_game": 41.0,
-          "touchdowns_per_game": 1.0,
-          "yards_per_carry": 3.73,
-          "touchdown_rate": 9.1
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 4.1,
+          "touchdown_rate": 0.0
         },
         "receiving": {
-          "targets": 3.0,
-          "receptions": 3.0,
-          "yards": 24.0,
+          "targets": 2.0,
+          "receptions": 2.0,
+          "yards": 16.0,
           "touchdowns": 0.0,
-          "targets_per_game": 3.0,
-          "receptions_per_game": 3.0,
-          "yards_per_game": 24.0,
+          "targets_per_game": 1.0,
+          "receptions_per_game": 1.0,
+          "yards_per_game": 8.0,
           "touchdowns_per_game": 0.0,
           "catch_rate": 100.0,
           "yards_per_target": 8.0,
@@ -543,178 +579,43 @@
       }
     },
     {
-      "player_id": "00-0037557",
-      "player": "Ronnie Rivers",
-      "team": "LAR",
-      "opponent": "NYG",
-      "position": "RB",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "rushing": {
-          "carries": 5.3,
-          "yards": 22.3,
-          "touchdowns": 0.0
-        },
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 0.9,
-          "yards": 5.2,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 2.75,
-        "ppr": 3.65
-      },
-      "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "LAR",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 5.0,
-          "yards": 19.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 5.0,
-          "yards_per_game": 19.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 3.8,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 1.0,
-          "yards": 5.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 1.0,
-          "receptions_per_game": 1.0,
-          "yards_per_game": 5.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 100.0,
-          "yards_per_target": 5.0,
-          "yards_per_reception": 5.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0036244",
-      "player": "Colby Parkinson",
-      "team": "LAR",
-      "opponent": "NYG",
+      "player_id": "00-0032392",
+      "player": "Austin Hooper",
+      "team": "ATL",
+      "opponent": "GB",
       "position": "TE",
-      "game_id": "2026_02_NYG_LA",
+      "game_id": "2026_03_ATL_GB",
       "projection": {
         "receiving": {
-          "targets": 2.0,
-          "receptions": 1.0,
-          "yards": 6.6,
+          "targets": 4.0,
+          "receptions": 1.9,
+          "yards": 18.4,
           "touchdowns": 0.0
         }
       },
       "fantasy": {
-        "standard": 0.66,
-        "ppr": 1.66
+        "standard": 1.84,
+        "ppr": 3.74
       },
       "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
       },
       "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
       },
       "injury_context": {
         "team": {
           "team_context": {
-            "team": "LAR",
+            "team": "ATL",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -745,12 +646,21 @@
       },
       "weather_context": {
         "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
-        "classification": "INDOOR",
+        "classification": "NEUTRAL",
         "severity_score": 0.0,
         "passing_factor": 1.0,
         "rushing_factor": 1.0,
@@ -789,17 +699,17 @@
           "touchdown_rate": 0.0
         },
         "receiving": {
-          "targets": 2.0,
-          "receptions": 1.0,
-          "yards": 6.0,
+          "targets": 4.0,
+          "receptions": 2.0,
+          "yards": 20.0,
           "touchdowns": 0.0,
-          "targets_per_game": 2.0,
-          "receptions_per_game": 1.0,
-          "yards_per_game": 6.0,
+          "targets_per_game": 4.0,
+          "receptions_per_game": 2.0,
+          "yards_per_game": 20.0,
           "touchdowns_per_game": 0.0,
           "catch_rate": 50.0,
-          "yards_per_target": 3.0,
-          "yards_per_reception": 6.0,
+          "yards_per_target": 5.0,
+          "yards_per_reception": 10.0,
           "touchdown_rate": 0.0
         }
       },
@@ -808,142 +718,12 @@
       }
     },
     {
-      "player_id": "00-0039074",
-      "player": "Davis Allen",
-      "team": "LAR",
-      "opponent": "NYG",
+      "player_id": "00-0036429",
+      "player": "Charlie Woerner",
+      "team": "ATL",
+      "opponent": "GB",
       "position": "TE",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 0.9,
-          "yards": 14.3,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 1.43,
-        "ppr": 2.33
-      },
-      "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "LAR",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 1.0,
-          "yards": 13.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 1.0,
-          "receptions_per_game": 1.0,
-          "yards_per_game": 13.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 100.0,
-          "yards_per_target": 13.0,
-          "yards_per_reception": 13.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0040737",
-      "player": "Terrance Ferguson",
-      "team": "LAR",
-      "opponent": "NYG",
-      "position": "TE",
-      "game_id": "2026_02_NYG_LA",
+      "game_id": "2026_03_ATL_GB",
       "projection": {
         "receiving": {
           "targets": 1.0,
@@ -957,24 +737,24 @@
         "ppr": 0.4
       },
       "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
       },
       "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
       },
       "injury_context": {
         "team": {
           "team_context": {
-            "team": "LAR",
+            "team": "ATL",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -1005,12 +785,21 @@
       },
       "weather_context": {
         "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
-        "classification": "INDOOR",
+        "classification": "NEUTRAL",
         "severity_score": 0.0,
         "passing_factor": 1.0,
         "rushing_factor": 1.0,
@@ -1068,43 +857,43 @@
       }
     },
     {
-      "player_id": "00-0033110",
-      "player": "Tyler Higbee",
-      "team": "LAR",
-      "opponent": "NYG",
+      "player_id": "00-0036970",
+      "player": "Kyle Pitts",
+      "team": "ATL",
+      "opponent": "GB",
       "position": "TE",
-      "game_id": "2026_02_NYG_LA",
+      "game_id": "2026_03_ATL_GB",
       "projection": {
         "receiving": {
           "targets": 2.0,
-          "receptions": 1.8,
-          "yards": 13.2,
+          "receptions": 0.8,
+          "yards": 6.9,
           "touchdowns": 0.0
         }
       },
       "fantasy": {
-        "standard": 1.32,
-        "ppr": 3.12
+        "standard": 0.69,
+        "ppr": 1.49
       },
       "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
       },
       "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
       },
       "injury_context": {
         "team": {
           "team_context": {
-            "team": "LAR",
+            "team": "ATL",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -1135,12 +924,160 @@
       },
       "weather_context": {
         "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
-        "classification": "INDOOR",
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 4.0,
+          "receptions": 1.0,
+          "yards": 15.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 2.0,
+          "receptions_per_game": 0.5,
+          "yards_per_game": 7.5,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 25.0,
+          "yards_per_target": 3.75,
+          "yards_per_reception": 15.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0037317",
+      "player": "Nick Muse",
+      "team": "ATL",
+      "opponent": "GB",
+      "position": "TE",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 0.0,
+          "receptions": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 0.0,
+        "ppr": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "ATL",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
         "severity_score": 0.0,
         "passing_factor": 1.0,
         "rushing_factor": 1.0,
@@ -1152,6 +1089,701 @@
       },
       "baseline": {
         "games": 1,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 0.0,
+          "receptions": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 0.0,
+          "receptions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 0.0,
+          "yards_per_target": 0.0,
+          "yards_per_reception": 0.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0036463",
+      "player": "Chris Blair",
+      "team": "ATL",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 1.5,
+          "receptions": 0.6,
+          "yards": 2.8,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 0.28,
+        "ppr": 0.88
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "ATL",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 3.0,
+          "receptions": 1.0,
+          "yards": 6.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 1.5,
+          "receptions_per_game": 0.5,
+          "yards_per_game": 3.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 33.3,
+          "yards_per_target": 2.0,
+          "yards_per_reception": 6.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0037238",
+      "player": "Drake London",
+      "team": "ATL",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 4.5,
+          "receptions": 2.9,
+          "yards": 36.8,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 3.68,
+        "ppr": 6.58
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "ATL",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 2.0,
+          "yards": 4.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 1.0,
+          "yards_per_game": 2.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 2.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 9.0,
+          "receptions": 6.0,
+          "yards": 80.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 4.5,
+          "receptions_per_game": 3.0,
+          "yards_per_game": 40.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 66.7,
+          "yards_per_target": 8.89,
+          "yards_per_reception": 13.33,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0037741",
+      "player": "Jahan Dotson",
+      "team": "ATL",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 3.5,
+          "receptions": 1.5,
+          "yards": 13.8,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 1.38,
+        "ppr": 2.88
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "ATL",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 7.0,
+          "receptions": 3.0,
+          "yards": 30.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 3.5,
+          "receptions_per_game": 1.5,
+          "yards_per_game": 15.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 42.9,
+          "yards_per_target": 4.29,
+          "yards_per_reception": 10.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0035208",
+      "player": "Olamide Zaccheaus",
+      "team": "ATL",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 2.0,
+          "receptions": 1.0,
+          "yards": 3.7,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 0.37,
+        "ppr": 1.37
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "ATL",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 4.0,
+          "receptions": 2.0,
+          "yards": 8.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 2.0,
+          "receptions_per_game": 1.0,
+          "yards_per_game": 4.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 50.0,
+          "yards_per_target": 2.0,
+          "yards_per_reception": 4.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0041044",
+      "player": "Zachariah Branch",
+      "team": "ATL",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 1.0,
+          "receptions": 0.9,
+          "yards": 6.4,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 0.64,
+        "ppr": 1.54
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "projected_game_total": 43.3,
+        "win_probability": 36.9,
+        "scoring_factor": 0.884,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": -14.0,
+        "passing_rating": -18.2,
+        "rushing_rating": -11.2,
+        "overall_factor": 0.958,
+        "passing_factor": 0.927,
+        "rushing_factor": 0.955
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "ATL",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
         "passing": {
           "completions": 0.0,
           "attempts": 0.0,
@@ -1181,275 +1813,15 @@
         "receiving": {
           "targets": 2.0,
           "receptions": 2.0,
-          "yards": 12.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 2.0,
-          "receptions_per_game": 2.0,
-          "yards_per_game": 12.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 100.0,
-          "yards_per_target": 6.0,
-          "yards_per_reception": 6.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0031381",
-      "player": "Davante Adams",
-      "team": "LAR",
-      "opponent": "NYG",
-      "position": "WR",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "receiving": {
-          "targets": 6.1,
-          "receptions": 3.1,
-          "yards": 28.6,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 2.86,
-        "ppr": 5.96
-      },
-      "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "LAR",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 6.0,
-          "receptions": 3.0,
-          "yards": 26.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 6.0,
-          "receptions_per_game": 3.0,
-          "yards_per_game": 26.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 50.0,
-          "yards_per_target": 4.33,
-          "yards_per_reception": 8.67,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0039751",
-      "player": "Jordan Whittington",
-      "team": "LAR",
-      "opponent": "NYG",
-      "position": "WR",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 0.9,
-          "yards": 8.8,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 0.88,
-        "ppr": 1.78
-      },
-      "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "LAR",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 1.0,
-          "yards": 8.0,
+          "yards": 14.0,
           "touchdowns": 0.0,
           "targets_per_game": 1.0,
           "receptions_per_game": 1.0,
-          "yards_per_game": 8.0,
+          "yards_per_game": 7.0,
           "touchdowns_per_game": 0.0,
           "catch_rate": 100.0,
-          "yards_per_target": 8.0,
-          "yards_per_reception": 8.0,
+          "yards_per_target": 7.0,
+          "yards_per_reception": 7.0,
           "touchdown_rate": 0.0
         }
       },
@@ -1458,43 +1830,49 @@
       }
     },
     {
-      "player_id": "00-0040590",
-      "player": "Konata Mumpfield",
-      "team": "LAR",
-      "opponent": "NYG",
-      "position": "WR",
-      "game_id": "2026_02_NYG_LA",
+      "player_id": "00-0036264",
+      "player": "Jordan Love",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "QB",
+      "game_id": "2026_03_ATL_GB",
       "projection": {
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 0.4,
+        "passing": {
+          "attempts": 33.0,
+          "completions": 17.1,
+          "yards": 255.4,
+          "touchdowns": 2.15,
+          "interceptions": 0.0
+        },
+        "rushing": {
+          "carries": 0.5,
           "yards": 0.0,
           "touchdowns": 0.0
         }
       },
       "fantasy": {
-        "standard": 0.0,
-        "ppr": 0.4
+        "standard": 18.82,
+        "ppr": 18.82
       },
       "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
       },
       "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
       },
       "injury_context": {
         "team": {
           "team_context": {
-            "team": "LAR",
+            "team": "GB",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -1525,55 +1903,64 @@
       },
       "weather_context": {
         "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
-        "classification": "INDOOR",
+        "classification": "NEUTRAL",
         "severity_score": 0.0,
         "passing_factor": 1.0,
         "rushing_factor": 1.0,
         "kicking_factor": 1.0
       },
       "sample": {
-        "games": 1,
+        "games": 2,
         "label": "Small"
       },
       "baseline": {
-        "games": 1,
+        "games": 2,
         "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
+          "completions": 37.0,
+          "attempts": 71.0,
+          "yards": 532.0,
+          "touchdowns": 4.0,
           "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
+          "attempts_per_game": 35.5,
+          "completions_per_game": 18.5,
+          "yards_per_game": 266.0,
+          "touchdowns_per_game": 2.0,
           "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
+          "completion_rate": 52.1,
+          "yards_per_attempt": 7.49,
+          "touchdown_rate": 5.6,
           "interception_rate": 0.0
         },
         "rushing": {
-          "carries": 0.0,
+          "carries": 1.0,
           "yards": 0.0,
           "touchdowns": 0.0,
-          "carries_per_game": 0.0,
+          "carries_per_game": 0.5,
           "yards_per_game": 0.0,
           "touchdowns_per_game": 0.0,
           "yards_per_carry": 0.0,
           "touchdown_rate": 0.0
         },
         "receiving": {
-          "targets": 1.0,
+          "targets": 0.0,
           "receptions": 0.0,
           "yards": 0.0,
           "touchdowns": 0.0,
-          "targets_per_game": 1.0,
+          "targets_per_game": 0.0,
           "receptions_per_game": 0.0,
           "yards_per_game": 0.0,
           "touchdowns_per_game": 0.0,
@@ -1588,43 +1975,48 @@
       }
     },
     {
-      "player_id": "00-0039075",
-      "player": "Puka Nacua",
-      "team": "LAR",
-      "opponent": "NYG",
-      "position": "WR",
-      "game_id": "2026_02_NYG_LA",
+      "player_id": "00-0038685",
+      "player": "Chris Brooks",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "RB",
+      "game_id": "2026_03_ATL_GB",
       "projection": {
+        "rushing": {
+          "carries": 5.8,
+          "yards": 20.3,
+          "touchdowns": 0.0
+        },
         "receiving": {
-          "targets": 9.2,
-          "receptions": 5.1,
-          "yards": 81.5,
+          "targets": 1.4,
+          "receptions": 0.6,
+          "yards": 7.4,
           "touchdowns": 0.0
         }
       },
       "fantasy": {
-        "standard": 8.15,
-        "ppr": 13.25
+        "standard": 2.77,
+        "ppr": 3.37
       },
       "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
       },
       "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
       },
       "injury_context": {
         "team": {
           "team_context": {
-            "team": "LAR",
+            "team": "GB",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -1655,12 +2047,448 @@
       },
       "weather_context": {
         "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
-        "classification": "INDOOR",
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 11.0,
+          "yards": 40.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 5.5,
+          "yards_per_game": 20.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 3.64,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 3.0,
+          "receptions": 1.0,
+          "yards": 15.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 1.5,
+          "receptions_per_game": 0.5,
+          "yards_per_game": 7.5,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 33.3,
+          "yards_per_target": 5.0,
+          "yards_per_reception": 15.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0040142",
+      "player": "Kaleb Johnson",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "RB",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "rushing": {
+          "carries": 4.2,
+          "yards": 16.2,
+          "touchdowns": 0.0
+        },
+        "receiving": {
+          "targets": 0.0,
+          "receptions": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 1.62,
+        "ppr": 1.62
+      },
+      "environment": {
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "GB",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 8.0,
+          "yards": 32.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 4.0,
+          "yards_per_game": 16.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 4.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 0.0,
+          "receptions": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 0.0,
+          "receptions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 0.0,
+          "yards_per_target": 0.0,
+          "yards_per_reception": 0.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0039811",
+      "player": "MarShawn Lloyd",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "RB",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "rushing": {
+          "carries": 10.0,
+          "yards": 28.9,
+          "touchdowns": 0.0
+        },
+        "receiving": {
+          "targets": 1.4,
+          "receptions": 1.0,
+          "yards": 3.0,
+          "touchdowns": 0.54
+        }
+      },
+      "fantasy": {
+        "standard": 6.43,
+        "ppr": 7.43
+      },
+      "environment": {
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "GB",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 19.0,
+          "yards": 57.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 9.5,
+          "yards_per_game": 28.5,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 3.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 3.0,
+          "receptions": 2.0,
+          "yards": 6.0,
+          "touchdowns": 1.0,
+          "targets_per_game": 1.5,
+          "receptions_per_game": 1.0,
+          "yards_per_game": 3.0,
+          "touchdowns_per_game": 0.5,
+          "catch_rate": 66.7,
+          "yards_per_target": 2.0,
+          "yards_per_reception": 3.0,
+          "touchdown_rate": 33.3
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0033858",
+      "player": "Jonnu Smith",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "TE",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 2.8,
+          "receptions": 1.9,
+          "yards": 48.0,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 4.8,
+        "ppr": 6.7
+      },
+      "environment": {
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "GB",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
         "severity_score": 0.0,
         "passing_factor": 1.0,
         "rushing_factor": 1.0,
@@ -1672,6 +2500,145 @@
       },
       "baseline": {
         "games": 1,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 3.0,
+          "receptions": 2.0,
+          "yards": 50.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 3.0,
+          "receptions_per_game": 2.0,
+          "yards_per_game": 50.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 66.7,
+          "yards_per_target": 16.67,
+          "yards_per_reception": 25.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0038996",
+      "player": "Tucker Kraft",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "TE",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 4.2,
+          "receptions": 2.3,
+          "yards": 38.4,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 3.84,
+        "ppr": 6.14
+      },
+      "environment": {
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "GB",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
         "passing": {
           "completions": 0.0,
           "attempts": 0.0,
@@ -1701,15 +2668,15 @@
         "receiving": {
           "targets": 9.0,
           "receptions": 5.0,
-          "yards": 74.0,
+          "yards": 80.0,
           "touchdowns": 0.0,
-          "targets_per_game": 9.0,
-          "receptions_per_game": 5.0,
-          "yards_per_game": 74.0,
+          "targets_per_game": 4.5,
+          "receptions_per_game": 2.5,
+          "yards_per_game": 40.0,
           "touchdowns_per_game": 0.0,
           "catch_rate": 55.6,
-          "yards_per_target": 8.22,
-          "yards_per_reception": 14.8,
+          "yards_per_target": 8.89,
+          "yards_per_reception": 16.0,
           "touchdown_rate": 0.0
         }
       },
@@ -1718,584 +2685,43 @@
       }
     },
     {
-      "player_id": "00-0038359",
-      "player": "Xavier Smith",
-      "team": "LAR",
-      "opponent": "NYG",
+      "player_id": "00-0037091",
+      "player": "Bo Melton",
+      "team": "GB",
+      "opponent": "ATL",
       "position": "WR",
-      "game_id": "2026_02_NYG_LA",
+      "game_id": "2026_03_ATL_GB",
       "projection": {
         "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 0.0,
-        "ppr": 0.0
-      },
-      "environment": {
-        "projected_team_points": 25.9,
-        "projected_game_total": 47.7,
-        "win_probability": 65.3,
-        "scoring_factor": 1.151,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 20.1,
-        "passing_rating": 20.1,
-        "rushing_rating": 26.6,
-        "overall_factor": 1.06,
-        "passing_factor": 1.08,
-        "rushing_factor": 1.106
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "LAR",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0040691",
-      "player": "Jaxson Dart",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "QB",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "passing": {
-          "attempts": 31.9,
-          "completions": 24.9,
-          "yards": 251.6,
-          "touchdowns": 2.89,
-          "interceptions": 0.0
-        },
-        "rushing": {
-          "carries": 10.8,
-          "yards": 54.7,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 27.09,
-        "ppr": 27.09
-      },
-      "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NYG",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 23.0,
-          "attempts": 29.0,
-          "yards": 230.0,
-          "touchdowns": 3.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 29.0,
-          "completions_per_game": 23.0,
-          "yards_per_game": 230.0,
-          "touchdowns_per_game": 3.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 79.3,
-          "yards_per_attempt": 7.93,
-          "touchdown_rate": 10.3,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 11.0,
-          "yards": 54.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 11.0,
-          "yards_per_game": 54.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 4.91,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0040715",
-      "player": "Cam Skattebo",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "RB",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "rushing": {
-          "carries": 16.9,
-          "yards": 77.0,
-          "touchdowns": 0.98
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 13.58,
-        "ppr": 13.58
-      },
-      "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NYG",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 18.0,
-          "yards": 81.0,
-          "touchdowns": 1.0,
-          "carries_per_game": 18.0,
-          "yards_per_game": 81.0,
-          "touchdowns_per_game": 1.0,
-          "yards_per_carry": 4.5,
-          "touchdown_rate": 5.6
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0035250",
-      "player": "Devin Singletary",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "RB",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "rushing": {
-          "carries": 5.6,
-          "yards": 15.2,
-          "touchdowns": 0.0
-        },
-        "receiving": {
-          "targets": 4.2,
-          "receptions": 3.8,
-          "yards": 22.9,
-          "touchdowns": 0.96
-        }
-      },
-      "fantasy": {
-        "standard": 9.57,
-        "ppr": 13.37
-      },
-      "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NYG",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 6.0,
-          "yards": 16.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 6.0,
-          "yards_per_game": 16.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 2.67,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 4.0,
-          "receptions": 4.0,
-          "yards": 22.0,
-          "touchdowns": 1.0,
-          "targets_per_game": 4.0,
-          "receptions_per_game": 4.0,
-          "yards_per_game": 22.0,
-          "touchdowns_per_game": 1.0,
-          "catch_rate": 100.0,
-          "yards_per_target": 5.5,
-          "yards_per_reception": 5.5,
-          "touchdown_rate": 25.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0033376",
-      "player": "Patrick Ricard",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "RB",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0
-        },
-        "receiving": {
-          "targets": 1.0,
+          "targets": 0.9,
           "receptions": 0.5,
-          "yards": 0.0,
+          "yards": 4.8,
           "touchdowns": 0.0
         }
       },
       "fantasy": {
-        "standard": 0.0,
-        "ppr": 0.5
+        "standard": 0.48,
+        "ppr": 0.98
       },
       "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
       },
       "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
       },
       "injury_context": {
         "team": {
           "team_context": {
-            "team": "NYG",
+            "team": "GB",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -2326,678 +2752,32 @@
       },
       "weather_context": {
         "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
-        "classification": "INDOOR",
+        "classification": "NEUTRAL",
         "severity_score": 0.0,
         "passing_factor": 1.0,
         "rushing_factor": 1.0,
         "kicking_factor": 1.0
       },
       "sample": {
-        "games": 1,
+        "games": 2,
         "label": "Small"
       },
       "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 1.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0039384",
-      "player": "Tyrone Tracy Jr.",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "RB",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "rushing": {
-          "carries": 1.9,
-          "yards": 13.3,
-          "touchdowns": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 1.33,
-        "ppr": 1.33
-      },
-      "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NYG",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 2.0,
-          "yards": 14.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 2.0,
-          "yards_per_game": 14.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 7.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0037838",
-      "player": "Isaiah Likely",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "TE",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "receiving": {
-          "targets": 8.8,
-          "receptions": 7.9,
-          "yards": 85.3,
-          "touchdowns": 1.93
-        }
-      },
-      "fantasy": {
-        "standard": 20.11,
-        "ppr": 28.01
-      },
-      "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NYG",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 8.0,
-          "receptions": 8.0,
-          "yards": 78.0,
-          "touchdowns": 2.0,
-          "targets_per_game": 8.0,
-          "receptions_per_game": 8.0,
-          "yards_per_game": 78.0,
-          "touchdowns_per_game": 2.0,
-          "catch_rate": 100.0,
-          "yards_per_target": 9.75,
-          "yards_per_reception": 9.75,
-          "touchdown_rate": 25.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0039847",
-      "player": "Theo Johnson",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "TE",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "receiving": {
-          "targets": 1.1,
-          "receptions": 1.0,
-          "yards": 9.8,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 0.98,
-        "ppr": 1.98
-      },
-      "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NYG",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 1.0,
-          "yards": 9.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 1.0,
-          "receptions_per_game": 1.0,
-          "yards_per_game": 9.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 100.0,
-          "yards_per_target": 9.0,
-          "yards_per_reception": 9.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0034419",
-      "player": "Braxton Berrios",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 0.0,
-        "ppr": 0.0
-      },
-      "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NYG",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 0.0,
-          "receptions": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 0.0,
-          "receptions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 0.0,
-          "yards_per_target": 0.0,
-          "yards_per_reception": 0.0,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0036309",
-      "player": "Darnell Mooney",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "receiving": {
-          "targets": 2.2,
-          "receptions": 2.0,
-          "yards": 29.5,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 2.95,
-        "ppr": 4.95
-      },
-      "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NYG",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
+        "games": 2,
         "passing": {
           "completions": 0.0,
           "attempts": 0.0,
@@ -3026,16 +2806,16 @@
         },
         "receiving": {
           "targets": 2.0,
-          "receptions": 2.0,
-          "yards": 27.0,
+          "receptions": 1.0,
+          "yards": 10.0,
           "touchdowns": 0.0,
-          "targets_per_game": 2.0,
-          "receptions_per_game": 2.0,
-          "yards_per_game": 27.0,
+          "targets_per_game": 1.0,
+          "receptions_per_game": 0.5,
+          "yards_per_game": 5.0,
           "touchdowns_per_game": 0.0,
-          "catch_rate": 100.0,
-          "yards_per_target": 13.5,
-          "yards_per_reception": 13.5,
+          "catch_rate": 50.0,
+          "yards_per_target": 5.0,
+          "yards_per_reception": 10.0,
           "touchdown_rate": 0.0
         }
       },
@@ -3044,43 +2824,43 @@
       }
     },
     {
-      "player_id": "00-0041042",
-      "player": "Malachi Fields",
-      "team": "NYG",
-      "opponent": "LAR",
+      "player_id": "00-0038124",
+      "player": "Christian Watson",
+      "team": "GB",
+      "opponent": "ATL",
       "position": "WR",
-      "game_id": "2026_02_NYG_LA",
+      "game_id": "2026_03_ATL_GB",
       "projection": {
         "receiving": {
-          "targets": 4.4,
-          "receptions": 2.2,
-          "yards": 27.3,
-          "touchdowns": 0.0
+          "targets": 8.8,
+          "receptions": 4.6,
+          "yards": 90.3,
+          "touchdowns": 1.61
         }
       },
       "fantasy": {
-        "standard": 2.73,
-        "ppr": 4.93
+        "standard": 18.69,
+        "ppr": 23.29
       },
       "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
       },
       "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
       },
       "injury_context": {
         "team": {
           "team_context": {
-            "team": "NYG",
+            "team": "GB",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -3111,12 +2891,160 @@
       },
       "weather_context": {
         "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
-        "classification": "INDOOR",
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 19.0,
+          "receptions": 10.0,
+          "yards": 188.0,
+          "touchdowns": 3.0,
+          "targets_per_game": 9.5,
+          "receptions_per_game": 5.0,
+          "yards_per_game": 94.0,
+          "touchdowns_per_game": 1.5,
+          "catch_rate": 52.6,
+          "yards_per_target": 9.89,
+          "yards_per_reception": 18.8,
+          "touchdown_rate": 15.8
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0040948",
+      "player": "J. Michael Sturdivant",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "WR",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 0.0,
+          "receptions": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 0.0,
+        "ppr": 0.0
+      },
+      "environment": {
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "GB",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
         "severity_score": 0.0,
         "passing_factor": 1.0,
         "rushing_factor": 1.0,
@@ -3128,6 +3056,423 @@
       },
       "baseline": {
         "games": 1,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 0.0,
+          "receptions": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 0.0,
+          "receptions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 0.0,
+          "yards_per_target": 0.0,
+          "yards_per_reception": 0.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0039146",
+      "player": "Jayden Reed",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "WR",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 3.7,
+          "receptions": 1.9,
+          "yards": 11.5,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 1.15,
+        "ppr": 3.05
+      },
+      "environment": {
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "GB",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 8.0,
+          "receptions": 4.0,
+          "yards": 24.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 4.0,
+          "receptions_per_game": 2.0,
+          "yards_per_game": 12.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 50.0,
+          "yards_per_target": 3.0,
+          "yards_per_reception": 6.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0040667",
+      "player": "Matthew Golden",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "WR",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 8.4,
+          "receptions": 4.6,
+          "yards": 73.5,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 7.35,
+        "ppr": 11.95
+      },
+      "environment": {
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "GB",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 18.0,
+          "receptions": 10.0,
+          "yards": 153.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 9.0,
+          "receptions_per_game": 5.0,
+          "yards_per_game": 76.5,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 55.6,
+          "yards_per_target": 8.5,
+          "yards_per_reception": 15.3,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0038090",
+      "player": "Skyy Moore",
+      "team": "GB",
+      "opponent": "ATL",
+      "position": "WR",
+      "game_id": "2026_03_ATL_GB",
+      "projection": {
+        "receiving": {
+          "targets": 1.9,
+          "receptions": 0.9,
+          "yards": 2.9,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 0.29,
+        "ppr": 1.19
+      },
+      "environment": {
+        "projected_team_points": 23.4,
+        "projected_game_total": 43.3,
+        "win_probability": 63.1,
+        "scoring_factor": 1.04,
+        "total_factor": 0.962
+      },
+      "matchup": {
+        "overall_rating": 0.9,
+        "passing_rating": 8.1,
+        "rushing_rating": -9.3,
+        "overall_factor": 1.003,
+        "passing_factor": 1.032,
+        "rushing_factor": 0.963
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "GB",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lambeau Field",
+        "weather": {
+          "forecast_time": "2026-09-24T20:00",
+          "temperature_f": 56.3,
+          "feels_like_f": 53.8,
+          "humidity_pct": 75.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "classification": "NEUTRAL",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
         "passing": {
           "completions": 0.0,
           "attempts": 0.0,
@@ -3157,145 +3502,15 @@
         "receiving": {
           "targets": 4.0,
           "receptions": 2.0,
-          "yards": 25.0,
+          "yards": 6.0,
           "touchdowns": 0.0,
-          "targets_per_game": 4.0,
-          "receptions_per_game": 2.0,
-          "yards_per_game": 25.0,
+          "targets_per_game": 2.0,
+          "receptions_per_game": 1.0,
+          "yards_per_game": 3.0,
           "touchdowns_per_game": 0.0,
           "catch_rate": 50.0,
-          "yards_per_target": 6.25,
-          "yards_per_reception": 12.5,
-          "touchdown_rate": 0.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
-      "player_id": "00-0039337",
-      "player": "Malik Nabers",
-      "team": "NYG",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_02_NYG_LA",
-      "projection": {
-        "receiving": {
-          "targets": 9.9,
-          "receptions": 6.5,
-          "yards": 75.5,
-          "touchdowns": 0.0
-        }
-      },
-      "fantasy": {
-        "standard": 7.55,
-        "ppr": 14.05
-      },
-      "environment": {
-        "projected_team_points": 21.8,
-        "projected_game_total": 47.7,
-        "win_probability": 34.7,
-        "scoring_factor": 0.969,
-        "total_factor": 1.06
-      },
-      "matchup": {
-        "overall_rating": 0.4,
-        "passing_rating": -1.5,
-        "rushing_rating": 3.2,
-        "overall_factor": 1.001,
-        "passing_factor": 0.994,
-        "rushing_factor": 1.013
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "NYG",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 1,
-        "label": "Small"
-      },
-      "baseline": {
-        "games": 1,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 9.0,
-          "receptions": 6.0,
-          "yards": 69.0,
-          "touchdowns": 0.0,
-          "targets_per_game": 9.0,
-          "receptions_per_game": 6.0,
-          "yards_per_game": 69.0,
-          "touchdowns_per_game": 0.0,
-          "catch_rate": 66.7,
-          "yards_per_target": 7.67,
-          "yards_per_reception": 11.5,
+          "yards_per_target": 1.5,
+          "yards_per_reception": 3.0,
           "touchdown_rate": 0.0
         }
       },
@@ -3307,13 +3522,13 @@
   "counts": {
     "total": 25,
     "QB": 3,
-    "RB": 7,
-    "WR": 9,
+    "RB": 5,
+    "WR": 11,
     "TE": 6
   },
   "diagnostics": {
-    "slate_players": 53,
-    "missing_player_metrics": 28,
+    "slate_players": 55,
+    "missing_player_metrics": 30,
     "missing_game_projection": 0,
     "missing_matchup_metrics": 0,
     "missing_injury_context": 0,
