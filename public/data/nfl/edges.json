@@ -7,10 +7,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 41.8,
+        "total": 43.3,
         "home_margin": "",
-        "away_win_probability": 0.344,
-        "home_win_probability": 0.6559999999999999,
+        "away_win_probability": 0.369,
+        "home_win_probability": 0.631,
         "projection_confidence": 52.6
       },
       "market": {
@@ -25,12 +25,12 @@
         "away_team": "ATL",
         "home_team": "GB",
         "moneyline": {
-          "away": 220.0,
-          "home": -270.0,
-          "away_implied_probability": 0.3125,
-          "home_implied_probability": 0.7297,
-          "away_no_vig_probability": 0.2998,
-          "home_no_vig_probability": 0.7002
+          "away": 225.0,
+          "home": -275.0,
+          "away_implied_probability": 0.3077,
+          "home_implied_probability": 0.7333,
+          "away_no_vig_probability": 0.2956,
+          "home_no_vig_probability": 0.7044
         },
         "spread": {
           "away": 6.5,
@@ -40,24 +40,24 @@
         },
         "game_total": 44.5,
         "game_total_prices": {
-          "over": -105.0,
-          "under": -115.0
+          "over": -110.0,
+          "under": -110.0
         },
         "team_totals": {
-          "away": 19.5,
+          "away": 0.5,
           "home": 25.5,
           "source": "sportsbook"
         },
         "posted_team_totals": {
           "away": {
-            "line": 19.5,
-            "over_price": -108.0,
-            "under_price": -118.0
+            "line": 0.5,
+            "over_price": -50000.0,
+            "under_price": -50000.0
           },
           "home": {
             "line": 25.5,
-            "over_price": -113.0,
-            "under_price": -113.0
+            "over_price": -118.0,
+            "under_price": -108.0
           },
           "source": "sportsbook"
         },
@@ -81,8 +81,8 @@
             "title": "FanDuel",
             "markets": {
               "moneyline": {
-                "away": 220.0,
-                "home": -270.0
+                "away": 225.0,
+                "home": -275.0
               },
               "spread": {
                 "away": 6.5,
@@ -92,19 +92,19 @@
               },
               "game_total": {
                 "line": 44.5,
-                "over_price": -105.0,
-                "under_price": -115.0
+                "over_price": -110.0,
+                "under_price": -110.0
               },
               "team_total": {
                 "home": {
                   "line": 25.5,
-                  "over_price": -113.0,
-                  "under_price": -113.0
+                  "over_price": -118.0,
+                  "under_price": -108.0
                 },
                 "away": {
-                  "line": 19.5,
-                  "over_price": -108.0,
-                  "under_price": -118.0
+                  "line": 0.5,
+                  "over_price": -50000.0,
+                  "under_price": -50000.0
                 }
               }
             }
@@ -136,24 +136,17 @@
         {
           "market": "moneyline",
           "selection": "ATL",
-          "edge": 0.044,
-          "confidence_score": 42.4,
-          "confidence_label": "PASS"
-        },
-        {
-          "market": "game_total",
-          "selection": "UNDER 44.5",
-          "edge": 2.7,
-          "confidence_score": 40.3,
-          "confidence_label": "PASS"
+          "edge": 0.073,
+          "confidence_score": 58.2,
+          "confidence_label": "LEAN"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "ATL",
-        "edge": 0.044,
-        "confidence_score": 42.4,
-        "confidence_label": "PASS"
+        "edge": 0.073,
+        "confidence_score": 58.2,
+        "confidence_label": "LEAN"
       }
     }
   ],
@@ -164,24 +157,14 @@
       "home_team": "GB",
       "market": "moneyline",
       "selection": "ATL",
-      "edge": 0.044,
-      "confidence_score": 42.4,
-      "confidence_label": "PASS"
-    },
-    {
-      "game_id": "2026_03_ATL_GB",
-      "away_team": "ATL",
-      "home_team": "GB",
-      "market": "game_total",
-      "selection": "UNDER 44.5",
-      "edge": 2.7,
-      "confidence_score": 40.3,
-      "confidence_label": "PASS"
+      "edge": 0.073,
+      "confidence_score": 58.2,
+      "confidence_label": "LEAN"
     }
   ],
   "counts": {
     "games": 1,
-    "bets": 2,
+    "bets": 1,
     "missing_projection": 0
   },
   "model": {

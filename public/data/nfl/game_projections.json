@@ -5,23 +5,23 @@
       "away_team": "ATL",
       "home_team": "GB",
       "away_projection": {
-        "projected_points": 18.8,
+        "projected_points": 19.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.76,
           "matchup_adjustment": -1.12,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 19.87,
-          "injury_scoring_factor": 0.944,
-          "injury_adjustment_points": -1.11,
-          "post_injury_projection": 18.75,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 19.87,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.944,
-          "passing_factor": 0.881,
-          "rushing_factor": 0.956,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
           "key_absences": []
         },
         "weather_context": {
@@ -33,7 +33,7 @@
             "temperature_f": 56.7,
             "feels_like_f": 54.2,
             "humidity_pct": 72.0,
-            "precip_probability_pct": 0.0,
+            "precip_probability_pct": 1.0,
             "precipitation_in": 0.0,
             "wind_mph": 4.6,
             "wind_gust_mph": 4.7,
@@ -59,23 +59,23 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.0,
+        "projected_points": 23.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.03,
           "matchup_adjustment": 0.1,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 23.38,
-          "injury_scoring_factor": 0.986,
-          "injury_adjustment_points": -0.33,
-          "post_injury_projection": 23.05,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 23.38,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.986,
-          "passing_factor": 0.954,
-          "rushing_factor": 1.067,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
           "key_absences": []
         },
         "weather_context": {
@@ -87,7 +87,7 @@
             "temperature_f": 56.7,
             "feels_like_f": 54.2,
             "humidity_pct": 72.0,
-            "precip_probability_pct": 0.0,
+            "precip_probability_pct": 1.0,
             "precipitation_in": 0.0,
             "wind_mph": 4.6,
             "wind_gust_mph": 4.7,
@@ -113,639 +113,69 @@
         }
       },
       "projected_score": {
-        "away": 18.8,
-        "home": 23.0
+        "away": 19.9,
+        "home": 23.4
       },
-      "projected_total": 41.8,
-      "expected_margin": 4.2,
+      "projected_total": 43.3,
+      "expected_margin": 3.5,
       "projected_winner": "GB",
       "win_probability": {
-        "away": 34.4,
-        "home": 65.6
+        "away": 36.9,
+        "home": 63.1
       },
       "projection_confidence": 52.6,
       "injury_context": {
         "away": {
           "team_context": {
             "team": "ATL",
-            "injuries": [
-              {
-                "player_id": "4241479",
-                "player": "Tua Tagovailoa",
-                "team": "ATL",
-                "position": "QB",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 10.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 10.0
-              },
-              {
-                "player_id": "4431194",
-                "player": "Billy Bowman Jr.",
-                "team": "ATL",
-                "position": "CB",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.4
-              },
-              {
-                "player_id": "2973014",
-                "player": "Storm Norton",
-                "team": "ATL",
-                "position": "OT",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.2
-              },
-              {
-                "player_id": "4431210",
-                "player": "Beaux Collins",
-                "team": "ATL",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "5150660",
-                "player": "Anterio Thompson",
-                "team": "ATL",
-                "position": "DT",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.6
-              },
-              {
-                "player_id": "3126352",
-                "player": "Da'Shawn Hand",
-                "team": "ATL",
-                "position": "DT",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Quadriceps",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.6
-              },
-              {
-                "player_id": "4243457",
-                "player": "DeAngelo Malone",
-                "team": "ATL",
-                "position": "LB",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4428872",
-                "player": "JD Bertrand",
-                "team": "ATL",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4685590",
-                "player": "Cameron Williams",
-                "team": "ATL",
-                "position": "OL",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.0
-              },
-              {
-                "player_id": "4241401",
-                "player": "Trey Sermon",
-                "team": "ATL",
-                "position": "RB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 1.8
-              },
-              {
-                "player_id": "3045527",
-                "player": "Samson Ebukam",
-                "team": "ATL",
-                "position": "DE",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Hamstring",
-                "unit": "defense",
-                "position_weight": 3.5,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.4
-              },
-              {
-                "player_id": "4239995",
-                "player": "A.J. Terrell Jr.",
-                "team": "ATL",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Groin",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
-                "player_id": "4034961",
-                "player": "Jawaan Taylor",
-                "team": "ATL",
-                "position": "OT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ribs",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.28
-              },
-              {
-                "player_id": "4427090",
-                "player": "Brandon Dorlus",
-                "team": "ATL",
-                "position": "DT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Thumb",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.04
-              },
-              {
-                "player_id": "4249624",
-                "player": "Nick Muse",
-                "team": "ATL",
-                "position": "TE",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Shoulder",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.88
-              },
-              {
-                "player_id": "4241474",
-                "player": "Brian Robinson Jr.",
-                "team": "ATL",
-                "position": "RB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.72
-              }
-            ],
+            "injuries": [],
             "offense": {
-              "impact": 18.0,
-              "factor": 0.8,
-              "passing_impact": 20.0,
-              "passing_factor": 0.78,
-              "rushing_impact": 16.0,
-              "rushing_factor": 0.824
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
             },
             "defense": {
-              "impact": 17.2,
-              "factor": 1.172,
-              "pass_defense_impact": 10.96,
-              "pass_defense_factor": 1.121,
-              "rush_defense_impact": 12.44,
-              "rush_defense_factor": 1.124
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
             },
-            "key_absences": [
-              {
-                "player_id": "4241479",
-                "player": "Tua Tagovailoa",
-                "position": "QB",
-                "status": "OUT",
-                "injury": "Ankle",
-                "impact": 10.0
-              },
-              {
-                "player_id": "4431194",
-                "player": "Billy Bowman Jr.",
-                "position": "CB",
-                "status": "OUT",
-                "injury": "Undisclosed",
-                "impact": 3.4
-              },
-              {
-                "player_id": "2973014",
-                "player": "Storm Norton",
-                "position": "OT",
-                "status": "OUT",
-                "injury": "Undisclosed",
-                "impact": 3.2
-              },
-              {
-                "player_id": "4431210",
-                "player": "Beaux Collins",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 3.0
-              },
-              {
-                "player_id": "3126352",
-                "player": "Da'Shawn Hand",
-                "position": "DT",
-                "status": "IR",
-                "injury": "Quadriceps",
-                "impact": 2.6
-              },
-              {
-                "player_id": "5150660",
-                "player": "Anterio Thompson",
-                "position": "DT",
-                "status": "OUT",
-                "injury": "Undisclosed",
-                "impact": 2.6
-              }
-            ]
+            "key_absences": []
           },
-          "scoring_factor": 0.944,
-          "passing_factor": 0.881,
-          "rushing_factor": 0.956
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
         },
         "home": {
           "team_context": {
             "team": "GB",
-            "injuries": [
-              {
-                "player_id": "4683059",
-                "player": "Collin Oliver",
-                "team": "GB",
-                "position": "DE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.5
-              },
-              {
-                "player_id": "4361423",
-                "player": "Micah Parsons",
-                "team": "GB",
-                "position": "DE",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "defense",
-                "position_weight": 3.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.5
-              },
-              {
-                "player_id": "4431487",
-                "player": "Savion Williams",
-                "team": "GB",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "2983055",
-                "player": "Javon Hargrave",
-                "team": "GB",
-                "position": "DT",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.6
-              },
-              {
-                "player_id": "4240677",
-                "player": "Jordon Riley",
-                "team": "GB",
-                "position": "DT",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.6
-              },
-              {
-                "player_id": "4429136",
-                "player": "Warren Brinson",
-                "team": "GB",
-                "position": "DT",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.6
-              },
-              {
-                "player_id": "4709980",
-                "player": "Johnathan Baldwin II",
-                "team": "GB",
-                "position": "S",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.5
-              },
-              {
-                "player_id": "4428085",
-                "player": "Luke Musgrave",
-                "team": "GB",
-                "position": "TE",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Neck",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.2
-              },
-              {
-                "player_id": "4361027",
-                "player": "Thomas Yassmin",
-                "team": "GB",
-                "position": "TE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.2
-              },
-              {
-                "player_id": "4047365",
-                "player": "Josh Jacobs",
-                "team": "GB",
-                "position": "RB",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Personal",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 1.8
-              },
-              {
-                "player_id": "5076652",
-                "player": "Brandon Cisse",
-                "team": "GB",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
-                "player_id": "4240435",
-                "player": "Zach Bako-Bewele",
-                "team": "GB",
-                "position": "OT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.28
-              },
-              {
-                "player_id": "4362249",
-                "player": "Jayden Reed",
-                "team": "GB",
-                "position": "WR",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Back",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.2
-              },
-              {
-                "player_id": "4887255",
-                "player": "Anthony Campbell",
-                "team": "GB",
-                "position": "DT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.04
-              },
-              {
-                "player_id": "4430438",
-                "player": "Edgerrin Cooper",
-                "team": "GB",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Shoulder",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4242390",
-                "player": "Aaron Banks",
-                "team": "GB",
-                "position": "OG",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Toe",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.8
-              },
-              {
-                "player_id": "4360887",
-                "player": "Donovan Jennings",
-                "team": "GB",
-                "position": "OG",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Hand",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.8
-              }
-            ],
+            "injuries": [],
             "offense": {
-              "impact": 13.28,
-              "factor": 0.841,
-              "passing_impact": 11.48,
-              "passing_factor": 0.851,
-              "rushing_impact": 4.68,
-              "rushing_factor": 0.949
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
             },
             "defense": {
-              "impact": 18.0,
-              "factor": 1.18,
-              "pass_defense_impact": 11.82,
-              "pass_defense_factor": 1.13,
-              "rush_defense_impact": 16.0,
-              "rush_defense_factor": 1.16
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
             },
-            "key_absences": [
-              {
-                "player_id": "4683059",
-                "player": "Collin Oliver",
-                "position": "DE",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 3.5
-              },
-              {
-                "player_id": "4361423",
-                "player": "Micah Parsons",
-                "position": "DE",
-                "status": "OUT",
-                "injury": "Knee",
-                "impact": 3.5
-              },
-              {
-                "player_id": "4431487",
-                "player": "Savion Williams",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 3.0
-              },
-              {
-                "player_id": "2983055",
-                "player": "Javon Hargrave",
-                "position": "DT",
-                "status": "OUT",
-                "injury": "Undisclosed",
-                "impact": 2.6
-              },
-              {
-                "player_id": "4240677",
-                "player": "Jordon Riley",
-                "position": "DT",
-                "status": "OUT",
-                "injury": "Undisclosed",
-                "impact": 2.6
-              },
-              {
-                "player_id": "4429136",
-                "player": "Warren Brinson",
-                "position": "DT",
-                "status": "OUT",
-                "injury": "Undisclosed",
-                "impact": 2.6
-              },
-              {
-                "player_id": "4709980",
-                "player": "Johnathan Baldwin II",
-                "position": "S",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 2.5
-              }
-            ]
+            "key_absences": []
           },
-          "scoring_factor": 0.986,
-          "passing_factor": 0.954,
-          "rushing_factor": 1.067
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
         }
       },
       "weather_context": {
@@ -763,7 +193,7 @@
           "temperature_f": 56.7,
           "feels_like_f": 54.2,
           "humidity_pct": 72.0,
-          "precip_probability_pct": 0.0,
+          "precip_probability_pct": 1.0,
           "precipitation_in": 0.0,
           "wind_mph": 4.6,
           "wind_gust_mph": 4.7,
