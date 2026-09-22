@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "generated_at": "2026-09-22T05:57:37.694670+00:00",
+  "generated_at": "2026-09-22T13:45:51.043804+00:00",
   "source": {
     "primary": "ESPN NFL injuries page",
     "fallback": "processed NFL roster reserve designations",
@@ -15,14 +15,14 @@
     "final": 393
   },
   "status_counts": {
-    "OUT": 113,
+    "OUT": 114,
     "DOUBTFUL": 7,
     "QUESTIONABLE": 63,
     "IR": 208,
     "PUP": 0,
     "NFI": 0,
     "INJURY": 0,
-    "OTHER": 2
+    "OTHER": 1
   },
   "source_counts": {
     "ESPN": 393,
@@ -220,13 +220,13 @@
     "LAR": {
       "team": "LAR",
       "total": 14,
-      "out": 4,
+      "out": 6,
       "doubtful": 0,
       "questionable": 1,
       "ir": 7,
       "pup": 0,
       "nfi": 0,
-      "other": 2
+      "other": 0
     },
     "LV": {
       "team": "LV",
@@ -286,13 +286,13 @@
     "NYG": {
       "team": "NYG",
       "total": 19,
-      "out": 7,
+      "out": 6,
       "doubtful": 0,
       "questionable": 4,
       "ir": 8,
       "pup": 0,
       "nfi": 0,
-      "other": 0
+      "other": 1
     },
     "NYJ": {
       "team": "NYJ",
@@ -3297,26 +3297,12 @@
       "source_updated": ""
     },
     {
-      "player_id": "4243003",
-      "espn_id": "4243003",
-      "player": "Ronnie Rivers",
-      "team": "LAR",
-      "position": "RB",
-      "status": "QUESTIONABLE",
-      "practice_status": "",
-      "injury": "Calf",
-      "detail": "Sep 21: Rivers has been ruled out for the remainder of Monday's game against the Giants due to a calf injury.",
-      "estimated_return_date": "Sep 27",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
       "player_id": "4426515",
       "espn_id": "4426515",
       "player": "Puka Nacua",
       "team": "LAR",
       "position": "WR",
-      "status": "INACTIVE",
+      "status": "OUT",
       "practice_status": "",
       "injury": "Hip",
       "detail": "Sep 21: Nacua (hip) is listed as inactive Monday against the Giants, Adam Schefter of ESPN reports.",
@@ -3330,10 +3316,24 @@
       "player": "Ty Simpson",
       "team": "LAR",
       "position": "QB",
-      "status": "INACTIVE",
+      "status": "OUT",
       "practice_status": "",
       "injury": "Coach's Decision",
       "detail": "Sep 21: Simpson (coach's decision) is inactive but will serve as the Rams' emergency third quarterback for Monday's game against the Giants.",
+      "estimated_return_date": "Sep 27",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
+      "player_id": "4243003",
+      "espn_id": "4243003",
+      "player": "Ronnie Rivers",
+      "team": "LAR",
+      "position": "RB",
+      "status": "QUESTIONABLE",
+      "practice_status": "",
+      "injury": "Calf",
+      "detail": "Sep 21: Rivers has been ruled out for the remainder of Monday's game against the Giants due to a calf injury.",
       "estimated_return_date": "Sep 27",
       "source": "ESPN",
       "source_updated": ""
@@ -4431,20 +4431,6 @@
       "source_updated": ""
     },
     {
-      "player_id": "4240706",
-      "espn_id": "4240706",
-      "player": "Jason Pinnock",
-      "team": "NYG",
-      "position": "S",
-      "status": "OUT",
-      "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
-      "estimated_return_date": "Sep 27",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
       "player_id": "4371961",
       "espn_id": "4371961",
       "player": "Micah McFadden",
@@ -4508,8 +4494,8 @@
       "position": "QB",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "Sep 21: Dart is believed to have suffered a sprained MCL in his left knee during Monday's Week 2 loss to the Rams, Ian Rapoport of NFL Network reports.",
+      "injury": "Knee",
+      "detail": "Sep 21: Dart (knee) is officially questionable to return to Monday's matchup against the Rams.",
       "estimated_return_date": "Sep 27",
       "source": "ESPN",
       "source_updated": ""
@@ -4524,6 +4510,20 @@
       "practice_status": "",
       "injury": "Undisclosed",
       "detail": "Sep 21: Nabers brought in one of four targets for one yard in the Giants' 28-6 loss to the Rams on Monday night.",
+      "estimated_return_date": "Sep 27",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
+      "player_id": "4240706",
+      "espn_id": "4240706",
+      "player": "Jason Pinnock",
+      "team": "NYG",
+      "position": "S",
+      "status": "INACTIVE",
+      "practice_status": "",
+      "injury": "Undisclosed",
+      "detail": "",
       "estimated_return_date": "Sep 27",
       "source": "ESPN",
       "source_updated": ""

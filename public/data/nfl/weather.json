@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T09:39:25.458189+00:00",
+  "generated_at": "2026-09-22T13:46:09.320798+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -11,27 +11,8 @@
       "longitude": -88.0622,
       "roof": "outdoor",
       "kickoff": "2026-09-24T20:15",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-09-24T20:00",
-        "temperature_f": 56.7,
-        "feels_like_f": 54.2,
-        "humidity_pct": 72.0,
-        "precip_probability_pct": 1.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 4.6,
-        "wind_gust_mph": 4.7,
-        "weather_code": 3,
-        "conditions": "Overcast"
-      },
-      "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "NEUTRAL"
-      }
+      "available": false,
+      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
     }
   ]
 }

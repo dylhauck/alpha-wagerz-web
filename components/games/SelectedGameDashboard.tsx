@@ -40,9 +40,13 @@ function ThrowHandBadge({ throws }: { throws: unknown }) {
 
 function PitcherCard({
   pitcher,
+  awayTeam,
+  homeTeam,
   onPitcherClick,
 }: {
   pitcher?: Record<string, any>;
+  awayTeam: string;
+  homeTeam: string;
   onPitcherClick: (pitcher: Record<string, any>) => void;
 }) {
   if (!pitcher) {
@@ -66,7 +70,7 @@ function PitcherCard({
       </div>
 
       <div className="text-xs text-slate-500">
-        {pitcher.Team} vs {pitcher.Opponent}
+        {awayTeam} @ {homeTeam}
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-2">
@@ -267,6 +271,8 @@ export function SelectedGameDashboard({
 
             <PitcherCard
               pitcher={awayPitcher}
+              awayTeam={game.away_team}
+              homeTeam={game.home_team}
               onPitcherClick={openPitcherProfile}
             />
           </div>
@@ -278,6 +284,8 @@ export function SelectedGameDashboard({
 
             <PitcherCard
               pitcher={homePitcher}
+              awayTeam={game.away_team}
+              homeTeam={game.home_team}
               onPitcherClick={openPitcherProfile}
             />
           </div>

@@ -7,10 +7,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 43.3,
+        "total": 41.8,
         "home_margin": "",
-        "away_win_probability": 0.369,
-        "home_win_probability": 0.631,
+        "away_win_probability": 0.344,
+        "home_win_probability": 0.6559999999999999,
         "projection_confidence": 52.6
       },
       "market": {
@@ -25,12 +25,12 @@
         "away_team": "ATL",
         "home_team": "GB",
         "moneyline": {
-          "away": 225.0,
-          "home": -275.0,
-          "away_implied_probability": 0.3077,
-          "home_implied_probability": 0.7333,
-          "away_no_vig_probability": 0.2956,
-          "home_no_vig_probability": 0.7044
+          "away": 220.0,
+          "home": -270.0,
+          "away_implied_probability": 0.3125,
+          "home_implied_probability": 0.7297,
+          "away_no_vig_probability": 0.2998,
+          "home_no_vig_probability": 0.7002
         },
         "spread": {
           "away": 6.5,
@@ -56,8 +56,8 @@
           },
           "home": {
             "line": 25.5,
-            "over_price": -118.0,
-            "under_price": -108.0
+            "over_price": -113.0,
+            "under_price": -113.0
           },
           "source": "sportsbook"
         },
@@ -81,8 +81,8 @@
             "title": "FanDuel",
             "markets": {
               "moneyline": {
-                "away": 225.0,
-                "home": -275.0
+                "away": 220.0,
+                "home": -270.0
               },
               "spread": {
                 "away": 6.5,
@@ -98,8 +98,8 @@
               "team_total": {
                 "home": {
                   "line": 25.5,
-                  "over_price": -118.0,
-                  "under_price": -108.0
+                  "over_price": -113.0,
+                  "under_price": -113.0
                 },
                 "away": {
                   "line": 0.5,
@@ -124,9 +124,21 @@
                 "home_price": -112.0
               },
               "game_total": {
-                "line": 44.5,
-                "over_price": -102.0,
-                "under_price": -119.0
+                "line": 43.5,
+                "over_price": -119.0,
+                "under_price": -102.0
+              },
+              "team_total": {
+                "home": {
+                  "line": 35.5,
+                  "over_price": 500.0,
+                  "under_price": -769.0
+                },
+                "away": {
+                  "line": 28.5,
+                  "over_price": 500.0,
+                  "under_price": -769.0
+                }
               }
             }
           }
@@ -136,17 +148,24 @@
         {
           "market": "moneyline",
           "selection": "ATL",
-          "edge": 0.073,
-          "confidence_score": 58.2,
-          "confidence_label": "LEAN"
+          "edge": 0.044,
+          "confidence_score": 42.4,
+          "confidence_label": "PASS"
+        },
+        {
+          "market": "game_total",
+          "selection": "UNDER 44.5",
+          "edge": 2.7,
+          "confidence_score": 40.3,
+          "confidence_label": "PASS"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "ATL",
-        "edge": 0.073,
-        "confidence_score": 58.2,
-        "confidence_label": "LEAN"
+        "edge": 0.044,
+        "confidence_score": 42.4,
+        "confidence_label": "PASS"
       }
     }
   ],
@@ -157,14 +176,24 @@
       "home_team": "GB",
       "market": "moneyline",
       "selection": "ATL",
-      "edge": 0.073,
-      "confidence_score": 58.2,
-      "confidence_label": "LEAN"
+      "edge": 0.044,
+      "confidence_score": 42.4,
+      "confidence_label": "PASS"
+    },
+    {
+      "game_id": "2026_03_ATL_GB",
+      "away_team": "ATL",
+      "home_team": "GB",
+      "market": "game_total",
+      "selection": "UNDER 44.5",
+      "edge": 2.7,
+      "confidence_score": 40.3,
+      "confidence_label": "PASS"
     }
   ],
   "counts": {
     "games": 1,
-    "bets": 1,
+    "bets": 2,
     "missing_projection": 0
   },
   "model": {
