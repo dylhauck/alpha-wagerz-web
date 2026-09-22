@@ -208,6 +208,8 @@ export function AppShell({
       ? mlbNavItems
       : activeSport === "NFL"
         ? nflNavItems
+        : activeSport === "NBA"
+          ? placeholderNavItems
         : placeholderNavItems;
 
   function handleSportChange(
@@ -240,9 +242,17 @@ export function AppShell({
         "/nfl/next/",
       ));
 
+  const isNBANextSection =
+  activeSport === "NBA" &&
+  (pathname === "/nba/next" ||
+    pathname.startsWith(
+      "/nba/next/",
+    ));
+
   const isNextSection =
     isMLBTomorrowSection ||
-    isNFLNextSection;
+    isNFLNextSection ||
+    isNBANextSection;
 
   /*
    * Base route for whichever slate
@@ -257,7 +267,11 @@ export function AppShell({
         ? isNFLNextSection
           ? "/nfl/next"
           : "/nfl"
-        : selectedSport.path;
+        : activeSport === "NBA"
+          ? isNBANextSection
+            ? "/nba/next"
+            : "/nba"
+          : selectedSport.path;
 
   /*
    * Determine whether the current
@@ -268,6 +282,8 @@ export function AppShell({
       ? ""
       : activeSport === "NFL"
         ? "/nfl"
+        : activeSport === "NBA"
+          ? "/nba"
         : selectedSport.path;
 
   const nextSlateBase =
@@ -275,7 +291,9 @@ export function AppShell({
       ? "/tomorrow"
       : activeSport === "NFL"
         ? "/nfl/next"
-        : "";
+        : activeSport === "NBA"
+          ? "/nba/next"
+          : "";
 
   const isCurrentSlateSection =
     !isNextSection &&
@@ -296,15 +314,9 @@ export function AppShell({
   /*
    * Bottom navigation labels.
    */
-  const currentSlateLabel =
-    activeSport === "NFL"
-      ? "Next Slate"
-      : "Today's Slate";
+  const currentSlateLabel = "Next Slate";
 
-  const nextSlateLabel =
-    activeSport === "NFL"
-      ? "Future Slate"
-      : "Tomorrow's Slate";
+  const nextSlateLabel = "Future Slate";
 
   function renderSidebarContent(
     mobile = false,
@@ -479,6 +491,7 @@ export function AppShell({
           </Link>
 
           {(activeSport === "MLB" ||
+            activeSport === "NBA" ||
             activeSport === "NFL") && (
             <Link
               href={nextSlateBase}
