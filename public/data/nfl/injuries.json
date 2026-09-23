@@ -1,31 +1,31 @@
 {
   "season": 2026,
-  "generated_at": "2026-09-22T21:21:38.632250+00:00",
+  "generated_at": "2026-09-23T10:30:24.355121+00:00",
   "source": {
     "primary": "ESPN NFL injuries page",
     "fallback": "processed NFL roster reserve designations",
     "url": "https://www.espn.com/nfl/injuries",
     "errors": []
   },
-  "injury_count": 386,
+  "injury_count": 384,
   "team_count": 32,
   "provider_counts": {
-    "espn_raw": 386,
+    "espn_raw": 384,
     "roster_reserve_raw": 0,
-    "final": 386
+    "final": 384
   },
   "status_counts": {
-    "OUT": 55,
-    "DOUBTFUL": 9,
-    "QUESTIONABLE": 111,
-    "IR": 211,
+    "OUT": 51,
+    "DOUBTFUL": 11,
+    "QUESTIONABLE": 109,
+    "IR": 213,
     "PUP": 0,
     "NFI": 0,
     "INJURY": 0,
     "OTHER": 0
   },
   "source_counts": {
-    "ESPN": 386,
+    "ESPN": 384,
     "NFL roster": 0,
     "OTHER": 0
   },
@@ -88,10 +88,10 @@
     "CHI": {
       "team": "CHI",
       "total": 16,
-      "out": 3,
+      "out": 4,
       "doubtful": 1,
       "questionable": 2,
-      "ir": 10,
+      "ir": 9,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -109,8 +109,8 @@
     },
     "CLE": {
       "team": "CLE",
-      "total": 13,
-      "out": 3,
+      "total": 12,
+      "out": 2,
       "doubtful": 0,
       "questionable": 2,
       "ir": 8,
@@ -143,10 +143,10 @@
     "DET": {
       "team": "DET",
       "total": 11,
-      "out": 4,
+      "out": 3,
       "doubtful": 0,
       "questionable": 2,
-      "ir": 5,
+      "ir": 6,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -155,8 +155,8 @@
       "team": "GB",
       "total": 18,
       "out": 5,
-      "doubtful": 0,
-      "questionable": 9,
+      "doubtful": 1,
+      "questionable": 8,
       "ir": 4,
       "pup": 0,
       "nfi": 0,
@@ -274,11 +274,11 @@
     },
     "NO": {
       "team": "NO",
-      "total": 17,
+      "total": 16,
       "out": 3,
       "doubtful": 0,
       "questionable": 3,
-      "ir": 11,
+      "ir": 10,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -297,10 +297,10 @@
     "NYJ": {
       "team": "NYJ",
       "total": 16,
-      "out": 4,
-      "doubtful": 0,
-      "questionable": 5,
-      "ir": 7,
+      "out": 1,
+      "doubtful": 1,
+      "questionable": 4,
+      "ir": 10,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -1169,20 +1169,6 @@
       "source_updated": ""
     },
     {
-      "player_id": "4361748",
-      "espn_id": "4361748",
-      "player": "Anthony Johnson Jr.",
-      "team": "CHI",
-      "position": "S",
-      "status": "IR",
-      "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
-      "estimated_return_date": "Oct 18",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
       "player_id": "4036032",
       "espn_id": "4036032",
       "player": "Brittain Brown",
@@ -1305,6 +1291,20 @@
       "injury": "Undisclosed",
       "detail": "Aug 31: The Bears placed Fields (undisclosed) on injured reserve Sunday with a designation to return.",
       "estimated_return_date": "Oct 11",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
+      "player_id": "4361748",
+      "espn_id": "4361748",
+      "player": "Anthony Johnson Jr.",
+      "team": "CHI",
+      "position": "S",
+      "status": "OUT",
+      "practice_status": "",
+      "injury": "Undisclosed",
+      "detail": "",
+      "estimated_return_date": "Oct 18",
       "source": "ESPN",
       "source_updated": ""
     },
@@ -1575,20 +1575,6 @@
       "source_updated": ""
     },
     {
-      "player_id": "4362895",
-      "espn_id": "4362895",
-      "player": "Nathaniel Watson",
-      "team": "CLE",
-      "position": "LB",
-      "status": "OUT",
-      "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
-      "estimated_return_date": "Oct 25",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
       "player_id": "4038457",
       "espn_id": "4038457",
       "player": "Teven Jenkins",
@@ -1610,8 +1596,8 @@
       "position": "CB",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
+      "injury": "Ankle/hip",
+      "detail": "Sep 22: Campbell (ankle/hip) exited Sunday's 23-19 win over the Buccaneers and did not return to the contest, Scott Petrak of BrownsZone reported Tuesday.",
       "estimated_return_date": "Sep 27",
       "source": "ESPN",
       "source_updated": ""
@@ -1925,6 +1911,20 @@
       "source_updated": ""
     },
     {
+      "player_id": "3123938",
+      "espn_id": "3123938",
+      "player": "Avonte Maddox",
+      "team": "DET",
+      "position": "CB",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Foot",
+      "detail": "Sep 22: The Lions placed Maddox (foot) on injured reserve Tuesday.",
+      "estimated_return_date": "Feb 15",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
       "player_id": "4361788",
       "espn_id": "4361788",
       "player": "Cade Mays",
@@ -1990,20 +1990,6 @@
       "practice_status": "",
       "injury": "Undisclosed",
       "detail": "",
-      "estimated_return_date": "Feb 15",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "3123938",
-      "espn_id": "3123938",
-      "player": "Avonte Maddox",
-      "team": "DET",
-      "position": "CB",
-      "status": "OUT",
-      "practice_status": "",
-      "injury": "Left Foot",
-      "detail": "Sep 21: Maddox will undergo season-ending surgery for a left foot injury that he sustained during the Lions' 41-31 loss to the Bills on Thursday, Dave Birkett of the Detroit Free Press reports.",
       "estimated_return_date": "Feb 15",
       "source": "ESPN",
       "source_updated": ""
@@ -2199,8 +2185,22 @@
       "status": "OUT",
       "practice_status": "",
       "injury": "Undisclosed",
-      "detail": "Sep 22: Bako said that he sustained a complete tear of his right patellar tendon in Sunday's 20-17 overtime win over the Jets and will undergo season-ending surgery Thursday, Matt Schneidman of The Athletic reports.",
+      "detail": "Sep 22: Bako-Bewele said he sustained a complete tear of his right patellar tendon in Sunday's 20-17 overtime win over the Jets and will undergo season-ending surgery Thursday, Matt Schneidman of The Athletic reports.",
       "estimated_return_date": "Feb 15",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
+      "player_id": "4362249",
+      "espn_id": "4362249",
+      "player": "Jayden Reed",
+      "team": "GB",
+      "position": "WR",
+      "status": "DOUBTFUL",
+      "practice_status": "",
+      "injury": "Neck",
+      "detail": "Sep 22: Packers head coach Matt LaFleur said Tuesday that Reed has returned to Green Bay to undergo further testing and consultations with doctors for his neck injury, Ryan Wood of USA Today. The wide receiver remains without a timeline for a return.",
+      "estimated_return_date": "Sep 24",
       "source": "ESPN",
       "source_updated": ""
     },
@@ -2298,20 +2298,6 @@
       "practice_status": "",
       "injury": "Undisclosed",
       "detail": "",
-      "estimated_return_date": "Sep 24",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4362249",
-      "espn_id": "4362249",
-      "player": "Jayden Reed",
-      "team": "GB",
-      "position": "WR",
-      "status": "QUESTIONABLE",
-      "practice_status": "",
-      "injury": "Neck",
-      "detail": "Sep 22: Reed (neck) was listed as a non-participant for Tuesday's walkthrough practice.",
       "estimated_return_date": "Sep 24",
       "source": "ESPN",
       "source_updated": ""
@@ -2632,8 +2618,8 @@
       "position": "DE",
       "status": "IR",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
+      "injury": "Toe",
+      "detail": "Sep 22: Clemons (toe) was placed on injured reserve by the Colts on Tuesday.",
       "estimated_return_date": "Oct 25",
       "source": "ESPN",
       "source_updated": ""
@@ -3010,8 +2996,8 @@
       "position": "TE",
       "status": "OUT",
       "practice_status": "",
-      "injury": "Forearm",
-      "detail": "Sep 21: Head coach Jim Harbaugh said Monday that Kolar will go on injured reserve due to a forearm injury he sustained during Sunday's 26-14 loss to the Raiders, Kris Rhim of ESPN.com reports.",
+      "injury": "Undisclosed",
+      "detail": "Sep 22: Kolar plans to undergo surgery to repair a broken forearm and is hopeful to return from injured reserve when first eligible for the Chargers' No. 1 game against the Rams, Jeremy Fowler of ESPN.com reports.",
       "estimated_return_date": "Nov 1",
       "source": "ESPN",
       "source_updated": ""
@@ -3850,8 +3836,8 @@
       "position": "G",
       "status": "IR",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
+      "injury": "Ankle",
+      "detail": "Sep 22: The Patriots placed Onwenu (ankle) on injured reserve Tuesday.",
       "estimated_return_date": "Oct 22",
       "source": "ESPN",
       "source_updated": ""
@@ -3979,20 +3965,6 @@
       "injury": "Thigh",
       "detail": "Sep 20: Raridon (thigh) has been ruled out for the remainder of Sunday's game against the Steelers.",
       "estimated_return_date": "Sep 27",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4569682",
-      "espn_id": "4569682",
-      "player": "Audric Estime",
-      "team": "NO",
-      "position": "RB",
-      "status": "IR",
-      "practice_status": "",
-      "injury": "Thigh",
-      "detail": "Sep 12: The Saints placed Estime (thigh) on injured reserve Saturday, Ross Jackson of WWL Louisiana reports.",
-      "estimated_return_date": "Oct 11",
       "source": "ESPN",
       "source_updated": ""
     },
@@ -4368,8 +4340,8 @@
       "position": "LB",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Ankle Sprain",
-      "detail": "Sep 21: Burns suffered a low-ankle sprain in Monday's 28-6 loss to the Rams, Connor Hughes of SNY.tv reports.",
+      "injury": "Ankle",
+      "detail": "Sep 21: Burns (ankle) did not return to Monday's game against the Rams, Dan Salomone of the Giants' official site reports.",
       "estimated_return_date": "Sep 27",
       "source": "ESPN",
       "source_updated": ""
@@ -4431,6 +4403,20 @@
       "source_updated": ""
     },
     {
+      "player_id": "4429105",
+      "espn_id": "4429105",
+      "player": "Arian Smith",
+      "team": "NYJ",
+      "position": "WR",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Knee",
+      "detail": "Sep 22: The Jets placed Smith (knee) on injured reserve Tuesday.",
+      "estimated_return_date": "Oct 25",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
       "player_id": "4430893",
       "espn_id": "4430893",
       "player": "Chip Trayanum",
@@ -4445,6 +4431,20 @@
       "source_updated": ""
     },
     {
+      "player_id": "4002046",
+      "espn_id": "4002046",
+      "player": "David Onyemata",
+      "team": "NYJ",
+      "position": "DT",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Groin",
+      "detail": "Sep 22: The Jets placed Onyemata (groin) on injured reserve Tuesday.",
+      "estimated_return_date": "Oct 25",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
       "player_id": "4240405",
       "espn_id": "4240405",
       "player": "Kingsley Jonathan",
@@ -4455,6 +4455,20 @@
       "injury": "Undisclosed",
       "detail": "",
       "estimated_return_date": "Feb 15",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
+      "player_id": "4045299",
+      "espn_id": "4045299",
+      "player": "Marcelino McCrary-Ball",
+      "team": "NYJ",
+      "position": "LB",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Undisclosed",
+      "detail": "",
+      "estimated_return_date": "Oct 25",
       "source": "ESPN",
       "source_updated": ""
     },
@@ -4515,48 +4529,6 @@
       "source_updated": ""
     },
     {
-      "player_id": "4429105",
-      "espn_id": "4429105",
-      "player": "Arian Smith",
-      "team": "NYJ",
-      "position": "WR",
-      "status": "OUT",
-      "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
-      "estimated_return_date": "Oct 25",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4002046",
-      "espn_id": "4002046",
-      "player": "David Onyemata",
-      "team": "NYJ",
-      "position": "DT",
-      "status": "OUT",
-      "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
-      "estimated_return_date": "Oct 25",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4045299",
-      "espn_id": "4045299",
-      "player": "Marcelino McCrary-Ball",
-      "team": "NYJ",
-      "position": "LB",
-      "status": "OUT",
-      "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
-      "estimated_return_date": "Oct 25",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
       "player_id": "4692555",
       "espn_id": "4692555",
       "player": "Tyler Baron",
@@ -4567,6 +4539,20 @@
       "injury": "Knee",
       "detail": "Aug 31: The Jets moved Baron (knee) to the reserve/PUP list Sunday, Eric Allen and Amanda Vogt of the team's official site report.",
       "estimated_return_date": "Oct 11",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
+      "player_id": "4808766",
+      "espn_id": "4808766",
+      "player": "Mason Taylor",
+      "team": "NYJ",
+      "position": "TE",
+      "status": "DOUBTFUL",
+      "practice_status": "",
+      "injury": "Thumb",
+      "detail": "Sep 22: Taylor (thumb) is considered week-to-week and will likely miss Sunday's game against the Lions, Ian Rapoport of NFL Network reports.",
+      "estimated_return_date": "Sep 27",
       "source": "ESPN",
       "source_updated": ""
     },
@@ -4608,20 +4594,6 @@
       "practice_status": "",
       "injury": "Quadriceps",
       "detail": "Sep 20: Mauigoa (quadriceps) has been ruled out for the rest of Sunday's game against Green Bay.",
-      "estimated_return_date": "Sep 27",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4808766",
-      "espn_id": "4808766",
-      "player": "Mason Taylor",
-      "team": "NYJ",
-      "position": "TE",
-      "status": "QUESTIONABLE",
-      "practice_status": "",
-      "injury": "Thumb",
-      "detail": "Sep 20: Taylor (thumb) is questionable to return to Sunday's game against the Packers, Zack Rosenblatt of The Athletic reports.",
       "estimated_return_date": "Sep 27",
       "source": "ESPN",
       "source_updated": ""
@@ -4900,8 +4872,8 @@
       "position": "RB",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "Sep 20: Dowdle has been ruled out for the remainder of Sunday's game against the Patriots, Brooke Pryor of ESPN.com reports. He finished with seven carries for 22 yards and two catches for 22 yards on two targets.",
+      "injury": "Toe",
+      "detail": "Sep 22: Dowdle \"checked out relatively OK\" after undergoing testing on his toe injury Tuesday and is considered day-to-day, Ian Rapoport of NFL Network reports.",
       "estimated_return_date": "Sep 27",
       "source": "ESPN",
       "source_updated": ""
@@ -5054,8 +5026,8 @@
       "position": "QB",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
+      "injury": "Glute",
+      "detail": "Sep 22: Darnold (glute) will practice Wednesday, according to Ian Rapoport of NFL Network.",
       "estimated_return_date": "Sep 27",
       "source": "ESPN",
       "source_updated": ""

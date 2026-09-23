@@ -156,6 +156,39 @@ const nflNavItems: NavItem[] = [
   },
 ];
 
+const nbaNavItems: NavItem[] = [
+  {
+    label: "Slate Summary",
+    path: "",
+    icon: Home,
+  },
+  {
+    label: "NBA Players",
+    path: "/players",
+    icon: Users,
+  },
+  {
+    label: "NBA Teams",
+    path: "/teams",
+    icon: Shield,
+  },
+  {
+    label: "Projections",
+    path: "/projections",
+    icon: LineChart,
+  },
+  {
+    label: "Injury Report",
+    path: "/injuries",
+    icon: BarChart3,
+  },
+  {
+    label: "How To",
+    path: "/how-to",
+    icon: BookOpen,
+  },
+];
+
 const placeholderNavItems: NavItem[] = [
   {
     label: "Slate Summary",
@@ -209,7 +242,7 @@ export function AppShell({
       : activeSport === "NFL"
         ? nflNavItems
         : activeSport === "NBA"
-          ? placeholderNavItems
+          ? nbaNavItems
         : placeholderNavItems;
 
   function handleSportChange(
