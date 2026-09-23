@@ -43,6 +43,86 @@ type NBAGame = {
   season?: number | string;
 };
 
+type MatchupStats = {
+  games: number;
+  min_per_game: number;
+  pts_per_game: number;
+  reb_per_game: number;
+  ast_per_game: number;
+  stl_per_game: number;
+  blk_per_game: number;
+  tov_per_game: number;
+  fg3m_per_game: number;
+  fg_pct: number;
+  fg3_pct: number;
+  ft_pct: number;
+  fantasy_per_game: number;
+};
+
+type SeasonSplit = MatchupStats & {
+  season?: string;
+  seasons?: string[];
+};
+
+type PlayerSplits = {
+  current_season: SeasonSplit;
+  last_season: SeasonSplit;
+  last_3_seasons: SeasonSplit;
+};
+
+type NBAPlayerMatchup = {
+  player_id: number;
+  player_name: string;
+  team: string;
+  opponent: string;
+  position: string;
+  position_group?: string;
+  number?: string;
+  splits: PlayerSplits;
+};
+
+type NBAPlayerMatchupGame = {
+  game_id: string | number;
+  game_date?: string;
+  away_team: string;
+  home_team: string;
+  away_players: NBAPlayerMatchup[];
+  home_players: NBAPlayerMatchup[];
+};
+
+type NBAPlayerMatchupPayload = {
+  generated_at?: string;
+  league?: string;
+  slate_type?: string;
+  slate_date?: string;
+  game_count?: number;
+  games?: NBAPlayerMatchupGame[];
+};
+
+type SeasonFilter =
+  | "current_season"
+  | "last_season"
+  | "last_3_seasons";
+
+type SortKey =
+  | "player_name"
+  | "position"
+  | "games"
+  | "min_per_game"
+  | "pts_per_game"
+  | "reb_per_game"
+  | "ast_per_game"
+  | "stl_per_game"
+  | "blk_per_game"
+  | "tov_per_game"
+  | "fg3m_per_game"
+  | "fg_pct"
+  | "fg3_pct"
+  | "ft_pct"
+  | "fantasy_per_game";
+
+type SortDirection = "asc" | "desc";
+
 function normalizeTeam(value: unknown) {
   return String(value || "")
     .trim()
@@ -363,12 +443,587 @@ function GameSelector({
   );
 }
 
+function formatPercentage(
+  value: number,
+) {
+  if (!Number.isFinite(value)) {
+    return "—";
+  }
+
+  if (value === 0) {
+    return ".000";
+  }
+
+  return value.toFixed(3).replace(
+    /^0/,
+    "",
+  );
+}
+
+function formatStat(
+  value: number,
+  digits = 1,
+) {
+  if (!Number.isFinite(value)) {
+    return "—";
+  }
+
+  return value.toFixed(digits);
+}
+
+function positionMatches(
+  position: string,
+  filter: string,
+) {
+  if (filter === "ALL") {
+    return true;
+  }
+
+  const normalized =
+    String(position || "N/A")
+      .trim()
+      .toUpperCase();
+
+  return normalized === filter;
+}
+
+function PlayerMatchupTable({
+  title,
+  team,
+  opponent,
+  players,
+  teams,
+  accent,
+}: {
+  title: string;
+  team: string;
+  opponent: string;
+  players: NBAPlayerMatchup[];
+  teams: NBATeam[];
+  accent: "cyan" | "pink";
+}) {
+  const [seasonFilter, setSeasonFilter] =
+    useState<SeasonFilter>(
+      "last_3_seasons",
+    );
+
+  const [positionFilter, setPositionFilter] =
+    useState("ALL");
+
+  const [sortKey, setSortKey] =
+    useState<SortKey>("fantasy_per_game");
+
+  const [sortDirection, setSortDirection] =
+    useState<SortDirection>("desc");
+
+  const availablePositions =
+    useMemo(() => {
+      const preferred = [
+        "G",
+        "G-F",
+        "F-G",
+        "F",
+        "F-C",
+        "C-F",
+        "C",
+        "N/A",
+      ];
+
+      const actual = new Set(
+        players.map((player) =>
+          String(
+            player.position || "N/A",
+          )
+            .trim()
+            .toUpperCase(),
+        ),
+      );
+
+      return preferred.filter(
+        (position) =>
+          actual.has(position),
+      );
+    }, [players]);
+
+  useEffect(() => {
+    setPositionFilter("ALL");
+  }, [team, opponent]);
+
+  const rows = useMemo(() => {
+    const filtered = players
+      .filter((player) =>
+        positionMatches(
+          player.position,
+          positionFilter,
+        ),
+      )
+      .map((player) => ({
+        player,
+        stats:
+          player.splits?.[
+            seasonFilter
+          ] || {
+            games: 0,
+            min_per_game: 0,
+            pts_per_game: 0,
+            reb_per_game: 0,
+            ast_per_game: 0,
+            stl_per_game: 0,
+            blk_per_game: 0,
+            tov_per_game: 0,
+            fg3m_per_game: 0,
+            fg_pct: 0,
+            fg3_pct: 0,
+            ft_pct: 0,
+            fantasy_per_game: 0,
+          },
+      }));
+
+    filtered.sort((a, b) => {
+      let comparison = 0;
+
+      if (sortKey === "player_name") {
+        comparison =
+          a.player.player_name.localeCompare(
+            b.player.player_name,
+          );
+      } else if (
+        sortKey === "position"
+      ) {
+        comparison =
+          a.player.position.localeCompare(
+            b.player.position,
+          );
+      } else {
+        const aValue =
+          Number(a.stats[sortKey]) || 0;
+
+        const bValue =
+          Number(b.stats[sortKey]) || 0;
+
+        comparison = aValue - bValue;
+      }
+
+      return sortDirection === "asc"
+        ? comparison
+        : -comparison;
+    });
+
+    return filtered;
+  }, [
+    players,
+    seasonFilter,
+    positionFilter,
+    sortKey,
+    sortDirection,
+  ]);
+
+  function handleSort(
+    key: SortKey,
+  ) {
+    if (sortKey === key) {
+      setSortDirection((current) =>
+        current === "asc"
+          ? "desc"
+          : "asc",
+      );
+
+      return;
+    }
+
+    setSortKey(key);
+
+    if (
+      key === "player_name" ||
+      key === "position"
+    ) {
+      setSortDirection("asc");
+    } else {
+      setSortDirection("desc");
+    }
+  }
+
+  function sortIndicator(
+    key: SortKey,
+  ) {
+    if (sortKey !== key) {
+      return "";
+    }
+
+    return sortDirection === "asc"
+      ? " ▲"
+      : " ▼";
+  }
+
+  const accentClasses =
+    accent === "cyan"
+      ? {
+          border:
+            "border-cyan-300/15",
+          background:
+            "bg-cyan-300/[0.045]",
+          title:
+            "text-cyan-200",
+          active:
+            "border-cyan-300/60 bg-cyan-300/15 text-cyan-100",
+          hover:
+            "hover:border-cyan-300/35 hover:text-cyan-100",
+        }
+      : {
+          border:
+            "border-pink-300/15",
+          background:
+            "bg-pink-500/[0.045]",
+          title:
+            "text-pink-200",
+          active:
+            "border-pink-300/60 bg-pink-500/15 text-pink-100",
+          hover:
+            "hover:border-pink-300/35 hover:text-pink-100",
+        };
+
+  return (
+    <div
+      className={`overflow-hidden rounded-3xl border ${accentClasses.border} ${accentClasses.background}`}
+    >
+      <div className="border-b border-white/10 p-5">
+        <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+          <div className="flex items-center gap-3">
+            <NBATeamLogo
+              team={team}
+              teams={teams}
+              size={46}
+            />
+
+            <div>
+              <div
+                className={`text-xs font-black uppercase tracking-[0.2em] ${accentClasses.title}`}
+              >
+                {title}
+              </div>
+
+              <div className="mt-1 text-xl font-black text-white">
+                {team} Players vs{" "}
+                {opponent}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {[
+              {
+                key: "current_season",
+                label: "Current Season",
+              },
+              {
+                key: "last_season",
+                label: "Last Season",
+              },
+              {
+                key: "last_3_seasons",
+                label: "Last 3 Seasons",
+              },
+            ].map((option) => {
+              const active =
+                seasonFilter ===
+                option.key;
+
+              return (
+                <button
+                  key={option.key}
+                  type="button"
+                  onClick={() =>
+                    setSeasonFilter(
+                      option.key as SeasonFilter,
+                    )
+                  }
+                  className={`rounded-xl border px-3 py-2 text-xs font-black uppercase tracking-wide transition ${
+                    active
+                      ? accentClasses.active
+                      : `border-white/10 bg-slate-950/40 text-slate-400 ${accentClasses.hover}`
+                  }`}
+                >
+                  {option.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {[
+            "ALL",
+            ...availablePositions,
+          ].map((position) => {
+            const active =
+              positionFilter ===
+              position;
+
+            return (
+              <button
+                key={position}
+                type="button"
+                onClick={() =>
+                  setPositionFilter(
+                    position,
+                  )
+                }
+                className={`rounded-lg border px-3 py-1.5 text-xs font-black transition ${
+                  active
+                    ? accentClasses.active
+                    : `border-white/10 bg-slate-950/40 text-slate-400 ${accentClasses.hover}`
+                }`}
+              >
+                {position}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="table-scroll overflow-x-auto">
+        <table className="min-w-[1450px] w-full border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-white/10 bg-slate-950/50">
+              {[
+                [
+                  "player_name",
+                  "Player",
+                  "text-left",
+                ],
+                [
+                  "position",
+                  "Pos",
+                  "text-center",
+                ],
+                [
+                  "games",
+                  "Games vs Opp",
+                  "text-center",
+                ],
+                [
+                  "min_per_game",
+                  "Min/G",
+                  "text-center",
+                ],
+                [
+                  "pts_per_game",
+                  "Pts/G",
+                  "text-center",
+                ],
+                [
+                  "fg3m_per_game",
+                  "3PT/G",
+                  "text-center",
+        ],
+                [
+                  "reb_per_game",
+                  "Reb/G",
+                  "text-center",
+                ],
+                [
+                  "ast_per_game",
+                  "Ast/G",
+                  "text-center",
+                ],
+                [
+                  "stl_per_game",
+                  "Stl/G",
+                  "text-center",
+                ],
+                [
+                  "blk_per_game",
+                  "Blk/G",
+                  "text-center",
+                ],
+                [
+                  "tov_per_game",
+                  "Tov/G",
+                  "text-center",
+                ],
+                [
+                  "fg_pct",
+                  "FG%",
+                  "text-center",
+                ],
+                [
+                  "fg3_pct",
+                  "3PT%",
+                  "text-center",
+                ],
+                [
+                  "ft_pct",
+                  "FT%",
+                  "text-center",
+                ],
+                [
+                  "fantasy_per_game",
+                  "Fantasy/G",
+                  "text-center",
+                ],
+              ].map(
+                ([
+                  key,
+                  label,
+                  align,
+                ]) => (
+                  <th
+                    key={key}
+                    className={`whitespace-nowrap px-4 py-3 text-xs font-black uppercase tracking-[0.12em] text-slate-400 ${align}`}
+                  >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        handleSort(
+                          key as SortKey,
+                        )
+                      }
+                      className="transition hover:text-white"
+                    >
+                      {label}
+                      {sortIndicator(
+                        key as SortKey,
+                      )}
+                    </button>
+                  </th>
+                ),
+              )}
+            </tr>
+          </thead>
+
+          <tbody>
+            {rows.map(
+              ({ player, stats }) => (
+                <tr
+                  key={player.player_id}
+                  className="border-b border-white/[0.06] transition last:border-b-0 hover:bg-white/[0.035]"
+                >
+                  <td className="whitespace-nowrap px-4 py-3">
+                    <div className="font-black text-white">
+                      {player.player_name}
+                    </div>
+
+                    <div className="mt-0.5 text-xs font-bold text-slate-500">
+                      {player.team} vs{" "}
+                      {player.opponent}
+                    </div>
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-black text-slate-300">
+                    {player.position ||
+                      "N/A"}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-black text-white">
+                    {stats.games}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatStat(
+                      stats.min_per_game,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatStat(
+                      stats.pts_per_game,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatStat(
+                      stats.fg3m_per_game,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatStat(
+                      stats.reb_per_game,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatStat(
+                      stats.ast_per_game,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatStat(
+                      stats.stl_per_game,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatStat(
+                      stats.blk_per_game,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatStat(
+                      stats.tov_per_game,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatPercentage(
+                      stats.fg_pct,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatPercentage(
+                      stats.fg3_pct,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-bold text-slate-300">
+                    {formatPercentage(
+                      stats.ft_pct,
+                    )}
+                  </td>
+
+                  <td className="px-4 py-3 text-center font-black text-white">
+                    {formatStat(
+                      stats.fantasy_per_game,
+                    )}
+                  </td>
+                </tr>
+              ),
+            )}
+
+            {!rows.length ? (
+              <tr>
+                <td
+                  colSpan={15}
+                  className="px-6 py-10 text-center text-sm font-bold text-slate-500"
+                >
+                  No players available for
+                  this position filter.
+                </td>
+              </tr>
+            ) : null}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 export default function NBAPage() {
   const [games, setGames] =
     useState<NBAGame[]>([]);
 
   const [teams, setTeams] =
     useState<NBATeam[]>([]);
+
+  const [
+    matchupGames,
+    setMatchupGames,
+  ] = useState<
+    NBAPlayerMatchupGame[]
+  >([]);
 
   const [
     selectedGameId,
@@ -384,6 +1039,7 @@ export default function NBAPage() {
         const [
           slateResponse,
           teamsResponse,
+          matchupResponse,
         ] = await Promise.all([
           fetch(
             "/data/nba/slate.json",
@@ -394,6 +1050,13 @@ export default function NBAPage() {
 
           fetch(
             "/data/nba/teams.json",
+            {
+              cache: "no-store",
+            },
+          ),
+
+          fetch(
+            "/data/nba/player_matchups.json",
             {
               cache: "no-store",
             },
@@ -427,6 +1090,22 @@ export default function NBAPage() {
           );
         }
 
+        if (matchupResponse.ok) {
+          const matchupPayload: NBAPlayerMatchupPayload =
+            await matchupResponse.json();
+
+          setMatchupGames(
+            Array.isArray(
+              matchupPayload,
+            )
+              ? matchupPayload
+              : matchupPayload.games ||
+                  [],
+          );
+        } else {
+          setMatchupGames([]);
+        }
+
         if (loadedGames.length) {
           setSelectedGameId(
             String(
@@ -437,6 +1116,7 @@ export default function NBAPage() {
       } catch {
         setGames([]);
         setTeams([]);
+        setMatchupGames([]);
       } finally {
         setLoading(false);
       }
@@ -461,6 +1141,48 @@ export default function NBAPage() {
     }, [
       games,
       selectedGameId,
+    ]);
+
+  const selectedMatchupGame =
+    useMemo(() => {
+      if (!selectedGame) {
+        return null;
+      }
+
+      const selectedAway =
+        normalizeTeam(
+          selectedGame.away_abbr ||
+            selectedGame.away_team,
+        );
+
+      const selectedHome =
+        normalizeTeam(
+          selectedGame.home_abbr ||
+            selectedGame.home_team,
+        );
+
+      return (
+        matchupGames.find(
+          (game) =>
+            String(game.game_id) ===
+            String(
+              selectedGame.game_id,
+            ),
+        ) ||
+        matchupGames.find(
+          (game) =>
+            normalizeTeam(
+              game.away_team,
+            ) === selectedAway &&
+            normalizeTeam(
+              game.home_team,
+            ) === selectedHome,
+        ) ||
+        null
+      );
+    }, [
+      matchupGames,
+      selectedGame,
     ]);
 
   if (loading) {
@@ -507,11 +1229,20 @@ export default function NBAPage() {
     selectedGame.venue ||
     "Arena TBD";
 
+  const awayPlayers =
+    selectedMatchupGame?.away_players ||
+    [];
+
+  const homePlayers =
+    selectedMatchupGame?.home_players ||
+    [];
+
   return (
     <div className="space-y-5">
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          {games.length} NBA Games Loaded For Current Slate
+          {games.length} NBA Games Loaded
+          For Current Slate
         </div>
       </div>
 
@@ -614,6 +1345,55 @@ export default function NBAPage() {
                 {awayCode} defense
               </div>
             </div>
+          </div>
+
+          <div className="mt-7">
+            <div className="mb-4 text-center">
+              <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
+                Matchup History
+              </div>
+
+              <h2 className="mt-1 text-2xl font-black text-white">
+                Player Matchup History
+              </h2>
+            </div>
+
+            {selectedMatchupGame ? (
+              <div className="space-y-5">
+                <PlayerMatchupTable
+                  title="Away Players"
+                  team={awayCode}
+                  opponent={homeCode}
+                  players={awayPlayers}
+                  teams={teams}
+                  accent="cyan"
+                />
+
+                <PlayerMatchupTable
+                  title="Home Players"
+                  team={homeCode}
+                  opponent={awayCode}
+                  players={homePlayers}
+                  teams={teams}
+                  accent="pink"
+                />
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-white/10 bg-slate-950/40 px-6 py-10 text-center">
+                <div className="text-sm font-black text-slate-300">
+                  Player matchup data
+                  unavailable for{" "}
+                  {awayCode} @ {homeCode}.
+                </div>
+
+                <div className="mt-2 text-xs font-bold text-slate-500">
+                  Run the NBA player
+                  matchup pipeline to
+                  regenerate
+                  player_matchups.json.
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>

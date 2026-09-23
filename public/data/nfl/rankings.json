@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T09:45:52.840885+00:00",
+  "generated_at": "2026-09-23T20:09:22.999362+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -29,23 +29,20 @@
     "game_bets": 1,
     "player_props": 0,
     "all_candidates": 1,
-    "best_bets": 0,
+    "best_bets": 1,
     "strong_plays": 0,
     "leans": 0,
-    "passes": 1
+    "passes": 0
   },
-  "best_bets": [],
-  "strong_plays": [],
-  "leans": [],
-  "passes": [
+  "best_bets": [
     {
       "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 55.13,
-      "confidence": 47.9,
-      "upstream_label": "PASS",
-      "edge_strength": 2.16,
-      "edge": 0.054,
+      "tier": "BEST BET",
+      "ranking_score": 88.38,
+      "confidence": 83.4,
+      "upstream_label": "ELITE",
+      "edge_strength": 4.96,
+      "edge": 0.124,
       "market_type": "moneyline",
       "game_id": "2026_03_ATL_GB",
       "matchup": "ATL @ GB",
@@ -65,22 +62,24 @@
         "home_team": "GB",
         "market": "moneyline",
         "selection": "ATL",
-        "edge": 0.054,
-        "confidence_score": 47.9,
-        "confidence_label": "PASS"
+        "edge": 0.124,
+        "confidence_score": 83.4,
+        "confidence_label": "ELITE"
       }
     }
   ],
-  "ranked_recommendations": [],
-  "game_bets": [
+  "strong_plays": [],
+  "leans": [],
+  "passes": [],
+  "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 55.13,
-      "confidence": 47.9,
-      "upstream_label": "PASS",
-      "edge_strength": 2.16,
-      "edge": 0.054,
+      "tier": "BEST BET",
+      "ranking_score": 88.38,
+      "confidence": 83.4,
+      "upstream_label": "ELITE",
+      "edge_strength": 4.96,
+      "edge": 0.124,
       "market_type": "moneyline",
       "game_id": "2026_03_ATL_GB",
       "matchup": "ATL @ GB",
@@ -100,9 +99,43 @@
         "home_team": "GB",
         "market": "moneyline",
         "selection": "ATL",
-        "edge": 0.054,
-        "confidence_score": 47.9,
-        "confidence_label": "PASS"
+        "edge": 0.124,
+        "confidence_score": 83.4,
+        "confidence_label": "ELITE"
+      }
+    }
+  ],
+  "game_bets": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "BEST BET",
+      "ranking_score": 88.38,
+      "confidence": 83.4,
+      "upstream_label": "ELITE",
+      "edge_strength": 4.96,
+      "edge": 0.124,
+      "market_type": "moneyline",
+      "game_id": "2026_03_ATL_GB",
+      "matchup": "ATL @ GB",
+      "away_team": "ATL",
+      "home_team": "GB",
+      "team": "",
+      "pick": "ATL",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_03_ATL_GB",
+        "away_team": "ATL",
+        "home_team": "GB",
+        "market": "moneyline",
+        "selection": "ATL",
+        "edge": 0.124,
+        "confidence_score": 83.4,
+        "confidence_label": "ELITE"
       }
     }
   ],
