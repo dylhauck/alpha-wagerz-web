@@ -5,41 +5,30 @@
       "away_team": "ATL",
       "home_team": "GB",
       "away_projection": {
-        "projected_points": 20.5,
+        "projected_points": 20.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.76,
           "matchup_adjustment": -1.12,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 19.87,
-          "injury_scoring_factor": 1.034,
-          "injury_adjustment_points": 0.68,
-          "post_injury_projection": 20.54,
+          "injury_scoring_factor": 1.028,
+          "injury_adjustment_points": 0.56,
+          "post_injury_projection": 20.42,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.034,
-          "passing_factor": 1.009,
+          "scoring_factor": 1.028,
+          "passing_factor": 0.987,
           "rushing_factor": 1.071,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Lambeau Field",
-          "weather": {
-            "forecast_time": "2026-09-24T20:00",
-            "temperature_f": 57.9,
-            "feels_like_f": 55.8,
-            "humidity_pct": 73.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.6,
-            "wind_gust_mph": 7.6,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -74,26 +63,15 @@
         },
         "injury_context": {
           "scoring_factor": 0.944,
-          "passing_factor": 0.899,
-          "rushing_factor": 1.036,
+          "passing_factor": 0.912,
+          "rushing_factor": 1.048,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Lambeau Field",
-          "weather": {
-            "forecast_time": "2026-09-24T20:00",
-            "temperature_f": 57.9,
-            "feels_like_f": 55.8,
-            "humidity_pct": 73.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.6,
-            "wind_gust_mph": 7.6,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -113,15 +91,15 @@
         }
       },
       "projected_score": {
-        "away": 20.5,
+        "away": 20.4,
         "home": 22.1
       },
-      "projected_total": 42.6,
-      "expected_margin": 1.6,
+      "projected_total": 42.5,
+      "expected_margin": 1.7,
       "projected_winner": "GB",
       "win_probability": {
-        "away": 43.9,
-        "home": 56.1
+        "away": 43.5,
+        "home": 56.5
       },
       "projection_confidence": 52.6,
       "injury_context": {
@@ -136,7 +114,7 @@
                 "position": "DE",
                 "status": "OUT",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Hamstring",
                 "unit": "defense",
                 "position_weight": 3.5,
                 "status_weight": 1.0,
@@ -276,7 +254,7 @@
                 "position": "CB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Achilles",
                 "unit": "defense",
                 "position_weight": 3.4,
                 "status_weight": 0.4,
@@ -306,7 +284,7 @@
                 "player": "Samson Ebukam",
                 "position": "DE",
                 "status": "OUT",
-                "injury": "Undisclosed",
+                "injury": "Hamstring",
                 "impact": 3.5
               },
               {
@@ -351,8 +329,8 @@
               }
             ]
           },
-          "scoring_factor": 1.034,
-          "passing_factor": 1.009,
+          "scoring_factor": 1.028,
+          "passing_factor": 0.987,
           "rushing_factor": 1.071
         },
         "home": {
@@ -444,6 +422,20 @@
                 "impact": 2.6
               },
               {
+                "player_id": "4429136",
+                "player": "Warren Brinson",
+                "team": "GB",
+                "position": "DT",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Calf",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.6
+              },
+              {
                 "player_id": "4709980",
                 "player": "Johnathan Baldwin II",
                 "team": "GB",
@@ -486,6 +478,20 @@
                 "impact": 2.2
               },
               {
+                "player_id": "4242390",
+                "player": "Aaron Banks",
+                "team": "GB",
+                "position": "OG",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Toe",
+                "unit": "offense",
+                "position_weight": 2.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.0
+              },
+              {
                 "player_id": "4047365",
                 "player": "Josh Jacobs",
                 "team": "GB",
@@ -498,34 +504,6 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 1.8
-              },
-              {
-                "player_id": "5076652",
-                "player": "Brandon Cisse",
-                "team": "GB",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
-                "player_id": "4873706",
-                "player": "Anthony Belton",
-                "team": "GB",
-                "position": "OT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.28
               },
               {
                 "player_id": "4887255",
@@ -548,83 +526,27 @@
                 "position": "DT",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Concussion",
                 "unit": "defense",
                 "position_weight": 2.6,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.04
-              },
-              {
-                "player_id": "4429136",
-                "player": "Warren Brinson",
-                "team": "GB",
-                "position": "DT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.04
-              },
-              {
-                "player_id": "4430438",
-                "player": "Edgerrin Cooper",
-                "team": "GB",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Shoulder",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4242390",
-                "player": "Aaron Banks",
-                "team": "GB",
-                "position": "OG",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Toe",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.8
-              },
-              {
-                "player_id": "4360887",
-                "player": "Donovan Jennings",
-                "team": "GB",
-                "position": "OG",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Hand",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.8
               }
             ],
             "offense": {
-              "impact": 18.0,
+              "impact": 17.4,
               "factor": 0.8,
-              "passing_impact": 16.48,
-              "passing_factor": 0.786,
-              "rushing_impact": 7.88,
-              "rushing_factor": 0.913
+              "passing_impact": 15.6,
+              "passing_factor": 0.797,
+              "rushing_impact": 7.0,
+              "rushing_factor": 0.923
             },
             "defense": {
-              "impact": 17.54,
-              "factor": 1.175,
-              "pass_defense_impact": 11.82,
-              "pass_defense_factor": 1.13,
+              "impact": 16.78,
+              "factor": 1.168,
+              "pass_defense_impact": 9.5,
+              "pass_defense_factor": 1.105,
               "rush_defense_impact": 16.0,
               "rush_defense_factor": 1.16
             },
@@ -678,6 +600,14 @@
                 "impact": 2.6
               },
               {
+                "player_id": "4429136",
+                "player": "Warren Brinson",
+                "position": "DT",
+                "status": "OUT",
+                "injury": "Calf",
+                "impact": 2.6
+              },
+              {
                 "player_id": "4709980",
                 "player": "Johnathan Baldwin II",
                 "position": "S",
@@ -688,8 +618,8 @@
             ]
           },
           "scoring_factor": 0.944,
-          "passing_factor": 0.899,
-          "rushing_factor": 1.036
+          "passing_factor": 0.912,
+          "rushing_factor": 1.048
         }
       },
       "weather_context": {
@@ -701,27 +631,8 @@
         "longitude": -88.0622,
         "roof": "outdoor",
         "kickoff": "2026-09-24T20:15",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-24T20:00",
-          "temperature_f": 57.9,
-          "feels_like_f": 55.8,
-          "humidity_pct": 73.0,
-          "precip_probability_pct": 1.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 4.6,
-          "wind_gust_mph": 7.6,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
