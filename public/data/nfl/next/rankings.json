@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T19:52:19.745058+00:00",
+  "generated_at": "2026-09-25T21:08:31.114547+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -31,8 +31,8 @@
     "all_candidates": 2,
     "best_bets": 1,
     "strong_plays": 0,
-    "leans": 0,
-    "passes": 1
+    "leans": 1,
+    "passes": 0
   },
   "best_bets": [
     {
@@ -41,8 +41,8 @@
       "ranking_score": 88.1,
       "confidence": 83.0,
       "upstream_label": "ELITE",
-      "edge_strength": 5.44,
-      "edge": 0.136,
+      "edge_strength": 8.44,
+      "edge": 0.211,
       "market_type": "moneyline",
       "game_id": "2026_03_PHI_CHI",
       "matchup": "PHI @ CHI",
@@ -62,23 +62,22 @@
         "home_team": "CHI",
         "market": "moneyline",
         "selection": "CHI",
-        "edge": 0.136,
+        "edge": 0.211,
         "confidence_score": 83.0,
         "confidence_label": "ELITE"
       }
     }
   ],
   "strong_plays": [],
-  "leans": [],
-  "passes": [
+  "leans": [
     {
       "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 31.14,
-      "confidence": 30.2,
-      "upstream_label": "PASS",
-      "edge_strength": 1.0,
-      "edge": 1.5,
+      "tier": "LEAN",
+      "ranking_score": 69.34,
+      "confidence": 56.2,
+      "upstream_label": "LEAN",
+      "edge_strength": 3.1333,
+      "edge": 4.7,
       "market_type": "game_total",
       "game_id": "2026_03_PHI_CHI",
       "matchup": "PHI @ CHI",
@@ -98,12 +97,13 @@
         "home_team": "CHI",
         "market": "game_total",
         "selection": "OVER 41.5",
-        "edge": 1.5,
-        "confidence_score": 30.2,
-        "confidence_label": "PASS"
+        "edge": 4.7,
+        "confidence_score": 56.2,
+        "confidence_label": "LEAN"
       }
     }
   ],
+  "passes": [],
   "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
@@ -111,8 +111,8 @@
       "ranking_score": 88.1,
       "confidence": 83.0,
       "upstream_label": "ELITE",
-      "edge_strength": 5.44,
-      "edge": 0.136,
+      "edge_strength": 8.44,
+      "edge": 0.211,
       "market_type": "moneyline",
       "game_id": "2026_03_PHI_CHI",
       "matchup": "PHI @ CHI",
@@ -132,9 +132,41 @@
         "home_team": "CHI",
         "market": "moneyline",
         "selection": "CHI",
-        "edge": 0.136,
+        "edge": 0.211,
         "confidence_score": 83.0,
         "confidence_label": "ELITE"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "LEAN",
+      "ranking_score": 69.34,
+      "confidence": 56.2,
+      "upstream_label": "LEAN",
+      "edge_strength": 3.1333,
+      "edge": 4.7,
+      "market_type": "game_total",
+      "game_id": "2026_03_PHI_CHI",
+      "matchup": "PHI @ CHI",
+      "away_team": "PHI",
+      "home_team": "CHI",
+      "team": "",
+      "pick": "OVER 41.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_03_PHI_CHI",
+        "away_team": "PHI",
+        "home_team": "CHI",
+        "market": "game_total",
+        "selection": "OVER 41.5",
+        "edge": 4.7,
+        "confidence_score": 56.2,
+        "confidence_label": "LEAN"
       }
     }
   ],
@@ -145,8 +177,8 @@
       "ranking_score": 88.1,
       "confidence": 83.0,
       "upstream_label": "ELITE",
-      "edge_strength": 5.44,
-      "edge": 0.136,
+      "edge_strength": 8.44,
+      "edge": 0.211,
       "market_type": "moneyline",
       "game_id": "2026_03_PHI_CHI",
       "matchup": "PHI @ CHI",
@@ -166,19 +198,19 @@
         "home_team": "CHI",
         "market": "moneyline",
         "selection": "CHI",
-        "edge": 0.136,
+        "edge": 0.211,
         "confidence_score": 83.0,
         "confidence_label": "ELITE"
       }
     },
     {
       "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 31.14,
-      "confidence": 30.2,
-      "upstream_label": "PASS",
-      "edge_strength": 1.0,
-      "edge": 1.5,
+      "tier": "LEAN",
+      "ranking_score": 69.34,
+      "confidence": 56.2,
+      "upstream_label": "LEAN",
+      "edge_strength": 3.1333,
+      "edge": 4.7,
       "market_type": "game_total",
       "game_id": "2026_03_PHI_CHI",
       "matchup": "PHI @ CHI",
@@ -198,9 +230,9 @@
         "home_team": "CHI",
         "market": "game_total",
         "selection": "OVER 41.5",
-        "edge": 1.5,
-        "confidence_score": 30.2,
-        "confidence_label": "PASS"
+        "edge": 4.7,
+        "confidence_score": 56.2,
+        "confidence_label": "LEAN"
       }
     }
   ],

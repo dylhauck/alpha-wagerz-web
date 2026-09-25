@@ -7,10 +7,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 43.0,
+        "total": 46.2,
         "home_margin": "",
-        "away_win_probability": 0.5379999999999999,
-        "home_win_probability": 0.462,
+        "away_win_probability": 0.462,
+        "home_win_probability": 0.5379999999999999,
         "projection_confidence": 51.5
       },
       "market": {
@@ -127,6 +127,18 @@
                 "line": 41.5,
                 "over_price": -105.0,
                 "under_price": -116.0
+              },
+              "team_total": {
+                "home": {
+                  "line": 27.5,
+                  "over_price": 550.0,
+                  "under_price": -769.0
+                },
+                "away": {
+                  "line": 33.5,
+                  "over_price": 475.0,
+                  "under_price": -714.0
+                }
               }
             }
           }
@@ -136,22 +148,22 @@
         {
           "market": "moneyline",
           "selection": "CHI",
-          "edge": 0.136,
+          "edge": 0.211,
           "confidence_score": 83.0,
           "confidence_label": "ELITE"
         },
         {
           "market": "game_total",
           "selection": "OVER 41.5",
-          "edge": 1.5,
-          "confidence_score": 30.2,
-          "confidence_label": "PASS"
+          "edge": 4.7,
+          "confidence_score": 56.2,
+          "confidence_label": "LEAN"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "CHI",
-        "edge": 0.136,
+        "edge": 0.211,
         "confidence_score": 83.0,
         "confidence_label": "ELITE"
       }
@@ -164,7 +176,7 @@
       "home_team": "CHI",
       "market": "moneyline",
       "selection": "CHI",
-      "edge": 0.136,
+      "edge": 0.211,
       "confidence_score": 83.0,
       "confidence_label": "ELITE"
     },
@@ -174,9 +186,9 @@
       "home_team": "CHI",
       "market": "game_total",
       "selection": "OVER 41.5",
-      "edge": 1.5,
-      "confidence_score": 30.2,
-      "confidence_label": "PASS"
+      "edge": 4.7,
+      "confidence_score": 56.2,
+      "confidence_label": "LEAN"
     }
   ],
   "counts": {
