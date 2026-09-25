@@ -5,7 +5,7 @@
       "away_team": "LAC",
       "home_team": "BUF",
       "away_projection": {
-        "projected_points": 17.7,
+        "projected_points": 18.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.31,
@@ -15,8 +15,8 @@
           "injury_scoring_factor": 0.875,
           "injury_adjustment_points": -2.61,
           "post_injury_projection": 18.26,
-          "weather_scoring_factor": 0.968,
-          "weather_adjustment_points": -0.58
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 0.875,
@@ -25,27 +25,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Highmark Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 67.3,
-            "feels_like_f": 60.4,
-            "humidity_pct": 45.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 15.8,
-            "wind_gust_mph": 21.3,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
-          "classification": "MODERATE",
-          "severity_score": 2.5,
-          "scoring_factor": 0.968,
-          "passing_factor": 0.955,
-          "rushing_factor": 1.012,
-          "kicking_factor": 0.95
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -6.2,
         "matchup_label": "Difficult",
@@ -59,7 +48,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 24.3,
+        "projected_points": 25.1,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.66,
@@ -69,8 +58,8 @@
           "injury_scoring_factor": 1.003,
           "injury_adjustment_points": 0.07,
           "post_injury_projection": 25.06,
-          "weather_scoring_factor": 0.968,
-          "weather_adjustment_points": -0.8
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.003,
@@ -79,27 +68,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Highmark Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 67.3,
-            "feels_like_f": 60.4,
-            "humidity_pct": 45.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 15.8,
-            "wind_gust_mph": 21.3,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
-          "classification": "MODERATE",
-          "severity_score": 2.5,
-          "scoring_factor": 0.968,
-          "passing_factor": 0.955,
-          "rushing_factor": 1.012,
-          "kicking_factor": 0.95
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 13.0,
         "matchup_label": "Favorable",
@@ -113,15 +91,15 @@
         }
       },
       "projected_score": {
-        "away": 17.7,
-        "home": 24.3
+        "away": 18.3,
+        "home": 25.1
       },
-      "projected_total": 42.0,
-      "expected_margin": 6.6,
+      "projected_total": 43.4,
+      "expected_margin": 6.8,
       "projected_winner": "BUF",
       "win_probability": {
-        "away": 26.6,
-        "home": 73.4
+        "away": 26.0,
+        "home": 74.0
       },
       "projection_confidence": 53.4,
       "injury_context": {
@@ -567,27 +545,8 @@
         "longitude": -78.7868,
         "roof": "outdoor",
         "kickoff": "2026-09-27T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T13:00",
-          "temperature_f": 67.3,
-          "feels_like_f": 60.4,
-          "humidity_pct": 45.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 15.8,
-          "wind_gust_mph": 21.3,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 2.5,
-          "passing_factor": 0.955,
-          "rushing_factor": 1.012,
-          "scoring_factor": 0.968,
-          "kicking_factor": 0.95,
-          "classification": "MODERATE"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -599,7 +558,7 @@
       "away_team": "CAR",
       "home_team": "CLE",
       "away_projection": {
-        "projected_points": 19.6,
+        "projected_points": 19.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.27,
@@ -609,8 +568,8 @@
           "injury_scoring_factor": 0.944,
           "injury_adjustment_points": -1.18,
           "post_injury_projection": 19.86,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.26
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 0.944,
@@ -619,27 +578,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Huntington Bank Field",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 67.0,
-            "feels_like_f": 63.7,
-            "humidity_pct": 56.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 12.1,
-            "wind_gust_mph": 16.6,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -5.3,
         "matchup_label": "Difficult",
@@ -653,47 +601,36 @@
         }
       },
       "home_projection": {
-        "projected_points": 18.6,
+        "projected_points": 19.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.65,
           "matchup_adjustment": -1.26,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 21.35,
-          "injury_scoring_factor": 0.882,
-          "injury_adjustment_points": -2.52,
-          "post_injury_projection": 18.83,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.24
+          "injury_scoring_factor": 0.918,
+          "injury_adjustment_points": -1.75,
+          "post_injury_projection": 19.6,
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.882,
-          "passing_factor": 0.873,
-          "rushing_factor": 0.925,
+          "scoring_factor": 0.918,
+          "passing_factor": 0.912,
+          "rushing_factor": 0.962,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Huntington Bank Field",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 67.0,
-            "feels_like_f": 63.7,
-            "humidity_pct": 56.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 12.1,
-            "wind_gust_mph": 16.6,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -14.8,
         "matchup_label": "Difficult",
@@ -707,15 +644,15 @@
         }
       },
       "projected_score": {
-        "away": 19.6,
-        "home": 18.6
+        "away": 19.9,
+        "home": 19.6
       },
-      "projected_total": 38.2,
-      "expected_margin": -1.0,
+      "projected_total": 39.5,
+      "expected_margin": -0.3,
       "projected_winner": "CAR",
       "win_probability": {
-        "away": 53.8,
-        "home": 46.2
+        "away": 51.2,
+        "home": 48.8
       },
       "projection_confidence": 53.5,
       "injury_context": {
@@ -780,6 +717,20 @@
                 "impact": 2.6
               },
               {
+                "player_id": "3116179",
+                "player": "Nick Scott",
+                "team": "CAR",
+                "position": "S",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.5
+              },
+              {
                 "player_id": "4880613",
                 "player": "Bam Martin-Scott",
                 "team": "CAR",
@@ -787,6 +738,34 @@
                 "status": "IR",
                 "practice_status": "",
                 "injury": "Hamstring",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4256224",
+                "player": "Claudin Cherelus",
+                "team": "CAR",
+                "position": "LB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4243256",
+                "player": "Devin Lloyd",
+                "team": "CAR",
+                "position": "LB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Calf",
                 "unit": "defense",
                 "position_weight": 2.4,
                 "status_weight": 1.0,
@@ -876,48 +855,6 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.2
-              },
-              {
-                "player_id": "3116179",
-                "player": "Nick Scott",
-                "team": "CAR",
-                "position": "S",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ribs",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.0
-              },
-              {
-                "player_id": "4256224",
-                "player": "Claudin Cherelus",
-                "team": "CAR",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Shoulder",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4243256",
-                "player": "Devin Lloyd",
-                "team": "CAR",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Calf",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
               }
             ],
             "offense": {
@@ -929,12 +866,12 @@
               "rushing_factor": 0.868
             },
             "defense": {
-              "impact": 10.32,
-              "factor": 1.103,
-              "pass_defense_impact": 7.72,
-              "pass_defense_factor": 1.085,
-              "rush_defense_impact": 10.32,
-              "rush_defense_factor": 1.103
+              "impact": 14.7,
+              "factor": 1.147,
+              "pass_defense_impact": 12.1,
+              "pass_defense_factor": 1.133,
+              "rush_defense_impact": 14.7,
+              "rush_defense_factor": 1.147
             },
             "key_absences": [
               {
@@ -968,6 +905,14 @@
                 "status": "OUT",
                 "injury": "Neck",
                 "impact": 2.6
+              },
+              {
+                "player_id": "3116179",
+                "player": "Nick Scott",
+                "position": "S",
+                "status": "OUT",
+                "injury": "Undisclosed",
+                "impact": 2.5
               }
             ]
           },
@@ -1235,9 +1180,9 @@
               }
             ]
           },
-          "scoring_factor": 0.882,
-          "passing_factor": 0.873,
-          "rushing_factor": 0.925
+          "scoring_factor": 0.918,
+          "passing_factor": 0.912,
+          "rushing_factor": 0.962
         }
       },
       "weather_context": {
@@ -1249,27 +1194,8 @@
         "longitude": -81.6995,
         "roof": "outdoor",
         "kickoff": "2026-09-27T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T13:00",
-          "temperature_f": 67.0,
-          "feels_like_f": 63.7,
-          "humidity_pct": 56.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 12.1,
-          "wind_gust_mph": 16.6,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 1.0,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "scoring_factor": 0.987,
-          "kicking_factor": 0.98,
-          "classification": "MINOR"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1281,22 +1207,22 @@
       "away_team": "NYJ",
       "home_team": "DET",
       "away_projection": {
-        "projected_points": 19.2,
+        "projected_points": 19.1,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.44,
           "matchup_adjustment": -0.56,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 20.74,
-          "injury_scoring_factor": 0.924,
-          "injury_adjustment_points": -1.58,
-          "post_injury_projection": 19.17,
+          "injury_scoring_factor": 0.922,
+          "injury_adjustment_points": -1.62,
+          "post_injury_projection": 19.13,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.924,
-          "passing_factor": 0.954,
+          "scoring_factor": 0.922,
+          "passing_factor": 0.95,
           "rushing_factor": 1.063,
           "key_absences": []
         },
@@ -1371,15 +1297,15 @@
         }
       },
       "projected_score": {
-        "away": 19.2,
+        "away": 19.1,
         "home": 24.3
       },
-      "projected_total": 43.5,
-      "expected_margin": 5.1,
+      "projected_total": 43.4,
+      "expected_margin": 5.2,
       "projected_winner": "DET",
       "win_probability": {
-        "away": 31.3,
-        "home": 68.7
+        "away": 31.0,
+        "home": 69.0
       },
       "projection_confidence": 53.2,
       "injury_context": {
@@ -1486,6 +1412,20 @@
                 "impact": 2.6
               },
               {
+                "player_id": "3925345",
+                "player": "Minkah Fitzpatrick",
+                "team": "NYJ",
+                "position": "S",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.5
+              },
+              {
                 "player_id": "4837388",
                 "player": "VJ Payne",
                 "team": "NYJ",
@@ -1498,6 +1438,20 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 2.5
+              },
+              {
+                "player_id": "4700136",
+                "player": "Kiko Mauigoa",
+                "team": "NYJ",
+                "position": "LB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Quadriceps",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
               },
               {
                 "player_id": "4045299",
@@ -1514,6 +1468,20 @@
                 "impact": 2.4
               },
               {
+                "player_id": "4808766",
+                "player": "Mason Taylor",
+                "team": "NYJ",
+                "position": "TE",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Thumb",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.2
+              },
+              {
                 "player_id": "4905597",
                 "player": "Anez Cooper",
                 "team": "NYJ",
@@ -1526,20 +1494,6 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 2.0
-              },
-              {
-                "player_id": "4808766",
-                "player": "Mason Taylor",
-                "team": "NYJ",
-                "position": "TE",
-                "status": "DOUBTFUL",
-                "practice_status": "",
-                "injury": "Thumb",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 0.85,
-                "usage_importance": 1.0,
-                "impact": 1.87
               },
               {
                 "player_id": "4430893",
@@ -1584,34 +1538,6 @@
                 "impact": 1.2
               },
               {
-                "player_id": "3925345",
-                "player": "Minkah Fitzpatrick",
-                "team": "NYJ",
-                "position": "S",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Groin",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.0
-              },
-              {
-                "player_id": "4700136",
-                "player": "Kiko Mauigoa",
-                "team": "NYJ",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Quadriceps",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
                 "player_id": "4035537",
                 "player": "Kene Nwangwu",
                 "team": "NYJ",
@@ -1627,17 +1553,17 @@
               }
             ],
             "offense": {
-              "impact": 16.59,
-              "factor": 0.801,
-              "passing_impact": 14.07,
-              "passing_factor": 0.817,
+              "impact": 16.92,
+              "factor": 0.8,
+              "passing_impact": 14.4,
+              "passing_factor": 0.813,
               "rushing_impact": 4.52,
               "rushing_factor": 0.95
             },
             "defense": {
               "impact": 18.0,
               "factor": 1.18,
-              "pass_defense_impact": 18.66,
+              "pass_defense_impact": 20.0,
               "pass_defense_factor": 1.2,
               "rush_defense_impact": 16.0,
               "rush_defense_factor": 1.16
@@ -1706,11 +1632,19 @@
                 "status": "IR",
                 "injury": "Undisclosed",
                 "impact": 2.5
+              },
+              {
+                "player_id": "3925345",
+                "player": "Minkah Fitzpatrick",
+                "position": "S",
+                "status": "OUT",
+                "injury": "Undisclosed",
+                "impact": 2.5
               }
             ]
           },
-          "scoring_factor": 0.924,
-          "passing_factor": 0.954,
+          "scoring_factor": 0.922,
+          "passing_factor": 0.95,
           "rushing_factor": 1.063
         },
         "home": {
@@ -2038,21 +1972,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "Lucas Oil Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 71.1,
-            "feels_like_f": 69.0,
-            "humidity_pct": 35.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.1,
-            "wind_gust_mph": 6.5,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2072,41 +1995,30 @@
         }
       },
       "home_projection": {
-        "projected_points": 22.6,
+        "projected_points": 22.0,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.2,
           "matchup_adjustment": -0.53,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 22.51,
-          "injury_scoring_factor": 1.003,
-          "injury_adjustment_points": 0.07,
-          "post_injury_projection": 22.58,
+          "injury_scoring_factor": 0.978,
+          "injury_adjustment_points": -0.5,
+          "post_injury_projection": 22.02,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.003,
-          "passing_factor": 1.006,
+          "scoring_factor": 0.978,
+          "passing_factor": 0.977,
           "rushing_factor": 1.16,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "Lucas Oil Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 71.1,
-            "feels_like_f": 69.0,
-            "humidity_pct": 35.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.1,
-            "wind_gust_mph": 6.5,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2127,14 +2039,14 @@
       },
       "projected_score": {
         "away": 19.1,
-        "home": 22.6
+        "home": 22.0
       },
-      "projected_total": 41.7,
-      "expected_margin": 3.5,
+      "projected_total": 41.1,
+      "expected_margin": 2.9,
       "projected_winner": "IND",
       "win_probability": {
-        "away": 36.9,
-        "home": 63.1
+        "away": 39.0,
+        "home": 61.0
       },
       "projection_confidence": 51.4,
       "injury_context": {
@@ -2269,6 +2181,20 @@
                 "impact": 2.6
               },
               {
+                "player_id": "4258173",
+                "player": "Nico Collins",
+                "team": "HOU",
+                "position": "WR",
+                "status": "DOUBTFUL",
+                "practice_status": "",
+                "injury": "Hamstring",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.85,
+                "usage_importance": 1.0,
+                "impact": 2.55
+              },
+              {
                 "player_id": "3116679",
                 "player": "M.J. Stewart",
                 "team": "HOU",
@@ -2365,20 +2291,6 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.28
-              },
-              {
-                "player_id": "4258173",
-                "player": "Nico Collins",
-                "team": "HOU",
-                "position": "WR",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Hamstring",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.2
               },
               {
                 "player_id": "4241250",
@@ -2499,6 +2411,14 @@
                 "impact": 2.6
               },
               {
+                "player_id": "4258173",
+                "player": "Nico Collins",
+                "position": "WR",
+                "status": "DOUBTFUL",
+                "injury": "Hamstring",
+                "impact": 2.55
+              },
+              {
                 "player_id": "3116679",
                 "player": "M.J. Stewart",
                 "position": "S",
@@ -2552,6 +2472,20 @@
                 "status": "OUT",
                 "practice_status": "",
                 "injury": "Heel",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.0
+              },
+              {
+                "player_id": "4061956",
+                "player": "Ashton Dulin",
+                "team": "IND",
+                "position": "WR",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Ankle",
                 "unit": "offense",
                 "position_weight": 3.0,
                 "status_weight": 1.0,
@@ -2615,20 +2549,6 @@
                 "impact": 1.36
               },
               {
-                "player_id": "4061956",
-                "player": "Ashton Dulin",
-                "team": "IND",
-                "position": "WR",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.2
-              },
-              {
                 "player_id": "4036275",
                 "player": "Sean McKeon",
                 "team": "IND",
@@ -2644,10 +2564,10 @@
               }
             ],
             "offense": {
-              "impact": 12.48,
-              "factor": 0.85,
-              "passing_impact": 12.48,
-              "passing_factor": 0.838,
+              "impact": 14.28,
+              "factor": 0.829,
+              "passing_impact": 14.28,
+              "passing_factor": 0.814,
               "rushing_impact": 0,
               "rushing_factor": 1.0
             },
@@ -2691,11 +2611,19 @@
                 "status": "OUT",
                 "injury": "Heel",
                 "impact": 3.0
+              },
+              {
+                "player_id": "4061956",
+                "player": "Ashton Dulin",
+                "position": "WR",
+                "status": "OUT",
+                "injury": "Ankle",
+                "impact": 3.0
               }
             ]
           },
-          "scoring_factor": 1.003,
-          "passing_factor": 1.006,
+          "scoring_factor": 0.978,
+          "passing_factor": 0.977,
           "rushing_factor": 1.16
         }
       },
@@ -2708,27 +2636,8 @@
         "longitude": -86.1639,
         "roof": "retractable",
         "kickoff": "2026-09-27T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T13:00",
-          "temperature_f": 71.1,
-          "feels_like_f": 69.0,
-          "humidity_pct": 35.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.1,
-          "wind_gust_mph": 6.5,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -2760,21 +2669,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "EverBank Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 87.3,
-            "feels_like_f": 87.2,
-            "humidity_pct": 27.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 6.5,
-            "wind_gust_mph": 7.8,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2814,21 +2712,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "EverBank Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 87.3,
-            "feels_like_f": 87.2,
-            "humidity_pct": 27.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 6.5,
-            "wind_gust_mph": 7.8,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -3396,27 +3283,8 @@
         "longitude": -81.6373,
         "roof": "outdoor",
         "kickoff": "2026-09-27T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T13:00",
-          "temperature_f": 87.3,
-          "feels_like_f": 87.2,
-          "humidity_pct": 27.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 6.5,
-          "wind_gust_mph": 7.8,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -3448,21 +3316,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Hard Rock Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 88.3,
-            "feels_like_f": 94.6,
-            "humidity_pct": 40.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 3.0,
-            "wind_gust_mph": 5.8,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -3482,41 +3339,30 @@
         }
       },
       "home_projection": {
-        "projected_points": 22.3,
+        "projected_points": 21.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.45,
           "matchup_adjustment": -0.72,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 22.08,
-          "injury_scoring_factor": 1.012,
-          "injury_adjustment_points": 0.26,
-          "post_injury_projection": 22.35,
+          "injury_scoring_factor": 0.977,
+          "injury_adjustment_points": -0.51,
+          "post_injury_projection": 21.57,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.012,
-          "passing_factor": 0.988,
-          "rushing_factor": 1.075,
+          "scoring_factor": 0.977,
+          "passing_factor": 0.962,
+          "rushing_factor": 1.066,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Hard Rock Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 88.3,
-            "feels_like_f": 94.6,
-            "humidity_pct": 40.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 3.0,
-            "wind_gust_mph": 5.8,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -3537,14 +3383,14 @@
       },
       "projected_score": {
         "away": 24.5,
-        "home": 22.3
+        "home": 21.6
       },
-      "projected_total": 46.8,
-      "expected_margin": -2.2,
+      "projected_total": 46.1,
+      "expected_margin": -2.9,
       "projected_winner": "KC",
       "win_probability": {
-        "away": 58.4,
-        "home": 41.6
+        "away": 61.0,
+        "home": 39.0
       },
       "projection_confidence": 54.7,
       "injury_context": {
@@ -3767,6 +3613,20 @@
                 "impact": 3.4
               },
               {
+                "player_id": "4869645",
+                "player": "Caleb Douglas",
+                "team": "MIA",
+                "position": "WR",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Ankle",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.0
+              },
+              {
                 "player_id": "4894654",
                 "player": "Kenneth Grant",
                 "team": "MIA",
@@ -3851,6 +3711,20 @@
                 "impact": 2.2
               },
               {
+                "player_id": "4682745",
+                "player": "Jaylen Wright",
+                "team": "MIA",
+                "position": "RB",
+                "status": "DOUBTFUL",
+                "practice_status": "",
+                "injury": "Foot",
+                "unit": "offense",
+                "position_weight": 1.8,
+                "status_weight": 0.85,
+                "usage_importance": 1.0,
+                "impact": 1.53
+              },
+              {
                 "player_id": "4259558",
                 "player": "Robert Beal Jr.",
                 "team": "MIA",
@@ -3877,20 +3751,6 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.36
-              },
-              {
-                "player_id": "4869645",
-                "player": "Caleb Douglas",
-                "team": "MIA",
-                "position": "WR",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.2
               },
               {
                 "player_id": "4869961",
@@ -3921,20 +3781,6 @@
                 "impact": 1.2
               },
               {
-                "player_id": "4682745",
-                "player": "Jaylen Wright",
-                "team": "MIA",
-                "position": "RB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Foot",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.72
-              },
-              {
                 "player_id": "4034729",
                 "player": "Tucker Addington",
                 "team": "MIA",
@@ -3950,12 +3796,12 @@
               }
             ],
             "offense": {
-              "impact": 6.52,
-              "factor": 0.922,
-              "passing_impact": 5.8,
-              "passing_factor": 0.925,
-              "rushing_impact": 0.72,
-              "rushing_factor": 0.992
+              "impact": 9.13,
+              "factor": 0.89,
+              "passing_impact": 7.6,
+              "passing_factor": 0.901,
+              "rushing_impact": 1.53,
+              "rushing_factor": 0.983
             },
             "defense": {
               "impact": 18.0,
@@ -3983,6 +3829,14 @@
                 "impact": 3.4
               },
               {
+                "player_id": "4869645",
+                "player": "Caleb Douglas",
+                "position": "WR",
+                "status": "OUT",
+                "injury": "Ankle",
+                "impact": 3.0
+              },
+              {
                 "player_id": "4894654",
                 "player": "Kenneth Grant",
                 "position": "DT",
@@ -4000,9 +3854,9 @@
               }
             ]
           },
-          "scoring_factor": 1.012,
-          "passing_factor": 0.988,
-          "rushing_factor": 1.075
+          "scoring_factor": 0.977,
+          "passing_factor": 0.962,
+          "rushing_factor": 1.066
         }
       },
       "weather_context": {
@@ -4014,27 +3868,8 @@
         "longitude": -80.2389,
         "roof": "outdoor",
         "kickoff": "2026-09-27T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T13:00",
-          "temperature_f": 88.3,
-          "feels_like_f": 94.6,
-          "humidity_pct": 40.0,
-          "precip_probability_pct": 1.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 3.0,
-          "wind_gust_mph": 5.8,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -4046,7 +3881,7 @@
       "away_team": "TEN",
       "home_team": "NYG",
       "away_projection": {
-        "projected_points": 22.1,
+        "projected_points": 23.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.03,
@@ -4056,8 +3891,8 @@
           "injury_scoring_factor": 1.102,
           "injury_adjustment_points": 2.21,
           "post_injury_projection": 23.86,
-          "weather_scoring_factor": 0.928,
-          "weather_adjustment_points": -1.72
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.102,
@@ -4066,27 +3901,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 59.2,
-            "feels_like_f": 53.7,
-            "humidity_pct": 92.0,
-            "precip_probability_pct": 83.0,
-            "precipitation_in": 0.059,
-            "wind_mph": 18.1,
-            "wind_gust_mph": 29.1,
-            "weather_code": 61,
-            "conditions": "Light Rain"
-          },
-          "classification": "SIGNIFICANT",
-          "severity_score": 5.5,
-          "scoring_factor": 0.928,
-          "passing_factor": 0.901,
-          "rushing_factor": 1.028,
-          "kicking_factor": 0.89
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -0.2,
         "matchup_label": "Neutral",
@@ -4100,7 +3924,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 21.2,
+        "projected_points": 22.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.3,
@@ -4110,8 +3934,8 @@
           "injury_scoring_factor": 0.944,
           "injury_adjustment_points": -1.36,
           "post_injury_projection": 22.85,
-          "weather_scoring_factor": 0.928,
-          "weather_adjustment_points": -1.65
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 0.944,
@@ -4120,27 +3944,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 59.2,
-            "feels_like_f": 53.7,
-            "humidity_pct": 92.0,
-            "precip_probability_pct": 83.0,
-            "precipitation_in": 0.059,
-            "wind_mph": 18.1,
-            "wind_gust_mph": 29.1,
-            "weather_code": 61,
-            "conditions": "Light Rain"
-          },
-          "classification": "SIGNIFICANT",
-          "severity_score": 5.5,
-          "scoring_factor": 0.928,
-          "passing_factor": 0.901,
-          "rushing_factor": 1.028,
-          "kicking_factor": 0.89
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 7.6,
         "matchup_label": "Favorable",
@@ -4154,15 +3967,15 @@
         }
       },
       "projected_score": {
-        "away": 22.1,
-        "home": 21.2
+        "away": 23.9,
+        "home": 22.9
       },
-      "projected_total": 43.3,
-      "expected_margin": -0.9,
+      "projected_total": 46.8,
+      "expected_margin": -1.0,
       "projected_winner": "TEN",
       "win_probability": {
-        "away": 53.5,
-        "home": 46.5
+        "away": 53.8,
+        "home": 46.2
       },
       "projection_confidence": 51.4,
       "injury_context": {
@@ -4720,27 +4533,8 @@
         "longitude": -74.0745,
         "roof": "outdoor",
         "kickoff": "2026-09-27T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T13:00",
-          "temperature_f": 59.2,
-          "feels_like_f": 53.7,
-          "humidity_pct": 92.0,
-          "precip_probability_pct": 83.0,
-          "precipitation_in": 0.059,
-          "wind_mph": 18.1,
-          "wind_gust_mph": 29.1,
-          "weather_code": 61,
-          "conditions": "Light Rain"
-        },
-        "context": {
-          "severity_score": 5.5,
-          "passing_factor": 0.901,
-          "rushing_factor": 1.028,
-          "scoring_factor": 0.928,
-          "kicking_factor": 0.89,
-          "classification": "SIGNIFICANT"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -4752,7 +4546,7 @@
       "away_team": "CIN",
       "home_team": "PIT",
       "away_projection": {
-        "projected_points": 22.0,
+        "projected_points": 22.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.2,
@@ -4762,8 +4556,8 @@
           "injury_scoring_factor": 1.061,
           "injury_adjustment_points": 1.28,
           "post_injury_projection": 22.29,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.29
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.061,
@@ -4772,27 +4566,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Acrisure Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 70.7,
-            "feels_like_f": 66.9,
-            "humidity_pct": 41.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.1,
-            "wind_gust_mph": 16.6,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -5.8,
         "matchup_label": "Difficult",
@@ -4806,47 +4589,36 @@
         }
       },
       "home_projection": {
-        "projected_points": 20.9,
+        "projected_points": 21.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.05,
           "matchup_adjustment": -0.23,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 22.97,
-          "injury_scoring_factor": 0.923,
-          "injury_adjustment_points": -1.77,
-          "post_injury_projection": 21.2,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.28
+          "injury_scoring_factor": 0.934,
+          "injury_adjustment_points": -1.52,
+          "post_injury_projection": 21.45,
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.923,
+          "scoring_factor": 0.934,
           "passing_factor": 0.926,
-          "rushing_factor": 0.949,
+          "rushing_factor": 0.961,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Acrisure Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 70.7,
-            "feels_like_f": 66.9,
-            "humidity_pct": 41.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.1,
-            "wind_gust_mph": 16.6,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -2.8,
         "matchup_label": "Neutral",
@@ -4860,15 +4632,15 @@
         }
       },
       "projected_score": {
-        "away": 22.0,
-        "home": 20.9
+        "away": 22.3,
+        "home": 21.5
       },
-      "projected_total": 42.9,
-      "expected_margin": -1.1,
+      "projected_total": 43.8,
+      "expected_margin": -0.8,
       "projected_winner": "CIN",
       "win_probability": {
-        "away": 54.2,
-        "home": 45.8
+        "away": 53.1,
+        "home": 46.9
       },
       "projection_confidence": 51.5,
       "injury_context": {
@@ -4923,14 +4695,14 @@
                 "player": "B.J. Hill",
                 "team": "CIN",
                 "position": "DT",
-                "status": "QUESTIONABLE",
+                "status": "DOUBTFUL",
                 "practice_status": "",
                 "injury": "Undisclosed",
                 "unit": "defense",
                 "position_weight": 2.6,
-                "status_weight": 0.4,
+                "status_weight": 0.85,
                 "usage_importance": 1.0,
-                "impact": 1.04
+                "impact": 2.21
               }
             ],
             "offense": {
@@ -4942,12 +4714,12 @@
               "rushing_factor": 0.965
             },
             "defense": {
-              "impact": 4.44,
-              "factor": 1.044,
+              "impact": 5.61,
+              "factor": 1.056,
               "pass_defense_impact": 3.4,
               "pass_defense_factor": 1.037,
-              "rush_defense_impact": 1.04,
-              "rush_defense_factor": 1.01
+              "rush_defense_impact": 2.21,
+              "rush_defense_factor": 1.022
             },
             "key_absences": [
               {
@@ -5220,9 +4992,9 @@
               }
             ]
           },
-          "scoring_factor": 0.923,
+          "scoring_factor": 0.934,
           "passing_factor": 0.926,
-          "rushing_factor": 0.949
+          "rushing_factor": 0.961
         }
       },
       "weather_context": {
@@ -5234,27 +5006,8 @@
         "longitude": -80.0158,
         "roof": "outdoor",
         "kickoff": "2026-09-27T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T13:00",
-          "temperature_f": 70.7,
-          "feels_like_f": 66.9,
-          "humidity_pct": 41.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 10.1,
-          "wind_gust_mph": 16.6,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 1.0,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "scoring_factor": 0.987,
-          "kicking_factor": 0.98,
-          "classification": "MINOR"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -5266,7 +5019,7 @@
       "away_team": "SEA",
       "home_team": "WAS",
       "away_projection": {
-        "projected_points": 21.8,
+        "projected_points": 23.8,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.98,
@@ -5276,8 +5029,8 @@
           "injury_scoring_factor": 0.977,
           "injury_adjustment_points": -0.56,
           "post_injury_projection": 23.83,
-          "weather_scoring_factor": 0.915,
-          "weather_adjustment_points": -2.03
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 0.977,
@@ -5286,27 +5039,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Northwest Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 56.8,
-            "feels_like_f": 52.0,
-            "humidity_pct": 94.0,
-            "precip_probability_pct": 40.0,
-            "precipitation_in": 0.118,
-            "wind_mph": 15.1,
-            "wind_gust_mph": 32.7,
-            "weather_code": 63,
-            "conditions": "Rain"
-          },
-          "classification": "SEVERE",
-          "severity_score": 6.5,
-          "scoring_factor": 0.915,
-          "passing_factor": 0.883,
-          "rushing_factor": 1.032,
-          "kicking_factor": 0.87
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 18.9,
         "matchup_label": "Strong",
@@ -5320,7 +5062,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 17.0,
+        "projected_points": 18.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.78,
@@ -5330,37 +5072,26 @@
           "injury_scoring_factor": 0.871,
           "injury_adjustment_points": -2.75,
           "post_injury_projection": 18.59,
-          "weather_scoring_factor": 0.915,
-          "weather_adjustment_points": -1.58
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 0.871,
-          "passing_factor": 0.86,
+          "passing_factor": 0.848,
           "rushing_factor": 0.871,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Northwest Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T13:00",
-            "temperature_f": 56.8,
-            "feels_like_f": 52.0,
-            "humidity_pct": 94.0,
-            "precip_probability_pct": 40.0,
-            "precipitation_in": 0.118,
-            "wind_mph": 15.1,
-            "wind_gust_mph": 32.7,
-            "weather_code": 63,
-            "conditions": "Rain"
-          },
-          "classification": "SEVERE",
-          "severity_score": 6.5,
-          "scoring_factor": 0.915,
-          "passing_factor": 0.883,
-          "rushing_factor": 1.032,
-          "kicking_factor": 0.87
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -13.9,
         "matchup_label": "Difficult",
@@ -5374,15 +5105,15 @@
         }
       },
       "projected_score": {
-        "away": 21.8,
-        "home": 17.0
+        "away": 23.8,
+        "home": 18.6
       },
-      "projected_total": 38.8,
-      "expected_margin": -4.8,
+      "projected_total": 42.4,
+      "expected_margin": -5.2,
       "projected_winner": "SEA",
       "win_probability": {
-        "away": 67.7,
-        "home": 32.3
+        "away": 69.0,
+        "home": 31.0
       },
       "projection_confidence": 55.7,
       "injury_context": {
@@ -5625,7 +5356,7 @@
                 "position": "QB",
                 "status": "OUT",
                 "practice_status": "",
-                "injury": "Left Elbow",
+                "injury": "Elbow",
                 "unit": "offense",
                 "position_weight": 10.0,
                 "status_weight": 1.0,
@@ -5715,6 +5446,20 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 2.4
+              },
+              {
+                "player_id": "4360635",
+                "player": "Chig Okonkwo",
+                "team": "WAS",
+                "position": "TE",
+                "status": "DOUBTFUL",
+                "practice_status": "",
+                "injury": "Hamstring",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 0.85,
+                "usage_importance": 1.0,
+                "impact": 1.87
               },
               {
                 "player_id": "3127586",
@@ -5829,20 +5574,6 @@
                 "impact": 0.96
               },
               {
-                "player_id": "4360635",
-                "player": "Chig Okonkwo",
-                "team": "WAS",
-                "position": "TE",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Hamstring",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.88
-              },
-              {
                 "player_id": "4262199",
                 "player": "Sam Cosmi",
                 "team": "WAS",
@@ -5858,10 +5589,10 @@
               }
             ],
             "offense": {
-              "impact": 17.88,
+              "impact": 18.0,
               "factor": 0.8,
-              "passing_impact": 16.08,
-              "passing_factor": 0.791,
+              "passing_impact": 17.07,
+              "passing_factor": 0.78,
               "rushing_impact": 15.8,
               "rushing_factor": 0.826
             },
@@ -5879,7 +5610,7 @@
                 "player": "Jayden Daniels",
                 "position": "QB",
                 "status": "OUT",
-                "injury": "Left Elbow",
+                "injury": "Elbow",
                 "impact": 10.0
               },
               {
@@ -5925,7 +5656,7 @@
             ]
           },
           "scoring_factor": 0.871,
-          "passing_factor": 0.86,
+          "passing_factor": 0.848,
           "rushing_factor": 0.871
         }
       },
@@ -5938,27 +5669,8 @@
         "longitude": -76.8645,
         "roof": "outdoor",
         "kickoff": "2026-09-27T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T13:00",
-          "temperature_f": 56.8,
-          "feels_like_f": 52.0,
-          "humidity_pct": 94.0,
-          "precip_probability_pct": 40.0,
-          "precipitation_in": 0.118,
-          "wind_mph": 15.1,
-          "wind_gust_mph": 32.7,
-          "weather_code": 63,
-          "conditions": "Rain"
-        },
-        "context": {
-          "severity_score": 6.5,
-          "passing_factor": 0.883,
-          "rushing_factor": 1.032,
-          "scoring_factor": 0.915,
-          "kicking_factor": 0.87,
-          "classification": "SEVERE"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -5970,7 +5682,7 @@
       "away_team": "ARI",
       "home_team": "SF",
       "away_projection": {
-        "projected_points": 21.5,
+        "projected_points": 21.8,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.18,
@@ -5980,8 +5692,8 @@
           "injury_scoring_factor": 1.024,
           "injury_adjustment_points": 0.51,
           "post_injury_projection": 21.8,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.28
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.024,
@@ -5990,27 +5702,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Levi's Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T16:00",
-            "temperature_f": 72.1,
-            "feels_like_f": 66.4,
-            "humidity_pct": 36.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 11.0,
-            "wind_gust_mph": 12.8,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -3.6,
         "matchup_label": "Neutral",
@@ -6024,7 +5725,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 24.3,
+        "projected_points": 24.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.99,
@@ -6034,8 +5735,8 @@
           "injury_scoring_factor": 0.944,
           "injury_adjustment_points": -1.46,
           "post_injury_projection": 24.64,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.32
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 0.944,
@@ -6044,27 +5745,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Levi's Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T16:00",
-            "temperature_f": 72.1,
-            "feels_like_f": 66.4,
-            "humidity_pct": 36.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 11.0,
-            "wind_gust_mph": 12.8,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 22.3,
         "matchup_label": "Strong",
@@ -6078,10 +5768,10 @@
         }
       },
       "projected_score": {
-        "away": 21.5,
-        "home": 24.3
+        "away": 21.8,
+        "home": 24.6
       },
-      "projected_total": 45.8,
+      "projected_total": 46.4,
       "expected_margin": 2.8,
       "projected_winner": "SF",
       "win_probability": {
@@ -6527,6 +6217,20 @@
                 "impact": 3.0
               },
               {
+                "player_id": "4040605",
+                "player": "Nick Bosa",
+                "team": "SF",
+                "position": "DE",
+                "status": "DOUBTFUL",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.5,
+                "status_weight": 0.85,
+                "usage_importance": 1.0,
+                "impact": 2.98
+              },
+              {
                 "player_id": "4430835",
                 "player": "Alfred Collins",
                 "team": "SF",
@@ -6651,20 +6355,6 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 1.8
-              },
-              {
-                "player_id": "4040605",
-                "player": "Nick Bosa",
-                "team": "SF",
-                "position": "DE",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Calf/knee",
-                "unit": "defense",
-                "position_weight": 3.5,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.4
               },
               {
                 "player_id": "4432244",
@@ -6815,6 +6505,14 @@
                 "impact": 3.0
               },
               {
+                "player_id": "4040605",
+                "player": "Nick Bosa",
+                "position": "DE",
+                "status": "DOUBTFUL",
+                "injury": "Undisclosed",
+                "impact": 2.98
+              },
+              {
                 "player_id": "4430835",
                 "player": "Alfred Collins",
                 "position": "DT",
@@ -6862,27 +6560,8 @@
         "longitude": -121.97,
         "roof": "outdoor",
         "kickoff": "2026-09-27T16:05",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T16:00",
-          "temperature_f": 72.1,
-          "feels_like_f": 66.4,
-          "humidity_pct": 36.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 11.0,
-          "wind_gust_mph": 12.8,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 1.0,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "scoring_factor": 0.987,
-          "kicking_factor": 0.98,
-          "classification": "MINOR"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -6894,41 +6573,30 @@
       "away_team": "MIN",
       "home_team": "TB",
       "away_projection": {
-        "projected_points": 20.0,
+        "projected_points": 20.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.41,
           "matchup_adjustment": -0.74,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 20.61,
-          "injury_scoring_factor": 0.972,
-          "injury_adjustment_points": -0.58,
-          "post_injury_projection": 20.03,
+          "injury_scoring_factor": 0.998,
+          "injury_adjustment_points": -0.04,
+          "post_injury_projection": 20.56,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.972,
-          "passing_factor": 1.016,
-          "rushing_factor": 0.976,
+          "scoring_factor": 0.998,
+          "passing_factor": 1.046,
+          "rushing_factor": 1.003,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Raymond James Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T16:00",
-            "temperature_f": 86.3,
-            "feels_like_f": 84.0,
-            "humidity_pct": 29.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 7.6,
-            "wind_gust_mph": 5.4,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -6968,21 +6636,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Raymond James Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T16:00",
-            "temperature_f": 86.3,
-            "feels_like_f": 84.0,
-            "humidity_pct": 29.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 7.6,
-            "wind_gust_mph": 5.4,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -7002,15 +6659,15 @@
         }
       },
       "projected_score": {
-        "away": 20.0,
+        "away": 20.6,
         "home": 21.6
       },
-      "projected_total": 41.6,
-      "expected_margin": 1.6,
+      "projected_total": 42.2,
+      "expected_margin": 1.0,
       "projected_winner": "TB",
       "win_probability": {
-        "away": 43.9,
-        "home": 56.1
+        "away": 46.2,
+        "home": 53.8
       },
       "projection_confidence": 54.6,
       "injury_context": {
@@ -7191,9 +6848,9 @@
             },
             "key_absences": []
           },
-          "scoring_factor": 0.972,
-          "passing_factor": 1.016,
-          "rushing_factor": 0.976
+          "scoring_factor": 0.998,
+          "passing_factor": 1.046,
+          "rushing_factor": 1.003
         },
         "home": {
           "team_context": {
@@ -7228,6 +6885,20 @@
                 "impact": 3.0
               },
               {
+                "player_id": "4870998",
+                "player": "Josiah Trotter",
+                "team": "TB",
+                "position": "LB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Shoulder",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
                 "player_id": "4427677",
                 "player": "Mohamed Kamara",
                 "team": "TB",
@@ -7235,6 +6906,20 @@
                 "status": "IR",
                 "practice_status": "",
                 "injury": "Knee",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4870617",
+                "player": "Rueben Bain Jr.",
+                "team": "TB",
+                "position": "LB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Undisclosed",
                 "unit": "defense",
                 "position_weight": 2.4,
                 "status_weight": 1.0,
@@ -7254,34 +6939,6 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 0.96
-              },
-              {
-                "player_id": "4870998",
-                "player": "Josiah Trotter",
-                "team": "TB",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Shoulder",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4870617",
-                "player": "Rueben Bain Jr.",
-                "team": "TB",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Groin",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
               }
             ],
             "offense": {
@@ -7293,12 +6950,12 @@
               "rushing_factor": 1.0
             },
             "defense": {
-              "impact": 8.68,
-              "factor": 1.087,
-              "pass_defense_impact": 8.68,
-              "pass_defense_factor": 1.095,
-              "rush_defense_impact": 5.28,
-              "rush_defense_factor": 1.053
+              "impact": 11.56,
+              "factor": 1.116,
+              "pass_defense_impact": 11.56,
+              "pass_defense_factor": 1.127,
+              "rush_defense_impact": 8.16,
+              "rush_defense_factor": 1.082
             },
             "key_absences": [
               {
@@ -7333,27 +6990,8 @@
         "longitude": -82.5033,
         "roof": "outdoor",
         "kickoff": "2026-09-27T16:05",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T16:00",
-          "temperature_f": 86.3,
-          "feels_like_f": 84.0,
-          "humidity_pct": 29.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 7.6,
-          "wind_gust_mph": 5.4,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -7385,21 +7023,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "AT&T Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T16:00",
-            "temperature_f": 93.0,
-            "feels_like_f": 94.5,
-            "humidity_pct": 34.0,
-            "precip_probability_pct": 7.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 6.0,
-            "wind_gust_mph": 7.6,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -7439,21 +7066,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "AT&T Stadium",
-          "weather": {
-            "forecast_time": "2026-09-27T16:00",
-            "temperature_f": 93.0,
-            "feels_like_f": 94.5,
-            "humidity_pct": 34.0,
-            "precip_probability_pct": 7.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 6.0,
-            "wind_gust_mph": 7.6,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -7967,27 +7583,8 @@
         "longitude": -97.0945,
         "roof": "retractable",
         "kickoff": "2026-09-27T16:25",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T16:00",
-          "temperature_f": 93.0,
-          "feels_like_f": 94.5,
-          "humidity_pct": 34.0,
-          "precip_probability_pct": 7.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 6.0,
-          "wind_gust_mph": 7.6,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -8756,21 +8353,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Empower Field at Mile High",
-          "weather": {
-            "forecast_time": "2026-09-27T20:00",
-            "temperature_f": 71.9,
-            "feels_like_f": 67.9,
-            "humidity_pct": 35.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.2,
-            "wind_gust_mph": 7.8,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -8810,21 +8396,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Empower Field at Mile High",
-          "weather": {
-            "forecast_time": "2026-09-27T20:00",
-            "temperature_f": 71.9,
-            "feels_like_f": 67.9,
-            "humidity_pct": 35.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.2,
-            "wind_gust_mph": 7.8,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -9278,27 +8853,8 @@
         "longitude": -105.0201,
         "roof": "outdoor",
         "kickoff": "2026-09-27T20:20",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-09-27T20:00",
-          "temperature_f": 71.9,
-          "feels_like_f": 67.9,
-          "humidity_pct": 35.0,
-          "precip_probability_pct": 1.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.2,
-          "wind_gust_mph": 7.8,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
