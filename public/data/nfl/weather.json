@@ -1,18 +1,422 @@
 {
-  "generated_at": "2026-09-24T13:01:53.873167+00:00",
+  "generated_at": "2026-09-25T13:08:55.138874+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_03_ATL_GB",
-      "away_team": "ATL",
-      "home_team": "GB",
-      "stadium": "Lambeau Field",
-      "latitude": 44.5013,
-      "longitude": -88.0622,
+      "game_id": "2026_03_LAC_BUF",
+      "away_team": "LAC",
+      "home_team": "BUF",
+      "stadium": "Highmark Stadium",
+      "latitude": 42.7738,
+      "longitude": -78.7868,
       "roof": "outdoor",
-      "kickoff": "2026-09-24T20:15",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "kickoff": "2026-09-27T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T13:00",
+        "temperature_f": 67.3,
+        "feels_like_f": 60.4,
+        "humidity_pct": 45.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 15.8,
+        "wind_gust_mph": 21.3,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 2.5,
+        "passing_factor": 0.955,
+        "rushing_factor": 1.012,
+        "scoring_factor": 0.968,
+        "kicking_factor": 0.95,
+        "classification": "MODERATE"
+      }
+    },
+    {
+      "game_id": "2026_03_CAR_CLE",
+      "away_team": "CAR",
+      "home_team": "CLE",
+      "stadium": "Huntington Bank Field",
+      "latitude": 41.5061,
+      "longitude": -81.6995,
+      "roof": "outdoor",
+      "kickoff": "2026-09-27T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T13:00",
+        "temperature_f": 67.0,
+        "feels_like_f": 63.7,
+        "humidity_pct": 56.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 12.1,
+        "wind_gust_mph": 16.6,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "scoring_factor": 0.987,
+        "kicking_factor": 0.98,
+        "classification": "MINOR"
+      }
+    },
+    {
+      "game_id": "2026_03_NYJ_DET",
+      "away_team": "NYJ",
+      "home_team": "DET",
+      "stadium": "Ford Field",
+      "latitude": 42.34,
+      "longitude": -83.0456,
+      "roof": "fixed",
+      "kickoff": "2026-09-27T13:00",
+      "available": true,
+      "weather": {
+        "conditions": "Indoor"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "INDOOR"
+      }
+    },
+    {
+      "game_id": "2026_03_HOU_IND",
+      "away_team": "HOU",
+      "home_team": "IND",
+      "stadium": "Lucas Oil Stadium",
+      "latitude": 39.7601,
+      "longitude": -86.1639,
+      "roof": "retractable",
+      "kickoff": "2026-09-27T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T13:00",
+        "temperature_f": 71.1,
+        "feels_like_f": 69.0,
+        "humidity_pct": 35.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 5.1,
+        "wind_gust_mph": 6.5,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_03_NE_JAX",
+      "away_team": "NE",
+      "home_team": "JAX",
+      "stadium": "EverBank Stadium",
+      "latitude": 30.3239,
+      "longitude": -81.6373,
+      "roof": "outdoor",
+      "kickoff": "2026-09-27T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T13:00",
+        "temperature_f": 87.3,
+        "feels_like_f": 87.2,
+        "humidity_pct": 27.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 6.5,
+        "wind_gust_mph": 7.8,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_03_KC_MIA",
+      "away_team": "KC",
+      "home_team": "MIA",
+      "stadium": "Hard Rock Stadium",
+      "latitude": 25.958,
+      "longitude": -80.2389,
+      "roof": "outdoor",
+      "kickoff": "2026-09-27T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T13:00",
+        "temperature_f": 88.3,
+        "feels_like_f": 94.6,
+        "humidity_pct": 40.0,
+        "precip_probability_pct": 1.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 3.0,
+        "wind_gust_mph": 5.8,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_03_TEN_NYG",
+      "away_team": "TEN",
+      "home_team": "NYG",
+      "stadium": "MetLife Stadium",
+      "latitude": 40.8135,
+      "longitude": -74.0745,
+      "roof": "outdoor",
+      "kickoff": "2026-09-27T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T13:00",
+        "temperature_f": 59.2,
+        "feels_like_f": 53.7,
+        "humidity_pct": 92.0,
+        "precip_probability_pct": 83.0,
+        "precipitation_in": 0.059,
+        "wind_mph": 18.1,
+        "wind_gust_mph": 29.1,
+        "weather_code": 61,
+        "conditions": "Light Rain"
+      },
+      "context": {
+        "severity_score": 5.5,
+        "passing_factor": 0.901,
+        "rushing_factor": 1.028,
+        "scoring_factor": 0.928,
+        "kicking_factor": 0.89,
+        "classification": "SIGNIFICANT"
+      }
+    },
+    {
+      "game_id": "2026_03_CIN_PIT",
+      "away_team": "CIN",
+      "home_team": "PIT",
+      "stadium": "Acrisure Stadium",
+      "latitude": 40.4468,
+      "longitude": -80.0158,
+      "roof": "outdoor",
+      "kickoff": "2026-09-27T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T13:00",
+        "temperature_f": 70.7,
+        "feels_like_f": 66.9,
+        "humidity_pct": 41.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 10.1,
+        "wind_gust_mph": 16.6,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "scoring_factor": 0.987,
+        "kicking_factor": 0.98,
+        "classification": "MINOR"
+      }
+    },
+    {
+      "game_id": "2026_03_SEA_WAS",
+      "away_team": "SEA",
+      "home_team": "WAS",
+      "stadium": "Northwest Stadium",
+      "latitude": 38.9076,
+      "longitude": -76.8645,
+      "roof": "outdoor",
+      "kickoff": "2026-09-27T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T13:00",
+        "temperature_f": 56.8,
+        "feels_like_f": 52.0,
+        "humidity_pct": 94.0,
+        "precip_probability_pct": 40.0,
+        "precipitation_in": 0.118,
+        "wind_mph": 15.1,
+        "wind_gust_mph": 32.7,
+        "weather_code": 63,
+        "conditions": "Rain"
+      },
+      "context": {
+        "severity_score": 6.5,
+        "passing_factor": 0.883,
+        "rushing_factor": 1.032,
+        "scoring_factor": 0.915,
+        "kicking_factor": 0.87,
+        "classification": "SEVERE"
+      }
+    },
+    {
+      "game_id": "2026_03_ARI_SF",
+      "away_team": "ARI",
+      "home_team": "SF",
+      "stadium": "Levi's Stadium",
+      "latitude": 37.403,
+      "longitude": -121.97,
+      "roof": "outdoor",
+      "kickoff": "2026-09-27T16:05",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T16:00",
+        "temperature_f": 72.1,
+        "feels_like_f": 66.4,
+        "humidity_pct": 36.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 11.0,
+        "wind_gust_mph": 12.8,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "scoring_factor": 0.987,
+        "kicking_factor": 0.98,
+        "classification": "MINOR"
+      }
+    },
+    {
+      "game_id": "2026_03_MIN_TB",
+      "away_team": "MIN",
+      "home_team": "TB",
+      "stadium": "Raymond James Stadium",
+      "latitude": 27.9759,
+      "longitude": -82.5033,
+      "roof": "outdoor",
+      "kickoff": "2026-09-27T16:05",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T16:00",
+        "temperature_f": 86.3,
+        "feels_like_f": 84.0,
+        "humidity_pct": 29.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 7.6,
+        "wind_gust_mph": 5.4,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_03_BAL_DAL",
+      "away_team": "BAL",
+      "home_team": "DAL",
+      "stadium": "AT&T Stadium",
+      "latitude": 32.7473,
+      "longitude": -97.0945,
+      "roof": "retractable",
+      "kickoff": "2026-09-27T16:25",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T16:00",
+        "temperature_f": 93.0,
+        "feels_like_f": 94.5,
+        "humidity_pct": 34.0,
+        "precip_probability_pct": 7.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 6.0,
+        "wind_gust_mph": 7.6,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_03_LV_NO",
+      "away_team": "LV",
+      "home_team": "NO",
+      "stadium": "Caesars Superdome",
+      "latitude": 29.9511,
+      "longitude": -90.0812,
+      "roof": "fixed",
+      "kickoff": "2026-09-27T16:25",
+      "available": true,
+      "weather": {
+        "conditions": "Indoor"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "INDOOR"
+      }
+    },
+    {
+      "game_id": "2026_03_LA_DEN",
+      "away_team": "LAR",
+      "home_team": "DEN",
+      "stadium": "Empower Field at Mile High",
+      "latitude": 39.7439,
+      "longitude": -105.0201,
+      "roof": "outdoor",
+      "kickoff": "2026-09-27T20:20",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-09-27T20:00",
+        "temperature_f": 71.9,
+        "feels_like_f": 67.9,
+        "humidity_pct": 35.0,
+        "precip_probability_pct": 1.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 5.2,
+        "wind_gust_mph": 7.8,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     }
   ]
 }
