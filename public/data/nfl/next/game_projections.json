@@ -25,10 +25,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Soldier Field",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-09-28T20:00",
+            "temperature_f": 60.3,
+            "feels_like_f": 60.4,
+            "humidity_pct": 86.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.6,
+            "wind_gust_mph": 7.4,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -68,10 +79,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Soldier Field",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-09-28T20:00",
+            "temperature_f": 60.3,
+            "feels_like_f": 60.4,
+            "humidity_pct": 86.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.6,
+            "wind_gust_mph": 7.4,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -165,8 +187,27 @@
         "longitude": -87.6167,
         "roof": "outdoor",
         "kickoff": "2026-09-28T20:15",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-09-28T20:00",
+          "temperature_f": 60.3,
+          "feels_like_f": 60.4,
+          "humidity_pct": 86.0,
+          "precip_probability_pct": 0.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 4.6,
+          "wind_gust_mph": 7.4,
+          "weather_code": 0,
+          "conditions": "Clear"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
