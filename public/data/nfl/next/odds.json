@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T10:21:50.818446+00:00",
+  "generated_at": "2026-09-28T11:23:21.786927+00:00",
   "provider": "odds_api_io",
   "base_url": "https://api.odds-api.io/v3",
   "sport": "american-football",
@@ -10,46 +10,46 @@
   ],
   "games": [
     {
-      "event_id": 71515840,
-      "game_id": "2026_03_PHI_CHI",
+      "event_id": 71515842,
+      "game_id": "2026_04_PIT_CLE",
       "season": 2026,
-      "week": 3,
+      "week": 4,
       "game_type": "REG",
-      "game_date": "2026-09-28",
+      "game_date": "2026-10-01",
       "game_time": "20:15",
-      "commence_time": "2026-09-29T00:15:00Z",
-      "away_team": "PHI",
-      "home_team": "CHI",
+      "commence_time": "2026-10-02T00:15:00Z",
+      "away_team": "PIT",
+      "home_team": "CLE",
       "bookmakers": [
         {
           "key": "FanDuel",
           "title": "FanDuel",
           "markets": {
             "moneyline": {
-              "away": -178.0,
-              "home": 148.0
+              "away": -136.0,
+              "home": 116.0
             },
             "spread": {
-              "away": -3.5,
-              "home": 3.5,
-              "away_price": -105.0,
-              "home_price": -115.0
+              "away": -2.5,
+              "home": 2.5,
+              "away_price": -114.0,
+              "home_price": -106.0
             },
             "game_total": {
-              "line": 41.5,
-              "over_price": -118.0,
-              "under_price": -108.0
+              "line": 13.5,
+              "over_price": -100000.0,
+              "under_price": -100000.0
             },
             "team_total": {
               "home": {
-                "line": 19.5,
-                "over_price": -113.0,
-                "under_price": -113.0
+                "line": 17.5,
+                "over_price": -115.0,
+                "under_price": -111.0
               },
               "away": {
-                "line": 23.5,
-                "over_price": -102.0,
-                "under_price": -125.0
+                "line": 19.5,
+                "over_price": -130.0,
+                "under_price": 102.0
               }
             }
           }
@@ -59,31 +59,19 @@
           "title": "DraftKings",
           "markets": {
             "moneyline": {
-              "away": -200.0,
-              "home": 164.0
+              "away": -143.0,
+              "home": 120.0
             },
             "spread": {
-              "away": -3.5,
-              "home": 3.5,
-              "away_price": -111.0,
-              "home_price": -111.0
+              "away": -2.5,
+              "home": 2.5,
+              "away_price": -112.0,
+              "home_price": -109.0
             },
             "game_total": {
-              "line": 42.5,
+              "line": 38.5,
               "over_price": -105.0,
               "under_price": -116.0
-            },
-            "team_total": {
-              "home": {
-                "line": 29.5,
-                "over_price": 550.0,
-                "under_price": -909.0
-              },
-              "away": {
-                "line": 33.5,
-                "over_price": 500.0,
-                "under_price": -714.0
-              }
             }
           }
         }
