@@ -5,7 +5,7 @@
       "away_team": "IND",
       "home_team": "WAS",
       "away_projection": {
-        "projected_points": 22.8,
+        "projected_points": 23.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.69,
@@ -15,8 +15,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 23.46,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.61
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -30,22 +30,22 @@
           "stadium": "Northwest Stadium",
           "weather": {
             "forecast_time": "2026-10-04T09:00",
-            "temperature_f": 62.2,
-            "feels_like_f": 62.8,
-            "humidity_pct": 98.0,
+            "temperature_f": 61.4,
+            "feels_like_f": 59.4,
+            "humidity_pct": 66.0,
             "precip_probability_pct": 46.0,
-            "precipitation_in": 0.173,
-            "wind_mph": 8.0,
-            "wind_gust_mph": 21.9,
-            "weather_code": 63,
-            "conditions": "Rain"
+            "precipitation_in": 0.0,
+            "wind_mph": 5.0,
+            "wind_gust_mph": 8.3,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 12.8,
         "matchup_label": "Favorable",
@@ -59,7 +59,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.5,
+        "projected_points": 24.1,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.31,
@@ -69,8 +69,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 24.08,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.63
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -84,22 +84,22 @@
           "stadium": "Northwest Stadium",
           "weather": {
             "forecast_time": "2026-10-04T09:00",
-            "temperature_f": 62.2,
-            "feels_like_f": 62.8,
-            "humidity_pct": 98.0,
+            "temperature_f": 61.4,
+            "feels_like_f": 59.4,
+            "humidity_pct": 66.0,
             "precip_probability_pct": 46.0,
-            "precipitation_in": 0.173,
-            "wind_mph": 8.0,
-            "wind_gust_mph": 21.9,
-            "weather_code": 63,
-            "conditions": "Rain"
+            "precipitation_in": 0.0,
+            "wind_mph": 5.0,
+            "wind_gust_mph": 8.3,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 6.2,
         "matchup_label": "Favorable",
@@ -113,15 +113,15 @@
         }
       },
       "projected_score": {
-        "away": 22.8,
-        "home": 23.5
+        "away": 23.5,
+        "home": 24.1
       },
-      "projected_total": 46.3,
-      "expected_margin": 0.7,
+      "projected_total": 47.6,
+      "expected_margin": 0.6,
       "projected_winner": "WAS",
       "win_probability": {
-        "away": 47.3,
-        "home": 52.7
+        "away": 47.7,
+        "home": 52.3
       },
       "projection_confidence": 53.3,
       "injury_context": {
@@ -190,23 +190,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T09:00",
-          "temperature_f": 62.2,
-          "feels_like_f": 62.8,
-          "humidity_pct": 98.0,
+          "temperature_f": 61.4,
+          "feels_like_f": 59.4,
+          "humidity_pct": 66.0,
           "precip_probability_pct": 46.0,
-          "precipitation_in": 0.173,
-          "wind_mph": 8.0,
-          "wind_gust_mph": 21.9,
-          "weather_code": 63,
-          "conditions": "Rain"
+          "precipitation_in": 0.0,
+          "wind_mph": 5.0,
+          "wind_gust_mph": 8.3,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "context": {
-          "severity_score": 2.0,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "scoring_factor": 0.974,
-          "kicking_factor": 0.96,
-          "classification": "MODERATE"
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
         }
       },
       "model": {
@@ -219,7 +219,7 @@
       "away_team": "TEN",
       "home_team": "BAL",
       "away_projection": {
-        "projected_points": 19.6,
+        "projected_points": 20.1,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.67,
@@ -229,8 +229,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 20.11,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.52
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -244,22 +244,22 @@
           "stadium": "M&T Bank Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 59.7,
-            "feels_like_f": 60.4,
-            "humidity_pct": 97.0,
-            "precip_probability_pct": 48.0,
-            "precipitation_in": 0.142,
-            "wind_mph": 5.4,
-            "wind_gust_mph": 13.4,
-            "weather_code": 63,
-            "conditions": "Rain"
+            "temperature_f": 69.2,
+            "feels_like_f": 68.3,
+            "humidity_pct": 59.0,
+            "precip_probability_pct": 38.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.6,
+            "wind_gust_mph": 5.6,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -12.0,
         "matchup_label": "Difficult",
@@ -273,7 +273,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 24.8,
+        "projected_points": 25.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.86,
@@ -283,8 +283,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 25.51,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.66
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -298,22 +298,22 @@
           "stadium": "M&T Bank Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 59.7,
-            "feels_like_f": 60.4,
-            "humidity_pct": 97.0,
-            "precip_probability_pct": 48.0,
-            "precipitation_in": 0.142,
-            "wind_mph": 5.4,
-            "wind_gust_mph": 13.4,
-            "weather_code": 63,
-            "conditions": "Rain"
+            "temperature_f": 69.2,
+            "feels_like_f": 68.3,
+            "humidity_pct": 59.0,
+            "precip_probability_pct": 38.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.6,
+            "wind_gust_mph": 5.6,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 16.4,
         "matchup_label": "Strong",
@@ -327,15 +327,15 @@
         }
       },
       "projected_score": {
-        "away": 19.6,
-        "home": 24.8
+        "away": 20.1,
+        "home": 25.5
       },
-      "projected_total": 44.4,
-      "expected_margin": 5.2,
+      "projected_total": 45.6,
+      "expected_margin": 5.4,
       "projected_winner": "BAL",
       "win_probability": {
-        "away": 31.0,
-        "home": 69.0
+        "away": 30.3,
+        "home": 69.7
       },
       "projection_confidence": 55.0,
       "injury_context": {
@@ -404,23 +404,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T13:00",
-          "temperature_f": 59.7,
-          "feels_like_f": 60.4,
-          "humidity_pct": 97.0,
-          "precip_probability_pct": 48.0,
-          "precipitation_in": 0.142,
-          "wind_mph": 5.4,
-          "wind_gust_mph": 13.4,
-          "weather_code": 63,
-          "conditions": "Rain"
+          "temperature_f": 69.2,
+          "feels_like_f": 68.3,
+          "humidity_pct": 59.0,
+          "precip_probability_pct": 38.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.6,
+          "wind_gust_mph": 5.6,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "context": {
-          "severity_score": 2.0,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "scoring_factor": 0.974,
-          "kicking_factor": 0.96,
-          "classification": "MODERATE"
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
         }
       },
       "model": {
@@ -458,13 +458,13 @@
           "stadium": "Highmark Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 65.1,
+            "temperature_f": 67.3,
             "feels_like_f": 62.1,
-            "humidity_pct": 59.0,
-            "precip_probability_pct": 25.0,
+            "humidity_pct": 39.0,
+            "precip_probability_pct": 2.0,
             "precipitation_in": 0.0,
-            "wind_mph": 8.1,
-            "wind_gust_mph": 9.2,
+            "wind_mph": 9.6,
+            "wind_gust_mph": 12.3,
             "weather_code": 3,
             "conditions": "Overcast"
           },
@@ -512,13 +512,13 @@
           "stadium": "Highmark Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 65.1,
+            "temperature_f": 67.3,
             "feels_like_f": 62.1,
-            "humidity_pct": 59.0,
-            "precip_probability_pct": 25.0,
+            "humidity_pct": 39.0,
+            "precip_probability_pct": 2.0,
             "precipitation_in": 0.0,
-            "wind_mph": 8.1,
-            "wind_gust_mph": 9.2,
+            "wind_mph": 9.6,
+            "wind_gust_mph": 12.3,
             "weather_code": 3,
             "conditions": "Overcast"
           },
@@ -618,13 +618,13 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T13:00",
-          "temperature_f": 65.1,
+          "temperature_f": 67.3,
           "feels_like_f": 62.1,
-          "humidity_pct": 59.0,
-          "precip_probability_pct": 25.0,
+          "humidity_pct": 39.0,
+          "precip_probability_pct": 2.0,
           "precipitation_in": 0.0,
-          "wind_mph": 8.1,
-          "wind_gust_mph": 9.2,
+          "wind_mph": 9.6,
+          "wind_gust_mph": 12.3,
           "weather_code": 3,
           "conditions": "Overcast"
         },
@@ -647,7 +647,7 @@
       "away_team": "NYJ",
       "home_team": "CHI",
       "away_projection": {
-        "projected_points": 21.0,
+        "projected_points": 20.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.23,
@@ -657,8 +657,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 20.99,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.27
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -672,22 +672,22 @@
           "stadium": "Soldier Field",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 67.7,
-            "feels_like_f": 65.1,
-            "humidity_pct": 49.0,
-            "precip_probability_pct": 3.0,
+            "temperature_f": 66.8,
+            "feels_like_f": 63.5,
+            "humidity_pct": 59.0,
+            "precip_probability_pct": 2.0,
             "precipitation_in": 0.0,
-            "wind_mph": 8.0,
-            "wind_gust_mph": 11.0,
+            "wind_mph": 11.8,
+            "wind_gust_mph": 15.0,
             "weather_code": 0,
             "conditions": "Clear"
           },
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": -6.2,
         "matchup_label": "Difficult",
@@ -701,7 +701,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 25.1,
+        "projected_points": 24.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.59,
@@ -711,8 +711,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 25.06,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.33
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -726,22 +726,22 @@
           "stadium": "Soldier Field",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 67.7,
-            "feels_like_f": 65.1,
-            "humidity_pct": 49.0,
-            "precip_probability_pct": 3.0,
+            "temperature_f": 66.8,
+            "feels_like_f": 63.5,
+            "humidity_pct": 59.0,
+            "precip_probability_pct": 2.0,
             "precipitation_in": 0.0,
-            "wind_mph": 8.0,
-            "wind_gust_mph": 11.0,
+            "wind_mph": 11.8,
+            "wind_gust_mph": 15.0,
             "weather_code": 0,
             "conditions": "Clear"
           },
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": 13.9,
         "matchup_label": "Favorable",
@@ -755,15 +755,15 @@
         }
       },
       "projected_score": {
-        "away": 21.0,
-        "home": 25.1
+        "away": 20.7,
+        "home": 24.7
       },
-      "projected_total": 46.1,
-      "expected_margin": 4.1,
+      "projected_total": 45.4,
+      "expected_margin": 4.0,
       "projected_winner": "CHI",
       "win_probability": {
-        "away": 34.7,
-        "home": 65.3
+        "away": 35.1,
+        "home": 64.9
       },
       "projection_confidence": 53.5,
       "injury_context": {
@@ -832,23 +832,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T13:00",
-          "temperature_f": 67.7,
-          "feels_like_f": 65.1,
-          "humidity_pct": 49.0,
-          "precip_probability_pct": 3.0,
+          "temperature_f": 66.8,
+          "feels_like_f": 63.5,
+          "humidity_pct": 59.0,
+          "precip_probability_pct": 2.0,
           "precipitation_in": 0.0,
-          "wind_mph": 8.0,
-          "wind_gust_mph": 11.0,
+          "wind_mph": 11.8,
+          "wind_gust_mph": 15.0,
           "weather_code": 0,
           "conditions": "Clear"
         },
         "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
+          "severity_score": 1.0,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "scoring_factor": 0.987,
+          "kicking_factor": 0.98,
+          "classification": "MINOR"
         }
       },
       "model": {
@@ -886,15 +886,15 @@
           "stadium": "Paycor Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 69.6,
-            "feels_like_f": 66.3,
-            "humidity_pct": 45.0,
-            "precip_probability_pct": 25.0,
+            "temperature_f": 71.3,
+            "feels_like_f": 69.0,
+            "humidity_pct": 35.0,
+            "precip_probability_pct": 6.0,
             "precipitation_in": 0.0,
-            "wind_mph": 7.2,
-            "wind_gust_mph": 10.1,
-            "weather_code": 3,
-            "conditions": "Overcast"
+            "wind_mph": 4.8,
+            "wind_gust_mph": 6.3,
+            "weather_code": 0,
+            "conditions": "Clear"
           },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
@@ -940,15 +940,15 @@
           "stadium": "Paycor Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 69.6,
-            "feels_like_f": 66.3,
-            "humidity_pct": 45.0,
-            "precip_probability_pct": 25.0,
+            "temperature_f": 71.3,
+            "feels_like_f": 69.0,
+            "humidity_pct": 35.0,
+            "precip_probability_pct": 6.0,
             "precipitation_in": 0.0,
-            "wind_mph": 7.2,
-            "wind_gust_mph": 10.1,
-            "weather_code": 3,
-            "conditions": "Overcast"
+            "wind_mph": 4.8,
+            "wind_gust_mph": 6.3,
+            "weather_code": 0,
+            "conditions": "Clear"
           },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
@@ -1046,15 +1046,15 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T13:00",
-          "temperature_f": 69.6,
-          "feels_like_f": 66.3,
-          "humidity_pct": 45.0,
-          "precip_probability_pct": 25.0,
+          "temperature_f": 71.3,
+          "feels_like_f": 69.0,
+          "humidity_pct": 35.0,
+          "precip_probability_pct": 6.0,
           "precipitation_in": 0.0,
-          "wind_mph": 7.2,
-          "wind_gust_mph": 10.1,
-          "weather_code": 3,
-          "conditions": "Overcast"
+          "wind_mph": 4.8,
+          "wind_gust_mph": 6.3,
+          "weather_code": 0,
+          "conditions": "Clear"
         },
         "context": {
           "severity_score": 0.0,
@@ -1075,7 +1075,7 @@
       "away_team": "DAL",
       "home_team": "HOU",
       "away_projection": {
-        "projected_points": 21.7,
+        "projected_points": 21.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.08,
@@ -1085,8 +1085,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 21.85,
-          "weather_scoring_factor": 0.994,
-          "weather_adjustment_points": -0.13
+          "weather_scoring_factor": 0.988,
+          "weather_adjustment_points": -0.26
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1100,22 +1100,22 @@
           "stadium": "NRG Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 82.2,
-            "feels_like_f": 85.2,
-            "humidity_pct": 64.0,
-            "precip_probability_pct": 31.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.2,
-            "wind_gust_mph": 13.0,
-            "weather_code": 3,
-            "conditions": "Overcast"
+            "temperature_f": 80.6,
+            "feels_like_f": 84.8,
+            "humidity_pct": 73.0,
+            "precip_probability_pct": 41.0,
+            "precipitation_in": 0.004,
+            "wind_mph": 10.4,
+            "wind_gust_mph": 16.6,
+            "weather_code": 51,
+            "conditions": "Light Drizzle"
           },
           "classification": "MINOR",
-          "severity_score": 0.45,
-          "scoring_factor": 0.994,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "kicking_factor": 0.991
+          "severity_score": 0.9,
+          "scoring_factor": 0.988,
+          "passing_factor": 0.984,
+          "rushing_factor": 1.004,
+          "kicking_factor": 0.982
         },
         "matchup_rating": 0.6,
         "matchup_label": "Neutral",
@@ -1129,7 +1129,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 24.8,
+        "projected_points": 24.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.56,
@@ -1139,8 +1139,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 24.92,
-          "weather_scoring_factor": 0.994,
-          "weather_adjustment_points": -0.15
+          "weather_scoring_factor": 0.988,
+          "weather_adjustment_points": -0.3
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1154,22 +1154,22 @@
           "stadium": "NRG Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 82.2,
-            "feels_like_f": 85.2,
-            "humidity_pct": 64.0,
-            "precip_probability_pct": 31.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.2,
-            "wind_gust_mph": 13.0,
-            "weather_code": 3,
-            "conditions": "Overcast"
+            "temperature_f": 80.6,
+            "feels_like_f": 84.8,
+            "humidity_pct": 73.0,
+            "precip_probability_pct": 41.0,
+            "precipitation_in": 0.004,
+            "wind_mph": 10.4,
+            "wind_gust_mph": 16.6,
+            "weather_code": 51,
+            "conditions": "Light Drizzle"
           },
           "classification": "MINOR",
-          "severity_score": 0.45,
-          "scoring_factor": 0.994,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "kicking_factor": 0.991
+          "severity_score": 0.9,
+          "scoring_factor": 0.988,
+          "passing_factor": 0.984,
+          "rushing_factor": 1.004,
+          "kicking_factor": 0.982
         },
         "matchup_rating": 13.1,
         "matchup_label": "Favorable",
@@ -1183,15 +1183,15 @@
         }
       },
       "projected_score": {
-        "away": 21.7,
-        "home": 24.8
+        "away": 21.6,
+        "home": 24.6
       },
-      "projected_total": 46.5,
-      "expected_margin": 3.1,
+      "projected_total": 46.2,
+      "expected_margin": 3.0,
       "projected_winner": "HOU",
       "win_probability": {
-        "away": 38.3,
-        "home": 61.7
+        "away": 38.7,
+        "home": 61.3
       },
       "projection_confidence": 52.4,
       "injury_context": {
@@ -1260,22 +1260,22 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T13:00",
-          "temperature_f": 82.2,
-          "feels_like_f": 85.2,
-          "humidity_pct": 64.0,
-          "precip_probability_pct": 31.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 10.2,
-          "wind_gust_mph": 13.0,
-          "weather_code": 3,
-          "conditions": "Overcast"
+          "temperature_f": 80.6,
+          "feels_like_f": 84.8,
+          "humidity_pct": 73.0,
+          "precip_probability_pct": 41.0,
+          "precipitation_in": 0.004,
+          "wind_mph": 10.4,
+          "wind_gust_mph": 16.6,
+          "weather_code": 51,
+          "conditions": "Light Drizzle"
         },
         "context": {
-          "severity_score": 0.45,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "scoring_factor": 0.994,
-          "kicking_factor": 0.991,
+          "severity_score": 0.9,
+          "passing_factor": 0.984,
+          "rushing_factor": 1.004,
+          "scoring_factor": 0.988,
+          "kicking_factor": 0.982,
           "classification": "MINOR"
         }
       },
@@ -1289,7 +1289,7 @@
       "away_team": "ARI",
       "home_team": "NYG",
       "away_projection": {
-        "projected_points": 21.8,
+        "projected_points": 22.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.34,
@@ -1299,8 +1299,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 22.67,
-          "weather_scoring_factor": 0.961,
-          "weather_adjustment_points": -0.88
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1314,22 +1314,22 @@
           "stadium": "MetLife Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 54.8,
-            "feels_like_f": 51.0,
-            "humidity_pct": 92.0,
-            "precip_probability_pct": 43.0,
-            "precipitation_in": 0.138,
-            "wind_mph": 11.1,
-            "wind_gust_mph": 20.4,
-            "weather_code": 63,
-            "conditions": "Rain"
+            "temperature_f": 67.4,
+            "feels_like_f": 65.0,
+            "humidity_pct": 44.0,
+            "precip_probability_pct": 8.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 6.6,
+            "wind_gust_mph": 5.4,
+            "weather_code": 0,
+            "conditions": "Clear"
           },
-          "classification": "MODERATE",
-          "severity_score": 3.0,
-          "scoring_factor": 0.961,
-          "passing_factor": 0.946,
-          "rushing_factor": 1.015,
-          "kicking_factor": 0.94
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 7.7,
         "matchup_label": "Favorable",
@@ -1343,7 +1343,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.4,
+        "projected_points": 24.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.37,
@@ -1353,8 +1353,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 24.37,
-          "weather_scoring_factor": 0.961,
-          "weather_adjustment_points": -0.95
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1368,22 +1368,22 @@
           "stadium": "MetLife Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 54.8,
-            "feels_like_f": 51.0,
-            "humidity_pct": 92.0,
-            "precip_probability_pct": 43.0,
-            "precipitation_in": 0.138,
-            "wind_mph": 11.1,
-            "wind_gust_mph": 20.4,
-            "weather_code": 63,
-            "conditions": "Rain"
+            "temperature_f": 67.4,
+            "feels_like_f": 65.0,
+            "humidity_pct": 44.0,
+            "precip_probability_pct": 8.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 6.6,
+            "wind_gust_mph": 5.4,
+            "weather_code": 0,
+            "conditions": "Clear"
           },
-          "classification": "MODERATE",
-          "severity_score": 3.0,
-          "scoring_factor": 0.961,
-          "passing_factor": 0.946,
-          "rushing_factor": 1.015,
-          "kicking_factor": 0.94
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 8.7,
         "matchup_label": "Favorable",
@@ -1397,15 +1397,15 @@
         }
       },
       "projected_score": {
-        "away": 21.8,
-        "home": 23.4
+        "away": 22.7,
+        "home": 24.4
       },
-      "projected_total": 45.2,
-      "expected_margin": 1.6,
+      "projected_total": 47.1,
+      "expected_margin": 1.7,
       "projected_winner": "NYG",
       "win_probability": {
-        "away": 43.9,
-        "home": 56.1
+        "away": 43.5,
+        "home": 56.5
       },
       "projection_confidence": 52.9,
       "injury_context": {
@@ -1474,23 +1474,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T13:00",
-          "temperature_f": 54.8,
-          "feels_like_f": 51.0,
-          "humidity_pct": 92.0,
-          "precip_probability_pct": 43.0,
-          "precipitation_in": 0.138,
-          "wind_mph": 11.1,
-          "wind_gust_mph": 20.4,
-          "weather_code": 63,
-          "conditions": "Rain"
+          "temperature_f": 67.4,
+          "feels_like_f": 65.0,
+          "humidity_pct": 44.0,
+          "precip_probability_pct": 8.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 6.6,
+          "wind_gust_mph": 5.4,
+          "weather_code": 0,
+          "conditions": "Clear"
         },
         "context": {
-          "severity_score": 3.0,
-          "passing_factor": 0.946,
-          "rushing_factor": 1.015,
-          "scoring_factor": 0.961,
-          "kicking_factor": 0.94,
-          "classification": "MODERATE"
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
         }
       },
       "model": {
@@ -1503,7 +1503,7 @@
       "away_team": "LAR",
       "home_team": "PHI",
       "away_projection": {
-        "projected_points": 22.6,
+        "projected_points": 22.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.46,
@@ -1513,8 +1513,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 22.87,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.3
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1528,22 +1528,22 @@
           "stadium": "Lincoln Financial Field",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 60.3,
-            "feels_like_f": 61.7,
-            "humidity_pct": 98.0,
-            "precip_probability_pct": 47.0,
-            "precipitation_in": 0.091,
+            "temperature_f": 70.7,
+            "feels_like_f": 68.3,
+            "humidity_pct": 40.0,
+            "precip_probability_pct": 33.0,
+            "precipitation_in": 0.0,
             "wind_mph": 4.5,
-            "wind_gust_mph": 18.8,
-            "weather_code": 61,
-            "conditions": "Light Rain"
+            "wind_gust_mph": 5.1,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 8.1,
         "matchup_label": "Favorable",
@@ -1557,7 +1557,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 21.7,
+        "projected_points": 22.0,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.47,
@@ -1567,8 +1567,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 21.96,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.29
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1582,22 +1582,22 @@
           "stadium": "Lincoln Financial Field",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 60.3,
-            "feels_like_f": 61.7,
-            "humidity_pct": 98.0,
-            "precip_probability_pct": 47.0,
-            "precipitation_in": 0.091,
+            "temperature_f": 70.7,
+            "feels_like_f": 68.3,
+            "humidity_pct": 40.0,
+            "precip_probability_pct": 33.0,
+            "precipitation_in": 0.0,
             "wind_mph": 4.5,
-            "wind_gust_mph": 18.8,
-            "weather_code": 61,
-            "conditions": "Light Rain"
+            "wind_gust_mph": 5.1,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -9.7,
         "matchup_label": "Difficult",
@@ -1611,10 +1611,10 @@
         }
       },
       "projected_score": {
-        "away": 22.6,
-        "home": 21.7
+        "away": 22.9,
+        "home": 22.0
       },
-      "projected_total": 44.3,
+      "projected_total": 44.9,
       "expected_margin": -0.9,
       "projected_winner": "LAR",
       "win_probability": {
@@ -1688,23 +1688,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T13:00",
-          "temperature_f": 60.3,
-          "feels_like_f": 61.7,
-          "humidity_pct": 98.0,
-          "precip_probability_pct": 47.0,
-          "precipitation_in": 0.091,
+          "temperature_f": 70.7,
+          "feels_like_f": 68.3,
+          "humidity_pct": 40.0,
+          "precip_probability_pct": 33.0,
+          "precipitation_in": 0.0,
           "wind_mph": 4.5,
-          "wind_gust_mph": 18.8,
-          "weather_code": 61,
-          "conditions": "Light Rain"
+          "wind_gust_mph": 5.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "context": {
-          "severity_score": 1.0,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "scoring_factor": 0.987,
-          "kicking_factor": 0.98,
-          "classification": "MINOR"
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
         }
       },
       "model": {
@@ -1742,15 +1742,15 @@
           "stadium": "Raymond James Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 90.2,
-            "feels_like_f": 96.4,
-            "humidity_pct": 48.0,
-            "precip_probability_pct": 1.0,
+            "temperature_f": 91.0,
+            "feels_like_f": 98.1,
+            "humidity_pct": 51.0,
+            "precip_probability_pct": 3.0,
             "precipitation_in": 0.0,
             "wind_mph": 8.2,
-            "wind_gust_mph": 8.7,
-            "weather_code": 1,
-            "conditions": "Mainly Clear"
+            "wind_gust_mph": 9.4,
+            "weather_code": 2,
+            "conditions": "Partly Cloudy"
           },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
@@ -1796,15 +1796,15 @@
           "stadium": "Raymond James Stadium",
           "weather": {
             "forecast_time": "2026-10-04T13:00",
-            "temperature_f": 90.2,
-            "feels_like_f": 96.4,
-            "humidity_pct": 48.0,
-            "precip_probability_pct": 1.0,
+            "temperature_f": 91.0,
+            "feels_like_f": 98.1,
+            "humidity_pct": 51.0,
+            "precip_probability_pct": 3.0,
             "precipitation_in": 0.0,
             "wind_mph": 8.2,
-            "wind_gust_mph": 8.7,
-            "weather_code": 1,
-            "conditions": "Mainly Clear"
+            "wind_gust_mph": 9.4,
+            "weather_code": 2,
+            "conditions": "Partly Cloudy"
           },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
@@ -1902,15 +1902,15 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T13:00",
-          "temperature_f": 90.2,
-          "feels_like_f": 96.4,
-          "humidity_pct": 48.0,
-          "precip_probability_pct": 1.0,
+          "temperature_f": 91.0,
+          "feels_like_f": 98.1,
+          "humidity_pct": 51.0,
+          "precip_probability_pct": 3.0,
           "precipitation_in": 0.0,
           "wind_mph": 8.2,
-          "wind_gust_mph": 8.7,
-          "weather_code": 1,
-          "conditions": "Mainly Clear"
+          "wind_gust_mph": 9.4,
+          "weather_code": 2,
+          "conditions": "Partly Cloudy"
         },
         "context": {
           "severity_score": 0.0,
@@ -2330,15 +2330,15 @@
           "stadium": "Lumen Field",
           "weather": {
             "forecast_time": "2026-10-04T16:00",
-            "temperature_f": 69.0,
-            "feels_like_f": 65.0,
-            "humidity_pct": 44.0,
+            "temperature_f": 69.2,
+            "feels_like_f": 65.6,
+            "humidity_pct": 47.0,
             "precip_probability_pct": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 7.1,
+            "wind_mph": 7.4,
             "wind_gust_mph": 8.1,
-            "weather_code": 3,
-            "conditions": "Overcast"
+            "weather_code": 2,
+            "conditions": "Partly Cloudy"
           },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
@@ -2384,15 +2384,15 @@
           "stadium": "Lumen Field",
           "weather": {
             "forecast_time": "2026-10-04T16:00",
-            "temperature_f": 69.0,
-            "feels_like_f": 65.0,
-            "humidity_pct": 44.0,
+            "temperature_f": 69.2,
+            "feels_like_f": 65.6,
+            "humidity_pct": 47.0,
             "precip_probability_pct": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 7.1,
+            "wind_mph": 7.4,
             "wind_gust_mph": 8.1,
-            "weather_code": 3,
-            "conditions": "Overcast"
+            "weather_code": 2,
+            "conditions": "Partly Cloudy"
           },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
@@ -2490,15 +2490,15 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T16:00",
-          "temperature_f": 69.0,
-          "feels_like_f": 65.0,
-          "humidity_pct": 44.0,
+          "temperature_f": 69.2,
+          "feels_like_f": 65.6,
+          "humidity_pct": 47.0,
           "precip_probability_pct": 0.0,
           "precipitation_in": 0.0,
-          "wind_mph": 7.1,
+          "wind_mph": 7.4,
           "wind_gust_mph": 8.1,
-          "weather_code": 3,
-          "conditions": "Overcast"
+          "weather_code": 2,
+          "conditions": "Partly Cloudy"
         },
         "context": {
           "severity_score": 0.0,
@@ -2544,13 +2544,13 @@
           "stadium": "Levi's Stadium",
           "weather": {
             "forecast_time": "2026-10-04T16:00",
-            "temperature_f": 90.4,
-            "feels_like_f": 85.4,
-            "humidity_pct": 20.0,
-            "precip_probability_pct": 0.0,
+            "temperature_f": 92.6,
+            "feels_like_f": 86.9,
+            "humidity_pct": 17.0,
+            "precip_probability_pct": 1.0,
             "precipitation_in": 0.0,
-            "wind_mph": 8.6,
-            "wind_gust_mph": 8.5,
+            "wind_mph": 8.7,
+            "wind_gust_mph": 9.2,
             "weather_code": 0,
             "conditions": "Clear"
           },
@@ -2598,13 +2598,13 @@
           "stadium": "Levi's Stadium",
           "weather": {
             "forecast_time": "2026-10-04T16:00",
-            "temperature_f": 90.4,
-            "feels_like_f": 85.4,
-            "humidity_pct": 20.0,
-            "precip_probability_pct": 0.0,
+            "temperature_f": 92.6,
+            "feels_like_f": 86.9,
+            "humidity_pct": 17.0,
+            "precip_probability_pct": 1.0,
             "precipitation_in": 0.0,
-            "wind_mph": 8.6,
-            "wind_gust_mph": 8.5,
+            "wind_mph": 8.7,
+            "wind_gust_mph": 9.2,
             "weather_code": 0,
             "conditions": "Clear"
           },
@@ -2704,13 +2704,13 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T16:00",
-          "temperature_f": 90.4,
-          "feels_like_f": 85.4,
-          "humidity_pct": 20.0,
-          "precip_probability_pct": 0.0,
+          "temperature_f": 92.6,
+          "feels_like_f": 86.9,
+          "humidity_pct": 17.0,
+          "precip_probability_pct": 1.0,
           "precipitation_in": 0.0,
-          "wind_mph": 8.6,
-          "wind_gust_mph": 8.5,
+          "wind_mph": 8.7,
+          "wind_gust_mph": 9.2,
           "weather_code": 0,
           "conditions": "Clear"
         },
@@ -2733,7 +2733,7 @@
       "away_team": "DET",
       "home_team": "CAR",
       "away_projection": {
-        "projected_points": 23.1,
+        "projected_points": 23.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.64,
@@ -2743,8 +2743,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 23.36,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.3
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -2758,22 +2758,22 @@
           "stadium": "Bank of America Stadium",
           "weather": {
             "forecast_time": "2026-10-04T20:00",
-            "temperature_f": 69.8,
-            "feels_like_f": 75.9,
+            "temperature_f": 61.5,
+            "feels_like_f": 63.3,
             "humidity_pct": 97.0,
-            "precip_probability_pct": 58.0,
-            "precipitation_in": 0.004,
-            "wind_mph": 3.2,
-            "wind_gust_mph": 8.7,
-            "weather_code": 51,
-            "conditions": "Light Drizzle"
+            "precip_probability_pct": 66.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.4,
+            "wind_gust_mph": 12.1,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 12.2,
         "matchup_label": "Favorable",
@@ -2787,7 +2787,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.3,
+        "projected_points": 23.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.16,
@@ -2797,8 +2797,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 23.63,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.31
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -2812,22 +2812,22 @@
           "stadium": "Bank of America Stadium",
           "weather": {
             "forecast_time": "2026-10-04T20:00",
-            "temperature_f": 69.8,
-            "feels_like_f": 75.9,
+            "temperature_f": 61.5,
+            "feels_like_f": 63.3,
             "humidity_pct": 97.0,
-            "precip_probability_pct": 58.0,
-            "precipitation_in": 0.004,
-            "wind_mph": 3.2,
-            "wind_gust_mph": 8.7,
-            "weather_code": 51,
-            "conditions": "Light Drizzle"
+            "precip_probability_pct": 66.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.4,
+            "wind_gust_mph": 12.1,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 2.9,
         "matchup_label": "Neutral",
@@ -2841,10 +2841,10 @@
         }
       },
       "projected_score": {
-        "away": 23.1,
-        "home": 23.3
+        "away": 23.4,
+        "home": 23.6
       },
-      "projected_total": 46.4,
+      "projected_total": 47.0,
       "expected_margin": 0.2,
       "projected_winner": "EVEN",
       "win_probability": {
@@ -2918,23 +2918,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-04T20:00",
-          "temperature_f": 69.8,
-          "feels_like_f": 75.9,
+          "temperature_f": 61.5,
+          "feels_like_f": 63.3,
           "humidity_pct": 97.0,
-          "precip_probability_pct": 58.0,
-          "precipitation_in": 0.004,
-          "wind_mph": 3.2,
-          "wind_gust_mph": 8.7,
-          "weather_code": 51,
-          "conditions": "Light Drizzle"
+          "precip_probability_pct": 66.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 4.4,
+          "wind_gust_mph": 12.1,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "context": {
-          "severity_score": 1.0,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "scoring_factor": 0.987,
-          "kicking_factor": 0.98,
-          "classification": "MINOR"
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
         }
       },
       "model": {

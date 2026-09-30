@@ -5,7 +5,7 @@
       "away_team": "PIT",
       "home_team": "CLE",
       "away_projection": {
-        "projected_points": 20.2,
+        "projected_points": 19.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.59,
@@ -15,8 +15,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 20.18,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.26
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -30,22 +30,22 @@
           "stadium": "Huntington Bank Field",
           "weather": {
             "forecast_time": "2026-10-01T20:00",
-            "temperature_f": 74.6,
-            "feels_like_f": 75.1,
-            "humidity_pct": 67.0,
-            "precip_probability_pct": 2.0,
+            "temperature_f": 77.6,
+            "feels_like_f": 75.0,
+            "humidity_pct": 46.0,
+            "precip_probability_pct": 5.0,
             "precipitation_in": 0.0,
-            "wind_mph": 9.7,
-            "wind_gust_mph": 19.5,
+            "wind_mph": 10.0,
+            "wind_gust_mph": 19.9,
             "weather_code": 3,
             "conditions": "Overcast"
           },
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": -11.9,
         "matchup_label": "Difficult",
@@ -59,7 +59,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 21.0,
+        "projected_points": 20.8,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.81,
@@ -69,8 +69,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 21.05,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.27
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -84,22 +84,22 @@
           "stadium": "Huntington Bank Field",
           "weather": {
             "forecast_time": "2026-10-01T20:00",
-            "temperature_f": 74.6,
-            "feels_like_f": 75.1,
-            "humidity_pct": 67.0,
-            "precip_probability_pct": 2.0,
+            "temperature_f": 77.6,
+            "feels_like_f": 75.0,
+            "humidity_pct": 46.0,
+            "precip_probability_pct": 5.0,
             "precipitation_in": 0.0,
-            "wind_mph": 9.7,
-            "wind_gust_mph": 19.5,
+            "wind_mph": 10.0,
+            "wind_gust_mph": 19.9,
             "weather_code": 3,
             "conditions": "Overcast"
           },
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": -17.2,
         "matchup_label": "Poor",
@@ -113,15 +113,15 @@
         }
       },
       "projected_score": {
-        "away": 20.2,
-        "home": 21.0
+        "away": 19.9,
+        "home": 20.8
       },
-      "projected_total": 41.2,
-      "expected_margin": 0.8,
+      "projected_total": 40.7,
+      "expected_margin": 0.9,
       "projected_winner": "CLE",
       "win_probability": {
-        "away": 46.9,
-        "home": 53.1
+        "away": 46.5,
+        "home": 53.5
       },
       "projection_confidence": 55.1,
       "injury_context": {
@@ -190,23 +190,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-01T20:00",
-          "temperature_f": 74.6,
-          "feels_like_f": 75.1,
-          "humidity_pct": 67.0,
-          "precip_probability_pct": 2.0,
+          "temperature_f": 77.6,
+          "feels_like_f": 75.0,
+          "humidity_pct": 46.0,
+          "precip_probability_pct": 5.0,
           "precipitation_in": 0.0,
-          "wind_mph": 9.7,
-          "wind_gust_mph": 19.5,
+          "wind_mph": 10.0,
+          "wind_gust_mph": 19.9,
           "weather_code": 3,
           "conditions": "Overcast"
         },
         "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
+          "severity_score": 1.0,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "scoring_factor": 0.987,
+          "kicking_factor": 0.98,
+          "classification": "MINOR"
         }
       },
       "model": {
