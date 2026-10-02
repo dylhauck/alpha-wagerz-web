@@ -1060,13 +1060,6 @@ export default function NBATeamsPage() {
               NBA Team Statistics
             </h1>
 
-            <p className="mt-3 text-sm font-medium text-slate-400">
-              League-wide team performance,
-              efficiency, ATS and
-              over/under results.
-            </p>
-
-
             {/* SEASON */}
 
             <div className="mt-6 flex flex-wrap justify-center gap-2">

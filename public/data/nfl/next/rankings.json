@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T10:55:32.651796+00:00",
+  "generated_at": "2026-10-02T14:04:37.595634+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -26,25 +26,58 @@
     }
   },
   "counts": {
-    "game_bets": 1,
+    "game_bets": 2,
     "player_props": 0,
-    "all_candidates": 1,
+    "all_candidates": 2,
     "best_bets": 0,
-    "strong_plays": 0,
+    "strong_plays": 1,
     "leans": 1,
     "passes": 0
   },
   "best_bets": [],
-  "strong_plays": [],
+  "strong_plays": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "STRONG PLAY",
+      "ranking_score": 85.86,
+      "confidence": 79.8,
+      "upstream_label": "STRONG",
+      "edge_strength": 4.52,
+      "edge": 0.113,
+      "market_type": "moneyline",
+      "game_id": "2026_04_ATL_NO",
+      "matchup": "ATL @ NO",
+      "away_team": "ATL",
+      "home_team": "NO",
+      "team": "",
+      "pick": "ATL",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_04_ATL_NO",
+        "away_team": "ATL",
+        "home_team": "NO",
+        "market": "moneyline",
+        "selection": "ATL",
+        "edge": 0.113,
+        "confidence_score": 79.8,
+        "confidence_label": "STRONG"
+      }
+    }
+  ],
   "leans": [
     {
       "ranking_type": "game_bet",
       "tier": "LEAN",
-      "ranking_score": 70.88,
-      "confidence": 58.4,
-      "upstream_label": "LEAN",
-      "edge_strength": 3.2667,
-      "edge": 4.9,
+      "ranking_score": 75.43,
+      "confidence": 64.9,
+      "upstream_label": "GOOD",
+      "edge_strength": 3.8,
+      "edge": 5.7,
       "market_type": "game_total",
       "game_id": "2026_04_ATL_NO",
       "matchup": "ATL @ NO",
@@ -64,9 +97,9 @@
         "home_team": "NO",
         "market": "game_total",
         "selection": "UNDER 47.5",
-        "edge": 4.9,
-        "confidence_score": 58.4,
-        "confidence_label": "LEAN"
+        "edge": 5.7,
+        "confidence_score": 64.9,
+        "confidence_label": "GOOD"
       }
     }
   ],
@@ -74,12 +107,44 @@
   "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
+      "tier": "STRONG PLAY",
+      "ranking_score": 85.86,
+      "confidence": 79.8,
+      "upstream_label": "STRONG",
+      "edge_strength": 4.52,
+      "edge": 0.113,
+      "market_type": "moneyline",
+      "game_id": "2026_04_ATL_NO",
+      "matchup": "ATL @ NO",
+      "away_team": "ATL",
+      "home_team": "NO",
+      "team": "",
+      "pick": "ATL",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_04_ATL_NO",
+        "away_team": "ATL",
+        "home_team": "NO",
+        "market": "moneyline",
+        "selection": "ATL",
+        "edge": 0.113,
+        "confidence_score": 79.8,
+        "confidence_label": "STRONG"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
       "tier": "LEAN",
-      "ranking_score": 70.88,
-      "confidence": 58.4,
-      "upstream_label": "LEAN",
-      "edge_strength": 3.2667,
-      "edge": 4.9,
+      "ranking_score": 75.43,
+      "confidence": 64.9,
+      "upstream_label": "GOOD",
+      "edge_strength": 3.8,
+      "edge": 5.7,
       "market_type": "game_total",
       "game_id": "2026_04_ATL_NO",
       "matchup": "ATL @ NO",
@@ -99,21 +164,53 @@
         "home_team": "NO",
         "market": "game_total",
         "selection": "UNDER 47.5",
-        "edge": 4.9,
-        "confidence_score": 58.4,
-        "confidence_label": "LEAN"
+        "edge": 5.7,
+        "confidence_score": 64.9,
+        "confidence_label": "GOOD"
       }
     }
   ],
   "game_bets": [
     {
       "ranking_type": "game_bet",
+      "tier": "STRONG PLAY",
+      "ranking_score": 85.86,
+      "confidence": 79.8,
+      "upstream_label": "STRONG",
+      "edge_strength": 4.52,
+      "edge": 0.113,
+      "market_type": "moneyline",
+      "game_id": "2026_04_ATL_NO",
+      "matchup": "ATL @ NO",
+      "away_team": "ATL",
+      "home_team": "NO",
+      "team": "",
+      "pick": "ATL",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_04_ATL_NO",
+        "away_team": "ATL",
+        "home_team": "NO",
+        "market": "moneyline",
+        "selection": "ATL",
+        "edge": 0.113,
+        "confidence_score": 79.8,
+        "confidence_label": "STRONG"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
       "tier": "LEAN",
-      "ranking_score": 70.88,
-      "confidence": 58.4,
-      "upstream_label": "LEAN",
-      "edge_strength": 3.2667,
-      "edge": 4.9,
+      "ranking_score": 75.43,
+      "confidence": 64.9,
+      "upstream_label": "GOOD",
+      "edge_strength": 3.8,
+      "edge": 5.7,
       "market_type": "game_total",
       "game_id": "2026_04_ATL_NO",
       "matchup": "ATL @ NO",
@@ -133,9 +230,9 @@
         "home_team": "NO",
         "market": "game_total",
         "selection": "UNDER 47.5",
-        "edge": 4.9,
-        "confidence_score": 58.4,
-        "confidence_label": "LEAN"
+        "edge": 5.7,
+        "confidence_score": 64.9,
+        "confidence_label": "GOOD"
       }
     }
   ],

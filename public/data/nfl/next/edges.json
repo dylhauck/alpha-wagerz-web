@@ -7,10 +7,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 42.6,
+        "total": 41.8,
         "home_margin": "",
-        "away_win_probability": 0.45399999999999996,
-        "home_win_probability": 0.546,
+        "away_win_probability": 0.546,
+        "home_win_probability": 0.45399999999999996,
         "projection_confidence": 53.0
       },
       "market": {
@@ -134,19 +134,26 @@
       },
       "recommendations": [
         {
+          "market": "moneyline",
+          "selection": "ATL",
+          "edge": 0.113,
+          "confidence_score": 79.8,
+          "confidence_label": "STRONG"
+        },
+        {
           "market": "game_total",
           "selection": "UNDER 47.5",
-          "edge": 4.9,
-          "confidence_score": 58.4,
-          "confidence_label": "LEAN"
+          "edge": 5.7,
+          "confidence_score": 64.9,
+          "confidence_label": "GOOD"
         }
       ],
       "best_bet": {
-        "market": "game_total",
-        "selection": "UNDER 47.5",
-        "edge": 4.9,
-        "confidence_score": 58.4,
-        "confidence_label": "LEAN"
+        "market": "moneyline",
+        "selection": "ATL",
+        "edge": 0.113,
+        "confidence_score": 79.8,
+        "confidence_label": "STRONG"
       }
     }
   ],
@@ -155,16 +162,26 @@
       "game_id": "2026_04_ATL_NO",
       "away_team": "ATL",
       "home_team": "NO",
+      "market": "moneyline",
+      "selection": "ATL",
+      "edge": 0.113,
+      "confidence_score": 79.8,
+      "confidence_label": "STRONG"
+    },
+    {
+      "game_id": "2026_04_ATL_NO",
+      "away_team": "ATL",
+      "home_team": "NO",
       "market": "game_total",
       "selection": "UNDER 47.5",
-      "edge": 4.9,
-      "confidence_score": 58.4,
-      "confidence_label": "LEAN"
+      "edge": 5.7,
+      "confidence_score": 64.9,
+      "confidence_label": "GOOD"
     }
   ],
   "counts": {
     "games": 1,
-    "bets": 1,
+    "bets": 2,
     "missing_projection": 0
   },
   "model": {
