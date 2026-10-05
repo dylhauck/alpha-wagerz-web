@@ -1,20 +1,20 @@
 {
   "games": [
     {
-      "game_id": "2026_04_ATL_NO",
-      "away_team": "ATL",
-      "home_team": "NO",
+      "game_id": "2026_05_TB_DAL",
+      "away_team": "TB",
+      "home_team": "DAL",
       "away_projection": {
-        "projected_points": 20.7,
+        "projected_points": 23.1,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": -0.35,
-          "matchup_adjustment": -0.66,
+          "efficiency_adjustment": 0.43,
+          "matchup_adjustment": 0.9,
           "home_field_adjustment": -0.75,
-          "pre_injury_projection": 20.74,
+          "pre_injury_projection": 23.08,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 20.74,
+          "post_injury_projection": 23.08,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
@@ -26,40 +26,49 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "fixed",
-          "stadium": "Caesars Superdome",
+          "roof": "retractable",
+          "stadium": "AT&T Stadium",
           "weather": {
-            "conditions": "Indoor"
+            "forecast_time": "2026-10-08T20:00",
+            "temperature_f": 85.4,
+            "feels_like_f": 86.3,
+            "humidity_pct": 40.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.3,
+            "wind_gust_mph": 7.2,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "INDOOR",
+          "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
           "passing_factor": 1.0,
           "rushing_factor": 1.0,
           "kicking_factor": 1.0
         },
-        "matchup_rating": -7.5,
-        "matchup_label": "Difficult",
+        "matchup_rating": 10.4,
+        "matchup_label": "Favorable",
         "passing_matchup": {
-          "rating": -18.4,
-          "label": "Poor"
+          "rating": 14.3,
+          "label": "Favorable"
         },
         "rushing_matchup": {
-          "rating": 3.4,
-          "label": "Neutral"
+          "rating": 12.1,
+          "label": "Favorable"
         }
       },
       "home_projection": {
-        "projected_points": 21.9,
+        "projected_points": 24.2,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": -0.5,
-          "matchup_adjustment": -0.85,
+          "efficiency_adjustment": 0.41,
+          "matchup_adjustment": 0.57,
           "home_field_adjustment": 0.75,
-          "pre_injury_projection": 21.9,
+          "pre_injury_projection": 24.24,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 21.9,
+          "post_injury_projection": 24.24,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
@@ -71,45 +80,54 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "fixed",
-          "stadium": "Caesars Superdome",
+          "roof": "retractable",
+          "stadium": "AT&T Stadium",
           "weather": {
-            "conditions": "Indoor"
+            "forecast_time": "2026-10-08T20:00",
+            "temperature_f": 85.4,
+            "feels_like_f": 86.3,
+            "humidity_pct": 40.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.3,
+            "wind_gust_mph": 7.2,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "INDOOR",
+          "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
           "passing_factor": 1.0,
           "rushing_factor": 1.0,
           "kicking_factor": 1.0
         },
-        "matchup_rating": -9.9,
-        "matchup_label": "Difficult",
+        "matchup_rating": 7.1,
+        "matchup_label": "Favorable",
         "passing_matchup": {
-          "rating": -12.4,
-          "label": "Difficult"
+          "rating": 19.0,
+          "label": "Strong"
         },
         "rushing_matchup": {
-          "rating": -12.9,
+          "rating": -10.5,
           "label": "Difficult"
         }
       },
       "projected_score": {
-        "away": 20.7,
-        "home": 21.9
+        "away": 23.1,
+        "home": 24.2
       },
-      "projected_total": 42.6,
-      "expected_margin": 1.2,
-      "projected_winner": "NO",
+      "projected_total": 47.3,
+      "expected_margin": 1.1,
+      "projected_winner": "DAL",
       "win_probability": {
-        "away": 45.4,
-        "home": 54.6
+        "away": 45.8,
+        "home": 54.2
       },
-      "projection_confidence": 53.0,
+      "projection_confidence": 53.1,
       "injury_context": {
         "away": {
           "team_context": {
-            "team": "ATL",
+            "team": "TB",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -135,7 +153,7 @@
         },
         "home": {
           "team_context": {
-            "team": "NO",
+            "team": "DAL",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -161,17 +179,26 @@
         }
       },
       "weather_context": {
-        "game_id": "2026_04_ATL_NO",
-        "away_team": "ATL",
-        "home_team": "NO",
-        "stadium": "Caesars Superdome",
-        "latitude": 29.9511,
-        "longitude": -90.0812,
-        "roof": "fixed",
-        "kickoff": "2026-10-05T20:15",
+        "game_id": "2026_05_TB_DAL",
+        "away_team": "TB",
+        "home_team": "DAL",
+        "stadium": "AT&T Stadium",
+        "latitude": 32.7473,
+        "longitude": -97.0945,
+        "roof": "retractable",
+        "kickoff": "2026-10-08T20:15",
         "available": true,
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-10-08T20:00",
+          "temperature_f": 85.4,
+          "feels_like_f": 86.3,
+          "humidity_pct": 40.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 4.3,
+          "wind_gust_mph": 7.2,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "context": {
           "severity_score": 0.0,
@@ -179,7 +206,7 @@
           "rushing_factor": 1.0,
           "scoring_factor": 1.0,
           "kicking_factor": 1.0,
-          "classification": "INDOOR"
+          "classification": "NEUTRAL"
         }
       },
       "model": {
@@ -191,20 +218,20 @@
   "league_baselines": {
     "points_per_game": 22.5,
     "points_allowed_per_game": 22.5,
-    "offensive_epa": 0.0074375,
-    "defensive_epa": 0.00740625,
-    "offensive_success": 43.98159375,
-    "defensive_success": 43.9941875,
-    "offensive_ypp": 5.4299375,
-    "defensive_ypp": 5.43171875,
-    "offensive_explosive": 9.447625,
-    "defensive_explosive": 9.4355,
-    "offensive_third_down": 40.387125,
-    "defensive_third_down": 40.37690625,
-    "offensive_red_zone": 19.35221875,
-    "defensive_red_zone": 19.64653125,
-    "offensive_turnovers": 1.12515625,
-    "defensive_takeaways": 1.1253125
+    "offensive_epa": 0.007687500000000001,
+    "defensive_epa": 0.007562499999999999,
+    "offensive_success": 43.837125,
+    "defensive_success": 43.862125,
+    "offensive_ypp": 5.4276875,
+    "defensive_ypp": 5.432875,
+    "offensive_explosive": 9.38009375,
+    "defensive_explosive": 9.38553125,
+    "offensive_third_down": 39.75234375,
+    "defensive_third_down": 39.77540625,
+    "offensive_red_zone": 19.5238125,
+    "defensive_red_zone": 19.75078125,
+    "offensive_turnovers": 1.1269375,
+    "defensive_takeaways": 1.128125
   },
   "model": {
     "name": "Alpha Wagerz NFL Projection Model",
