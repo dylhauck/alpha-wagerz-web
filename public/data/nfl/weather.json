@@ -1,19 +1,28 @@
 {
-  "generated_at": "2026-10-05T12:03:28.935521+00:00",
+  "generated_at": "2026-10-06T11:43:20.063895+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_04_ATL_NO",
-      "away_team": "ATL",
-      "home_team": "NO",
-      "stadium": "Caesars Superdome",
-      "latitude": 29.9511,
-      "longitude": -90.0812,
-      "roof": "fixed",
-      "kickoff": "2026-10-05T20:15",
+      "game_id": "2026_05_TB_DAL",
+      "away_team": "TB",
+      "home_team": "DAL",
+      "stadium": "AT&T Stadium",
+      "latitude": 32.7473,
+      "longitude": -97.0945,
+      "roof": "retractable",
+      "kickoff": "2026-10-08T20:15",
       "available": true,
       "weather": {
-        "conditions": "Indoor"
+        "forecast_time": "2026-10-08T20:00",
+        "temperature_f": 85.6,
+        "feels_like_f": 87.1,
+        "humidity_pct": 39.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 2.5,
+        "wind_gust_mph": 4.7,
+        "weather_code": 0,
+        "conditions": "Clear"
       },
       "context": {
         "severity_score": 0.0,
@@ -21,7 +30,7 @@
         "rushing_factor": 1.0,
         "scoring_factor": 1.0,
         "kicking_factor": 1.0,
-        "classification": "INDOOR"
+        "classification": "NEUTRAL"
       }
     }
   ]
