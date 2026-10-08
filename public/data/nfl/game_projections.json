@@ -5,23 +5,23 @@
       "away_team": "TB",
       "home_team": "DAL",
       "away_projection": {
-        "projected_points": 23.0,
+        "projected_points": 22.0,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.42,
           "matchup_adjustment": 0.88,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 23.05,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 23.05,
+          "injury_scoring_factor": 0.953,
+          "injury_adjustment_points": -1.08,
+          "post_injury_projection": 21.96,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
+          "scoring_factor": 0.953,
+          "passing_factor": 0.937,
+          "rushing_factor": 1.023,
           "key_absences": []
         },
         "weather_context": {
@@ -30,13 +30,13 @@
           "stadium": "AT&T Stadium",
           "weather": {
             "forecast_time": "2026-10-08T20:00",
-            "temperature_f": 79.5,
-            "feels_like_f": 79.4,
-            "humidity_pct": 43.0,
+            "temperature_f": 81.9,
+            "feels_like_f": 83.4,
+            "humidity_pct": 46.0,
             "precip_probability_pct": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 3.7,
-            "wind_gust_mph": 5.1,
+            "wind_mph": 3.6,
+            "wind_gust_mph": 4.9,
             "weather_code": 0,
             "conditions": "Clear"
           },
@@ -59,23 +59,23 @@
         }
       },
       "home_projection": {
-        "projected_points": 24.2,
+        "projected_points": 22.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.4,
           "matchup_adjustment": 0.56,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 24.2,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 24.2,
+          "injury_scoring_factor": 0.936,
+          "injury_adjustment_points": -1.55,
+          "post_injury_projection": 22.66,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
+          "scoring_factor": 0.936,
+          "passing_factor": 0.956,
+          "rushing_factor": 0.962,
           "key_absences": []
         },
         "weather_context": {
@@ -84,13 +84,13 @@
           "stadium": "AT&T Stadium",
           "weather": {
             "forecast_time": "2026-10-08T20:00",
-            "temperature_f": 79.5,
-            "feels_like_f": 79.4,
-            "humidity_pct": 43.0,
+            "temperature_f": 81.9,
+            "feels_like_f": 83.4,
+            "humidity_pct": 46.0,
             "precip_probability_pct": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 3.7,
-            "wind_gust_mph": 5.1,
+            "wind_mph": 3.6,
+            "wind_gust_mph": 4.9,
             "weather_code": 0,
             "conditions": "Clear"
           },
@@ -113,69 +113,499 @@
         }
       },
       "projected_score": {
-        "away": 23.0,
-        "home": 24.2
+        "away": 22.0,
+        "home": 22.7
       },
-      "projected_total": 47.2,
-      "expected_margin": 1.2,
+      "projected_total": 44.7,
+      "expected_margin": 0.7,
       "projected_winner": "DAL",
       "win_probability": {
-        "away": 45.4,
-        "home": 54.6
+        "away": 47.3,
+        "home": 52.7
       },
       "projection_confidence": 53.0,
       "injury_context": {
         "away": {
           "team_context": {
             "team": "TB",
-            "injuries": [],
+            "injuries": [
+              {
+                "player_id": "3052587",
+                "player": "Baker Mayfield",
+                "team": "TB",
+                "position": "QB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 10.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 10.0
+              },
+              {
+                "player_id": "4816107",
+                "player": "Benjamin Morrison",
+                "team": "TB",
+                "position": "CB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Quadriceps",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.4
+              },
+              {
+                "player_id": "4248533",
+                "player": "Josh Hayes",
+                "team": "TB",
+                "position": "CB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.4
+              },
+              {
+                "player_id": "3871102",
+                "player": "David Sills V",
+                "team": "TB",
+                "position": "WR",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.0
+              },
+              {
+                "player_id": "4430834",
+                "player": "Jalen McMillan",
+                "team": "TB",
+                "position": "WR",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Knee",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.0
+              },
+              {
+                "player_id": "4034790",
+                "player": "Antoine Winfield Jr.",
+                "team": "TB",
+                "position": "S",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Ribs",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.5
+              },
+              {
+                "player_id": "4427677",
+                "player": "Mohamed Kamara",
+                "team": "TB",
+                "position": "LB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Knee",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4429511",
+                "player": "SirVocea Dennis",
+                "team": "TB",
+                "position": "LB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Ankle",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              }
+            ],
             "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
+              "impact": 16.0,
+              "factor": 0.808,
+              "passing_impact": 16.0,
+              "passing_factor": 0.792,
+              "rushing_impact": 10.0,
+              "rushing_factor": 0.89
             },
             "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
+              "impact": 14.1,
+              "factor": 1.141,
+              "pass_defense_impact": 14.1,
+              "pass_defense_factor": 1.155,
+              "rush_defense_impact": 7.3,
+              "rush_defense_factor": 1.073
             },
-            "key_absences": []
+            "key_absences": [
+              {
+                "player_id": "3052587",
+                "player": "Baker Mayfield",
+                "position": "QB",
+                "status": "OUT",
+                "injury": "Undisclosed",
+                "impact": 10.0
+              },
+              {
+                "player_id": "4248533",
+                "player": "Josh Hayes",
+                "position": "CB",
+                "status": "IR",
+                "injury": "Undisclosed",
+                "impact": 3.4
+              },
+              {
+                "player_id": "4816107",
+                "player": "Benjamin Morrison",
+                "position": "CB",
+                "status": "OUT",
+                "injury": "Quadriceps",
+                "impact": 3.4
+              },
+              {
+                "player_id": "3871102",
+                "player": "David Sills V",
+                "position": "WR",
+                "status": "IR",
+                "injury": "Undisclosed",
+                "impact": 3.0
+              },
+              {
+                "player_id": "4430834",
+                "player": "Jalen McMillan",
+                "position": "WR",
+                "status": "IR",
+                "injury": "Knee",
+                "impact": 3.0
+              },
+              {
+                "player_id": "4034790",
+                "player": "Antoine Winfield Jr.",
+                "position": "S",
+                "status": "OUT",
+                "injury": "Ribs",
+                "impact": 2.5
+              }
+            ]
           },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
+          "scoring_factor": 0.953,
+          "passing_factor": 0.937,
+          "rushing_factor": 1.023
         },
         "home": {
           "team_context": {
             "team": "DAL",
-            "injuries": [],
+            "injuries": [
+              {
+                "player_id": "4384549",
+                "player": "Cobie Durant",
+                "team": "DAL",
+                "position": "CB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Hamstring",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.4
+              },
+              {
+                "player_id": "4702577",
+                "player": "Devin Moore",
+                "team": "DAL",
+                "position": "CB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.4
+              },
+              {
+                "player_id": "4685554",
+                "player": "Drew Shelton",
+                "team": "DAL",
+                "position": "OT",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Hamstring",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.2
+              },
+              {
+                "player_id": "2980097",
+                "player": "Jonathan Bullard",
+                "team": "DAL",
+                "position": "DT",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Calf",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.6
+              },
+              {
+                "player_id": "4431547",
+                "player": "Kelvin Gilliam Jr.",
+                "team": "DAL",
+                "position": "DT",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Triceps",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.6
+              },
+              {
+                "player_id": "4043089",
+                "player": "Jalen Thompson",
+                "team": "DAL",
+                "position": "S",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Hamstring",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.5
+              },
+              {
+                "player_id": "3929850",
+                "player": "P.J. Locke",
+                "team": "DAL",
+                "position": "S",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Foot",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.5
+              },
+              {
+                "player_id": "4362088",
+                "player": "DeMarvion Overshown",
+                "team": "DAL",
+                "position": "LB",
+                "status": "OUT",
+                "practice_status": "",
+                "injury": "Hamstring",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4427816",
+                "player": "Marist Liufau",
+                "team": "DAL",
+                "position": "LB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Forearm",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4044138",
+                "player": "Matt Hennessy",
+                "team": "DAL",
+                "position": "C",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4710711",
+                "player": "DJ Rogers",
+                "team": "DAL",
+                "position": "TE",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Knee",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.2
+              },
+              {
+                "player_id": "4242442",
+                "player": "Princeton Fant",
+                "team": "DAL",
+                "position": "TE",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.2
+              },
+              {
+                "player_id": "4568652",
+                "player": "Tyler Smith",
+                "team": "DAL",
+                "position": "OG",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Thumb",
+                "unit": "offense",
+                "position_weight": 2.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.0
+              },
+              {
+                "player_id": "4240603",
+                "player": "Malik Davis",
+                "team": "DAL",
+                "position": "RB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Hip",
+                "unit": "offense",
+                "position_weight": 1.8,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 1.8
+              },
+              {
+                "player_id": "4426485",
+                "player": "Jonathan Mingo",
+                "team": "DAL",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              }
+            ],
             "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
+              "impact": 15.0,
+              "factor": 0.82,
+              "passing_impact": 13.2,
+              "passing_factor": 0.828,
+              "rushing_impact": 9.4,
+              "rushing_factor": 0.897
             },
             "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
+              "impact": 18.0,
+              "factor": 1.18,
+              "pass_defense_impact": 16.6,
+              "pass_defense_factor": 1.183,
+              "rush_defense_impact": 15.0,
+              "rush_defense_factor": 1.15
             },
-            "key_absences": []
+            "key_absences": [
+              {
+                "player_id": "4702577",
+                "player": "Devin Moore",
+                "position": "CB",
+                "status": "IR",
+                "injury": "Undisclosed",
+                "impact": 3.4
+              },
+              {
+                "player_id": "4384549",
+                "player": "Cobie Durant",
+                "position": "CB",
+                "status": "OUT",
+                "injury": "Hamstring",
+                "impact": 3.4
+              },
+              {
+                "player_id": "4685554",
+                "player": "Drew Shelton",
+                "position": "OT",
+                "status": "OUT",
+                "injury": "Hamstring",
+                "impact": 3.2
+              },
+              {
+                "player_id": "2980097",
+                "player": "Jonathan Bullard",
+                "position": "DT",
+                "status": "IR",
+                "injury": "Calf",
+                "impact": 2.6
+              },
+              {
+                "player_id": "4431547",
+                "player": "Kelvin Gilliam Jr.",
+                "position": "DT",
+                "status": "IR",
+                "injury": "Triceps",
+                "impact": 2.6
+              },
+              {
+                "player_id": "4043089",
+                "player": "Jalen Thompson",
+                "position": "S",
+                "status": "IR",
+                "injury": "Hamstring",
+                "impact": 2.5
+              },
+              {
+                "player_id": "3929850",
+                "player": "P.J. Locke",
+                "position": "S",
+                "status": "IR",
+                "injury": "Foot",
+                "impact": 2.5
+              }
+            ]
           },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
+          "scoring_factor": 0.936,
+          "passing_factor": 0.956,
+          "rushing_factor": 0.962
         }
       },
       "weather_context": {
@@ -190,13 +620,13 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-10-08T20:00",
-          "temperature_f": 79.5,
-          "feels_like_f": 79.4,
-          "humidity_pct": 43.0,
+          "temperature_f": 81.9,
+          "feels_like_f": 83.4,
+          "humidity_pct": 46.0,
           "precip_probability_pct": 0.0,
           "precipitation_in": 0.0,
-          "wind_mph": 3.7,
-          "wind_gust_mph": 5.1,
+          "wind_mph": 3.6,
+          "wind_gust_mph": 4.9,
           "weather_code": 0,
           "conditions": "Clear"
         },

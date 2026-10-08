@@ -94,6 +94,99 @@
       "matchup_advantage": "JAX"
     },
     {
+      "game_id": "2026_05_CHI_GB",
+      "away_team": "CHI",
+      "home_team": "GB",
+      "away": {
+        "offense_team": "CHI",
+        "defense_team": "GB",
+        "rating": 10.5,
+        "rating_label": "Favorable",
+        "overall": {
+          "epa_edge": 20.3,
+          "success_edge": 10.8,
+          "yards_per_play_edge": 0.1,
+          "explosive_edge": -1.3,
+          "third_down_edge": 20.1,
+          "red_zone_edge": -3.4,
+          "turnover_edge": -1.1
+        },
+        "passing": {
+          "rating": 13.3,
+          "rating_label": "Favorable",
+          "epa_edge": 23.9,
+          "success_edge": 6.4,
+          "explosive_edge": -3.0
+        },
+        "rushing": {
+          "rating": 13.1,
+          "rating_label": "Favorable",
+          "epa_edge": 17.0,
+          "success_edge": 15.8,
+          "explosive_edge": -0.9
+        },
+        "raw": {
+          "offense": {
+            "epa_per_play": 0.093,
+            "yards_per_play": 5.82,
+            "success_rate": 46.9,
+            "explosive_rate": 11.3
+          },
+          "defense_allowed": {
+            "epa_per_play": 0.038,
+            "yards_per_play": 5.07,
+            "success_rate": 45.2,
+            "explosive_rate": 7.2
+          }
+        }
+      },
+      "home": {
+        "offense_team": "GB",
+        "defense_team": "CHI",
+        "rating": -1.3,
+        "rating_label": "Neutral",
+        "overall": {
+          "epa_edge": -4.7,
+          "success_edge": -1.0,
+          "yards_per_play_edge": 7.4,
+          "explosive_edge": 7.7,
+          "third_down_edge": -19.0,
+          "red_zone_edge": -1.3,
+          "turnover_edge": 7.0
+        },
+        "passing": {
+          "rating": 0.8,
+          "rating_label": "Neutral",
+          "epa_edge": 1.5,
+          "success_edge": -5.3,
+          "explosive_edge": 8.2
+        },
+        "rushing": {
+          "rating": -8.1,
+          "rating_label": "Difficult",
+          "epa_edge": -20.4,
+          "success_edge": 3.8,
+          "explosive_edge": 5.0
+        },
+        "raw": {
+          "offense": {
+            "epa_per_play": 0.012,
+            "yards_per_play": 5.54,
+            "success_rate": 43.5,
+            "explosive_rate": 9.9
+          },
+          "defense_allowed": {
+            "epa_per_play": -0.02,
+            "yards_per_play": 5.96,
+            "success_rate": 43.9,
+            "explosive_rate": 10.8
+          }
+        }
+      },
+      "matchup_differential": 11.8,
+      "matchup_advantage": "CHI"
+    },
+    {
       "game_id": "2026_05_CIN_MIA",
       "away_team": "CIN",
       "home_team": "MIA",
@@ -743,99 +836,6 @@
       },
       "matchup_differential": 2.0,
       "matchup_advantage": "EVEN"
-    },
-    {
-      "game_id": "2026_05_CHI_GB",
-      "away_team": "CHI",
-      "home_team": "GB",
-      "away": {
-        "offense_team": "CHI",
-        "defense_team": "GB",
-        "rating": 10.5,
-        "rating_label": "Favorable",
-        "overall": {
-          "epa_edge": 20.3,
-          "success_edge": 10.8,
-          "yards_per_play_edge": 0.1,
-          "explosive_edge": -1.3,
-          "third_down_edge": 20.1,
-          "red_zone_edge": -3.4,
-          "turnover_edge": -1.1
-        },
-        "passing": {
-          "rating": 13.3,
-          "rating_label": "Favorable",
-          "epa_edge": 23.9,
-          "success_edge": 6.4,
-          "explosive_edge": -3.0
-        },
-        "rushing": {
-          "rating": 13.1,
-          "rating_label": "Favorable",
-          "epa_edge": 17.0,
-          "success_edge": 15.8,
-          "explosive_edge": -0.9
-        },
-        "raw": {
-          "offense": {
-            "epa_per_play": 0.093,
-            "yards_per_play": 5.82,
-            "success_rate": 46.9,
-            "explosive_rate": 11.3
-          },
-          "defense_allowed": {
-            "epa_per_play": 0.038,
-            "yards_per_play": 5.07,
-            "success_rate": 45.2,
-            "explosive_rate": 7.2
-          }
-        }
-      },
-      "home": {
-        "offense_team": "GB",
-        "defense_team": "CHI",
-        "rating": -1.3,
-        "rating_label": "Neutral",
-        "overall": {
-          "epa_edge": -4.7,
-          "success_edge": -1.0,
-          "yards_per_play_edge": 7.4,
-          "explosive_edge": 7.7,
-          "third_down_edge": -19.0,
-          "red_zone_edge": -1.3,
-          "turnover_edge": 7.0
-        },
-        "passing": {
-          "rating": 0.8,
-          "rating_label": "Neutral",
-          "epa_edge": 1.5,
-          "success_edge": -5.3,
-          "explosive_edge": 8.2
-        },
-        "rushing": {
-          "rating": -8.1,
-          "rating_label": "Difficult",
-          "epa_edge": -20.4,
-          "success_edge": 3.8,
-          "explosive_edge": 5.0
-        },
-        "raw": {
-          "offense": {
-            "epa_per_play": 0.012,
-            "yards_per_play": 5.54,
-            "success_rate": 43.5,
-            "explosive_rate": 9.9
-          },
-          "defense_allowed": {
-            "epa_per_play": -0.02,
-            "yards_per_play": 5.96,
-            "success_rate": 43.9,
-            "explosive_rate": 10.8
-          }
-        }
-      },
-      "matchup_differential": 11.8,
-      "matchup_advantage": "CHI"
     },
     {
       "game_id": "2026_05_DEN_LAC",

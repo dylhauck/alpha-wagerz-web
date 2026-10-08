@@ -742,16 +742,16 @@ function PlayerMatchupTable({
     positionFilter,
     setPositionFilter,
   ] =
-    useState<PositionFilter>("ALL");
+    useState<PositionFilter>("QB");
 
   const [sortKey, setSortKey] =
-    useState<PlayerSortKey>("player");
+    useState<PlayerSortKey>("fantasy_points_per_game");
 
   const [
     sortDirection,
     setSortDirection,
   ] =
-    useState<SortDirection>("asc");
+    useState<SortDirection>("desc");
 
   const columns =
     useMemo(

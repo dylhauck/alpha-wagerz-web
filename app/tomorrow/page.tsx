@@ -176,7 +176,7 @@ function NoGamesScheduled() {
 
           {/* Label */}
           <div className="mb-3 text-[12px] font-black uppercase tracking-[0.42em] text-cyan-300 md:text-[13px]">
-            Tomorrow&apos;s Slate
+            MLB Games Loaded For Next Slate
           </div>
 
           {/* Main title */}

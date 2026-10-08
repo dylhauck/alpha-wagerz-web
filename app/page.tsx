@@ -318,6 +318,10 @@ export default async function Home({
           {today}
         </div>
 
+        <div className="mt-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
+          {games.length} MLB Games Loaded For Current Slate
+        </div>
+
         {sortedGames.length > 0 && (
           <div className="mt-3 w-full">
             <GameTicker
