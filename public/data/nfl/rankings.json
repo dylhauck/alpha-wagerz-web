@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T05:27:36.127679+00:00",
+  "generated_at": "2026-10-08T11:48:04.770848+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -26,13 +26,13 @@
     }
   },
   "counts": {
-    "game_bets": 2,
+    "game_bets": 1,
     "player_props": 0,
-    "all_candidates": 2,
+    "all_candidates": 1,
     "best_bets": 1,
     "strong_plays": 0,
     "leans": 0,
-    "passes": 1
+    "passes": 0
   },
   "best_bets": [
     {
@@ -41,8 +41,8 @@
       "ranking_score": 88.45,
       "confidence": 83.5,
       "upstream_label": "ELITE",
-      "edge_strength": 10.72,
-      "edge": 0.268,
+      "edge_strength": 9.8,
+      "edge": 0.245,
       "market_type": "moneyline",
       "game_id": "2026_05_TB_DAL",
       "matchup": "TB @ DAL",
@@ -62,7 +62,7 @@
         "home_team": "DAL",
         "market": "moneyline",
         "selection": "TB",
-        "edge": 0.268,
+        "edge": 0.245,
         "confidence_score": 83.5,
         "confidence_label": "ELITE"
       }
@@ -70,40 +70,7 @@
   ],
   "strong_plays": [],
   "leans": [],
-  "passes": [
-    {
-      "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 59.91,
-      "confidence": 49.4,
-      "upstream_label": "PASS",
-      "edge_strength": 2.5333,
-      "edge": 3.8,
-      "market_type": "game_total",
-      "game_id": "2026_05_TB_DAL",
-      "matchup": "TB @ DAL",
-      "away_team": "TB",
-      "home_team": "DAL",
-      "team": "",
-      "pick": "UNDER 48.5",
-      "line": "",
-      "odds": "",
-      "sportsbook": "",
-      "projection": "",
-      "projection_confidence": "",
-      "source": "nfl_game_edges",
-      "raw": {
-        "game_id": "2026_05_TB_DAL",
-        "away_team": "TB",
-        "home_team": "DAL",
-        "market": "game_total",
-        "selection": "UNDER 48.5",
-        "edge": 3.8,
-        "confidence_score": 49.4,
-        "confidence_label": "PASS"
-      }
-    }
-  ],
+  "passes": [],
   "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
@@ -111,8 +78,8 @@
       "ranking_score": 88.45,
       "confidence": 83.5,
       "upstream_label": "ELITE",
-      "edge_strength": 10.72,
-      "edge": 0.268,
+      "edge_strength": 9.8,
+      "edge": 0.245,
       "market_type": "moneyline",
       "game_id": "2026_05_TB_DAL",
       "matchup": "TB @ DAL",
@@ -132,7 +99,7 @@
         "home_team": "DAL",
         "market": "moneyline",
         "selection": "TB",
-        "edge": 0.268,
+        "edge": 0.245,
         "confidence_score": 83.5,
         "confidence_label": "ELITE"
       }
@@ -145,8 +112,8 @@
       "ranking_score": 88.45,
       "confidence": 83.5,
       "upstream_label": "ELITE",
-      "edge_strength": 10.72,
-      "edge": 0.268,
+      "edge_strength": 9.8,
+      "edge": 0.245,
       "market_type": "moneyline",
       "game_id": "2026_05_TB_DAL",
       "matchup": "TB @ DAL",
@@ -166,41 +133,9 @@
         "home_team": "DAL",
         "market": "moneyline",
         "selection": "TB",
-        "edge": 0.268,
+        "edge": 0.245,
         "confidence_score": 83.5,
         "confidence_label": "ELITE"
-      }
-    },
-    {
-      "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 59.91,
-      "confidence": 49.4,
-      "upstream_label": "PASS",
-      "edge_strength": 2.5333,
-      "edge": 3.8,
-      "market_type": "game_total",
-      "game_id": "2026_05_TB_DAL",
-      "matchup": "TB @ DAL",
-      "away_team": "TB",
-      "home_team": "DAL",
-      "team": "",
-      "pick": "UNDER 48.5",
-      "line": "",
-      "odds": "",
-      "sportsbook": "",
-      "projection": "",
-      "projection_confidence": "",
-      "source": "nfl_game_edges",
-      "raw": {
-        "game_id": "2026_05_TB_DAL",
-        "away_team": "TB",
-        "home_team": "DAL",
-        "market": "game_total",
-        "selection": "UNDER 48.5",
-        "edge": 3.8,
-        "confidence_score": 49.4,
-        "confidence_label": "PASS"
       }
     }
   ],

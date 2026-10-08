@@ -7,10 +7,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 43.0,
+        "total": 44.1,
         "home_margin": "",
-        "away_win_probability": 0.31,
-        "home_win_probability": 0.69,
+        "away_win_probability": 0.34700000000000003,
+        "home_win_probability": 0.653,
         "projection_confidence": 53.8
       },
       "market": {
@@ -120,13 +120,13 @@
               "spread": {
                 "away": 7.0,
                 "home": -7.0,
-                "away_price": -105.0,
-                "home_price": -116.0
+                "away_price": 100.0,
+                "home_price": -120.0
               },
               "game_total": {
-                "line": 42.5,
-                "over_price": -105.0,
-                "under_price": -116.0
+                "line": 41.5,
+                "over_price": -112.0,
+                "under_price": -109.0
               },
               "team_total": {
                 "home": {
@@ -148,17 +148,24 @@
         {
           "market": "moneyline",
           "selection": "PHI",
-          "edge": 0.067,
-          "confidence_score": 55.0,
-          "confidence_label": "LEAN"
+          "edge": 0.104,
+          "confidence_score": 75.0,
+          "confidence_label": "STRONG"
+        },
+        {
+          "market": "game_total",
+          "selection": "OVER 42.5",
+          "edge": 1.6,
+          "confidence_score": 31.8,
+          "confidence_label": "PASS"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "PHI",
-        "edge": 0.067,
-        "confidence_score": 55.0,
-        "confidence_label": "LEAN"
+        "edge": 0.104,
+        "confidence_score": 75.0,
+        "confidence_label": "STRONG"
       }
     },
     {
@@ -168,7 +175,7 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 43.1,
+        "total": 45.7,
         "home_margin": "",
         "away_win_probability": 0.488,
         "home_win_probability": 0.512,
@@ -186,18 +193,18 @@
         "away_team": "CHI",
         "home_team": "GB",
         "moneyline": {
-          "away": -134.0,
-          "home": 114.0,
-          "away_implied_probability": 0.5726,
-          "home_implied_probability": 0.4673,
-          "away_no_vig_probability": 0.5507,
-          "home_no_vig_probability": 0.4493
+          "away": -130.0,
+          "home": 110.0,
+          "away_implied_probability": 0.5652,
+          "home_implied_probability": 0.4762,
+          "away_no_vig_probability": 0.5427,
+          "home_no_vig_probability": 0.4573
         },
         "spread": {
-          "away": -2.5,
-          "home": 2.5,
-          "away_price": -105.0,
-          "home_price": -115.0
+          "away": -1.5,
+          "home": 1.5,
+          "away_price": -115.0,
+          "home_price": -105.0
         },
         "game_total": 45.5,
         "game_total_prices": {
@@ -212,8 +219,8 @@
         "posted_team_totals": {
           "away": {
             "line": 23.5,
-            "over_price": -113.0,
-            "under_price": -113.0
+            "over_price": -111.0,
+            "under_price": -115.0
           },
           "home": {
             "line": 22.5,
@@ -242,14 +249,14 @@
             "title": "FanDuel",
             "markets": {
               "moneyline": {
-                "away": -134.0,
-                "home": 114.0
+                "away": -130.0,
+                "home": 110.0
               },
               "spread": {
-                "away": -2.5,
-                "home": 2.5,
-                "away_price": -105.0,
-                "home_price": -115.0
+                "away": -1.5,
+                "home": 1.5,
+                "away_price": -115.0,
+                "home_price": -105.0
               },
               "game_total": {
                 "line": 45.5,
@@ -264,8 +271,8 @@
                 },
                 "away": {
                   "line": 23.5,
-                  "over_price": -113.0,
-                  "under_price": -113.0
+                  "over_price": -111.0,
+                  "under_price": -115.0
                 }
               }
             }
@@ -279,26 +286,26 @@
                 "home": 110.0
               },
               "spread": {
-                "away": -2.5,
-                "home": 2.5,
-                "away_price": -105.0,
-                "home_price": -116.0
+                "away": -1.5,
+                "home": 1.5,
+                "away_price": -119.0,
+                "home_price": -102.0
               },
               "game_total": {
                 "line": 45.5,
-                "over_price": -112.0,
-                "under_price": -109.0
+                "over_price": -119.0,
+                "under_price": -102.0
               },
               "team_total": {
                 "home": {
                   "line": 32.5,
                   "over_price": 550.0,
-                  "under_price": -833.0
+                  "under_price": -769.0
                 },
                 "away": {
                   "line": 33.5,
-                  "over_price": 475.0,
-                  "under_price": -667.0
+                  "over_price": 500.0,
+                  "under_price": -714.0
                 }
               }
             }
@@ -309,24 +316,17 @@
         {
           "market": "moneyline",
           "selection": "GB",
-          "edge": 0.063,
-          "confidence_score": 52.2,
-          "confidence_label": "LEAN"
-        },
-        {
-          "market": "game_total",
-          "selection": "UNDER 45.5",
-          "edge": 2.4,
-          "confidence_score": 37.7,
+          "edge": 0.055,
+          "confidence_score": 47.9,
           "confidence_label": "PASS"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "GB",
-        "edge": 0.063,
-        "confidence_score": 52.2,
-        "confidence_label": "LEAN"
+        "edge": 0.055,
+        "confidence_score": 47.9,
+        "confidence_label": "PASS"
       }
     },
     {
@@ -336,10 +336,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 46.8,
+        "total": 45.6,
         "home_margin": "",
-        "away_win_probability": 0.523,
-        "home_win_probability": 0.47700000000000004,
+        "away_win_probability": 0.515,
+        "home_win_probability": 0.485,
         "projection_confidence": 52.8
       },
       "market": {
@@ -444,7 +444,7 @@
             "markets": {
               "moneyline": {
                 "away": -312.0,
-                "home": 250.0
+                "home": 245.0
               },
               "spread": {
                 "away": -6.5,
@@ -477,22 +477,22 @@
         {
           "market": "moneyline",
           "selection": "MIA",
-          "edge": 0.198,
+          "edge": 0.206,
           "confidence_score": 83.5,
           "confidence_label": "ELITE"
         },
         {
           "market": "game_total",
           "selection": "OVER 42.5",
-          "edge": 4.3,
-          "confidence_score": 53.4,
-          "confidence_label": "LEAN"
+          "edge": 3.1,
+          "confidence_score": 43.7,
+          "confidence_label": "PASS"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "MIA",
-        "edge": 0.198,
+        "edge": 0.206,
         "confidence_score": 83.5,
         "confidence_label": "ELITE"
       }
@@ -504,10 +504,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 39.1,
+        "total": 43.4,
         "home_margin": "",
-        "away_win_probability": 0.42,
-        "home_win_probability": 0.58,
+        "away_win_probability": 0.358,
+        "home_win_probability": 0.642,
         "projection_confidence": 53.0
       },
       "market": {
@@ -641,29 +641,8 @@
           }
         ]
       },
-      "recommendations": [
-        {
-          "market": "game_total",
-          "selection": "UNDER 44.5",
-          "edge": 5.4,
-          "confidence_score": 62.4,
-          "confidence_label": "GOOD"
-        },
-        {
-          "market": "moneyline",
-          "selection": "LV",
-          "edge": 0.056,
-          "confidence_score": 48.9,
-          "confidence_label": "PASS"
-        }
-      ],
-      "best_bet": {
-        "market": "game_total",
-        "selection": "UNDER 44.5",
-        "edge": 5.4,
-        "confidence_score": 62.4,
-        "confidence_label": "GOOD"
-      }
+      "recommendations": [],
+      "best_bet": ""
     },
     {
       "game_id": "2026_05_MIN_NO",
@@ -672,10 +651,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 36.6,
+        "total": 40.8,
         "home_margin": "",
-        "away_win_probability": 0.584,
-        "home_win_probability": 0.41600000000000004,
+        "away_win_probability": 0.508,
+        "home_win_probability": 0.49200000000000005,
         "projection_confidence": 55.5
       },
       "market": {
@@ -779,14 +758,14 @@
             "title": "DraftKings",
             "markets": {
               "moneyline": {
-                "away": -132.0,
-                "home": 110.0
+                "away": -135.0,
+                "home": 114.0
               },
               "spread": {
                 "away": -1.5,
                 "home": 1.5,
-                "away_price": -116.0,
-                "home_price": -105.0
+                "away_price": -119.0,
+                "home_price": -102.0
               },
               "game_total": {
                 "line": 42.5,
@@ -796,8 +775,8 @@
               "team_total": {
                 "home": {
                   "line": 30.5,
-                  "over_price": 500.0,
-                  "under_price": -769.0
+                  "over_price": 550.0,
+                  "under_price": -833.0
                 },
                 "away": {
                   "line": 31.5,
@@ -811,26 +790,26 @@
       },
       "recommendations": [
         {
-          "market": "game_total",
-          "selection": "UNDER 42.5",
-          "edge": 5.9,
-          "confidence_score": 67.4,
-          "confidence_label": "GOOD"
+          "market": "moneyline",
+          "selection": "NO",
+          "edge": 0.043,
+          "confidence_score": 42.6,
+          "confidence_label": "PASS"
         },
         {
-          "market": "moneyline",
-          "selection": "MIN",
-          "edge": 0.033,
-          "confidence_score": 37.5,
+          "market": "game_total",
+          "selection": "UNDER 42.5",
+          "edge": 1.7,
+          "confidence_score": 33.2,
           "confidence_label": "PASS"
         }
       ],
       "best_bet": {
-        "market": "game_total",
-        "selection": "UNDER 42.5",
-        "edge": 5.9,
-        "confidence_score": 67.4,
-        "confidence_label": "GOOD"
+        "market": "moneyline",
+        "selection": "NO",
+        "edge": 0.043,
+        "confidence_score": 42.6,
+        "confidence_label": "PASS"
       }
     },
     {
@@ -840,10 +819,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 39.5,
+        "total": 42.4,
         "home_margin": "",
-        "away_win_probability": 0.473,
-        "home_win_probability": 0.527,
+        "away_win_probability": 0.469,
+        "home_win_probability": 0.531,
         "projection_confidence": 53.2
       },
       "market": {
@@ -977,8 +956,22 @@
           }
         ]
       },
-      "recommendations": [],
-      "best_bet": ""
+      "recommendations": [
+        {
+          "market": "game_total",
+          "selection": "OVER 40.5",
+          "edge": 1.9,
+          "confidence_score": 34.1,
+          "confidence_label": "PASS"
+        }
+      ],
+      "best_bet": {
+        "market": "game_total",
+        "selection": "OVER 40.5",
+        "edge": 1.9,
+        "confidence_score": 34.1,
+        "confidence_label": "PASS"
+      }
     },
     {
       "game_id": "2026_05_IND_PIT",
@@ -987,10 +980,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 42.1,
+        "total": 41.8,
         "home_margin": "",
-        "away_win_probability": 0.44299999999999995,
-        "home_win_probability": 0.557,
+        "away_win_probability": 0.45399999999999996,
+        "home_win_probability": 0.546,
         "projection_confidence": 50.5
       },
       "market": {
@@ -1005,12 +998,12 @@
         "away_team": "IND",
         "home_team": "PIT",
         "moneyline": {
-          "away": 114.0,
-          "home": -134.0,
-          "away_implied_probability": 0.4673,
-          "home_implied_probability": 0.5726,
-          "away_no_vig_probability": 0.4493,
-          "home_no_vig_probability": 0.5507
+          "away": 112.0,
+          "home": -132.0,
+          "away_implied_probability": 0.4717,
+          "home_implied_probability": 0.569,
+          "away_no_vig_probability": 0.4533,
+          "home_no_vig_probability": 0.5467
         },
         "spread": {
           "away": 2.5,
@@ -1018,10 +1011,10 @@
           "away_price": -115.0,
           "home_price": -105.0
         },
-        "game_total": 43.5,
+        "game_total": 44.5,
         "game_total_prices": {
-          "over": -122.0,
-          "under": -104.0
+          "over": -104.0,
+          "under": -118.0
         },
         "team_totals": {
           "away": 21.5,
@@ -1031,8 +1024,8 @@
         "posted_team_totals": {
           "away": {
             "line": 21.5,
-            "over_price": -111.0,
-            "under_price": -115.0
+            "over_price": -113.0,
+            "under_price": -113.0
           },
           "home": {
             "line": 22.5,
@@ -1061,8 +1054,8 @@
             "title": "FanDuel",
             "markets": {
               "moneyline": {
-                "away": 114.0,
-                "home": -134.0
+                "away": 112.0,
+                "home": -132.0
               },
               "spread": {
                 "away": 2.5,
@@ -1071,9 +1064,9 @@
                 "home_price": -105.0
               },
               "game_total": {
-                "line": 43.5,
-                "over_price": -122.0,
-                "under_price": -104.0
+                "line": 44.5,
+                "over_price": -104.0,
+                "under_price": -118.0
               },
               "team_total": {
                 "home": {
@@ -1083,8 +1076,8 @@
                 },
                 "away": {
                   "line": 21.5,
-                  "over_price": -111.0,
-                  "under_price": -115.0
+                  "over_price": -113.0,
+                  "under_price": -113.0
                 }
               }
             }
@@ -1100,8 +1093,8 @@
               "spread": {
                 "away": 2.5,
                 "home": -2.5,
-                "away_price": -105.0,
-                "home_price": -116.0
+                "away_price": -102.0,
+                "home_price": -119.0
               },
               "game_total": {
                 "line": 44.5,
@@ -1117,15 +1110,29 @@
                 "away": {
                   "line": 31.5,
                   "over_price": 550.0,
-                  "under_price": -833.0
+                  "under_price": -909.0
                 }
               }
             }
           }
         ]
       },
-      "recommendations": [],
-      "best_bet": ""
+      "recommendations": [
+        {
+          "market": "game_total",
+          "selection": "UNDER 44.5",
+          "edge": 2.7,
+          "confidence_score": 39.6,
+          "confidence_label": "PASS"
+        }
+      ],
+      "best_bet": {
+        "market": "game_total",
+        "selection": "UNDER 44.5",
+        "edge": 2.7,
+        "confidence_score": 39.6,
+        "confidence_label": "PASS"
+      }
     },
     {
       "game_id": "2026_05_HOU_TEN",
@@ -1134,10 +1141,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 42.6,
+        "total": 42.7,
         "home_margin": "",
-        "away_win_probability": 0.45399999999999996,
-        "home_win_probability": 0.546,
+        "away_win_probability": 0.565,
+        "home_win_probability": 0.435,
         "projection_confidence": 54.2
       },
       "market": {
@@ -1241,19 +1248,19 @@
             "title": "DraftKings",
             "markets": {
               "moneyline": {
-                "away": -400.0,
-                "home": 310.0
+                "away": -435.0,
+                "home": 330.0
               },
               "spread": {
                 "away": -7.5,
                 "home": 7.5,
-                "away_price": -111.0,
-                "home_price": -111.0
+                "away_price": -105.0,
+                "home_price": -116.0
               },
               "game_total": {
-                "line": 37.5,
-                "over_price": -109.0,
-                "under_price": -112.0
+                "line": 38.5,
+                "over_price": -105.0,
+                "under_price": -116.0
               },
               "team_total": {
                 "home": {
@@ -1263,8 +1270,8 @@
                 },
                 "away": {
                   "line": 33.5,
-                  "over_price": 550.0,
-                  "under_price": -833.0
+                  "over_price": 500.0,
+                  "under_price": -769.0
                 }
               }
             }
@@ -1275,22 +1282,22 @@
         {
           "market": "moneyline",
           "selection": "TEN",
-          "edge": 0.303,
+          "edge": 0.192,
           "confidence_score": 84.0,
           "confidence_label": "ELITE"
         },
         {
           "market": "game_total",
           "selection": "OVER 37.5",
-          "edge": 5.1,
-          "confidence_score": 60.4,
+          "edge": 5.2,
+          "confidence_score": 61.2,
           "confidence_label": "GOOD"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "TEN",
-        "edge": 0.303,
+        "edge": 0.192,
         "confidence_score": 84.0,
         "confidence_label": "ELITE"
       }
@@ -1302,10 +1309,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 42.1,
+        "total": 42.4,
         "home_margin": "",
-        "away_win_probability": 0.45799999999999996,
-        "home_win_probability": 0.542,
+        "away_win_probability": 0.45399999999999996,
+        "home_win_probability": 0.546,
         "projection_confidence": 51.0
       },
       "market": {
@@ -1330,8 +1337,8 @@
         "spread": {
           "away": 3.5,
           "home": -3.5,
-          "away_price": -104.0,
-          "home_price": -118.0
+          "away_price": -102.0,
+          "home_price": -120.0
         },
         "game_total": 42.5,
         "game_total_prices": {
@@ -1346,13 +1353,13 @@
         "posted_team_totals": {
           "away": {
             "line": 19.5,
-            "over_price": -113.0,
+            "over_price": -115.0,
             "under_price": -113.0
           },
           "home": {
             "line": 23.5,
-            "over_price": -115.0,
-            "under_price": -111.0
+            "over_price": -118.0,
+            "under_price": -108.0
           },
           "source": "sportsbook"
         },
@@ -1382,8 +1389,8 @@
               "spread": {
                 "away": 3.5,
                 "home": -3.5,
-                "away_price": -104.0,
-                "home_price": -118.0
+                "away_price": -102.0,
+                "home_price": -120.0
               },
               "game_total": {
                 "line": 42.5,
@@ -1393,12 +1400,12 @@
               "team_total": {
                 "home": {
                   "line": 23.5,
-                  "over_price": -115.0,
-                  "under_price": -111.0
+                  "over_price": -118.0,
+                  "under_price": -108.0
                 },
                 "away": {
                   "line": 19.5,
-                  "over_price": -113.0,
+                  "over_price": -115.0,
                   "under_price": -113.0
                 }
               }
@@ -1415,8 +1422,8 @@
               "spread": {
                 "away": 3.5,
                 "home": -3.5,
-                "away_price": -109.0,
-                "home_price": -112.0
+                "away_price": -105.0,
+                "home_price": -116.0
               },
               "game_total": {
                 "line": 42.5,
@@ -1443,17 +1450,17 @@
         {
           "market": "moneyline",
           "selection": "NYG",
-          "edge": 0.097,
-          "confidence_score": 70.2,
-          "confidence_label": "STRONG"
+          "edge": 0.093,
+          "confidence_score": 68.0,
+          "confidence_label": "GOOD"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "NYG",
-        "edge": 0.097,
-        "confidence_score": 70.2,
-        "confidence_label": "STRONG"
+        "edge": 0.093,
+        "confidence_score": 68.0,
+        "confidence_label": "GOOD"
       }
     },
     {
@@ -1463,10 +1470,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 38.0,
+        "total": 42.5,
         "home_margin": "",
-        "away_win_probability": 0.462,
-        "home_win_probability": 0.5379999999999999,
+        "away_win_probability": 0.48100000000000004,
+        "home_win_probability": 0.519,
         "projection_confidence": 53.3
       },
       "market": {
@@ -1604,22 +1611,15 @@
         {
           "market": "moneyline",
           "selection": "LAC",
-          "edge": 0.156,
+          "edge": 0.137,
           "confidence_score": 83.7,
           "confidence_label": "ELITE"
-        },
-        {
-          "market": "game_total",
-          "selection": "UNDER 42.5",
-          "edge": 4.5,
-          "confidence_score": 55.2,
-          "confidence_label": "LEAN"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "LAC",
-        "edge": 0.156,
+        "edge": 0.137,
         "confidence_score": 83.7,
         "confidence_label": "ELITE"
       }
@@ -1631,10 +1631,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 45.4,
+        "total": 46.6,
         "home_margin": "",
-        "away_win_probability": 0.5760000000000001,
-        "home_win_probability": 0.424,
+        "away_win_probability": 0.523,
+        "home_win_probability": 0.47700000000000004,
         "projection_confidence": 53.9
       },
       "market": {
@@ -1738,8 +1738,8 @@
             "title": "DraftKings",
             "markets": {
               "moneyline": {
-                "away": -250.0,
-                "home": 205.0
+                "away": -263.0,
+                "home": 210.0
               },
               "spread": {
                 "away": -5.5,
@@ -1760,7 +1760,7 @@
                 },
                 "away": {
                   "line": 40.5,
-                  "over_price": 550.0,
+                  "over_price": 500.0,
                   "under_price": -769.0
                 }
               }
@@ -1770,24 +1770,24 @@
       },
       "recommendations": [
         {
-          "market": "game_total",
-          "selection": "UNDER 54.5",
-          "edge": 9.1,
+          "market": "moneyline",
+          "selection": "ARI",
+          "edge": 0.151,
           "confidence_score": 83.9,
           "confidence_label": "ELITE"
         },
         {
-          "market": "moneyline",
-          "selection": "ARI",
-          "edge": 0.097,
-          "confidence_score": 71.7,
-          "confidence_label": "STRONG"
+          "market": "game_total",
+          "selection": "UNDER 54.5",
+          "edge": 7.9,
+          "confidence_score": 83.1,
+          "confidence_label": "ELITE"
         }
       ],
       "best_bet": {
-        "market": "game_total",
-        "selection": "UNDER 54.5",
-        "edge": 9.1,
+        "market": "moneyline",
+        "selection": "ARI",
+        "edge": 0.151,
         "confidence_score": 83.9,
         "confidence_label": "ELITE"
       }
@@ -1799,10 +1799,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 42.3,
+        "total": 46.4,
         "home_margin": "",
-        "away_win_probability": 0.39,
-        "home_win_probability": 0.61,
+        "away_win_probability": 0.439,
+        "home_win_probability": 0.561,
         "projection_confidence": 51.8
       },
       "market": {
@@ -1938,19 +1938,19 @@
       },
       "recommendations": [
         {
-          "market": "game_total",
-          "selection": "UNDER 46.5",
-          "edge": 4.2,
-          "confidence_score": 52.3,
-          "confidence_label": "LEAN"
+          "market": "moneyline",
+          "selection": "SF",
+          "edge": 0.032,
+          "confidence_score": 35.7,
+          "confidence_label": "PASS"
         }
       ],
       "best_bet": {
-        "market": "game_total",
-        "selection": "UNDER 46.5",
-        "edge": 4.2,
-        "confidence_score": 52.3,
-        "confidence_label": "LEAN"
+        "market": "moneyline",
+        "selection": "SF",
+        "edge": 0.032,
+        "confidence_score": 35.7,
+        "confidence_label": "PASS"
       }
     },
     {
@@ -1960,10 +1960,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 43.4,
+        "total": 45.8,
         "home_margin": "",
-        "away_win_probability": 0.469,
-        "home_win_probability": 0.531,
+        "away_win_probability": 0.485,
+        "home_win_probability": 0.515,
         "projection_confidence": 51.4
       },
       "market": {
@@ -2101,17 +2101,24 @@
         {
           "market": "moneyline",
           "selection": "BAL",
-          "edge": 0.076,
-          "confidence_score": 59.0,
-          "confidence_label": "LEAN"
+          "edge": 0.092,
+          "confidence_score": 67.7,
+          "confidence_label": "GOOD"
+        },
+        {
+          "market": "game_total",
+          "selection": "OVER 43.5",
+          "edge": 2.3,
+          "confidence_score": 36.7,
+          "confidence_label": "PASS"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "BAL",
-        "edge": 0.076,
-        "confidence_score": 59.0,
-        "confidence_label": "LEAN"
+        "edge": 0.092,
+        "confidence_score": 67.7,
+        "confidence_label": "GOOD"
       }
     }
   ],
@@ -2122,7 +2129,7 @@
       "home_team": "TEN",
       "market": "moneyline",
       "selection": "TEN",
-      "edge": 0.303,
+      "edge": 0.192,
       "confidence_score": 84.0,
       "confidence_label": "ELITE"
     },
@@ -2130,9 +2137,9 @@
       "game_id": "2026_05_DET_ARI",
       "away_team": "DET",
       "home_team": "ARI",
-      "market": "game_total",
-      "selection": "UNDER 54.5",
-      "edge": 9.1,
+      "market": "moneyline",
+      "selection": "ARI",
+      "edge": 0.151,
       "confidence_score": 83.9,
       "confidence_label": "ELITE"
     },
@@ -2142,7 +2149,7 @@
       "home_team": "LAC",
       "market": "moneyline",
       "selection": "LAC",
-      "edge": 0.156,
+      "edge": 0.137,
       "confidence_score": 83.7,
       "confidence_label": "ELITE"
     },
@@ -2152,7 +2159,7 @@
       "home_team": "MIA",
       "market": "moneyline",
       "selection": "MIA",
-      "edge": 0.198,
+      "edge": 0.206,
       "confidence_score": 83.5,
       "confidence_label": "ELITE"
     },
@@ -2160,10 +2167,20 @@
       "game_id": "2026_05_DET_ARI",
       "away_team": "DET",
       "home_team": "ARI",
+      "market": "game_total",
+      "selection": "UNDER 54.5",
+      "edge": 7.9,
+      "confidence_score": 83.1,
+      "confidence_label": "ELITE"
+    },
+    {
+      "game_id": "2026_05_PHI_JAX",
+      "away_team": "PHI",
+      "home_team": "JAX",
       "market": "moneyline",
-      "selection": "ARI",
-      "edge": 0.097,
-      "confidence_score": 71.7,
+      "selection": "PHI",
+      "edge": 0.104,
+      "confidence_score": 75.0,
       "confidence_label": "STRONG"
     },
     {
@@ -2172,38 +2189,8 @@
       "home_team": "WAS",
       "market": "moneyline",
       "selection": "NYG",
-      "edge": 0.097,
-      "confidence_score": 70.2,
-      "confidence_label": "STRONG"
-    },
-    {
-      "game_id": "2026_05_MIN_NO",
-      "away_team": "MIN",
-      "home_team": "NO",
-      "market": "game_total",
-      "selection": "UNDER 42.5",
-      "edge": 5.9,
-      "confidence_score": 67.4,
-      "confidence_label": "GOOD"
-    },
-    {
-      "game_id": "2026_05_LV_NE",
-      "away_team": "LV",
-      "home_team": "NE",
-      "market": "game_total",
-      "selection": "UNDER 44.5",
-      "edge": 5.4,
-      "confidence_score": 62.4,
-      "confidence_label": "GOOD"
-    },
-    {
-      "game_id": "2026_05_HOU_TEN",
-      "away_team": "HOU",
-      "home_team": "TEN",
-      "market": "game_total",
-      "selection": "OVER 37.5",
-      "edge": 5.1,
-      "confidence_score": 60.4,
+      "edge": 0.093,
+      "confidence_score": 68.0,
       "confidence_label": "GOOD"
     },
     {
@@ -2212,49 +2199,19 @@
       "home_team": "ATL",
       "market": "moneyline",
       "selection": "BAL",
-      "edge": 0.076,
-      "confidence_score": 59.0,
-      "confidence_label": "LEAN"
+      "edge": 0.092,
+      "confidence_score": 67.7,
+      "confidence_label": "GOOD"
     },
     {
-      "game_id": "2026_05_DEN_LAC",
-      "away_team": "DEN",
-      "home_team": "LAC",
+      "game_id": "2026_05_HOU_TEN",
+      "away_team": "HOU",
+      "home_team": "TEN",
       "market": "game_total",
-      "selection": "UNDER 42.5",
-      "edge": 4.5,
-      "confidence_score": 55.2,
-      "confidence_label": "LEAN"
-    },
-    {
-      "game_id": "2026_05_PHI_JAX",
-      "away_team": "PHI",
-      "home_team": "JAX",
-      "market": "moneyline",
-      "selection": "PHI",
-      "edge": 0.067,
-      "confidence_score": 55.0,
-      "confidence_label": "LEAN"
-    },
-    {
-      "game_id": "2026_05_CIN_MIA",
-      "away_team": "CIN",
-      "home_team": "MIA",
-      "market": "game_total",
-      "selection": "OVER 42.5",
-      "edge": 4.3,
-      "confidence_score": 53.4,
-      "confidence_label": "LEAN"
-    },
-    {
-      "game_id": "2026_05_SF_SEA",
-      "away_team": "SF",
-      "home_team": "SEA",
-      "market": "game_total",
-      "selection": "UNDER 46.5",
-      "edge": 4.2,
-      "confidence_score": 52.3,
-      "confidence_label": "LEAN"
+      "selection": "OVER 37.5",
+      "edge": 5.2,
+      "confidence_score": 61.2,
+      "confidence_label": "GOOD"
     },
     {
       "game_id": "2026_05_CHI_GB",
@@ -2262,28 +2219,18 @@
       "home_team": "GB",
       "market": "moneyline",
       "selection": "GB",
-      "edge": 0.063,
-      "confidence_score": 52.2,
-      "confidence_label": "LEAN"
-    },
-    {
-      "game_id": "2026_05_LV_NE",
-      "away_team": "LV",
-      "home_team": "NE",
-      "market": "moneyline",
-      "selection": "LV",
-      "edge": 0.056,
-      "confidence_score": 48.9,
+      "edge": 0.055,
+      "confidence_score": 47.9,
       "confidence_label": "PASS"
     },
     {
-      "game_id": "2026_05_CHI_GB",
-      "away_team": "CHI",
-      "home_team": "GB",
+      "game_id": "2026_05_CIN_MIA",
+      "away_team": "CIN",
+      "home_team": "MIA",
       "market": "game_total",
-      "selection": "UNDER 45.5",
-      "edge": 2.4,
-      "confidence_score": 37.7,
+      "selection": "OVER 42.5",
+      "edge": 3.1,
+      "confidence_score": 43.7,
       "confidence_label": "PASS"
     },
     {
@@ -2291,9 +2238,69 @@
       "away_team": "MIN",
       "home_team": "NO",
       "market": "moneyline",
-      "selection": "MIN",
-      "edge": 0.033,
-      "confidence_score": 37.5,
+      "selection": "NO",
+      "edge": 0.043,
+      "confidence_score": 42.6,
+      "confidence_label": "PASS"
+    },
+    {
+      "game_id": "2026_05_IND_PIT",
+      "away_team": "IND",
+      "home_team": "PIT",
+      "market": "game_total",
+      "selection": "UNDER 44.5",
+      "edge": 2.7,
+      "confidence_score": 39.6,
+      "confidence_label": "PASS"
+    },
+    {
+      "game_id": "2026_05_BAL_ATL",
+      "away_team": "BAL",
+      "home_team": "ATL",
+      "market": "game_total",
+      "selection": "OVER 43.5",
+      "edge": 2.3,
+      "confidence_score": 36.7,
+      "confidence_label": "PASS"
+    },
+    {
+      "game_id": "2026_05_SF_SEA",
+      "away_team": "SF",
+      "home_team": "SEA",
+      "market": "moneyline",
+      "selection": "SF",
+      "edge": 0.032,
+      "confidence_score": 35.7,
+      "confidence_label": "PASS"
+    },
+    {
+      "game_id": "2026_05_CLE_NYJ",
+      "away_team": "CLE",
+      "home_team": "NYJ",
+      "market": "game_total",
+      "selection": "OVER 40.5",
+      "edge": 1.9,
+      "confidence_score": 34.1,
+      "confidence_label": "PASS"
+    },
+    {
+      "game_id": "2026_05_MIN_NO",
+      "away_team": "MIN",
+      "home_team": "NO",
+      "market": "game_total",
+      "selection": "UNDER 42.5",
+      "edge": 1.7,
+      "confidence_score": 33.2,
+      "confidence_label": "PASS"
+    },
+    {
+      "game_id": "2026_05_PHI_JAX",
+      "away_team": "PHI",
+      "home_team": "JAX",
+      "market": "game_total",
+      "selection": "OVER 42.5",
+      "edge": 1.6,
+      "confidence_score": 31.8,
       "confidence_label": "PASS"
     }
   ],
