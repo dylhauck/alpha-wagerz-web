@@ -1,43 +1,43 @@
 {
   "players": [
     {
-      "player_id": "00-0034857",
-      "player": "Josh Allen",
-      "team": "BUF",
-      "opponent": "LAR",
+      "player_id": "00-0039732",
+      "player": "Bo Nix",
+      "team": "DEN",
+      "opponent": "SEA",
       "position": "QB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 69.0,
-      "touchdown_lambda": 1.1698,
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 18.6,
+      "touchdown_lambda": 0.2062,
       "scoring": {
-        "rushing_td_probability": 68.7,
-        "receiving_td_probability": 0.9,
-        "rushing_lambda": 1.1612,
-        "receiving_lambda": 0.0086
+        "rushing_td_probability": 17.8,
+        "receiving_td_probability": 1.0,
+        "rushing_lambda": 0.1962,
+        "receiving_lambda": 0.01
       },
       "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 1.75,
+        "current_games": 5,
+        "current_rushing_td_rate": 0.2,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.66,
-        "career_receiving_td_rate": 0.02,
-        "regressed_rushing_td_rate": 1.023,
-        "regressed_receiving_td_rate": 0.013,
-        "usage_factor": 1.077,
-        "projected_rushing_tds": 1.87,
+        "career_rushing_td_rate": 0.26,
+        "career_receiving_td_rate": 0.03,
+        "regressed_rushing_td_rate": 0.237,
+        "regressed_receiving_td_rate": 0.018,
+        "usage_factor": 0.902,
+        "projected_rushing_tds": 0.17,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 1.75,
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.2,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.66,
-        "career_receiving_tds_per_game": 0.02,
-        "projected_rushing_tds": 1.87,
+        "career_rushing_tds_per_game": 0.26,
+        "career_receiving_tds_per_game": 0.03,
+        "projected_rushing_tds": 0.17,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.4,
+        "projected_team_points": 20.7,
         "injury_status": ""
       },
       "model": {
@@ -46,1110 +46,30 @@
       }
     },
     {
-      "player_id": "00-0037248",
-      "player": "James Cook",
-      "team": "BUF",
-      "opponent": "LAR",
+      "player_id": "00-0041496",
+      "player": "Jonah Coleman",
+      "team": "DEN",
+      "opponent": "SEA",
       "position": "RB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 53.4,
-      "touchdown_lambda": 0.7626,
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 37.4,
+      "touchdown_lambda": 0.468,
       "scoring": {
-        "rushing_td_probability": 50.6,
-        "receiving_td_probability": 5.6,
-        "rushing_lambda": 0.7054,
-        "receiving_lambda": 0.0573
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.75,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.5,
-        "career_receiving_td_rate": 0.13,
-        "regressed_rushing_td_rate": 0.583,
-        "regressed_receiving_td_rate": 0.087,
-        "usage_factor": 1.101,
-        "projected_rushing_tds": 0.8,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.75,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.5,
-        "career_receiving_tds_per_game": 0.13,
-        "projected_rushing_tds": 0.8,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039875",
-      "player": "Ray Davis",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "RB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 11.3,
-      "touchdown_lambda": 0.12,
-      "scoring": {
-        "rushing_td_probability": 4.3,
-        "receiving_td_probability": 7.4,
-        "rushing_lambda": 0.0436,
-        "receiving_lambda": 0.0764
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.08,
-        "career_receiving_td_rate": 0.14,
-        "regressed_rushing_td_rate": 0.058,
-        "regressed_receiving_td_rate": 0.102,
-        "usage_factor": 0.75,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.08,
-        "career_receiving_tds_per_game": 0.14,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035537",
-      "player": "Ty Johnson",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "RB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 11.3,
-      "touchdown_lambda": 0.1194,
-      "scoring": {
-        "rushing_td_probability": 5.5,
-        "receiving_td_probability": 6.1,
-        "rushing_lambda": 0.0562,
-        "receiving_lambda": 0.0632
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.08,
-        "career_receiving_td_rate": 0.09,
-        "regressed_rushing_td_rate": 0.064,
-        "regressed_receiving_td_rate": 0.072,
-        "usage_factor": 0.878,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.08,
-        "career_receiving_tds_per_game": 0.09,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039471",
-      "player": "Frank Gore Jr.",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "RB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
+        "rushing_td_probability": 37.4,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
+        "rushing_lambda": 0.468,
         "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038933",
-      "player": "Dalton Kincaid",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "TE",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 20.8,
-      "touchdown_lambda": 0.2338,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 20.8,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2338
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.22,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.23,
-        "usage_factor": 0.97,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.22,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035689",
-      "player": "Dawson Knox",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "TE",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 20.8,
-      "touchdown_lambda": 0.2332,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 20.8,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2332
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.28,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.27,
-        "usage_factor": 0.822,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.28,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040194",
-      "player": "Jackson Hawes",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "TE",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 15.4,
-      "touchdown_lambda": 0.167,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 15.4,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.167
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.21,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.187,
-        "usage_factor": 0.895,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.21,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040363",
-      "player": "Keleki Latu",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "TE",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036988",
-      "player": "Josh Palmer",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 34.6,
-      "touchdown_lambda": 0.4249,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 34.6,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4249
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.67,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.17,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.306,
-        "usage_factor": 0.875,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.66,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.67,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.17,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.66,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039901",
-      "player": "Keon Coleman",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 23.4,
-      "touchdown_lambda": 0.2663,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 23.4,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2663
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.31,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.29,
-        "usage_factor": 0.956,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.31,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0034827",
-      "player": "DJ Moore",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 22.8,
-      "touchdown_lambda": 0.2589,
-      "scoring": {
-        "rushing_td_probability": 0.4,
-        "receiving_td_probability": 22.5,
-        "rushing_lambda": 0.0036,
-        "receiving_lambda": 0.2553
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.31,
-        "regressed_rushing_td_rate": 0.007,
-        "regressed_receiving_td_rate": 0.29,
-        "usage_factor": 0.892,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.31,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037261",
-      "player": "Khalil Shakir",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 12.1,
-      "touchdown_lambda": 0.1293,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 12.1,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1293
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.18,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.12,
-        "usage_factor": 1.077,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.18,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035500",
-      "player": "Greg Dortch",
-      "team": "BUF",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 9.5,
-      "touchdown_lambda": 0.1,
-      "scoring": {
-        "rushing_td_probability": 0.7,
-        "receiving_td_probability": 8.9,
-        "rushing_lambda": 0.0067,
-        "receiving_lambda": 0.0933
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.14,
-        "regressed_rushing_td_rate": 0.007,
-        "regressed_receiving_td_rate": 0.093,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.14,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.4,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0026498",
-      "player": "Matthew Stafford",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "QB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 1.5,
-      "touchdown_lambda": 0.0156,
-      "scoring": {
-        "rushing_td_probability": 1.5,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0156,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.02,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.013,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.17,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.02,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039107",
-      "player": "Stetson Bennett",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "QB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037840",
-      "player": "Kyren Williams",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "RB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 64.0,
-      "touchdown_lambda": 1.0223,
-      "scoring": {
-        "rushing_td_probability": 54.6,
-        "receiving_td_probability": 20.7,
-        "rushing_lambda": 0.7901,
-        "receiving_lambda": 0.2322
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.75,
-        "current_receiving_td_rate": 0.25,
-        "career_rushing_td_rate": 0.68,
-        "career_receiving_td_rate": 0.16,
-        "regressed_rushing_td_rate": 0.703,
-        "regressed_receiving_td_rate": 0.19,
-        "usage_factor": 1.019,
-        "projected_rushing_tds": 0.9,
-        "projected_receiving_tds": 0.29,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.75,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.68,
-        "career_receiving_tds_per_game": 0.16,
-        "projected_rushing_tds": 0.9,
-        "projected_receiving_tds": 0.29,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039738",
-      "player": "Blake Corum",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "RB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 12.0,
-      "touchdown_lambda": 0.1275,
-      "scoring": {
-        "rushing_td_probability": 12.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1275,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.17,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.113,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.125,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.17,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0041415",
-      "player": "Dean Connors",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "RB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037557",
-      "player": "Ronnie Rivers",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "RB",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.186,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040737",
-      "player": "Terrance Ferguson",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "TE",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 30.7,
-      "touchdown_lambda": 0.3666,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 30.7,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3666
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.33,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.29,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.301,
-        "usage_factor": 1.167,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.39,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.33,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.29,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.39,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0033110",
-      "player": "Tyler Higbee",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "TE",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 27.6,
-      "touchdown_lambda": 0.3225,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 27.6,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3225
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.33,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.21,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.243,
-        "usage_factor": 1.143,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.39,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.33,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.21,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.39,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036244",
-      "player": "Colby Parkinson",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "TE",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 11.2,
-      "touchdown_lambda": 0.1191,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 11.2,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1191
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.19,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.138,
-        "usage_factor": 0.862,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.19,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039074",
-      "player": "Davis Allen",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "TE",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 7.4,
-      "touchdown_lambda": 0.0773,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 7.4,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0773
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.12,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.08,
-        "usage_factor": 0.966,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.12,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0031381",
-      "player": "Davante Adams",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 46.8,
-      "touchdown_lambda": 0.6314,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 46.8,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.6314
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.5,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.75,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.667,
-        "usage_factor": 0.989,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.59,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.5,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.75,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.59,
-        "projected_team_points": 25.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039075",
-      "player": "Puka Nacua",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 38.8,
-      "touchdown_lambda": 0.4906,
-      "scoring": {
-        "rushing_td_probability": 14.6,
-        "receiving_td_probability": 28.3,
-        "rushing_lambda": 0.1581,
-        "receiving_lambda": 0.3324
       },
       "inputs": {
         "current_games": 2,
         "current_rushing_td_rate": 0.5,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.07,
-        "career_receiving_td_rate": 0.41,
-        "regressed_rushing_td_rate": 0.156,
-        "regressed_receiving_td_rate": 0.328,
-        "usage_factor": 1.014,
-        "projected_rushing_tds": 0.0,
+        "career_rushing_td_rate": 0.5,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.5,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.42,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -1158,11 +78,11 @@
         "current_games": 2,
         "current_rushing_tds_per_game": 0.5,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.07,
-        "career_receiving_tds_per_game": 0.41,
-        "projected_rushing_tds": 0.0,
+        "career_rushing_tds_per_game": 0.5,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.42,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
+        "projected_team_points": 20.7,
         "injury_status": ""
       },
       "model": {
@@ -1171,43 +91,43 @@
       }
     },
     {
-      "player_id": "00-0040590",
-      "player": "Konata Mumpfield",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 20.9,
-      "touchdown_lambda": 0.2341,
+      "player_id": "00-0040730",
+      "player": "RJ Harvey",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "RB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 29.8,
+      "touchdown_lambda": 0.3542,
       "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 20.9,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2341
+        "rushing_td_probability": 18.5,
+        "receiving_td_probability": 13.9,
+        "rushing_lambda": 0.205,
+        "receiving_lambda": 0.1491
       },
       "inputs": {
         "current_games": 4,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.14,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.177,
-        "usage_factor": 1.114,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.33,
+        "career_receiving_td_rate": 0.24,
+        "regressed_rushing_td_rate": 0.22,
+        "regressed_receiving_td_rate": 0.16,
+        "usage_factor": 0.932,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.29,
+        "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
         "current_games": 4,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.14,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.33,
+        "career_receiving_tds_per_game": 0.24,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.29,
-        "projected_team_points": 25.1,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
         "injury_status": ""
       },
       "model": {
@@ -1216,29 +136,254 @@
       }
     },
     {
-      "player_id": "00-0036849",
-      "player": "Tutu Atwell",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
-      "touchdown_probability": 6.8,
-      "touchdown_lambda": 0.0705,
+      "player_id": "00-0036158",
+      "player": "J.K. Dobbins",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "RB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 26.3,
+      "touchdown_lambda": 0.3049,
       "scoring": {
-        "rushing_td_probability": 1.3,
-        "receiving_td_probability": 5.6,
-        "rushing_lambda": 0.0128,
-        "receiving_lambda": 0.0577
+        "rushing_td_probability": 25.7,
+        "receiving_td_probability": 0.7,
+        "rushing_lambda": 0.2976,
+        "receiving_lambda": 0.0073
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.2,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.5,
+        "career_receiving_td_rate": 0.02,
+        "regressed_rushing_td_rate": 0.385,
+        "regressed_receiving_td_rate": 0.012,
+        "usage_factor": 0.995,
+        "projected_rushing_tds": 0.17,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.2,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.5,
+        "career_receiving_tds_per_game": 0.02,
+        "projected_rushing_tds": 0.17,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037085",
+      "player": "Tyler Badie",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "RB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 2.7,
+      "touchdown_lambda": 0.0274,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 2.7,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0274
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.04,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.027,
+        "usage_factor": 1.026,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.04,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036727",
+      "player": "Adam Prentice",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "RB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.829,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038783",
+      "player": "Nate Adkins",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "TE",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 37.2,
+      "touchdown_lambda": 0.4658,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 37.2,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.4658
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.67,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.21,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.335,
+        "usage_factor": 1.201,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.56,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.67,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.21,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.56,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033881",
+      "player": "Evan Engram",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "TE",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 15.8,
+      "touchdown_lambda": 0.1714,
+      "scoring": {
+        "rushing_td_probability": 0.3,
+        "receiving_td_probability": 15.5,
+        "rushing_lambda": 0.0031,
+        "receiving_lambda": 0.1683
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.2,
+        "regressed_rushing_td_rate": 0.006,
+        "regressed_receiving_td_rate": 0.2,
+        "usage_factor": 0.836,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.2,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036422",
+      "player": "Adam Trautman",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "TE",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 9.7,
+      "touchdown_lambda": 0.1016,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 9.7,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1016
       },
       "inputs": {
         "current_games": 2,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.02,
-        "career_receiving_td_rate": 0.09,
-        "regressed_rushing_td_rate": 0.016,
-        "regressed_receiving_td_rate": 0.072,
-        "usage_factor": 0.801,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.13,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.104,
+        "usage_factor": 0.977,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -1248,11 +393,11 @@
         "current_games": 2,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.02,
-        "career_receiving_tds_per_game": 0.09,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.13,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
+        "projected_team_points": 20.7,
         "injury_status": ""
       },
       "model": {
@@ -1261,12 +406,282 @@
       }
     },
     {
-      "player_id": "00-0035602",
-      "player": "Alex Bachman",
-      "team": "LAR",
-      "opponent": "BUF",
+      "player_id": "00-0036613",
+      "player": "Jaylen Waddle",
+      "team": "DEN",
+      "opponent": "SEA",
       "position": "WR",
-      "game_id": "2026_05_BUF_LA",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 21.0,
+      "touchdown_lambda": 0.2353,
+      "scoring": {
+        "rushing_td_probability": 0.4,
+        "receiving_td_probability": 20.7,
+        "rushing_lambda": 0.0036,
+        "receiving_lambda": 0.2317
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.33,
+        "regressed_rushing_td_rate": 0.006,
+        "regressed_receiving_td_rate": 0.28,
+        "usage_factor": 0.974,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.33,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0034348",
+      "player": "Courtland Sutton",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 19.9,
+      "touchdown_lambda": 0.2222,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 19.9,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.2222
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.33,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.28,
+        "usage_factor": 0.918,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.33,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040134",
+      "player": "Pat Bryant",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 16.3,
+      "touchdown_lambda": 0.1782,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 16.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1782
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.25,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.12,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.163,
+        "usage_factor": 0.962,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.21,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.25,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.12,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.21,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0035406",
+      "player": "Lil'Jordan Humphrey",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 11.1,
+      "touchdown_lambda": 0.1172,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 11.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1172
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.17,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.136,
+        "usage_factor": 0.862,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.17,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039868",
+      "player": "Troy Franklin",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 10.8,
+      "touchdown_lambda": 0.1147,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 10.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1147
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.22,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.147,
+        "usage_factor": 0.782,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.22,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038976",
+      "player": "Marvin Mims Jr.",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 10.6,
+      "touchdown_lambda": 0.1117,
+      "scoring": {
+        "rushing_td_probability": 1.2,
+        "receiving_td_probability": 9.4,
+        "rushing_lambda": 0.0124,
+        "receiving_lambda": 0.0992
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.02,
+        "career_receiving_td_rate": 0.16,
+        "regressed_rushing_td_rate": 0.015,
+        "regressed_receiving_td_rate": 0.116,
+        "usage_factor": 0.853,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.02,
+        "career_receiving_tds_per_game": 0.16,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041292",
+      "player": "Kolbe Katsis",
+      "team": "DEN",
+      "opponent": "SEA",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1297,7 +712,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
+        "projected_team_points": 20.7,
         "injury_status": ""
       },
       "model": {
@@ -1306,12 +721,237 @@
       }
     },
     {
-      "player_id": "00-0039751",
-      "player": "Jordan Whittington",
-      "team": "LAR",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_05_BUF_LA",
+      "player_id": "00-0035704",
+      "player": "Drew Lock",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "QB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 11.9,
+      "touchdown_lambda": 0.1268,
+      "scoring": {
+        "rushing_td_probability": 11.9,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.1268,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.2,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.16,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.792,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.2,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0034869",
+      "player": "Sam Darnold",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "QB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 6.6,
+      "touchdown_lambda": 0.0686,
+      "scoring": {
+        "rushing_td_probability": 6.6,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0686,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.13,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.087,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.791,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.13,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038797",
+      "player": "Emanuel Wilson",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "RB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 40.1,
+      "touchdown_lambda": 0.512,
+      "scoring": {
+        "rushing_td_probability": 30.0,
+        "receiving_td_probability": 14.4,
+        "rushing_lambda": 0.356,
+        "receiving_lambda": 0.156
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.4,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.2,
+        "career_receiving_td_rate": 0.05,
+        "regressed_rushing_td_rate": 0.277,
+        "regressed_receiving_td_rate": 0.108,
+        "usage_factor": 1.3,
+        "projected_rushing_tds": 0.35,
+        "projected_receiving_tds": 0.18,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.4,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.2,
+        "career_receiving_tds_per_game": 0.05,
+        "projected_rushing_tds": 0.35,
+        "projected_receiving_tds": 0.18,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037745",
+      "player": "Velus Jones Jr.",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "RB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 5.2,
+      "touchdown_lambda": 0.0533,
+      "scoring": {
+        "rushing_td_probability": 2.6,
+        "receiving_td_probability": 2.6,
+        "rushing_lambda": 0.0267,
+        "receiving_lambda": 0.0267
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.03,
+        "career_receiving_td_rate": 0.03,
+        "regressed_rushing_td_rate": 0.027,
+        "regressed_receiving_td_rate": 0.027,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.03,
+        "career_receiving_tds_per_game": 0.03,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039299",
+      "player": "George Holani",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "RB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 4.7,
+      "touchdown_lambda": 0.048,
+      "scoring": {
+        "rushing_td_probability": 4.7,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.048,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.06,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.037,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.3,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.06,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038488",
+      "player": "Brady Russell",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "RB",
+      "game_id": "2026_06_SEA_DEN",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1321,14 +961,194 @@
         "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 2,
+        "current_games": 4,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
         "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.916,
+        "usage_factor": 1.3,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041512",
+      "player": "Jadarian Price",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "RB",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039793",
+      "player": "AJ Barner",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "TE",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 24.9,
+      "touchdown_lambda": 0.2865,
+      "scoring": {
+        "rushing_td_probability": 10.7,
+        "receiving_td_probability": 16.0,
+        "rushing_lambda": 0.1127,
+        "receiving_lambda": 0.1738
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.2,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.05,
+        "career_receiving_td_rate": 0.27,
+        "regressed_rushing_td_rate": 0.108,
+        "regressed_receiving_td_rate": 0.166,
+        "usage_factor": 1.046,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.2,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.05,
+        "career_receiving_tds_per_game": 0.27,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033576",
+      "player": "Eric Saubert",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "TE",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 12.1,
+      "touchdown_lambda": 0.1294,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 12.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1294
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.06,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.114,
+        "usage_factor": 0.841,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.06,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040739",
+      "player": "Elijah Arroyo",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "TE",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 4.6,
+      "touchdown_lambda": 0.0469,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 4.6,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0469
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.07,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.056,
+        "usage_factor": 0.837,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -1339,10 +1159,235 @@
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.07,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038543",
+      "player": "Jaxon Smith-Njigba",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 64.8,
+      "touchdown_lambda": 1.0446,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 64.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 1.0446
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 1.4,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.48,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.834,
+        "usage_factor": 1.089,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 1.25,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 1.4,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.48,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 1.25,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040648",
+      "player": "Tory Horton",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 39.1,
+      "touchdown_lambda": 0.4959,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 39.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.4959
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.5,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.6,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.58,
+        "usage_factor": 0.919,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.44,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.5,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.6,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.44,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033908",
+      "player": "Cooper Kupp",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 21.6,
+      "touchdown_lambda": 0.2439,
+      "scoring": {
+        "rushing_td_probability": 0.3,
+        "receiving_td_probability": 21.4,
+        "rushing_lambda": 0.0029,
+        "receiving_lambda": 0.241
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.46,
+        "regressed_rushing_td_rate": 0.006,
+        "regressed_receiving_td_rate": 0.36,
+        "usage_factor": 0.782,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.46,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037545",
+      "player": "Rashid Shaheed",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 19.6,
+      "touchdown_lambda": 0.2186,
+      "scoring": {
+        "rushing_td_probability": 9.2,
+        "receiving_td_probability": 11.5,
+        "rushing_lambda": 0.0962,
+        "receiving_lambda": 0.1224
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.2,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.04,
+        "career_receiving_td_rate": 0.21,
+        "regressed_rushing_td_rate": 0.102,
+        "regressed_receiving_td_rate": 0.129,
+        "usage_factor": 0.947,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.2,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.04,
+        "career_receiving_tds_per_game": 0.21,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040621",
+      "player": "Montorie Foster Jr",
+      "team": "SEA",
+      "opponent": "DEN",
+      "position": "WR",
+      "game_id": "2026_06_SEA_DEN",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.1,
+        "projected_team_points": 20.7,
         "injury_status": ""
       },
       "model": {
@@ -1352,11 +1397,11 @@
     }
   ],
   "counts": {
-    "total": 30,
+    "total": 31,
     "QB": 3,
-    "RB": 8,
-    "WR": 11,
-    "TE": 8
+    "RB": 10,
+    "WR": 12,
+    "TE": 6
   },
   "diagnostics": {
     "missing_player_metrics": 0
