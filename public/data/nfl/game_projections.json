@@ -1,20 +1,20 @@
 {
   "games": [
     {
-      "game_id": "2026_05_BUF_LA",
-      "away_team": "BUF",
-      "home_team": "LAR",
+      "game_id": "2026_06_SEA_DEN",
+      "away_team": "SEA",
+      "home_team": "DEN",
       "away_projection": {
-        "projected_points": 22.5,
+        "projected_points": 20.6,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": 0.27,
-          "matchup_adjustment": 0.49,
+          "efficiency_adjustment": -0.37,
+          "matchup_adjustment": -0.74,
           "home_field_adjustment": -0.75,
-          "pre_injury_projection": 22.51,
+          "pre_injury_projection": 20.64,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 22.51,
+          "post_injury_projection": 20.64,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
@@ -26,40 +26,49 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "fixed",
-          "stadium": "SoFi Stadium",
+          "roof": "outdoor",
+          "stadium": "Empower Field at Mile High",
           "weather": {
-            "conditions": "Indoor"
+            "forecast_time": "2026-10-15T20:00",
+            "temperature_f": 50.5,
+            "feels_like_f": 45.8,
+            "humidity_pct": 40.0,
+            "precip_probability_pct": 29.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 0.5,
+            "wind_gust_mph": 0.9,
+            "weather_code": 0,
+            "conditions": "Clear"
           },
-          "classification": "INDOOR",
+          "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
           "passing_factor": 1.0,
           "rushing_factor": 1.0,
           "kicking_factor": 1.0
         },
-        "matchup_rating": 6.2,
-        "matchup_label": "Favorable",
+        "matchup_rating": -9.4,
+        "matchup_label": "Difficult",
         "passing_matchup": {
-          "rating": -1.0,
-          "label": "Neutral"
+          "rating": -8.7,
+          "label": "Difficult"
         },
         "rushing_matchup": {
-          "rating": 19.0,
-          "label": "Strong"
+          "rating": -12.0,
+          "label": "Difficult"
         }
       },
       "home_projection": {
-        "projected_points": 25.2,
+        "projected_points": 20.6,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": 0.77,
-          "matchup_adjustment": 1.2,
+          "efficiency_adjustment": -1.08,
+          "matchup_adjustment": -1.56,
           "home_field_adjustment": 0.75,
-          "pre_injury_projection": 25.22,
+          "pre_injury_projection": 20.61,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 25.22,
+          "post_injury_projection": 20.61,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
@@ -71,45 +80,54 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "fixed",
-          "stadium": "SoFi Stadium",
+          "roof": "outdoor",
+          "stadium": "Empower Field at Mile High",
           "weather": {
-            "conditions": "Indoor"
+            "forecast_time": "2026-10-15T20:00",
+            "temperature_f": 50.5,
+            "feels_like_f": 45.8,
+            "humidity_pct": 40.0,
+            "precip_probability_pct": 29.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 0.5,
+            "wind_gust_mph": 0.9,
+            "weather_code": 0,
+            "conditions": "Clear"
           },
-          "classification": "INDOOR",
+          "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
           "passing_factor": 1.0,
           "rushing_factor": 1.0,
           "kicking_factor": 1.0
         },
-        "matchup_rating": 15.0,
-        "matchup_label": "Strong",
+        "matchup_rating": -19.2,
+        "matchup_label": "Poor",
         "passing_matchup": {
-          "rating": 13.5,
-          "label": "Favorable"
+          "rating": -23.0,
+          "label": "Poor"
         },
         "rushing_matchup": {
-          "rating": 21.2,
-          "label": "Strong"
+          "rating": -20.0,
+          "label": "Poor"
         }
       },
       "projected_score": {
-        "away": 22.5,
-        "home": 25.2
+        "away": 20.6,
+        "home": 20.6
       },
-      "projected_total": 47.7,
-      "expected_margin": 2.7,
-      "projected_winner": "LAR",
+      "projected_total": 41.2,
+      "expected_margin": 0.0,
+      "projected_winner": "EVEN",
       "win_probability": {
-        "away": 39.8,
-        "home": 60.2
+        "away": 50.0,
+        "home": 50.0
       },
-      "projection_confidence": 53.7,
+      "projection_confidence": 55.0,
       "injury_context": {
         "away": {
           "team_context": {
-            "team": "BUF",
+            "team": "SEA",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -135,7 +153,7 @@
         },
         "home": {
           "team_context": {
-            "team": "LAR",
+            "team": "DEN",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -161,17 +179,26 @@
         }
       },
       "weather_context": {
-        "game_id": "2026_05_BUF_LA",
-        "away_team": "BUF",
-        "home_team": "LAR",
-        "stadium": "SoFi Stadium",
-        "latitude": 33.9535,
-        "longitude": -118.3392,
-        "roof": "fixed",
-        "kickoff": "2026-10-12T20:15",
+        "game_id": "2026_06_SEA_DEN",
+        "away_team": "SEA",
+        "home_team": "DEN",
+        "stadium": "Empower Field at Mile High",
+        "latitude": 39.7439,
+        "longitude": -105.0201,
+        "roof": "outdoor",
+        "kickoff": "2026-10-15T20:15",
         "available": true,
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-10-15T20:00",
+          "temperature_f": 50.5,
+          "feels_like_f": 45.8,
+          "humidity_pct": 40.0,
+          "precip_probability_pct": 29.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 0.5,
+          "wind_gust_mph": 0.9,
+          "weather_code": 0,
+          "conditions": "Clear"
         },
         "context": {
           "severity_score": 0.0,
@@ -179,7 +206,7 @@
           "rushing_factor": 1.0,
           "scoring_factor": 1.0,
           "kicking_factor": 1.0,
-          "classification": "INDOOR"
+          "classification": "NEUTRAL"
         }
       },
       "model": {
@@ -191,20 +218,20 @@
   "league_baselines": {
     "points_per_game": 22.5,
     "points_allowed_per_game": 22.5,
-    "offensive_epa": 0.005124999999999999,
-    "defensive_epa": 0.004124999999999999,
-    "offensive_success": 43.678125,
-    "defensive_success": 43.6289375,
-    "offensive_ypp": 5.4153125,
-    "defensive_ypp": 5.41690625,
-    "offensive_explosive": 9.42021875,
-    "defensive_explosive": 9.3973125,
-    "offensive_third_down": 39.84684375,
-    "defensive_third_down": 39.847375,
-    "offensive_red_zone": 19.705125,
-    "defensive_red_zone": 19.7923125,
-    "offensive_turnovers": 1.1534375,
-    "defensive_takeaways": 1.15575
+    "offensive_epa": 0.006187499999999999,
+    "defensive_epa": 0.006468749999999999,
+    "offensive_success": 43.6894375,
+    "defensive_success": 43.70196875,
+    "offensive_ypp": 5.4183125,
+    "defensive_ypp": 5.42765625,
+    "offensive_explosive": 9.4475625,
+    "defensive_explosive": 9.4438125,
+    "offensive_third_down": 39.8515,
+    "defensive_third_down": 39.861031249999996,
+    "offensive_red_zone": 19.78090625,
+    "defensive_red_zone": 19.91575,
+    "offensive_turnovers": 1.15365625,
+    "defensive_takeaways": 1.15296875
   },
   "model": {
     "name": "Alpha Wagerz NFL Projection Model",

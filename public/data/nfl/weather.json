@@ -1,19 +1,28 @@
 {
-  "generated_at": "2026-10-12T12:41:59.753395+00:00",
+  "generated_at": "2026-10-13T12:24:16.571723+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_05_BUF_LA",
-      "away_team": "BUF",
-      "home_team": "LAR",
-      "stadium": "SoFi Stadium",
-      "latitude": 33.9535,
-      "longitude": -118.3392,
-      "roof": "fixed",
-      "kickoff": "2026-10-12T20:15",
+      "game_id": "2026_06_SEA_DEN",
+      "away_team": "SEA",
+      "home_team": "DEN",
+      "stadium": "Empower Field at Mile High",
+      "latitude": 39.7439,
+      "longitude": -105.0201,
+      "roof": "outdoor",
+      "kickoff": "2026-10-15T20:15",
       "available": true,
       "weather": {
-        "conditions": "Indoor"
+        "forecast_time": "2026-10-15T20:00",
+        "temperature_f": 50.5,
+        "feels_like_f": 45.8,
+        "humidity_pct": 40.0,
+        "precip_probability_pct": 29.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 0.5,
+        "wind_gust_mph": 0.9,
+        "weather_code": 0,
+        "conditions": "Clear"
       },
       "context": {
         "severity_score": 0.0,
@@ -21,7 +30,7 @@
         "rushing_factor": 1.0,
         "scoring_factor": 1.0,
         "kicking_factor": 1.0,
-        "classification": "INDOOR"
+        "classification": "NEUTRAL"
       }
     }
   ]
