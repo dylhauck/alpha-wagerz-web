@@ -406,51 +406,6 @@
       }
     },
     {
-      "player_id": "00-0039849",
-      "player": "Marvin Harrison Jr.",
-      "team": "ARI",
-      "opponent": "LAR",
-      "position": "WR",
-      "game_id": "2026_06_ARI_LA",
-      "touchdown_probability": 22.6,
-      "touchdown_lambda": 0.2562,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 22.6,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2562
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.39,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.343,
-        "usage_factor": 0.836,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.21,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.39,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.21,
-        "projected_team_points": 20.3,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
       "player_id": "00-0033307",
       "player": "Kendrick Bourne",
       "team": "ARI",
@@ -8542,7 +8497,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.16,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8557,13 +8512,13 @@
       "opponent": "JAX",
       "position": "RB",
       "game_id": "2026_06_HOU_JAX",
-      "touchdown_probability": 40.5,
-      "touchdown_lambda": 0.5198,
+      "touchdown_probability": 40.3,
+      "touchdown_lambda": 0.5158,
       "scoring": {
         "rushing_td_probability": 32.5,
-        "receiving_td_probability": 11.8,
+        "receiving_td_probability": 11.5,
         "rushing_lambda": 0.3937,
-        "receiving_lambda": 0.1261
+        "receiving_lambda": 0.1221
       },
       "inputs": {
         "current_games": 5,
@@ -8575,7 +8530,7 @@
         "regressed_receiving_td_rate": 0.108,
         "usage_factor": 0.9,
         "projected_rushing_tds": 0.32,
-        "projected_receiving_tds": 0.17,
+        "projected_receiving_tds": 0.16,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -8586,8 +8541,8 @@
         "career_rushing_tds_per_game": 0.55,
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.32,
-        "projected_receiving_tds": 0.17,
-        "projected_team_points": 20.2,
+        "projected_receiving_tds": 0.16,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8632,7 +8587,7 @@
         "career_receiving_tds_per_game": 0.14,
         "projected_rushing_tds": 0.32,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8677,7 +8632,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8692,13 +8647,13 @@
       "opponent": "JAX",
       "position": "TE",
       "game_id": "2026_06_HOU_JAX",
-      "touchdown_probability": 17.3,
-      "touchdown_lambda": 0.1901,
+      "touchdown_probability": 17.0,
+      "touchdown_lambda": 0.1861,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 17.3,
+        "receiving_td_probability": 17.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1901
+        "receiving_lambda": 0.1861
       },
       "inputs": {
         "current_games": 5,
@@ -8710,7 +8665,7 @@
         "regressed_receiving_td_rate": 0.206,
         "usage_factor": 0.987,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
+        "projected_receiving_tds": 0.16,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -8721,8 +8676,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.21,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
-        "projected_team_points": 20.2,
+        "projected_receiving_tds": 0.16,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8767,7 +8722,7 @@
         "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8812,7 +8767,7 @@
         "career_receiving_tds_per_game": 0.16,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8857,7 +8812,7 @@
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8902,7 +8857,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8917,13 +8872,13 @@
       "opponent": "JAX",
       "position": "WR",
       "game_id": "2026_06_HOU_JAX",
-      "touchdown_probability": 50.9,
-      "touchdown_lambda": 0.7104,
+      "touchdown_probability": 50.1,
+      "touchdown_lambda": 0.6944,
       "scoring": {
         "rushing_td_probability": 0.5,
-        "receiving_td_probability": 50.6,
+        "receiving_td_probability": 49.8,
         "rushing_lambda": 0.0047,
-        "receiving_lambda": 0.7057
+        "receiving_lambda": 0.6897
       },
       "inputs": {
         "current_games": 3,
@@ -8935,7 +8890,7 @@
         "regressed_receiving_td_rate": 0.556,
         "usage_factor": 1.083,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.86,
+        "projected_receiving_tds": 0.82,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -8946,8 +8901,53 @@
         "career_rushing_tds_per_game": 0.01,
         "career_receiving_tds_per_game": 0.39,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.86,
-        "projected_team_points": 20.2,
+        "projected_receiving_tds": 0.82,
+        "projected_team_points": 19.8,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039849",
+      "player": "Marvin Harrison Jr.",
+      "team": "HOU",
+      "opponent": "JAX",
+      "position": "WR",
+      "game_id": "2026_06_HOU_JAX",
+      "touchdown_probability": 22.3,
+      "touchdown_lambda": 0.2522,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 22.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.2522
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.25,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.39,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.343,
+        "usage_factor": 0.836,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.2,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.25,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.39,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -8962,13 +8962,13 @@
       "opponent": "JAX",
       "position": "WR",
       "game_id": "2026_06_HOU_JAX",
-      "touchdown_probability": 16.7,
-      "touchdown_lambda": 0.1828,
+      "touchdown_probability": 16.4,
+      "touchdown_lambda": 0.1788,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 16.7,
+        "receiving_td_probability": 16.4,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1828
+        "receiving_lambda": 0.1788
       },
       "inputs": {
         "current_games": 5,
@@ -8980,7 +8980,7 @@
         "regressed_receiving_td_rate": 0.163,
         "usage_factor": 1.173,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
+        "projected_receiving_tds": 0.16,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -8991,8 +8991,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.14,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
-        "projected_team_points": 20.2,
+        "projected_receiving_tds": 0.16,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -9037,7 +9037,7 @@
         "career_receiving_tds_per_game": 0.24,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -9082,7 +9082,7 @@
         "career_receiving_tds_per_game": 0.06,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -9127,7 +9127,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -9172,7 +9172,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.2,
+        "projected_team_points": 19.8,
         "injury_status": ""
       },
       "model": {
@@ -9217,7 +9217,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.9,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9262,7 +9262,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.9,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9307,7 +9307,7 @@
         "career_receiving_tds_per_game": 0.1,
         "projected_rushing_tds": 0.4,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.9,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9352,7 +9352,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.4,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.9,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9397,7 +9397,7 @@
         "career_receiving_tds_per_game": 0.08,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.9,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9442,7 +9442,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.9,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9457,13 +9457,13 @@
       "opponent": "HOU",
       "position": "TE",
       "game_id": "2026_06_HOU_JAX",
-      "touchdown_probability": 18.6,
-      "touchdown_lambda": 0.2059,
+      "touchdown_probability": 18.3,
+      "touchdown_lambda": 0.2019,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 18.6,
+        "receiving_td_probability": 18.3,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2059
+        "receiving_lambda": 0.2019
       },
       "inputs": {
         "current_games": 5,
@@ -9475,7 +9475,7 @@
         "regressed_receiving_td_rate": 0.188,
         "usage_factor": 1.118,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
+        "projected_receiving_tds": 0.19,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -9486,8 +9486,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.18,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
-        "projected_team_points": 22.9,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9532,7 +9532,7 @@
         "career_receiving_tds_per_game": 0.11,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.9,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9577,7 +9577,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.9,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9592,13 +9592,13 @@
       "opponent": "HOU",
       "position": "WR",
       "game_id": "2026_06_HOU_JAX",
-      "touchdown_probability": 49.4,
-      "touchdown_lambda": 0.6811,
+      "touchdown_probability": 48.8,
+      "touchdown_lambda": 0.6691,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 49.4,
+        "receiving_td_probability": 48.8,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.6811
+        "receiving_lambda": 0.6691
       },
       "inputs": {
         "current_games": 5,
@@ -9610,7 +9610,7 @@
         "regressed_receiving_td_rate": 0.511,
         "usage_factor": 1.165,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.81,
+        "projected_receiving_tds": 0.78,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -9621,8 +9621,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.33,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.81,
-        "projected_team_points": 22.9,
+        "projected_receiving_tds": 0.78,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9637,13 +9637,13 @@
       "opponent": "HOU",
       "position": "WR",
       "game_id": "2026_06_HOU_JAX",
-      "touchdown_probability": 33.2,
-      "touchdown_lambda": 0.404,
+      "touchdown_probability": 32.7,
+      "touchdown_lambda": 0.396,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 33.2,
+        "receiving_td_probability": 32.7,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.404
+        "receiving_lambda": 0.396
       },
       "inputs": {
         "current_games": 5,
@@ -9655,7 +9655,7 @@
         "regressed_receiving_td_rate": 0.4,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.41,
+        "projected_receiving_tds": 0.39,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -9666,8 +9666,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.4,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.41,
-        "projected_team_points": 22.9,
+        "projected_receiving_tds": 0.39,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9682,13 +9682,13 @@
       "opponent": "HOU",
       "position": "WR",
       "game_id": "2026_06_HOU_JAX",
-      "touchdown_probability": 27.6,
-      "touchdown_lambda": 0.3227,
+      "touchdown_probability": 27.0,
+      "touchdown_lambda": 0.3147,
       "scoring": {
         "rushing_td_probability": 0.6,
-        "receiving_td_probability": 27.1,
+        "receiving_td_probability": 26.5,
         "rushing_lambda": 0.0062,
-        "receiving_lambda": 0.3165
+        "receiving_lambda": 0.3085
       },
       "inputs": {
         "current_games": 5,
@@ -9700,7 +9700,7 @@
         "regressed_receiving_td_rate": 0.302,
         "usage_factor": 0.843,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.41,
+        "projected_receiving_tds": 0.39,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -9711,8 +9711,8 @@
         "career_rushing_tds_per_game": 0.02,
         "career_receiving_tds_per_game": 0.24,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.41,
-        "projected_team_points": 22.9,
+        "projected_receiving_tds": 0.39,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9727,13 +9727,13 @@
       "opponent": "HOU",
       "position": "WR",
       "game_id": "2026_06_HOU_JAX",
-      "touchdown_probability": 21.0,
-      "touchdown_lambda": 0.2362,
+      "touchdown_probability": 20.7,
+      "touchdown_lambda": 0.2322,
       "scoring": {
         "rushing_td_probability": 0.9,
-        "receiving_td_probability": 20.3,
+        "receiving_td_probability": 20.0,
         "rushing_lambda": 0.0091,
-        "receiving_lambda": 0.2271
+        "receiving_lambda": 0.2231
       },
       "inputs": {
         "current_games": 5,
@@ -9745,7 +9745,7 @@
         "regressed_receiving_td_rate": 0.298,
         "usage_factor": 0.821,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
+        "projected_receiving_tds": 0.19,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -9756,8 +9756,8 @@
         "career_rushing_tds_per_game": 0.03,
         "career_receiving_tds_per_game": 0.36,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
-        "projected_team_points": 22.9,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -9802,7 +9802,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.27,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.0,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -9820,10 +9820,10 @@
       "touchdown_probability": 67.8,
       "touchdown_lambda": 1.1317,
       "scoring": {
-        "rushing_td_probability": 56.1,
-        "receiving_td_probability": 26.6,
-        "rushing_lambda": 0.8223,
-        "receiving_lambda": 0.3093
+        "rushing_td_probability": 55.9,
+        "receiving_td_probability": 26.8,
+        "rushing_lambda": 0.8191,
+        "receiving_lambda": 0.3126
       },
       "inputs": {
         "current_games": 4,
@@ -9834,8 +9834,8 @@
         "regressed_rushing_td_rate": 0.687,
         "regressed_receiving_td_rate": 0.207,
         "usage_factor": 1.178,
-        "projected_rushing_tds": 1.06,
-        "projected_receiving_tds": 0.49,
+        "projected_rushing_tds": 1.08,
+        "projected_receiving_tds": 0.51,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -9845,9 +9845,9 @@
         "current_receiving_tds_per_game": 0.5,
         "career_rushing_tds_per_game": 0.53,
         "career_receiving_tds_per_game": 0.06,
-        "projected_rushing_tds": 1.06,
-        "projected_receiving_tds": 0.49,
-        "projected_team_points": 23.0,
+        "projected_rushing_tds": 1.08,
+        "projected_receiving_tds": 0.51,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -9892,7 +9892,7 @@
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.0,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -9937,7 +9937,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.0,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -9982,7 +9982,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.0,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -9997,13 +9997,13 @@
       "opponent": "LAC",
       "position": "TE",
       "game_id": "2026_06_LAC_KC",
-      "touchdown_probability": 36.0,
-      "touchdown_lambda": 0.4466,
+      "touchdown_probability": 36.5,
+      "touchdown_lambda": 0.4546,
       "scoring": {
         "rushing_td_probability": 0.4,
-        "receiving_td_probability": 35.8,
+        "receiving_td_probability": 36.3,
         "rushing_lambda": 0.0035,
-        "receiving_lambda": 0.4431
+        "receiving_lambda": 0.4511
       },
       "inputs": {
         "current_games": 4,
@@ -10015,7 +10015,7 @@
         "regressed_receiving_td_rate": 0.467,
         "usage_factor": 0.882,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.49,
+        "projected_receiving_tds": 0.51,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -10026,8 +10026,8 @@
         "career_rushing_tds_per_game": 0.01,
         "career_receiving_tds_per_game": 0.45,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.49,
-        "projected_team_points": 23.0,
+        "projected_receiving_tds": 0.51,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -10072,7 +10072,7 @@
         "career_receiving_tds_per_game": 0.12,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.0,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -10117,7 +10117,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.0,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -10132,13 +10132,13 @@
       "opponent": "LAC",
       "position": "WR",
       "game_id": "2026_06_LAC_KC",
-      "touchdown_probability": 31.9,
-      "touchdown_lambda": 0.3847,
+      "touchdown_probability": 32.2,
+      "touchdown_lambda": 0.3887,
       "scoring": {
         "rushing_td_probability": 1.2,
-        "receiving_td_probability": 31.1,
+        "receiving_td_probability": 31.4,
         "rushing_lambda": 0.012,
-        "receiving_lambda": 0.3728
+        "receiving_lambda": 0.3768
       },
       "inputs": {
         "current_games": 3,
@@ -10150,7 +10150,7 @@
         "regressed_receiving_td_rate": 0.439,
         "usage_factor": 0.914,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.33,
+        "projected_receiving_tds": 0.34,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -10161,8 +10161,8 @@
         "career_rushing_tds_per_game": 0.03,
         "career_receiving_tds_per_game": 0.48,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.33,
-        "projected_team_points": 23.0,
+        "projected_receiving_tds": 0.34,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -10177,13 +10177,13 @@
       "opponent": "LAC",
       "position": "WR",
       "game_id": "2026_06_LAC_KC",
-      "touchdown_probability": 31.7,
-      "touchdown_lambda": 0.381,
+      "touchdown_probability": 32.2,
+      "touchdown_lambda": 0.389,
       "scoring": {
         "rushing_td_probability": 0.8,
-        "receiving_td_probability": 31.1,
+        "receiving_td_probability": 31.7,
         "rushing_lambda": 0.0084,
-        "receiving_lambda": 0.3726
+        "receiving_lambda": 0.3806
       },
       "inputs": {
         "current_games": 4,
@@ -10195,7 +10195,7 @@
         "regressed_receiving_td_rate": 0.28,
         "usage_factor": 1.051,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.49,
+        "projected_receiving_tds": 0.51,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -10206,8 +10206,8 @@
         "career_rushing_tds_per_game": 0.02,
         "career_receiving_tds_per_game": 0.17,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.49,
-        "projected_team_points": 23.0,
+        "projected_receiving_tds": 0.51,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -10222,13 +10222,13 @@
       "opponent": "LAC",
       "position": "WR",
       "game_id": "2026_06_LAC_KC",
-      "touchdown_probability": 23.8,
-      "touchdown_lambda": 0.2715,
+      "touchdown_probability": 24.1,
+      "touchdown_lambda": 0.2755,
       "scoring": {
         "rushing_td_probability": 3.3,
-        "receiving_td_probability": 21.1,
+        "receiving_td_probability": 21.5,
         "rushing_lambda": 0.0339,
-        "receiving_lambda": 0.2375
+        "receiving_lambda": 0.2415
       },
       "inputs": {
         "current_games": 4,
@@ -10240,7 +10240,7 @@
         "regressed_receiving_td_rate": 0.243,
         "usage_factor": 0.942,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
+        "projected_receiving_tds": 0.26,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -10251,8 +10251,8 @@
         "career_rushing_tds_per_game": 0.09,
         "career_receiving_tds_per_game": 0.24,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "projected_team_points": 23.0,
+        "projected_receiving_tds": 0.26,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -10267,13 +10267,13 @@
       "opponent": "LAC",
       "position": "WR",
       "game_id": "2026_06_LAC_KC",
-      "touchdown_probability": 19.4,
-      "touchdown_lambda": 0.2155,
+      "touchdown_probability": 19.7,
+      "touchdown_lambda": 0.2195,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 19.4,
+        "receiving_td_probability": 19.7,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2155
+        "receiving_lambda": 0.2195
       },
       "inputs": {
         "current_games": 4,
@@ -10285,7 +10285,7 @@
         "regressed_receiving_td_rate": 0.197,
         "usage_factor": 0.979,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
+        "projected_receiving_tds": 0.26,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -10296,8 +10296,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.17,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "projected_team_points": 23.0,
+        "projected_receiving_tds": 0.26,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -10342,7 +10342,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.0,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -10387,7 +10387,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.0,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -10432,7 +10432,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10447,12 +10447,12 @@
       "opponent": "KC",
       "position": "RB",
       "game_id": "2026_06_LAC_KC",
-      "touchdown_probability": 41.3,
-      "touchdown_lambda": 0.5323,
+      "touchdown_probability": 41.5,
+      "touchdown_lambda": 0.5363,
       "scoring": {
-        "rushing_td_probability": 39.8,
+        "rushing_td_probability": 40.0,
         "receiving_td_probability": 2.5,
-        "rushing_lambda": 0.5071,
+        "rushing_lambda": 0.5111,
         "receiving_lambda": 0.0252
       },
       "inputs": {
@@ -10464,7 +10464,7 @@
         "regressed_rushing_td_rate": 0.538,
         "regressed_receiving_td_rate": 0.043,
         "usage_factor": 0.975,
-        "projected_rushing_tds": 0.48,
+        "projected_rushing_tds": 0.49,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -10475,9 +10475,9 @@
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.5,
         "career_receiving_tds_per_game": 0.07,
-        "projected_rushing_tds": 0.48,
+        "projected_rushing_tds": 0.49,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10492,13 +10492,13 @@
       "opponent": "KC",
       "position": "RB",
       "game_id": "2026_06_LAC_KC",
-      "touchdown_probability": 28.0,
-      "touchdown_lambda": 0.3287,
+      "touchdown_probability": 28.3,
+      "touchdown_lambda": 0.3327,
       "scoring": {
         "rushing_td_probability": 15.9,
-        "receiving_td_probability": 14.4,
+        "receiving_td_probability": 14.7,
         "rushing_lambda": 0.1734,
-        "receiving_lambda": 0.1552
+        "receiving_lambda": 0.1592
       },
       "inputs": {
         "current_games": 4,
@@ -10510,7 +10510,7 @@
         "regressed_receiving_td_rate": 0.163,
         "usage_factor": 0.849,
         "projected_rushing_tds": 0.2,
-        "projected_receiving_tds": 0.18,
+        "projected_receiving_tds": 0.19,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -10521,8 +10521,8 @@
         "career_rushing_tds_per_game": 0.15,
         "career_receiving_tds_per_game": 0.12,
         "projected_rushing_tds": 0.2,
-        "projected_receiving_tds": 0.18,
-        "projected_team_points": 19.0,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10567,7 +10567,7 @@
         "career_receiving_tds_per_game": 0.03,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.15,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10612,7 +10612,7 @@
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10627,13 +10627,13 @@
       "opponent": "KC",
       "position": "TE",
       "game_id": "2026_06_LAC_KC",
-      "touchdown_probability": 33.4,
-      "touchdown_lambda": 0.4058,
+      "touchdown_probability": 33.6,
+      "touchdown_lambda": 0.4098,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 33.4,
+        "receiving_td_probability": 33.6,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4058
+        "receiving_lambda": 0.4098
       },
       "inputs": {
         "current_games": 2,
@@ -10645,7 +10645,7 @@
         "regressed_receiving_td_rate": 0.364,
         "usage_factor": 1.18,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.37,
+        "projected_receiving_tds": 0.38,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -10656,8 +10656,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.33,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.37,
-        "projected_team_points": 19.0,
+        "projected_receiving_tds": 0.38,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10702,7 +10702,7 @@
         "career_receiving_tds_per_game": 0.3,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10747,7 +10747,7 @@
         "career_receiving_tds_per_game": 0.2,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.15,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10792,7 +10792,7 @@
         "career_receiving_tds_per_game": 0.11,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10837,7 +10837,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10852,13 +10852,13 @@
       "opponent": "KC",
       "position": "WR",
       "game_id": "2026_06_LAC_KC",
-      "touchdown_probability": 22.3,
-      "touchdown_lambda": 0.2528,
+      "touchdown_probability": 22.6,
+      "touchdown_lambda": 0.2568,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 22.3,
+        "receiving_td_probability": 22.6,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2528
+        "receiving_lambda": 0.2568
       },
       "inputs": {
         "current_games": 4,
@@ -10870,7 +10870,7 @@
         "regressed_receiving_td_rate": 0.343,
         "usage_factor": 0.878,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
+        "projected_receiving_tds": 0.19,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -10881,8 +10881,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.39,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
-        "projected_team_points": 19.0,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10927,7 +10927,7 @@
         "career_receiving_tds_per_game": 0.37,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -10972,7 +10972,7 @@
         "career_receiving_tds_per_game": 0.25,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -11017,7 +11017,7 @@
         "career_receiving_tds_per_game": 0.18,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -11062,7 +11062,7 @@
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -11107,7 +11107,7 @@
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -11152,7 +11152,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.0,
+        "projected_team_points": 19.2,
         "injury_status": ""
       },
       "model": {
@@ -11197,7 +11197,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.2,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11242,7 +11242,7 @@
         "career_receiving_tds_per_game": 0.19,
         "projected_rushing_tds": 0.49,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11287,7 +11287,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.49,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11332,7 +11332,7 @@
         "career_receiving_tds_per_game": 0.1,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11377,7 +11377,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11392,13 +11392,13 @@
       "opponent": "NYG",
       "position": "TE",
       "game_id": "2026_06_NO_NYG",
-      "touchdown_probability": 39.4,
-      "touchdown_lambda": 0.5013,
+      "touchdown_probability": 39.9,
+      "touchdown_lambda": 0.5093,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 39.4,
+        "receiving_td_probability": 39.9,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.5013
+        "receiving_lambda": 0.5093
       },
       "inputs": {
         "current_games": 5,
@@ -11410,7 +11410,7 @@
         "regressed_receiving_td_rate": 0.409,
         "usage_factor": 1.178,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.53,
+        "projected_receiving_tds": 0.55,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -11421,8 +11421,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.29,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.53,
-        "projected_team_points": 21.2,
+        "projected_receiving_tds": 0.55,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11437,13 +11437,13 @@
       "opponent": "NYG",
       "position": "TE",
       "game_id": "2026_06_NO_NYG",
-      "touchdown_probability": 37.5,
-      "touchdown_lambda": 0.4697,
+      "touchdown_probability": 38.2,
+      "touchdown_lambda": 0.4817,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 37.5,
+        "receiving_td_probability": 38.2,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4697
+        "receiving_lambda": 0.4817
       },
       "inputs": {
         "current_games": 4,
@@ -11455,7 +11455,7 @@
         "regressed_receiving_td_rate": 0.377,
         "usage_factor": 0.91,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.66,
+        "projected_receiving_tds": 0.69,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -11466,8 +11466,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.19,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.66,
-        "projected_team_points": 21.2,
+        "projected_receiving_tds": 0.69,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11512,7 +11512,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11557,7 +11557,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11572,13 +11572,13 @@
       "opponent": "NYG",
       "position": "WR",
       "game_id": "2026_06_NO_NYG",
-      "touchdown_probability": 30.4,
-      "touchdown_lambda": 0.363,
+      "touchdown_probability": 31.0,
+      "touchdown_lambda": 0.371,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 30.4,
+        "receiving_td_probability": 31.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.363
+        "receiving_lambda": 0.371
       },
       "inputs": {
         "current_games": 5,
@@ -11590,7 +11590,7 @@
         "regressed_receiving_td_rate": 0.314,
         "usage_factor": 1.184,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.35,
+        "projected_receiving_tds": 0.37,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -11601,8 +11601,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.26,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.35,
-        "projected_team_points": 21.2,
+        "projected_receiving_tds": 0.37,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11647,7 +11647,7 @@
         "career_receiving_tds_per_game": 0.33,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.18,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11692,7 +11692,7 @@
         "career_receiving_tds_per_game": 0.07,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11737,7 +11737,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11782,7 +11782,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11827,7 +11827,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -11872,7 +11872,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -11917,7 +11917,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -11962,7 +11962,7 @@
         "career_receiving_tds_per_game": 0.01,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -11977,13 +11977,13 @@
       "opponent": "NO",
       "position": "RB",
       "game_id": "2026_06_NO_NYG",
-      "touchdown_probability": 31.4,
-      "touchdown_lambda": 0.3764,
+      "touchdown_probability": 31.9,
+      "touchdown_lambda": 0.3844,
       "scoring": {
         "rushing_td_probability": 10.0,
-        "receiving_td_probability": 23.7,
+        "receiving_td_probability": 24.3,
         "rushing_lambda": 0.1054,
-        "receiving_lambda": 0.2709
+        "receiving_lambda": 0.2789
       },
       "inputs": {
         "current_games": 2,
@@ -11995,7 +11995,7 @@
         "regressed_receiving_td_rate": 0.132,
         "usage_factor": 0.845,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.51,
+        "projected_receiving_tds": 0.53,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -12006,8 +12006,8 @@
         "career_rushing_tds_per_game": 0.26,
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.51,
-        "projected_team_points": 23.1,
+        "projected_receiving_tds": 0.53,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12052,7 +12052,7 @@
         "career_receiving_tds_per_game": 0.15,
         "projected_rushing_tds": 0.21,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12097,7 +12097,7 @@
         "career_receiving_tds_per_game": 0.08,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12142,7 +12142,7 @@
         "career_receiving_tds_per_game": 0.08,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12187,7 +12187,7 @@
         "career_receiving_tds_per_game": 0.09,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12202,13 +12202,13 @@
       "opponent": "NO",
       "position": "TE",
       "game_id": "2026_06_NO_NYG",
-      "touchdown_probability": 51.4,
-      "touchdown_lambda": 0.7216,
+      "touchdown_probability": 51.8,
+      "touchdown_lambda": 0.7296,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 51.4,
+        "receiving_td_probability": 51.8,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.7216
+        "receiving_lambda": 0.7296
       },
       "inputs": {
         "current_games": 5,
@@ -12220,7 +12220,7 @@
         "regressed_receiving_td_rate": 0.505,
         "usage_factor": 1.3,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.82,
+        "projected_receiving_tds": 0.84,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -12231,8 +12231,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.32,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.82,
-        "projected_team_points": 23.1,
+        "projected_receiving_tds": 0.84,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12277,7 +12277,7 @@
         "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.26,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12322,7 +12322,7 @@
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12337,13 +12337,13 @@
       "opponent": "NO",
       "position": "WR",
       "game_id": "2026_06_NO_NYG",
-      "touchdown_probability": 33.9,
-      "touchdown_lambda": 0.4135,
+      "touchdown_probability": 34.1,
+      "touchdown_lambda": 0.4175,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 33.9,
+        "receiving_td_probability": 34.1,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4135
+        "receiving_lambda": 0.4175
       },
       "inputs": {
         "current_games": 5,
@@ -12355,7 +12355,7 @@
         "regressed_receiving_td_rate": 0.437,
         "usage_factor": 0.952,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.41,
+        "projected_receiving_tds": 0.42,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -12366,8 +12366,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.46,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.41,
-        "projected_team_points": 23.1,
+        "projected_receiving_tds": 0.42,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12382,13 +12382,13 @@
       "opponent": "NO",
       "position": "WR",
       "game_id": "2026_06_NO_NYG",
-      "touchdown_probability": 18.1,
-      "touchdown_lambda": 0.2,
+      "touchdown_probability": 18.5,
+      "touchdown_lambda": 0.204,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 18.1,
+        "receiving_td_probability": 18.5,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2
+        "receiving_lambda": 0.204
       },
       "inputs": {
         "current_games": 5,
@@ -12400,7 +12400,7 @@
         "regressed_receiving_td_rate": 0.2,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
+        "projected_receiving_tds": 0.21,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -12411,8 +12411,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.2,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
-        "projected_team_points": 23.1,
+        "projected_receiving_tds": 0.21,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12457,7 +12457,7 @@
         "career_receiving_tds_per_game": 0.18,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12502,7 +12502,7 @@
         "career_receiving_tds_per_game": 0.06,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12547,7 +12547,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12592,7 +12592,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.1,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -12637,7 +12637,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.22,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -12682,7 +12682,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -12727,7 +12727,7 @@
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.44,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -12772,7 +12772,7 @@
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.27,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -12817,7 +12817,7 @@
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -12862,7 +12862,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -12907,7 +12907,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -12922,13 +12922,13 @@
       "opponent": "NYJ",
       "position": "TE",
       "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 23.4,
-      "touchdown_lambda": 0.266,
+      "touchdown_probability": 23.7,
+      "touchdown_lambda": 0.27,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 23.4,
+        "receiving_td_probability": 23.7,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.266
+        "receiving_lambda": 0.27
       },
       "inputs": {
         "current_games": 4,
@@ -12940,7 +12940,7 @@
         "regressed_receiving_td_rate": 0.25,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.29,
+        "projected_receiving_tds": 0.3,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -12951,8 +12951,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.25,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.29,
-        "projected_team_points": 24.2,
+        "projected_receiving_tds": 0.3,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -12967,13 +12967,13 @@
       "opponent": "NYJ",
       "position": "TE",
       "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 22.5,
-      "touchdown_lambda": 0.2552,
+      "touchdown_probability": 22.8,
+      "touchdown_lambda": 0.2592,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 22.5,
+        "receiving_td_probability": 22.8,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2552
+        "receiving_lambda": 0.2592
       },
       "inputs": {
         "current_games": 5,
@@ -12985,7 +12985,7 @@
         "regressed_receiving_td_rate": 0.298,
         "usage_factor": 0.911,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
+        "projected_receiving_tds": 0.24,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -12996,8 +12996,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.36,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
-        "projected_team_points": 24.2,
+        "projected_receiving_tds": 0.24,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -13042,7 +13042,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -13087,7 +13087,52 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037816",
+      "player": "Romeo Doubs",
+      "team": "NE",
+      "opponent": "NYJ",
+      "position": "WR",
+      "game_id": "2026_06_NYJ_NE",
+      "touchdown_probability": 33.1,
+      "touchdown_lambda": 0.4018,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 33.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.4018
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.4,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.36,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.375,
+        "usage_factor": 0.949,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.47,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.4,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.36,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.47,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -13132,52 +13177,7 @@
         "career_receiving_tds_per_game": 0.53,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037816",
-      "player": "Romeo Doubs",
-      "team": "NE",
-      "opponent": "NYJ",
-      "position": "WR",
-      "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 32.8,
-      "touchdown_lambda": 0.3978,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 32.8,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3978
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.4,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.36,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.375,
-        "usage_factor": 0.949,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.46,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.4,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.36,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.46,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -13192,13 +13192,13 @@
       "opponent": "NYJ",
       "position": "WR",
       "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 28.1,
-      "touchdown_lambda": 0.3296,
+      "touchdown_probability": 28.4,
+      "touchdown_lambda": 0.3336,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 28.1,
+        "receiving_td_probability": 28.4,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3296
+        "receiving_lambda": 0.3336
       },
       "inputs": {
         "current_games": 5,
@@ -13210,7 +13210,7 @@
         "regressed_receiving_td_rate": 0.252,
         "usage_factor": 0.962,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.46,
+        "projected_receiving_tds": 0.47,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -13221,8 +13221,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.16,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.46,
-        "projected_team_points": 24.2,
+        "projected_receiving_tds": 0.47,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -13237,13 +13237,13 @@
       "opponent": "NYJ",
       "position": "WR",
       "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 23.6,
-      "touchdown_lambda": 0.2694,
+      "touchdown_probability": 23.9,
+      "touchdown_lambda": 0.2734,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 23.6,
+        "receiving_td_probability": 23.9,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2694
+        "receiving_lambda": 0.2734
       },
       "inputs": {
         "current_games": 4,
@@ -13255,7 +13255,7 @@
         "regressed_receiving_td_rate": 0.197,
         "usage_factor": 1.3,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.29,
+        "projected_receiving_tds": 0.3,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -13266,8 +13266,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.17,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.29,
-        "projected_team_points": 24.2,
+        "projected_receiving_tds": 0.3,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -13282,13 +13282,13 @@
       "opponent": "NYJ",
       "position": "WR",
       "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 19.9,
-      "touchdown_lambda": 0.2222,
+      "touchdown_probability": 20.2,
+      "touchdown_lambda": 0.2262,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 19.9,
+        "receiving_td_probability": 20.2,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2222
+        "receiving_lambda": 0.2262
       },
       "inputs": {
         "current_games": 5,
@@ -13300,7 +13300,7 @@
         "regressed_receiving_td_rate": 0.206,
         "usage_factor": 1.052,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
+        "projected_receiving_tds": 0.24,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -13311,8 +13311,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.21,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
-        "projected_team_points": 24.2,
+        "projected_receiving_tds": 0.24,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -13357,7 +13357,7 @@
         "career_receiving_tds_per_game": 0.15,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.2,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -13402,7 +13402,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13447,7 +13447,7 @@
         "career_receiving_tds_per_game": 0.15,
         "projected_rushing_tds": 0.29,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13492,7 +13492,7 @@
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.35,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13537,7 +13537,7 @@
         "career_receiving_tds_per_game": 0.1,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13582,7 +13582,7 @@
         "career_receiving_tds_per_game": 0.03,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13627,7 +13627,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13642,13 +13642,13 @@
       "opponent": "NE",
       "position": "TE",
       "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 26.2,
-      "touchdown_lambda": 0.304,
+      "touchdown_probability": 26.5,
+      "touchdown_lambda": 0.308,
       "scoring": {
         "rushing_td_probability": 11.3,
-        "receiving_td_probability": 16.8,
+        "receiving_td_probability": 17.1,
         "rushing_lambda": 0.12,
-        "receiving_lambda": 0.184
+        "receiving_lambda": 0.188
       },
       "inputs": {
         "current_games": 5,
@@ -13660,7 +13660,7 @@
         "regressed_receiving_td_rate": 0.2,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.16,
+        "projected_receiving_tds": 0.17,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -13671,8 +13671,8 @@
         "career_rushing_tds_per_game": 0.2,
         "career_receiving_tds_per_game": 0.2,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.16,
-        "projected_team_points": 20.0,
+        "projected_receiving_tds": 0.17,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13687,13 +13687,13 @@
       "opponent": "NE",
       "position": "TE",
       "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 17.4,
-      "touchdown_lambda": 0.1915,
+      "touchdown_probability": 17.8,
+      "touchdown_lambda": 0.1955,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 17.4,
+        "receiving_td_probability": 17.8,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1915
+        "receiving_lambda": 0.1955
       },
       "inputs": {
         "current_games": 3,
@@ -13705,7 +13705,7 @@
         "regressed_receiving_td_rate": 0.126,
         "usage_factor": 1.101,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.27,
+        "projected_receiving_tds": 0.28,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -13716,8 +13716,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.27,
-        "projected_team_points": 20.0,
+        "projected_receiving_tds": 0.28,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13762,7 +13762,7 @@
         "career_receiving_tds_per_game": 0.18,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13807,7 +13807,7 @@
         "career_receiving_tds_per_game": 0.07,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13822,13 +13822,13 @@
       "opponent": "NE",
       "position": "WR",
       "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 36.1,
-      "touchdown_lambda": 0.4483,
+      "touchdown_probability": 36.6,
+      "touchdown_lambda": 0.4563,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 36.1,
+        "receiving_td_probability": 36.6,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4483
+        "receiving_lambda": 0.4563
       },
       "inputs": {
         "current_games": 5,
@@ -13840,7 +13840,7 @@
         "regressed_receiving_td_rate": 0.434,
         "usage_factor": 0.969,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.49,
+        "projected_receiving_tds": 0.51,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -13851,8 +13851,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.33,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.49,
-        "projected_team_points": 20.0,
+        "projected_receiving_tds": 0.51,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13897,7 +13897,52 @@
         "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039451",
+      "player": "Isaiah Williams",
+      "team": "NYJ",
+      "opponent": "NE",
+      "position": "WR",
+      "game_id": "2026_06_NYJ_NE",
+      "touchdown_probability": 13.1,
+      "touchdown_lambda": 0.1406,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 13.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1406
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.04,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.102,
+        "usage_factor": 1.191,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.04,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -13942,52 +13987,7 @@
         "career_receiving_tds_per_game": 0.22,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039451",
-      "player": "Isaiah Williams",
-      "team": "NYJ",
-      "opponent": "NE",
-      "position": "WR",
-      "game_id": "2026_06_NYJ_NE",
-      "touchdown_probability": 12.8,
-      "touchdown_lambda": 0.1366,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 12.8,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1366
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.2,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.04,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.102,
-        "usage_factor": 1.191,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.16,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.2,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.04,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.16,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -14032,7 +14032,7 @@
         "career_receiving_tds_per_game": 0.06,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -14077,7 +14077,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -14122,7 +14122,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -14167,7 +14167,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -14212,7 +14212,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 20.3,
         "injury_status": ""
       },
       "model": {
@@ -14257,7 +14257,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14302,7 +14302,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14317,13 +14317,13 @@
       "opponent": "TB",
       "position": "RB",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 29.4,
-      "touchdown_lambda": 0.3476,
+      "touchdown_probability": 28.8,
+      "touchdown_lambda": 0.3396,
       "scoring": {
-        "rushing_td_probability": 19.0,
-        "receiving_td_probability": 12.8,
-        "rushing_lambda": 0.2109,
-        "receiving_lambda": 0.1368
+        "rushing_td_probability": 18.7,
+        "receiving_td_probability": 12.4,
+        "rushing_lambda": 0.2069,
+        "receiving_lambda": 0.1328
       },
       "inputs": {
         "current_games": 5,
@@ -14334,8 +14334,8 @@
         "regressed_rushing_td_rate": 0.194,
         "regressed_receiving_td_rate": 0.102,
         "usage_factor": 1.194,
-        "projected_rushing_tds": 0.18,
-        "projected_receiving_tds": 0.16,
+        "projected_rushing_tds": 0.17,
+        "projected_receiving_tds": 0.15,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -14345,9 +14345,9 @@
         "current_receiving_tds_per_game": 0.2,
         "career_rushing_tds_per_game": 0.19,
         "career_receiving_tds_per_game": 0.04,
-        "projected_rushing_tds": 0.18,
-        "projected_receiving_tds": 0.16,
-        "projected_team_points": 20.1,
+        "projected_rushing_tds": 0.17,
+        "projected_receiving_tds": 0.15,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14392,7 +14392,7 @@
         "career_receiving_tds_per_game": 0.1,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14437,7 +14437,7 @@
         "career_receiving_tds_per_game": 0.03,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14482,7 +14482,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14527,7 +14527,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14572,7 +14572,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14587,13 +14587,13 @@
       "opponent": "TB",
       "position": "TE",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 44.2,
-      "touchdown_lambda": 0.5827,
+      "touchdown_probability": 43.0,
+      "touchdown_lambda": 0.5627,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 44.2,
+        "receiving_td_probability": 43.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.5827
+        "receiving_lambda": 0.5627
       },
       "inputs": {
         "current_games": 5,
@@ -14605,7 +14605,7 @@
         "regressed_receiving_td_rate": 0.511,
         "usage_factor": 1.066,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.64,
+        "projected_receiving_tds": 0.59,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -14616,8 +14616,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.33,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.64,
-        "projected_team_points": 20.1,
+        "projected_receiving_tds": 0.59,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14662,7 +14662,7 @@
         "career_receiving_tds_per_game": 0.24,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14677,13 +14677,13 @@
       "opponent": "TB",
       "position": "TE",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 13.8,
-      "touchdown_lambda": 0.1484,
+      "touchdown_probability": 13.4,
+      "touchdown_lambda": 0.1444,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 13.8,
+        "receiving_td_probability": 13.4,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1484
+        "receiving_lambda": 0.1444
       },
       "inputs": {
         "current_games": 5,
@@ -14695,7 +14695,7 @@
         "regressed_receiving_td_rate": 0.126,
         "usage_factor": 1.115,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.16,
+        "projected_receiving_tds": 0.15,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -14706,8 +14706,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.08,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.16,
-        "projected_team_points": 20.1,
+        "projected_receiving_tds": 0.15,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14722,13 +14722,13 @@
       "opponent": "TB",
       "position": "WR",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 30.5,
-      "touchdown_lambda": 0.3637,
+      "touchdown_probability": 29.9,
+      "touchdown_lambda": 0.3557,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 30.5,
+        "receiving_td_probability": 29.9,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3637
+        "receiving_lambda": 0.3557
       },
       "inputs": {
         "current_games": 5,
@@ -14740,7 +14740,7 @@
         "regressed_receiving_td_rate": 0.332,
         "usage_factor": 1.182,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.32,
+        "projected_receiving_tds": 0.3,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -14751,8 +14751,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.29,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.32,
-        "projected_team_points": 20.1,
+        "projected_receiving_tds": 0.3,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14767,13 +14767,13 @@
       "opponent": "TB",
       "position": "WR",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 25.1,
-      "touchdown_lambda": 0.2893,
+      "touchdown_probability": 24.8,
+      "touchdown_lambda": 0.2853,
       "scoring": {
         "rushing_td_probability": 0.4,
-        "receiving_td_probability": 24.8,
+        "receiving_td_probability": 24.5,
         "rushing_lambda": 0.0037,
-        "receiving_lambda": 0.2856
+        "receiving_lambda": 0.2816
       },
       "inputs": {
         "current_games": 5,
@@ -14785,7 +14785,7 @@
         "regressed_receiving_td_rate": 0.366,
         "usage_factor": 1.008,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.16,
+        "projected_receiving_tds": 0.15,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -14796,8 +14796,8 @@
         "career_rushing_tds_per_game": 0.01,
         "career_receiving_tds_per_game": 0.47,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.16,
-        "projected_team_points": 20.1,
+        "projected_receiving_tds": 0.15,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14812,13 +14812,13 @@
       "opponent": "TB",
       "position": "WR",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 16.4,
-      "touchdown_lambda": 0.1787,
+      "touchdown_probability": 15.4,
+      "touchdown_lambda": 0.1667,
       "scoring": {
         "rushing_td_probability": 0.4,
-        "receiving_td_probability": 16.0,
+        "receiving_td_probability": 15.0,
         "rushing_lambda": 0.0041,
-        "receiving_lambda": 0.1746
+        "receiving_lambda": 0.1626
       },
       "inputs": {
         "current_games": 3,
@@ -14830,7 +14830,7 @@
         "regressed_receiving_td_rate": 0.119,
         "usage_factor": 0.932,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.27,
+        "projected_receiving_tds": 0.24,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -14841,8 +14841,8 @@
         "career_rushing_tds_per_game": 0.01,
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.27,
-        "projected_team_points": 20.1,
+        "projected_receiving_tds": 0.24,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14887,7 +14887,7 @@
         "career_receiving_tds_per_game": 0.26,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14932,7 +14932,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14977,7 +14977,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.4,
         "injury_status": ""
       },
       "model": {
@@ -14992,12 +14992,12 @@
       "opponent": "PIT",
       "position": "QB",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 21.1,
-      "touchdown_lambda": 0.2371,
+      "touchdown_probability": 20.8,
+      "touchdown_lambda": 0.2331,
       "scoring": {
-        "rushing_td_probability": 21.1,
+        "rushing_td_probability": 20.8,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.2371,
+        "rushing_lambda": 0.2331,
         "receiving_lambda": 0.0
       },
       "inputs": {
@@ -15009,7 +15009,7 @@
         "regressed_rushing_td_rate": 0.163,
         "regressed_receiving_td_rate": 0.0,
         "usage_factor": 1.077,
-        "projected_rushing_tds": 0.33,
+        "projected_rushing_tds": 0.32,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -15020,9 +15020,9 @@
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.1,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.33,
+        "projected_rushing_tds": 0.32,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15067,7 +15067,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15082,13 +15082,13 @@
       "opponent": "PIT",
       "position": "RB",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 42.0,
-      "touchdown_lambda": 0.5452,
+      "touchdown_probability": 41.3,
+      "touchdown_lambda": 0.5332,
       "scoring": {
-        "rushing_td_probability": 31.9,
-        "receiving_td_probability": 14.9,
-        "rushing_lambda": 0.3841,
-        "receiving_lambda": 0.1611
+        "rushing_td_probability": 31.6,
+        "receiving_td_probability": 14.2,
+        "rushing_lambda": 0.3801,
+        "receiving_lambda": 0.1531
       },
       "inputs": {
         "current_games": 5,
@@ -15099,8 +15099,8 @@
         "regressed_rushing_td_rate": 0.363,
         "regressed_receiving_td_rate": 0.151,
         "usage_factor": 1.029,
-        "projected_rushing_tds": 0.4,
-        "projected_receiving_tds": 0.17,
+        "projected_rushing_tds": 0.39,
+        "projected_receiving_tds": 0.15,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -15110,9 +15110,9 @@
         "current_receiving_tds_per_game": 0.2,
         "career_rushing_tds_per_game": 0.34,
         "career_receiving_tds_per_game": 0.12,
-        "projected_rushing_tds": 0.4,
-        "projected_receiving_tds": 0.17,
-        "projected_team_points": 21.4,
+        "projected_rushing_tds": 0.39,
+        "projected_receiving_tds": 0.15,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15127,12 +15127,12 @@
       "opponent": "PIT",
       "position": "RB",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 32.8,
-      "touchdown_lambda": 0.3977,
+      "touchdown_probability": 32.3,
+      "touchdown_lambda": 0.3897,
       "scoring": {
-        "rushing_td_probability": 31.3,
+        "rushing_td_probability": 30.7,
         "receiving_td_probability": 2.2,
-        "rushing_lambda": 0.3749,
+        "rushing_lambda": 0.3669,
         "receiving_lambda": 0.0227
       },
       "inputs": {
@@ -15144,7 +15144,7 @@
         "regressed_rushing_td_rate": 0.308,
         "regressed_receiving_td_rate": 0.04,
         "usage_factor": 0.947,
-        "projected_rushing_tds": 0.5,
+        "projected_rushing_tds": 0.48,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -15155,9 +15155,9 @@
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.26,
         "career_receiving_tds_per_game": 0.05,
-        "projected_rushing_tds": 0.5,
+        "projected_rushing_tds": 0.48,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15172,13 +15172,13 @@
       "opponent": "PIT",
       "position": "RB",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 18.2,
-      "touchdown_lambda": 0.2013,
+      "touchdown_probability": 17.6,
+      "touchdown_lambda": 0.1933,
       "scoring": {
         "rushing_td_probability": 6.5,
-        "receiving_td_probability": 12.5,
+        "receiving_td_probability": 11.8,
         "rushing_lambda": 0.0675,
-        "receiving_lambda": 0.1338
+        "receiving_lambda": 0.1258
       },
       "inputs": {
         "current_games": 5,
@@ -15190,7 +15190,7 @@
         "regressed_receiving_td_rate": 0.114,
         "usage_factor": 0.963,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
+        "projected_receiving_tds": 0.15,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -15201,8 +15201,8 @@
         "career_rushing_tds_per_game": 0.19,
         "career_receiving_tds_per_game": 0.06,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
-        "projected_team_points": 21.4,
+        "projected_receiving_tds": 0.15,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15247,7 +15247,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15292,7 +15292,7 @@
         "career_receiving_tds_per_game": 0.16,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15337,7 +15337,7 @@
         "career_receiving_tds_per_game": 0.07,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15382,7 +15382,7 @@
         "career_receiving_tds_per_game": 0.08,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15427,7 +15427,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15472,7 +15472,7 @@
         "career_receiving_tds_per_game": 0.44,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15487,13 +15487,13 @@
       "opponent": "PIT",
       "position": "WR",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 25.3,
-      "touchdown_lambda": 0.2921,
+      "touchdown_probability": 24.7,
+      "touchdown_lambda": 0.2841,
       "scoring": {
         "rushing_td_probability": 6.1,
-        "receiving_td_probability": 20.5,
+        "receiving_td_probability": 19.8,
         "rushing_lambda": 0.0632,
-        "receiving_lambda": 0.2288
+        "receiving_lambda": 0.2208
       },
       "inputs": {
         "current_games": 5,
@@ -15505,7 +15505,7 @@
         "regressed_receiving_td_rate": 0.274,
         "usage_factor": 0.979,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
+        "projected_receiving_tds": 0.15,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -15516,8 +15516,8 @@
         "career_rushing_tds_per_game": 0.05,
         "career_receiving_tds_per_game": 0.32,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
-        "projected_team_points": 21.4,
+        "projected_receiving_tds": 0.15,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15532,13 +15532,13 @@
       "opponent": "PIT",
       "position": "WR",
       "game_id": "2026_06_PIT_TB",
-      "touchdown_probability": 20.9,
-      "touchdown_lambda": 0.234,
+      "touchdown_probability": 20.2,
+      "touchdown_lambda": 0.226,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 20.9,
+        "receiving_td_probability": 20.2,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.234
+        "receiving_lambda": 0.226
       },
       "inputs": {
         "current_games": 4,
@@ -15550,7 +15550,7 @@
         "regressed_receiving_td_rate": 0.25,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.21,
+        "projected_receiving_tds": 0.19,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -15561,8 +15561,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.25,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.21,
-        "projected_team_points": 21.4,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15607,7 +15607,7 @@
         "career_receiving_tds_per_game": 0.33,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15652,7 +15652,7 @@
         "career_receiving_tds_per_game": 0.25,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {
@@ -15697,7 +15697,7 @@
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.4,
+        "projected_team_points": 20.6,
         "injury_status": ""
       },
       "model": {

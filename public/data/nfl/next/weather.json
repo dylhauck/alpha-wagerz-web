@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T12:24:18.371152+00:00",
+  "generated_at": "2026-10-14T10:00:42.857734+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -14,23 +14,23 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-10-18T09:00",
-        "temperature_f": 74.1,
-        "feels_like_f": 72.1,
-        "humidity_pct": 64.0,
-        "precip_probability_pct": 9.0,
+        "temperature_f": 73.8,
+        "feels_like_f": 70.0,
+        "humidity_pct": 58.0,
+        "precip_probability_pct": 4.0,
         "precipitation_in": 0.0,
-        "wind_mph": 13.7,
-        "wind_gust_mph": 21.9,
+        "wind_mph": 15.4,
+        "wind_gust_mph": 23.7,
         "weather_code": 3,
         "conditions": "Overcast"
       },
       "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
+        "severity_score": 2.5,
+        "passing_factor": 0.955,
+        "rushing_factor": 1.012,
+        "scoring_factor": 0.968,
+        "kicking_factor": 0.95,
+        "classification": "MODERATE"
       }
     },
     {
@@ -45,13 +45,13 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-10-18T13:00",
-        "temperature_f": 65.5,
-        "feels_like_f": 58.9,
-        "humidity_pct": 32.0,
+        "temperature_f": 63.8,
+        "feels_like_f": 55.6,
+        "humidity_pct": 23.0,
         "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
-        "wind_mph": 11.8,
-        "wind_gust_mph": 16.6,
+        "wind_mph": 12.6,
+        "wind_gust_mph": 17.0,
         "weather_code": 0,
         "conditions": "Clear"
       },
@@ -76,13 +76,13 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-10-18T13:00",
-        "temperature_f": 58.9,
-        "feels_like_f": 50.3,
-        "humidity_pct": 32.0,
+        "temperature_f": 59.1,
+        "feels_like_f": 51.6,
+        "humidity_pct": 39.0,
         "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
-        "wind_mph": 11.9,
-        "wind_gust_mph": 17.7,
+        "wind_mph": 11.1,
+        "wind_gust_mph": 15.9,
         "weather_code": 0,
         "conditions": "Clear"
       },
@@ -104,27 +104,8 @@
       "longitude": -86.1639,
       "roof": "retractable",
       "kickoff": "2026-10-18T13:00",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-10-18T13:00",
-        "temperature_f": 61.0,
-        "feels_like_f": 54.1,
-        "humidity_pct": 29.0,
-        "precip_probability_pct": 1.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 8.4,
-        "wind_gust_mph": 13.6,
-        "weather_code": 0,
-        "conditions": "Clear"
-      },
-      "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "NEUTRAL"
-      }
+      "available": false,
+      "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
     },
     {
       "game_id": "2026_06_NYJ_NE",
@@ -138,23 +119,23 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-10-18T13:00",
-        "temperature_f": 54.8,
-        "feels_like_f": 46.6,
-        "humidity_pct": 39.0,
+        "temperature_f": 56.2,
+        "feels_like_f": 49.7,
+        "humidity_pct": 46.0,
         "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
-        "wind_mph": 11.8,
-        "wind_gust_mph": 17.9,
+        "wind_mph": 9.7,
+        "wind_gust_mph": 15.7,
         "weather_code": 0,
         "conditions": "Clear"
       },
       "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
       }
     },
     {
@@ -169,23 +150,23 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-10-18T13:00",
-        "temperature_f": 57.4,
-        "feels_like_f": 48.9,
-        "humidity_pct": 28.0,
-        "precip_probability_pct": 1.0,
+        "temperature_f": 60.6,
+        "feels_like_f": 54.4,
+        "humidity_pct": 34.0,
+        "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
-        "wind_mph": 11.4,
-        "wind_gust_mph": 16.3,
+        "wind_mph": 8.3,
+        "wind_gust_mph": 12.8,
         "weather_code": 0,
         "conditions": "Clear"
       },
       "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
       }
     },
     {
@@ -200,13 +181,13 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-10-18T13:00",
-        "temperature_f": 57.7,
-        "feels_like_f": 50.7,
-        "humidity_pct": 29.0,
-        "precip_probability_pct": 1.0,
+        "temperature_f": 60.2,
+        "feels_like_f": 54.3,
+        "humidity_pct": 31.0,
+        "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
-        "wind_mph": 8.6,
-        "wind_gust_mph": 12.1,
+        "wind_mph": 7.2,
+        "wind_gust_mph": 10.5,
         "weather_code": 0,
         "conditions": "Clear"
       },
@@ -231,23 +212,23 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-10-18T13:00",
-        "temperature_f": 76.8,
-        "feels_like_f": 76.2,
-        "humidity_pct": 77.0,
-        "precip_probability_pct": 4.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 19.1,
-        "wind_gust_mph": 29.5,
-        "weather_code": 3,
-        "conditions": "Overcast"
+        "temperature_f": 80.5,
+        "feels_like_f": 77.9,
+        "humidity_pct": 63.0,
+        "precip_probability_pct": 7.0,
+        "precipitation_in": 0.004,
+        "wind_mph": 21.3,
+        "wind_gust_mph": 29.1,
+        "weather_code": 51,
+        "conditions": "Light Drizzle"
       },
       "context": {
-        "severity_score": 3.5,
-        "passing_factor": 0.937,
-        "rushing_factor": 1.018,
-        "scoring_factor": 0.955,
-        "kicking_factor": 0.93,
-        "classification": "SIGNIFICANT"
+        "severity_score": 6.0,
+        "passing_factor": 0.892,
+        "rushing_factor": 1.03,
+        "scoring_factor": 0.922,
+        "kicking_factor": 0.88,
+        "classification": "SEVERE"
       }
     },
     {
@@ -284,23 +265,23 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-10-18T16:00",
-        "temperature_f": 65.9,
-        "feels_like_f": 58.1,
-        "humidity_pct": 45.0,
-        "precip_probability_pct": 3.0,
+        "temperature_f": 64.4,
+        "feels_like_f": 57.3,
+        "humidity_pct": 44.0,
+        "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
-        "wind_mph": 14.6,
-        "wind_gust_mph": 25.7,
+        "wind_mph": 12.3,
+        "wind_gust_mph": 19.7,
         "weather_code": 3,
         "conditions": "Overcast"
       },
       "context": {
-        "severity_score": 2.0,
-        "passing_factor": 0.964,
-        "rushing_factor": 1.01,
-        "scoring_factor": 0.974,
-        "kicking_factor": 0.96,
-        "classification": "MODERATE"
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "scoring_factor": 0.987,
+        "kicking_factor": 0.98,
+        "classification": "MINOR"
       }
     },
     {
@@ -337,15 +318,15 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-10-18T20:00",
-        "temperature_f": 56.2,
-        "feels_like_f": 45.7,
-        "humidity_pct": 55.0,
-        "precip_probability_pct": 3.0,
+        "temperature_f": 55.3,
+        "feels_like_f": 46.1,
+        "humidity_pct": 61.0,
+        "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
-        "wind_mph": 19.1,
-        "wind_gust_mph": 38.5,
-        "weather_code": 3,
-        "conditions": "Overcast"
+        "wind_mph": 17.1,
+        "wind_gust_mph": 36.0,
+        "weather_code": 1,
+        "conditions": "Mainly Clear"
       },
       "context": {
         "severity_score": 4.5,
