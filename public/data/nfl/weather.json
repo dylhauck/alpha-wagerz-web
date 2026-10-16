@@ -1,26 +1,88 @@
 {
-  "generated_at": "2026-10-15T09:39:44.030976+00:00",
+  "generated_at": "2026-10-16T09:34:06.054235+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_06_SEA_DEN",
-      "away_team": "SEA",
-      "home_team": "DEN",
-      "stadium": "Empower Field at Mile High",
-      "latitude": 39.7439,
-      "longitude": -105.0201,
+      "game_id": "2026_06_HOU_JAX",
+      "away_team": "HOU",
+      "home_team": "JAX",
+      "stadium": "EverBank Stadium",
+      "latitude": 30.3239,
+      "longitude": -81.6373,
       "roof": "outdoor",
-      "kickoff": "2026-10-15T20:15",
+      "kickoff": "2026-10-18T09:30",
       "available": true,
       "weather": {
-        "forecast_time": "2026-10-15T20:00",
-        "temperature_f": 43.9,
-        "feels_like_f": 38.3,
-        "humidity_pct": 71.0,
+        "forecast_time": "2026-10-18T09:00",
+        "temperature_f": 59.9,
+        "feels_like_f": 53.1,
+        "humidity_pct": 57.0,
+        "precip_probability_pct": 5.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 13.0,
+        "wind_gust_mph": 22.8,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "scoring_factor": 0.987,
+        "kicking_factor": 0.98,
+        "classification": "MINOR"
+      }
+    },
+    {
+      "game_id": "2026_06_CHI_ATL",
+      "away_team": "CHI",
+      "home_team": "ATL",
+      "stadium": "Mercedes-Benz Stadium",
+      "latitude": 33.7554,
+      "longitude": -84.4008,
+      "roof": "retractable",
+      "kickoff": "2026-10-18T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-18T13:00",
+        "temperature_f": 62.7,
+        "feels_like_f": 55.0,
+        "humidity_pct": 19.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 10.4,
+        "wind_gust_mph": 14.8,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.45,
+        "passing_factor": 0.992,
+        "rushing_factor": 1.002,
+        "scoring_factor": 0.994,
+        "kicking_factor": 0.991,
+        "classification": "MINOR"
+      }
+    },
+    {
+      "game_id": "2026_06_BAL_CLE",
+      "away_team": "BAL",
+      "home_team": "CLE",
+      "stadium": "Huntington Bank Field",
+      "latitude": 41.5061,
+      "longitude": -81.6995,
+      "roof": "outdoor",
+      "kickoff": "2026-10-18T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-18T13:00",
+        "temperature_f": 56.6,
+        "feels_like_f": 50.4,
+        "humidity_pct": 29.0,
         "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
         "wind_mph": 5.4,
-        "wind_gust_mph": 6.3,
+        "wind_gust_mph": 8.1,
         "weather_code": 0,
         "conditions": "Clear"
       },
@@ -31,6 +93,267 @@
         "scoring_factor": 1.0,
         "kicking_factor": 1.0,
         "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_06_TEN_IND",
+      "away_team": "TEN",
+      "home_team": "IND",
+      "stadium": "Lucas Oil Stadium",
+      "latitude": 39.7601,
+      "longitude": -86.1639,
+      "roof": "retractable",
+      "kickoff": "2026-10-18T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-18T13:00",
+        "temperature_f": 57.1,
+        "feels_like_f": 50.6,
+        "humidity_pct": 30.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 6.5,
+        "wind_gust_mph": 9.6,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_06_NYJ_NE",
+      "away_team": "NYJ",
+      "home_team": "NE",
+      "stadium": "Gillette Stadium",
+      "latitude": 42.0909,
+      "longitude": -71.2643,
+      "roof": "outdoor",
+      "kickoff": "2026-10-18T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-18T13:00",
+        "temperature_f": 50.6,
+        "feels_like_f": 43.6,
+        "humidity_pct": 41.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 8.4,
+        "wind_gust_mph": 12.8,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_06_NO_NYG",
+      "away_team": "NO",
+      "home_team": "NYG",
+      "stadium": "MetLife Stadium",
+      "latitude": 40.8135,
+      "longitude": -74.0745,
+      "roof": "outdoor",
+      "kickoff": "2026-10-18T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-18T13:00",
+        "temperature_f": 55.0,
+        "feels_like_f": 47.1,
+        "humidity_pct": 24.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 8.6,
+        "wind_gust_mph": 14.1,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
+    },
+    {
+      "game_id": "2026_06_CAR_PHI",
+      "away_team": "CAR",
+      "home_team": "PHI",
+      "stadium": "Lincoln Financial Field",
+      "latitude": 39.9008,
+      "longitude": -75.1675,
+      "roof": "outdoor",
+      "kickoff": "2026-10-18T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-18T13:00",
+        "temperature_f": 55.0,
+        "feels_like_f": 46.4,
+        "humidity_pct": 25.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 10.5,
+        "wind_gust_mph": 14.5,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "scoring_factor": 0.987,
+        "kicking_factor": 0.98,
+        "classification": "MINOR"
+      }
+    },
+    {
+      "game_id": "2026_06_PIT_TB",
+      "away_team": "PIT",
+      "home_team": "TB",
+      "stadium": "Raymond James Stadium",
+      "latitude": 27.9759,
+      "longitude": -82.5033,
+      "roof": "outdoor",
+      "kickoff": "2026-10-18T13:00",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-18T13:00",
+        "temperature_f": 75.0,
+        "feels_like_f": 71.1,
+        "humidity_pct": 52.0,
+        "precip_probability_pct": 1.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 18.4,
+        "wind_gust_mph": 23.0,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 2.5,
+        "passing_factor": 0.955,
+        "rushing_factor": 1.012,
+        "scoring_factor": 0.968,
+        "kicking_factor": 0.95,
+        "classification": "MODERATE"
+      }
+    },
+    {
+      "game_id": "2026_06_ARI_LA",
+      "away_team": "ARI",
+      "home_team": "LAR",
+      "stadium": "SoFi Stadium",
+      "latitude": 33.9535,
+      "longitude": -118.3392,
+      "roof": "fixed",
+      "kickoff": "2026-10-18T16:05",
+      "available": true,
+      "weather": {
+        "conditions": "Indoor"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "INDOOR"
+      }
+    },
+    {
+      "game_id": "2026_06_LAC_KC",
+      "away_team": "LAC",
+      "home_team": "KC",
+      "stadium": "GEHA Field at Arrowhead Stadium",
+      "latitude": 39.0489,
+      "longitude": -94.4839,
+      "roof": "outdoor",
+      "kickoff": "2026-10-18T16:25",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-18T16:00",
+        "temperature_f": 65.1,
+        "feels_like_f": 57.2,
+        "humidity_pct": 39.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 12.8,
+        "wind_gust_mph": 17.2,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "scoring_factor": 0.987,
+        "kicking_factor": 0.98,
+        "classification": "MINOR"
+      }
+    },
+    {
+      "game_id": "2026_06_BUF_LV",
+      "away_team": "BUF",
+      "home_team": "LV",
+      "stadium": "Allegiant Stadium",
+      "latitude": 36.0908,
+      "longitude": -115.183,
+      "roof": "fixed",
+      "kickoff": "2026-10-18T16:25",
+      "available": true,
+      "weather": {
+        "conditions": "Indoor"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "INDOOR"
+      }
+    },
+    {
+      "game_id": "2026_06_DAL_GB",
+      "away_team": "DAL",
+      "home_team": "GB",
+      "stadium": "Lambeau Field",
+      "latitude": 44.5013,
+      "longitude": -88.0622,
+      "roof": "outdoor",
+      "kickoff": "2026-10-18T20:20",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-18T20:00",
+        "temperature_f": 51.7,
+        "feels_like_f": 42.4,
+        "humidity_pct": 57.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 14.9,
+        "wind_gust_mph": 33.8,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 3.0,
+        "passing_factor": 0.946,
+        "rushing_factor": 1.015,
+        "scoring_factor": 0.961,
+        "kicking_factor": 0.94,
+        "classification": "MODERATE"
       }
     }
   ]
