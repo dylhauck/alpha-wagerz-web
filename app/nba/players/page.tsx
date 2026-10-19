@@ -778,7 +778,6 @@ export default function NBAPlayersPage() {
         <div className="border-b border-white/10 px-6 py-7">
           <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
             <h1 className="text-3xl font-black neon-text sm:text-5xl">
-              NBA Player Statistics
             </h1>
 
             <div className="mt-6 flex flex-wrap justify-center gap-2">

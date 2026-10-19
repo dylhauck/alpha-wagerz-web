@@ -1051,13 +1051,7 @@ export default function NBATeamsPage() {
 
           <div className="flex flex-col items-center text-center">
 
-            <div className="flex items-center justify-center gap-2 text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
-              <Shield size={16} />
-              Alpha Wagerz NBA
-            </div>
-
             <h1 className="mt-2 text-3xl font-black neon-text sm:text-5xl">
-              NBA Team Statistics
             </h1>
 
             {/* SEASON */}
