@@ -1,18 +1,37 @@
 {
-  "generated_at": "2026-10-18T09:20:24.687467+00:00",
+  "generated_at": "2026-10-19T10:32:35.228357+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_06_WAS_SF",
-      "away_team": "WAS",
-      "home_team": "SF",
-      "stadium": "Levi's Stadium",
-      "latitude": 37.403,
-      "longitude": -121.97,
+      "game_id": "2026_07_NE_CHI",
+      "away_team": "NE",
+      "home_team": "CHI",
+      "stadium": "Soldier Field",
+      "latitude": 41.8623,
+      "longitude": -87.6167,
       "roof": "outdoor",
-      "kickoff": "2026-10-19T20:15",
-      "available": false,
-      "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "kickoff": "2026-10-22T20:15",
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-22T20:00",
+        "temperature_f": 62.8,
+        "feels_like_f": 59.7,
+        "humidity_pct": 49.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 3.5,
+        "wind_gust_mph": 5.8,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     }
   ]
 }
