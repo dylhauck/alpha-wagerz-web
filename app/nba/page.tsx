@@ -8,6 +8,7 @@ import {
   Shield,
   Trophy,
 } from "lucide-react";
+import PlayerPropsModal from "@/components/nba/PlayerPropsModal";
 
 type NBATeam = {
   abbr?: string;
@@ -494,6 +495,7 @@ function PlayerMatchupTable({
   players,
   teams,
   accent,
+  onPlayerClick,
 }: {
   title: string;
   team: string;
@@ -501,6 +503,7 @@ function PlayerMatchupTable({
   players: NBAPlayerMatchup[];
   teams: NBATeam[];
   accent: "cyan" | "pink";
+  onPlayerClick: (player: NBAPlayerMatchup) => void;
 }) {
   const [seasonFilter, setSeasonFilter] =
     useState<SeasonFilter>(
@@ -899,9 +902,13 @@ function PlayerMatchupTable({
                   className="border-b border-white/[0.06] transition last:border-b-0 hover:bg-white/[0.035]"
                 >
                   <td className="whitespace-nowrap px-4 py-3">
-                    <div className="font-black text-white">
+                    <button
+                      type="button"
+                      onClick={() => onPlayerClick(player)}
+                      className="text-left font-black text-white transition hover:text-cyan-200 hover:underline"
+                    >
                       {player.player_name}
-                    </div>
+                    </button>
 
                     <div className="mt-0.5 text-xs font-bold text-slate-500">
                       {player.team} vs{" "}
@@ -1012,6 +1019,9 @@ function PlayerMatchupTable({
 }
 
 export default function NBAPage() {
+  const [selectedPropPlayer, setSelectedPropPlayer] =
+    useState<NBAPlayerMatchup | null>(null);
+
   const [games, setGames] =
     useState<NBAGame[]>([]);
 
@@ -1367,6 +1377,7 @@ export default function NBAPage() {
                   players={awayPlayers}
                   teams={teams}
                   accent="cyan"
+                onPlayerClick={setSelectedPropPlayer}
                 />
 
                 <PlayerMatchupTable
@@ -1376,6 +1387,7 @@ export default function NBAPage() {
                   players={homePlayers}
                   teams={teams}
                   accent="pink"
+                onPlayerClick={setSelectedPropPlayer}
                 />
               </div>
             ) : (
@@ -1397,6 +1409,14 @@ export default function NBAPage() {
           </div>
         </div>
       </section>
+      <PlayerPropsModal
+        open={selectedPropPlayer !== null}
+        onClose={() => setSelectedPropPlayer(null)}
+        playerName={selectedPropPlayer?.player_name ?? null}
+        playerId={selectedPropPlayer?.player_id}
+        team={selectedPropPlayer?.team}
+        position={selectedPropPlayer?.position}
+      />
     </div>
   );
 }

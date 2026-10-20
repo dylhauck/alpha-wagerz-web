@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Search } from "lucide-react";
+import PlayerPropsModal from "@/components/nba/PlayerPropsModal";
 
 type NBATeam = {
   abbr?: string;
@@ -416,6 +417,9 @@ export default function NBAPlayersPage() {
 
   const [currentPage, setCurrentPage] =
     useState(1);
+
+  const [selectedPlayer, setSelectedPlayer] =
+    useState<NBAPlayerStat | null>(null);
 
   useEffect(() => {
     async function loadData() {
@@ -989,12 +993,13 @@ export default function NBAPlayersPage() {
                         className="border-b border-white/[0.06] transition last:border-b-0 hover:bg-white/[0.035]"
                       >
                         <td className="whitespace-nowrap px-4 py-3">
-                          <div className="font-black text-white">
-                            {
-                              row.player
-                                .player_name
-                            }
-                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setSelectedPlayer(row.player)}
+                            className="text-left font-black text-white transition hover:text-cyan-200 hover:underline"
+                          >
+                            {row.player.player_name}
+                          </button>
 
                           {row.player
                             .number ? (
@@ -1186,6 +1191,14 @@ export default function NBAPlayersPage() {
           </>
         )}
       </section>
+      <PlayerPropsModal
+        open={selectedPlayer !== null}
+        onClose={() => setSelectedPlayer(null)}
+        playerName={selectedPlayer?.player_name ?? null}
+        playerId={selectedPlayer?.player_id}
+        team={selectedPlayer?.team}
+        position={selectedPlayer?.position}
+      />
     </div>
   );
 }

@@ -1138,19 +1138,8 @@ export default function NBAProjectionsPage() {
 
               {market?.bookmaker && (
                 <p className="mt-3 text-xs text-slate-500">
-                  Sportsbook:{" "}
-                  {
-                    market.bookmaker
-                  }
                 </p>
               )}
-
-              <p className="mt-3 text-xs text-slate-500">
-                Market comparisons require real sportsbook data.
-                Cover and O/U probabilities display only when
-                scoring-variance estimates are available;
-                period estimates have not been backtested.
-              </p>
             </>
           ) : (
             <div className="rounded-2xl border border-amber-300/20 bg-amber-300/5 p-5 text-center text-sm text-amber-100">

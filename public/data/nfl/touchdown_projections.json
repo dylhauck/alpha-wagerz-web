@@ -1,795 +1,30 @@
 {
   "players": [
     {
-      "player_id": "00-0037834",
-      "player": "Brock Purdy",
-      "team": "SF",
-      "opponent": "WAS",
+      "player_id": "00-0039918",
+      "player": "Caleb Williams",
+      "team": "CHI",
+      "opponent": "NE",
       "position": "QB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 21.9,
-      "touchdown_lambda": 0.2478,
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 38.8,
+      "touchdown_lambda": 0.4918,
       "scoring": {
-        "rushing_td_probability": 21.9,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.2478,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.2,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.22,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.212,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.16,
-        "projected_rushing_tds": 0.25,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.2,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.22,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.25,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036972",
-      "player": "Mac Jones",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "QB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 2.4,
-      "touchdown_lambda": 0.0239,
-      "scoring": {
-        "rushing_td_probability": 2.4,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0239,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.027,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.895,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0033280",
-      "player": "Christian McCaffrey",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "RB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 63.8,
-      "touchdown_lambda": 1.0164,
-      "scoring": {
-        "rushing_td_probability": 59.7,
-        "receiving_td_probability": 10.1,
-        "rushing_lambda": 0.9101,
-        "receiving_lambda": 0.1064
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 1.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.57,
-        "career_receiving_td_rate": 0.31,
-        "regressed_rushing_td_rate": 0.735,
-        "regressed_receiving_td_rate": 0.191,
-        "usage_factor": 0.929,
-        "projected_rushing_tds": 1.26,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 1.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.57,
-        "career_receiving_tds_per_game": 0.31,
-        "projected_rushing_tds": 1.26,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0029892",
-      "player": "Kyle Juszczyk",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "RB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 25.4,
-      "touchdown_lambda": 0.2924,
-      "scoring": {
-        "rushing_td_probability": 1.6,
-        "receiving_td_probability": 24.2,
-        "rushing_lambda": 0.0158,
-        "receiving_lambda": 0.2765
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.33,
-        "career_rushing_td_rate": 0.04,
-        "career_receiving_td_rate": 0.11,
-        "regressed_rushing_td_rate": 0.029,
-        "regressed_receiving_td_rate": 0.17,
-        "usage_factor": 0.907,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.46,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.33,
-        "career_rushing_tds_per_game": 0.04,
-        "career_receiving_tds_per_game": 0.11,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.46,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040177",
-      "player": "Jordan James",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "RB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0041052",
-      "player": "Kaelon Black",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "RB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0033288",
-      "player": "George Kittle",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "TE",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 53.9,
-      "touchdown_lambda": 0.7743,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 53.9,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.7743
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.8,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.43,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.572,
-        "usage_factor": 0.95,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 1.12,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.8,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.43,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 1.12,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036887",
-      "player": "Luke Farrell",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "TE",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 2.1,
-      "touchdown_lambda": 0.0215,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 2.1,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0215
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.04,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.025,
-        "usage_factor": 0.874,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.04,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038643",
-      "player": "Brayden Willis",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "TE",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0031408",
-      "player": "Mike Evans",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 49.7,
-      "touchdown_lambda": 0.6867,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 49.7,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.6867
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.6,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.64,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.625,
-        "usage_factor": 0.936,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.84,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.6,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.64,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.84,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035719",
-      "player": "Deebo Samuel Sr.",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 46.4,
-      "touchdown_lambda": 0.624,
-      "scoring": {
-        "rushing_td_probability": 6.7,
-        "receiving_td_probability": 42.6,
-        "rushing_lambda": 0.0691,
-        "receiving_lambda": 0.5549
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.6,
-        "career_rushing_td_rate": 0.21,
-        "career_receiving_td_rate": 0.29,
-        "regressed_rushing_td_rate": 0.129,
-        "regressed_receiving_td_rate": 0.409,
-        "usage_factor": 0.891,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.84,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.6,
-        "career_rushing_tds_per_game": 0.21,
-        "career_receiving_tds_per_game": 0.29,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.84,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0031236",
-      "player": "Brandin Cooks",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 36.3,
-      "touchdown_lambda": 0.451,
-      "scoring": {
-        "rushing_td_probability": 0.4,
-        "receiving_td_probability": 36.1,
-        "rushing_lambda": 0.0036,
-        "receiving_lambda": 0.4474
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.5,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.34,
-        "regressed_rushing_td_rate": 0.008,
-        "regressed_receiving_td_rate": 0.372,
-        "usage_factor": 0.75,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.7,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.5,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.34,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.7,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0032775",
-      "player": "Demarcus Robinson",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 35.5,
-      "touchdown_lambda": 0.4388,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 35.5,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4388
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.5,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.22,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.276,
-        "usage_factor": 0.959,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.7,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.5,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.22,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.7,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0034854",
-      "player": "KhaDarel Hodge",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 1.1,
-      "touchdown_lambda": 0.0109,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 1.1,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0109
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.02,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.015,
-        "usage_factor": 0.75,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.02,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039365",
-      "player": "Jacob Cowing",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.296,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040172",
-      "player": "Jordan Watkins",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.069,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038359",
-      "player": "Xavier Smith",
-      "team": "SF",
-      "opponent": "WAS",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.773,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 26.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039910",
-      "player": "Jayden Daniels",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "QB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 39.8,
-      "touchdown_lambda": 0.5072,
-      "scoring": {
-        "rushing_td_probability": 39.8,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.5072,
-        "receiving_lambda": 0.0
+        "rushing_td_probability": 38.0,
+        "receiving_td_probability": 1.4,
+        "rushing_lambda": 0.4773,
+        "receiving_lambda": 0.0145
       },
       "inputs": {
         "current_games": 3,
         "current_rushing_td_rate": 0.67,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.37,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.452,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.941,
-        "projected_rushing_tds": 0.63,
+        "career_rushing_td_rate": 0.14,
+        "career_receiving_td_rate": 0.03,
+        "regressed_rushing_td_rate": 0.285,
+        "regressed_receiving_td_rate": 0.022,
+        "usage_factor": 1.109,
+        "projected_rushing_tds": 0.72,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -798,11 +33,11 @@
         "current_games": 3,
         "current_rushing_tds_per_game": 0.67,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.37,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.63,
+        "career_rushing_tds_per_game": 0.14,
+        "career_receiving_tds_per_game": 0.03,
+        "projected_rushing_tds": 0.72,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
+        "projected_team_points": 23.3,
         "injury_status": ""
       },
       "model": {
@@ -811,29 +46,74 @@
       }
     },
     {
-      "player_id": "00-0032268",
-      "player": "Marcus Mariota",
-      "team": "WAS",
-      "opponent": "SF",
+      "player_id": "00-0028986",
+      "player": "Case Keenum",
+      "team": "CHI",
+      "opponent": "NE",
       "position": "QB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 10.9,
-      "touchdown_lambda": 0.1152,
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 28.6,
+      "touchdown_lambda": 0.3362,
       "scoring": {
-        "rushing_td_probability": 10.9,
+        "rushing_td_probability": 28.6,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1152,
+        "rushing_lambda": 0.3362,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.5,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.1,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.18,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.113,
+        "projected_rushing_tds": 0.54,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.5,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.1,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.54,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038416",
+      "player": "Tyson Bagent",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "QB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 9.2,
+      "touchdown_lambda": 0.0968,
+      "scoring": {
+        "rushing_td_probability": 9.2,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0968,
         "receiving_lambda": 0.0
       },
       "inputs": {
         "current_games": 3,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.19,
+        "career_rushing_td_rate": 0.14,
         "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.138,
+        "regressed_rushing_td_rate": 0.102,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.834,
+        "usage_factor": 0.951,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -843,11 +123,11 @@
         "current_games": 3,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.19,
+        "career_rushing_tds_per_game": 0.14,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
+        "projected_team_points": 23.3,
         "injury_status": ""
       },
       "model": {
@@ -856,12 +136,507 @@
       }
     },
     {
-      "player_id": "00-0041117",
-      "player": "Athan Kaliakmanis",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "QB",
-      "game_id": "2026_06_WAS_SF",
+      "player_id": "00-0036275",
+      "player": "D'Andre Swift",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "RB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 59.4,
+      "touchdown_lambda": 0.9024,
+      "scoring": {
+        "rushing_td_probability": 58.1,
+        "receiving_td_probability": 3.2,
+        "rushing_lambda": 0.8696,
+        "receiving_lambda": 0.0328
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 1.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.46,
+        "career_receiving_td_rate": 0.09,
+        "regressed_rushing_td_rate": 0.691,
+        "regressed_receiving_td_rate": 0.051,
+        "usage_factor": 1.064,
+        "projected_rushing_tds": 1.07,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 1.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.46,
+        "career_receiving_tds_per_game": 0.09,
+        "projected_rushing_tds": 1.07,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040236",
+      "player": "Kyle Monangai",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "RB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 44.5,
+      "touchdown_lambda": 0.5889,
+      "scoring": {
+        "rushing_td_probability": 44.5,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.5889,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.75,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.38,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.503,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.102,
+        "projected_rushing_tds": 0.64,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.75,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.38,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.64,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039021",
+      "player": "Roschon Johnson",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "RB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 23.7,
+      "touchdown_lambda": 0.2705,
+      "scoring": {
+        "rushing_td_probability": 23.7,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.2705,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.25,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.24,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.243,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.113,
+        "projected_rushing_tds": 0.27,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.25,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.24,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.27,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038440",
+      "player": "Zavier Scott",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "RB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 6.2,
+      "touchdown_lambda": 0.064,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 6.2,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.064
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.08,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.064,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.08,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040126",
+      "player": "Colston Loveland",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "TE",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 20.1,
+      "touchdown_lambda": 0.224,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 20.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.224
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.17,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.32,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.256,
+        "usage_factor": 0.99,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.17,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.32,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036290",
+      "player": "Cole Kmet",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "TE",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 15.3,
+      "touchdown_lambda": 0.1655,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 15.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1655
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.17,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.21,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.193,
+        "usage_factor": 0.808,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.17,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.21,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041558",
+      "player": "Sam Roush",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "TE",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040277",
+      "player": "Jahdae Walker",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 26.5,
+      "touchdown_lambda": 0.3076,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 26.5,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.3076
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.33,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.33,
+        "usage_factor": 0.826,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.36,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.33,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.36,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040735",
+      "player": "Luther Burden III",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 16.5,
+      "touchdown_lambda": 0.1801,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 16.5,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1801
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.17,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.14,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.153,
+        "usage_factor": 1.178,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.17,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.14,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0032464",
+      "player": "Kalif Raymond",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 15.2,
+      "touchdown_lambda": 0.1645,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 15.2,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1645
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.17,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.08,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.119,
+        "usage_factor": 1.3,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.17,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.08,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.18,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039919",
+      "player": "Rome Odunze",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 13.1,
+      "touchdown_lambda": 0.1406,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 13.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1406
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.26,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.149,
+        "usage_factor": 0.947,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.26,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037380",
+      "player": "Kaden Davis",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -892,7 +667,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
+        "projected_team_points": 23.3,
         "injury_status": ""
       },
       "model": {
@@ -901,327 +676,12 @@
       }
     },
     {
-      "player_id": "00-0040242",
-      "player": "Jacory Croskey-Merritt",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "RB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 35.1,
-      "touchdown_lambda": 0.4324,
-      "scoring": {
-        "rushing_td_probability": 35.1,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.4324,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.4,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.45,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.431,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.085,
-        "projected_rushing_tds": 0.38,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.4,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.45,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.38,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0033699",
-      "player": "Austin Ekeler",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "RB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 32.2,
-      "touchdown_lambda": 0.3885,
-      "scoring": {
-        "rushing_td_probability": 20.4,
-        "receiving_td_probability": 14.8,
-        "rushing_lambda": 0.2281,
-        "receiving_lambda": 0.1603
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.37,
-        "career_receiving_td_rate": 0.26,
-        "regressed_rushing_td_rate": 0.296,
-        "regressed_receiving_td_rate": 0.208,
-        "usage_factor": 0.771,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.37,
-        "career_receiving_tds_per_game": 0.26,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037256",
-      "player": "Rachaad White",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "RB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 23.7,
-      "touchdown_lambda": 0.2707,
-      "scoring": {
-        "rushing_td_probability": 7.0,
-        "receiving_td_probability": 18.0,
-        "rushing_lambda": 0.0722,
-        "receiving_lambda": 0.1985
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
-        "career_rushing_td_rate": 0.2,
-        "career_receiving_td_rate": 0.17,
-        "regressed_rushing_td_rate": 0.133,
-        "regressed_receiving_td_rate": 0.197,
-        "usage_factor": 0.902,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.2,
-        "career_receiving_tds_per_game": 0.17,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
-        "projected_team_points": 21.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035567",
-      "player": "Craig Reynolds",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "RB",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 2.1,
-      "touchdown_lambda": 0.0212,
-      "scoring": {
-        "rushing_td_probability": 2.1,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0212,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.027,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.794,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037809",
-      "player": "Chig Okonkwo",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "TE",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 8.4,
-      "touchdown_lambda": 0.0881,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 8.4,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0881
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.12,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.087,
-        "usage_factor": 1.009,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.12,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039912",
-      "player": "Ben Sinnott",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "TE",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 6.7,
-      "touchdown_lambda": 0.0699,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 6.7,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0699
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.11,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.08,
-        "usage_factor": 0.873,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.11,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036628",
-      "player": "John Bates",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "TE",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 3.5,
-      "touchdown_lambda": 0.0357,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 3.5,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0357
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.05,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.036,
-        "usage_factor": 0.982,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.05,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039686",
-      "player": "Colson Yankoff",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "TE",
-      "game_id": "2026_06_WAS_SF",
+      "player_id": "00-0041051",
+      "player": "Zavion Thomas",
+      "team": "CHI",
+      "opponent": "NE",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1238,7 +698,7 @@
         "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.3,
+        "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -1252,7 +712,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
+        "projected_team_points": 23.3,
         "injury_status": ""
       },
       "model": {
@@ -1261,43 +721,43 @@
       }
     },
     {
-      "player_id": "00-0031588",
-      "player": "Stefon Diggs",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 45.4,
-      "touchdown_lambda": 0.6048,
+      "player_id": "00-0039851",
+      "player": "Drake Maye",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "QB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 16.1,
+      "touchdown_lambda": 0.1752,
       "scoring": {
-        "rushing_td_probability": 0.4,
-        "receiving_td_probability": 45.2,
-        "rushing_lambda": 0.0038,
-        "receiving_lambda": 0.6009
+        "rushing_td_probability": 16.1,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.1752,
+        "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.75,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.48,
-        "regressed_rushing_td_rate": 0.007,
-        "regressed_receiving_td_rate": 0.57,
-        "usage_factor": 0.962,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.68,
+        "current_games": 6,
+        "current_rushing_td_rate": 0.17,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.19,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.181,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.022,
+        "projected_rushing_tds": 0.16,
+        "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.75,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.48,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.68,
-        "projected_team_points": 21.1,
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.17,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.19,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.16,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
         "injury_status": ""
       },
       "model": {
@@ -1306,43 +766,178 @@
       }
     },
     {
-      "player_id": "00-0037742",
-      "player": "Treylon Burks",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 26.7,
-      "touchdown_lambda": 0.3113,
+      "player_id": "00-0038476",
+      "player": "Tommy DeVito",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "QB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 5.2,
+      "touchdown_lambda": 0.0533,
       "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 26.7,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3113
+        "rushing_td_probability": 5.2,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0533,
+        "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 4,
+        "current_games": 1,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.5,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.08,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.071,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.75,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.08,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036875",
+      "player": "Rhamondre Stevenson",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "RB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 30.4,
+      "touchdown_lambda": 0.3623,
+      "scoring": {
+        "rushing_td_probability": 29.2,
+        "receiving_td_probability": 1.7,
+        "rushing_lambda": 0.3452,
+        "receiving_lambda": 0.017
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.33,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.39,
+        "career_receiving_td_rate": 0.05,
+        "regressed_rushing_td_rate": 0.364,
+        "regressed_receiving_td_rate": 0.029,
+        "usage_factor": 0.994,
+        "projected_rushing_tds": 0.32,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.33,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.39,
+        "career_receiving_tds_per_game": 0.05,
+        "projected_rushing_tds": 0.32,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040734",
+      "player": "TreVeyon Henderson",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "RB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 25.6,
+      "touchdown_lambda": 0.2955,
+      "scoring": {
+        "rushing_td_probability": 24.3,
+        "receiving_td_probability": 1.7,
+        "rushing_lambda": 0.2779,
+        "receiving_lambda": 0.0176
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.2,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.45,
+        "career_receiving_td_rate": 0.05,
+        "regressed_rushing_td_rate": 0.354,
+        "regressed_receiving_td_rate": 0.031,
+        "usage_factor": 0.951,
+        "projected_rushing_tds": 0.19,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.2,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.45,
+        "career_receiving_tds_per_game": 0.05,
+        "projected_rushing_tds": 0.19,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036187",
+      "player": "Reggie Gilliam",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "RB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 5.6,
+      "touchdown_lambda": 0.0578,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 5.6,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0578
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.11,
+        "career_receiving_td_rate": 0.05,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.24,
-        "usage_factor": 0.912,
+        "regressed_receiving_td_rate": 0.044,
+        "usage_factor": 1.3,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.45,
+        "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 4,
+        "current_games": 1,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.5,
+        "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.11,
+        "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.45,
-        "projected_team_points": 21.1,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
         "injury_status": ""
       },
       "model": {
@@ -1351,43 +946,43 @@
       }
     },
     {
-      "player_id": "00-0035659",
-      "player": "Terry McLaurin",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 24.8,
-      "touchdown_lambda": 0.2852,
+      "player_id": "00-0040556",
+      "player": "Corey Kiner",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "RB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 24.8,
+        "receiving_td_probability": 0.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2852
+        "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 4,
+        "current_games": 6,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
+        "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.38,
+        "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.337,
-        "usage_factor": 0.956,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.051,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
+        "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 4,
+        "current_games": 6,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
+        "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.38,
+        "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
-        "projected_team_points": 21.1,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
         "injury_status": ""
       },
       "model": {
@@ -1396,19 +991,109 @@
       }
     },
     {
-      "player_id": "00-0041040",
-      "player": "Antonio Williams",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 17.5,
-      "touchdown_lambda": 0.192,
+      "player_id": "00-0040568",
+      "player": "Lan Larison",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "RB",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 17.5,
+        "receiving_td_probability": 0.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.192
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033090",
+      "player": "Hunter Henry",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "TE",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 27.1,
+      "touchdown_lambda": 0.3167,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 27.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.3167
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.36,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.347,
+        "usage_factor": 0.925,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.31,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.36,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.31,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041395",
+      "player": "Eli Raridon",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "TE",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 17.8,
+      "touchdown_lambda": 0.196,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 17.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.196
       },
       "inputs": {
         "current_games": 5,
@@ -1420,7 +1105,7 @@
         "regressed_receiving_td_rate": 0.2,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
+        "projected_receiving_tds": 0.19,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -1431,8 +1116,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.2,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
-        "projected_team_points": 21.1,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 21.7,
         "injury_status": ""
       },
       "model": {
@@ -1441,102 +1126,12 @@
       }
     },
     {
-      "player_id": "00-0039355",
-      "player": "Luke McCaffrey",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 9.2,
-      "touchdown_lambda": 0.096,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 9.2,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.096
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.12,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.096,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.12,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036626",
-      "player": "Dyami Brown",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
-      "touchdown_probability": 5.1,
-      "touchdown_lambda": 0.0526,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 5.1,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0526
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.08,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.049,
-        "usage_factor": 1.068,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.08,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040164",
-      "player": "Jaylin Lane",
-      "team": "WAS",
-      "opponent": "SF",
-      "position": "WR",
-      "game_id": "2026_06_WAS_SF",
+      "player_id": "00-0038564",
+      "player": "Cameron Latu",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "TE",
+      "game_id": "2026_07_NE_CHI",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1546,14 +1141,374 @@
         "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 4,
+        "current_games": 5,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
         "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.75,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041314",
+      "player": "Tanner Arkin",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "TE",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0035676",
+      "player": "A.J. Brown",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 33.5,
+      "touchdown_lambda": 0.4086,
+      "scoring": {
+        "rushing_td_probability": 0.8,
+        "receiving_td_probability": 33.0,
+        "rushing_lambda": 0.0077,
+        "receiving_lambda": 0.4009
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.52,
+        "regressed_rushing_td_rate": 0.008,
+        "regressed_receiving_td_rate": 0.416,
+        "usage_factor": 0.964,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.52,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037816",
+      "player": "Romeo Doubs",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 32.2,
+      "touchdown_lambda": 0.389,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 32.2,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.389
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.5,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.37,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.426,
+        "usage_factor": 0.914,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.5,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.37,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038621",
+      "player": "DeMario Douglas",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 31.3,
+      "touchdown_lambda": 0.3749,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 31.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.3749
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.5,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.17,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.311,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.47,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.5,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.17,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.47,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038824",
+      "player": "Ryan Miller",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 23.0,
+      "touchdown_lambda": 0.2609,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 23.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.2609
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.19,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.228,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.31,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.19,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.31,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040563",
+      "player": "Efton Chism III",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 18.8,
+      "touchdown_lambda": 0.208,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 18.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.208
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.15,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.169,
+        "usage_factor": 1.3,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.19,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.15,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040131",
+      "player": "Kyle Williams",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 16.4,
+      "touchdown_lambda": 0.1793,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 16.4,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1793
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.17,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.2,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.187,
+        "usage_factor": 1.027,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.16,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.17,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.2,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.16,
+        "projected_team_points": 21.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033555",
+      "player": "Mack Hollins",
+      "team": "NE",
+      "opponent": "CHI",
+      "position": "WR",
+      "game_id": "2026_07_NE_CHI",
+      "touchdown_probability": 11.3,
+      "touchdown_lambda": 0.1202,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 11.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1202
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.15,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.1,
+        "usage_factor": 1.202,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -1564,10 +1519,10 @@
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.15,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.1,
+        "projected_team_points": 21.7,
         "injury_status": ""
       },
       "model": {
@@ -1577,10 +1532,10 @@
     }
   ],
   "counts": {
-    "total": 35,
+    "total": 34,
     "QB": 5,
-    "RB": 8,
-    "WR": 15,
+    "RB": 9,
+    "WR": 13,
     "TE": 7
   },
   "diagnostics": {
