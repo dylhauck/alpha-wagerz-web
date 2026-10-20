@@ -884,12 +884,11 @@ export default function NBAProjectionsPage() {
   // ==========================================================
 
   return (
-    <div className="mx-auto max-w-7xl pb-12 text-white">
-      {/* PROJECTION COUNT */}
-
-      <div className="mb-5 flex flex-col items-center justify-center gap-3 text-center">
-        <div className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          {loaded} Alpha projections loaded for today&apos;s slate
+    <div className="space-y-5">
+      <div className="mb-4 flex justify-center">
+        <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
+          {games.length} NBA Games Loaded
+          For Current Slate
         </div>
       </div>
 
