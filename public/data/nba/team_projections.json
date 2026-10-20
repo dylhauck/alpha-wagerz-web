@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T16:16:36.424476+00:00",
+  "generated_at": "2026-10-20T22:34:11.996414+00:00",
   "slate_date": "2026-10-20",
   "season": "2026-27",
   "game_count": 3,
@@ -13,8 +13,8 @@
       "game_time": "1900-01-01T15:00:00Z",
       "game_datetime": "2026-10-20T15:00:00Z",
       "game_datetime_utc": "2026-10-20T19:00:00Z",
-      "status": "3:00 pm ET",
-      "status_code": 1,
+      "status": "Final",
+      "status_code": 3,
       "venue": "Little Caesars Arena",
       "arena": "Little Caesars Arena",
       "arena_city": "Detroit",
@@ -23,18 +23,18 @@
       "week_name": "Week 1",
       "away_team": "BOS",
       "home_team": "DET",
-      "away_record": "0-0",
-      "home_record": "0-0",
+      "away_record": "0-1",
+      "home_record": "1-0",
       "model": {
-        "away_score": 108.6,
-        "home_score": 111.1,
-        "projected_total": 219.7,
-        "home_margin": 2.5,
-        "away_margin": -2.5,
+        "away_score": 108.7,
+        "home_score": 111.8,
+        "projected_total": 220.5,
+        "home_margin": 3.1,
+        "away_margin": -3.1,
         "projected_winner": "DET",
-        "away_win_probability": 44.4,
-        "home_win_probability": 55.6,
-        "confidence": 55.0
+        "away_win_probability": 42.9,
+        "home_win_probability": 57.1,
+        "confidence": 56.8
       },
       "team_profiles": {
         "away": {
@@ -42,30 +42,30 @@
           "team_name": "Boston Celtics",
           "conference": "East",
           "games": {
-            "current": 0,
+            "current": 1,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.0,
-            "last_season": 1.0
+            "current_season": 0.05,
+            "last_season": 0.95
           },
           "per_game": {
-            "pts": 114.9,
-            "pts_allowed": 107.2,
-            "point_diff": 7.7,
-            "reb": 46.4,
-            "ast": 24.6,
-            "tov": 12.4,
-            "fg3m": 15.5
+            "pts": 114.81,
+            "pts_allowed": 107.89,
+            "point_diff": 6.91,
+            "reb": 46.03,
+            "ast": 24.77,
+            "tov": 12.48,
+            "fg3m": 15.57
           },
           "percentages": {
-            "fg_pct": 0.467,
-            "fg3_pct": 0.367,
-            "ft_pct": 0.807
+            "fg_pct": 0.466,
+            "fg3_pct": 0.369,
+            "ft_pct": 0.805
           },
           "ratings": {
-            "offense_index": 0.9939,
-            "defense_index": 0.9273
+            "offense_index": 0.993,
+            "defense_index": 0.9332
           }
         },
         "home": {
@@ -73,67 +73,67 @@
           "team_name": "Detroit Pistons",
           "conference": "East",
           "games": {
-            "current": 0,
+            "current": 1,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.0,
-            "last_season": 1.0
+            "current_season": 0.05,
+            "last_season": 0.95
           },
           "per_game": {
-            "pts": 117.8,
-            "pts_allowed": 109.6,
-            "point_diff": 8.2,
-            "reb": 45.6,
-            "ast": 27.8,
-            "tov": 15.1,
-            "fg3m": 11.0
+            "pts": 117.96,
+            "pts_allowed": 109.77,
+            "point_diff": 8.19,
+            "reb": 45.77,
+            "ast": 27.76,
+            "tov": 15.19,
+            "fg3m": 11.2
           },
           "percentages": {
-            "fg_pct": 0.485,
-            "fg3_pct": 0.356,
-            "ft_pct": 0.763
+            "fg_pct": 0.483,
+            "fg3_pct": 0.357,
+            "ft_pct": 0.769
           },
           "ratings": {
-            "offense_index": 1.019,
-            "defense_index": 0.9481
+            "offense_index": 1.0202,
+            "defense_index": 0.9494
           }
         }
       },
       "standings": {
         "away": {
-          "record": "0-0",
+          "record": "0-1",
           "wins": 0,
-          "losses": 0,
+          "losses": 1,
           "win_pct": 0.0,
-          "nba_rank": null,
-          "conference_rank": null,
-          "division_rank": null,
+          "nba_rank": 30,
+          "conference_rank": 2,
+          "division_rank": 1,
           "home_record": "0-0",
-          "road_record": "0-0",
-          "last_10": "0-0",
-          "conference_record": "",
-          "division_record": "",
-          "points_per_game": 0.0,
-          "opponent_points_per_game": 0.0,
-          "point_differential": 0.0
+          "road_record": "0-1",
+          "last_10": "0-1",
+          "conference_record": "1.0",
+          "division_record": "0.5",
+          "points_per_game": 113.0,
+          "opponent_points_per_game": 121.0,
+          "point_differential": -8.0
         },
         "home": {
-          "record": "0-0",
-          "wins": 0,
+          "record": "1-0",
+          "wins": 1,
           "losses": 0,
-          "win_pct": 0.0,
-          "nba_rank": null,
-          "conference_rank": null,
-          "division_rank": null,
-          "home_record": "0-0",
+          "win_pct": 1.0,
+          "nba_rank": 1,
+          "conference_rank": 1,
+          "division_rank": 1,
+          "home_record": "1-0",
           "road_record": "0-0",
-          "last_10": "0-0",
+          "last_10": "1-0",
           "conference_record": "",
           "division_record": "",
-          "points_per_game": 0.0,
-          "opponent_points_per_game": 0.0,
-          "point_differential": 0.0
+          "points_per_game": 121.0,
+          "opponent_points_per_game": 113.0,
+          "point_differential": 8.0
         }
       },
       "markets": {
@@ -150,14 +150,14 @@
       "periods": {
         "Q1": {
           "away_score": 27.9,
-          "home_score": 28.3,
-          "projected_total": 56.2,
-          "home_margin": 0.4,
-          "away_margin": -0.4,
-          "home_win_probability": 52.0,
-          "away_win_probability": 48.0,
-          "home_spread": -0.4,
-          "away_spread": 0.4,
+          "home_score": 28.5,
+          "projected_total": 56.4,
+          "home_margin": 0.6,
+          "away_margin": -0.6,
+          "home_win_probability": 52.8,
+          "away_win_probability": 47.2,
+          "home_spread": -0.6,
+          "away_spread": 0.6,
           "projected_winner": "home",
           "margin_sd": 8.0,
           "total_sd": 10.0,
@@ -165,14 +165,14 @@
         },
         "Q2": {
           "away_score": 27.5,
-          "home_score": 28.3,
-          "projected_total": 55.7,
-          "home_margin": 0.8,
-          "away_margin": -0.8,
-          "home_win_probability": 53.9,
-          "away_win_probability": 46.1,
-          "home_spread": -0.8,
-          "away_spread": 0.8,
+          "home_score": 28.4,
+          "projected_total": 55.9,
+          "home_margin": 0.9,
+          "away_margin": -0.9,
+          "home_win_probability": 54.7,
+          "away_win_probability": 45.3,
+          "home_spread": -0.9,
+          "away_spread": 0.9,
           "projected_winner": "home",
           "margin_sd": 8.0,
           "total_sd": 10.0,
@@ -180,14 +180,14 @@
         },
         "Q3": {
           "away_score": 27.4,
-          "home_score": 27.9,
-          "projected_total": 55.3,
-          "home_margin": 0.5,
-          "away_margin": -0.5,
-          "home_win_probability": 52.7,
-          "away_win_probability": 47.3,
-          "home_spread": -0.5,
-          "away_spread": 0.5,
+          "home_score": 28.1,
+          "projected_total": 55.5,
+          "home_margin": 0.7,
+          "away_margin": -0.7,
+          "home_win_probability": 53.4,
+          "away_win_probability": 46.6,
+          "home_spread": -0.7,
+          "away_spread": 0.7,
           "projected_winner": "home",
           "margin_sd": 8.0,
           "total_sd": 10.0,
@@ -195,29 +195,29 @@
         },
         "Q4": {
           "away_score": 25.9,
-          "home_score": 26.6,
-          "projected_total": 52.5,
-          "home_margin": 0.8,
-          "away_margin": -0.8,
-          "home_win_probability": 53.8,
-          "away_win_probability": 46.2,
-          "home_spread": -0.8,
-          "away_spread": 0.8,
+          "home_score": 26.8,
+          "projected_total": 52.7,
+          "home_margin": 0.9,
+          "away_margin": -0.9,
+          "home_win_probability": 54.5,
+          "away_win_probability": 45.5,
+          "home_spread": -0.9,
+          "away_spread": 0.9,
           "projected_winner": "home",
           "margin_sd": 8.0,
           "total_sd": 10.0,
           "markets": null
         },
         "1H": {
-          "away_score": 55.3,
-          "home_score": 56.5,
-          "projected_total": 111.9,
-          "home_margin": 1.2,
-          "away_margin": -1.2,
-          "home_win_probability": 54.2,
-          "away_win_probability": 45.8,
-          "home_spread": -1.2,
-          "away_spread": 1.2,
+          "away_score": 55.4,
+          "home_score": 56.9,
+          "projected_total": 112.3,
+          "home_margin": 1.5,
+          "away_margin": -1.5,
+          "home_win_probability": 55.3,
+          "away_win_probability": 44.7,
+          "home_spread": -1.5,
+          "away_spread": 1.5,
           "projected_winner": "home",
           "margin_sd": 11.31,
           "total_sd": 14.14,
@@ -225,14 +225,14 @@
         },
         "2H": {
           "away_score": 53.3,
-          "home_score": 54.6,
-          "projected_total": 107.8,
-          "home_margin": 1.3,
-          "away_margin": -1.3,
-          "home_win_probability": 54.6,
-          "away_win_probability": 45.4,
-          "home_spread": -1.3,
-          "away_spread": 1.3,
+          "home_score": 54.9,
+          "projected_total": 108.2,
+          "home_margin": 1.6,
+          "away_margin": -1.6,
+          "home_win_probability": 55.6,
+          "away_win_probability": 44.4,
+          "home_spread": -1.6,
+          "away_spread": 1.6,
           "projected_winner": "home",
           "margin_sd": 11.31,
           "total_sd": 14.14,
@@ -300,8 +300,8 @@
             "ft_pct": 0.809
           },
           "ratings": {
-            "offense_index": 1.0026,
-            "defense_index": 1.0043
+            "offense_index": 1.0024,
+            "defense_index": 1.0042
           }
         },
         "home": {
@@ -331,8 +331,8 @@
             "ft_pct": 0.792
           },
           "ratings": {
-            "offense_index": 1.0078,
-            "defense_index": 0.9524
+            "offense_index": 1.0076,
+            "defense_index": 0.9523
           }
         }
       },
@@ -342,13 +342,13 @@
           "wins": 0,
           "losses": 0,
           "win_pct": 0.0,
-          "nba_rank": null,
-          "conference_rank": null,
-          "division_rank": null,
+          "nba_rank": 22,
+          "conference_rank": 13,
+          "division_rank": 4,
           "home_record": "0-0",
           "road_record": "0-0",
           "last_10": "0-0",
-          "conference_record": "",
+          "conference_record": "0.5",
           "division_record": "",
           "points_per_game": 0.0,
           "opponent_points_per_game": 0.0,
@@ -359,13 +359,13 @@
           "wins": 0,
           "losses": 0,
           "win_pct": 0.0,
-          "nba_rank": null,
-          "conference_rank": null,
-          "division_rank": null,
+          "nba_rank": 19,
+          "conference_rank": 11,
+          "division_rank": 3,
           "home_record": "0-0",
           "road_record": "0-0",
           "last_10": "0-0",
-          "conference_record": "",
+          "conference_record": "0.5",
           "division_record": "",
           "points_per_game": 0.0,
           "opponent_points_per_game": 0.0,
@@ -536,8 +536,8 @@
             "ft_pct": 0.817
           },
           "ratings": {
-            "offense_index": 1.0294,
-            "defense_index": 0.9334
+            "offense_index": 1.0292,
+            "defense_index": 0.9332
           }
         },
         "home": {
@@ -567,8 +567,8 @@
             "ft_pct": 0.787
           },
           "ratings": {
-            "offense_index": 1.0363,
-            "defense_index": 0.9645
+            "offense_index": 1.0362,
+            "defense_index": 0.9644
           }
         }
       },
@@ -578,9 +578,9 @@
           "wins": 0,
           "losses": 0,
           "win_pct": 0.0,
-          "nba_rank": null,
-          "conference_rank": null,
-          "division_rank": null,
+          "nba_rank": 20,
+          "conference_rank": 10,
+          "division_rank": 3,
           "home_record": "0-0",
           "road_record": "0-0",
           "last_10": "0-0",
@@ -595,9 +595,9 @@
           "wins": 0,
           "losses": 0,
           "win_pct": 0.0,
-          "nba_rank": null,
-          "conference_rank": null,
-          "division_rank": null,
+          "nba_rank": 26,
+          "conference_rank": 14,
+          "division_rank": 5,
           "home_record": "0-0",
           "road_record": "0-0",
           "last_10": "0-0",

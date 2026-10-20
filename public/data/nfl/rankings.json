@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T16:14:54.983211+00:00",
+  "generated_at": "2026-10-20T22:32:33.856108+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -26,13 +26,13 @@
     }
   },
   "counts": {
-    "game_bets": 1,
+    "game_bets": 2,
     "player_props": 0,
-    "all_candidates": 1,
+    "all_candidates": 2,
     "best_bets": 0,
     "strong_plays": 0,
     "leans": 1,
-    "passes": 0
+    "passes": 1
   },
   "best_bets": [],
   "strong_plays": [],
@@ -70,7 +70,40 @@
       }
     }
   ],
-  "passes": [],
+  "passes": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 34.44,
+      "confidence": 33.2,
+      "upstream_label": "PASS",
+      "edge_strength": 1.12,
+      "edge": 0.028,
+      "market_type": "moneyline",
+      "game_id": "2026_07_NE_CHI",
+      "matchup": "NE @ CHI",
+      "away_team": "NE",
+      "home_team": "CHI",
+      "team": "",
+      "pick": "NE",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_07_NE_CHI",
+        "away_team": "NE",
+        "home_team": "CHI",
+        "market": "moneyline",
+        "selection": "NE",
+        "edge": 0.028,
+        "confidence_score": 33.2,
+        "confidence_label": "PASS"
+      }
+    }
+  ],
   "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
@@ -136,6 +169,38 @@
         "edge": 5.5,
         "confidence_score": 62.7,
         "confidence_label": "GOOD"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 34.44,
+      "confidence": 33.2,
+      "upstream_label": "PASS",
+      "edge_strength": 1.12,
+      "edge": 0.028,
+      "market_type": "moneyline",
+      "game_id": "2026_07_NE_CHI",
+      "matchup": "NE @ CHI",
+      "away_team": "NE",
+      "home_team": "CHI",
+      "team": "",
+      "pick": "NE",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_07_NE_CHI",
+        "away_team": "NE",
+        "home_team": "CHI",
+        "market": "moneyline",
+        "selection": "NE",
+        "edge": 0.028,
+        "confidence_score": 33.2,
+        "confidence_label": "PASS"
       }
     }
   ],
