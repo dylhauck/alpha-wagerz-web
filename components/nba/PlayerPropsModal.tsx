@@ -273,10 +273,24 @@ export default function PlayerPropsModal({
                     (market) => normalize(market.prop_type) === key,
                   );
 
-                  const displayedMarkets =
-                    matchingMarkets.length > 0
-                      ? matchingMarkets
-                      : [null];
+                  const bestMarket =
+  matchingMarkets.length > 0
+    ? matchingMarkets.reduce((best, market) => {
+        if (typeof value !== "number") return best;
+
+        if (typeof market.line !== "number") return best;
+        if (typeof best.line !== "number") return market;
+
+        const bestDifference = Math.abs(value - best.line);
+        const marketDifference = Math.abs(value - market.line);
+
+        return marketDifference > bestDifference
+          ? market
+          : best;
+      })
+    : null;
+
+const displayedMarkets = [bestMarket];
 
                   return displayedMarkets.map((market, index) => {
                     const line = market?.line;
@@ -303,10 +317,6 @@ export default function PlayerPropsModal({
                           <h3 className="text-sm font-black text-white">
                             {label}
                           </h3>
-
-                          <span className="rounded-lg border border-cyan-300/20 bg-cyan-300/10 px-2 py-1 text-[10px] font-black uppercase text-cyan-200">
-                            {market?.sportsbook ?? "Alpha Model"}
-                          </span>
                         </div>
 
                         <div className="grid grid-cols-2 gap-3">
