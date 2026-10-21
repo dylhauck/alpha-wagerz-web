@@ -730,7 +730,7 @@
       "away_team": "SF",
       "home_team": "ATL",
       "away_projection": {
-        "projected_points": 22.7,
+        "projected_points": 22.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.84,
@@ -740,8 +740,8 @@
           "injury_scoring_factor": 0.944,
           "injury_adjustment_points": -1.35,
           "post_injury_projection": 22.7,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.994,
+          "weather_adjustment_points": -0.14
         },
         "injury_context": {
           "scoring_factor": 0.944,
@@ -750,16 +750,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "Mercedes-Benz Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 66.6,
+            "feels_like_f": 60.3,
+            "humidity_pct": 34.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 11.5,
+            "wind_gust_mph": 15.7,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
+          "classification": "MINOR",
+          "severity_score": 0.45,
+          "scoring_factor": 0.994,
+          "passing_factor": 0.992,
+          "rushing_factor": 1.002,
+          "kicking_factor": 0.991
         },
         "matchup_rating": 18.1,
         "matchup_label": "Strong",
@@ -773,7 +784,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.3,
+        "projected_points": 23.2,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.22,
@@ -783,8 +794,8 @@
           "injury_scoring_factor": 1.038,
           "injury_adjustment_points": 0.85,
           "post_injury_projection": 23.33,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.994,
+          "weather_adjustment_points": -0.14
         },
         "injury_context": {
           "scoring_factor": 1.038,
@@ -793,16 +804,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "Mercedes-Benz Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 66.6,
+            "feels_like_f": 60.3,
+            "humidity_pct": 34.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 11.5,
+            "wind_gust_mph": 15.7,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
+          "classification": "MINOR",
+          "severity_score": 0.45,
+          "scoring_factor": 0.994,
+          "passing_factor": 0.992,
+          "rushing_factor": 1.002,
+          "kicking_factor": 0.991
         },
         "matchup_rating": -6.3,
         "matchup_label": "Difficult",
@@ -816,10 +838,10 @@
         }
       },
       "projected_score": {
-        "away": 22.7,
-        "home": 23.3
+        "away": 22.6,
+        "home": 23.2
       },
-      "projected_total": 46.0,
+      "projected_total": 45.8,
       "expected_margin": 0.6,
       "projected_winner": "ATL",
       "win_probability": {
@@ -1111,6 +1133,20 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.4
+              },
+              {
+                "player_id": "4565200",
+                "player": "Upton Stout",
+                "team": "SF",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
               },
               {
                 "player_id": "16737",
@@ -1572,8 +1608,27 @@
         "longitude": -84.4008,
         "roof": "retractable",
         "kickoff": "2026-10-25T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-10-25T13:00",
+          "temperature_f": 66.6,
+          "feels_like_f": 60.3,
+          "humidity_pct": 34.0,
+          "precip_probability_pct": 0.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 11.5,
+          "wind_gust_mph": 15.7,
+          "weather_code": 0,
+          "conditions": "Clear"
+        },
+        "context": {
+          "severity_score": 0.45,
+          "passing_factor": 0.992,
+          "rushing_factor": 1.002,
+          "scoring_factor": 0.994,
+          "kicking_factor": 0.991,
+          "classification": "MINOR"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1605,10 +1660,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "M&T Bank Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 62.2,
+            "feels_like_f": 59.5,
+            "humidity_pct": 49.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.5,
+            "wind_gust_mph": 5.1,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1648,10 +1714,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "M&T Bank Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 62.2,
+            "feels_like_f": 59.5,
+            "humidity_pct": 49.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.5,
+            "wind_gust_mph": 5.1,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2143,8 +2220,27 @@
         "longitude": -76.6227,
         "roof": "outdoor",
         "kickoff": "2026-10-25T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-10-25T13:00",
+          "temperature_f": 62.2,
+          "feels_like_f": 59.5,
+          "humidity_pct": 49.0,
+          "precip_probability_pct": 0.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 4.5,
+          "wind_gust_mph": 5.1,
+          "weather_code": 0,
+          "conditions": "Clear"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -2176,10 +2272,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Bank of America Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 64.6,
+            "feels_like_f": 60.4,
+            "humidity_pct": 45.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 8.7,
+            "wind_gust_mph": 12.1,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2219,10 +2326,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Bank of America Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 64.6,
+            "feels_like_f": 60.4,
+            "humidity_pct": 45.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 8.7,
+            "wind_gust_mph": 12.1,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2694,8 +2812,27 @@
         "longitude": -80.8528,
         "roof": "outdoor",
         "kickoff": "2026-10-25T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-10-25T13:00",
+          "temperature_f": 64.6,
+          "feels_like_f": 60.4,
+          "humidity_pct": 45.0,
+          "precip_probability_pct": 0.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 8.7,
+          "wind_gust_mph": 12.1,
+          "weather_code": 0,
+          "conditions": "Clear"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -2707,7 +2844,7 @@
       "away_team": "NYG",
       "home_team": "HOU",
       "away_projection": {
-        "projected_points": 19.6,
+        "projected_points": 19.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.38,
@@ -2717,8 +2854,8 @@
           "injury_scoring_factor": 0.944,
           "injury_adjustment_points": -1.16,
           "post_injury_projection": 19.62,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.994,
+          "weather_adjustment_points": -0.12
         },
         "injury_context": {
           "scoring_factor": 0.944,
@@ -2727,16 +2864,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "NRG Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 79.9,
+            "feels_like_f": 77.6,
+            "humidity_pct": 35.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 10.2,
+            "wind_gust_mph": 10.3,
+            "weather_code": 1,
+            "conditions": "Mainly Clear"
+          },
+          "classification": "MINOR",
+          "severity_score": 0.45,
+          "scoring_factor": 0.994,
+          "passing_factor": 0.992,
+          "rushing_factor": 1.002,
+          "kicking_factor": 0.991
         },
         "matchup_rating": -6.9,
         "matchup_label": "Difficult",
@@ -2750,7 +2898,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 22.8,
+        "projected_points": 22.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.41,
@@ -2760,8 +2908,8 @@
           "injury_scoring_factor": 0.944,
           "injury_adjustment_points": -1.35,
           "post_injury_projection": 22.8,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.994,
+          "weather_adjustment_points": -0.14
         },
         "injury_context": {
           "scoring_factor": 0.944,
@@ -2770,16 +2918,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "NRG Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 79.9,
+            "feels_like_f": 77.6,
+            "humidity_pct": 35.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 10.2,
+            "wind_gust_mph": 10.3,
+            "weather_code": 1,
+            "conditions": "Mainly Clear"
+          },
+          "classification": "MINOR",
+          "severity_score": 0.45,
+          "scoring_factor": 0.994,
+          "passing_factor": 0.992,
+          "rushing_factor": 1.002,
+          "kicking_factor": 0.991
         },
         "matchup_rating": 6.6,
         "matchup_label": "Favorable",
@@ -2793,10 +2952,10 @@
         }
       },
       "projected_score": {
-        "away": 19.6,
-        "home": 22.8
+        "away": 19.5,
+        "home": 22.7
       },
-      "projected_total": 42.4,
+      "projected_total": 42.2,
       "expected_margin": 3.2,
       "projected_winner": "HOU",
       "win_probability": {
@@ -3324,7 +3483,7 @@
                 "position": "LB",
                 "status": "IR",
                 "practice_status": "",
-                "injury": "Groin",
+                "injury": "Undisclosed",
                 "unit": "defense",
                 "position_weight": 2.4,
                 "status_weight": 1.0,
@@ -3513,8 +3672,27 @@
         "longitude": -95.4107,
         "roof": "retractable",
         "kickoff": "2026-10-25T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-10-25T13:00",
+          "temperature_f": 79.9,
+          "feels_like_f": 77.6,
+          "humidity_pct": 35.0,
+          "precip_probability_pct": 0.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 10.2,
+          "wind_gust_mph": 10.3,
+          "weather_code": 1,
+          "conditions": "Mainly Clear"
+        },
+        "context": {
+          "severity_score": 0.45,
+          "passing_factor": 0.992,
+          "rushing_factor": 1.002,
+          "scoring_factor": 0.994,
+          "kicking_factor": 0.991,
+          "classification": "MINOR"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -4106,10 +4284,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 62.8,
+            "feels_like_f": 56.8,
+            "humidity_pct": 32.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 7.1,
+            "wind_gust_mph": 9.6,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -4149,10 +4338,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 62.8,
+            "feels_like_f": 56.8,
+            "humidity_pct": 32.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 7.1,
+            "wind_gust_mph": 9.6,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -4736,8 +4936,27 @@
         "longitude": -74.0745,
         "roof": "outdoor",
         "kickoff": "2026-10-25T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-10-25T13:00",
+          "temperature_f": 62.8,
+          "feels_like_f": 56.8,
+          "humidity_pct": 32.0,
+          "precip_probability_pct": 0.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 7.1,
+          "wind_gust_mph": 9.6,
+          "weather_code": 0,
+          "conditions": "Clear"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -4764,15 +4983,26 @@
         },
         "injury_context": {
           "scoring_factor": 0.922,
-          "passing_factor": 0.924,
+          "passing_factor": 0.97,
           "rushing_factor": 0.961,
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Nissan Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 74.9,
+            "feels_like_f": 74.0,
+            "humidity_pct": 31.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 1.1,
+            "wind_gust_mph": 1.1,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -4812,10 +5042,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Nissan Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T13:00",
+            "temperature_f": 74.9,
+            "feels_like_f": 74.0,
+            "humidity_pct": 31.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 1.1,
+            "wind_gust_mph": 1.1,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -4892,20 +5133,6 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 3.4
-              },
-              {
-                "player_id": "4427985",
-                "player": "Bub Means",
-                "team": "CLE",
-                "position": "WR",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
               },
               {
                 "player_id": "4429392",
@@ -5091,10 +5318,10 @@
               }
             ],
             "offense": {
-              "impact": 18.0,
+              "impact": 17.32,
               "factor": 0.8,
-              "passing_impact": 16.0,
-              "passing_factor": 0.792,
+              "passing_impact": 13.0,
+              "passing_factor": 0.831,
               "rushing_impact": 15.12,
               "rushing_factor": 0.834
             },
@@ -5132,14 +5359,6 @@
                 "impact": 3.4
               },
               {
-                "player_id": "4427985",
-                "player": "Bub Means",
-                "position": "WR",
-                "status": "OUT",
-                "injury": "Undisclosed",
-                "impact": 3.0
-              },
-              {
                 "player_id": "4429392",
                 "player": "Elijah Chatman",
                 "position": "DT",
@@ -5158,7 +5377,7 @@
             ]
           },
           "scoring_factor": 0.922,
-          "passing_factor": 0.924,
+          "passing_factor": 0.97,
           "rushing_factor": 0.961
         },
         "home": {
@@ -5355,8 +5574,27 @@
         "longitude": -86.7713,
         "roof": "outdoor",
         "kickoff": "2026-10-25T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-10-25T13:00",
+          "temperature_f": 74.9,
+          "feels_like_f": 74.0,
+          "humidity_pct": 31.0,
+          "precip_probability_pct": 0.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 1.1,
+          "wind_gust_mph": 1.1,
+          "weather_code": 0,
+          "conditions": "Clear"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -5388,10 +5626,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "State Farm Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T16:00",
+            "temperature_f": 81.2,
+            "feels_like_f": 75.9,
+            "humidity_pct": 21.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.6,
+            "wind_gust_mph": 6.5,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -5431,10 +5680,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "State Farm Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T16:00",
+            "temperature_f": 81.2,
+            "feels_like_f": 75.9,
+            "humidity_pct": 21.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.6,
+            "wind_gust_mph": 6.5,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -5968,8 +6228,27 @@
         "longitude": -112.2626,
         "roof": "retractable",
         "kickoff": "2026-10-25T16:05",
-        "available": false,
-        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-10-25T16:00",
+          "temperature_f": 81.2,
+          "feels_like_f": 75.9,
+          "humidity_pct": 21.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.6,
+          "wind_gust_mph": 6.5,
+          "weather_code": 0,
+          "conditions": "Clear"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -6781,22 +7060,22 @@
         }
       },
       "home_projection": {
-        "projected_points": 21.2,
+        "projected_points": 22.2,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.53,
           "matchup_adjustment": -0.78,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 21.94,
-          "injury_scoring_factor": 0.968,
-          "injury_adjustment_points": -0.7,
-          "post_injury_projection": 21.24,
+          "injury_scoring_factor": 1.01,
+          "injury_adjustment_points": 0.22,
+          "post_injury_projection": 22.16,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.968,
-          "passing_factor": 0.98,
+          "scoring_factor": 1.01,
+          "passing_factor": 1.026,
           "rushing_factor": 1.111,
           "key_absences": []
         },
@@ -6827,14 +7106,14 @@
       },
       "projected_score": {
         "away": 20.9,
-        "home": 21.2
+        "home": 22.2
       },
-      "projected_total": 42.1,
-      "expected_margin": 0.3,
+      "projected_total": 43.1,
+      "expected_margin": 1.3,
       "projected_winner": "LV",
       "win_probability": {
-        "away": 48.8,
-        "home": 51.2
+        "away": 45.0,
+        "home": 55.0
       },
       "projection_confidence": 54.2,
       "injury_context": {
@@ -6917,7 +7196,7 @@
                 "player": "Poona Ford",
                 "team": "LAR",
                 "position": "DT",
-                "status": "OUT",
+                "status": "IR",
                 "practice_status": "",
                 "injury": "Triceps",
                 "unit": "defense",
@@ -7086,7 +7365,7 @@
                 "player_id": "3125114",
                 "player": "Poona Ford",
                 "position": "DT",
-                "status": "OUT",
+                "status": "IR",
                 "injury": "Triceps",
                 "impact": 2.6
               }
@@ -7127,20 +7406,6 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 3.4
-              },
-              {
-                "player_id": "4433901",
-                "player": "Corey Rucker",
-                "team": "LV",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
               },
               {
                 "player_id": "4432775",
@@ -7242,10 +7507,10 @@
               }
             ],
             "offense": {
-              "impact": 15.0,
-              "factor": 0.82,
-              "passing_impact": 13.2,
-              "passing_factor": 0.828,
+              "impact": 12.0,
+              "factor": 0.856,
+              "passing_impact": 10.2,
+              "passing_factor": 0.867,
               "rushing_impact": 3.8,
               "rushing_factor": 0.958
             },
@@ -7275,14 +7540,6 @@
                 "impact": 3.4
               },
               {
-                "player_id": "4433901",
-                "player": "Corey Rucker",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 3.0
-              },
-              {
                 "player_id": "4432775",
                 "player": "Dont'e Thornton Jr.",
                 "position": "WR",
@@ -7300,8 +7557,8 @@
               }
             ]
           },
-          "scoring_factor": 0.968,
-          "passing_factor": 0.98,
+          "scoring_factor": 1.01,
+          "passing_factor": 1.026,
           "rushing_factor": 1.111
         }
       },
@@ -7357,10 +7614,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Lumen Field",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T20:00",
+            "temperature_f": 49.9,
+            "feels_like_f": 45.8,
+            "humidity_pct": 77.0,
+            "precip_probability_pct": 13.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.6,
+            "wind_gust_mph": 7.8,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -7400,10 +7668,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Lumen Field",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-10-25T20:00",
+            "temperature_f": 49.9,
+            "feels_like_f": 45.8,
+            "humidity_pct": 77.0,
+            "precip_probability_pct": 13.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 5.6,
+            "wind_gust_mph": 7.8,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -7895,8 +8174,27 @@
         "longitude": -122.3316,
         "roof": "outdoor",
         "kickoff": "2026-10-25T20:20",
-        "available": false,
-        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-10-25T20:00",
+          "temperature_f": 49.9,
+          "feels_like_f": 45.8,
+          "humidity_pct": 77.0,
+          "precip_probability_pct": 13.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 5.6,
+          "wind_gust_mph": 7.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,

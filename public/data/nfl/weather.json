@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T22:32:26.294164+00:00",
+  "generated_at": "2026-10-21T13:24:25.627251+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -11,8 +11,27 @@
       "longitude": -87.6167,
       "roof": "outdoor",
       "kickoff": "2026-10-22T20:15",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-22T20:00",
+        "temperature_f": 55.2,
+        "feels_like_f": 52.8,
+        "humidity_pct": 82.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 5.7,
+        "wind_gust_mph": 9.6,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     }
   ]
 }

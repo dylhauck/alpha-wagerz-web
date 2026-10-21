@@ -884,6 +884,20 @@
               "impact": 1.4
             },
             {
+              "player_id": "4565200",
+              "player": "Upton Stout",
+              "team": "SF",
+              "position": "CB",
+              "status": "QUESTIONABLE",
+              "practice_status": "",
+              "injury": "Undisclosed",
+              "unit": "defense",
+              "position_weight": 3.4,
+              "status_weight": 0.4,
+              "usage_importance": 1.0,
+              "impact": 1.36
+            },
+            {
               "player_id": "16737",
               "player": "Mike Evans",
               "team": "SF",
@@ -2747,7 +2761,7 @@
               "position": "LB",
               "status": "IR",
               "practice_status": "",
-              "injury": "Groin",
+              "injury": "Undisclosed",
               "unit": "defense",
               "position_weight": 2.4,
               "status_weight": 1.0,
@@ -3955,20 +3969,6 @@
               "impact": 3.4
             },
             {
-              "player_id": "4427985",
-              "player": "Bub Means",
-              "team": "CLE",
-              "position": "WR",
-              "status": "OUT",
-              "practice_status": "",
-              "injury": "Undisclosed",
-              "unit": "offense",
-              "position_weight": 3.0,
-              "status_weight": 1.0,
-              "usage_importance": 1.0,
-              "impact": 3.0
-            },
-            {
               "player_id": "4429392",
               "player": "Elijah Chatman",
               "team": "CLE",
@@ -4152,10 +4152,10 @@
             }
           ],
           "offense": {
-            "impact": 18.0,
+            "impact": 17.32,
             "factor": 0.8,
-            "passing_impact": 16.0,
-            "passing_factor": 0.792,
+            "passing_impact": 13.0,
+            "passing_factor": 0.831,
             "rushing_impact": 15.12,
             "rushing_factor": 0.834
           },
@@ -4193,14 +4193,6 @@
               "impact": 3.4
             },
             {
-              "player_id": "4427985",
-              "player": "Bub Means",
-              "position": "WR",
-              "status": "OUT",
-              "injury": "Undisclosed",
-              "impact": 3.0
-            },
-            {
               "player_id": "4429392",
               "player": "Elijah Chatman",
               "position": "DT",
@@ -4219,7 +4211,7 @@
           ]
         },
         "scoring_factor": 0.922,
-        "passing_factor": 0.924,
+        "passing_factor": 0.97,
         "rushing_factor": 0.961
       },
       "home": {
@@ -5612,7 +5604,7 @@
               "player": "Poona Ford",
               "team": "LAR",
               "position": "DT",
-              "status": "OUT",
+              "status": "IR",
               "practice_status": "",
               "injury": "Triceps",
               "unit": "defense",
@@ -5781,7 +5773,7 @@
               "player_id": "3125114",
               "player": "Poona Ford",
               "position": "DT",
-              "status": "OUT",
+              "status": "IR",
               "injury": "Triceps",
               "impact": 2.6
             }
@@ -5822,20 +5814,6 @@
               "status_weight": 1.0,
               "usage_importance": 1.0,
               "impact": 3.4
-            },
-            {
-              "player_id": "4433901",
-              "player": "Corey Rucker",
-              "team": "LV",
-              "position": "WR",
-              "status": "IR",
-              "practice_status": "",
-              "injury": "Undisclosed",
-              "unit": "offense",
-              "position_weight": 3.0,
-              "status_weight": 1.0,
-              "usage_importance": 1.0,
-              "impact": 3.0
             },
             {
               "player_id": "4432775",
@@ -5937,10 +5915,10 @@
             }
           ],
           "offense": {
-            "impact": 15.0,
-            "factor": 0.82,
-            "passing_impact": 13.2,
-            "passing_factor": 0.828,
+            "impact": 12.0,
+            "factor": 0.856,
+            "passing_impact": 10.2,
+            "passing_factor": 0.867,
             "rushing_impact": 3.8,
             "rushing_factor": 0.958
           },
@@ -5970,14 +5948,6 @@
               "impact": 3.4
             },
             {
-              "player_id": "4433901",
-              "player": "Corey Rucker",
-              "position": "WR",
-              "status": "IR",
-              "injury": "Undisclosed",
-              "impact": 3.0
-            },
-            {
               "player_id": "4432775",
               "player": "Dont'e Thornton Jr.",
               "position": "WR",
@@ -5995,8 +5965,8 @@
             }
           ]
         },
-        "scoring_factor": 0.968,
-        "passing_factor": 0.98,
+        "scoring_factor": 1.01,
+        "passing_factor": 1.026,
         "rushing_factor": 1.111
       }
     },
@@ -7832,7 +7802,7 @@
           "position": "LB",
           "status": "QUESTIONABLE",
           "practice_status": "",
-          "injury": "Undisclosed",
+          "injury": "Concussion",
           "unit": "defense",
           "position_weight": 2.4,
           "status_weight": 0.4,
@@ -8154,20 +8124,6 @@
           "impact": 3.4
         },
         {
-          "player_id": "4427985",
-          "player": "Bub Means",
-          "team": "CLE",
-          "position": "WR",
-          "status": "OUT",
-          "practice_status": "",
-          "injury": "Undisclosed",
-          "unit": "offense",
-          "position_weight": 3.0,
-          "status_weight": 1.0,
-          "usage_importance": 1.0,
-          "impact": 3.0
-        },
-        {
           "player_id": "4429392",
           "player": "Elijah Chatman",
           "team": "CLE",
@@ -8351,10 +8307,10 @@
         }
       ],
       "offense": {
-        "impact": 18.0,
+        "impact": 17.32,
         "factor": 0.8,
-        "passing_impact": 16.0,
-        "passing_factor": 0.792,
+        "passing_impact": 13.0,
+        "passing_factor": 0.831,
         "rushing_impact": 15.12,
         "rushing_factor": 0.834
       },
@@ -8390,14 +8346,6 @@
           "status": "IR",
           "injury": "Undisclosed",
           "impact": 3.4
-        },
-        {
-          "player_id": "4427985",
-          "player": "Bub Means",
-          "position": "WR",
-          "status": "OUT",
-          "injury": "Undisclosed",
-          "impact": 3.0
         },
         {
           "player_id": "4429392",
@@ -9645,7 +9593,7 @@
           "position": "LB",
           "status": "IR",
           "practice_status": "",
-          "injury": "Groin",
+          "injury": "Undisclosed",
           "unit": "defense",
           "position_weight": 2.4,
           "status_weight": 1.0,
@@ -10892,7 +10840,7 @@
           "player": "Poona Ford",
           "team": "LAR",
           "position": "DT",
-          "status": "OUT",
+          "status": "IR",
           "practice_status": "",
           "injury": "Triceps",
           "unit": "defense",
@@ -11061,7 +11009,7 @@
           "player_id": "3125114",
           "player": "Poona Ford",
           "position": "DT",
-          "status": "OUT",
+          "status": "IR",
           "injury": "Triceps",
           "impact": 2.6
         }
@@ -11097,20 +11045,6 @@
           "status_weight": 1.0,
           "usage_importance": 1.0,
           "impact": 3.4
-        },
-        {
-          "player_id": "4433901",
-          "player": "Corey Rucker",
-          "team": "LV",
-          "position": "WR",
-          "status": "IR",
-          "practice_status": "",
-          "injury": "Undisclosed",
-          "unit": "offense",
-          "position_weight": 3.0,
-          "status_weight": 1.0,
-          "usage_importance": 1.0,
-          "impact": 3.0
         },
         {
           "player_id": "4432775",
@@ -11212,10 +11146,10 @@
         }
       ],
       "offense": {
-        "impact": 15.0,
-        "factor": 0.82,
-        "passing_impact": 13.2,
-        "passing_factor": 0.828,
+        "impact": 12.0,
+        "factor": 0.856,
+        "passing_impact": 10.2,
+        "passing_factor": 0.867,
         "rushing_impact": 3.8,
         "rushing_factor": 0.958
       },
@@ -11243,14 +11177,6 @@
           "status": "IR",
           "injury": "Knee",
           "impact": 3.4
-        },
-        {
-          "player_id": "4433901",
-          "player": "Corey Rucker",
-          "position": "WR",
-          "status": "IR",
-          "injury": "Undisclosed",
-          "impact": 3.0
         },
         {
           "player_id": "4432775",
@@ -11789,7 +11715,7 @@
           "position": "C",
           "status": "DOUBTFUL",
           "practice_status": "",
-          "injury": "Undisclosed",
+          "injury": "Knee",
           "unit": "offense",
           "position_weight": 2.4,
           "status_weight": 0.85,
@@ -11859,7 +11785,7 @@
           "position": "OG",
           "status": "DOUBTFUL",
           "practice_status": "",
-          "injury": "Undisclosed",
+          "injury": "Hamstring",
           "unit": "offense",
           "position_weight": 2.0,
           "status_weight": 0.85,
@@ -11930,20 +11856,6 @@
           "status": "QUESTIONABLE",
           "practice_status": "",
           "injury": "Ankle",
-          "unit": "offense",
-          "position_weight": 3.0,
-          "status_weight": 0.4,
-          "usage_importance": 1.0,
-          "impact": 1.2
-        },
-        {
-          "player_id": "4572655",
-          "player": "Jeremiah Webb",
-          "team": "NE",
-          "position": "WR",
-          "status": "QUESTIONABLE",
-          "practice_status": "",
-          "injury": "Undisclosed",
           "unit": "offense",
           "position_weight": 3.0,
           "status_weight": 0.4,
@@ -13235,20 +13147,6 @@
           "impact": 0.96
         },
         {
-          "player_id": "4714365",
-          "player": "Carson Steele",
-          "team": "PHI",
-          "position": "RB",
-          "status": "QUESTIONABLE",
-          "practice_status": "",
-          "injury": "Right Shoulder",
-          "unit": "offense",
-          "position_weight": 1.8,
-          "status_weight": 0.4,
-          "usage_importance": 1.0,
-          "impact": 0.72
-        },
-        {
           "player_id": "3929630",
           "player": "Saquon Barkley",
           "team": "PHI",
@@ -14098,6 +13996,20 @@
           "status_weight": 0.4,
           "usage_importance": 1.0,
           "impact": 1.4
+        },
+        {
+          "player_id": "4565200",
+          "player": "Upton Stout",
+          "team": "SF",
+          "position": "CB",
+          "status": "QUESTIONABLE",
+          "practice_status": "",
+          "injury": "Undisclosed",
+          "unit": "defense",
+          "position_weight": 3.4,
+          "status_weight": 0.4,
+          "usage_importance": 1.0,
+          "impact": 1.36
         },
         {
           "player_id": "16737",

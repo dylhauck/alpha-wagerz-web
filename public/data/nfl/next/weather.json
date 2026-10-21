@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T22:32:27.116344+00:00",
+  "generated_at": "2026-10-21T13:24:30.112930+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -33,8 +33,27 @@
       "longitude": -84.4008,
       "roof": "retractable",
       "kickoff": "2026-10-25T13:00",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-25T13:00",
+        "temperature_f": 66.6,
+        "feels_like_f": 60.3,
+        "humidity_pct": 34.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 11.5,
+        "wind_gust_mph": 15.7,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.45,
+        "passing_factor": 0.992,
+        "rushing_factor": 1.002,
+        "scoring_factor": 0.994,
+        "kicking_factor": 0.991,
+        "classification": "MINOR"
+      }
     },
     {
       "game_id": "2026_07_CIN_BAL",
@@ -45,8 +64,27 @@
       "longitude": -76.6227,
       "roof": "outdoor",
       "kickoff": "2026-10-25T13:00",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-25T13:00",
+        "temperature_f": 62.2,
+        "feels_like_f": 59.5,
+        "humidity_pct": 49.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 4.5,
+        "wind_gust_mph": 5.1,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     },
     {
       "game_id": "2026_07_TB_CAR",
@@ -57,8 +95,27 @@
       "longitude": -80.8528,
       "roof": "outdoor",
       "kickoff": "2026-10-25T13:00",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-25T13:00",
+        "temperature_f": 64.6,
+        "feels_like_f": 60.4,
+        "humidity_pct": 45.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 8.7,
+        "wind_gust_mph": 12.1,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     },
     {
       "game_id": "2026_07_NYG_HOU",
@@ -69,8 +126,27 @@
       "longitude": -95.4107,
       "roof": "retractable",
       "kickoff": "2026-10-25T13:00",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-25T13:00",
+        "temperature_f": 79.9,
+        "feels_like_f": 77.6,
+        "humidity_pct": 35.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 10.2,
+        "wind_gust_mph": 10.3,
+        "weather_code": 1,
+        "conditions": "Mainly Clear"
+      },
+      "context": {
+        "severity_score": 0.45,
+        "passing_factor": 0.992,
+        "rushing_factor": 1.002,
+        "scoring_factor": 0.994,
+        "kicking_factor": 0.991,
+        "classification": "MINOR"
+      }
     },
     {
       "game_id": "2026_07_IND_MIN",
@@ -103,8 +179,27 @@
       "longitude": -74.0745,
       "roof": "outdoor",
       "kickoff": "2026-10-25T13:00",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-25T13:00",
+        "temperature_f": 62.8,
+        "feels_like_f": 56.8,
+        "humidity_pct": 32.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 7.1,
+        "wind_gust_mph": 9.6,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     },
     {
       "game_id": "2026_07_CLE_TEN",
@@ -115,8 +210,27 @@
       "longitude": -86.7713,
       "roof": "outdoor",
       "kickoff": "2026-10-25T13:00",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-25T13:00",
+        "temperature_f": 74.9,
+        "feels_like_f": 74.0,
+        "humidity_pct": 31.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 1.1,
+        "wind_gust_mph": 1.1,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     },
     {
       "game_id": "2026_07_DEN_ARI",
@@ -127,8 +241,27 @@
       "longitude": -112.2626,
       "roof": "retractable",
       "kickoff": "2026-10-25T16:05",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-25T16:00",
+        "temperature_f": 81.2,
+        "feels_like_f": 75.9,
+        "humidity_pct": 21.0,
+        "precip_probability_pct": 1.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 5.6,
+        "wind_gust_mph": 6.5,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     },
     {
       "game_id": "2026_07_GB_DET",
@@ -183,8 +316,27 @@
       "longitude": -122.3316,
       "roof": "outdoor",
       "kickoff": "2026-10-25T20:20",
-      "available": false,
-      "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-10-25T20:00",
+        "temperature_f": 49.9,
+        "feels_like_f": 45.8,
+        "humidity_pct": 77.0,
+        "precip_probability_pct": 13.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 5.6,
+        "wind_gust_mph": 7.8,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     }
   ]
 }
