@@ -5,23 +5,23 @@
       "away_team": "PIT",
       "home_team": "NO",
       "away_projection": {
-        "projected_points": 20.5,
+        "projected_points": 19.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.07,
           "matchup_adjustment": 0.04,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 21.86,
-          "injury_scoring_factor": 0.938,
-          "injury_adjustment_points": -1.36,
-          "post_injury_projection": 20.5,
+          "injury_scoring_factor": 0.909,
+          "injury_adjustment_points": -1.99,
+          "post_injury_projection": 19.87,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.938,
-          "passing_factor": 0.901,
-          "rushing_factor": 0.996,
+          "scoring_factor": 0.909,
+          "passing_factor": 0.889,
+          "rushing_factor": 0.977,
           "key_absences": []
         },
         "weather_context": {
@@ -50,22 +50,22 @@
         }
       },
       "home_projection": {
-        "projected_points": 20.2,
+        "projected_points": 20.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.59,
           "matchup_adjustment": -0.87,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 21.79,
-          "injury_scoring_factor": 0.927,
-          "injury_adjustment_points": -1.59,
-          "post_injury_projection": 20.2,
+          "injury_scoring_factor": 0.944,
+          "injury_adjustment_points": -1.22,
+          "post_injury_projection": 20.57,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.927,
-          "passing_factor": 0.871,
+          "scoring_factor": 0.944,
+          "passing_factor": 0.892,
           "rushing_factor": 0.925,
           "key_absences": []
         },
@@ -95,15 +95,15 @@
         }
       },
       "projected_score": {
-        "away": 20.5,
-        "home": 20.2
+        "away": 19.9,
+        "home": 20.6
       },
-      "projected_total": 40.7,
-      "expected_margin": -0.3,
-      "projected_winner": "PIT",
+      "projected_total": 40.5,
+      "expected_margin": 0.7,
+      "projected_winner": "NO",
       "win_probability": {
-        "away": 51.2,
-        "home": 48.8
+        "away": 47.3,
+        "home": 52.7
       },
       "projection_confidence": 51.9,
       "injury_context": {
@@ -266,35 +266,91 @@
                 "impact": 1.36
               },
               {
+                "player_id": "3045373",
+                "player": "Jalen Ramsey",
+                "team": "PIT",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Nine Solo",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
+              },
+              {
                 "player_id": "4035656",
                 "player": "Ben Skowronek",
                 "team": "PIT",
                 "position": "WR",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Calf",
                 "unit": "offense",
                 "position_weight": 3.0,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.2
+              },
+              {
+                "player_id": "3047495",
+                "player": "Sebastian Joseph-Day",
+                "team": "PIT",
+                "position": "DT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.04
+              },
+              {
+                "player_id": "4037333",
+                "player": "Alex Highsmith",
+                "team": "PIT",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "4038815",
+                "player": "Rico Dowdle",
+                "team": "PIT",
+                "position": "RB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Knee",
+                "unit": "offense",
+                "position_weight": 1.8,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.72
               }
             ],
             "offense": {
-              "impact": 15.4,
-              "factor": 0.815,
+              "impact": 16.12,
+              "factor": 0.807,
               "passing_impact": 15.4,
               "passing_factor": 0.8,
-              "rushing_impact": 5.2,
-              "rushing_factor": 0.943
+              "rushing_impact": 5.92,
+              "rushing_factor": 0.935
             },
             "defense": {
-              "impact": 15.86,
-              "factor": 1.159,
-              "pass_defense_impact": 10.66,
-              "pass_defense_factor": 1.117,
-              "rush_defense_impact": 7.7,
-              "rush_defense_factor": 1.077
+              "impact": 18.0,
+              "factor": 1.18,
+              "pass_defense_impact": 12.98,
+              "pass_defense_factor": 1.143,
+              "rush_defense_impact": 9.7,
+              "rush_defense_factor": 1.097
             },
             "key_absences": [
               {
@@ -371,9 +427,9 @@
               }
             ]
           },
-          "scoring_factor": 0.938,
-          "passing_factor": 0.901,
-          "rushing_factor": 0.996
+          "scoring_factor": 0.909,
+          "passing_factor": 0.889,
+          "rushing_factor": 0.977
         },
         "home": {
           "team_context": {
@@ -534,20 +590,6 @@
                 "impact": 1.8
               },
               {
-                "player_id": "4433975",
-                "player": "Kool-Aid McKinstry",
-                "team": "NO",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Illness",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
                 "player_id": "4428350",
                 "player": "Quincy Riley",
                 "team": "NO",
@@ -560,20 +602,6 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.36
-              },
-              {
-                "player_id": "4076951",
-                "player": "Nathan Shepherd",
-                "team": "NO",
-                "position": "DT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.04
               },
               {
                 "player_id": "3925350",
@@ -596,7 +624,7 @@
                 "position": "LB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Calf",
                 "unit": "defense",
                 "position_weight": 2.4,
                 "status_weight": 0.4,
@@ -616,6 +644,34 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 0.8
+              },
+              {
+                "player_id": "3054850",
+                "player": "Alvin Kamara",
+                "team": "NO",
+                "position": "RB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Back",
+                "unit": "offense",
+                "position_weight": 1.8,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.72
+              },
+              {
+                "player_id": "5081999",
+                "player": "CJ Donaldson",
+                "team": "NO",
+                "position": "RB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Shoulder",
+                "unit": "offense",
+                "position_weight": 1.8,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.72
               }
             ],
             "offense": {
@@ -623,16 +679,16 @@
               "factor": 0.8,
               "passing_impact": 17.4,
               "passing_factor": 0.78,
-              "rushing_impact": 12.8,
-              "rushing_factor": 0.859
+              "rushing_impact": 14.24,
+              "rushing_factor": 0.843
             },
             "defense": {
-              "impact": 15.08,
-              "factor": 1.151,
-              "pass_defense_impact": 11.44,
-              "pass_defense_factor": 1.126,
-              "rush_defense_impact": 5.56,
-              "rush_defense_factor": 1.056
+              "impact": 12.68,
+              "factor": 1.127,
+              "pass_defense_impact": 10.08,
+              "pass_defense_factor": 1.111,
+              "rush_defense_impact": 4.52,
+              "rush_defense_factor": 1.045
             },
             "key_absences": [
               {
@@ -693,8 +749,8 @@
               }
             ]
           },
-          "scoring_factor": 0.927,
-          "passing_factor": 0.871,
+          "scoring_factor": 0.944,
+          "passing_factor": 0.892,
           "rushing_factor": 0.925
         }
       },
@@ -730,7 +786,7 @@
       "away_team": "SF",
       "home_team": "ATL",
       "away_projection": {
-        "projected_points": 22.6,
+        "projected_points": 22.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.84,
@@ -740,37 +796,26 @@
           "injury_scoring_factor": 0.944,
           "injury_adjustment_points": -1.35,
           "post_injury_projection": 22.7,
-          "weather_scoring_factor": 0.994,
-          "weather_adjustment_points": -0.14
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 0.944,
-          "passing_factor": 0.911,
-          "rushing_factor": 1.04,
+          "passing_factor": 0.936,
+          "rushing_factor": 1.056,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "Mercedes-Benz Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 66.6,
-            "feels_like_f": 60.3,
-            "humidity_pct": 34.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 11.5,
-            "wind_gust_mph": 15.7,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 0.45,
-          "scoring_factor": 0.994,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "kicking_factor": 0.991
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 18.1,
         "matchup_label": "Strong",
@@ -784,47 +829,36 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.2,
+        "projected_points": 22.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.22,
           "matchup_adjustment": -0.55,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 22.47,
-          "injury_scoring_factor": 1.038,
-          "injury_adjustment_points": 0.85,
-          "post_injury_projection": 23.33,
-          "weather_scoring_factor": 0.994,
-          "weather_adjustment_points": -0.14
+          "injury_scoring_factor": 0.994,
+          "injury_adjustment_points": -0.13,
+          "post_injury_projection": 22.34,
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.038,
-          "passing_factor": 1.072,
-          "rushing_factor": 1.071,
+          "scoring_factor": 0.994,
+          "passing_factor": 1.025,
+          "rushing_factor": 1.045,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "Mercedes-Benz Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 66.6,
-            "feels_like_f": 60.3,
-            "humidity_pct": 34.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 11.5,
-            "wind_gust_mph": 15.7,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 0.45,
-          "scoring_factor": 0.994,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "kicking_factor": 0.991
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -6.3,
         "matchup_label": "Difficult",
@@ -838,15 +872,15 @@
         }
       },
       "projected_score": {
-        "away": 22.6,
-        "home": 23.2
+        "away": 22.7,
+        "home": 22.3
       },
-      "projected_total": 45.8,
-      "expected_margin": 0.6,
-      "projected_winner": "ATL",
+      "projected_total": 45.0,
+      "expected_margin": -0.4,
+      "projected_winner": "SF",
       "win_probability": {
-        "away": 47.7,
-        "home": 52.3
+        "away": 51.5,
+        "home": 48.5
       },
       "projection_confidence": 54.3,
       "injury_context": {
@@ -854,34 +888,6 @@
           "team_context": {
             "team": "SF",
             "injuries": [
-              {
-                "player_id": "4394894",
-                "player": "Andrew Farmer II",
-                "team": "SF",
-                "position": "DE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Back",
-                "unit": "defense",
-                "position_weight": 3.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.5
-              },
-              {
-                "player_id": "4696051",
-                "player": "Mikail Kamara",
-                "team": "SF",
-                "position": "DE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "defense",
-                "position_weight": 3.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.5
-              },
               {
                 "player_id": "4240542",
                 "player": "Nate Hobbs",
@@ -973,7 +979,7 @@
                 "position": "WR",
                 "status": "OUT",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Hamstring",
                 "unit": "offense",
                 "position_weight": 3.0,
                 "status_weight": 1.0,
@@ -1049,20 +1055,6 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 2.6
-              },
-              {
-                "player_id": "4239088",
-                "player": "Darrick Forrest",
-                "team": "SF",
-                "position": "S",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.5
               },
               {
                 "player_id": "4241807",
@@ -1121,13 +1113,27 @@
                 "impact": 1.8
               },
               {
+                "player_id": "4685623",
+                "player": "Mykel Williams",
+                "team": "SF",
+                "position": "DE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Knee",
+                "unit": "defense",
+                "position_weight": 3.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.4
+              },
+              {
                 "player_id": "4040605",
                 "player": "Nick Bosa",
                 "team": "SF",
                 "position": "DE",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Calf",
                 "unit": "defense",
                 "position_weight": 3.5,
                 "status_weight": 0.4,
@@ -1155,7 +1161,7 @@
                 "position": "WR",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Ribs/achilles",
                 "unit": "offense",
                 "position_weight": 3.0,
                 "status_weight": 0.4,
@@ -1163,8 +1169,8 @@
                 "impact": 1.2
               },
               {
-                "player_id": "4693337",
-                "player": "Marques Sigle",
+                "player_id": "3858271",
+                "player": "Ashtyn Davis",
                 "team": "SF",
                 "position": "S",
                 "status": "QUESTIONABLE",
@@ -1175,6 +1181,48 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.0
+              },
+              {
+                "player_id": "4693337",
+                "player": "Marques Sigle",
+                "team": "SF",
+                "position": "S",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Ankle",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.0
+              },
+              {
+                "player_id": "3057524",
+                "player": "Siran Neal",
+                "team": "SF",
+                "position": "S",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.0
+              },
+              {
+                "player_id": "5086161",
+                "player": "Jaden Dugger",
+                "team": "SF",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Knee",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
               },
               {
                 "player_id": "3116097",
@@ -1202,28 +1250,12 @@
             "defense": {
               "impact": 18.0,
               "factor": 1.18,
-              "pass_defense_impact": 20.0,
-              "pass_defense_factor": 1.2,
+              "pass_defense_impact": 17.28,
+              "pass_defense_factor": 1.19,
               "rush_defense_impact": 16.0,
               "rush_defense_factor": 1.16
             },
             "key_absences": [
-              {
-                "player_id": "4394894",
-                "player": "Andrew Farmer II",
-                "position": "DE",
-                "status": "IR",
-                "injury": "Back",
-                "impact": 3.5
-              },
-              {
-                "player_id": "4696051",
-                "player": "Mikail Kamara",
-                "position": "DE",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 3.5
-              },
               {
                 "player_id": "4240542",
                 "player": "Nate Hobbs",
@@ -1293,7 +1325,7 @@
                 "player": "Deebo Samuel Sr.",
                 "position": "WR",
                 "status": "OUT",
-                "injury": "Undisclosed",
+                "injury": "Hamstring",
                 "impact": 3.0
               },
               {
@@ -1319,20 +1351,12 @@
                 "status": "IR",
                 "injury": "Undisclosed",
                 "impact": 2.6
-              },
-              {
-                "player_id": "4239088",
-                "player": "Darrick Forrest",
-                "position": "S",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 2.5
               }
             ]
           },
           "scoring_factor": 0.944,
-          "passing_factor": 0.911,
-          "rushing_factor": 1.04
+          "passing_factor": 0.936,
+          "rushing_factor": 1.056
         },
         "home": {
           "team_context": {
@@ -1479,6 +1503,48 @@
                 "impact": 1.8
               },
               {
+                "player_id": "3045527",
+                "player": "Samson Ebukam",
+                "team": "ATL",
+                "position": "DE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.4
+              },
+              {
+                "player_id": "3043168",
+                "player": "Za'Darius Smith",
+                "team": "ATL",
+                "position": "DE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.4
+              },
+              {
+                "player_id": "4870988",
+                "player": "Avieon Terrell",
+                "team": "ATL",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
+              },
+              {
                 "player_id": "4431194",
                 "player": "Billy Bowman Jr.",
                 "team": "ATL",
@@ -1499,12 +1565,40 @@
                 "position": "CB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Groin",
                 "unit": "defense",
                 "position_weight": 3.4,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.36
+              },
+              {
+                "player_id": "5209093",
+                "player": "Michael Jerrell",
+                "team": "ATL",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
+                "player_id": "3917914",
+                "player": "Olamide Zaccheaus",
+                "team": "ATL",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Shoulder",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
               },
               {
                 "player_id": "4037626",
@@ -1521,35 +1615,35 @@
                 "impact": 0.96
               },
               {
-                "player_id": "4595343",
-                "player": "Kendal Daniels",
+                "player_id": "4241474",
+                "player": "Brian Robinson Jr.",
                 "team": "ATL",
-                "position": "LB",
+                "position": "RB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Neck",
-                "unit": "defense",
-                "position_weight": 2.4,
+                "injury": "Hamstring",
+                "unit": "offense",
+                "position_weight": 1.8,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
-                "impact": 0.96
+                "impact": 0.72
               }
             ],
             "offense": {
-              "impact": 10.0,
-              "factor": 0.88,
-              "passing_impact": 8.2,
-              "passing_factor": 0.893,
-              "rushing_impact": 7.0,
-              "rushing_factor": 0.923
+              "impact": 13.2,
+              "factor": 0.842,
+              "passing_impact": 10.68,
+              "passing_factor": 0.861,
+              "rushing_impact": 9.0,
+              "rushing_factor": 0.901
             },
             "defense": {
               "impact": 18.0,
               "factor": 1.18,
-              "pass_defense_impact": 15.24,
-              "pass_defense_factor": 1.168,
-              "rush_defense_impact": 14.32,
-              "rush_defense_factor": 1.143
+              "pass_defense_impact": 18.44,
+              "pass_defense_factor": 1.2,
+              "rush_defense_impact": 16.0,
+              "rush_defense_factor": 1.16
             },
             "key_absences": [
               {
@@ -1594,9 +1688,9 @@
               }
             ]
           },
-          "scoring_factor": 1.038,
-          "passing_factor": 1.072,
-          "rushing_factor": 1.071
+          "scoring_factor": 0.994,
+          "passing_factor": 1.025,
+          "rushing_factor": 1.045
         }
       },
       "weather_context": {
@@ -1608,27 +1702,8 @@
         "longitude": -84.4008,
         "roof": "retractable",
         "kickoff": "2026-10-25T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-10-25T13:00",
-          "temperature_f": 66.6,
-          "feels_like_f": 60.3,
-          "humidity_pct": 34.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 11.5,
-          "wind_gust_mph": 15.7,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.45,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "scoring_factor": 0.994,
-          "kicking_factor": 0.991,
-          "classification": "MINOR"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1640,41 +1715,30 @@
       "away_team": "CIN",
       "home_team": "BAL",
       "away_projection": {
-        "projected_points": 21.4,
+        "projected_points": 22.2,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.05,
           "matchup_adjustment": 0.15,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 21.95,
-          "injury_scoring_factor": 0.976,
-          "injury_adjustment_points": -0.53,
-          "post_injury_projection": 21.42,
+          "injury_scoring_factor": 1.01,
+          "injury_adjustment_points": 0.22,
+          "post_injury_projection": 22.17,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.976,
-          "passing_factor": 0.964,
-          "rushing_factor": 0.999,
+          "scoring_factor": 1.01,
+          "passing_factor": 1.001,
+          "rushing_factor": 1.018,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "M&T Bank Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 62.2,
-            "feels_like_f": 59.5,
-            "humidity_pct": 49.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.5,
-            "wind_gust_mph": 5.1,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1714,21 +1778,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "M&T Bank Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 62.2,
-            "feels_like_f": 59.5,
-            "humidity_pct": 49.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.5,
-            "wind_gust_mph": 5.1,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1748,15 +1801,15 @@
         }
       },
       "projected_score": {
-        "away": 21.4,
+        "away": 22.2,
         "home": 22.5
       },
-      "projected_total": 43.9,
-      "expected_margin": 1.1,
+      "projected_total": 44.7,
+      "expected_margin": 0.3,
       "projected_winner": "BAL",
       "win_probability": {
-        "away": 45.8,
-        "home": 54.2
+        "away": 48.8,
+        "home": 51.2
       },
       "projection_confidence": 53.3,
       "injury_context": {
@@ -1849,27 +1902,13 @@
                 "impact": 2.2
               },
               {
-                "player_id": "5092508",
-                "player": "Colbie Young",
-                "team": "CIN",
-                "position": "WR",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.2
-              },
-              {
                 "player_id": "4401811",
                 "player": "Kyle Dugger",
                 "team": "CIN",
                 "position": "S",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Quadriceps",
                 "unit": "defense",
                 "position_weight": 2.5,
                 "status_weight": 0.4,
@@ -1878,10 +1917,10 @@
               }
             ],
             "offense": {
-              "impact": 9.6,
-              "factor": 0.885,
-              "passing_impact": 9.6,
-              "passing_factor": 0.875,
+              "impact": 8.4,
+              "factor": 0.899,
+              "passing_impact": 8.4,
+              "passing_factor": 0.891,
               "rushing_impact": 3.2,
               "rushing_factor": 0.965
             },
@@ -1928,9 +1967,9 @@
               }
             ]
           },
-          "scoring_factor": 0.976,
-          "passing_factor": 0.964,
-          "rushing_factor": 0.999
+          "scoring_factor": 1.01,
+          "passing_factor": 1.001,
+          "rushing_factor": 1.018
         },
         "home": {
           "team_context": {
@@ -1957,7 +1996,7 @@
                 "position": "QB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Ankle",
                 "unit": "offense",
                 "position_weight": 10.0,
                 "status_weight": 0.4,
@@ -1985,7 +2024,7 @@
                 "position": "CB",
                 "status": "IR",
                 "practice_status": "",
-                "injury": "Knee",
+                "injury": "Toe/ankle",
                 "unit": "defense",
                 "position_weight": 3.4,
                 "status_weight": 1.0,
@@ -2105,14 +2144,42 @@
                 "impact": 1.04
               },
               {
+                "player_id": "3858276",
+                "player": "Jaylinn Hawkins",
+                "team": "BAL",
+                "position": "S",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.0
+              },
+              {
                 "player_id": "4361178",
                 "player": "Cam Jurgens",
                 "team": "BAL",
                 "position": "C",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Concussion",
                 "unit": "offense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "4690179",
+                "player": "Tavius Robinson",
+                "team": "BAL",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
                 "position_weight": 2.4,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
@@ -2125,7 +2192,7 @@
                 "position": "TE",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Hand",
                 "unit": "offense",
                 "position_weight": 2.2,
                 "status_weight": 0.4,
@@ -2135,6 +2202,34 @@
               {
                 "player_id": "4243220",
                 "player": "Andrew Vorhees",
+                "team": "BAL",
+                "position": "OG",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 2.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.8
+              },
+              {
+                "player_id": "4035479",
+                "player": "John Simpson",
+                "team": "BAL",
+                "position": "OG",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 2.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.8
+              },
+              {
+                "player_id": "4832793",
+                "player": "Olaivavega Ioane",
                 "team": "BAL",
                 "position": "OG",
                 "status": "QUESTIONABLE",
@@ -2156,12 +2251,12 @@
               "rushing_factor": 0.824
             },
             "defense": {
-              "impact": 10.34,
-              "factor": 1.103,
-              "pass_defense_impact": 9.3,
-              "pass_defense_factor": 1.102,
-              "rush_defense_impact": 3.54,
-              "rush_defense_factor": 1.035
+              "impact": 12.3,
+              "factor": 1.123,
+              "pass_defense_impact": 11.26,
+              "pass_defense_factor": 1.124,
+              "rush_defense_impact": 5.5,
+              "rush_defense_factor": 1.055
             },
             "key_absences": [
               {
@@ -2177,7 +2272,7 @@
                 "player": "Lamar Jackson",
                 "position": "QB",
                 "status": "QUESTIONABLE",
-                "injury": "Undisclosed",
+                "injury": "Ankle",
                 "impact": 4.0
               },
               {
@@ -2193,7 +2288,7 @@
                 "player": "T.J. Tampa",
                 "position": "CB",
                 "status": "IR",
-                "injury": "Knee",
+                "injury": "Toe/ankle",
                 "impact": 3.4
               },
               {
@@ -2220,27 +2315,8 @@
         "longitude": -76.6227,
         "roof": "outdoor",
         "kickoff": "2026-10-25T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-10-25T13:00",
-          "temperature_f": 62.2,
-          "feels_like_f": 59.5,
-          "humidity_pct": 49.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 4.5,
-          "wind_gust_mph": 5.1,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -2252,41 +2328,30 @@
       "away_team": "TB",
       "home_team": "CAR",
       "away_projection": {
-        "projected_points": 20.5,
+        "projected_points": 20.0,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.47,
           "matchup_adjustment": -0.84,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 20.44,
-          "injury_scoring_factor": 1.003,
-          "injury_adjustment_points": 0.06,
-          "post_injury_projection": 20.5,
+          "injury_scoring_factor": 0.978,
+          "injury_adjustment_points": -0.45,
+          "post_injury_projection": 19.99,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.003,
-          "passing_factor": 0.99,
-          "rushing_factor": 1.028,
+          "scoring_factor": 0.978,
+          "passing_factor": 0.963,
+          "rushing_factor": 1.021,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Bank of America Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 64.6,
-            "feels_like_f": 60.4,
-            "humidity_pct": 45.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 8.7,
-            "wind_gust_mph": 12.1,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2306,41 +2371,30 @@
         }
       },
       "home_projection": {
-        "projected_points": 20.7,
+        "projected_points": 21.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.03,
           "matchup_adjustment": -0.16,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 23.12,
-          "injury_scoring_factor": 0.896,
-          "injury_adjustment_points": -2.4,
-          "post_injury_projection": 20.72,
+          "injury_scoring_factor": 0.939,
+          "injury_adjustment_points": -1.41,
+          "post_injury_projection": 21.71,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.896,
-          "passing_factor": 0.923,
-          "rushing_factor": 0.942,
+          "scoring_factor": 0.939,
+          "passing_factor": 0.951,
+          "rushing_factor": 0.983,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Bank of America Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 64.6,
-            "feels_like_f": 60.4,
-            "humidity_pct": 45.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 8.7,
-            "wind_gust_mph": 12.1,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2360,15 +2414,15 @@
         }
       },
       "projected_score": {
-        "away": 20.5,
-        "home": 20.7
+        "away": 20.0,
+        "home": 21.7
       },
-      "projected_total": 41.2,
-      "expected_margin": 0.2,
-      "projected_winner": "EVEN",
+      "projected_total": 41.7,
+      "expected_margin": 1.7,
+      "projected_winner": "CAR",
       "win_probability": {
-        "away": 49.2,
-        "home": 50.8
+        "away": 43.5,
+        "home": 56.5
       },
       "projection_confidence": 52.0,
       "injury_context": {
@@ -2383,7 +2437,7 @@
                 "position": "QB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Right Thumb",
                 "unit": "offense",
                 "position_weight": 10.0,
                 "status_weight": 0.4,
@@ -2453,7 +2507,7 @@
                 "position": "S",
                 "status": "DOUBTFUL",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Ribs",
                 "unit": "defense",
                 "position_weight": 2.5,
                 "status_weight": 0.85,
@@ -2461,13 +2515,13 @@
                 "impact": 2.12
               },
               {
-                "player_id": "4816107",
-                "player": "Benjamin Morrison",
+                "player_id": "4250392",
+                "player": "Zyon McCollum",
                 "team": "TB",
                 "position": "CB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Illness",
                 "unit": "defense",
                 "position_weight": 3.4,
                 "status_weight": 0.4,
@@ -2475,13 +2529,69 @@
                 "impact": 1.36
               },
               {
-                "player_id": "4430871",
-                "player": "Sean Tucker",
+                "player_id": "4380507",
+                "player": "Luke Goedeke",
+                "team": "TB",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
+                "player_id": "4567750",
+                "player": "Emeka Egbuka",
+                "team": "TB",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Concussion",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
+                "player_id": "4427673",
+                "player": "Calijah Kancey",
+                "team": "TB",
+                "position": "DT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.04
+              },
+              {
+                "player_id": "3909013",
+                "player": "Christian Rozeboom",
+                "team": "TB",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "4596448",
+                "player": "Bucky Irving",
                 "team": "TB",
                 "position": "RB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Illness",
                 "unit": "offense",
                 "position_weight": 1.8,
                 "status_weight": 0.4,
@@ -2490,20 +2600,20 @@
               }
             ],
             "offense": {
-              "impact": 10.72,
-              "factor": 0.871,
-              "passing_impact": 10.0,
-              "passing_factor": 0.87,
-              "rushing_impact": 4.72,
-              "rushing_factor": 0.948
+              "impact": 13.2,
+              "factor": 0.842,
+              "passing_impact": 12.48,
+              "passing_factor": 0.838,
+              "rushing_impact": 6.0,
+              "rushing_factor": 0.934
             },
             "defense": {
-              "impact": 9.28,
-              "factor": 1.093,
-              "pass_defense_impact": 9.28,
-              "pass_defense_factor": 1.102,
-              "rush_defense_impact": 4.52,
-              "rush_defense_factor": 1.045
+              "impact": 11.28,
+              "factor": 1.113,
+              "pass_defense_impact": 10.24,
+              "pass_defense_factor": 1.113,
+              "rush_defense_impact": 6.52,
+              "rush_defense_factor": 1.065
             },
             "key_absences": [
               {
@@ -2511,7 +2621,7 @@
                 "player": "Baker Mayfield",
                 "position": "QB",
                 "status": "QUESTIONABLE",
-                "injury": "Undisclosed",
+                "injury": "Right Thumb",
                 "impact": 4.0
               },
               {
@@ -2540,9 +2650,9 @@
               }
             ]
           },
-          "scoring_factor": 1.003,
-          "passing_factor": 0.99,
-          "rushing_factor": 1.028
+          "scoring_factor": 0.978,
+          "passing_factor": 0.963,
+          "rushing_factor": 1.021
         },
         "home": {
           "team_context": {
@@ -2689,18 +2799,18 @@
                 "impact": 1.8
               },
               {
-                "player_id": "4870694",
-                "player": "Monroe Freeling",
+                "player_id": "4242975",
+                "player": "Jaelan Phillips",
                 "team": "CAR",
-                "position": "OT",
+                "position": "LB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.2,
+                "injury": "Hamstring",
+                "unit": "defense",
+                "position_weight": 2.4,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
-                "impact": 1.28
+                "impact": 0.96
               },
               {
                 "player_id": "4714157",
@@ -2715,37 +2825,23 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 0.96
-              },
-              {
-                "player_id": "4239934",
-                "player": "AJ Dillon",
-                "team": "CAR",
-                "position": "RB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.72
               }
             ],
             "offense": {
-              "impact": 15.0,
-              "factor": 0.82,
-              "passing_impact": 12.48,
-              "passing_factor": 0.838,
-              "rushing_impact": 9.0,
-              "rushing_factor": 0.901
+              "impact": 13.0,
+              "factor": 0.844,
+              "passing_impact": 11.2,
+              "passing_factor": 0.854,
+              "rushing_impact": 7.0,
+              "rushing_factor": 0.923
             },
             "defense": {
-              "impact": 15.16,
-              "factor": 1.152,
-              "pass_defense_impact": 12.56,
-              "pass_defense_factor": 1.138,
-              "rush_defense_impact": 8.36,
-              "rush_defense_factor": 1.084
+              "impact": 16.12,
+              "factor": 1.161,
+              "pass_defense_impact": 13.52,
+              "pass_defense_factor": 1.149,
+              "rush_defense_impact": 9.32,
+              "rush_defense_factor": 1.093
             },
             "key_absences": [
               {
@@ -2798,9 +2894,9 @@
               }
             ]
           },
-          "scoring_factor": 0.896,
-          "passing_factor": 0.923,
-          "rushing_factor": 0.942
+          "scoring_factor": 0.939,
+          "passing_factor": 0.951,
+          "rushing_factor": 0.983
         }
       },
       "weather_context": {
@@ -2812,27 +2908,8 @@
         "longitude": -80.8528,
         "roof": "outdoor",
         "kickoff": "2026-10-25T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-10-25T13:00",
-          "temperature_f": 64.6,
-          "feels_like_f": 60.4,
-          "humidity_pct": 45.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 8.7,
-          "wind_gust_mph": 12.1,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -2844,7 +2921,7 @@
       "away_team": "NYG",
       "home_team": "HOU",
       "away_projection": {
-        "projected_points": 19.5,
+        "projected_points": 19.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.38,
@@ -2854,37 +2931,26 @@
           "injury_scoring_factor": 0.944,
           "injury_adjustment_points": -1.16,
           "post_injury_projection": 19.62,
-          "weather_scoring_factor": 0.994,
-          "weather_adjustment_points": -0.12
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 0.944,
           "passing_factor": 0.936,
-          "rushing_factor": 1.016,
+          "rushing_factor": 0.984,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "NRG Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 79.9,
-            "feels_like_f": 77.6,
-            "humidity_pct": 35.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.2,
-            "wind_gust_mph": 10.3,
-            "weather_code": 1,
-            "conditions": "Mainly Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 0.45,
-          "scoring_factor": 0.994,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "kicking_factor": 0.991
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -6.9,
         "matchup_label": "Difficult",
@@ -2898,7 +2964,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 22.7,
+        "projected_points": 22.8,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.41,
@@ -2908,37 +2974,26 @@
           "injury_scoring_factor": 0.944,
           "injury_adjustment_points": -1.35,
           "post_injury_projection": 22.8,
-          "weather_scoring_factor": 0.994,
-          "weather_adjustment_points": -0.14
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 0.944,
           "passing_factor": 0.936,
-          "rushing_factor": 0.928,
+          "rushing_factor": 0.926,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "NRG Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 79.9,
-            "feels_like_f": 77.6,
-            "humidity_pct": 35.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.2,
-            "wind_gust_mph": 10.3,
-            "weather_code": 1,
-            "conditions": "Mainly Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 0.45,
-          "scoring_factor": 0.994,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "kicking_factor": 0.991
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 6.6,
         "matchup_label": "Favorable",
@@ -2952,10 +3007,10 @@
         }
       },
       "projected_score": {
-        "away": 19.5,
-        "home": 22.7
+        "away": 19.6,
+        "home": 22.8
       },
-      "projected_total": 42.2,
+      "projected_total": 42.4,
       "expected_margin": 3.2,
       "projected_winner": "HOU",
       "win_probability": {
@@ -3165,6 +3220,20 @@
                 "impact": 1.36
               },
               {
+                "player_id": "4259566",
+                "player": "Andrew Thomas",
+                "team": "NYG",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
                 "player_id": "3115303",
                 "player": "Jermaine Eluemunor",
                 "team": "NYG",
@@ -3179,18 +3248,46 @@
                 "impact": 1.28
               },
               {
-                "player_id": "4040655",
-                "player": "Darnell Mooney",
+                "player_id": "4686362",
+                "player": "Marcus Mbow",
+                "team": "NYG",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
+                "player_id": "4257188",
+                "player": "Charlie Jones",
                 "team": "NYG",
                 "position": "WR",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Neck",
+                "injury": "Undisclosed",
                 "unit": "offense",
                 "position_weight": 3.0,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.2
+              },
+              {
+                "player_id": "4373809",
+                "player": "Jevon Holland",
+                "team": "NYG",
+                "position": "S",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Concussion",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.0
               },
               {
                 "player_id": "4430261",
@@ -3205,6 +3302,20 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.0
+              },
+              {
+                "player_id": "4426326",
+                "player": "Kayvon Thibodeaux",
+                "team": "NYG",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
               },
               {
                 "player_id": "3929950",
@@ -3227,12 +3338,26 @@
                 "position": "TE",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Neck",
                 "unit": "offense",
                 "position_weight": 2.2,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 0.88
+              },
+              {
+                "player_id": "4260224",
+                "player": "Jordan Stout",
+                "team": "NYG",
+                "position": "P",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "other",
+                "position_weight": 1.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.4
               }
             ],
             "offense": {
@@ -3240,16 +3365,16 @@
               "factor": 0.8,
               "passing_impact": 20.0,
               "passing_factor": 0.78,
-              "rushing_impact": 11.28,
-              "rushing_factor": 0.876
+              "rushing_impact": 13.84,
+              "rushing_factor": 0.848
             },
             "defense": {
               "impact": 18.0,
               "factor": 1.18,
               "pass_defense_impact": 20.0,
               "pass_defense_factor": 1.2,
-              "rush_defense_impact": 10.46,
-              "rush_defense_factor": 1.105
+              "rush_defense_impact": 12.42,
+              "rush_defense_factor": 1.124
             },
             "key_absences": [
               {
@@ -3344,7 +3469,7 @@
           },
           "scoring_factor": 0.944,
           "passing_factor": 0.936,
-          "rushing_factor": 1.016
+          "rushing_factor": 0.984
         },
         "home": {
           "team_context": {
@@ -3505,20 +3630,6 @@
                 "impact": 2.4
               },
               {
-                "player_id": "4241223",
-                "player": "Jalen Pitre",
-                "team": "HOU",
-                "position": "S",
-                "status": "DOUBTFUL",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 0.85,
-                "usage_importance": 1.0,
-                "impact": 2.12
-              },
-              {
                 "player_id": "4879242",
                 "player": "Sam Hagen",
                 "team": "HOU",
@@ -3547,6 +3658,76 @@
                 "impact": 1.8
               },
               {
+                "player_id": "16734",
+                "player": "Jadeveon Clowney",
+                "team": "HOU",
+                "position": "DE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.4
+              },
+              {
+                "player_id": "4360189",
+                "player": "Logan Hall",
+                "team": "HOU",
+                "position": "DE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.4
+              },
+              {
+                "player_id": "4432699",
+                "player": "Blake Fisher",
+                "team": "HOU",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
+                "player_id": "3043109",
+                "player": "Trent Brown",
+                "team": "HOU",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
+                "player_id": "4241223",
+                "player": "Jalen Pitre",
+                "team": "HOU",
+                "position": "S",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Shoulder",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.0
+              },
+              {
                 "player_id": "4243956",
                 "player": "Reed Blankenship",
                 "team": "HOU",
@@ -3561,13 +3742,55 @@
                 "impact": 1.0
               },
               {
+                "player_id": "3919117",
+                "player": "Azeez Al-Shaair",
+                "team": "HOU",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Knee",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "4426350",
+                "player": "Henry To'oTo'o",
+                "team": "HOU",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "3117256",
+                "player": "Dalton Schultz",
+                "team": "HOU",
+                "position": "TE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.88
+              },
+              {
                 "player_id": "4035538",
                 "player": "David Montgomery",
                 "team": "HOU",
                 "position": "RB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Groin",
                 "unit": "offense",
                 "position_weight": 1.8,
                 "status_weight": 0.4,
@@ -3578,10 +3801,10 @@
             "offense": {
               "impact": 18.0,
               "factor": 0.8,
-              "passing_impact": 18.0,
+              "passing_impact": 20.0,
               "passing_factor": 0.78,
-              "rushing_impact": 14.52,
-              "rushing_factor": 0.84
+              "rushing_impact": 16.0,
+              "rushing_factor": 0.824
             },
             "defense": {
               "impact": 18.0,
@@ -3660,7 +3883,7 @@
           },
           "scoring_factor": 0.944,
           "passing_factor": 0.936,
-          "rushing_factor": 0.928
+          "rushing_factor": 0.926
         }
       },
       "weather_context": {
@@ -3672,27 +3895,8 @@
         "longitude": -95.4107,
         "roof": "retractable",
         "kickoff": "2026-10-25T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-10-25T13:00",
-          "temperature_f": 79.9,
-          "feels_like_f": 77.6,
-          "humidity_pct": 35.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 10.2,
-          "wind_gust_mph": 10.3,
-          "weather_code": 1,
-          "conditions": "Mainly Clear"
-        },
-        "context": {
-          "severity_score": 0.45,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "scoring_factor": 0.994,
-          "kicking_factor": 0.991,
-          "classification": "MINOR"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -3704,23 +3908,23 @@
       "away_team": "IND",
       "home_team": "MIN",
       "away_projection": {
-        "projected_points": 17.1,
+        "projected_points": 16.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -1.08,
           "matchup_adjustment": -1.76,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 18.91,
-          "injury_scoring_factor": 0.905,
-          "injury_adjustment_points": -1.8,
-          "post_injury_projection": 17.11,
+          "injury_scoring_factor": 0.867,
+          "injury_adjustment_points": -2.51,
+          "post_injury_projection": 16.39,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.905,
-          "passing_factor": 0.896,
-          "rushing_factor": 1.048,
+          "scoring_factor": 0.867,
+          "passing_factor": 0.855,
+          "rushing_factor": 1.024,
           "key_absences": []
         },
         "weather_context": {
@@ -3749,23 +3953,23 @@
         }
       },
       "home_projection": {
-        "projected_points": 22.0,
+        "projected_points": 22.2,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.23,
           "matchup_adjustment": -0.63,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 22.39,
-          "injury_scoring_factor": 0.982,
-          "injury_adjustment_points": -0.4,
-          "post_injury_projection": 21.98,
+          "injury_scoring_factor": 0.992,
+          "injury_adjustment_points": -0.18,
+          "post_injury_projection": 22.21,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.982,
-          "passing_factor": 1.008,
-          "rushing_factor": 0.991,
+          "scoring_factor": 0.992,
+          "passing_factor": 1.019,
+          "rushing_factor": 0.993,
           "key_absences": []
         },
         "weather_context": {
@@ -3794,15 +3998,15 @@
         }
       },
       "projected_score": {
-        "away": 17.1,
-        "home": 22.0
+        "away": 16.4,
+        "home": 22.2
       },
-      "projected_total": 39.1,
-      "expected_margin": 4.9,
+      "projected_total": 38.6,
+      "expected_margin": 5.8,
       "projected_winner": "MIN",
       "win_probability": {
-        "away": 32.0,
-        "home": 68.0
+        "away": 29.1,
+        "home": 70.9
       },
       "projection_confidence": 55.1,
       "injury_context": {
@@ -3909,6 +4113,34 @@
                 "impact": 2.2
               },
               {
+                "player_id": "4682909",
+                "player": "Justin Walley",
+                "team": "IND",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
+              },
+              {
+                "player_id": "4892240",
+                "player": "Jalen Travis",
+                "team": "IND",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
                 "player_id": "4429684",
                 "player": "Anthony Gould",
                 "team": "IND",
@@ -3929,12 +4161,40 @@
                 "position": "WR",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Hamstring",
                 "unit": "offense",
                 "position_weight": 3.0,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.2
+              },
+              {
+                "player_id": "4374171",
+                "player": "Austin Ajiake",
+                "team": "IND",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "5088571",
+                "player": "Bryce Boettcher",
+                "team": "IND",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
               },
               {
                 "player_id": "4601021",
@@ -3949,6 +4209,20 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 0.96
+              },
+              {
+                "player_id": "4722908",
+                "player": "Drew Ogletree",
+                "team": "IND",
+                "position": "TE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Ankle",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.88
               },
               {
                 "player_id": "4036275",
@@ -3971,12 +4245,26 @@
                 "position": "TE",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Groin",
                 "unit": "offense",
                 "position_weight": 2.2,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 0.88
+              },
+              {
+                "player_id": "4427298",
+                "player": "Matt Goncalves",
+                "team": "IND",
+                "position": "OG",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 2.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.8
               },
               {
                 "player_id": "3914922",
@@ -3994,20 +4282,20 @@
               }
             ],
             "offense": {
-              "impact": 12.36,
-              "factor": 0.852,
-              "passing_impact": 12.36,
-              "passing_factor": 0.839,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
+              "impact": 15.32,
+              "factor": 0.816,
+              "passing_impact": 15.32,
+              "passing_factor": 0.801,
+              "rushing_impact": 2.08,
+              "rushing_factor": 0.977
             },
             "defense": {
-              "impact": 14.25,
-              "factor": 1.143,
-              "pass_defense_impact": 14.25,
-              "pass_defense_factor": 1.157,
-              "rush_defense_impact": 7.96,
-              "rush_defense_factor": 1.08
+              "impact": 17.53,
+              "factor": 1.175,
+              "pass_defense_impact": 17.53,
+              "pass_defense_factor": 1.193,
+              "rush_defense_impact": 9.88,
+              "rush_defense_factor": 1.099
             },
             "key_absences": [
               {
@@ -4060,9 +4348,9 @@
               }
             ]
           },
-          "scoring_factor": 0.905,
-          "passing_factor": 0.896,
-          "rushing_factor": 1.048
+          "scoring_factor": 0.867,
+          "passing_factor": 0.855,
+          "rushing_factor": 1.024
         },
         "home": {
           "team_context": {
@@ -4153,8 +4441,8 @@
                 "impact": 1.8
               },
               {
-                "player_id": "5091793",
-                "player": "Charles Demmings",
+                "player_id": "4259252",
+                "player": "James Pierre",
                 "team": "MIN",
                 "position": "CB",
                 "status": "QUESTIONABLE",
@@ -4165,6 +4453,20 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.36
+              },
+              {
+                "player_id": "3123954",
+                "player": "Brian O'Neill",
+                "team": "MIN",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
               },
               {
                 "player_id": "4361985",
@@ -4181,13 +4483,13 @@
                 "impact": 1.28
               },
               {
-                "player_id": "4429205",
-                "player": "Jordan Addison",
+                "player_id": "4262921",
+                "player": "Justin Jefferson",
                 "team": "MIN",
                 "position": "WR",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Ankle",
                 "unit": "offense",
                 "position_weight": 3.0,
                 "status_weight": 0.4,
@@ -4210,12 +4512,12 @@
               }
             ],
             "offense": {
-              "impact": 11.76,
-              "factor": 0.859,
-              "passing_impact": 9.96,
-              "passing_factor": 0.871,
-              "rushing_impact": 7.48,
-              "rushing_factor": 0.918
+              "impact": 13.04,
+              "factor": 0.844,
+              "passing_impact": 11.24,
+              "passing_factor": 0.854,
+              "rushing_impact": 8.76,
+              "rushing_factor": 0.904
             },
             "defense": {
               "impact": 6.16,
@@ -4227,9 +4529,9 @@
             },
             "key_absences": []
           },
-          "scoring_factor": 0.982,
-          "passing_factor": 1.008,
-          "rushing_factor": 0.991
+          "scoring_factor": 0.992,
+          "passing_factor": 1.019,
+          "rushing_factor": 0.993
         }
       },
       "weather_context": {
@@ -4271,34 +4573,23 @@
           "matchup_adjustment": -0.6,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 20.72,
-          "injury_scoring_factor": 1.082,
-          "injury_adjustment_points": 1.7,
-          "post_injury_projection": 22.42,
+          "injury_scoring_factor": 1.083,
+          "injury_adjustment_points": 1.72,
+          "post_injury_projection": 22.44,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.082,
-          "passing_factor": 1.121,
-          "rushing_factor": 1.126,
+          "scoring_factor": 1.083,
+          "passing_factor": 1.133,
+          "rushing_factor": 1.128,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 62.8,
-            "feels_like_f": 56.8,
-            "humidity_pct": 32.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 7.1,
-            "wind_gust_mph": 9.6,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -4318,41 +4609,30 @@
         }
       },
       "home_projection": {
-        "projected_points": 24.7,
+        "projected_points": 24.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.15,
           "matchup_adjustment": 0.65,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 24.05,
-          "injury_scoring_factor": 1.027,
-          "injury_adjustment_points": 0.65,
-          "post_injury_projection": 24.7,
+          "injury_scoring_factor": 1.017,
+          "injury_adjustment_points": 0.41,
+          "post_injury_projection": 24.46,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.027,
-          "passing_factor": 1.045,
-          "rushing_factor": 1.056,
+          "scoring_factor": 1.017,
+          "passing_factor": 1.043,
+          "rushing_factor": 1.039,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 62.8,
-            "feels_like_f": 56.8,
-            "humidity_pct": 32.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 7.1,
-            "wind_gust_mph": 9.6,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -4373,14 +4653,14 @@
       },
       "projected_score": {
         "away": 22.4,
-        "home": 24.7
+        "home": 24.5
       },
-      "projected_total": 47.1,
-      "expected_margin": 2.3,
+      "projected_total": 46.9,
+      "expected_margin": 2.1,
       "projected_winner": "NYJ",
       "win_probability": {
-        "away": 41.2,
-        "home": 58.8
+        "away": 42.0,
+        "home": 58.0
       },
       "projection_confidence": 52.5,
       "injury_context": {
@@ -4501,20 +4781,6 @@
                 "impact": 1.4
               },
               {
-                "player_id": "4360488",
-                "player": "JuJu Brents",
-                "team": "MIA",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
                 "player_id": "4371946",
                 "player": "Reese Taylor",
                 "team": "MIA",
@@ -4543,27 +4809,13 @@
                 "impact": 1.2
               },
               {
-                "player_id": "4880346",
-                "player": "Michael Taaffe",
-                "team": "MIA",
-                "position": "S",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Chest",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.0
-              },
-              {
-                "player_id": "4912052",
-                "player": "Justin Joly",
+                "player_id": "4880236",
+                "player": "Will Kacmarek",
                 "team": "MIA",
                 "position": "TE",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Hamstring",
                 "unit": "offense",
                 "position_weight": 2.2,
                 "status_weight": 0.4,
@@ -4571,35 +4823,49 @@
                 "impact": 0.88
               },
               {
-                "player_id": "4819257",
-                "player": "Jonah Savaiinaea",
+                "player_id": "4682745",
+                "player": "Jaylen Wright",
                 "team": "MIA",
-                "position": "OG",
+                "position": "RB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Ankle",
+                "injury": "Foot",
                 "unit": "offense",
-                "position_weight": 2.0,
+                "position_weight": 1.8,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
-                "impact": 0.8
+                "impact": 0.72
+              },
+              {
+                "player_id": "4034729",
+                "player": "Tucker Addington",
+                "team": "MIA",
+                "position": "LS",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "other",
+                "position_weight": 1.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.4
               }
             ],
             "offense": {
-              "impact": 6.88,
-              "factor": 0.917,
-              "passing_impact": 5.08,
-              "passing_factor": 0.934,
-              "rushing_impact": 2.6,
-              "rushing_factor": 0.971
+              "impact": 6.8,
+              "factor": 0.918,
+              "passing_impact": 4.28,
+              "passing_factor": 0.944,
+              "rushing_impact": 2.52,
+              "rushing_factor": 0.972
             },
             "defense": {
-              "impact": 18.0,
-              "factor": 1.18,
-              "pass_defense_impact": 15.72,
-              "pass_defense_factor": 1.173,
-              "rush_defense_impact": 12.2,
-              "rush_defense_factor": 1.122
+              "impact": 15.96,
+              "factor": 1.16,
+              "pass_defense_impact": 13.36,
+              "pass_defense_factor": 1.147,
+              "rush_defense_impact": 11.2,
+              "rush_defense_factor": 1.112
             },
             "key_absences": [
               {
@@ -4620,9 +4886,9 @@
               }
             ]
           },
-          "scoring_factor": 1.082,
-          "passing_factor": 1.121,
-          "rushing_factor": 1.126
+          "scoring_factor": 1.083,
+          "passing_factor": 1.133,
+          "rushing_factor": 1.128
         },
         "home": {
           "team_context": {
@@ -4699,6 +4965,20 @@
                 "impact": 3.0
               },
               {
+                "player_id": "4362094",
+                "player": "Joseph Ossai",
+                "team": "NYJ",
+                "position": "DE",
+                "status": "DOUBTFUL",
+                "practice_status": "",
+                "injury": "Ankle",
+                "unit": "defense",
+                "position_weight": 3.5,
+                "status_weight": 0.85,
+                "usage_importance": 1.0,
+                "impact": 2.98
+              },
+              {
                 "player_id": "4002046",
                 "player": "David Onyemata",
                 "team": "NYJ",
@@ -4711,20 +4991,6 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 2.6
-              },
-              {
-                "player_id": "4597500",
-                "player": "Adonai Mitchell",
-                "team": "NYJ",
-                "position": "WR",
-                "status": "DOUBTFUL",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 0.85,
-                "usage_importance": 1.0,
-                "impact": 2.55
               },
               {
                 "player_id": "4837388",
@@ -4755,6 +5021,20 @@
                 "impact": 2.4
               },
               {
+                "player_id": "4700136",
+                "player": "Kiko Mauigoa",
+                "team": "NYJ",
+                "position": "LB",
+                "status": "DOUBTFUL",
+                "practice_status": "",
+                "injury": "Thigh",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.85,
+                "usage_importance": 1.0,
+                "impact": 2.04
+              },
+              {
                 "player_id": "4905597",
                 "player": "Anez Cooper",
                 "team": "NYJ",
@@ -4783,8 +5063,8 @@
                 "impact": 1.8
               },
               {
-                "player_id": "4362094",
-                "player": "Joseph Ossai",
+                "player_id": "4361767",
+                "player": "Will McDonald IV",
                 "team": "NYJ",
                 "position": "DE",
                 "status": "QUESTIONABLE",
@@ -4797,18 +5077,32 @@
                 "impact": 1.4
               },
               {
-                "player_id": "4700136",
-                "player": "Kiko Mauigoa",
+                "player_id": "4597500",
+                "player": "Adonai Mitchell",
                 "team": "NYJ",
-                "position": "LB",
+                "position": "WR",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Thigh",
-                "unit": "defense",
-                "position_weight": 2.4,
+                "injury": "Finger",
+                "unit": "offense",
+                "position_weight": 3.0,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
-                "impact": 0.96
+                "impact": 1.2
+              },
+              {
+                "player_id": "4428617",
+                "player": "T'Vondre Sweat",
+                "team": "NYJ",
+                "position": "DT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.04
               },
               {
                 "player_id": "4243375",
@@ -4817,7 +5111,7 @@
                 "position": "OG",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Knee",
                 "unit": "offense",
                 "position_weight": 2.0,
                 "status_weight": 0.4,
@@ -4831,7 +5125,21 @@
                 "position": "RB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Quadriceps",
+                "unit": "offense",
+                "position_weight": 1.8,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.72
+              },
+              {
+                "player_id": "4035537",
+                "player": "Kene Nwangwu",
+                "team": "NYJ",
+                "position": "RB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Knee",
                 "unit": "offense",
                 "position_weight": 1.8,
                 "status_weight": 0.4,
@@ -4840,12 +5148,12 @@
               }
             ],
             "offense": {
-              "impact": 10.87,
-              "factor": 0.87,
-              "passing_impact": 8.35,
-              "passing_factor": 0.891,
-              "rushing_impact": 5.32,
-              "rushing_factor": 0.941
+              "impact": 10.24,
+              "factor": 0.877,
+              "passing_impact": 7.0,
+              "passing_factor": 0.909,
+              "rushing_impact": 6.04,
+              "rushing_factor": 0.934
             },
             "defense": {
               "impact": 18.0,
@@ -4897,20 +5205,20 @@
                 "impact": 3.0
               },
               {
+                "player_id": "4362094",
+                "player": "Joseph Ossai",
+                "position": "DE",
+                "status": "DOUBTFUL",
+                "injury": "Ankle",
+                "impact": 2.98
+              },
+              {
                 "player_id": "4002046",
                 "player": "David Onyemata",
                 "position": "DT",
                 "status": "IR",
                 "injury": "Groin",
                 "impact": 2.6
-              },
-              {
-                "player_id": "4597500",
-                "player": "Adonai Mitchell",
-                "position": "WR",
-                "status": "DOUBTFUL",
-                "injury": "Undisclosed",
-                "impact": 2.55
               },
               {
                 "player_id": "4837388",
@@ -4922,9 +5230,9 @@
               }
             ]
           },
-          "scoring_factor": 1.027,
-          "passing_factor": 1.045,
-          "rushing_factor": 1.056
+          "scoring_factor": 1.017,
+          "passing_factor": 1.043,
+          "rushing_factor": 1.039
         }
       },
       "weather_context": {
@@ -4936,27 +5244,8 @@
         "longitude": -74.0745,
         "roof": "outdoor",
         "kickoff": "2026-10-25T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-10-25T13:00",
-          "temperature_f": 62.8,
-          "feels_like_f": 56.8,
-          "humidity_pct": 32.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 7.1,
-          "wind_gust_mph": 9.6,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -4983,26 +5272,15 @@
         },
         "injury_context": {
           "scoring_factor": 0.922,
-          "passing_factor": 0.97,
-          "rushing_factor": 0.961,
+          "passing_factor": 0.91,
+          "rushing_factor": 0.949,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Nissan Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 74.9,
-            "feels_like_f": 74.0,
-            "humidity_pct": 31.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 1.1,
-            "wind_gust_mph": 1.1,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -5022,41 +5300,30 @@
         }
       },
       "home_projection": {
-        "projected_points": 22.4,
+        "projected_points": 22.1,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -1.09,
           "matchup_adjustment": -1.62,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 20.54,
-          "injury_scoring_factor": 1.093,
-          "injury_adjustment_points": 1.91,
-          "post_injury_projection": 22.45,
+          "injury_scoring_factor": 1.075,
+          "injury_adjustment_points": 1.54,
+          "post_injury_projection": 22.08,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.093,
-          "passing_factor": 1.057,
+          "scoring_factor": 1.075,
+          "passing_factor": 1.054,
           "rushing_factor": 1.109,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Nissan Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T13:00",
-            "temperature_f": 74.9,
-            "feels_like_f": 74.0,
-            "humidity_pct": 31.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 1.1,
-            "wind_gust_mph": 1.1,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -5077,14 +5344,14 @@
       },
       "projected_score": {
         "away": 19.0,
-        "home": 22.4
+        "home": 22.1
       },
-      "projected_total": 41.4,
-      "expected_margin": 3.4,
+      "projected_total": 41.1,
+      "expected_margin": 3.1,
       "projected_winner": "TEN",
       "win_probability": {
-        "away": 37.2,
-        "home": 62.8
+        "away": 38.3,
+        "home": 61.7
       },
       "projection_confidence": 55.0,
       "injury_context": {
@@ -5233,6 +5500,76 @@
                 "impact": 1.8
               },
               {
+                "player_id": "3115336",
+                "player": "Derek Barnett",
+                "team": "CLE",
+                "position": "DE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.4
+              },
+              {
+                "player_id": "3131498",
+                "player": "Tytus Howard",
+                "team": "CLE",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
+                "player_id": "4832800",
+                "player": "Denzel Boston",
+                "team": "CLE",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Foot",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
+                "player_id": "4870653",
+                "player": "KC Concepcion",
+                "team": "CLE",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Calf, Quad",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
+                "player_id": "3040471",
+                "player": "Maliek Collins",
+                "team": "CLE",
+                "position": "DT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.04
+              },
+              {
                 "player_id": "4873232",
                 "player": "Mason Graham",
                 "team": "CLE",
@@ -5275,14 +5612,28 @@
                 "impact": 1.0
               },
               {
-                "player_id": "5150249",
-                "player": "Justin Jefferson",
+                "player_id": "4876017",
+                "player": "Carson Schwesinger",
                 "team": "CLE",
                 "position": "LB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Hip",
+                "injury": "Ankle",
                 "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "3115485",
+                "player": "Elgton Jenkins",
+                "team": "CLE",
+                "position": "C",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
                 "position_weight": 2.4,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
@@ -5309,7 +5660,7 @@
                 "position": "RB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Ankle",
                 "unit": "offense",
                 "position_weight": 1.8,
                 "status_weight": 0.4,
@@ -5318,18 +5669,18 @@
               }
             ],
             "offense": {
-              "impact": 17.32,
+              "impact": 18.0,
               "factor": 0.8,
-              "passing_impact": 13.0,
-              "passing_factor": 0.831,
-              "rushing_impact": 15.12,
-              "rushing_factor": 0.834
+              "passing_impact": 17.64,
+              "passing_factor": 0.78,
+              "rushing_impact": 16.0,
+              "rushing_factor": 0.824
             },
             "defense": {
               "impact": 18.0,
               "factor": 1.18,
-              "pass_defense_impact": 13.66,
-              "pass_defense_factor": 1.15,
+              "pass_defense_impact": 15.06,
+              "pass_defense_factor": 1.166,
               "rush_defense_impact": 16.0,
               "rush_defense_factor": 1.16
             },
@@ -5377,8 +5728,8 @@
             ]
           },
           "scoring_factor": 0.922,
-          "passing_factor": 0.97,
-          "rushing_factor": 0.961
+          "passing_factor": 0.91,
+          "rushing_factor": 0.949
         },
         "home": {
           "team_context": {
@@ -5497,13 +5848,27 @@
                 "impact": 2.0
               },
               {
+                "player_id": "3925357",
+                "player": "Calvin Ridley",
+                "team": "TEN",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Hip",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
                 "player_id": "4685617",
                 "player": "Kevin Winston Jr.",
                 "team": "TEN",
                 "position": "S",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Quadriceps",
                 "unit": "defense",
                 "position_weight": 2.5,
                 "status_weight": 0.4,
@@ -5526,10 +5891,10 @@
               }
             ],
             "offense": {
-              "impact": 6.2,
-              "factor": 0.926,
-              "passing_impact": 6.2,
-              "passing_factor": 0.919,
+              "impact": 7.4,
+              "factor": 0.911,
+              "passing_impact": 7.4,
+              "passing_factor": 0.904,
               "rushing_impact": 4.0,
               "rushing_factor": 0.956
             },
@@ -5560,8 +5925,8 @@
               }
             ]
           },
-          "scoring_factor": 1.093,
-          "passing_factor": 1.057,
+          "scoring_factor": 1.075,
+          "passing_factor": 1.054,
           "rushing_factor": 1.109
         }
       },
@@ -5574,27 +5939,8 @@
         "longitude": -86.7713,
         "roof": "outdoor",
         "kickoff": "2026-10-25T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-10-25T13:00",
-          "temperature_f": 74.9,
-          "feels_like_f": 74.0,
-          "humidity_pct": 31.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 1.1,
-          "wind_gust_mph": 1.1,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -5606,41 +5952,30 @@
       "away_team": "DEN",
       "home_team": "ARI",
       "away_projection": {
-        "projected_points": 20.2,
+        "projected_points": 20.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.01,
           "matchup_adjustment": 0.15,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 21.91,
-          "injury_scoring_factor": 0.923,
-          "injury_adjustment_points": -1.69,
-          "post_injury_projection": 20.23,
+          "injury_scoring_factor": 0.946,
+          "injury_adjustment_points": -1.18,
+          "post_injury_projection": 20.73,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.923,
-          "passing_factor": 0.907,
-          "rushing_factor": 0.975,
+          "scoring_factor": 0.946,
+          "passing_factor": 0.923,
+          "rushing_factor": 0.993,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "State Farm Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T16:00",
-            "temperature_f": 81.2,
-            "feels_like_f": 75.9,
-            "humidity_pct": 21.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.6,
-            "wind_gust_mph": 6.5,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -5660,41 +5995,30 @@
         }
       },
       "home_projection": {
-        "projected_points": 19.4,
+        "projected_points": 19.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.59,
           "matchup_adjustment": -0.79,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 21.87,
-          "injury_scoring_factor": 0.887,
-          "injury_adjustment_points": -2.47,
-          "post_injury_projection": 19.4,
+          "injury_scoring_factor": 0.891,
+          "injury_adjustment_points": -2.38,
+          "post_injury_projection": 19.49,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.887,
-          "passing_factor": 0.92,
-          "rushing_factor": 0.943,
+          "scoring_factor": 0.891,
+          "passing_factor": 0.878,
+          "rushing_factor": 0.907,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "State Farm Stadium",
-          "weather": {
-            "forecast_time": "2026-10-25T16:00",
-            "temperature_f": 81.2,
-            "feels_like_f": 75.9,
-            "humidity_pct": 21.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.6,
-            "wind_gust_mph": 6.5,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -5714,15 +6038,15 @@
         }
       },
       "projected_score": {
-        "away": 20.2,
-        "home": 19.4
+        "away": 20.7,
+        "home": 19.5
       },
-      "projected_total": 39.6,
-      "expected_margin": -0.8,
+      "projected_total": 40.2,
+      "expected_margin": -1.2,
       "projected_winner": "DEN",
       "win_probability": {
-        "away": 53.1,
-        "home": 46.9
+        "away": 54.6,
+        "home": 45.4
       },
       "projection_confidence": 51.9,
       "injury_context": {
@@ -5773,20 +6097,6 @@
                 "impact": 3.0
               },
               {
-                "player_id": "4372012",
-                "player": "Pat Surtain II",
-                "team": "DEN",
-                "position": "CB",
-                "status": "DOUBTFUL",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.85,
-                "usage_importance": 1.0,
-                "impact": 2.89
-              },
-              {
                 "player_id": "4428241",
                 "player": "Levelle Bailey",
                 "team": "DEN",
@@ -5835,12 +6145,26 @@
                 "position": "S",
                 "status": "DOUBTFUL",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Ankle",
                 "unit": "defense",
                 "position_weight": 2.5,
                 "status_weight": 0.85,
                 "usage_importance": 1.0,
                 "impact": 2.12
+              },
+              {
+                "player_id": "4687592",
+                "player": "Jonah Elliss",
+                "team": "DEN",
+                "position": "LB",
+                "status": "DOUBTFUL",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.85,
+                "usage_importance": 1.0,
+                "impact": 2.04
               },
               {
                 "player_id": "4368033",
@@ -5871,6 +6195,34 @@
                 "impact": 1.8
               },
               {
+                "player_id": "4372012",
+                "player": "Pat Surtain II",
+                "team": "DEN",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Ankle",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
+              },
+              {
+                "player_id": "4372016",
+                "player": "Jaylen Waddle",
+                "team": "DEN",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Chest",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
                 "player_id": "4362748",
                 "player": "Tyler Badie",
                 "team": "DEN",
@@ -5886,20 +6238,20 @@
               }
             ],
             "offense": {
-              "impact": 15.32,
-              "factor": 0.816,
-              "passing_impact": 12.8,
-              "passing_factor": 0.834,
+              "impact": 16.52,
+              "factor": 0.802,
+              "passing_impact": 14.0,
+              "passing_factor": 0.818,
               "rushing_impact": 10.12,
               "rushing_factor": 0.889
             },
             "defense": {
-              "impact": 10.91,
-              "factor": 1.109,
-              "pass_defense_impact": 10.91,
-              "pass_defense_factor": 1.12,
-              "rush_defense_impact": 8.02,
-              "rush_defense_factor": 1.08
+              "impact": 11.42,
+              "factor": 1.114,
+              "pass_defense_impact": 11.42,
+              "pass_defense_factor": 1.126,
+              "rush_defense_impact": 10.06,
+              "rush_defense_factor": 1.101
             },
             "key_absences": [
               {
@@ -5925,25 +6277,31 @@
                 "status": "IR",
                 "injury": "Ankle",
                 "impact": 3.0
-              },
-              {
-                "player_id": "4372012",
-                "player": "Pat Surtain II",
-                "position": "CB",
-                "status": "DOUBTFUL",
-                "injury": "Undisclosed",
-                "impact": 2.89
               }
             ]
           },
-          "scoring_factor": 0.923,
-          "passing_factor": 0.907,
-          "rushing_factor": 0.975
+          "scoring_factor": 0.946,
+          "passing_factor": 0.923,
+          "rushing_factor": 0.993
         },
         "home": {
           "team_context": {
             "team": "ARI",
             "injuries": [
+              {
+                "player_id": "4430841",
+                "player": "Carson Beck",
+                "team": "ARI",
+                "position": "QB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Back",
+                "unit": "offense",
+                "position_weight": 10.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 4.0
+              },
               {
                 "player_id": "4685408",
                 "player": "Will Johnson",
@@ -6113,6 +6471,62 @@
                 "impact": 1.8
               },
               {
+                "player_id": "4568506",
+                "player": "Garrett Williams",
+                "team": "ARI",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
+              },
+              {
+                "player_id": "4698113",
+                "player": "Max Melton",
+                "team": "ARI",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
+              },
+              {
+                "player_id": "4241482",
+                "player": "Jedrick Wills Jr.",
+                "team": "ARI",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
+                "player_id": "4685503",
+                "player": "Walter Nolen III",
+                "team": "ARI",
+                "position": "DT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.04
+              },
+              {
                 "player_id": "3918331",
                 "player": "Andrew Wingard",
                 "team": "ARI",
@@ -6120,6 +6534,20 @@
                 "status": "QUESTIONABLE",
                 "practice_status": "",
                 "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.0
+              },
+              {
+                "player_id": "3127287",
+                "player": "Budda Baker",
+                "team": "ARI",
+                "position": "S",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Four Solo",
                 "unit": "defense",
                 "position_weight": 2.5,
                 "status_weight": 0.4,
@@ -6158,20 +6586,28 @@
             "offense": {
               "impact": 18.0,
               "factor": 0.8,
-              "passing_impact": 13.8,
-              "passing_factor": 0.821,
-              "rushing_impact": 11.52,
-              "rushing_factor": 0.873
+              "passing_impact": 19.08,
+              "passing_factor": 0.78,
+              "rushing_impact": 16.0,
+              "rushing_factor": 0.824
             },
             "defense": {
-              "impact": 13.1,
-              "factor": 1.131,
-              "pass_defense_impact": 7.9,
-              "pass_defense_factor": 1.087,
-              "rush_defense_impact": 9.7,
-              "rush_defense_factor": 1.097
+              "impact": 17.86,
+              "factor": 1.179,
+              "pass_defense_impact": 11.62,
+              "pass_defense_factor": 1.128,
+              "rush_defense_impact": 11.74,
+              "rush_defense_factor": 1.117
             },
             "key_absences": [
+              {
+                "player_id": "4430841",
+                "player": "Carson Beck",
+                "position": "QB",
+                "status": "QUESTIONABLE",
+                "injury": "Back",
+                "impact": 4.0
+              },
               {
                 "player_id": "4685408",
                 "player": "Will Johnson",
@@ -6214,9 +6650,9 @@
               }
             ]
           },
-          "scoring_factor": 0.887,
-          "passing_factor": 0.92,
-          "rushing_factor": 0.943
+          "scoring_factor": 0.891,
+          "passing_factor": 0.878,
+          "rushing_factor": 0.907
         }
       },
       "weather_context": {
@@ -6228,27 +6664,8 @@
         "longitude": -112.2626,
         "roof": "retractable",
         "kickoff": "2026-10-25T16:05",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-10-25T16:00",
-          "temperature_f": 81.2,
-          "feels_like_f": 75.9,
-          "humidity_pct": 21.0,
-          "precip_probability_pct": 1.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.6,
-          "wind_gust_mph": 6.5,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -6260,23 +6677,23 @@
       "away_team": "GB",
       "home_team": "DET",
       "away_projection": {
-        "projected_points": 21.9,
+        "projected_points": 21.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.5,
           "matchup_adjustment": 0.76,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 23.01,
-          "injury_scoring_factor": 0.951,
-          "injury_adjustment_points": -1.13,
-          "post_injury_projection": 21.88,
+          "injury_scoring_factor": 0.944,
+          "injury_adjustment_points": -1.29,
+          "post_injury_projection": 21.72,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.951,
-          "passing_factor": 0.976,
-          "rushing_factor": 1.084,
+          "scoring_factor": 0.944,
+          "passing_factor": 0.936,
+          "rushing_factor": 1.033,
           "key_absences": []
         },
         "weather_context": {
@@ -6320,7 +6737,7 @@
         },
         "injury_context": {
           "scoring_factor": 0.962,
-          "passing_factor": 0.943,
+          "passing_factor": 0.956,
           "rushing_factor": 1.041,
           "key_absences": []
         },
@@ -6350,15 +6767,15 @@
         }
       },
       "projected_score": {
-        "away": 21.9,
+        "away": 21.7,
         "home": 23.5
       },
-      "projected_total": 45.4,
-      "expected_margin": 1.6,
+      "projected_total": 45.2,
+      "expected_margin": 1.8,
       "projected_winner": "DET",
       "win_probability": {
-        "away": 43.9,
-        "home": 56.1
+        "away": 43.1,
+        "home": 56.9
       },
       "projection_confidence": 53.4,
       "injury_context": {
@@ -6366,6 +6783,20 @@
           "team_context": {
             "team": "GB",
             "injuries": [
+              {
+                "player_id": "4036378",
+                "player": "Jordan Love",
+                "team": "GB",
+                "position": "QB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Back",
+                "unit": "offense",
+                "position_weight": 10.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 4.0
+              },
               {
                 "player_id": "4683059",
                 "player": "Collin Oliver",
@@ -6577,6 +7008,90 @@
                 "impact": 1.36
               },
               {
+                "player_id": "5076652",
+                "player": "Brandon Cisse",
+                "team": "GB",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Shoulder",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
+              },
+              {
+                "player_id": "4259305",
+                "player": "Bo Melton",
+                "team": "GB",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Back",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
+                "player_id": "4248528",
+                "player": "Christian Watson",
+                "team": "GB",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Ankle",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
+                "player_id": "4701936",
+                "player": "Matthew Golden",
+                "team": "GB",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Shoulder",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
+                "player_id": "4431487",
+                "player": "Savion Williams",
+                "team": "GB",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Ankle",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
+                "player_id": "4887255",
+                "player": "Anthony Campbell",
+                "team": "GB",
+                "position": "DT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.04
+              },
+              {
                 "player_id": "4242390",
                 "player": "Aaron Banks",
                 "team": "GB",
@@ -6592,22 +7107,30 @@
               }
             ],
             "offense": {
-              "impact": 16.2,
-              "factor": 0.806,
-              "passing_impact": 14.4,
-              "passing_factor": 0.813,
-              "rushing_impact": 5.8,
-              "rushing_factor": 0.936
+              "impact": 18.0,
+              "factor": 0.8,
+              "passing_impact": 20.0,
+              "passing_factor": 0.78,
+              "rushing_impact": 9.8,
+              "rushing_factor": 0.892
             },
             "defense": {
               "impact": 18.0,
               "factor": 1.18,
-              "pass_defense_impact": 13.26,
-              "pass_defense_factor": 1.146,
+              "pass_defense_impact": 14.62,
+              "pass_defense_factor": 1.161,
               "rush_defense_impact": 16.0,
               "rush_defense_factor": 1.16
             },
             "key_absences": [
+              {
+                "player_id": "4036378",
+                "player": "Jordan Love",
+                "position": "QB",
+                "status": "QUESTIONABLE",
+                "injury": "Back",
+                "impact": 4.0
+              },
               {
                 "player_id": "4683059",
                 "player": "Collin Oliver",
@@ -6690,9 +7213,9 @@
               }
             ]
           },
-          "scoring_factor": 0.951,
-          "passing_factor": 0.976,
-          "rushing_factor": 1.084
+          "scoring_factor": 0.944,
+          "passing_factor": 0.936,
+          "rushing_factor": 1.033
         },
         "home": {
           "team_context": {
@@ -6775,7 +7298,7 @@
                 "position": "S",
                 "status": "OUT",
                 "practice_status": "",
-                "injury": "Achilles",
+                "injury": "Undisclosed",
                 "unit": "defense",
                 "position_weight": 2.5,
                 "status_weight": 1.0,
@@ -6965,7 +7488,7 @@
                 "player": "Brian Branch",
                 "position": "S",
                 "status": "OUT",
-                "injury": "Achilles",
+                "injury": "Undisclosed",
                 "impact": 2.5
               },
               {
@@ -6979,7 +7502,7 @@
             ]
           },
           "scoring_factor": 0.962,
-          "passing_factor": 0.943,
+          "passing_factor": 0.956,
           "rushing_factor": 1.041
         }
       },
@@ -7015,23 +7538,23 @@
       "away_team": "LAR",
       "home_team": "LV",
       "away_projection": {
-        "projected_points": 20.9,
+        "projected_points": 21.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.85,
           "matchup_adjustment": 1.12,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 23.72,
-          "injury_scoring_factor": 0.882,
-          "injury_adjustment_points": -2.8,
-          "post_injury_projection": 20.92,
+          "injury_scoring_factor": 0.898,
+          "injury_adjustment_points": -2.42,
+          "post_injury_projection": 21.3,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.882,
-          "passing_factor": 0.86,
-          "rushing_factor": 0.907,
+          "scoring_factor": 0.898,
+          "passing_factor": 0.868,
+          "rushing_factor": 0.923,
           "key_absences": []
         },
         "weather_context": {
@@ -7060,23 +7583,23 @@
         }
       },
       "home_projection": {
-        "projected_points": 22.2,
+        "projected_points": 21.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.53,
           "matchup_adjustment": -0.78,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 21.94,
-          "injury_scoring_factor": 1.01,
-          "injury_adjustment_points": 0.22,
-          "post_injury_projection": 22.16,
+          "injury_scoring_factor": 0.969,
+          "injury_adjustment_points": -0.68,
+          "post_injury_projection": 21.26,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.01,
-          "passing_factor": 1.026,
-          "rushing_factor": 1.111,
+          "scoring_factor": 0.969,
+          "passing_factor": 1.002,
+          "rushing_factor": 1.086,
           "key_absences": []
         },
         "weather_context": {
@@ -7105,15 +7628,15 @@
         }
       },
       "projected_score": {
-        "away": 20.9,
-        "home": 22.2
+        "away": 21.3,
+        "home": 21.3
       },
-      "projected_total": 43.1,
-      "expected_margin": 1.3,
-      "projected_winner": "LV",
+      "projected_total": 42.6,
+      "expected_margin": 0.0,
+      "projected_winner": "EVEN",
       "win_probability": {
-        "away": 45.0,
-        "home": 55.0
+        "away": 50.0,
+        "home": 50.0
       },
       "projection_confidence": 54.2,
       "injury_context": {
@@ -7154,9 +7677,9 @@
                 "player": "Kobie Turner",
                 "team": "LAR",
                 "position": "DE",
-                "status": "OUT",
+                "status": "IR",
                 "practice_status": "",
-                "injury": "Groin Strain",
+                "injury": "Groin",
                 "unit": "defense",
                 "position_weight": 3.5,
                 "status_weight": 1.0,
@@ -7282,7 +7805,7 @@
                 "position": "CB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Groin",
                 "unit": "defense",
                 "position_weight": 3.4,
                 "status_weight": 0.4,
@@ -7302,6 +7825,20 @@
                 "status_weight": 1.0,
                 "usage_importance": 1.0,
                 "impact": 1.0
+              },
+              {
+                "player_id": "4243181",
+                "player": "Nate Landman",
+                "team": "LAR",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Concussion",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
               }
             ],
             "offense": {
@@ -7315,8 +7852,8 @@
             "defense": {
               "impact": 18.0,
               "factor": 1.18,
-              "pass_defense_impact": 16.66,
-              "pass_defense_factor": 1.183,
+              "pass_defense_impact": 17.62,
+              "pass_defense_factor": 1.194,
               "rush_defense_impact": 16.0,
               "rush_defense_factor": 1.16
             },
@@ -7338,19 +7875,19 @@
                 "impact": 3.5
               },
               {
+                "player_id": "4250621",
+                "player": "Kobie Turner",
+                "position": "DE",
+                "status": "IR",
+                "injury": "Groin",
+                "impact": 3.5
+              },
+              {
                 "player_id": "3122132",
                 "player": "Myles Garrett",
                 "position": "DE",
                 "status": "IR",
                 "injury": "Knee",
-                "impact": 3.5
-              },
-              {
-                "player_id": "4250621",
-                "player": "Kobie Turner",
-                "position": "DE",
-                "status": "OUT",
-                "injury": "Groin Strain",
                 "impact": 3.5
               },
               {
@@ -7371,9 +7908,9 @@
               }
             ]
           },
-          "scoring_factor": 0.882,
-          "passing_factor": 0.86,
-          "rushing_factor": 0.907
+          "scoring_factor": 0.898,
+          "passing_factor": 0.868,
+          "rushing_factor": 0.923
         },
         "home": {
           "team_context": {
@@ -7492,6 +8029,34 @@
                 "impact": 1.8
               },
               {
+                "player_id": "3134312",
+                "player": "Kolton Miller",
+                "team": "LV",
+                "position": "OT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.28
+              },
+              {
+                "player_id": "3045172",
+                "player": "Folorunso Fatukasi",
+                "team": "LV",
+                "position": "DT",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.04
+              },
+              {
                 "player_id": "4429109",
                 "player": "Tonka Hemingway",
                 "team": "LV",
@@ -7504,23 +8069,65 @@
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.04
+              },
+              {
+                "player_id": "4379416",
+                "player": "Quay Walker",
+                "team": "LV",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Chest",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "4432665",
+                "player": "Brock Bowers",
+                "team": "LV",
+                "position": "TE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Hamstring/calf",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.88
+              },
+              {
+                "player_id": "4686658",
+                "player": "Mike Washington Jr.",
+                "team": "LV",
+                "position": "RB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Foot/back",
+                "unit": "offense",
+                "position_weight": 1.8,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.72
               }
             ],
             "offense": {
-              "impact": 12.0,
-              "factor": 0.856,
-              "passing_impact": 10.2,
-              "passing_factor": 0.867,
-              "rushing_impact": 3.8,
-              "rushing_factor": 0.958
+              "impact": 14.88,
+              "factor": 0.821,
+              "passing_impact": 12.36,
+              "passing_factor": 0.839,
+              "rushing_impact": 5.8,
+              "rushing_factor": 0.936
             },
             "defense": {
-              "impact": 10.34,
-              "factor": 1.103,
-              "pass_defense_impact": 9.3,
-              "pass_defense_factor": 1.102,
-              "rush_defense_impact": 6.94,
-              "rush_defense_factor": 1.069
+              "impact": 12.34,
+              "factor": 1.123,
+              "pass_defense_impact": 10.26,
+              "pass_defense_factor": 1.113,
+              "rush_defense_impact": 8.94,
+              "rush_defense_factor": 1.089
             },
             "key_absences": [
               {
@@ -7557,9 +8164,9 @@
               }
             ]
           },
-          "scoring_factor": 1.01,
-          "passing_factor": 1.026,
-          "rushing_factor": 1.111
+          "scoring_factor": 0.969,
+          "passing_factor": 1.002,
+          "rushing_factor": 1.086
         }
       },
       "weather_context": {
@@ -7594,41 +8201,30 @@
       "away_team": "KC",
       "home_team": "SEA",
       "away_projection": {
-        "projected_points": 18.9,
+        "projected_points": 19.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.19,
           "matchup_adjustment": -0.28,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 21.28,
-          "injury_scoring_factor": 0.89,
-          "injury_adjustment_points": -2.34,
-          "post_injury_projection": 18.94,
+          "injury_scoring_factor": 0.905,
+          "injury_adjustment_points": -2.02,
+          "post_injury_projection": 19.26,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.89,
-          "passing_factor": 0.876,
-          "rushing_factor": 0.978,
+          "scoring_factor": 0.905,
+          "passing_factor": 0.893,
+          "rushing_factor": 0.996,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Lumen Field",
-          "weather": {
-            "forecast_time": "2026-10-25T20:00",
-            "temperature_f": 49.9,
-            "feels_like_f": 45.8,
-            "humidity_pct": 77.0,
-            "precip_probability_pct": 13.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.6,
-            "wind_gust_mph": 7.8,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -7648,41 +8244,30 @@
         }
       },
       "home_projection": {
-        "projected_points": 19.3,
+        "projected_points": 19.0,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.52,
           "matchup_adjustment": -0.93,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 21.81,
-          "injury_scoring_factor": 0.886,
-          "injury_adjustment_points": -2.49,
-          "post_injury_projection": 19.32,
+          "injury_scoring_factor": 0.87,
+          "injury_adjustment_points": -2.83,
+          "post_injury_projection": 18.97,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.886,
-          "passing_factor": 0.927,
-          "rushing_factor": 0.963,
+          "scoring_factor": 0.87,
+          "passing_factor": 0.857,
+          "rushing_factor": 0.906,
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Lumen Field",
-          "weather": {
-            "forecast_time": "2026-10-25T20:00",
-            "temperature_f": 49.9,
-            "feels_like_f": 45.8,
-            "humidity_pct": 77.0,
-            "precip_probability_pct": 13.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.6,
-            "wind_gust_mph": 7.8,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -7702,15 +8287,15 @@
         }
       },
       "projected_score": {
-        "away": 18.9,
-        "home": 19.3
+        "away": 19.3,
+        "home": 19.0
       },
-      "projected_total": 38.2,
-      "expected_margin": 0.4,
-      "projected_winner": "SEA",
+      "projected_total": 38.3,
+      "expected_margin": -0.3,
+      "projected_winner": "KC",
       "win_probability": {
-        "away": 48.5,
-        "home": 51.5
+        "away": 51.2,
+        "home": 48.8
       },
       "projection_confidence": 52.6,
       "injury_context": {
@@ -7831,6 +8416,20 @@
                 "impact": 2.2
               },
               {
+                "player_id": "4040432",
+                "player": "L'Jarius Sneed",
+                "team": "KC",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
+              },
+              {
                 "player_id": "4043041",
                 "player": "Jaylon Moore",
                 "team": "KC",
@@ -7865,27 +8464,41 @@
                 "position": "WR",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
-                "injury": "Undisclosed",
+                "injury": "Hamstring/knee",
                 "unit": "offense",
                 "position_weight": 3.0,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 1.2
+              },
+              {
+                "player_id": "15847",
+                "player": "Travis Kelce",
+                "team": "KC",
+                "position": "TE",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Ankle",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.88
               }
             ],
             "offense": {
               "impact": 18.0,
               "factor": 0.8,
-              "passing_impact": 18.16,
+              "passing_impact": 19.04,
               "passing_factor": 0.78,
               "rushing_impact": 5.76,
               "rushing_factor": 0.937
             },
             "defense": {
-              "impact": 7.4,
-              "factor": 1.074,
-              "pass_defense_impact": 4.8,
-              "pass_defense_factor": 1.053,
+              "impact": 8.76,
+              "factor": 1.088,
+              "pass_defense_impact": 6.16,
+              "pass_defense_factor": 1.068,
               "rush_defense_impact": 7.4,
               "rush_defense_factor": 1.074
             },
@@ -7932,14 +8545,28 @@
               }
             ]
           },
-          "scoring_factor": 0.89,
-          "passing_factor": 0.876,
-          "rushing_factor": 0.978
+          "scoring_factor": 0.905,
+          "passing_factor": 0.893,
+          "rushing_factor": 0.996
         },
         "home": {
           "team_context": {
             "team": "SEA",
             "injuries": [
+              {
+                "player_id": "3924327",
+                "player": "Drew Lock",
+                "team": "SEA",
+                "position": "QB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Elbow",
+                "unit": "offense",
+                "position_weight": 10.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 4.0
+              },
               {
                 "player_id": "4684543",
                 "player": "Julian Neal",
@@ -8081,8 +8708,36 @@
                 "impact": 1.8
               },
               {
+                "player_id": "4032473",
+                "player": "Rashid Shaheed",
+                "team": "SEA",
+                "position": "WR",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Hip",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.2
+              },
+              {
                 "player_id": "4037521",
                 "player": "Chazz Surratt",
+                "team": "SEA",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "4605491",
+                "player": "Connor O'Toole",
                 "team": "SEA",
                 "position": "LB",
                 "status": "QUESTIONABLE",
@@ -8101,31 +8756,67 @@
                 "position": "LB",
                 "status": "QUESTIONABLE",
                 "practice_status": "",
+                "injury": "Ankle",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "4686540",
+                "player": "Tyrice Knight",
+                "team": "SEA",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
                 "injury": "Undisclosed",
                 "unit": "defense",
                 "position_weight": 2.4,
                 "status_weight": 0.4,
                 "usage_importance": 1.0,
                 "impact": 0.96
+              },
+              {
+                "player_id": "4592823",
+                "player": "Beau Stephens",
+                "team": "SEA",
+                "position": "OG",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 2.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.8
               }
             ],
             "offense": {
-              "impact": 14.6,
-              "factor": 0.825,
-              "passing_impact": 9.2,
-              "passing_factor": 0.88,
-              "rushing_impact": 9.4,
-              "rushing_factor": 0.897
+              "impact": 18.0,
+              "factor": 0.8,
+              "passing_impact": 15.2,
+              "passing_factor": 0.802,
+              "rushing_impact": 14.2,
+              "rushing_factor": 0.844
             },
             "defense": {
-              "impact": 11.22,
-              "factor": 1.112,
-              "pass_defense_impact": 11.22,
-              "pass_defense_factor": 1.123,
-              "rush_defense_impact": 4.42,
-              "rush_defense_factor": 1.044
+              "impact": 13.14,
+              "factor": 1.131,
+              "pass_defense_impact": 13.14,
+              "pass_defense_factor": 1.145,
+              "rush_defense_impact": 6.34,
+              "rush_defense_factor": 1.063
             },
             "key_absences": [
+              {
+                "player_id": "3924327",
+                "player": "Drew Lock",
+                "position": "QB",
+                "status": "QUESTIONABLE",
+                "injury": "Elbow",
+                "impact": 4.0
+              },
               {
                 "player_id": "4684543",
                 "player": "Julian Neal",
@@ -8160,9 +8851,9 @@
               }
             ]
           },
-          "scoring_factor": 0.886,
-          "passing_factor": 0.927,
-          "rushing_factor": 0.963
+          "scoring_factor": 0.87,
+          "passing_factor": 0.857,
+          "rushing_factor": 0.906
         }
       },
       "weather_context": {
@@ -8174,27 +8865,8 @@
         "longitude": -122.3316,
         "roof": "outdoor",
         "kickoff": "2026-10-25T20:20",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-10-25T20:00",
-          "temperature_f": 49.9,
-          "feels_like_f": 45.8,
-          "humidity_pct": 77.0,
-          "precip_probability_pct": 13.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.6,
-          "wind_gust_mph": 7.8,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1032)>"
       },
       "model": {
         "uses_sportsbook_lines": false,
