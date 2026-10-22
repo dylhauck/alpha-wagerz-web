@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 import {
   CalendarDays,
   Clock3,
@@ -123,6 +124,10 @@ type SortKey =
   | "fantasy_per_game";
 
 type SortDirection = "asc" | "desc";
+
+const pathname = usePathname();
+
+const isNextSlate = pathname.startsWith("/nba/next");
 
 function normalizeTeam(value: unknown) {
   return String(value || "")
@@ -1252,7 +1257,7 @@ export default function NBAPage() {
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
           {games.length} NBA Games Loaded
-          For {window.location.pathname.startsWith("/nba/next") ? "Next Slate" : "Current Slate"}
+          For {isNextSlate ? "Next Slate" : "Current Slate"}
         </div>
       </div>
 

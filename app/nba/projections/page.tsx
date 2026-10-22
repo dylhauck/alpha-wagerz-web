@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 
 type Team = {
   abbr?: string;
@@ -95,7 +96,8 @@ const PERIODS = [
 type Period = (typeof PERIODS)[number];
 
 const DATA_ROOT = "/data/nba";
-
+const pathname = usePathname();
+const isNextSlate = pathname.startsWith("/nba/next");
 // ============================================================
 // PERIOD KEY MAPPING
 // ============================================================
@@ -888,7 +890,7 @@ export default function NBAProjectionsPage() {
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
           {games.length} NBA Games Loaded
-          For {window.location.pathname.startsWith("/nba/next") ? "Next Slate" : "Current Slate"}
+          For {isNextSlate ? "Next Slate" : "Current Slate"}
         </div>
       </div>
 
