@@ -125,10 +125,6 @@ type SortKey =
 
 type SortDirection = "asc" | "desc";
 
-const pathname = usePathname();
-
-const isNextSlate = pathname.startsWith("/nba/next");
-
 function normalizeTeam(value: unknown) {
   return String(value || "")
     .trim()
@@ -1024,6 +1020,8 @@ function PlayerMatchupTable({
 }
 
 export default function NBAPage() {
+  const pathname = usePathname();
+  const isNextSlate = pathname.startsWith("/nba/next");
   const [selectedPropPlayer, setSelectedPropPlayer] =
     useState<NBAPlayerMatchup | null>(null);
 

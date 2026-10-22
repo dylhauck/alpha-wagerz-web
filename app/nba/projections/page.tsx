@@ -96,8 +96,7 @@ const PERIODS = [
 type Period = (typeof PERIODS)[number];
 
 const DATA_ROOT = "/data/nba";
-const pathname = usePathname();
-const isNextSlate = pathname.startsWith("/nba/next");
+
 // ============================================================
 // PERIOD KEY MAPPING
 // ============================================================
@@ -607,6 +606,8 @@ function MarketPanel({
 // ============================================================
 
 export default function NBAProjectionsPage() {
+  const pathname = usePathname();
+  const isNextSlate = pathname.startsWith("/nba/next");
   const [slate, setSlate] =
     useState<SlateGame[]>([]);
 

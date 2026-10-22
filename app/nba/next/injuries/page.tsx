@@ -1,12 +1,20 @@
 "use client";
 
-import OriginalNBAPage from "@/app/nba/injuries/page";
+import dynamic from "next/dynamic";
 import FutureNBAData from "@/components/nba/FutureNBAData";
 
-export default function NBAFuturePage() {
+const OriginalNBAInjuriesPage = dynamic(
+  () => import("@/app/nba/injuries/page"),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+);
+
+export default function NBAFutureInjuriesPage() {
   return (
     <FutureNBAData>
-      <OriginalNBAPage />
+      <OriginalNBAInjuriesPage />
     </FutureNBAData>
   );
 }
