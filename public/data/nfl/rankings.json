@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T19:34:13.051236+00:00",
+  "generated_at": "2026-10-23T21:48:06.765463+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -26,23 +26,23 @@
     }
   },
   "counts": {
-    "game_bets": 16,
+    "game_bets": 17,
     "player_props": 0,
-    "all_candidates": 16,
+    "all_candidates": 17,
     "best_bets": 3,
     "strong_plays": 1,
     "leans": 4,
-    "passes": 8
+    "passes": 9
   },
   "best_bets": [
     {
       "ranking_type": "game_bet",
       "tier": "BEST BET",
-      "ranking_score": 88.38,
-      "confidence": 83.4,
+      "ranking_score": 88.52,
+      "confidence": 83.6,
       "upstream_label": "ELITE",
-      "edge_strength": 4.8,
-      "edge": 0.12,
+      "edge_strength": 5.4,
+      "edge": 0.135,
       "market_type": "moneyline",
       "game_id": "2026_07_CIN_BAL",
       "matchup": "CIN @ BAL",
@@ -62,8 +62,8 @@
         "home_team": "BAL",
         "market": "moneyline",
         "selection": "BAL",
-        "edge": 0.12,
-        "confidence_score": 83.4,
+        "edge": 0.135,
+        "confidence_score": 83.6,
         "confidence_label": "ELITE"
       }
     },
@@ -105,8 +105,8 @@
       "ranking_score": 88.24,
       "confidence": 83.2,
       "upstream_label": "ELITE",
-      "edge_strength": 6.6,
-      "edge": 0.165,
+      "edge_strength": 6.48,
+      "edge": 0.162,
       "market_type": "moneyline",
       "game_id": "2026_07_DEN_ARI",
       "matchup": "DEN @ ARI",
@@ -126,7 +126,7 @@
         "home_team": "ARI",
         "market": "moneyline",
         "selection": "ARI",
-        "edge": 0.165,
+        "edge": 0.162,
         "confidence_score": 83.2,
         "confidence_label": "ELITE"
       }
@@ -266,11 +266,11 @@
     {
       "ranking_type": "game_bet",
       "tier": "LEAN",
-      "ranking_score": 58.88,
-      "confidence": 50.4,
+      "ranking_score": 60.8,
+      "confidence": 52.0,
       "upstream_label": "LEAN",
-      "edge_strength": 2.36,
-      "edge": 0.059,
+      "edge_strength": 2.44,
+      "edge": 0.061,
       "market_type": "moneyline",
       "game_id": "2026_07_GB_DET",
       "matchup": "GB @ DET",
@@ -290,8 +290,8 @@
         "home_team": "DET",
         "market": "moneyline",
         "selection": "GB",
-        "edge": 0.059,
-        "confidence_score": 50.4,
+        "edge": 0.061,
+        "confidence_score": 52.0,
         "confidence_label": "LEAN"
       }
     }
@@ -552,17 +552,49 @@
         "confidence_score": 35.4,
         "confidence_label": "PASS"
       }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 32.51,
+      "confidence": 31.2,
+      "upstream_label": "PASS",
+      "edge_strength": 1.0667,
+      "edge": 1.6,
+      "market_type": "game_total",
+      "game_id": "2026_07_TB_CAR",
+      "matchup": "TB @ CAR",
+      "away_team": "TB",
+      "home_team": "CAR",
+      "team": "",
+      "pick": "UNDER 44.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_07_TB_CAR",
+        "away_team": "TB",
+        "home_team": "CAR",
+        "market": "game_total",
+        "selection": "UNDER 44.5",
+        "edge": 1.6,
+        "confidence_score": 31.2,
+        "confidence_label": "PASS"
+      }
     }
   ],
   "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
       "tier": "BEST BET",
-      "ranking_score": 88.38,
-      "confidence": 83.4,
+      "ranking_score": 88.52,
+      "confidence": 83.6,
       "upstream_label": "ELITE",
-      "edge_strength": 4.8,
-      "edge": 0.12,
+      "edge_strength": 5.4,
+      "edge": 0.135,
       "market_type": "moneyline",
       "game_id": "2026_07_CIN_BAL",
       "matchup": "CIN @ BAL",
@@ -582,8 +614,8 @@
         "home_team": "BAL",
         "market": "moneyline",
         "selection": "BAL",
-        "edge": 0.12,
-        "confidence_score": 83.4,
+        "edge": 0.135,
+        "confidence_score": 83.6,
         "confidence_label": "ELITE"
       }
     },
@@ -625,8 +657,8 @@
       "ranking_score": 88.24,
       "confidence": 83.2,
       "upstream_label": "ELITE",
-      "edge_strength": 6.6,
-      "edge": 0.165,
+      "edge_strength": 6.48,
+      "edge": 0.162,
       "market_type": "moneyline",
       "game_id": "2026_07_DEN_ARI",
       "matchup": "DEN @ ARI",
@@ -646,7 +678,7 @@
         "home_team": "ARI",
         "market": "moneyline",
         "selection": "ARI",
-        "edge": 0.165,
+        "edge": 0.162,
         "confidence_score": 83.2,
         "confidence_label": "ELITE"
       }
@@ -782,11 +814,11 @@
     {
       "ranking_type": "game_bet",
       "tier": "LEAN",
-      "ranking_score": 58.88,
-      "confidence": 50.4,
+      "ranking_score": 60.8,
+      "confidence": 52.0,
       "upstream_label": "LEAN",
-      "edge_strength": 2.36,
-      "edge": 0.059,
+      "edge_strength": 2.44,
+      "edge": 0.061,
       "market_type": "moneyline",
       "game_id": "2026_07_GB_DET",
       "matchup": "GB @ DET",
@@ -806,8 +838,8 @@
         "home_team": "DET",
         "market": "moneyline",
         "selection": "GB",
-        "edge": 0.059,
-        "confidence_score": 50.4,
+        "edge": 0.061,
+        "confidence_score": 52.0,
         "confidence_label": "LEAN"
       }
     }
@@ -816,11 +848,11 @@
     {
       "ranking_type": "game_bet",
       "tier": "BEST BET",
-      "ranking_score": 88.38,
-      "confidence": 83.4,
+      "ranking_score": 88.52,
+      "confidence": 83.6,
       "upstream_label": "ELITE",
-      "edge_strength": 4.8,
-      "edge": 0.12,
+      "edge_strength": 5.4,
+      "edge": 0.135,
       "market_type": "moneyline",
       "game_id": "2026_07_CIN_BAL",
       "matchup": "CIN @ BAL",
@@ -840,8 +872,8 @@
         "home_team": "BAL",
         "market": "moneyline",
         "selection": "BAL",
-        "edge": 0.12,
-        "confidence_score": 83.4,
+        "edge": 0.135,
+        "confidence_score": 83.6,
         "confidence_label": "ELITE"
       }
     },
@@ -883,8 +915,8 @@
       "ranking_score": 88.24,
       "confidence": 83.2,
       "upstream_label": "ELITE",
-      "edge_strength": 6.6,
-      "edge": 0.165,
+      "edge_strength": 6.48,
+      "edge": 0.162,
       "market_type": "moneyline",
       "game_id": "2026_07_DEN_ARI",
       "matchup": "DEN @ ARI",
@@ -904,7 +936,7 @@
         "home_team": "ARI",
         "market": "moneyline",
         "selection": "ARI",
-        "edge": 0.165,
+        "edge": 0.162,
         "confidence_score": 83.2,
         "confidence_label": "ELITE"
       }
@@ -1040,11 +1072,11 @@
     {
       "ranking_type": "game_bet",
       "tier": "LEAN",
-      "ranking_score": 58.88,
-      "confidence": 50.4,
+      "ranking_score": 60.8,
+      "confidence": 52.0,
       "upstream_label": "LEAN",
-      "edge_strength": 2.36,
-      "edge": 0.059,
+      "edge_strength": 2.44,
+      "edge": 0.061,
       "market_type": "moneyline",
       "game_id": "2026_07_GB_DET",
       "matchup": "GB @ DET",
@@ -1064,8 +1096,8 @@
         "home_team": "DET",
         "market": "moneyline",
         "selection": "GB",
-        "edge": 0.059,
-        "confidence_score": 50.4,
+        "edge": 0.061,
+        "confidence_score": 52.0,
         "confidence_label": "LEAN"
       }
     },
@@ -1322,6 +1354,38 @@
         "selection": "OVER 42.5",
         "edge": 2.1,
         "confidence_score": 35.4,
+        "confidence_label": "PASS"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 32.51,
+      "confidence": 31.2,
+      "upstream_label": "PASS",
+      "edge_strength": 1.0667,
+      "edge": 1.6,
+      "market_type": "game_total",
+      "game_id": "2026_07_TB_CAR",
+      "matchup": "TB @ CAR",
+      "away_team": "TB",
+      "home_team": "CAR",
+      "team": "",
+      "pick": "UNDER 44.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_07_TB_CAR",
+        "away_team": "TB",
+        "home_team": "CAR",
+        "market": "game_total",
+        "selection": "UNDER 44.5",
+        "edge": 1.6,
+        "confidence_score": 31.2,
         "confidence_label": "PASS"
       }
     }
