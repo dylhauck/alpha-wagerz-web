@@ -7,10 +7,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 44.8,
+        "total": 46.9,
         "home_margin": "",
-        "away_win_probability": 0.47700000000000004,
-        "home_win_probability": 0.523,
+        "away_win_probability": 0.45,
+        "home_win_probability": 0.55,
         "projection_confidence": 52.7
       },
       "market": {
@@ -148,15 +148,22 @@
         {
           "market": "moneyline",
           "selection": "PHI",
-          "edge": 0.175,
+          "edge": 0.202,
           "confidence_score": 83.4,
           "confidence_label": "ELITE"
+        },
+        {
+          "market": "game_total",
+          "selection": "OVER 44.5",
+          "edge": 2.4,
+          "confidence_score": 37.9,
+          "confidence_label": "PASS"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "PHI",
-        "edge": 0.175,
+        "edge": 0.202,
         "confidence_score": 83.4,
         "confidence_label": "ELITE"
       }
@@ -169,14 +176,24 @@
       "home_team": "PHI",
       "market": "moneyline",
       "selection": "PHI",
-      "edge": 0.175,
+      "edge": 0.202,
       "confidence_score": 83.4,
       "confidence_label": "ELITE"
+    },
+    {
+      "game_id": "2026_07_DAL_PHI",
+      "away_team": "DAL",
+      "home_team": "PHI",
+      "market": "game_total",
+      "selection": "OVER 44.5",
+      "edge": 2.4,
+      "confidence_score": 37.9,
+      "confidence_label": "PASS"
     }
   ],
   "counts": {
     "games": 1,
-    "bets": 1,
+    "bets": 2,
     "missing_projection": 0
   },
   "model": {
