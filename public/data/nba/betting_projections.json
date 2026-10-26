@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T14:49:15.941338+00:00",
+  "generated_at": "2026-10-26T15:05:20.056261+00:00",
   "league": "NBA",
   "season": "2026-27",
   "slate_type": "current",
@@ -19,16 +19,16 @@
     "current_season_full_weight_games": 20,
     "home_court_advantage": 2.2,
     "regression_to_league": 0.12,
-    "league_baseline_points": 115.44
+    "league_baseline_points": 115.31
   },
   "league_baseline": {
-    "points": 115.44,
-    "points_for": 115.44,
-    "points_against": 115.45,
-    "rebounds": 43.82,
-    "assists": 26.63,
-    "turnovers": 14.65,
-    "threes": 13.2
+    "points": 115.31,
+    "points_for": 115.31,
+    "points_against": 115.31,
+    "rebounds": 43.9,
+    "assists": 26.46,
+    "turnovers": 14.87,
+    "threes": 13.04
   },
   "games": [
     {
@@ -52,15 +52,15 @@
       "away_record": "2-1",
       "home_record": "2-1",
       "model": {
-        "away_score": 108.7,
-        "home_score": 124.7,
-        "projected_total": 233.5,
-        "home_margin": 16.0,
-        "away_margin": -16.0,
+        "away_score": 109.4,
+        "home_score": 123.5,
+        "projected_total": 232.9,
+        "home_margin": 14.1,
+        "away_margin": -14.1,
         "projected_winner": "CHA",
-        "away_win_probability": 19.0,
-        "home_win_probability": 81.0,
-        "confidence": 56.8
+        "away_win_probability": 21.8,
+        "home_win_probability": 78.2,
+        "confidence": 60.2
       },
       "team_profiles": {
         "away": {
@@ -68,30 +68,30 @@
           "team_name": "Washington Wizards",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 113.66,
-            "pts_allowed": 124.45,
-            "point_diff": -10.8,
-            "reb": 42.01,
-            "ast": 25.15,
-            "tov": 15.56,
-            "fg3m": 12.65
+            "pts": 115.17,
+            "pts_allowed": 123.56,
+            "point_diff": -8.4,
+            "reb": 42.21,
+            "ast": 25.45,
+            "tov": 15.29,
+            "fg3m": 11.95
           },
           "percentages": {
-            "fg_pct": 0.466,
-            "fg3_pct": 0.352,
-            "ft_pct": 0.767
+            "fg_pct": 0.472,
+            "fg3_pct": 0.337,
+            "ft_pct": 0.768
           },
           "ratings": {
-            "offense_index": 0.9845,
-            "defense_index": 1.0781
+            "offense_index": 0.9988,
+            "defense_index": 1.0716
           }
         },
         "home": {
@@ -99,30 +99,30 @@
           "team_name": "Charlotte Hornets",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 115.7,
-            "pts_allowed": 110.79,
-            "point_diff": 4.91,
-            "reb": 46.0,
-            "ast": 26.29,
-            "tov": 15.68,
-            "fg3m": 16.33
+            "pts": 115.1,
+            "pts_allowed": 109.97,
+            "point_diff": 5.13,
+            "reb": 45.79,
+            "ast": 26.25,
+            "tov": 16.24,
+            "fg3m": 16.19
           },
           "percentages": {
-            "fg_pct": 0.459,
-            "fg3_pct": 0.375,
-            "ft_pct": 0.82
+            "fg_pct": 0.457,
+            "fg3_pct": 0.368,
+            "ft_pct": 0.825
           },
           "ratings": {
-            "offense_index": 1.0022,
-            "defense_index": 0.9597
+            "offense_index": 0.9982,
+            "defense_index": 0.9537
           }
         }
       },
@@ -1129,15 +1129,15 @@
       "away_record": "3-0",
       "home_record": "1-1",
       "model": {
-        "away_score": 117.1,
-        "home_score": 118.4,
+        "away_score": 118.3,
+        "home_score": 117.1,
         "projected_total": 235.4,
-        "home_margin": 1.3,
-        "away_margin": -1.3,
-        "projected_winner": "CLE",
-        "away_win_probability": 47.1,
-        "home_win_probability": 52.9,
-        "confidence": 56.8
+        "home_margin": -1.1,
+        "away_margin": 1.1,
+        "projected_winner": "MIN",
+        "away_win_probability": 52.6,
+        "home_win_probability": 47.4,
+        "confidence": 59.4
       },
       "team_profiles": {
         "away": {
@@ -1145,30 +1145,30 @@
           "team_name": "Minnesota Timberwolves",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 118.65,
-            "pts_allowed": 114.17,
-            "point_diff": 4.48,
-            "reb": 44.49,
-            "ast": 25.8,
-            "tov": 14.86,
-            "fg3m": 14.16
+            "pts": 119.95,
+            "pts_allowed": 113.31,
+            "point_diff": 6.64,
+            "reb": 45.28,
+            "ast": 25.19,
+            "tov": 14.98,
+            "fg3m": 14.88
           },
           "percentages": {
-            "fg_pct": 0.48,
-            "fg3_pct": 0.372,
-            "ft_pct": 0.745
+            "fg_pct": 0.479,
+            "fg3_pct": 0.378,
+            "ft_pct": 0.732
           },
           "ratings": {
-            "offense_index": 1.0278,
-            "defense_index": 0.989
+            "offense_index": 1.0403,
+            "defense_index": 0.9827
           }
         },
         "home": {
@@ -1176,30 +1176,30 @@
           "team_name": "Cleveland Cavaliers",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 2,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.1,
+            "last_season": 0.9
           },
           "per_game": {
-            "pts": 118.82,
-            "pts_allowed": 115.33,
-            "point_diff": 3.49,
-            "reb": 44.48,
-            "ast": 27.78,
-            "tov": 14.35,
-            "fg3m": 13.94
+            "pts": 118.15,
+            "pts_allowed": 115.26,
+            "point_diff": 2.89,
+            "reb": 44.56,
+            "ast": 27.27,
+            "tov": 14.7,
+            "fg3m": 13.57
           },
           "percentages": {
-            "fg_pct": 0.48,
-            "fg3_pct": 0.354,
-            "ft_pct": 0.775
+            "fg_pct": 0.479,
+            "fg3_pct": 0.348,
+            "ft_pct": 0.773
           },
           "ratings": {
-            "offense_index": 1.0293,
-            "defense_index": 0.999
+            "offense_index": 1.0247,
+            "defense_index": 0.9996
           }
         }
       },
@@ -2142,15 +2142,15 @@
       "away_record": "1-2",
       "home_record": "1-1",
       "model": {
-        "away_score": 107.4,
-        "home_score": 121.9,
-        "projected_total": 229.3,
-        "home_margin": 14.5,
-        "away_margin": -14.5,
+        "away_score": 106.1,
+        "home_score": 123.1,
+        "projected_total": 229.2,
+        "home_margin": 17.0,
+        "away_margin": -17.0,
         "projected_winner": "BOS",
-        "away_win_probability": 21.1,
-        "home_win_probability": 78.9,
-        "confidence": 56.8
+        "away_win_probability": 17.6,
+        "home_win_probability": 82.4,
+        "confidence": 59.4
       },
       "team_profiles": {
         "away": {
@@ -2158,30 +2158,30 @@
           "team_name": "Chicago Bulls",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 115.08,
-            "pts_allowed": 122.17,
-            "point_diff": -7.09,
-            "reb": 45.6,
-            "ast": 27.88,
-            "tov": 15.88,
-            "fg3m": 13.79
+            "pts": 112.65,
+            "pts_allowed": 123.52,
+            "point_diff": -10.87,
+            "reb": 46.8,
+            "ast": 26.62,
+            "tov": 17.05,
+            "fg3m": 12.76
           },
           "percentages": {
-            "fg_pct": 0.461,
-            "fg3_pct": 0.344,
-            "ft_pct": 0.773
+            "fg_pct": 0.446,
+            "fg3_pct": 0.319,
+            "ft_pct": 0.768
           },
           "ratings": {
-            "offense_index": 0.9969,
-            "defense_index": 1.0583
+            "offense_index": 0.977,
+            "defense_index": 1.0713
           }
         },
         "home": {
@@ -2189,30 +2189,30 @@
           "team_name": "Boston Celtics",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 2,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.1,
+            "last_season": 0.9
           },
           "per_game": {
-            "pts": 114.81,
-            "pts_allowed": 107.89,
-            "point_diff": 6.91,
-            "reb": 46.03,
-            "ast": 24.77,
-            "tov": 12.48,
-            "fg3m": 15.57
+            "pts": 114.71,
+            "pts_allowed": 108.58,
+            "point_diff": 6.13,
+            "reb": 45.66,
+            "ast": 24.94,
+            "tov": 12.56,
+            "fg3m": 15.65
           },
           "percentages": {
             "fg_pct": 0.466,
-            "fg3_pct": 0.369,
-            "ft_pct": 0.805
+            "fg3_pct": 0.371,
+            "ft_pct": 0.803
           },
           "ratings": {
-            "offense_index": 0.9945,
-            "defense_index": 0.9346
+            "offense_index": 0.9948,
+            "defense_index": 0.9417
           }
         }
       },
@@ -3155,15 +3155,15 @@
       "away_record": "1-2",
       "home_record": "0-3",
       "model": {
-        "away_score": 116.2,
-        "home_score": 124.9,
-        "projected_total": 241.1,
-        "home_margin": 8.7,
-        "away_margin": -8.7,
+        "away_score": 117.0,
+        "home_score": 124.4,
+        "projected_total": 241.4,
+        "home_margin": 7.4,
+        "away_margin": -7.4,
         "projected_winner": "MIA",
-        "away_win_probability": 31.2,
-        "home_win_probability": 68.8,
-        "confidence": 56.8
+        "away_win_probability": 33.8,
+        "home_win_probability": 66.2,
+        "confidence": 60.2
       },
       "team_profiles": {
         "away": {
@@ -3171,30 +3171,30 @@
           "team_name": "Dallas Mavericks",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 113.89,
-            "pts_allowed": 120.02,
-            "point_diff": -6.12,
-            "reb": 44.12,
-            "ast": 25.04,
-            "tov": 14.82,
+            "pts": 113.48,
+            "pts_allowed": 120.86,
+            "point_diff": -7.38,
+            "reb": 42.95,
+            "ast": 24.5,
+            "tov": 15.47,
             "fg3m": 11.0
           },
           "percentages": {
-            "fg_pct": 0.469,
-            "fg3_pct": 0.342,
-            "ft_pct": 0.75
+            "fg_pct": 0.474,
+            "fg3_pct": 0.337,
+            "ft_pct": 0.74
           },
           "ratings": {
-            "offense_index": 0.9866,
-            "defense_index": 1.0397
+            "offense_index": 0.9842,
+            "defense_index": 1.0482
           }
         },
         "home": {
@@ -3202,30 +3202,30 @@
           "team_name": "Miami Heat",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 120.16,
-            "pts_allowed": 119.12,
-            "point_diff": 0.93,
-            "reb": 45.68,
-            "ast": 28.9,
-            "tov": 13.96,
-            "fg3m": 13.41
+            "pts": 118.66,
+            "pts_allowed": 120.38,
+            "point_diff": -1.8,
+            "reb": 44.45,
+            "ast": 28.7,
+            "tov": 14.49,
+            "fg3m": 12.84
           },
           "percentages": {
-            "fg_pct": 0.469,
-            "fg3_pct": 0.355,
-            "ft_pct": 0.791
+            "fg_pct": 0.47,
+            "fg3_pct": 0.343,
+            "ft_pct": 0.789
           },
           "ratings": {
-            "offense_index": 1.0408,
-            "defense_index": 1.0319
+            "offense_index": 1.0291,
+            "defense_index": 1.044
           }
         }
       },
@@ -4168,15 +4168,15 @@
       "away_record": "2-1",
       "home_record": "0-3",
       "model": {
-        "away_score": 113.8,
-        "home_score": 116.7,
-        "projected_total": 230.5,
-        "home_margin": 2.9,
-        "away_margin": -2.9,
+        "away_score": 115.8,
+        "home_score": 117.3,
+        "projected_total": 233.1,
+        "home_margin": 1.4,
+        "away_margin": -1.4,
         "projected_winner": "MIL",
-        "away_win_probability": 43.4,
-        "home_win_probability": 56.6,
-        "confidence": 56.8
+        "away_win_probability": 46.7,
+        "home_win_probability": 53.3,
+        "confidence": 60.2
       },
       "team_profiles": {
         "away": {
@@ -4184,30 +4184,30 @@
           "team_name": "Indiana Pacers",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 112.93,
-            "pts_allowed": 120.38,
-            "point_diff": -7.45,
-            "reb": 41.95,
-            "ast": 27.76,
-            "tov": 14.42,
-            "fg3m": 13.18
+            "pts": 113.99,
+            "pts_allowed": 120.34,
+            "point_diff": -6.35,
+            "reb": 42.06,
+            "ast": 27.89,
+            "tov": 14.27,
+            "fg3m": 12.74
           },
           "percentages": {
-            "fg_pct": 0.461,
-            "fg3_pct": 0.353,
-            "ft_pct": 0.772
+            "fg_pct": 0.468,
+            "fg3_pct": 0.348,
+            "ft_pct": 0.763
           },
           "ratings": {
-            "offense_index": 0.9782,
-            "defense_index": 1.0428
+            "offense_index": 0.9886,
+            "defense_index": 1.0437
           }
         },
         "home": {
@@ -4215,30 +4215,30 @@
           "team_name": "Milwaukee Bucks",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 110.87,
-            "pts_allowed": 117.36,
-            "point_diff": -6.49,
-            "reb": 40.71,
-            "ast": 25.91,
-            "tov": 15.24,
-            "fg3m": 15.09
+            "pts": 111.41,
+            "pts_allowed": 118.48,
+            "point_diff": -7.07,
+            "reb": 40.74,
+            "ast": 26.13,
+            "tov": 15.32,
+            "fg3m": 15.08
           },
           "percentages": {
-            "fg_pct": 0.476,
-            "fg3_pct": 0.386,
-            "ft_pct": 0.735
+            "fg_pct": 0.473,
+            "fg3_pct": 0.384,
+            "ft_pct": 0.744
           },
           "ratings": {
-            "offense_index": 0.9604,
-            "defense_index": 1.0166
+            "offense_index": 0.9662,
+            "defense_index": 1.0275
           }
         }
       },
@@ -5277,51 +5277,20 @@
       "away_record": "1-1",
       "home_record": "3-0",
       "model": {
-        "away_score": 103.0,
-        "home_score": 115.2,
-        "projected_total": 218.2,
-        "home_margin": 12.2,
-        "away_margin": -12.2,
+        "away_score": 101.3,
+        "home_score": 115.3,
+        "projected_total": 216.6,
+        "home_margin": 14.1,
+        "away_margin": -14.1,
         "projected_winner": "OKC",
-        "away_win_probability": 24.7,
-        "home_win_probability": 75.3,
-        "confidence": 57.6
+        "away_win_probability": 21.8,
+        "home_win_probability": 78.2,
+        "confidence": 59.4
       },
       "team_profiles": {
         "away": {
           "team": "PHX",
           "team_name": "Phoenix Suns",
-          "conference": "West",
-          "games": {
-            "current": 1,
-            "previous": 82
-          },
-          "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
-          },
-          "per_game": {
-            "pts": 111.12,
-            "pts_allowed": 111.74,
-            "point_diff": -0.63,
-            "reb": 42.9,
-            "ast": 24.07,
-            "tov": 14.57,
-            "fg3m": 14.36
-          },
-          "percentages": {
-            "fg_pct": 0.45,
-            "fg3_pct": 0.352,
-            "ft_pct": 0.779
-          },
-          "ratings": {
-            "offense_index": 0.9626,
-            "defense_index": 0.968
-          }
-        },
-        "home": {
-          "team": "OKC",
-          "team_name": "Oklahoma City Thunder",
           "conference": "West",
           "games": {
             "current": 2,
@@ -5332,22 +5301,53 @@
             "last_season": 0.9
           },
           "per_game": {
-            "pts": 117.7,
-            "pts_allowed": 106.51,
-            "point_diff": 11.19,
-            "reb": 44.34,
-            "ast": 25.52,
-            "tov": 12.64,
-            "fg3m": 13.67
+            "pts": 109.64,
+            "pts_allowed": 112.39,
+            "point_diff": -2.75,
+            "reb": 42.69,
+            "ast": 23.54,
+            "tov": 14.65,
+            "fg3m": 13.92
           },
           "percentages": {
-            "fg_pct": 0.477,
-            "fg3_pct": 0.362,
-            "ft_pct": 0.821
+            "fg_pct": 0.445,
+            "fg3_pct": 0.344,
+            "ft_pct": 0.777
           },
           "ratings": {
-            "offense_index": 1.0196,
-            "defense_index": 0.9226
+            "offense_index": 0.9509,
+            "defense_index": 0.9747
+          }
+        },
+        "home": {
+          "team": "OKC",
+          "team_name": "Oklahoma City Thunder",
+          "conference": "West",
+          "games": {
+            "current": 3,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.15,
+            "last_season": 0.85
+          },
+          "per_game": {
+            "pts": 117.05,
+            "pts_allowed": 105.81,
+            "point_diff": 11.23,
+            "reb": 44.46,
+            "ast": 25.38,
+            "tov": 12.66,
+            "fg3m": 13.61
+          },
+          "percentages": {
+            "fg_pct": 0.474,
+            "fg3_pct": 0.361,
+            "ft_pct": 0.822
+          },
+          "ratings": {
+            "offense_index": 1.0151,
+            "defense_index": 0.9177
           }
         }
       },
@@ -6290,15 +6290,15 @@
       "away_record": "2-1",
       "home_record": "3-0",
       "model": {
-        "away_score": 112.7,
-        "home_score": 117.8,
-        "projected_total": 230.5,
-        "home_margin": 5.1,
-        "away_margin": -5.1,
+        "away_score": 113.9,
+        "home_score": 119.8,
+        "projected_total": 233.7,
+        "home_margin": 5.9,
+        "away_margin": -5.9,
         "projected_winner": "HOU",
-        "away_win_probability": 38.6,
-        "home_win_probability": 61.4,
-        "confidence": 56.8
+        "away_win_probability": 36.9,
+        "home_win_probability": 63.1,
+        "confidence": 60.2
       },
       "team_profiles": {
         "away": {
@@ -6306,30 +6306,30 @@
           "team_name": "Atlanta Hawks",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 119.17,
-            "pts_allowed": 116.45,
-            "point_diff": 2.63,
-            "reb": 43.42,
-            "ast": 29.99,
-            "tov": 14.34,
-            "fg3m": 14.57
+            "pts": 120.52,
+            "pts_allowed": 117.35,
+            "point_diff": 3.09,
+            "reb": 43.27,
+            "ast": 29.79,
+            "tov": 14.62,
+            "fg3m": 14.51
           },
           "percentages": {
-            "fg_pct": 0.475,
-            "fg3_pct": 0.372,
-            "ft_pct": 0.777
+            "fg_pct": 0.476,
+            "fg3_pct": 0.374,
+            "ft_pct": 0.783
           },
           "ratings": {
-            "offense_index": 1.0323,
-            "defense_index": 1.0087
+            "offense_index": 1.0453,
+            "defense_index": 1.0177
           }
         },
         "home": {
@@ -6337,30 +6337,30 @@
           "team_name": "Houston Rockets",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 115.84,
+            "pts": 117.12,
             "pts_allowed": 110.0,
-            "point_diff": 5.84,
-            "reb": 47.8,
-            "ast": 25.73,
-            "tov": 15.43,
-            "fg3m": 11.72
+            "point_diff": 7.12,
+            "reb": 47.18,
+            "ast": 26.39,
+            "tov": 15.49,
+            "fg3m": 12.18
           },
           "percentages": {
-            "fg_pct": 0.482,
-            "fg3_pct": 0.368,
-            "ft_pct": 0.761
+            "fg_pct": 0.487,
+            "fg3_pct": 0.376,
+            "ft_pct": 0.757
           },
           "ratings": {
-            "offense_index": 1.0034,
-            "defense_index": 0.9529
+            "offense_index": 1.0157,
+            "defense_index": 0.954
           }
         }
       },
@@ -7367,15 +7367,15 @@
       "away_record": "3-0",
       "home_record": "1-2",
       "model": {
-        "away_score": 123.2,
-        "home_score": 121.7,
-        "projected_total": 244.9,
-        "home_margin": -1.5,
-        "away_margin": 1.5,
+        "away_score": 123.8,
+        "home_score": 118.9,
+        "projected_total": 242.8,
+        "home_margin": -4.9,
+        "away_margin": 4.9,
         "projected_winner": "MEM",
-        "away_win_probability": 53.4,
-        "home_win_probability": 46.6,
-        "confidence": 56.8
+        "away_win_probability": 61.0,
+        "home_win_probability": 39.0,
+        "confidence": 60.2
       },
       "team_profiles": {
         "away": {
@@ -7383,30 +7383,30 @@
           "team_name": "Memphis Grizzlies",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 115.12,
-            "pts_allowed": 119.81,
-            "point_diff": -4.7,
-            "reb": 42.74,
-            "ast": 27.56,
-            "tov": 15.09,
-            "fg3m": 13.86
+            "pts": 115.95,
+            "pts_allowed": 118.05,
+            "point_diff": -2.1,
+            "reb": 44.04,
+            "ast": 27.08,
+            "tov": 15.08,
+            "fg3m": 13.76
           },
           "percentages": {
-            "fg_pct": 0.457,
-            "fg3_pct": 0.354,
-            "ft_pct": 0.793
+            "fg_pct": 0.459,
+            "fg3_pct": 0.357,
+            "ft_pct": 0.792
           },
           "ratings": {
-            "offense_index": 0.9972,
-            "defense_index": 1.0379
+            "offense_index": 1.0055,
+            "defense_index": 1.0238
           }
         },
         "home": {
@@ -7414,30 +7414,30 @@
           "team_name": "Utah Jazz",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 116.87,
-            "pts_allowed": 125.85,
-            "point_diff": -8.98,
-            "reb": 43.51,
-            "ast": 29.37,
-            "tov": 15.62,
-            "fg3m": 12.52
+            "pts": 115.41,
+            "pts_allowed": 125.55,
+            "point_diff": -10.14,
+            "reb": 42.93,
+            "ast": 28.91,
+            "tov": 15.87,
+            "fg3m": 12.36
           },
           "percentages": {
             "fg_pct": 0.467,
             "fg3_pct": 0.345,
-            "ft_pct": 0.78
+            "ft_pct": 0.768
           },
           "ratings": {
-            "offense_index": 1.0124,
-            "defense_index": 1.0902
+            "offense_index": 1.0009,
+            "defense_index": 1.0888
           }
         }
       },
@@ -8476,15 +8476,15 @@
       "away_record": "0-3",
       "home_record": "1-1",
       "model": {
-        "away_score": 113.5,
-        "home_score": 121.0,
-        "projected_total": 234.6,
-        "home_margin": 7.5,
-        "away_margin": -7.5,
+        "away_score": 111.9,
+        "home_score": 120.5,
+        "projected_total": 232.4,
+        "home_margin": 8.6,
+        "away_margin": -8.6,
         "projected_winner": "DEN",
-        "away_win_probability": 33.6,
-        "home_win_probability": 66.4,
-        "confidence": 56.8
+        "away_win_probability": 31.3,
+        "home_win_probability": 68.7,
+        "confidence": 59.4
       },
       "team_profiles": {
         "away": {
@@ -8492,30 +8492,30 @@
           "team_name": "Golden State Warriors",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 114.12,
-            "pts_allowed": 115.79,
-            "point_diff": -1.67,
-            "reb": 41.98,
-            "ast": 28.7,
-            "tov": 15.71,
-            "fg3m": 15.31
+            "pts": 113.16,
+            "pts_allowed": 116.97,
+            "point_diff": -3.81,
+            "reb": 41.35,
+            "ast": 28.31,
+            "tov": 15.74,
+            "fg3m": 14.54
           },
           "percentages": {
-            "fg_pct": 0.459,
-            "fg3_pct": 0.349,
-            "ft_pct": 0.806
+            "fg_pct": 0.454,
+            "fg3_pct": 0.336,
+            "ft_pct": 0.803
           },
           "ratings": {
-            "offense_index": 0.9885,
-            "defense_index": 1.003
+            "offense_index": 0.9814,
+            "defense_index": 1.0144
           }
         },
         "home": {
@@ -8523,30 +8523,30 @@
           "team_name": "Denver Nuggets",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 2,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.1,
+            "last_season": 0.9
           },
           "per_game": {
-            "pts": 120.19,
-            "pts_allowed": 115.86,
-            "point_diff": 4.24,
-            "reb": 44.45,
-            "ast": 28.4,
-            "tov": 13.35,
-            "fg3m": 13.89
+            "pts": 118.29,
+            "pts_allowed": 114.81,
+            "point_diff": 3.39,
+            "reb": 44.9,
+            "ast": 27.8,
+            "tov": 13.81,
+            "fg3m": 13.58
           },
           "percentages": {
-            "fg_pct": 0.49,
-            "fg3_pct": 0.39,
-            "ft_pct": 0.799
+            "fg_pct": 0.484,
+            "fg3_pct": 0.383,
+            "ft_pct": 0.791
           },
           "ratings": {
-            "offense_index": 1.0412,
-            "defense_index": 1.0036
+            "offense_index": 1.0259,
+            "defense_index": 0.9957
           }
         }
       },

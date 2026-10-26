@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T14:49:26.658237+00:00",
+  "generated_at": "2026-10-26T15:05:31.419653+00:00",
   "league": "NBA",
   "season": "2026-27",
   "slate_type": "future",
@@ -19,16 +19,16 @@
     "current_season_full_weight_games": 20,
     "home_court_advantage": 2.2,
     "regression_to_league": 0.12,
-    "league_baseline_points": 115.44
+    "league_baseline_points": 115.31
   },
   "league_baseline": {
-    "points": 115.44,
-    "points_for": 115.44,
-    "points_against": 115.45,
-    "rebounds": 43.82,
-    "assists": 26.63,
-    "turnovers": 14.65,
-    "threes": 13.2
+    "points": 115.31,
+    "points_for": 115.31,
+    "points_against": 115.31,
+    "rebounds": 43.9,
+    "assists": 26.46,
+    "turnovers": 14.87,
+    "threes": 13.04
   },
   "games": [
     {
@@ -52,15 +52,15 @@
       "away_record": "0-3",
       "home_record": "1-1",
       "model": {
-        "away_score": 99.7,
-        "home_score": 116.1,
-        "projected_total": 215.9,
-        "home_margin": 16.4,
-        "away_margin": -16.4,
+        "away_score": 100.1,
+        "home_score": 115.6,
+        "projected_total": 215.8,
+        "home_margin": 15.5,
+        "away_margin": -15.5,
         "projected_winner": "BOS",
-        "away_win_probability": 18.4,
-        "home_win_probability": 81.6,
-        "confidence": 56.8
+        "away_win_probability": 19.6,
+        "home_win_probability": 80.4,
+        "confidence": 59.4
       },
       "team_profiles": {
         "away": {
@@ -68,30 +68,30 @@
           "team_name": "Brooklyn Nets",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 105.76,
-            "pts_allowed": 115.61,
-            "point_diff": -9.85,
-            "reb": 39.23,
-            "ast": 24.85,
-            "tov": 16.11,
-            "fg3m": 13.04
+            "pts": 105.47,
+            "pts_allowed": 115.02,
+            "point_diff": -9.55,
+            "reb": 39.1,
+            "ast": 24.55,
+            "tov": 16.73,
+            "fg3m": 12.93
           },
           "percentages": {
-            "fg_pct": 0.443,
-            "fg3_pct": 0.342,
-            "ft_pct": 0.779
+            "fg_pct": 0.444,
+            "fg3_pct": 0.347,
+            "ft_pct": 0.777
           },
           "ratings": {
-            "offense_index": 0.9161,
-            "defense_index": 1.0014
+            "offense_index": 0.9147,
+            "defense_index": 0.9975
           }
         },
         "home": {
@@ -99,30 +99,30 @@
           "team_name": "Boston Celtics",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 2,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.1,
+            "last_season": 0.9
           },
           "per_game": {
-            "pts": 114.81,
-            "pts_allowed": 107.89,
-            "point_diff": 6.91,
-            "reb": 46.03,
-            "ast": 24.77,
-            "tov": 12.48,
-            "fg3m": 15.57
+            "pts": 114.71,
+            "pts_allowed": 108.58,
+            "point_diff": 6.13,
+            "reb": 45.66,
+            "ast": 24.94,
+            "tov": 12.56,
+            "fg3m": 15.65
           },
           "percentages": {
             "fg_pct": 0.466,
-            "fg3_pct": 0.369,
-            "ft_pct": 0.805
+            "fg3_pct": 0.371,
+            "ft_pct": 0.803
           },
           "ratings": {
-            "offense_index": 0.9945,
-            "defense_index": 0.9346
+            "offense_index": 0.9948,
+            "defense_index": 0.9417
           }
         }
       },
@@ -1162,14 +1162,14 @@
       "home_record": "0-3",
       "model": {
         "away_score": 111.6,
-        "home_score": 111.7,
-        "projected_total": 223.3,
-        "home_margin": 0.2,
-        "away_margin": -0.2,
-        "projected_winner": "NYK",
-        "away_win_probability": 49.6,
-        "home_win_probability": 50.4,
-        "confidence": 56.8
+        "home_score": 110.8,
+        "projected_total": 222.3,
+        "home_margin": -0.8,
+        "away_margin": 0.8,
+        "projected_winner": "DET",
+        "away_win_probability": 51.8,
+        "home_win_probability": 48.2,
+        "confidence": 60.2
       },
       "team_profiles": {
         "away": {
@@ -1177,30 +1177,30 @@
           "team_name": "Detroit Pistons",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 117.96,
-            "pts_allowed": 109.77,
-            "point_diff": 8.19,
-            "reb": 45.77,
-            "ast": 27.76,
-            "tov": 15.19,
-            "fg3m": 11.2
+            "pts": 118.28,
+            "pts_allowed": 110.11,
+            "point_diff": 8.17,
+            "reb": 46.11,
+            "ast": 27.68,
+            "tov": 15.38,
+            "fg3m": 11.6
           },
           "percentages": {
-            "fg_pct": 0.483,
-            "fg3_pct": 0.357,
-            "ft_pct": 0.769
+            "fg_pct": 0.48,
+            "fg3_pct": 0.359,
+            "ft_pct": 0.78
           },
           "ratings": {
-            "offense_index": 1.0218,
-            "defense_index": 0.9509
+            "offense_index": 1.0258,
+            "defense_index": 0.9549
           }
         },
         "home": {
@@ -1208,30 +1208,30 @@
           "team_name": "New York Knicks",
           "conference": "East",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 115.67,
-            "pts_allowed": 109.89,
-            "point_diff": 5.68,
-            "reb": 45.97,
-            "ast": 27.08,
-            "tov": 13.67,
-            "fg3m": 14.04
+            "pts": 114.02,
+            "pts_allowed": 109.48,
+            "point_diff": 4.46,
+            "reb": 46.71,
+            "ast": 26.44,
+            "tov": 13.81,
+            "fg3m": 13.72
           },
           "percentages": {
-            "fg_pct": 0.473,
-            "fg3_pct": 0.371,
-            "ft_pct": 0.788
+            "fg_pct": 0.462,
+            "fg3_pct": 0.367,
+            "ft_pct": 0.779
           },
           "ratings": {
-            "offense_index": 1.002,
-            "defense_index": 0.9519
+            "offense_index": 0.9889,
+            "defense_index": 0.9495
           }
         }
       },
@@ -2270,15 +2270,15 @@
       "away_record": "0-3",
       "home_record": "1-2",
       "model": {
-        "away_score": 106.6,
-        "home_score": 124.7,
-        "projected_total": 231.4,
-        "home_margin": 18.1,
-        "away_margin": -18.1,
+        "away_score": 105.8,
+        "home_score": 123.4,
+        "projected_total": 229.2,
+        "home_margin": 17.5,
+        "away_margin": -17.5,
         "projected_winner": "SAS",
-        "away_win_probability": 16.2,
-        "home_win_probability": 83.8,
-        "confidence": 56.8
+        "away_win_probability": 16.9,
+        "home_win_probability": 83.1,
+        "confidence": 60.2
       },
       "team_profiles": {
         "away": {
@@ -2286,30 +2286,30 @@
           "team_name": "Sacramento Kings",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 110.25,
+            "pts": 108.75,
             "pts_allowed": 121.0,
-            "point_diff": -10.75,
-            "reb": 42.28,
-            "ast": 25.32,
-            "tov": 14.44,
-            "fg3m": 10.19
+            "point_diff": -12.25,
+            "reb": 42.25,
+            "ast": 24.98,
+            "tov": 14.71,
+            "fg3m": 9.96
           },
           "percentages": {
-            "fg_pct": 0.465,
-            "fg3_pct": 0.337,
-            "ft_pct": 0.762
+            "fg_pct": 0.461,
+            "fg3_pct": 0.332,
+            "ft_pct": 0.742
           },
           "ratings": {
-            "offense_index": 0.955,
-            "defense_index": 1.0481
+            "offense_index": 0.9431,
+            "defense_index": 1.0494
           }
         },
         "home": {
@@ -2317,30 +2317,30 @@
           "team_name": "San Antonio Spurs",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 119.01,
-            "pts_allowed": 111.72,
-            "point_diff": 7.29,
-            "reb": 46.9,
-            "ast": 27.75,
-            "tov": 13.52,
-            "fg3m": 13.42
+            "pts": 117.43,
+            "pts_allowed": 112.17,
+            "point_diff": 5.26,
+            "reb": 46.7,
+            "ast": 27.04,
+            "tov": 13.57,
+            "fg3m": 13.06
           },
           "percentages": {
-            "fg_pct": 0.478,
-            "fg3_pct": 0.355,
-            "ft_pct": 0.792
+            "fg_pct": 0.469,
+            "fg3_pct": 0.346,
+            "ft_pct": 0.801
           },
           "ratings": {
-            "offense_index": 1.0309,
-            "defense_index": 0.9678
+            "offense_index": 1.0184,
+            "defense_index": 0.9729
           }
         }
       },
@@ -3219,15 +3219,15 @@
       "away_record": "2-0",
       "home_record": "3-0",
       "model": {
-        "away_score": 113.6,
-        "home_score": 116.6,
-        "projected_total": 230.2,
+        "away_score": 113.2,
+        "home_score": 116.2,
+        "projected_total": 229.4,
         "home_margin": 3.0,
         "away_margin": -3.0,
         "projected_winner": "LAL",
-        "away_win_probability": 43.2,
-        "home_win_probability": 56.8,
-        "confidence": 56.8
+        "away_win_probability": 43.3,
+        "home_win_probability": 56.7,
+        "confidence": 59.4
       },
       "team_profiles": {
         "away": {
@@ -3235,30 +3235,30 @@
           "team_name": "Portland Trail Blazers",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 2,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.1,
+            "last_season": 0.9
           },
           "per_game": {
-            "pts": 115.92,
-            "pts_allowed": 114.16,
-            "point_diff": 1.77,
-            "reb": 46.5,
-            "ast": 25.45,
-            "tov": 17.29,
-            "fg3m": 14.72
+            "pts": 116.35,
+            "pts_allowed": 112.52,
+            "point_diff": 3.83,
+            "reb": 47.0,
+            "ast": 25.79,
+            "tov": 17.27,
+            "fg3m": 14.95
           },
           "percentages": {
-            "fg_pct": 0.454,
-            "fg3_pct": 0.346,
-            "ft_pct": 0.768
+            "fg_pct": 0.456,
+            "fg3_pct": 0.349,
+            "ft_pct": 0.772
           },
           "ratings": {
-            "offense_index": 1.0042,
-            "defense_index": 0.9889
+            "offense_index": 1.0091,
+            "defense_index": 0.9758
           }
         },
         "home": {
@@ -3266,30 +3266,30 @@
           "team_name": "Los Angeles Lakers",
           "conference": "West",
           "games": {
-            "current": 1,
+            "current": 3,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.05,
-            "last_season": 0.95
+            "current_season": 0.15,
+            "last_season": 0.85
           },
           "per_game": {
-            "pts": 116.83,
-            "pts_allowed": 114.12,
-            "point_diff": 2.81,
-            "reb": 41.1,
-            "ast": 26.0,
-            "tov": 14.67,
-            "fg3m": 11.76
+            "pts": 117.9,
+            "pts_allowed": 113.16,
+            "point_diff": 4.83,
+            "reb": 41.3,
+            "ast": 26.21,
+            "tov": 15.02,
+            "fg3m": 11.68
           },
           "percentages": {
-            "fg_pct": 0.505,
-            "fg3_pct": 0.361,
-            "ft_pct": 0.769
+            "fg_pct": 0.512,
+            "fg3_pct": 0.364,
+            "ft_pct": 0.782
           },
           "ratings": {
-            "offense_index": 1.0121,
-            "defense_index": 0.9885
+            "offense_index": 1.0225,
+            "defense_index": 0.9814
           }
         }
       },
