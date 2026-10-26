@@ -1615,9 +1615,11 @@ function normalizeTouchdownProbability(value: unknown) {
 function TouchdownChanceGraph({
   players,
   position,
+  onPlayerClick,
 }: {
   players: NFLTouchdownProjection[];
   position: PositionFilter;
+  onPlayerClick: (player: NFLTouchdownProjection) => void;
 }) {
   const [sort, setSort] = useState<{ key: string; direction: SortDirection }>({
     key: "TD Chance",
@@ -1748,7 +1750,7 @@ function TouchdownChanceGraph({
                     <div className="flex h-11 items-center justify-center rounded-lg border border-cyan-300/25 bg-cyan-300/10 font-black text-cyan-100">{rank}</div>
                   </td>
                   <th scope="row" className="border-y border-white/10 px-3 py-2 text-left">
-                    <div className="font-black text-white">{touchdownPlayerName(player)}</div>
+                    <button type="button" onClick={() => onPlayerClick(player)} className="font-black text-white transition hover:text-cyan-200 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300">{touchdownPlayerName(player)}</button>
                     <div className="mt-0.5 text-[10px] font-bold uppercase text-slate-500">{player.position || "—"} · {player.team || "—"}</div>
                   </th>
                   {metrics.map((metric, index) => {
