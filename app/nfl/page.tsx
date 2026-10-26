@@ -2217,6 +2217,13 @@ function PlayerMatchupTable({
 
           position={positionFilter}
 
+          onPlayerClick={(player) => onPlayerClick({
+            player: touchdownPlayerName(player),
+            player_id: player.player_id,
+            team: player.team,
+            position: player.position,
+          })}
+
         />
 
       ) : sortedPlayers.length ? (
