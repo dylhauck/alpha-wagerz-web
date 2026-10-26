@@ -1,525 +1,30 @@
 {
   "players": [
     {
-      "player_id": "00-0033077",
-      "player": "Dak Prescott",
-      "team": "DAL",
-      "opponent": "PHI",
+      "player_id": "00-0039150",
+      "player": "Bryce Young",
+      "team": "CAR",
+      "opponent": "GB",
       "position": "QB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 10.6,
-      "touchdown_lambda": 0.1121,
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 14.1,
+      "touchdown_lambda": 0.1515,
       "scoring": {
-        "rushing_td_probability": 10.2,
-        "receiving_td_probability": 0.5,
-        "rushing_lambda": 0.107,
-        "receiving_lambda": 0.0051
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.21,
-        "career_receiving_td_rate": 0.01,
-        "regressed_rushing_td_rate": 0.12,
-        "regressed_receiving_td_rate": 0.006,
-        "usage_factor": 0.892,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.21,
-        "career_receiving_tds_per_game": 0.01,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036997",
-      "player": "Javonte Williams",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "RB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 64.4,
-      "touchdown_lambda": 1.0326,
-      "scoring": {
-        "rushing_td_probability": 58.7,
-        "receiving_td_probability": 13.8,
-        "rushing_lambda": 0.8846,
-        "receiving_lambda": 0.148
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 1.17,
-        "current_receiving_td_rate": 0.17,
-        "career_rushing_td_rate": 0.38,
-        "career_receiving_td_rate": 0.11,
-        "regressed_rushing_td_rate": 0.719,
-        "regressed_receiving_td_rate": 0.136,
-        "usage_factor": 1.039,
-        "projected_rushing_tds": 1.22,
-        "projected_receiving_tds": 0.18,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 1.17,
-        "current_receiving_tds_per_game": 0.17,
-        "career_rushing_tds_per_game": 0.38,
-        "career_receiving_tds_per_game": 0.11,
-        "projected_rushing_tds": 1.22,
-        "projected_receiving_tds": 0.18,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038705",
-      "player": "Emari Demercado",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "RB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 6.9,
-      "touchdown_lambda": 0.0718,
-      "scoring": {
-        "rushing_td_probability": 5.1,
-        "receiving_td_probability": 1.9,
-        "rushing_lambda": 0.0522,
-        "receiving_lambda": 0.0196
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.08,
-        "career_receiving_td_rate": 0.03,
-        "regressed_rushing_td_rate": 0.064,
-        "regressed_receiving_td_rate": 0.024,
-        "usage_factor": 0.815,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.08,
-        "career_receiving_tds_per_game": 0.03,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037120",
-      "player": "Tyler Goodson",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "RB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 5.5,
-      "touchdown_lambda": 0.0561,
-      "scoring": {
-        "rushing_td_probability": 2.8,
-        "receiving_td_probability": 2.8,
-        "rushing_lambda": 0.028,
-        "receiving_lambda": 0.028
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.03,
-        "regressed_rushing_td_rate": 0.022,
-        "regressed_receiving_td_rate": 0.022,
-        "usage_factor": 1.285,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.03,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038738",
-      "player": "Hunter Luepke",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "RB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 2.3,
-      "touchdown_lambda": 0.0228,
-      "scoring": {
-        "rushing_td_probability": 1.1,
-        "receiving_td_probability": 1.1,
-        "rushing_lambda": 0.0114,
-        "receiving_lambda": 0.0114
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.02,
-        "career_receiving_td_rate": 0.02,
-        "regressed_rushing_td_rate": 0.012,
-        "regressed_receiving_td_rate": 0.012,
-        "usage_factor": 0.927,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.02,
-        "career_receiving_tds_per_game": 0.02,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038041",
-      "player": "Jake Ferguson",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "TE",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 34.2,
-      "touchdown_lambda": 0.4185,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 34.2,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4185
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.5,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.28,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.374,
-        "usage_factor": 0.92,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.53,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.5,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.28,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.53,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038547",
-      "player": "Luke Schoonmaker",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "TE",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 4.2,
-      "touchdown_lambda": 0.0426,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 4.2,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0426
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.07,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.051,
-        "usage_factor": 0.836,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.07,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039530",
-      "player": "Brevyn Spann-Ford",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "TE",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 2.0,
-      "touchdown_lambda": 0.0207,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 2.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0207
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.03,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.017,
-        "usage_factor": 1.207,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.03,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036358",
-      "player": "CeeDee Lamb",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 47.7,
-      "touchdown_lambda": 0.6473,
-      "scoring": {
-        "rushing_td_probability": 1.1,
-        "receiving_td_probability": 47.1,
-        "rushing_lambda": 0.0111,
-        "receiving_lambda": 0.6362
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.67,
-        "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.45,
-        "regressed_rushing_td_rate": 0.017,
-        "regressed_receiving_td_rate": 0.544,
-        "usage_factor": 1.079,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.71,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.67,
-        "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.45,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.71,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037247",
-      "player": "George Pickens",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 21.3,
-      "touchdown_lambda": 0.2392,
-      "scoring": {
-        "rushing_td_probability": 0.4,
-        "receiving_td_probability": 21.0,
-        "rushing_lambda": 0.0037,
-        "receiving_lambda": 0.2355
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.17,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.31,
-        "regressed_rushing_td_rate": 0.006,
-        "regressed_receiving_td_rate": 0.25,
-        "usage_factor": 1.09,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.17,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.31,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039410",
-      "player": "Ryan Flournoy",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 17.9,
-      "touchdown_lambda": 0.1968,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 17.9,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1968
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.17,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.17,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.17,
-        "usage_factor": 1.224,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.17,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.17,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037801",
-      "player": "KaVontae Turpin",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 12.1,
-      "touchdown_lambda": 0.1287,
-      "scoring": {
-        "rushing_td_probability": 7.6,
-        "receiving_td_probability": 4.9,
-        "rushing_lambda": 0.0787,
-        "receiving_lambda": 0.05
+        "rushing_td_probability": 14.1,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.1515,
+        "receiving_lambda": 0.0
       },
       "inputs": {
         "current_games": 6,
         "current_rushing_td_rate": 0.17,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.1,
-        "regressed_rushing_td_rate": 0.09,
-        "regressed_receiving_td_rate": 0.057,
-        "usage_factor": 0.874,
-        "projected_rushing_tds": 0.0,
+        "career_rushing_td_rate": 0.17,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.17,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.858,
+        "projected_rushing_tds": 0.16,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -528,56 +33,11 @@
         "current_games": 6,
         "current_rushing_tds_per_game": 0.17,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.1,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.8,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039062",
-      "player": "Jonathan Mingo",
-      "team": "DAL",
-      "opponent": "PHI",
-      "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.815,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.17,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
+        "projected_rushing_tds": 0.16,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.8,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -586,268 +46,43 @@
       }
     },
     {
-      "player_id": "00-0036389",
-      "player": "Jalen Hurts",
-      "team": "PHI",
-      "opponent": "DAL",
+      "player_id": "00-0038102",
+      "player": "Kenny Pickett",
+      "team": "CAR",
+      "opponent": "GB",
       "position": "QB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 28.0,
-      "touchdown_lambda": 0.3287,
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 7.0,
+      "touchdown_lambda": 0.0728,
       "scoring": {
-        "rushing_td_probability": 28.0,
+        "rushing_td_probability": 7.0,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.3287,
+        "rushing_lambda": 0.0728,
         "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.2,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.66,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.483,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.844,
-        "projected_rushing_tds": 0.21,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.2,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.66,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.21,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038400",
-      "player": "Tanner McKee",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "QB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 1,
+        "current_games": 3,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.825,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037258",
-      "player": "Dameon Pierce",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "RB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 33.1,
-      "touchdown_lambda": 0.4017,
-      "scoring": {
-        "rushing_td_probability": 32.3,
-        "receiving_td_probability": 1.1,
-        "rushing_lambda": 0.3907,
-        "receiving_lambda": 0.011
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.5,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.2,
-        "career_receiving_td_rate": 0.02,
-        "regressed_rushing_td_rate": 0.26,
-        "regressed_receiving_td_rate": 0.016,
-        "usage_factor": 1.145,
-        "projected_rushing_tds": 0.53,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.5,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.2,
-        "career_receiving_tds_per_game": 0.02,
-        "projected_rushing_tds": 0.53,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0034844",
-      "player": "Saquon Barkley",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "RB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 30.1,
-      "touchdown_lambda": 0.3577,
-      "scoring": {
-        "rushing_td_probability": 24.1,
-        "receiving_td_probability": 7.9,
-        "rushing_lambda": 0.2752,
-        "receiving_lambda": 0.0825
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.5,
-        "career_receiving_td_rate": 0.15,
-        "regressed_rushing_td_rate": 0.333,
-        "regressed_receiving_td_rate": 0.1,
-        "usage_factor": 0.825,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.5,
-        "career_receiving_tds_per_game": 0.15,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038555",
-      "player": "Tank Bigsby",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "RB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 23.1,
-      "touchdown_lambda": 0.262,
-      "scoring": {
-        "rushing_td_probability": 23.1,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.262,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.25,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.25,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.25,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.053,
-        "projected_rushing_tds": 0.26,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.25,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.25,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.26,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039746",
-      "player": "Will Shipley",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "RB",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 14.6,
-      "touchdown_lambda": 0.1584,
-      "scoring": {
-        "rushing_td_probability": 14.6,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1584,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.2,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.03,
+        "career_rushing_td_rate": 0.13,
         "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.095,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.3,
-        "projected_rushing_tds": 0.21,
+        "usage_factor": 0.77,
+        "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.2,
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.03,
+        "career_rushing_tds_per_game": 0.13,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.21,
+        "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -856,12 +91,147 @@
       }
     },
     {
-      "player_id": "00-0039325",
-      "player": "Carson Steele",
-      "team": "PHI",
-      "opponent": "DAL",
+      "player_id": "00-0036555",
+      "player": "Chuba Hubbard",
+      "team": "CAR",
+      "opponent": "GB",
       "position": "RB",
-      "game_id": "2026_07_DAL_PHI",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 56.2,
+      "touchdown_lambda": 0.8263,
+      "scoring": {
+        "rushing_td_probability": 43.9,
+        "receiving_td_probability": 22.0,
+        "rushing_lambda": 0.5774,
+        "receiving_lambda": 0.2489
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.67,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.33,
+        "career_receiving_td_rate": 0.08,
+        "regressed_rushing_td_rate": 0.476,
+        "regressed_receiving_td_rate": 0.187,
+        "usage_factor": 1.112,
+        "projected_rushing_tds": 0.65,
+        "projected_receiving_tds": 0.31,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.67,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.33,
+        "career_receiving_tds_per_game": 0.08,
+        "projected_rushing_tds": 0.65,
+        "projected_receiving_tds": 0.31,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040394",
+      "player": "Anthony Tyus III",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "RB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 27.8,
+      "touchdown_lambda": 0.326,
+      "scoring": {
+        "rushing_td_probability": 27.8,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.326,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.33,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.33,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.33,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.32,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.33,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.33,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.32,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036265",
+      "player": "AJ Dillon",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "RB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 13.5,
+      "touchdown_lambda": 0.1445,
+      "scoring": {
+        "rushing_td_probability": 12.1,
+        "receiving_td_probability": 1.6,
+        "rushing_lambda": 0.1284,
+        "receiving_lambda": 0.0161
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.24,
+        "career_receiving_td_rate": 0.03,
+        "regressed_rushing_td_rate": 0.16,
+        "regressed_receiving_td_rate": 0.02,
+        "usage_factor": 0.803,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.24,
+        "career_receiving_tds_per_game": 0.03,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039344",
+      "player": "Jonathon Brooks",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "RB",
+      "game_id": "2026_08_CAR_GB",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -878,7 +248,7 @@
         "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.75,
+        "usage_factor": 1.087,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -892,7 +262,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -901,88 +271,43 @@
       }
     },
     {
-      "player_id": "00-0034351",
-      "player": "Dallas Goedert",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "TE",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 37.6,
-      "touchdown_lambda": 0.4716,
+      "player_id": "00-0040644",
+      "player": "Trevor Etienne",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "RB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 37.6,
+        "receiving_td_probability": 0.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4716
+        "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.5,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.33,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.387,
-        "usage_factor": 1.05,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.57,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.5,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.33,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.57,
-        "projected_team_points": 24.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0030061",
-      "player": "Zach Ertz",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "TE",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 18.0,
-      "touchdown_lambda": 0.1989,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 18.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1989
-      },
-      "inputs": {
-        "current_games": 3,
+        "current_games": 2,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.35,
+        "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.255,
-        "usage_factor": 0.781,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.3,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 3,
+        "current_games": 2,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.35,
+        "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -991,28 +316,163 @@
       }
     },
     {
-      "player_id": "00-0038498",
-      "player": "E.J. Jenkins",
-      "team": "PHI",
-      "opponent": "DAL",
+      "player_id": "00-0031610",
+      "player": "Darren Waller",
+      "team": "CAR",
+      "opponent": "GB",
       "position": "TE",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 11.6,
-      "touchdown_lambda": 0.1236,
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 32.7,
+      "touchdown_lambda": 0.3958,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 11.6,
+        "receiving_td_probability": 32.7,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1236
+        "receiving_lambda": 0.3958
       },
       "inputs": {
-        "current_games": 3,
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.5,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.32,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.397,
+        "usage_factor": 0.872,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.47,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.5,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.32,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.47,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037005",
+      "player": "Tommy Tremble",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "TE",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 25.2,
+      "touchdown_lambda": 0.2902,
+      "scoring": {
+        "rushing_td_probability": 0.4,
+        "receiving_td_probability": 24.9,
+        "rushing_lambda": 0.0039,
+        "receiving_lambda": 0.2864
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.17,
+        "regressed_rushing_td_rate": 0.006,
+        "regressed_receiving_td_rate": 0.239,
+        "usage_factor": 1.134,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.31,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.17,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.31,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040187",
+      "player": "Mitchell Evans",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "TE",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 5.5,
+      "touchdown_lambda": 0.0569,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 5.5,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0569
+      },
+      "inputs": {
+        "current_games": 6,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.17,
+        "career_receiving_td_rate": 0.1,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.124,
+        "regressed_receiving_td_rate": 0.057,
+        "usage_factor": 0.996,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.1,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036825",
+      "player": "Feleipe Franks",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "TE",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
@@ -1020,14 +480,14 @@
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 3,
+        "current_games": 5,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.17,
+        "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -1036,43 +496,43 @@
       }
     },
     {
-      "player_id": "00-0033246",
-      "player": "Johnny Mundt",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "TE",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 3.3,
-      "touchdown_lambda": 0.0338,
+      "player_id": "00-0039491",
+      "player": "Jalen Coker",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 31.5,
+      "touchdown_lambda": 0.3789,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 3.3,
+        "receiving_td_probability": 31.5,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0338
+        "receiving_lambda": 0.3789
       },
       "inputs": {
         "current_games": 5,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
+        "current_receiving_td_rate": 0.4,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.06,
+        "career_receiving_td_rate": 0.26,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.037,
-        "usage_factor": 0.916,
+        "regressed_receiving_td_rate": 0.314,
+        "usage_factor": 1.226,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
+        "projected_receiving_tds": 0.37,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
         "current_games": 5,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.4,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.06,
+        "career_receiving_tds_per_game": 0.26,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
+        "projected_receiving_tds": 0.37,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -1081,88 +541,178 @@
       }
     },
     {
-      "player_id": "00-0040024",
-      "player": "Darius Cooper",
-      "team": "PHI",
-      "opponent": "DAL",
+      "player_id": "00-0040124",
+      "player": "Tetairoa McMillan",
+      "team": "CAR",
+      "opponent": "GB",
       "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 45.4,
-      "touchdown_lambda": 0.6046,
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 30.0,
+      "touchdown_lambda": 0.3561,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 45.4,
+        "receiving_td_probability": 30.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.6046
+        "receiving_lambda": 0.3561
       },
       "inputs": {
         "current_games": 6,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.67,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.33,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.476,
-        "usage_factor": 1.053,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.76,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.67,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.33,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.76,
-        "projected_team_points": 24.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036912",
-      "player": "DeVonta Smith",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 40.8,
-      "touchdown_lambda": 0.5239,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 40.8,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.5239
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.5,
+        "current_receiving_td_rate": 0.33,
         "career_rushing_td_rate": 0.0,
         "career_receiving_td_rate": 0.39,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.427,
-        "usage_factor": 1.156,
+        "regressed_receiving_td_rate": 0.364,
+        "usage_factor": 1.062,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.57,
+        "projected_receiving_tds": 0.31,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.39,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.31,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037614",
+      "player": "John Metchie III",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 14.8,
+      "touchdown_lambda": 0.1605,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 14.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1605
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.1,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.138,
+        "usage_factor": 1.017,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.19,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.1,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039342",
+      "player": "Xavier Legette",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 14.0,
+      "touchdown_lambda": 0.1511,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 14.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1511
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.22,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.176,
+        "usage_factor": 0.859,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.22,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033589",
+      "player": "David Moore",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 11.1,
+      "touchdown_lambda": 0.1178,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 11.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1178
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.23,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.153,
+        "usage_factor": 0.768,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
         "current_games": 4,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.5,
+        "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.39,
+        "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.57,
-        "projected_team_points": 24.1,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -1171,29 +721,74 @@
       }
     },
     {
-      "player_id": "00-0035662",
-      "player": "Marquise Brown",
-      "team": "PHI",
-      "opponent": "DAL",
+      "player_id": "00-0038840",
+      "player": "Brycen Tremayne",
+      "team": "CAR",
+      "opponent": "GB",
       "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 21.9,
-      "touchdown_lambda": 0.2471,
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 21.9,
+        "receiving_td_probability": 0.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2471
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.114,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040265",
+      "player": "Ja'Seem Reed",
+      "team": "CAR",
+      "opponent": "GB",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
       },
       "inputs": {
         "current_games": 1,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.37,
+        "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.329,
-        "usage_factor": 0.751,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -1204,10 +799,10 @@
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.37,
+        "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
+        "projected_team_points": 21.5,
         "injury_status": ""
       },
       "model": {
@@ -1216,43 +811,43 @@
       }
     },
     {
-      "player_id": "00-0038393",
-      "player": "Dontayvion Wicks",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 19.3,
-      "touchdown_lambda": 0.2139,
+      "player_id": "00-0028118",
+      "player": "Tyrod Taylor",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "QB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 14.5,
+      "touchdown_lambda": 0.1571,
       "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 19.3,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2139
+        "rushing_td_probability": 14.5,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.1571,
+        "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 6,
+        "current_games": 1,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.17,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.24,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.21,
-        "usage_factor": 1.094,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.22,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.196,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.804,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.19,
+        "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 6,
+        "current_games": 1,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.17,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.24,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.22,
+        "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.19,
-        "projected_team_points": 24.1,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
         "injury_status": ""
       },
       "model": {
@@ -1261,43 +856,223 @@
       }
     },
     {
-      "player_id": "00-0036980",
-      "player": "Elijah Moore",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 10.4,
-      "touchdown_lambda": 0.1097,
+      "player_id": "00-0036264",
+      "player": "Jordan Love",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "QB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 11.0,
+      "touchdown_lambda": 0.1166,
       "scoring": {
-        "rushing_td_probability": 2.0,
-        "receiving_td_probability": 8.5,
-        "rushing_lambda": 0.0206,
-        "receiving_lambda": 0.0891
+        "rushing_td_probability": 11.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.1166,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.14,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.09,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.113,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.891,
+        "projected_rushing_tds": 0.14,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.14,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.09,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.14,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0035700",
+      "player": "Josh Jacobs",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "RB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 57.6,
+      "touchdown_lambda": 0.8589,
+      "scoring": {
+        "rushing_td_probability": 30.0,
+        "receiving_td_probability": 39.5,
+        "rushing_lambda": 0.3561,
+        "receiving_lambda": 0.5028
       },
       "inputs": {
         "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 1.0,
+        "career_rushing_td_rate": 0.7,
+        "career_receiving_td_rate": 0.03,
+        "regressed_rushing_td_rate": 0.622,
+        "regressed_receiving_td_rate": 0.138,
+        "usage_factor": 0.954,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 1.06,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 1.0,
+        "career_rushing_tds_per_game": 0.7,
+        "career_receiving_tds_per_game": 0.03,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 1.06,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039811",
+      "player": "MarShawn Lloyd",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "RB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 33.9,
+      "touchdown_lambda": 0.4141,
+      "scoring": {
+        "rushing_td_probability": 24.1,
+        "receiving_td_probability": 12.9,
+        "rushing_lambda": 0.2754,
+        "receiving_lambda": 0.1387
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.29,
+        "current_receiving_td_rate": 0.14,
+        "career_rushing_td_rate": 0.25,
+        "career_receiving_td_rate": 0.12,
+        "regressed_rushing_td_rate": 0.269,
+        "regressed_receiving_td_rate": 0.129,
+        "usage_factor": 1.014,
+        "projected_rushing_tds": 0.28,
+        "projected_receiving_tds": 0.15,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.29,
+        "current_receiving_tds_per_game": 0.14,
+        "career_rushing_tds_per_game": 0.25,
+        "career_receiving_tds_per_game": 0.12,
+        "projected_rushing_tds": 0.28,
+        "projected_receiving_tds": 0.15,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038098",
+      "player": "Pierre Strong",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "RB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 5.1,
+      "touchdown_lambda": 0.052,
+      "scoring": {
+        "rushing_td_probability": 5.1,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.052,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.05,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.04,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.3,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.05,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038685",
+      "player": "Chris Brooks",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "RB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 2.2,
+      "touchdown_lambda": 0.0223,
+      "scoring": {
+        "rushing_td_probability": 2.2,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0223,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 4,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.13,
-        "regressed_rushing_td_rate": 0.027,
-        "regressed_receiving_td_rate": 0.116,
-        "usage_factor": 0.771,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.02,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.114,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 1,
+        "current_games": 4,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.13,
+        "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
+        "projected_team_points": 23.3,
         "injury_status": ""
       },
       "model": {
@@ -1306,12 +1081,507 @@
       }
     },
     {
-      "player_id": "00-0037132",
-      "player": "Britain Covey",
-      "team": "PHI",
-      "opponent": "DAL",
+      "player_id": "00-0040142",
+      "player": "Kaleb Johnson",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "RB",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.125,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038996",
+      "player": "Tucker Kraft",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "TE",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 29.9,
+      "touchdown_lambda": 0.3556,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 29.9,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.3556
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.29,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.37,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.333,
+        "usage_factor": 1.16,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.31,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.29,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.37,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.31,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033858",
+      "player": "Jonnu Smith",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "TE",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 12.0,
+      "touchdown_lambda": 0.128,
+      "scoring": {
+        "rushing_td_probability": 0.6,
+        "receiving_td_probability": 11.5,
+        "rushing_lambda": 0.0056,
+        "receiving_lambda": 0.1224
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.22,
+        "regressed_rushing_td_rate": 0.007,
+        "regressed_receiving_td_rate": 0.147,
+        "usage_factor": 0.835,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.22,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040598",
+      "player": "Mark Redman",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "TE",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038124",
+      "player": "Christian Watson",
+      "team": "GB",
+      "opponent": "CAR",
       "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 56.6,
+      "touchdown_lambda": 0.8345,
+      "scoring": {
+        "rushing_td_probability": 1.5,
+        "receiving_td_probability": 55.9,
+        "rushing_lambda": 0.0148,
+        "receiving_lambda": 0.8197
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.86,
+        "career_rushing_td_rate": 0.04,
+        "career_receiving_td_rate": 0.48,
+        "regressed_rushing_td_rate": 0.021,
+        "regressed_receiving_td_rate": 0.657,
+        "usage_factor": 1.155,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.91,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.86,
+        "career_rushing_tds_per_game": 0.04,
+        "career_receiving_tds_per_game": 0.48,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.91,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040667",
+      "player": "Matthew Golden",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 32.3,
+      "touchdown_lambda": 0.3894,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 32.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.3894
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.43,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.14,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.275,
+        "usage_factor": 1.243,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.46,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.43,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.14,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.46,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039146",
+      "player": "Jayden Reed",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 27.4,
+      "touchdown_lambda": 0.3206,
+      "scoring": {
+        "rushing_td_probability": 4.9,
+        "receiving_td_probability": 23.7,
+        "rushing_lambda": 0.0499,
+        "receiving_lambda": 0.2707
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.07,
+        "career_receiving_td_rate": 0.38,
+        "regressed_rushing_td_rate": 0.056,
+        "regressed_receiving_td_rate": 0.304,
+        "usage_factor": 0.891,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.07,
+        "career_receiving_tds_per_game": 0.38,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040009",
+      "player": "Savion Williams",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 7.0,
+      "touchdown_lambda": 0.0728,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 7.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0728
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.07,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.056,
+        "usage_factor": 1.3,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.07,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037091",
+      "player": "Bo Melton",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 2.3,
+      "touchdown_lambda": 0.0235,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 2.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0235
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.05,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.027,
+        "usage_factor": 0.882,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.05,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038090",
+      "player": "Skyy Moore",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 1.4,
+      "touchdown_lambda": 0.0143,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 1.4,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0143
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.02,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.012,
+        "usage_factor": 1.163,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.02,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040352",
+      "player": "Coleman Owen",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.3,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040948",
+      "player": "J. Michael Sturdivant",
+      "team": "GB",
+      "opponent": "CAR",
+      "position": "WR",
+      "game_id": "2026_08_CAR_GB",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1342,52 +1612,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040867",
-      "player": "Makai Lemon",
-      "team": "PHI",
-      "opponent": "DAL",
-      "position": "WR",
-      "game_id": "2026_07_DAL_PHI",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.999,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.1,
+        "projected_team_points": 23.3,
         "injury_status": ""
       },
       "model": {
@@ -1397,10 +1622,10 @@
     }
   ],
   "counts": {
-    "total": 31,
-    "QB": 3,
-    "RB": 9,
-    "WR": 12,
+    "total": 36,
+    "QB": 4,
+    "RB": 10,
+    "WR": 15,
     "TE": 7
   },
   "diagnostics": {
