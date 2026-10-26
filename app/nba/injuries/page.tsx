@@ -490,7 +490,7 @@ function InjuryTable({
         </div>
       ) : (
         <div className="table-scroll overflow-x-auto">
-          <table className="w-full min-w-[760px] text-left">
+          <table className="w-full min-w-[610px] text-left">
             <thead className="bg-white/[0.04]">
               <tr className="border-b border-white/10 text-[10px] font-black uppercase tracking-[0.14em] text-slate-500">
                 <th className="px-4 py-3">
@@ -513,10 +513,8 @@ function InjuryTable({
                   Est. Return
                 </th>
 
-                <th className="px-4 py-3">
-                  Details
-                </th>
-              </tr>
+
+</tr>
             </thead>
 
             <tbody>
@@ -556,10 +554,8 @@ function InjuryTable({
                     {row.estimated_return_date || "—"}
                   </td>
 
-                  <td className="max-w-xl px-4 py-4 text-sm text-slate-400">
-                    {row.detail || "—"}
-                  </td>
-                </tr>
+
+</tr>
               ))}
             </tbody>
           </table>
