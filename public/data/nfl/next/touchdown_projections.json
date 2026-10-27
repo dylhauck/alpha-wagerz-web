@@ -1711,6 +1711,51 @@
       }
     },
     {
+      "player_id": "00-0038498",
+      "player": "E.J. Jenkins",
+      "team": "ATL",
+      "opponent": "TB",
+      "position": "TE",
+      "game_id": "2026_08_ATL_TB",
+      "touchdown_probability": 11.6,
+      "touchdown_lambda": 0.1236,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 11.6,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1236
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.17,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.124,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.17,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.8,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
       "player_id": "00-0036429",
       "player": "Charlie Woerner",
       "team": "ATL",
@@ -4222,7 +4267,7 @@
         "career_receiving_tds_per_game": 0.01,
         "projected_rushing_tds": 0.12,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4267,7 +4312,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4312,7 +4357,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.85,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4327,12 +4372,12 @@
       "opponent": "PIT",
       "position": "RB",
       "game_id": "2026_08_CLE_PIT",
-      "touchdown_probability": 37.3,
-      "touchdown_lambda": 0.4661,
+      "touchdown_probability": 37.5,
+      "touchdown_lambda": 0.4701,
       "scoring": {
-        "rushing_td_probability": 37.3,
+        "rushing_td_probability": 37.5,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.4661,
+        "rushing_lambda": 0.4701,
         "receiving_lambda": 0.0
       },
       "inputs": {
@@ -4344,7 +4389,7 @@
         "regressed_rushing_td_rate": 0.5,
         "regressed_receiving_td_rate": 0.0,
         "usage_factor": 0.994,
-        "projected_rushing_tds": 0.42,
+        "projected_rushing_tds": 0.43,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -4355,9 +4400,9 @@
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.5,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.42,
+        "projected_rushing_tds": 0.43,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4402,7 +4447,7 @@
         "career_receiving_tds_per_game": 0.09,
         "projected_rushing_tds": 0.17,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4447,7 +4492,7 @@
         "career_receiving_tds_per_game": 0.12,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4492,7 +4537,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4537,7 +4582,7 @@
         "career_receiving_tds_per_game": 0.01,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4552,13 +4597,13 @@
       "opponent": "PIT",
       "position": "TE",
       "game_id": "2026_08_CLE_PIT",
-      "touchdown_probability": 31.8,
-      "touchdown_lambda": 0.3833,
+      "touchdown_probability": 32.1,
+      "touchdown_lambda": 0.3873,
       "scoring": {
         "rushing_td_probability": 1.2,
-        "receiving_td_probability": 31.0,
+        "receiving_td_probability": 31.3,
         "rushing_lambda": 0.0121,
-        "receiving_lambda": 0.3713
+        "receiving_lambda": 0.3753
       },
       "inputs": {
         "current_games": 7,
@@ -4570,7 +4615,7 @@
         "regressed_receiving_td_rate": 0.409,
         "usage_factor": 0.943,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.35,
+        "projected_receiving_tds": 0.36,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -4581,8 +4626,8 @@
         "career_rushing_tds_per_game": 0.04,
         "career_receiving_tds_per_game": 0.39,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.35,
-        "projected_team_points": 19.8,
+        "projected_receiving_tds": 0.36,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4597,13 +4642,13 @@
       "opponent": "PIT",
       "position": "TE",
       "game_id": "2026_08_CLE_PIT",
-      "touchdown_probability": 15.8,
-      "touchdown_lambda": 0.1717,
+      "touchdown_probability": 16.1,
+      "touchdown_lambda": 0.1757,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 15.8,
+        "receiving_td_probability": 16.1,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1717
+        "receiving_lambda": 0.1757
       },
       "inputs": {
         "current_games": 4,
@@ -4615,7 +4660,7 @@
         "regressed_receiving_td_rate": 0.15,
         "usage_factor": 1.018,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
+        "projected_receiving_tds": 0.21,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -4626,8 +4671,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.1,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
-        "projected_team_points": 19.8,
+        "projected_receiving_tds": 0.21,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4672,7 +4717,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4687,13 +4732,13 @@
       "opponent": "PIT",
       "position": "WR",
       "game_id": "2026_08_CLE_PIT",
-      "touchdown_probability": 32.8,
-      "touchdown_lambda": 0.398,
+      "touchdown_probability": 33.1,
+      "touchdown_lambda": 0.402,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 32.8,
+        "receiving_td_probability": 33.1,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.398
+        "receiving_lambda": 0.402
       },
       "inputs": {
         "current_games": 7,
@@ -4705,7 +4750,7 @@
         "regressed_receiving_td_rate": 0.43,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.35,
+        "projected_receiving_tds": 0.36,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -4716,8 +4761,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.43,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.35,
-        "projected_team_points": 19.8,
+        "projected_receiving_tds": 0.36,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4762,7 +4807,7 @@
         "career_receiving_tds_per_game": 0.18,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4807,7 +4852,7 @@
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4852,7 +4897,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4897,7 +4942,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4942,7 +4987,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -4987,7 +5032,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 19.8,
+        "projected_team_points": 20.1,
         "injury_status": ""
       },
       "model": {
@@ -5032,7 +5077,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5077,7 +5122,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5122,7 +5167,7 @@
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.14,
         "projected_receiving_tds": 0.12,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5167,7 +5212,7 @@
         "career_receiving_tds_per_game": 0.1,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5212,7 +5257,7 @@
         "career_receiving_tds_per_game": 0.03,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5257,7 +5302,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5302,7 +5347,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5347,7 +5392,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5362,13 +5407,13 @@
       "opponent": "CLE",
       "position": "TE",
       "game_id": "2026_08_CLE_PIT",
-      "touchdown_probability": 37.1,
-      "touchdown_lambda": 0.4637,
+      "touchdown_probability": 37.4,
+      "touchdown_lambda": 0.4677,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 37.1,
+        "receiving_td_probability": 37.4,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4637
+        "receiving_lambda": 0.4677
       },
       "inputs": {
         "current_games": 7,
@@ -5380,7 +5425,7 @@
         "regressed_receiving_td_rate": 0.437,
         "usage_factor": 1.022,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.49,
+        "projected_receiving_tds": 0.5,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -5391,8 +5436,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.32,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.49,
-        "projected_team_points": 21.7,
+        "projected_receiving_tds": 0.5,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5407,13 +5452,13 @@
       "opponent": "CLE",
       "position": "TE",
       "game_id": "2026_08_CLE_PIT",
-      "touchdown_probability": 27.8,
-      "touchdown_lambda": 0.3256,
+      "touchdown_probability": 28.1,
+      "touchdown_lambda": 0.3296,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 27.8,
+        "receiving_td_probability": 28.1,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3256
+        "receiving_lambda": 0.3296
       },
       "inputs": {
         "current_games": 7,
@@ -5425,7 +5470,7 @@
         "regressed_receiving_td_rate": 0.265,
         "usage_factor": 1.118,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.37,
+        "projected_receiving_tds": 0.38,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -5436,8 +5481,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.12,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.37,
-        "projected_team_points": 21.7,
+        "projected_receiving_tds": 0.38,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5482,7 +5527,7 @@
         "career_receiving_tds_per_game": 0.24,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5497,13 +5542,13 @@
       "opponent": "CLE",
       "position": "WR",
       "game_id": "2026_08_CLE_PIT",
-      "touchdown_probability": 31.0,
-      "touchdown_lambda": 0.3717,
+      "touchdown_probability": 31.3,
+      "touchdown_lambda": 0.3757,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 31.0,
+        "receiving_td_probability": 31.3,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3717
+        "receiving_lambda": 0.3757
       },
       "inputs": {
         "current_games": 5,
@@ -5515,7 +5560,7 @@
         "regressed_receiving_td_rate": 0.332,
         "usage_factor": 1.182,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.34,
+        "projected_receiving_tds": 0.35,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -5526,8 +5571,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.29,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.34,
-        "projected_team_points": 21.7,
+        "projected_receiving_tds": 0.35,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5572,7 +5617,7 @@
         "career_receiving_tds_per_game": 0.46,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.12,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5587,13 +5632,13 @@
       "opponent": "CLE",
       "position": "WR",
       "game_id": "2026_08_CLE_PIT",
-      "touchdown_probability": 16.7,
-      "touchdown_lambda": 0.1827,
+      "touchdown_probability": 17.0,
+      "touchdown_lambda": 0.1867,
       "scoring": {
         "rushing_td_probability": 0.4,
-        "receiving_td_probability": 16.4,
+        "receiving_td_probability": 16.7,
         "rushing_lambda": 0.0041,
-        "receiving_lambda": 0.1786
+        "receiving_lambda": 0.1826
       },
       "inputs": {
         "current_games": 3,
@@ -5605,7 +5650,7 @@
         "regressed_receiving_td_rate": 0.119,
         "usage_factor": 0.932,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.28,
+        "projected_receiving_tds": 0.29,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -5616,8 +5661,8 @@
         "career_rushing_tds_per_game": 0.01,
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.28,
-        "projected_team_points": 21.7,
+        "projected_receiving_tds": 0.29,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5662,7 +5707,7 @@
         "career_receiving_tds_per_game": 0.17,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.15,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5707,7 +5752,7 @@
         "career_receiving_tds_per_game": 0.26,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5752,7 +5797,7 @@
         "career_receiving_tds_per_game": 0.18,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5797,7 +5842,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5842,7 +5887,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.7,
+        "projected_team_points": 22.0,
         "injury_status": ""
       },
       "model": {
@@ -5887,7 +5932,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.12,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -5902,12 +5947,12 @@
       "opponent": "JAX",
       "position": "RB",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 64.8,
-      "touchdown_lambda": 1.0431,
+      "touchdown_probability": 64.6,
+      "touchdown_lambda": 1.0391,
       "scoring": {
-        "rushing_td_probability": 63.8,
+        "rushing_td_probability": 63.7,
         "receiving_td_probability": 2.6,
-        "rushing_lambda": 1.0166,
+        "rushing_lambda": 1.0126,
         "receiving_lambda": 0.0265
       },
       "inputs": {
@@ -5919,7 +5964,7 @@
         "regressed_rushing_td_rate": 0.985,
         "regressed_receiving_td_rate": 0.043,
         "usage_factor": 1.036,
-        "projected_rushing_tds": 1.01,
+        "projected_rushing_tds": 1.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -5930,9 +5975,9 @@
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.85,
         "career_receiving_tds_per_game": 0.08,
-        "projected_rushing_tds": 1.01,
+        "projected_rushing_tds": 1.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -5977,7 +6022,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -5992,13 +6037,13 @@
       "opponent": "JAX",
       "position": "TE",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 33.5,
-      "touchdown_lambda": 0.4082,
+      "touchdown_probability": 33.2,
+      "touchdown_lambda": 0.4042,
       "scoring": {
         "rushing_td_probability": 7.9,
-        "receiving_td_probability": 27.8,
+        "receiving_td_probability": 27.5,
         "rushing_lambda": 0.082,
-        "receiving_lambda": 0.3262
+        "receiving_lambda": 0.3222
       },
       "inputs": {
         "current_games": 5,
@@ -6010,7 +6055,7 @@
         "regressed_receiving_td_rate": 0.32,
         "usage_factor": 1.032,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.32,
+        "projected_receiving_tds": 0.31,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -6021,8 +6066,8 @@
         "career_rushing_tds_per_game": 0.09,
         "career_receiving_tds_per_game": 0.27,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.32,
-        "projected_team_points": 20.0,
+        "projected_receiving_tds": 0.31,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6037,13 +6082,13 @@
       "opponent": "JAX",
       "position": "TE",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 16.8,
-      "touchdown_lambda": 0.1843,
+      "touchdown_probability": 16.5,
+      "touchdown_lambda": 0.1803,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 16.8,
+        "receiving_td_probability": 16.5,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1843
+        "receiving_lambda": 0.1803
       },
       "inputs": {
         "current_games": 4,
@@ -6055,7 +6100,7 @@
         "regressed_receiving_td_rate": 0.19,
         "usage_factor": 0.915,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
+        "projected_receiving_tds": 0.19,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -6066,8 +6111,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.16,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
-        "projected_team_points": 20.0,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6112,7 +6157,7 @@
         "career_receiving_tds_per_game": 0.1,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6157,7 +6202,7 @@
         "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6202,7 +6247,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6217,13 +6262,13 @@
       "opponent": "JAX",
       "position": "WR",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 19.9,
-      "touchdown_lambda": 0.2222,
+      "touchdown_probability": 19.6,
+      "touchdown_lambda": 0.2182,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 19.9,
+        "receiving_td_probability": 19.6,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2222
+        "receiving_lambda": 0.2182
       },
       "inputs": {
         "current_games": 6,
@@ -6235,7 +6280,7 @@
         "regressed_receiving_td_rate": 0.301,
         "usage_factor": 0.919,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.14,
+        "projected_receiving_tds": 0.13,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -6246,8 +6291,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.4,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.14,
-        "projected_team_points": 20.0,
+        "projected_receiving_tds": 0.13,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6292,7 +6337,7 @@
         "career_receiving_tds_per_game": 0.26,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6337,7 +6382,7 @@
         "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6382,7 +6427,7 @@
         "career_receiving_tds_per_game": 0.2,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6427,7 +6472,7 @@
         "career_receiving_tds_per_game": 0.06,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6472,7 +6517,7 @@
         "career_receiving_tds_per_game": 0.06,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6517,7 +6562,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6562,7 +6607,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.0,
+        "projected_team_points": 19.7,
         "injury_status": ""
       },
       "model": {
@@ -6607,7 +6652,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.8,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -6652,7 +6697,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.8,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -6667,13 +6712,13 @@
       "opponent": "IND",
       "position": "RB",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 53.2,
-      "touchdown_lambda": 0.7588,
+      "touchdown_probability": 52.8,
+      "touchdown_lambda": 0.7508,
       "scoring": {
         "rushing_td_probability": 33.5,
-        "receiving_td_probability": 29.6,
+        "receiving_td_probability": 29.0,
         "rushing_lambda": 0.4085,
-        "receiving_lambda": 0.3503
+        "receiving_lambda": 0.3423
       },
       "inputs": {
         "current_games": 6,
@@ -6685,7 +6730,7 @@
         "regressed_receiving_td_rate": 0.25,
         "usage_factor": 1.295,
         "projected_rushing_tds": 0.38,
-        "projected_receiving_tds": 0.39,
+        "projected_receiving_tds": 0.37,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -6696,8 +6741,8 @@
         "career_rushing_tds_per_game": 0.33,
         "career_receiving_tds_per_game": 0.19,
         "projected_rushing_tds": 0.38,
-        "projected_receiving_tds": 0.39,
-        "projected_team_points": 24.8,
+        "projected_receiving_tds": 0.37,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -6742,7 +6787,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.38,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.8,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -6787,7 +6832,7 @@
         "career_receiving_tds_per_game": 0.07,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.8,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -6832,7 +6877,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.8,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -6877,7 +6922,7 @@
         "career_receiving_tds_per_game": 0.2,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.23,
-        "projected_team_points": 24.8,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -6892,13 +6937,13 @@
       "opponent": "IND",
       "position": "TE",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 18.1,
-      "touchdown_lambda": 0.1996,
+      "touchdown_probability": 17.8,
+      "touchdown_lambda": 0.1956,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 18.1,
+        "receiving_td_probability": 17.8,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1996
+        "receiving_lambda": 0.1956
       },
       "inputs": {
         "current_games": 6,
@@ -6910,7 +6955,7 @@
         "regressed_receiving_td_rate": 0.176,
         "usage_factor": 1.135,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
+        "projected_receiving_tds": 0.19,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -6921,8 +6966,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.18,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
-        "projected_team_points": 24.8,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -6967,7 +7012,7 @@
         "career_receiving_tds_per_game": 0.11,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 24.8,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -6982,13 +7027,13 @@
       "opponent": "IND",
       "position": "WR",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 47.8,
-      "touchdown_lambda": 0.6492,
+      "touchdown_probability": 47.3,
+      "touchdown_lambda": 0.6412,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 47.8,
+        "receiving_td_probability": 47.3,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.6492
+        "receiving_lambda": 0.6412
       },
       "inputs": {
         "current_games": 6,
@@ -7000,7 +7045,7 @@
         "regressed_receiving_td_rate": 0.47,
         "usage_factor": 1.196,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.78,
+        "projected_receiving_tds": 0.76,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -7011,8 +7056,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.32,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.78,
-        "projected_team_points": 24.8,
+        "projected_receiving_tds": 0.76,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -7027,13 +7072,13 @@
       "opponent": "IND",
       "position": "WR",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 29.8,
-      "touchdown_lambda": 0.354,
+      "touchdown_probability": 29.2,
+      "touchdown_lambda": 0.346,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 29.8,
+        "receiving_td_probability": 29.2,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.354
+        "receiving_lambda": 0.346
       },
       "inputs": {
         "current_games": 6,
@@ -7045,7 +7090,7 @@
         "regressed_receiving_td_rate": 0.33,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.39,
+        "projected_receiving_tds": 0.37,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -7056,8 +7101,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.33,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.39,
-        "projected_team_points": 24.8,
+        "projected_receiving_tds": 0.37,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -7072,13 +7117,13 @@
       "opponent": "IND",
       "position": "WR",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 26.8,
-      "touchdown_lambda": 0.3116,
+      "touchdown_probability": 26.2,
+      "touchdown_lambda": 0.3036,
       "scoring": {
         "rushing_td_probability": 0.6,
-        "receiving_td_probability": 26.3,
+        "receiving_td_probability": 25.7,
         "rushing_lambda": 0.0061,
-        "receiving_lambda": 0.3055
+        "receiving_lambda": 0.2975
       },
       "inputs": {
         "current_games": 6,
@@ -7090,7 +7135,7 @@
         "regressed_receiving_td_rate": 0.279,
         "usage_factor": 0.894,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.39,
+        "projected_receiving_tds": 0.37,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -7101,8 +7146,8 @@
         "career_rushing_tds_per_game": 0.02,
         "career_receiving_tds_per_game": 0.24,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.39,
-        "projected_team_points": 24.8,
+        "projected_receiving_tds": 0.37,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -7117,13 +7162,13 @@
       "opponent": "IND",
       "position": "WR",
       "game_id": "2026_08_IND_JAX",
-      "touchdown_probability": 19.9,
-      "touchdown_lambda": 0.2214,
+      "touchdown_probability": 19.5,
+      "touchdown_lambda": 0.2174,
       "scoring": {
         "rushing_td_probability": 0.8,
-        "receiving_td_probability": 19.2,
+        "receiving_td_probability": 18.9,
         "rushing_lambda": 0.0084,
-        "receiving_lambda": 0.2131
+        "receiving_lambda": 0.2091
       },
       "inputs": {
         "current_games": 6,
@@ -7135,7 +7180,7 @@
         "regressed_receiving_td_rate": 0.273,
         "usage_factor": 0.813,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
+        "projected_receiving_tds": 0.19,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -7146,8 +7191,8 @@
         "career_rushing_tds_per_game": 0.03,
         "career_receiving_tds_per_game": 0.35,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.2,
-        "projected_team_points": 24.8,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 24.5,
         "injury_status": ""
       },
       "model": {
@@ -15031,51 +15076,6 @@
       }
     },
     {
-      "player_id": "00-0038498",
-      "player": "E.J. Jenkins",
-      "team": "PHI",
-      "opponent": "WAS",
-      "position": "TE",
-      "game_id": "2026_08_PHI_WAS",
-      "touchdown_probability": 11.6,
-      "touchdown_lambda": 0.1236,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 11.6,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1236
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.17,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.124,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.17,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 21.2,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
       "player_id": "00-0033246",
       "player": "Johnny Mundt",
       "team": "PHI",
@@ -16342,12 +16342,12 @@
       "opponent": "TEN",
       "position": "QB",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 15.8,
-      "touchdown_lambda": 0.1718,
+      "touchdown_probability": 15.4,
+      "touchdown_lambda": 0.1678,
       "scoring": {
-        "rushing_td_probability": 15.8,
+        "rushing_td_probability": 15.4,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1718,
+        "rushing_lambda": 0.1678,
         "receiving_lambda": 0.0
       },
       "inputs": {
@@ -16359,7 +16359,7 @@
         "regressed_rushing_td_rate": 0.164,
         "regressed_receiving_td_rate": 0.0,
         "usage_factor": 0.972,
-        "projected_rushing_tds": 0.19,
+        "projected_rushing_tds": 0.18,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -16370,54 +16370,9 @@
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.16,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.19,
+        "projected_rushing_tds": 0.18,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0033526",
-      "player": "Samaje Perine",
-      "team": "CIN",
-      "opponent": "TEN",
-      "position": "RB",
-      "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 26.5,
-      "touchdown_lambda": 0.3079,
-      "scoring": {
-        "rushing_td_probability": 14.5,
-        "receiving_td_probability": 14.0,
-        "rushing_lambda": 0.1567,
-        "receiving_lambda": 0.1511
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.17,
-        "current_receiving_td_rate": 0.17,
-        "career_rushing_td_rate": 0.11,
-        "career_receiving_td_rate": 0.07,
-        "regressed_rushing_td_rate": 0.136,
-        "regressed_receiving_td_rate": 0.113,
-        "usage_factor": 0.992,
-        "projected_rushing_tds": 0.19,
-        "projected_receiving_tds": 0.21,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.17,
-        "current_receiving_tds_per_game": 0.17,
-        "career_rushing_tds_per_game": 0.11,
-        "career_receiving_tds_per_game": 0.07,
-        "projected_rushing_tds": 0.19,
-        "projected_receiving_tds": 0.21,
-        "projected_team_points": 25.0,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16432,12 +16387,12 @@
       "opponent": "TEN",
       "position": "RB",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 25.8,
-      "touchdown_lambda": 0.2981,
+      "touchdown_probability": 25.5,
+      "touchdown_lambda": 0.2941,
       "scoring": {
-        "rushing_td_probability": 20.1,
+        "rushing_td_probability": 19.7,
         "receiving_td_probability": 7.2,
-        "rushing_lambda": 0.2238,
+        "rushing_lambda": 0.2198,
         "receiving_lambda": 0.0744
       },
       "inputs": {
@@ -16449,7 +16404,7 @@
         "regressed_rushing_td_rate": 0.227,
         "regressed_receiving_td_rate": 0.114,
         "usage_factor": 1.084,
-        "projected_rushing_tds": 0.19,
+        "projected_rushing_tds": 0.18,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -16460,9 +16415,54 @@
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.27,
         "career_receiving_tds_per_game": 0.2,
-        "projected_rushing_tds": 0.19,
+        "projected_rushing_tds": 0.18,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.0,
+        "projected_team_points": 23.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033526",
+      "player": "Samaje Perine",
+      "team": "CIN",
+      "opponent": "TEN",
+      "position": "RB",
+      "game_id": "2026_08_TEN_CIN",
+      "touchdown_probability": 25.3,
+      "touchdown_lambda": 0.2919,
+      "scoring": {
+        "rushing_td_probability": 14.2,
+        "receiving_td_probability": 13.0,
+        "rushing_lambda": 0.1527,
+        "receiving_lambda": 0.1391
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.17,
+        "current_receiving_td_rate": 0.17,
+        "career_rushing_td_rate": 0.11,
+        "career_receiving_td_rate": 0.07,
+        "regressed_rushing_td_rate": 0.136,
+        "regressed_receiving_td_rate": 0.113,
+        "usage_factor": 0.992,
+        "projected_rushing_tds": 0.18,
+        "projected_receiving_tds": 0.18,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.17,
+        "current_receiving_tds_per_game": 0.17,
+        "career_rushing_tds_per_game": 0.11,
+        "career_receiving_tds_per_game": 0.07,
+        "projected_rushing_tds": 0.18,
+        "projected_receiving_tds": 0.18,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16507,7 +16507,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.0,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16522,13 +16522,13 @@
       "opponent": "TEN",
       "position": "TE",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 54.3,
-      "touchdown_lambda": 0.783,
+      "touchdown_probability": 51.5,
+      "touchdown_lambda": 0.723,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 54.3,
+        "receiving_td_probability": 51.5,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.783
+        "receiving_lambda": 0.723
       },
       "inputs": {
         "current_games": 5,
@@ -16540,7 +16540,7 @@
         "regressed_receiving_td_rate": 0.526,
         "usage_factor": 0.934,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 1.22,
+        "projected_receiving_tds": 1.07,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -16551,8 +16551,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 1.22,
-        "projected_team_points": 25.0,
+        "projected_receiving_tds": 1.07,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16567,13 +16567,13 @@
       "opponent": "TEN",
       "position": "TE",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 18.5,
-      "touchdown_lambda": 0.2046,
+      "touchdown_probability": 17.2,
+      "touchdown_lambda": 0.1886,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 18.5,
+        "receiving_td_probability": 17.2,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2046
+        "receiving_lambda": 0.1886
       },
       "inputs": {
         "current_games": 4,
@@ -16585,7 +16585,7 @@
         "regressed_receiving_td_rate": 0.137,
         "usage_factor": 0.983,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.31,
+        "projected_receiving_tds": 0.27,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -16596,8 +16596,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.08,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.31,
-        "projected_team_points": 25.0,
+        "projected_receiving_tds": 0.27,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16612,13 +16612,13 @@
       "opponent": "TEN",
       "position": "TE",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 18.4,
-      "touchdown_lambda": 0.203,
+      "touchdown_probability": 17.1,
+      "touchdown_lambda": 0.187,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 18.4,
+        "receiving_td_probability": 17.1,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.203
+        "receiving_lambda": 0.187
       },
       "inputs": {
         "current_games": 4,
@@ -16630,7 +16630,7 @@
         "regressed_receiving_td_rate": 0.15,
         "usage_factor": 0.878,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.31,
+        "projected_receiving_tds": 0.27,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -16641,8 +16641,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.1,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.31,
-        "projected_team_points": 25.0,
+        "projected_receiving_tds": 0.27,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16687,7 +16687,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.0,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16702,13 +16702,13 @@
       "opponent": "TEN",
       "position": "WR",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 55.9,
-      "touchdown_lambda": 0.8187,
+      "touchdown_probability": 53.7,
+      "touchdown_lambda": 0.7707,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 55.9,
+        "receiving_td_probability": 53.7,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.8187
+        "receiving_lambda": 0.7707
       },
       "inputs": {
         "current_games": 6,
@@ -16720,7 +16720,7 @@
         "regressed_receiving_td_rate": 0.756,
         "usage_factor": 0.915,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 1.01,
+        "projected_receiving_tds": 0.89,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -16731,8 +16731,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.7,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 1.01,
-        "projected_team_points": 25.0,
+        "projected_receiving_tds": 0.89,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16747,13 +16747,13 @@
       "opponent": "TEN",
       "position": "WR",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 35.3,
-      "touchdown_lambda": 0.4361,
+      "touchdown_probability": 34.0,
+      "touchdown_lambda": 0.4161,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 35.3,
+        "receiving_td_probability": 34.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.4361
+        "receiving_lambda": 0.4161
       },
       "inputs": {
         "current_games": 6,
@@ -16765,7 +16765,7 @@
         "regressed_receiving_td_rate": 0.444,
         "usage_factor": 1.036,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.4,
+        "projected_receiving_tds": 0.35,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -16776,8 +16776,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.53,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.4,
-        "projected_team_points": 25.0,
+        "projected_receiving_tds": 0.35,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16822,7 +16822,7 @@
         "career_receiving_tds_per_game": 0.27,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.0,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16867,7 +16867,7 @@
         "career_receiving_tds_per_game": 0.2,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.0,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16912,7 +16912,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.0,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -16957,7 +16957,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.0,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -17002,7 +17002,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 25.0,
+        "projected_team_points": 23.7,
         "injury_status": ""
       },
       "model": {
@@ -17017,12 +17017,12 @@
       "opponent": "CIN",
       "position": "QB",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 21.8,
-      "touchdown_lambda": 0.2453,
+      "touchdown_probability": 21.4,
+      "touchdown_lambda": 0.2413,
       "scoring": {
-        "rushing_td_probability": 21.8,
+        "rushing_td_probability": 21.4,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.2453,
+        "rushing_lambda": 0.2413,
         "receiving_lambda": 0.0
       },
       "inputs": {
@@ -17034,7 +17034,7 @@
         "regressed_rushing_td_rate": 0.226,
         "regressed_receiving_td_rate": 0.0,
         "usage_factor": 1.042,
-        "projected_rushing_tds": 0.26,
+        "projected_rushing_tds": 0.25,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -17045,9 +17045,9 @@
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.17,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.26,
+        "projected_rushing_tds": 0.25,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17062,12 +17062,12 @@
       "opponent": "CIN",
       "position": "RB",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 39.1,
-      "touchdown_lambda": 0.496,
+      "touchdown_probability": 38.6,
+      "touchdown_lambda": 0.488,
       "scoring": {
-        "rushing_td_probability": 38.2,
+        "rushing_td_probability": 37.7,
         "receiving_td_probability": 1.4,
-        "rushing_lambda": 0.482,
+        "rushing_lambda": 0.474,
         "receiving_lambda": 0.0139
       },
       "inputs": {
@@ -17079,7 +17079,7 @@
         "regressed_rushing_td_rate": 0.431,
         "regressed_receiving_td_rate": 0.021,
         "usage_factor": 1.09,
-        "projected_rushing_tds": 0.5,
+        "projected_rushing_tds": 0.48,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -17090,9 +17090,9 @@
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.31,
         "career_receiving_tds_per_game": 0.04,
-        "projected_rushing_tds": 0.5,
+        "projected_rushing_tds": 0.48,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17137,7 +17137,7 @@
         "career_receiving_tds_per_game": 0.02,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17182,7 +17182,7 @@
         "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17227,7 +17227,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17272,7 +17272,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17317,7 +17317,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17362,7 +17362,7 @@
         "career_receiving_tds_per_game": 0.09,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17407,7 +17407,7 @@
         "career_receiving_tds_per_game": 0.07,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17452,7 +17452,7 @@
         "career_receiving_tds_per_game": 0.01,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17467,13 +17467,13 @@
       "opponent": "CIN",
       "position": "WR",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 20.5,
-      "touchdown_lambda": 0.2297,
+      "touchdown_probability": 19.9,
+      "touchdown_lambda": 0.2217,
       "scoring": {
         "rushing_td_probability": 0.6,
-        "receiving_td_probability": 20.0,
+        "receiving_td_probability": 19.4,
         "rushing_lambda": 0.0061,
-        "receiving_lambda": 0.2236
+        "receiving_lambda": 0.2156
       },
       "inputs": {
         "current_games": 7,
@@ -17485,7 +17485,7 @@
         "regressed_receiving_td_rate": 0.231,
         "usage_factor": 0.948,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
+        "projected_receiving_tds": 0.21,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -17496,8 +17496,8 @@
         "career_rushing_tds_per_game": 0.02,
         "career_receiving_tds_per_game": 0.18,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.23,
-        "projected_team_points": 20.1,
+        "projected_receiving_tds": 0.21,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17542,7 +17542,7 @@
         "career_receiving_tds_per_game": 0.42,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17557,13 +17557,13 @@
       "opponent": "CIN",
       "position": "WR",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 13.0,
-      "touchdown_lambda": 0.1393,
+      "touchdown_probability": 12.7,
+      "touchdown_lambda": 0.1353,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 13.0,
+        "receiving_td_probability": 12.7,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1393
+        "receiving_lambda": 0.1353
       },
       "inputs": {
         "current_games": 7,
@@ -17575,7 +17575,7 @@
         "regressed_receiving_td_rate": 0.183,
         "usage_factor": 0.87,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.11,
+        "projected_receiving_tds": 0.1,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -17586,8 +17586,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.22,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.11,
-        "projected_team_points": 20.1,
+        "projected_receiving_tds": 0.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17602,13 +17602,13 @@
       "opponent": "CIN",
       "position": "WR",
       "game_id": "2026_08_TEN_CIN",
-      "touchdown_probability": 12.0,
-      "touchdown_lambda": 0.128,
+      "touchdown_probability": 11.7,
+      "touchdown_lambda": 0.124,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 12.0,
+        "receiving_td_probability": 11.7,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.128
+        "receiving_lambda": 0.124
       },
       "inputs": {
         "current_games": 7,
@@ -17620,7 +17620,7 @@
         "regressed_receiving_td_rate": 0.14,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.11,
+        "projected_receiving_tds": 0.1,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -17631,8 +17631,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.14,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.11,
-        "projected_team_points": 20.1,
+        "projected_receiving_tds": 0.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
@@ -17677,7 +17677,7 @@
         "career_receiving_tds_per_game": 0.17,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.1,
+        "projected_team_points": 19.0,
         "injury_status": ""
       },
       "model": {
