@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T13:08:31.204803+00:00",
+  "generated_at": "2026-11-03T18:51:00.120360+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -31,8 +31,8 @@
     "all_candidates": 2,
     "best_bets": 1,
     "strong_plays": 0,
-    "leans": 0,
-    "passes": 1
+    "leans": 1,
+    "passes": 0
   },
   "best_bets": [
     {
@@ -41,8 +41,8 @@
       "ranking_score": 88.59,
       "confidence": 83.7,
       "upstream_label": "ELITE",
-      "edge_strength": 10.84,
-      "edge": 0.271,
+      "edge_strength": 10.72,
+      "edge": 0.268,
       "market_type": "moneyline",
       "game_id": "2026_09_JAX_BAL",
       "matchup": "JAX @ BAL",
@@ -62,30 +62,29 @@
         "home_team": "BAL",
         "market": "moneyline",
         "selection": "BAL",
-        "edge": 0.271,
+        "edge": 0.268,
         "confidence_score": 83.7,
         "confidence_label": "ELITE"
       }
     }
   ],
   "strong_plays": [],
-  "leans": [],
-  "passes": [
+  "leans": [
     {
       "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 56.3,
-      "confidence": 47.1,
-      "upstream_label": "PASS",
-      "edge_strength": 2.3333,
-      "edge": 3.5,
+      "tier": "LEAN",
+      "ranking_score": 74.38,
+      "confidence": 63.4,
+      "upstream_label": "GOOD",
+      "edge_strength": 3.6667,
+      "edge": 5.5,
       "market_type": "game_total",
       "game_id": "2026_09_JAX_BAL",
       "matchup": "JAX @ BAL",
       "away_team": "JAX",
       "home_team": "BAL",
       "team": "",
-      "pick": "OVER 42.5",
+      "pick": "OVER 40.5",
       "line": "",
       "odds": "",
       "sportsbook": "",
@@ -97,13 +96,14 @@
         "away_team": "JAX",
         "home_team": "BAL",
         "market": "game_total",
-        "selection": "OVER 42.5",
-        "edge": 3.5,
-        "confidence_score": 47.1,
-        "confidence_label": "PASS"
+        "selection": "OVER 40.5",
+        "edge": 5.5,
+        "confidence_score": 63.4,
+        "confidence_label": "GOOD"
       }
     }
   ],
+  "passes": [],
   "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
@@ -111,8 +111,8 @@
       "ranking_score": 88.59,
       "confidence": 83.7,
       "upstream_label": "ELITE",
-      "edge_strength": 10.84,
-      "edge": 0.271,
+      "edge_strength": 10.72,
+      "edge": 0.268,
       "market_type": "moneyline",
       "game_id": "2026_09_JAX_BAL",
       "matchup": "JAX @ BAL",
@@ -132,9 +132,41 @@
         "home_team": "BAL",
         "market": "moneyline",
         "selection": "BAL",
-        "edge": 0.271,
+        "edge": 0.268,
         "confidence_score": 83.7,
         "confidence_label": "ELITE"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "LEAN",
+      "ranking_score": 74.38,
+      "confidence": 63.4,
+      "upstream_label": "GOOD",
+      "edge_strength": 3.6667,
+      "edge": 5.5,
+      "market_type": "game_total",
+      "game_id": "2026_09_JAX_BAL",
+      "matchup": "JAX @ BAL",
+      "away_team": "JAX",
+      "home_team": "BAL",
+      "team": "",
+      "pick": "OVER 40.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_09_JAX_BAL",
+        "away_team": "JAX",
+        "home_team": "BAL",
+        "market": "game_total",
+        "selection": "OVER 40.5",
+        "edge": 5.5,
+        "confidence_score": 63.4,
+        "confidence_label": "GOOD"
       }
     }
   ],
@@ -145,8 +177,8 @@
       "ranking_score": 88.59,
       "confidence": 83.7,
       "upstream_label": "ELITE",
-      "edge_strength": 10.84,
-      "edge": 0.271,
+      "edge_strength": 10.72,
+      "edge": 0.268,
       "market_type": "moneyline",
       "game_id": "2026_09_JAX_BAL",
       "matchup": "JAX @ BAL",
@@ -166,26 +198,26 @@
         "home_team": "BAL",
         "market": "moneyline",
         "selection": "BAL",
-        "edge": 0.271,
+        "edge": 0.268,
         "confidence_score": 83.7,
         "confidence_label": "ELITE"
       }
     },
     {
       "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 56.3,
-      "confidence": 47.1,
-      "upstream_label": "PASS",
-      "edge_strength": 2.3333,
-      "edge": 3.5,
+      "tier": "LEAN",
+      "ranking_score": 74.38,
+      "confidence": 63.4,
+      "upstream_label": "GOOD",
+      "edge_strength": 3.6667,
+      "edge": 5.5,
       "market_type": "game_total",
       "game_id": "2026_09_JAX_BAL",
       "matchup": "JAX @ BAL",
       "away_team": "JAX",
       "home_team": "BAL",
       "team": "",
-      "pick": "OVER 42.5",
+      "pick": "OVER 40.5",
       "line": "",
       "odds": "",
       "sportsbook": "",
@@ -197,10 +229,10 @@
         "away_team": "JAX",
         "home_team": "BAL",
         "market": "game_total",
-        "selection": "OVER 42.5",
-        "edge": 3.5,
-        "confidence_score": 47.1,
-        "confidence_label": "PASS"
+        "selection": "OVER 40.5",
+        "edge": 5.5,
+        "confidence_score": 63.4,
+        "confidence_label": "GOOD"
       }
     }
   ],
