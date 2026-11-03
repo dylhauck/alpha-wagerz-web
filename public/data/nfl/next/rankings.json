@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T19:58:35.021498+00:00",
+  "generated_at": "2026-11-03T20:34:26.924703+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -31,8 +31,8 @@
     "all_candidates": 21,
     "best_bets": 9,
     "strong_plays": 2,
-    "leans": 4,
-    "passes": 6
+    "leans": 5,
+    "passes": 5
   },
   "best_bets": [
     {
@@ -518,6 +518,38 @@
         "confidence_score": 51.3,
         "confidence_label": "LEAN"
       }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "LEAN",
+      "ranking_score": 61.98,
+      "confidence": 51.4,
+      "upstream_label": "LEAN",
+      "edge_strength": 2.6,
+      "edge": 3.9,
+      "market_type": "game_total",
+      "game_id": "2026_09_LV_SF",
+      "matchup": "LV @ SF",
+      "away_team": "LV",
+      "home_team": "SF",
+      "team": "",
+      "pick": "UNDER 52.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_09_LV_SF",
+        "away_team": "LV",
+        "home_team": "SF",
+        "market": "game_total",
+        "selection": "UNDER 52.5",
+        "edge": 3.9,
+        "confidence_score": 51.4,
+        "confidence_label": "LEAN"
+      }
     }
   ],
   "passes": [
@@ -550,38 +582,6 @@
         "selection": "UNDER 47.5",
         "edge": 3.3,
         "confidence_score": 45.8,
-        "confidence_label": "PASS"
-      }
-    },
-    {
-      "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 49.57,
-      "confidence": 43.2,
-      "upstream_label": "PASS",
-      "edge_strength": 1.9333,
-      "edge": 2.9,
-      "market_type": "game_total",
-      "game_id": "2026_09_LV_SF",
-      "matchup": "LV @ SF",
-      "away_team": "LV",
-      "home_team": "SF",
-      "team": "",
-      "pick": "UNDER 51.5",
-      "line": "",
-      "odds": "",
-      "sportsbook": "",
-      "projection": "",
-      "projection_confidence": "",
-      "source": "nfl_game_edges",
-      "raw": {
-        "game_id": "2026_09_LV_SF",
-        "away_team": "LV",
-        "home_team": "SF",
-        "market": "game_total",
-        "selection": "UNDER 51.5",
-        "edge": 2.9,
-        "confidence_score": 43.2,
         "confidence_label": "PASS"
       }
     },
@@ -1194,6 +1194,38 @@
         "confidence_score": 51.3,
         "confidence_label": "LEAN"
       }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "LEAN",
+      "ranking_score": 61.98,
+      "confidence": 51.4,
+      "upstream_label": "LEAN",
+      "edge_strength": 2.6,
+      "edge": 3.9,
+      "market_type": "game_total",
+      "game_id": "2026_09_LV_SF",
+      "matchup": "LV @ SF",
+      "away_team": "LV",
+      "home_team": "SF",
+      "team": "",
+      "pick": "UNDER 52.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_09_LV_SF",
+        "away_team": "LV",
+        "home_team": "SF",
+        "market": "game_total",
+        "selection": "UNDER 52.5",
+        "edge": 3.9,
+        "confidence_score": 51.4,
+        "confidence_label": "LEAN"
+      }
     }
   ],
   "game_bets": [
@@ -1679,6 +1711,38 @@
     },
     {
       "ranking_type": "game_bet",
+      "tier": "LEAN",
+      "ranking_score": 61.98,
+      "confidence": 51.4,
+      "upstream_label": "LEAN",
+      "edge_strength": 2.6,
+      "edge": 3.9,
+      "market_type": "game_total",
+      "game_id": "2026_09_LV_SF",
+      "matchup": "LV @ SF",
+      "away_team": "LV",
+      "home_team": "SF",
+      "team": "",
+      "pick": "UNDER 52.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_09_LV_SF",
+        "away_team": "LV",
+        "home_team": "SF",
+        "market": "game_total",
+        "selection": "UNDER 52.5",
+        "edge": 3.9,
+        "confidence_score": 51.4,
+        "confidence_label": "LEAN"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
       "tier": "PASS",
       "ranking_score": 54.06,
       "confidence": 45.8,
@@ -1706,38 +1770,6 @@
         "selection": "UNDER 47.5",
         "edge": 3.3,
         "confidence_score": 45.8,
-        "confidence_label": "PASS"
-      }
-    },
-    {
-      "ranking_type": "game_bet",
-      "tier": "PASS",
-      "ranking_score": 49.57,
-      "confidence": 43.2,
-      "upstream_label": "PASS",
-      "edge_strength": 1.9333,
-      "edge": 2.9,
-      "market_type": "game_total",
-      "game_id": "2026_09_LV_SF",
-      "matchup": "LV @ SF",
-      "away_team": "LV",
-      "home_team": "SF",
-      "team": "",
-      "pick": "UNDER 51.5",
-      "line": "",
-      "odds": "",
-      "sportsbook": "",
-      "projection": "",
-      "projection_confidence": "",
-      "source": "nfl_game_edges",
-      "raw": {
-        "game_id": "2026_09_LV_SF",
-        "away_team": "LV",
-        "home_team": "SF",
-        "market": "game_total",
-        "selection": "UNDER 51.5",
-        "edge": 2.9,
-        "confidence_score": 43.2,
         "confidence_label": "PASS"
       }
     },
