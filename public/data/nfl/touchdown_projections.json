@@ -1,255 +1,30 @@
 {
   "players": [
     {
-      "player_id": "00-0039918",
-      "player": "Caleb Williams",
-      "team": "CHI",
-      "opponent": "SEA",
+      "player_id": "00-0034796",
+      "player": "Lamar Jackson",
+      "team": "BAL",
+      "opponent": "JAX",
       "position": "QB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 29.5,
-      "touchdown_lambda": 0.3498,
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 18.2,
+      "touchdown_lambda": 0.2009,
       "scoring": {
-        "rushing_td_probability": 28.6,
-        "receiving_td_probability": 1.3,
-        "rushing_lambda": 0.3368,
-        "receiving_lambda": 0.013
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.5,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.13,
-        "career_receiving_td_rate": 0.03,
-        "regressed_rushing_td_rate": 0.253,
-        "regressed_receiving_td_rate": 0.02,
-        "usage_factor": 1.084,
-        "projected_rushing_tds": 0.43,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.5,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.13,
-        "career_receiving_tds_per_game": 0.03,
-        "projected_rushing_tds": 0.43,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0028986",
-      "player": "Case Keenum",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "QB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 25.3,
-      "touchdown_lambda": 0.2922,
-      "scoring": {
-        "rushing_td_probability": 25.3,
+        "rushing_td_probability": 18.2,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.2922,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.5,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.1,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.18,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.113,
-        "projected_rushing_tds": 0.43,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.5,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.1,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.43,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038416",
-      "player": "Tyson Bagent",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "QB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 9.2,
-      "touchdown_lambda": 0.0968,
-      "scoring": {
-        "rushing_td_probability": 9.2,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0968,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.14,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.102,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.951,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.14,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036275",
-      "player": "D'Andre Swift",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "RB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 57.1,
-      "touchdown_lambda": 0.8452,
-      "scoring": {
-        "rushing_td_probability": 55.7,
-        "receiving_td_probability": 3.1,
-        "rushing_lambda": 0.814,
-        "receiving_lambda": 0.0312
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 1.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.47,
-        "career_receiving_td_rate": 0.09,
-        "regressed_rushing_td_rate": 0.717,
-        "regressed_receiving_td_rate": 0.048,
-        "usage_factor": 1.083,
-        "projected_rushing_tds": 0.87,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 1.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.47,
-        "career_receiving_tds_per_game": 0.09,
-        "projected_rushing_tds": 0.87,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040236",
-      "player": "Kyle Monangai",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "RB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 44.7,
-      "touchdown_lambda": 0.5929,
-      "scoring": {
-        "rushing_td_probability": 44.7,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.5929,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.75,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.38,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.503,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.102,
-        "projected_rushing_tds": 0.65,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.75,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.38,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.65,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039021",
-      "player": "Roschon Johnson",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "RB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 18.6,
-      "touchdown_lambda": 0.2057,
-      "scoring": {
-        "rushing_td_probability": 18.6,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.2057,
+        "rushing_lambda": 0.2009,
         "receiving_lambda": 0.0
       },
       "inputs": {
         "current_games": 5,
         "current_rushing_td_rate": 0.2,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.23,
+        "career_rushing_td_rate": 0.3,
         "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.218,
+        "regressed_rushing_td_rate": 0.262,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.051,
-        "projected_rushing_tds": 0.17,
+        "usage_factor": 0.796,
+        "projected_rushing_tds": 0.19,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
@@ -258,11 +33,11 @@
         "current_games": 5,
         "current_rushing_tds_per_game": 0.2,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.23,
+        "career_rushing_tds_per_game": 0.3,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.17,
+        "projected_rushing_tds": 0.19,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
+        "projected_team_points": 22.6,
         "injury_status": ""
       },
       "model": {
@@ -271,43 +46,43 @@
       }
     },
     {
-      "player_id": "00-0038440",
-      "player": "Zavier Scott",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "RB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 5.0,
-      "touchdown_lambda": 0.0509,
+      "player_id": "00-0035993",
+      "player": "Tyler Huntley",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "QB",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 16.1,
+      "touchdown_lambda": 0.1756,
       "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 5.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0509
+        "rushing_td_probability": 16.1,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.1756,
+        "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
+        "current_games": 5,
+        "current_rushing_td_rate": 0.2,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.07,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.051,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
+        "career_rushing_td_rate": 0.18,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.188,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.884,
+        "projected_rushing_tds": 0.19,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.2,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.07,
-        "projected_rushing_tds": 0.0,
+        "career_rushing_tds_per_game": 0.18,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.19,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
+        "projected_team_points": 22.6,
         "injury_status": ""
       },
       "model": {
@@ -316,102 +91,12 @@
       }
     },
     {
-      "player_id": "00-0040126",
-      "player": "Colston Loveland",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "TE",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 25.9,
-      "touchdown_lambda": 0.3003,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 25.9,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3003
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.29,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.35,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.322,
-        "usage_factor": 1.037,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.29,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.35,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "projected_team_points": 20.3,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036290",
-      "player": "Cole Kmet",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "TE",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 12.7,
-      "touchdown_lambda": 0.1356,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 12.7,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1356
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.14,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.21,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.177,
-        "usage_factor": 0.823,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.12,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.14,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.21,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.12,
-        "projected_team_points": 20.3,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0041558",
-      "player": "Sam Roush",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "TE",
-      "game_id": "2026_08_CHI_SEA",
+      "player_id": "00-0040981",
+      "player": "Joe Fagnano",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "QB",
+      "game_id": "2026_09_JAX_BAL",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -421,7 +106,7 @@
         "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 5,
+        "current_games": 1,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
@@ -435,14 +120,14 @@
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 5,
+        "current_games": 1,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
+        "projected_team_points": 22.6,
         "injury_status": ""
       },
       "model": {
@@ -451,43 +136,133 @@
       }
     },
     {
-      "player_id": "00-0040735",
-      "player": "Luther Burden III",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 22.9,
-      "touchdown_lambda": 0.2596,
+      "player_id": "00-0032764",
+      "player": "Derrick Henry",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "RB",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 64.9,
+      "touchdown_lambda": 1.0473,
+      "scoring": {
+        "rushing_td_probability": 61.3,
+        "receiving_td_probability": 9.3,
+        "rushing_lambda": 0.9493,
+        "receiving_lambda": 0.098
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 1.0,
+        "current_receiving_td_rate": 0.12,
+        "career_rushing_td_rate": 0.81,
+        "career_receiving_td_rate": 0.04,
+        "regressed_rushing_td_rate": 0.905,
+        "regressed_receiving_td_rate": 0.08,
+        "usage_factor": 1.041,
+        "projected_rushing_tds": 0.96,
+        "projected_receiving_tds": 0.12,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 1.0,
+        "current_receiving_tds_per_game": 0.12,
+        "career_rushing_tds_per_game": 0.81,
+        "career_receiving_tds_per_game": 0.04,
+        "projected_rushing_tds": 0.96,
+        "projected_receiving_tds": 0.12,
+        "projected_team_points": 22.6,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0034975",
+      "player": "Justice Hill",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "RB",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 7.2,
+      "touchdown_lambda": 0.0748,
+      "scoring": {
+        "rushing_td_probability": 4.7,
+        "receiving_td_probability": 2.6,
+        "rushing_lambda": 0.0481,
+        "receiving_lambda": 0.0267
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.09,
+        "career_receiving_td_rate": 0.05,
+        "regressed_rushing_td_rate": 0.045,
+        "regressed_receiving_td_rate": 0.025,
+        "usage_factor": 1.068,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.09,
+        "career_receiving_tds_per_game": 0.05,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.6,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039796",
+      "player": "Rasheen Ali",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "RB",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 1.9,
+      "touchdown_lambda": 0.0187,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 22.9,
+        "receiving_td_probability": 1.9,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2596
+        "receiving_lambda": 0.0187
       },
       "inputs": {
         "current_games": 7,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.29,
+        "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.18,
+        "career_receiving_td_rate": 0.04,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.231,
-        "usage_factor": 1.15,
+        "regressed_receiving_td_rate": 0.021,
+        "usage_factor": 0.876,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
+        "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
         "current_games": 7,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.29,
+        "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.18,
+        "career_receiving_tds_per_game": 0.04,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.25,
-        "projected_team_points": 20.3,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.6,
         "injury_status": ""
       },
       "model": {
@@ -496,43 +271,223 @@
       }
     },
     {
-      "player_id": "00-0040277",
-      "player": "Jahdae Walker",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 20.0,
-      "touchdown_lambda": 0.2233,
+      "player_id": "00-0034753",
+      "player": "Mark Andrews",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "TE",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 19.0,
+      "touchdown_lambda": 0.211,
       "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 20.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2233
+        "rushing_td_probability": 0.3,
+        "receiving_td_probability": 18.8,
+        "rushing_lambda": 0.0029,
+        "receiving_lambda": 0.2081
       },
       "inputs": {
-        "current_games": 4,
+        "current_games": 8,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
+        "current_receiving_td_rate": 0.12,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.44,
+        "regressed_rushing_td_rate": 0.005,
+        "regressed_receiving_td_rate": 0.28,
+        "usage_factor": 0.953,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.12,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.12,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.44,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.12,
+        "projected_team_points": 22.6,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040879",
+      "player": "Matthew Hibner",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "TE",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 18.1,
+      "touchdown_lambda": 0.2,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 18.1,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.2
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
         "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.2,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.2,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.2,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.2,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.2,
+        "projected_team_points": 22.6,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040887",
+      "player": "Josh Cuevas",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "TE",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 15.6,
+      "touchdown_lambda": 0.17,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 15.6,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.17
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.17,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.17,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.17,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.17,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.17,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.17,
+        "projected_team_points": 22.6,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0034798",
+      "player": "Durham Smythe",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "TE",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 2.2,
+      "touchdown_lambda": 0.0225,
+      "scoring": {
+        "rushing_td_probability": 0.6,
+        "receiving_td_probability": 1.7,
+        "rushing_lambda": 0.0056,
+        "receiving_lambda": 0.0169
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.03,
+        "regressed_rushing_td_rate": 0.007,
+        "regressed_receiving_td_rate": 0.022,
+        "usage_factor": 0.774,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.03,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.6,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039064",
+      "player": "Zay Flowers",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "WR",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 33.6,
+      "touchdown_lambda": 0.4095,
+      "scoring": {
+        "rushing_td_probability": 1.3,
+        "receiving_td_probability": 32.7,
+        "rushing_lambda": 0.0135,
+        "receiving_lambda": 0.396
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.43,
+        "career_rushing_td_rate": 0.04,
         "career_receiving_td_rate": 0.3,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.283,
-        "usage_factor": 0.796,
+        "regressed_rushing_td_rate": 0.021,
+        "regressed_receiving_td_rate": 0.361,
+        "usage_factor": 1.054,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.22,
+        "projected_receiving_tds": 0.42,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 4,
+        "current_games": 7,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.43,
+        "career_rushing_tds_per_game": 0.04,
         "career_receiving_tds_per_game": 0.3,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.22,
-        "projected_team_points": 20.3,
+        "projected_receiving_tds": 0.42,
+        "projected_team_points": 22.6,
         "injury_status": ""
       },
       "model": {
@@ -541,43 +496,133 @@
       }
     },
     {
-      "player_id": "00-0032464",
-      "player": "Kalif Raymond",
-      "team": "CHI",
-      "opponent": "SEA",
+      "player_id": "00-0039792",
+      "player": "Devontez Walker",
+      "team": "BAL",
+      "opponent": "JAX",
       "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 12.1,
-      "touchdown_lambda": 0.1289,
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 23.3,
+      "touchdown_lambda": 0.2654,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 12.1,
+        "receiving_td_probability": 23.3,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1289
+        "receiving_lambda": 0.2654
       },
       "inputs": {
-        "current_games": 7,
+        "current_games": 5,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.14,
+        "current_receiving_td_rate": 0.2,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.08,
+        "career_receiving_td_rate": 0.31,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.108,
-        "usage_factor": 1.249,
+        "regressed_receiving_td_rate": 0.268,
+        "usage_factor": 1.154,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.2,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.31,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.2,
+        "projected_team_points": 22.6,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0032398",
+      "player": "Chris Moore",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "WR",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 19.6,
+      "touchdown_lambda": 0.2187,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 19.6,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.2187
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.1,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.163,
+        "usage_factor": 0.929,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.32,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.1,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.32,
+        "projected_team_points": 22.6,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036550",
+      "player": "Rashod Bateman",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "WR",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 13.8,
+      "touchdown_lambda": 0.1482,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 13.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1482
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.12,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.23,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.175,
+        "usage_factor": 0.954,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.12,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 7,
+        "current_games": 8,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.14,
+        "current_receiving_tds_per_game": 0.12,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.08,
+        "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.12,
-        "projected_team_points": 20.3,
+        "projected_team_points": 22.6,
         "injury_status": ""
       },
       "model": {
@@ -586,57 +631,12 @@
       }
     },
     {
-      "player_id": "00-0039919",
-      "player": "Rome Odunze",
-      "team": "CHI",
-      "opponent": "SEA",
+      "player_id": "00-0040876",
+      "player": "Elijah Sarratt",
+      "team": "BAL",
+      "opponent": "JAX",
       "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 11.8,
-      "touchdown_lambda": 0.126,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 11.8,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.126
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.25,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.133,
-        "usage_factor": 0.945,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.25,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037380",
-      "player": "Kaden Davis",
-      "team": "CHI",
-      "opponent": "SEA",
-      "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
+      "game_id": "2026_09_JAX_BAL",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -667,7 +667,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
+        "projected_team_points": 22.6,
         "injury_status": ""
       },
       "model": {
@@ -676,12 +676,12 @@
       }
     },
     {
-      "player_id": "00-0041051",
-      "player": "Zavion Thomas",
-      "team": "CHI",
-      "opponent": "SEA",
+      "player_id": "00-0040870",
+      "player": "Ja'Kobi Lane",
+      "team": "BAL",
+      "opponent": "JAX",
       "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
+      "game_id": "2026_09_JAX_BAL",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -691,7 +691,7 @@
         "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 6,
+        "current_games": 4,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
@@ -705,14 +705,14 @@
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 6,
+        "current_games": 4,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 20.3,
+        "projected_team_points": 22.6,
         "injury_status": ""
       },
       "model": {
@@ -721,43 +721,43 @@
       }
     },
     {
-      "player_id": "00-0035704",
-      "player": "Drew Lock",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "QB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 10.1,
-      "touchdown_lambda": 0.1066,
+      "player_id": "00-0040075",
+      "player": "LaJohntay Wester",
+      "team": "BAL",
+      "opponent": "JAX",
+      "position": "WR",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
       "scoring": {
-        "rushing_td_probability": 10.1,
+        "rushing_td_probability": 0.0,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1066,
+        "rushing_lambda": 0.0,
         "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 2,
+        "current_games": 8,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.17,
+        "career_rushing_td_rate": 0.0,
         "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.136,
+        "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.784,
+        "usage_factor": 1.3,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 2,
+        "current_games": 8,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.17,
+        "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
+        "projected_team_points": 22.6,
         "injury_status": ""
       },
       "model": {
@@ -766,43 +766,43 @@
       }
     },
     {
-      "player_id": "00-0034869",
-      "player": "Sam Darnold",
-      "team": "SEA",
-      "opponent": "CHI",
+      "player_id": "00-0036971",
+      "player": "Trevor Lawrence",
+      "team": "JAX",
+      "opponent": "BAL",
       "position": "QB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 5.9,
-      "touchdown_lambda": 0.0612,
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 12.2,
+      "touchdown_lambda": 0.13,
       "scoring": {
-        "rushing_td_probability": 5.9,
+        "rushing_td_probability": 12.2,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0612,
+        "rushing_lambda": 0.13,
         "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 6,
+        "current_games": 7,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.13,
+        "career_rushing_td_rate": 0.27,
         "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.074,
+        "regressed_rushing_td_rate": 0.144,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.824,
+        "usage_factor": 0.903,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 6,
+        "current_games": 7,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.13,
+        "career_rushing_tds_per_game": 0.27,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -811,43 +811,133 @@
       }
     },
     {
-      "player_id": "00-0038797",
-      "player": "Emanuel Wilson",
-      "team": "SEA",
-      "opponent": "CHI",
+      "player_id": "00-0033319",
+      "player": "Nick Mullens",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "QB",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.294,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040234",
+      "player": "Quinn Ewers",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "QB",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040719",
+      "player": "Bhayshul Tuten",
+      "team": "JAX",
+      "opponent": "BAL",
       "position": "RB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 42.2,
-      "touchdown_lambda": 0.5476,
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 60.2,
+      "touchdown_lambda": 0.9224,
       "scoring": {
-        "rushing_td_probability": 34.3,
-        "receiving_td_probability": 12.0,
-        "rushing_lambda": 0.42,
-        "receiving_lambda": 0.1276
+        "rushing_td_probability": 38.1,
+        "receiving_td_probability": 35.8,
+        "rushing_lambda": 0.4797,
+        "receiving_lambda": 0.4428
       },
       "inputs": {
         "current_games": 7,
         "current_rushing_td_rate": 0.43,
-        "current_receiving_td_rate": 0.14,
-        "career_rushing_td_rate": 0.22,
-        "career_receiving_td_rate": 0.04,
-        "regressed_rushing_td_rate": 0.318,
-        "regressed_receiving_td_rate": 0.087,
-        "usage_factor": 1.3,
-        "projected_rushing_tds": 0.43,
-        "projected_receiving_tds": 0.15,
+        "current_receiving_td_rate": 0.43,
+        "career_rushing_td_rate": 0.36,
+        "career_receiving_td_rate": 0.23,
+        "regressed_rushing_td_rate": 0.393,
+        "regressed_receiving_td_rate": 0.323,
+        "usage_factor": 1.272,
+        "projected_rushing_tds": 0.45,
+        "projected_receiving_tds": 0.49,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
         "current_games": 7,
         "current_rushing_tds_per_game": 0.43,
-        "current_receiving_tds_per_game": 0.14,
-        "career_rushing_tds_per_game": 0.22,
-        "career_receiving_tds_per_game": 0.04,
-        "projected_rushing_tds": 0.43,
-        "projected_receiving_tds": 0.15,
-        "projected_team_points": 23.2,
+        "current_receiving_tds_per_game": 0.43,
+        "career_rushing_tds_per_game": 0.36,
+        "career_receiving_tds_per_game": 0.23,
+        "projected_rushing_tds": 0.45,
+        "projected_receiving_tds": 0.49,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -856,43 +946,43 @@
       }
     },
     {
-      "player_id": "00-0039299",
-      "player": "George Holani",
-      "team": "SEA",
-      "opponent": "CHI",
+      "player_id": "00-0038611",
+      "player": "Chris Rodriguez Jr.",
+      "team": "JAX",
+      "opponent": "BAL",
       "position": "RB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 13.7,
-      "touchdown_lambda": 0.1479,
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 33.9,
+      "touchdown_lambda": 0.4145,
       "scoring": {
-        "rushing_td_probability": 13.7,
+        "rushing_td_probability": 33.9,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1479,
+        "rushing_lambda": 0.4145,
         "receiving_lambda": 0.0
       },
       "inputs": {
         "current_games": 7,
-        "current_rushing_td_rate": 0.14,
+        "current_rushing_td_rate": 0.43,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.1,
+        "career_rushing_td_rate": 0.37,
         "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.119,
+        "regressed_rushing_td_rate": 0.398,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.291,
-        "projected_rushing_tds": 0.14,
+        "usage_factor": 0.982,
+        "projected_rushing_tds": 0.45,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
         "current_games": 7,
-        "current_rushing_tds_per_game": 0.14,
+        "current_rushing_tds_per_game": 0.43,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.1,
+        "career_rushing_tds_per_game": 0.37,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.14,
+        "projected_rushing_tds": 0.45,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -901,164 +991,29 @@
       }
     },
     {
-      "player_id": "00-0037745",
-      "player": "Velus Jones Jr.",
-      "team": "SEA",
-      "opponent": "CHI",
+      "player_id": "00-0032104",
+      "player": "Ameer Abdullah",
+      "team": "JAX",
+      "opponent": "BAL",
       "position": "RB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 5.5,
-      "touchdown_lambda": 0.0567,
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 5.3,
+      "touchdown_lambda": 0.0546,
       "scoring": {
-        "rushing_td_probability": 2.8,
-        "receiving_td_probability": 2.8,
-        "rushing_lambda": 0.0284,
-        "receiving_lambda": 0.0284
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.03,
-        "regressed_rushing_td_rate": 0.022,
-        "regressed_receiving_td_rate": 0.022,
-        "usage_factor": 1.3,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.03,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038488",
-      "player": "Brady Russell",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "RB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.3,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0041512",
-      "player": "Jadarian Price",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "RB",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039793",
-      "player": "AJ Barner",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "TE",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 22.1,
-      "touchdown_lambda": 0.2495,
-      "scoring": {
-        "rushing_td_probability": 9.5,
-        "receiving_td_probability": 13.9,
-        "rushing_lambda": 0.0995,
-        "receiving_lambda": 0.15
+        "rushing_td_probability": 2.2,
+        "receiving_td_probability": 3.1,
+        "rushing_lambda": 0.0227,
+        "receiving_lambda": 0.0318
       },
       "inputs": {
         "current_games": 7,
-        "current_rushing_td_rate": 0.14,
+        "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.05,
-        "career_receiving_td_rate": 0.26,
-        "regressed_rushing_td_rate": 0.092,
-        "regressed_receiving_td_rate": 0.139,
-        "usage_factor": 1.082,
+        "career_receiving_td_rate": 0.07,
+        "regressed_rushing_td_rate": 0.027,
+        "regressed_receiving_td_rate": 0.037,
+        "usage_factor": 0.853,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -1066,103 +1021,13 @@
       },
       "actual_data": {
         "current_games": 7,
-        "current_rushing_tds_per_game": 0.14,
+        "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.05,
-        "career_receiving_tds_per_game": 0.26,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0033576",
-      "player": "Eric Saubert",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "TE",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 10.3,
-      "touchdown_lambda": 0.1082,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 10.3,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1082
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.14,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.05,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.092,
-        "usage_factor": 0.874,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.15,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.14,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.05,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.15,
-        "projected_team_points": 23.2,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040739",
-      "player": "Elijah Arroyo",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "TE",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 4.6,
-      "touchdown_lambda": 0.0469,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 4.6,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0469
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.07,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.056,
-        "usage_factor": 0.837,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.07,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -1171,43 +1036,43 @@
       }
     },
     {
-      "player_id": "00-0038543",
-      "player": "Jaxon Smith-Njigba",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 63.6,
-      "touchdown_lambda": 1.0118,
+      "player_id": "00-0040238",
+      "player": "LeQuint Allen Jr.",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "RB",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 63.6,
+        "receiving_td_probability": 0.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 1.0118
+        "receiving_lambda": 0.0
       },
       "inputs": {
-        "current_games": 7,
+        "current_games": 6,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 1.14,
+        "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.48,
+        "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.788,
-        "usage_factor": 1.133,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.87,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 1.19,
+        "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 7,
+        "current_games": 6,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 1.14,
+        "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.48,
+        "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 1.19,
-        "projected_team_points": 23.2,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -1216,43 +1081,43 @@
       }
     },
     {
-      "player_id": "00-0040648",
-      "player": "Tory Horton",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 29.4,
-      "touchdown_lambda": 0.3484,
+      "player_id": "00-0041503",
+      "player": "Nate Boerkircher",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "TE",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 29.5,
+      "touchdown_lambda": 0.35,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 29.4,
+        "receiving_td_probability": 29.5,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3484
+        "receiving_lambda": 0.35
       },
       "inputs": {
-        "current_games": 4,
+        "current_games": 6,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
+        "current_receiving_td_rate": 0.33,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.5,
+        "career_receiving_td_rate": 0.33,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.417,
-        "usage_factor": 0.978,
+        "regressed_receiving_td_rate": 0.33,
+        "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.26,
+        "projected_receiving_tds": 0.38,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 4,
+        "current_games": 6,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
+        "current_receiving_tds_per_game": 0.33,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.5,
+        "career_receiving_tds_per_game": 0.33,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.26,
-        "projected_team_points": 23.2,
+        "projected_receiving_tds": 0.38,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -1261,31 +1126,31 @@
       }
     },
     {
-      "player_id": "00-0033908",
-      "player": "Cooper Kupp",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 19.6,
-      "touchdown_lambda": 0.218,
+      "player_id": "00-0038935",
+      "player": "Brenton Strange",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "TE",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 15.3,
+      "touchdown_lambda": 0.1666,
       "scoring": {
-        "rushing_td_probability": 0.3,
-        "receiving_td_probability": 19.4,
-        "rushing_lambda": 0.0026,
-        "receiving_lambda": 0.2153
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 15.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1666
       },
       "inputs": {
         "current_games": 7,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.14,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.47,
-        "regressed_rushing_td_rate": 0.005,
-        "regressed_receiving_td_rate": 0.316,
-        "usage_factor": 0.819,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.17,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.156,
+        "usage_factor": 1.096,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.15,
+        "projected_receiving_tds": 0.16,
         "availability_factor": 1.0,
         "injury_status": ""
       },
@@ -1293,11 +1158,11 @@
         "current_games": 7,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.14,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.47,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.17,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.15,
-        "projected_team_points": 23.2,
+        "projected_receiving_tds": 0.16,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -1306,43 +1171,223 @@
       }
     },
     {
-      "player_id": "00-0037545",
-      "player": "Rashid Shaheed",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 17.2,
-      "touchdown_lambda": 0.1888,
+      "player_id": "00-0036590",
+      "player": "Quintin Morris",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "TE",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 5.3,
+      "touchdown_lambda": 0.0546,
       "scoring": {
-        "rushing_td_probability": 7.6,
-        "receiving_td_probability": 10.4,
-        "rushing_lambda": 0.0794,
-        "receiving_lambda": 0.1094
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 5.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0546
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.11,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.068,
+        "usage_factor": 0.807,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.11,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041084",
+      "player": "Tanner Koziol",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "TE",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 23.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038606",
+      "player": "Parker Washington",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "WR",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 42.8,
+      "touchdown_lambda": 0.5581,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 42.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.5581
       },
       "inputs": {
         "current_games": 7,
-        "current_rushing_td_rate": 0.14,
-        "current_receiving_td_rate": 0.0,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.57,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.31,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.431,
+        "usage_factor": 1.152,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.65,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.57,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.31,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.65,
+        "projected_team_points": 23.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041100",
+      "player": "Josh Cameron",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "WR",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 26.4,
+      "touchdown_lambda": 0.306,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 26.4,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.306
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.29,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.29,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.29,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.33,
+        "availability_factor": 1.0,
+        "injury_status": ""
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.29,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.29,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.33,
+        "projected_team_points": 23.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039893",
+      "player": "Brian Thomas Jr.",
+      "team": "JAX",
+      "opponent": "BAL",
+      "position": "WR",
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 26.0,
+      "touchdown_lambda": 0.3008,
+      "scoring": {
+        "rushing_td_probability": 0.8,
+        "receiving_td_probability": 25.4,
+        "rushing_lambda": 0.0077,
+        "receiving_lambda": 0.2931
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.29,
         "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.21,
-        "regressed_rushing_td_rate": 0.081,
-        "regressed_receiving_td_rate": 0.112,
-        "usage_factor": 0.976,
+        "career_receiving_td_rate": 0.37,
+        "regressed_rushing_td_rate": 0.016,
+        "regressed_receiving_td_rate": 0.333,
+        "usage_factor": 0.807,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
+        "projected_receiving_tds": 0.33,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
         "current_games": 7,
-        "current_rushing_tds_per_game": 0.14,
-        "current_receiving_tds_per_game": 0.0,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.29,
         "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.21,
+        "career_receiving_tds_per_game": 0.37,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
+        "projected_receiving_tds": 0.33,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -1351,88 +1396,43 @@
       }
     },
     {
-      "player_id": "00-0037156",
-      "player": "Irvin Charles",
-      "team": "SEA",
-      "opponent": "CHI",
+      "player_id": "00-0034960",
+      "player": "Jakobi Meyers",
+      "team": "JAX",
+      "opponent": "BAL",
       "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
+      "game_id": "2026_09_JAX_BAL",
+      "touchdown_probability": 24.0,
+      "touchdown_lambda": 0.2742,
       "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
+        "rushing_td_probability": 0.6,
+        "receiving_td_probability": 23.6,
+        "rushing_lambda": 0.0056,
+        "receiving_lambda": 0.2686
       },
       "inputs": {
-        "current_games": 2,
+        "current_games": 7,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
+        "current_receiving_td_rate": 0.29,
+        "career_rushing_td_rate": 0.02,
+        "career_receiving_td_rate": 0.23,
+        "regressed_rushing_td_rate": 0.011,
+        "regressed_receiving_td_rate": 0.258,
+        "usage_factor": 0.882,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
+        "projected_receiving_tds": 0.33,
         "availability_factor": 1.0,
         "injury_status": ""
       },
       "actual_data": {
-        "current_games": 2,
+        "current_games": 7,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.29,
+        "career_rushing_tds_per_game": 0.02,
+        "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040621",
-      "player": "Montorie Foster Jr",
-      "team": "SEA",
-      "opponent": "CHI",
-      "position": "WR",
-      "game_id": "2026_08_CHI_SEA",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": ""
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.2,
+        "projected_receiving_tds": 0.33,
+        "projected_team_points": 23.4,
         "injury_status": ""
       },
       "model": {
@@ -1443,10 +1443,10 @@
   ],
   "counts": {
     "total": 32,
-    "QB": 5,
-    "RB": 9,
-    "WR": 12,
-    "TE": 6
+    "QB": 6,
+    "RB": 7,
+    "WR": 11,
+    "TE": 8
   },
   "diagnostics": {
     "missing_player_metrics": 0

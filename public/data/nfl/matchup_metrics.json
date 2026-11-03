@@ -1,131 +1,131 @@
 {
   "games": [
     {
-      "game_id": "2026_08_CHI_SEA",
-      "away_team": "CHI",
-      "home_team": "SEA",
+      "game_id": "2026_09_JAX_BAL",
+      "away_team": "JAX",
+      "home_team": "BAL",
       "away": {
-        "offense_team": "CHI",
-        "defense_team": "SEA",
-        "rating": -10.0,
-        "rating_label": "Difficult",
+        "offense_team": "JAX",
+        "defense_team": "BAL",
+        "rating": 15.3,
+        "rating_label": "Strong",
         "overall": {
-          "epa_edge": -14.7,
-          "success_edge": -8.6,
-          "yards_per_play_edge": -14.0,
-          "explosive_edge": -9.2,
-          "third_down_edge": -14.9,
-          "red_zone_edge": 8.2,
-          "turnover_edge": -0.5
+          "epa_edge": 27.8,
+          "success_edge": 11.1,
+          "yards_per_play_edge": 5.5,
+          "explosive_edge": 3.0,
+          "third_down_edge": 15.4,
+          "red_zone_edge": 1.6,
+          "turnover_edge": 3.7
         },
         "passing": {
-          "rating": -10.2,
-          "rating_label": "Difficult",
-          "epa_edge": -15.4,
-          "success_edge": -3.6,
-          "explosive_edge": -7.0
+          "rating": 29.3,
+          "rating_label": "Strong",
+          "epa_edge": 43.6,
+          "success_edge": 16.6,
+          "explosive_edge": 12.6
         },
         "rushing": {
-          "rating": -9.8,
-          "rating_label": "Difficult",
-          "epa_edge": -9.1,
-          "success_edge": -11.3,
-          "explosive_edge": -9.5
+          "rating": 3.0,
+          "rating_label": "Neutral",
+          "epa_edge": 8.1,
+          "success_edge": 3.0,
+          "explosive_edge": -9.6
         },
         "raw": {
           "offense": {
-            "epa_per_play": 0.051,
-            "yards_per_play": 5.55,
-            "success_rate": 46.6,
-            "explosive_rate": 10.6
+            "epa_per_play": 0.145,
+            "yards_per_play": 5.94,
+            "success_rate": 47.1,
+            "explosive_rate": 10.8
           },
           "defense_allowed": {
-            "epa_per_play": -0.129,
-            "yards_per_play": 4.12,
-            "success_rate": 37.1,
-            "explosive_rate": 5.4
+            "epa_per_play": 0.013,
+            "yards_per_play": 5.34,
+            "success_rate": 44.4,
+            "explosive_rate": 8.2
           }
         }
       },
       "home": {
-        "offense_team": "SEA",
-        "defense_team": "CHI",
-        "rating": -2.5,
+        "offense_team": "BAL",
+        "defense_team": "JAX",
+        "rating": -4.3,
         "rating_label": "Neutral",
         "overall": {
-          "epa_edge": -6.2,
-          "success_edge": -5.6,
-          "yards_per_play_edge": 10.9,
-          "explosive_edge": 7.0,
-          "third_down_edge": -25.4,
-          "red_zone_edge": 2.3,
-          "turnover_edge": -10.6
+          "epa_edge": -14.5,
+          "success_edge": 1.5,
+          "yards_per_play_edge": 5.8,
+          "explosive_edge": 0.0,
+          "third_down_edge": -7.2,
+          "red_zone_edge": -5.8,
+          "turnover_edge": 10.7
         },
         "passing": {
-          "rating": 3.4,
+          "rating": -2.4,
           "rating_label": "Neutral",
-          "epa_edge": 4.2,
-          "success_edge": -2.5,
-          "explosive_edge": 10.3
+          "epa_edge": -8.6,
+          "success_edge": 7.0,
+          "explosive_edge": -1.0
         },
         "rushing": {
-          "rating": -9.6,
+          "rating": -11.5,
           "rating_label": "Difficult",
-          "epa_edge": -16.4,
-          "success_edge": -6.3,
-          "explosive_edge": 2.3
+          "epa_edge": -18.9,
+          "success_edge": -6.5,
+          "explosive_edge": -0.5
         },
         "raw": {
           "offense": {
-            "epa_per_play": -0.031,
-            "yards_per_play": 5.5,
-            "success_rate": 42.6,
-            "explosive_rate": 9.4
+            "epa_per_play": 0.023,
+            "yards_per_play": 5.74,
+            "success_rate": 45.6,
+            "explosive_rate": 10.5
           },
           "defense_allowed": {
-            "epa_per_play": 0.0,
-            "yards_per_play": 6.24,
-            "success_rate": 42.2,
-            "explosive_rate": 10.7
+            "epa_per_play": -0.1,
+            "yards_per_play": 5.56,
+            "success_rate": 42.1,
+            "explosive_rate": 7.8
           }
         }
       },
-      "matchup_differential": -7.5,
-      "matchup_advantage": "SEA"
+      "matchup_differential": 19.6,
+      "matchup_advantage": "JAX"
     }
   ],
   "league_baselines": {
     "offense": {
-      "yards_per_play": 5.41409375,
-      "epa_per_play": 0.0025937499999999997,
-      "success_rate": 43.5825,
-      "explosive_rate": 9.1839375,
-      "pass_epa": 0.03,
-      "pass_success": 44.67303125,
-      "pass_explosive": 8.202,
-      "rush_epa": -0.039375,
-      "rush_success": 41.868,
-      "rush_explosive": 10.39340625,
-      "third_down_rate": 40.0495625,
-      "red_zone_td_rate": 19.6394375,
-      "turnovers_per_game": 1.18090625,
-      "sacks_per_game": 2.3085
+      "yards_per_play": 5.40646875,
+      "epa_per_play": 0.0022500000000000003,
+      "success_rate": 43.55084375,
+      "explosive_rate": 9.15309375,
+      "pass_epa": 0.029093749999999998,
+      "pass_success": 44.653875,
+      "pass_explosive": 8.18284375,
+      "rush_epa": -0.0393125,
+      "rush_success": 41.81915625,
+      "rush_explosive": 10.34653125,
+      "third_down_rate": 39.95503125,
+      "red_zone_td_rate": 19.62109375,
+      "turnovers_per_game": 1.18015625,
+      "sacks_per_game": 2.312625
     },
     "defense": {
-      "yards_per_play": 5.414625,
-      "epa_per_play": 0.0009999999999999996,
-      "success_rate": 43.5386875,
-      "explosive_rate": 9.15934375,
-      "pass_epa": 0.0315625,
-      "pass_success": 44.70121875,
-      "pass_explosive": 8.1375,
-      "rush_epa": -0.038375,
-      "rush_success": 41.91603125,
-      "rush_explosive": 10.52934375,
-      "third_down_rate": 39.76175,
-      "red_zone_td_rate": 19.576125,
-      "turnovers_per_game": 1.18403125,
-      "sacks_per_game": 2.30390625
+      "yards_per_play": 5.41128125,
+      "epa_per_play": 0.0015624999999999999,
+      "success_rate": 43.5320625,
+      "explosive_rate": 9.14215625,
+      "pass_epa": 0.03165625,
+      "pass_success": 44.70825,
+      "pass_explosive": 8.1304375,
+      "rush_epa": -0.03721875,
+      "rush_success": 41.89140625,
+      "rush_explosive": 10.49846875,
+      "third_down_rate": 39.6949375,
+      "red_zone_td_rate": 19.50584375,
+      "turnovers_per_game": 1.17890625,
+      "sacks_per_game": 2.30078125
     }
   }
 }
