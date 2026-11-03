@@ -2091,7 +2091,7 @@
       "away_team": "GB",
       "home_team": "NE",
       "away_projection": {
-        "projected_points": 21.2,
+        "projected_points": 21.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.1,
@@ -2101,8 +2101,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 21.44,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.28
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -2111,27 +2111,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Gillette Stadium",
-          "weather": {
-            "forecast_time": "2026-11-08T16:00",
-            "temperature_f": 49.0,
-            "feels_like_f": 42.4,
-            "humidity_pct": 80.0,
-            "precip_probability_pct": 5.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 11.5,
-            "wind_gust_mph": 13.6,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -2.5,
         "matchup_label": "Neutral",
@@ -2145,7 +2134,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.0,
+        "projected_points": 23.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.01,
@@ -2155,8 +2144,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 23.32,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.3
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -2165,27 +2154,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Gillette Stadium",
-          "weather": {
-            "forecast_time": "2026-11-08T16:00",
-            "temperature_f": 49.0,
-            "feels_like_f": 42.4,
-            "humidity_pct": 80.0,
-            "precip_probability_pct": 5.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 11.5,
-            "wind_gust_mph": 13.6,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 0.4,
         "matchup_label": "Neutral",
@@ -2199,15 +2177,15 @@
         }
       },
       "projected_score": {
-        "away": 21.2,
-        "home": 23.0
+        "away": 21.4,
+        "home": 23.3
       },
-      "projected_total": 44.2,
-      "expected_margin": 1.8,
+      "projected_total": 44.7,
+      "expected_margin": 1.9,
       "projected_winner": "NE",
       "win_probability": {
-        "away": 43.1,
-        "home": 56.9
+        "away": 42.7,
+        "home": 57.3
       },
       "projection_confidence": 50.5,
       "injury_context": {
@@ -2273,27 +2251,8 @@
         "longitude": -71.2643,
         "roof": "outdoor",
         "kickoff": "2026-11-08T16:25",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-08T16:00",
-          "temperature_f": 49.0,
-          "feels_like_f": 42.4,
-          "humidity_pct": 80.0,
-          "precip_probability_pct": 5.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 11.5,
-          "wind_gust_mph": 13.6,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 1.0,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "scoring_factor": 0.987,
-          "kicking_factor": 0.98,
-          "classification": "MINOR"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T18:50:58.050421+00:00",
+  "generated_at": "2026-11-03T19:26:40.865700+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -303,27 +303,8 @@
       "longitude": -71.2643,
       "roof": "outdoor",
       "kickoff": "2026-11-08T16:25",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-08T16:00",
-        "temperature_f": 49.0,
-        "feels_like_f": 42.4,
-        "humidity_pct": 80.0,
-        "precip_probability_pct": 5.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 11.5,
-        "wind_gust_mph": 13.6,
-        "weather_code": 3,
-        "conditions": "Overcast"
-      },
-      "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
-      }
+      "available": false,
+      "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
     },
     {
       "game_id": "2026_09_ARI_SEA",
