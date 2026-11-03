@@ -249,6 +249,7 @@ type NFLTouchdownProjection = {
     regressed_receiving_td_rate?: number;
 
     usage_factor?: number;
+    usage_percentage?: number | null;
 
     projected_rushing_tds?: number;
 
@@ -1648,7 +1649,7 @@ function TouchdownChanceGraph({
     { label: "Rush TD", description: "Rushing touchdown probability", getValue: p => normalizeTouchdownProbability(p.scoring?.rushing_td_probability), suffix: "%", decimals: 1 },
     { label: "Rec TD", description: "Receiving touchdown probability", getValue: p => normalizeTouchdownProbability(p.scoring?.receiving_td_probability), suffix: "%", decimals: 1 },
     { label: "Expected TDs", description: "Expected touchdown count for this game (not a probability)", getValue: p => touchdownMetricNumber(p.touchdown_lambda), suffix: "", decimals: 2 },
-    { label: "Usage", description: "Usage factor", getValue: p => touchdownMetricNumber(p.inputs?.usage_factor), suffix: "×", decimals: 2 },
+    { label: "Usage", description: "Projected team opportunity share (QB: passing attempts; RB/WR/TE: carries + targets among projected players)", getValue: p => touchdownMetricNumber(p.inputs?.usage_percentage), suffix: "%", decimals: 1 },
     { label: "Scoring", description: "Scoring environment factor", getValue: p => touchdownMetricNumber(p.environment?.scoring_factor), suffix: "×", decimals: 2 },
     { label: "Matchup", description: "Overall matchup factor", getValue: p => touchdownMetricNumber(p.matchup?.overall_factor), suffix: "×", decimals: 2 },
     { label: "Rush Match", description: "Rushing matchup factor", getValue: p => touchdownMetricNumber(p.matchup?.rushing_factor), suffix: "×", decimals: 2 },
