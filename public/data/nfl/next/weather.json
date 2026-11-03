@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T19:26:40.865700+00:00",
+  "generated_at": "2026-11-03T19:58:33.310898+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -20,7 +20,7 @@
         "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
         "wind_mph": 5.3,
-        "wind_gust_mph": 2.9,
+        "wind_gust_mph": 7.8,
         "weather_code": 3,
         "conditions": "Overcast"
       },
@@ -51,7 +51,7 @@
         "precip_probability_pct": 2.0,
         "precipitation_in": 0.0,
         "wind_mph": 4.1,
-        "wind_gust_mph": 7.2,
+        "wind_gust_mph": 4.9,
         "weather_code": 3,
         "conditions": "Overcast"
       },
@@ -82,7 +82,7 @@
         "precip_probability_pct": 5.0,
         "precipitation_in": 0.0,
         "wind_mph": 5.4,
-        "wind_gust_mph": 15.2,
+        "wind_gust_mph": 8.5,
         "weather_code": 0,
         "conditions": "Clear"
       },
@@ -228,7 +228,7 @@
         "precip_probability_pct": 2.0,
         "precipitation_in": 0.0,
         "wind_mph": 12.7,
-        "wind_gust_mph": 11.0,
+        "wind_gust_mph": 20.8,
         "weather_code": 1,
         "conditions": "Mainly Clear"
       },
@@ -303,8 +303,27 @@
       "longitude": -71.2643,
       "roof": "outdoor",
       "kickoff": "2026-11-08T16:25",
-      "available": false,
-      "reason": "forecast_error: <urlopen error _ssl.c:993: The handshake operation timed out>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-11-08T16:00",
+        "temperature_f": 49.0,
+        "feels_like_f": 42.4,
+        "humidity_pct": 80.0,
+        "precip_probability_pct": 5.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 11.5,
+        "wind_gust_mph": 13.6,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "scoring_factor": 0.987,
+        "kicking_factor": 0.98,
+        "classification": "MINOR"
+      }
     },
     {
       "game_id": "2026_09_ARI_SEA",
@@ -324,7 +343,7 @@
         "precip_probability_pct": 43.0,
         "precipitation_in": 0.008,
         "wind_mph": 6.7,
-        "wind_gust_mph": 2.0,
+        "wind_gust_mph": 15.4,
         "weather_code": 51,
         "conditions": "Light Drizzle"
       },
@@ -355,7 +374,7 @@
         "precip_probability_pct": 3.0,
         "precipitation_in": 0.0,
         "wind_mph": 5.1,
-        "wind_gust_mph": 14.5,
+        "wind_gust_mph": 14.1,
         "weather_code": 1,
         "conditions": "Mainly Clear"
       },
