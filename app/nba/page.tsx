@@ -1049,8 +1049,20 @@ function FirstBasketGraph({
   game: FirstBasketGame | null;
   awayTeam: string;
   homeTeam: string;
+  awayPlayers: NBAPlayerMatchup[];
+  homePlayers: NBAPlayerMatchup[];
 }) {
   const candidates = game?.status === "estimated" ? game.players : [];
+  const projectedLineup = [
+    ...[{ team: awayTeam, players: awayPlayers }, { team: homeTeam, players: homePlayers }]
+      .flatMap(({ team, players }) => players
+        .filter((player) => (player.splits?.current_season?.min_per_game || player.splits?.last_season?.min_per_game || 0) > 0)
+        .sort((a, b) =>
+          (b.splits?.current_season?.min_per_game || b.splits?.last_season?.min_per_game || 0) -
+          (a.splits?.current_season?.min_per_game || a.splits?.last_season?.min_per_game || 0))
+        .slice(0, 5)
+        .map((player) => ({ team, player_name: player.player_name, player_id: player.player_id }))),
+  ];
   return (
     <div className="rounded-2xl border border-cyan-300/20 bg-slate-950/40 p-4 sm:p-5">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -1112,9 +1124,19 @@ function FirstBasketGraph({
                 <td className="rounded-r-xl px-3 py-3 text-center font-bold text-slate-300">{row.starts_sample}</td>
               </tr>
             ))}
-            {!candidates.length && (
+            {!candidates.length && projectedLineup.map((row, index) => (
+              <tr key={`pending-${row.team}-${row.player_id}`} className="bg-white/[0.04]">
+                <td className="rounded-l-xl px-3 py-3 text-center font-black text-cyan-200">{index + 1}</td>
+                <td className="px-3 py-3 font-black text-white">{row.player_name}</td>
+                <td className="px-3 py-3 text-center font-bold text-slate-300">{row.team}</td>
+                <td colSpan={4} className="rounded-r-xl px-3 py-3 text-center font-bold text-slate-500">
+                  — · insufficient verified first-basket data
+                </td>
+              </tr>
+            ))}
+            {!candidates.length && !projectedLineup.length && (
               <tr><td colSpan={7} className="px-4 py-8 text-center text-slate-400">
-                {game?.reason || "First-basket play-by-play data has not been generated yet. Run Daily Update."}
+                Projected lineup and first-basket data unavailable.
               </td></tr>
             )}
           </tbody>
@@ -1503,6 +1525,8 @@ export default function NBAPage() {
                 ) || null}
                 awayTeam={awayCode}
                 homeTeam={homeCode}
+                awayPlayers={awayPlayers}
+                homePlayers={homePlayers}
               />
             ) : (
             <>
