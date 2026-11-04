@@ -1038,6 +1038,8 @@ type FirstBasketGame = {
   reason?: string | null;
   history_games: number;
   lineup_status: string;
+  lineup_sources?: Record<string, string>;
+  projected_starters?: Array<{ player_id?: number | null; player_name: string; team: string; side: string }>;
   players: FirstBasketPlayer[];
 };
 
@@ -1055,7 +1057,9 @@ function FirstBasketGraph({
   homePlayers: NBAPlayerMatchup[];
 }) {
   const candidates = game?.status === "estimated" ? game.players : [];
-  const projectedLineup = [
+  const projectedLineup = game?.projected_starters?.length
+    ? game.projected_starters
+    : [
     ...[{ team: awayTeam, players: awayPlayers }, { team: homeTeam, players: homePlayers }]
       .flatMap(({ team, players }) => players
         .filter((player) => (player.splits?.current_season?.min_per_game || player.splits?.last_season?.min_per_game || 0) > 0)
@@ -1076,9 +1080,11 @@ function FirstBasketGraph({
             {awayTeam} @ {homeTeam} — First Basket Rankings
           </h2>
           <p className="mt-1 text-xs font-bold text-amber-200/90">
-            {game?.status === "estimated"
-              ? "Historical play-by-play model · projected, unconfirmed starters"
-              : "Verified first-basket projections pending"}
+            {game?.lineup_status === "previous_confirmed_lineup"
+              ? "Lineup fallback: last verified starters · not confirmed for this game"
+              : game?.status === "estimated"
+                ? "Historical play-by-play model · projected, unconfirmed starters"
+                : "Verified first-basket projections pending"}
           </p>
         </div>
         {candidates[0] && (
