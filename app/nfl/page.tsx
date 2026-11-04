@@ -1650,10 +1650,10 @@ function TouchdownChanceGraph({
     { label: "Rec TD", description: "Receiving touchdown probability", getValue: p => normalizeTouchdownProbability(p.scoring?.receiving_td_probability), suffix: "%", decimals: 1 },
     { label: "Expected TDs", description: "Expected touchdown count for this game (not a probability)", getValue: p => touchdownMetricNumber(p.touchdown_lambda), suffix: "", decimals: 2 },
     { label: "Usage", description: "Projected team opportunity share (QB: passing attempts; RB/WR/TE: carries + targets among projected players)", getValue: p => touchdownMetricNumber(p.inputs?.usage_percentage), suffix: "%", decimals: 1 },
-    { label: "Scoring", description: "Scoring environment factor", getValue: p => touchdownMetricNumber(p.environment?.scoring_factor), suffix: "×", decimals: 2 },
-    { label: "Matchup", description: "Overall matchup factor", getValue: p => touchdownMetricNumber(p.matchup?.overall_factor), suffix: "×", decimals: 2 },
-    { label: "Rush Match", description: "Rushing matchup factor", getValue: p => touchdownMetricNumber(p.matchup?.rushing_factor), suffix: "×", decimals: 2 },
-    { label: "Pass Match", description: "Passing matchup factor", getValue: p => touchdownMetricNumber(p.matchup?.passing_factor), suffix: "×", decimals: 2 },
+    { label: "Scoring", description: "Scoring environment factor", getValue: p => touchdownMetricNumber(p.environment?.scoring_factor), suffix: "", decimals: 2 },
+    { label: "Matchup", description: "Overall matchup factor", getValue: p => touchdownMetricNumber(p.matchup?.overall_factor), suffix: "", decimals: 2 },
+    { label: "Rush Match", description: "Rushing matchup factor", getValue: p => touchdownMetricNumber(p.matchup?.rushing_factor), suffix: "", decimals: 2 },
+    { label: "Pass Match", description: "Passing matchup factor", getValue: p => touchdownMetricNumber(p.matchup?.passing_factor), suffix: "", decimals: 2 },
   ];
   const sortedPlayers = graphPlayers.map((player, index) => ({ player, rank: index + 1 }))
     .sort((a, b) => {
@@ -1696,8 +1696,21 @@ function TouchdownChanceGraph({
     return values.length ? { min: Math.min(...values), max: Math.max(...values) } : null;
   });
   const heatClass = (value: number | null, index: number) => {
+    if (value === null) {
+      return "border-white/15 bg-white/[0.06] text-slate-200";
+    }
+    // Scoring and matchup factors are centered on 1.00 (neutral).
+    // Categorize them against that baseline, even if every player in
+    // a matchup has the same factor.
+    if (index >= 5) {
+      if (value >= 1.10) return "border-emerald-200/35 bg-gradient-to-br from-emerald-700 to-green-500 text-white";
+      if (value >= 1.04) return "border-lime-200/35 bg-gradient-to-br from-lime-700 to-lime-500 text-white";
+      if (value >= 0.98) return "border-yellow-200/35 bg-gradient-to-br from-yellow-700 to-yellow-500 text-white";
+      if (value >= 0.92) return "border-orange-200/35 bg-gradient-to-br from-orange-800 to-orange-500 text-white";
+      return "border-red-200/35 bg-gradient-to-br from-red-800 to-red-500 text-white";
+    }
     const range = ranges[index];
-    if (value === null || !range || range.min === range.max) {
+    if (!range || range.min === range.max) {
       return "border-white/15 bg-white/[0.06] text-slate-200";
     }
     const strength = (value - range.min) / (range.max - range.min);
