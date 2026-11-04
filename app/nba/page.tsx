@@ -1024,8 +1024,9 @@ type FirstBasketPlayer = {
   player_name: string;
   team: string;
   probability: number;
-  first_shot_rate: number;
-  first_basket_rate: number;
+  first_shot_rate: number | null;
+  first_basket_rate: number | null;
+  estimate_source?: string;
   starts_sample: number;
   lineup_status: string;
 };
@@ -1126,9 +1127,12 @@ function FirstBasketGraph({
                   <span className={`inline-block min-w-[88px] rounded-lg px-3 py-2 font-black text-white ${row.probability >= 15 ? "bg-emerald-600" : row.probability >= 8 ? "bg-amber-600" : "bg-rose-700"}`}>
                     {row.probability.toFixed(1)}%
                   </span>
+                  {row.estimate_source === "statistical_fallback" && (
+                    <div className="mt-1 text-[10px] font-bold text-amber-300">Limited-data estimate</div>
+                  )}
                 </td>
-                <td className="px-3 py-3 text-center font-bold text-slate-300">{row.first_shot_rate.toFixed(1)}%</td>
-                <td className="px-3 py-3 text-center font-bold text-slate-300">{row.first_basket_rate.toFixed(1)}%</td>
+                <td className="px-3 py-3 text-center font-bold text-slate-300">{row.first_shot_rate == null ? "—" : `${row.first_shot_rate.toFixed(1)}%`}</td>
+                <td className="px-3 py-3 text-center font-bold text-slate-300">{row.first_basket_rate == null ? "—" : `${row.first_basket_rate.toFixed(1)}%`}</td>
                 <td className="rounded-r-xl px-3 py-3 text-center font-bold text-slate-300">{row.starts_sample}</td>
               </tr>
             ))}
