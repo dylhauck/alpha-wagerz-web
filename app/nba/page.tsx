@@ -1045,6 +1045,8 @@ function FirstBasketGraph({
   game,
   awayTeam,
   homeTeam,
+  awayPlayers,
+  homePlayers,
 }: {
   game: FirstBasketGame | null;
   awayTeam: string;
