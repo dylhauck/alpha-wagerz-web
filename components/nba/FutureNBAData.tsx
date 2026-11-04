@@ -12,6 +12,7 @@ import { useEffect, useState, type ReactNode } from "react";
 const FUTURE_FILES = new Set([
   "slate.json",
   "player_matchups.json",
+  "first_basket.json",
   "betting_projections.json",
   "team_projections.json",
   "live_team_markets.json",
