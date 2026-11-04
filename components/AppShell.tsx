@@ -189,6 +189,15 @@ const nbaNavItems: NavItem[] = [
   },
 ];
 
+const nhlNavItems: NavItem[] = [
+  { label: "Slate Summary", path: "", icon: Home },
+  { label: "NHL Players", path: "/players", icon: Users },
+  { label: "NHL Teams", path: "/teams", icon: Shield },
+  { label: "Projections", path: "/projections", icon: LineChart },
+  { label: "Injury Report", path: "/injuries", icon: BarChart3 },
+  { label: "How To", path: "/how-to", icon: BookOpen },
+];
+
 const placeholderNavItems: NavItem[] = [
   {
     label: "Slate Summary",
@@ -243,6 +252,8 @@ export function AppShell({
         ? nflNavItems
         : activeSport === "NBA"
           ? nbaNavItems
+        : activeSport === "NHL"
+          ? nhlNavItems
         : placeholderNavItems;
 
   function handleSportChange(
@@ -282,10 +293,15 @@ export function AppShell({
       "/nba/next/",
     ));
 
+  const isNHLNextSection =
+    activeSport === "NHL" &&
+    (pathname === "/nhl/next" || pathname.startsWith("/nhl/next/"));
+
   const isNextSection =
     isMLBTomorrowSection ||
     isNFLNextSection ||
-    isNBANextSection;
+    isNBANextSection ||
+    isNHLNextSection;
 
   /*
    * Base route for whichever slate
@@ -304,7 +320,11 @@ export function AppShell({
           ? isNBANextSection
             ? "/nba/next"
             : "/nba"
-          : selectedSport.path;
+          : activeSport === "NHL"
+            ? isNHLNextSection ? "/nhl/next" : "/nhl"
+          : activeSport === "NHL"
+          ? "/nhl"
+        : selectedSport.path;
 
   /*
    * Determine whether the current
@@ -326,6 +346,8 @@ export function AppShell({
         ? "/nfl/next"
         : activeSport === "NBA"
           ? "/nba/next"
+          : activeSport === "NHL"
+            ? "/nhl/next"
           : "";
 
   const isCurrentSlateSection =
