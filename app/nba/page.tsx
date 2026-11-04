@@ -1019,68 +1019,38 @@ function PlayerMatchupTable({
   );
 }
 
-type FirstBasketCandidate = {
-  player: NBAPlayerMatchup;
+type FirstBasketPlayer = {
+  player_id?: number;
+  player_name: string;
   team: string;
-  chance: number;
-  shotShare: number;
-  fgPct: number;
-  minutes: number;
+  probability: number;
+  first_shot_rate: number;
+  first_basket_rate: number;
+  starts_sample: number;
+  lineup_status: string;
+};
+
+type FirstBasketGame = {
+  game_id: string | number;
+  away_team: string;
+  home_team: string;
+  status: string;
+  reason?: string | null;
+  history_games: number;
+  lineup_status: string;
+  players: FirstBasketPlayer[];
 };
 
 function FirstBasketGraph({
-  awayPlayers,
-  homePlayers,
+  game,
   awayTeam,
   homeTeam,
 }: {
-  awayPlayers: NBAPlayerMatchup[];
-  homePlayers: NBAPlayerMatchup[];
+  game: FirstBasketGame | null;
   awayTeam: string;
   homeTeam: string;
 }) {
-  // Until verified opening-possession and first-shot event data are
-  // available, these are explicitly labeled baseline estimates.
-  // Never present a season scoring average as historical first-shot %.
-  const starters = [
-    ...[
-      { players: awayPlayers, team: awayTeam },
-      { players: homePlayers, team: homeTeam },
-    ].flatMap(({ players, team }) =>
-      players
-        .filter((p) => {
-          const s = p.splits?.current_season;
-          return s && s.games > 0 && s.min_per_game > 0;
-        })
-        .sort((a, b) =>
-          (b.splits.current_season.min_per_game || 0) -
-          (a.splits.current_season.min_per_game || 0)
-        )
-        .slice(0, 5)
-        .map((player) => ({ player, team }))
-    ),
-  ];
-  const weights = starters.map(({ player }) => {
-    const stats = player.splits.current_season;
-    const points = Math.max(0, stats.pts_per_game || 0);
-    const minutes = Math.max(0, stats.min_per_game || 0);
-    const fgPct = Math.max(0, Math.min(1, stats.fg_pct || 0));
-    // Relative opening-field-goal opportunity proxy, not observed
-    // first-shot frequency or a validated first-basket probability.
-    return Math.max(0.01, (points / Math.max(minutes, 1)) * minutes * Math.max(fgPct, 0.25));
-  });
-  const total = weights.reduce((sum, value) => sum + value, 0);
-  const candidates: FirstBasketCandidate[] = starters
-    .map(({ player, team }, index) => ({
-      player,
-      team,
-      chance: total > 0 ? (weights[index] / total) * 100 : 0,
-      shotShare: total > 0 ? (weights[index] / total) * 100 : 0,
-      fgPct: player.splits.current_season.fg_pct || 0,
-      minutes: player.splits.current_season.min_per_game || 0,
-    }))
-    .sort((a, b) => b.chance - a.chance);
-
+  const candidates = game?.status === "estimated" ? game.players : [];
   return (
     <div className="rounded-2xl border border-cyan-300/20 bg-slate-950/40 p-4 sm:p-5">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -1092,7 +1062,9 @@ function FirstBasketGraph({
             {awayTeam} @ {homeTeam} — First Basket Rankings
           </h2>
           <p className="mt-1 text-xs font-bold text-amber-200/90">
-            Preliminary estimates · projected starters by minutes · not confirmed lineups
+            {game?.status === "estimated"
+              ? "Historical play-by-play model · projected, unconfirmed starters"
+              : "Verified first-basket projections pending"}
           </p>
         </div>
         {candidates[0] && (
@@ -1101,46 +1073,48 @@ function FirstBasketGraph({
               Top Target
             </div>
             <div className="text-sm font-black text-white">
-              {candidates[0].player.player_name}
+              {candidates[0].player_name}
             </div>
           </div>
         )}
       </div>
       <p className="mt-3 text-xs text-slate-400">
-        Baseline share estimates use current-season scoring and field-goal efficiency.
-        First-shot history, jump-ball win rates, and confirmed starters are not yet included.
-        These estimates are not sportsbook odds or verified first-basket probabilities.
+        {game?.reason || "The first-basket model has not produced verified data for this matchup."}
+        {game?.history_games ? ` · ${game.history_games} verified historical games available.` : ""}
+        {" "}First basket means the first made field goal, excluding free throws.
       </p>
       <div className="table-scroll mt-4 overflow-x-auto">
-        <table className="w-full min-w-[740px] border-separate border-spacing-y-2 text-sm">
+        <table className="w-full min-w-[760px] border-separate border-spacing-y-2 text-sm">
           <thead>
             <tr className="text-[10px] font-black uppercase tracking-wide text-slate-400">
               <th className="px-3 py-2 text-center">Rank</th>
               <th className="px-3 py-2 text-left">Player</th>
               <th className="px-3 py-2 text-center">Team</th>
-              <th className="px-3 py-2 text-center">Estimated Share</th>
-              <th className="px-3 py-2 text-center">FG%</th>
-              <th className="px-3 py-2 text-center">Min/G</th>
+              <th className="px-3 py-2 text-center">First Basket %</th>
+              <th className="px-3 py-2 text-center">First Shot %</th>
+              <th className="px-3 py-2 text-center">Historical Hit %</th>
+              <th className="px-3 py-2 text-center">Starts</th>
             </tr>
           </thead>
           <tbody>
             {candidates.map((row, index) => (
-              <tr key={`${row.team}-${row.player.player_id}`} className="bg-white/[0.04]">
+              <tr key={`${row.team}-${row.player_id ?? row.player_name}`} className="bg-white/[0.04]">
                 <td className="rounded-l-xl px-3 py-3 text-center font-black text-cyan-200">{index + 1}</td>
-                <td className="px-3 py-3 font-black text-white">{row.player.player_name}</td>
+                <td className="px-3 py-3 font-black text-white">{row.player_name}</td>
                 <td className="px-3 py-3 text-center font-bold text-slate-300">{row.team}</td>
                 <td className="px-3 py-3 text-center">
-                  <span className={`inline-block min-w-[88px] rounded-lg px-3 py-2 font-black text-white ${row.chance >= 15 ? "bg-emerald-600" : row.chance >= 8 ? "bg-amber-600" : "bg-rose-700"}`}>
-                    {row.chance.toFixed(1)}%
+                  <span className={`inline-block min-w-[88px] rounded-lg px-3 py-2 font-black text-white ${row.probability >= 15 ? "bg-emerald-600" : row.probability >= 8 ? "bg-amber-600" : "bg-rose-700"}`}>
+                    {row.probability.toFixed(1)}%
                   </span>
                 </td>
-                <td className="px-3 py-3 text-center font-bold text-slate-300">{(row.fgPct * 100).toFixed(1)}%</td>
-                <td className="rounded-r-xl px-3 py-3 text-center font-bold text-slate-300">{row.minutes.toFixed(1)}</td>
+                <td className="px-3 py-3 text-center font-bold text-slate-300">{row.first_shot_rate.toFixed(1)}%</td>
+                <td className="px-3 py-3 text-center font-bold text-slate-300">{row.first_basket_rate.toFixed(1)}%</td>
+                <td className="rounded-r-xl px-3 py-3 text-center font-bold text-slate-300">{row.starts_sample}</td>
               </tr>
             ))}
             {!candidates.length && (
-              <tr><td colSpan={6} className="px-4 py-8 text-center text-slate-400">
-                No current-season player data available for projected starters.
+              <tr><td colSpan={7} className="px-4 py-8 text-center text-slate-400">
+                {game?.reason || "First-basket play-by-play data has not been generated yet. Run Daily Update."}
               </td></tr>
             )}
           </tbody>
@@ -1154,6 +1128,7 @@ export default function NBAPage() {
   const pathname = usePathname();
   const isNextSlate = pathname.startsWith("/nba/next");
   const [slateDetailTab, setSlateDetailTab] = useState<"first_basket" | "matchup_history">("first_basket");
+  const [firstBasketGames, setFirstBasketGames] = useState<FirstBasketGame[]>([]);
   const [selectedPropPlayer, setSelectedPropPlayer] =
     useState<NBAPlayerMatchup | null>(null);
 
@@ -1185,6 +1160,7 @@ export default function NBAPage() {
           slateResponse,
           teamsResponse,
           matchupResponse,
+          firstBasketResponse,
         ] = await Promise.all([
           fetch(
             "/data/nba/slate.json",
@@ -1206,6 +1182,7 @@ export default function NBAPage() {
               cache: "no-store",
             },
           ),
+          fetch("/data/nba/first_basket.json", { cache: "no-store" }),
         ]);
 
         if (!slateResponse.ok) {
@@ -1249,6 +1226,15 @@ export default function NBAPage() {
           );
         } else {
           setMatchupGames([]);
+        }
+
+        if (firstBasketResponse.ok) {
+          const firstBasketPayload = await firstBasketResponse.json();
+          setFirstBasketGames(
+            Array.isArray(firstBasketPayload?.games) ? firstBasketPayload.games : [],
+          );
+        } else {
+          setFirstBasketGames([]);
         }
 
         if (loadedGames.length) {
@@ -1512,8 +1498,9 @@ export default function NBAPage() {
             </div>
             {slateDetailTab === "first_basket" ? (
               <FirstBasketGraph
-                awayPlayers={awayPlayers}
-                homePlayers={homePlayers}
+                game={firstBasketGames.find(
+                  (item) => String(item.game_id) === String(selectedGame.game_id),
+                ) || null}
                 awayTeam={awayCode}
                 homeTeam={homeCode}
               />
