@@ -5,7 +5,7 @@
       "away_team": "JAX",
       "home_team": "BAL",
       "away_projection": {
-        "projected_points": 23.4,
+        "projected_points": 23.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.66,
@@ -15,8 +15,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 23.72,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.31
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -30,22 +30,22 @@
           "stadium": "M&T Bank Stadium",
           "weather": {
             "forecast_time": "2026-11-05T20:00",
-            "temperature_f": 68.9,
-            "feels_like_f": 72.5,
-            "humidity_pct": 85.0,
-            "precip_probability_pct": 17.0,
-            "precipitation_in": 0.004,
-            "wind_mph": 3.6,
-            "wind_gust_mph": 14.5,
-            "weather_code": 51,
-            "conditions": "Light Drizzle"
+            "temperature_f": 66.5,
+            "feels_like_f": 70.2,
+            "humidity_pct": 94.0,
+            "precip_probability_pct": 21.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.0,
+            "wind_gust_mph": 15.9,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 15.3,
         "matchup_label": "Strong",
@@ -59,7 +59,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 22.6,
+        "projected_points": 22.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.01,
@@ -69,8 +69,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 22.86,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.3
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -84,22 +84,22 @@
           "stadium": "M&T Bank Stadium",
           "weather": {
             "forecast_time": "2026-11-05T20:00",
-            "temperature_f": 68.9,
-            "feels_like_f": 72.5,
-            "humidity_pct": 85.0,
-            "precip_probability_pct": 17.0,
-            "precipitation_in": 0.004,
-            "wind_mph": 3.6,
-            "wind_gust_mph": 14.5,
-            "weather_code": 51,
-            "conditions": "Light Drizzle"
+            "temperature_f": 66.5,
+            "feels_like_f": 70.2,
+            "humidity_pct": 94.0,
+            "precip_probability_pct": 21.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.0,
+            "wind_gust_mph": 15.9,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -4.3,
         "matchup_label": "Neutral",
@@ -113,10 +113,10 @@
         }
       },
       "projected_score": {
-        "away": 23.4,
-        "home": 22.6
+        "away": 23.7,
+        "home": 22.9
       },
-      "projected_total": 46.0,
+      "projected_total": 46.6,
       "expected_margin": -0.8,
       "projected_winner": "JAX",
       "win_probability": {
@@ -190,23 +190,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-11-05T20:00",
-          "temperature_f": 68.9,
-          "feels_like_f": 72.5,
-          "humidity_pct": 85.0,
-          "precip_probability_pct": 17.0,
-          "precipitation_in": 0.004,
-          "wind_mph": 3.6,
-          "wind_gust_mph": 14.5,
-          "weather_code": 51,
-          "conditions": "Light Drizzle"
+          "temperature_f": 66.5,
+          "feels_like_f": 70.2,
+          "humidity_pct": 94.0,
+          "precip_probability_pct": 21.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 4.0,
+          "wind_gust_mph": 15.9,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "context": {
-          "severity_score": 1.0,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "scoring_factor": 0.987,
-          "kicking_factor": 0.98,
-          "classification": "MINOR"
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
         }
       },
       "model": {
