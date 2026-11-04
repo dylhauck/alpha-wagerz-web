@@ -13,6 +13,7 @@ type GoalPlayer = {
   goals_per_game: number; shots_per_game: number; goal_probability: number;
   expected_goals: number;
 };
+type Goalie = { player_id: string; name: string; team: string; games: number; saves: number; shots_against: number; goals_against: number; save_percentage: number | null; goals_against_per_appearance: number };
 type Team = { team: string; games: number; wins: number; goals_for_per_game: number; goals_against_per_game: number };
 type Player = { player_id: string; name: string; team: string; position: string; games: number; goals: number; assists: number; points: number; shots: number; goals_per_game: number; shots_per_game: number };
 type Projection = { game_id: number; away: string; home: string; away_goals: number | null; home_goals: number | null; sample_games: number };
@@ -65,6 +66,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
   const games=(data.slate?.games||[]) as Game[];
   const active=games.find(g=>g.game_id===selected)||games[0];
   const players=(data.players?.players||[]) as Player[];
+  const goalies=(data.players?.goalies||[]) as Goalie[];
   const teams=(data.teams?.teams||[]) as Team[];
   const projections=(data.projections?.games||[]) as Projection[];
   const goals=(data.anytime_goals?.games||[]).find((g:{game_id:number})=>g.game_id===active?.game_id)?.players as GoalPlayer[]|undefined;
@@ -99,16 +101,16 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
           className={`rounded-lg px-5 py-3 text-xs font-black uppercase tracking-wider ${tab===key?"border border-cyan-300/50 bg-cyan-300/15 text-cyan-100":"text-slate-500"}`}>{label}</button>)}
       </div></div>
         <Title>{tab==="goals"?`${active.away} @ ${active.home} — Anytime Goal Rankings`:`${active.away} @ ${active.home} — Matchup History`}</Title>
-        {tab==="goals"?<><p className="mb-4 text-xs text-amber-200/80">Historical goal-rate estimates, not validated betting probabilities. Goalies, power-play roles and confirmed lines are not yet incorporated.</p>
+        {tab==="goals"?<><p className="mb-4 text-xs text-amber-200/80">Historical goal-and-shot estimates, not validated betting probabilities. Starting goalies, power-play roles, injuries and confirmed lines are not yet incorporated.</p>
           <Table heads={["Rank","Player","Team","Anytime Goal %","Goals/G","Shots/G","Sample"]} rows={(goals||[]).map((p,i)=>[
             i+1,p.name,p.team,<span key={p.player_id} className="inline-block min-w-[84px] rounded-lg px-3 py-2 text-center font-black text-white" style={{backgroundColor:pctColor(p.goal_probability,range.min,range.max)}}>{p.goal_probability.toFixed(1)}%</span>,
             p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2),`${p.games} GP`
           ])}/></>:<Table heads={["Date","Matchup","Final Score"]} rows={(history||[]).map(g=>[g.date,`${g.away} @ ${g.home}`,`${g.away_score} – ${g.home_score}`])}/>}
       </Panel>}
-    </>:mode==="players"?<Panel><Title>NHL Skater Statistics</Title><Table heads={["Player","Team","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={players.map(p=>[p.name,p.team,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></Panel>
+    </>:mode==="players"?<><Panel><Title>NHL Skater Statistics</Title><p className="mb-3 text-xs text-slate-400">Completed games in the current historical sample. GP is observed appearances, not full-season totals.</p><Table heads={["Player","Team","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={players.map(p=>[p.name,p.team,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></Panel><Panel><Title>NHL Goaltenders</Title><p className="mb-3 text-xs text-amber-200/80">Historical appearances only; these are not confirmed starters for the upcoming slate.</p><Table heads={["Goalie","Team","GP","Saves","Shots Against","Goals Against","Save %","GA/Appearance"]} rows={goalies.map(g=>[g.name,g.team,g.games,g.saves,g.shots_against,g.goals_against,g.save_percentage==null?"—":(g.save_percentage*100).toFixed(1)+"%",g.goals_against_per_appearance.toFixed(2)])}/></Panel></>
     :mode==="teams"?<Panel><Title>NHL Team Statistics</Title><Table heads={["Team","GP","Wins","Goals For/G","Goals Against/G"]} rows={teams.map(t=>[t.team,t.games,t.wins,t.goals_for_per_game.toFixed(2),t.goals_against_per_game.toFixed(2)])}/></Panel>
     :mode==="projections"?<Panel><Title>NHL Game Projections</Title><p className="mb-4 text-xs text-amber-200/80">Recent goals-for/against baseline, not sportsbook odds or a validated betting model.</p><Table heads={["Game","Away Goals","Home Goals","Projected Total","Sample"]} rows={projections.map(p=>[`${p.away} @ ${p.home}`,p.away_goals?.toFixed(2)??"—",p.home_goals?.toFixed(2)??"—",p.away_goals!=null&&p.home_goals!=null?(p.away_goals+p.home_goals).toFixed(2):"—",`${p.sample_games} GP`])}/></Panel>
     :mode==="injuries"?<Panel><Title>NHL Injury Report</Title><p className="text-sm text-amber-200">{data.injuries?.message||"Verified NHL injury data unavailable. No injury statuses have been assumed."}</p></Panel>
-    :<Panel><Title>How to Read NHL Projections</Title><p className="space-y-3 text-sm leading-7 text-slate-300">Anytime goal percentage is currently a Poisson estimate from a player's observed recent goals per game, adjusted by the opponent's recent goals allowed. The heatmap is relative to players in the selected matchup. These are preliminary estimates, not verified market probabilities. Matchup history uses completed NHL games; unavailable data is shown as unavailable, never as zero. Confirm starting goaltenders, player availability, and line assignments before betting.</p></Panel>}
+    :<Panel><Title>How to Read NHL Projections</Title><p className="space-y-3 text-sm leading-7 text-slate-300">Anytime goal percentage is currently a Poisson estimate blending observed recent goals per game and shots-based scoring opportunity, adjusted by the opponent's recent goals allowed. The heatmap is relative to players in the selected matchup. These are preliminary estimates, not verified market probabilities. Matchup history uses completed NHL games; unavailable data is shown as unavailable, never as zero. Confirm starting goaltenders, player availability, and line assignments before betting.</p></Panel>}
   </main></AppShell>;
 }
