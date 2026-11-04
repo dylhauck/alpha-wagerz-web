@@ -1044,6 +1044,27 @@ type FirstBasketGame = {
   players: FirstBasketPlayer[];
 };
 
+// Continuous, matchup-relative heatmap. Each game's ten projected starters
+// define its own low/high range; the values and rankings are unchanged.
+function firstBasketHeatColor(value: number, low: number, high: number): string {
+  const range = high - low;
+  const fraction = range > 0.0001 ? Math.max(0, Math.min(1, (value - low) / range)) : 0.5;
+  const stops = [
+    [190, 18, 60],   // deep red
+    [234, 88, 12],   // orange
+    [234, 179, 8],   // yellow
+    [132, 204, 22],  // lime
+    [5, 163, 93],    // green
+  ];
+  const segment = fraction * (stops.length - 1);
+  const index = Math.min(stops.length - 2, Math.floor(segment));
+  const blend = segment - index;
+  const rgb = stops[index].map((channel, i) =>
+    Math.round(channel + (stops[index + 1][i] - channel) * blend),
+  );
+  return `rgb(${rgb.join(", ")})`;
+}
+
 function FirstBasketGraph({
   game,
   awayTeam,
@@ -1058,6 +1079,9 @@ function FirstBasketGraph({
   homePlayers: NBAPlayerMatchup[];
 }) {
   const candidates = game?.status === "estimated" ? game.players : [];
+  const chanceValues = candidates.map((candidate) => candidate.probability);
+  const lowChance = chanceValues.length ? Math.min(...chanceValues) : 0;
+  const highChance = chanceValues.length ? Math.max(...chanceValues) : 0;
   const projectedLineup = game?.projected_starters?.length
     ? game.projected_starters
     : [
@@ -1124,7 +1148,7 @@ function FirstBasketGraph({
                 <td className="px-3 py-3 font-black text-white">{row.player_name}</td>
                 <td className="px-3 py-3 text-center font-bold text-slate-300">{row.team}</td>
                 <td className="px-3 py-3 text-center">
-                  <span className={`inline-block min-w-[88px] rounded-lg px-3 py-2 font-black text-white ${row.probability >= 14 ? "bg-emerald-600" : row.probability >= 11 ? "bg-lime-600" : row.probability >= 9 ? "bg-yellow-600" : row.probability >= 7 ? "bg-orange-600" : "bg-rose-700"}`}>
+                  <span className="inline-block min-w-[88px] rounded-lg px-3 py-2 font-black text-white" style={{ backgroundColor: firstBasketHeatColor(row.probability, lowChance, highChance) }}>
                     {row.probability.toFixed(1)}%
                   </span>
                   {row.estimate_source === "statistical_fallback" && (
