@@ -1124,7 +1124,7 @@ function FirstBasketGraph({
                 <td className="px-3 py-3 font-black text-white">{row.player_name}</td>
                 <td className="px-3 py-3 text-center font-bold text-slate-300">{row.team}</td>
                 <td className="px-3 py-3 text-center">
-                  <span className={`inline-block min-w-[88px] rounded-lg px-3 py-2 font-black text-white ${row.probability >= 15 ? "bg-emerald-600" : row.probability >= 8 ? "bg-amber-600" : "bg-rose-700"}`}>
+                  <span className={`inline-block min-w-[88px] rounded-lg px-3 py-2 font-black text-white ${row.probability >= 14 ? "bg-emerald-600" : row.probability >= 11 ? "bg-lime-600" : row.probability >= 9 ? "bg-yellow-600" : row.probability >= 7 ? "bg-orange-600" : "bg-rose-700"}`}>
                     {row.probability.toFixed(1)}%
                   </span>
                   {row.estimate_source === "statistical_fallback" && (
