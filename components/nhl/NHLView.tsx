@@ -1,0 +1,114 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { AppShell } from "@/components/AppShell";
+
+type Game = {
+  game_id: number; date: string; start_time_utc?: string;
+  away: string; home: string; away_name: string; home_name: string;
+  away_logo?: string; home_logo?: string; venue?: string;
+};
+type GoalPlayer = {
+  player_id: string; name: string; team: string; games: number;
+  goals_per_game: number; shots_per_game: number; goal_probability: number;
+  expected_goals: number;
+};
+type Team = { team: string; games: number; wins: number; goals_for_per_game: number; goals_against_per_game: number };
+type Player = { player_id: string; name: string; team: string; position: string; games: number; goals: number; assists: number; points: number; shots: number; goals_per_game: number; shots_per_game: number };
+type Projection = { game_id: number; away: string; home: string; away_goals: number | null; home_goals: number | null; sample_games: number };
+type History = { game_id: number; games: Array<{ id: number; date: string; away: string; home: string; away_score: number; home_score: number }> };
+type Mode = "summary" | "players" | "teams" | "projections" | "injuries" | "how-to";
+const files = ["slate", "anytime_goals", "matchup_history", "players", "teams", "projections", "injuries"] as const;
+type Data = Record<(typeof files)[number], any>;
+function pctColor(value: number, low: number, high: number) {
+  const t = high > low ? Math.max(0, Math.min(1, (value - low) / (high - low))) : 0.5;
+  const colors = [[190,18,60],[234,88,12],[234,179,8],[132,204,22],[5,163,93]];
+  const x = t * (colors.length - 1), i = Math.min(3, Math.floor(x)), f = x - i;
+  return `rgb(${colors[i].map((v,j) => Math.round(v + (colors[i+1][j]-v)*f)).join(",")})`;
+}
+function Panel({ children }: { children: React.ReactNode }) {
+  return <section className="rounded-3xl border border-cyan-300/20 bg-slate-900/65 p-5 shadow-xl sm:p-7">{children}</section>;
+}
+function Title({ children }: { children: React.ReactNode }) {
+  return <h2 className="mb-4 text-xl font-black text-white">{children}</h2>;
+}
+function Table({ heads, rows }: { heads: string[]; rows: React.ReactNode[][] }) {
+  return <div className="overflow-x-auto"><table className="w-full min-w-[600px] border-separate border-spacing-y-2 text-sm">
+    <thead><tr>{heads.map(h=><th key={h} className="px-3 py-3 text-left text-[11px] font-black uppercase tracking-wider text-slate-400">{h}</th>)}</tr></thead>
+    <tbody>{rows.map((row,i)=><tr key={i} className="bg-white/[0.045]">{row.map((cell,j)=><td key={j} className="px-3 py-3 font-semibold text-slate-200">{cell}</td>)}</tr>)}</tbody>
+  </table>{!rows.length&&<p className="py-8 text-center text-sm text-slate-400">No verified data available.</p>}</div>;
+}
+export default function NHLView({ mode, next = false }: { mode: Mode; next?: boolean }) {
+  const [data,setData]=useState<Partial<Data>>({});
+  const [selected,setSelected]=useState<number|null>(null);
+  const [tab,setTab]=useState<"goals"|"history">("goals");
+  const [loading,setLoading]=useState(true);
+  useEffect(()=>{
+    let alive=true;
+    setLoading(true);
+    const base=`/data/nhl/${next?"next/":""}`;
+    Promise.all(files.map(async name=>{
+      try {
+        const response=await fetch(`${base}${name}.json`,{cache:"no-store"});
+        return [name,response.ok?await response.json():null] as const;
+      } catch {return [name,null] as const;}
+    })).then(results=>{
+      if(!alive)return;
+      const values=Object.fromEntries(results) as Partial<Data>;
+      setData(values);
+      const games=(values.slate?.games||[]) as Game[];
+      setSelected(games[0]?.game_id??null);
+      setLoading(false);
+    });
+    return ()=>{alive=false;};
+  },[next]);
+  const games=(data.slate?.games||[]) as Game[];
+  const active=games.find(g=>g.game_id===selected)||games[0];
+  const players=(data.players?.players||[]) as Player[];
+  const teams=(data.teams?.teams||[]) as Team[];
+  const projections=(data.projections?.games||[]) as Projection[];
+  const goals=(data.anytime_goals?.games||[]).find((g:{game_id:number})=>g.game_id===active?.game_id)?.players as GoalPlayer[]|undefined;
+  const history=(data.matchup_history?.games||[]).find((g:History)=>g.game_id===active?.game_id)?.games as History["games"]|undefined;
+  const range=useMemo(()=>({min:Math.min(...(goals||[]).map(p=>p.goal_probability)),max:Math.max(...(goals||[]).map(p=>p.goal_probability))}),[goals]);
+  const date=next?"Next Slate":"Current Slate";
+  return <AppShell><main className="mx-auto max-w-[1500px] space-y-5 pb-16 text-white">
+    <header className="py-3 text-center"><p className="text-xs font-black uppercase tracking-[.25em] text-cyan-300">Alpha Wagerz · NHL</p>
+      <h1 className="mt-2 text-3xl font-black sm:text-4xl">{mode==="summary"?"NHL Slate Summary":mode==="how-to"?"NHL Model Guide":`NHL ${mode[0].toUpperCase()+mode.slice(1)}`}</h1>
+      <p className="mt-2 text-sm text-slate-400">{date} · {data.slate?.date||"Data pending"} · All game times Central</p>
+    </header>
+    {loading?<Panel><p className="text-center text-slate-400">Loading NHL data…</p></Panel>:mode==="summary"?<>
+      <Panel><div className="mb-4 text-center text-xs font-black uppercase tracking-[.2em] text-cyan-300">{games.length} NHL games loaded for {date.toLowerCase()}</div>
+        <div className="flex flex-wrap justify-center gap-3">{games.map(g=><button key={g.game_id} onClick={()=>{setSelected(g.game_id);setTab("goals");}}
+          className={`rounded-xl border px-5 py-3 font-black transition ${active?.game_id===g.game_id?"border-cyan-300 bg-cyan-400/15":"border-white/10 bg-slate-800/80 hover:border-cyan-300/40"}`}>
+          {g.away} @ {g.home}<div className="mt-1 text-xs font-semibold text-slate-400">{g.start_time_utc?new Date(g.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"}):"TBD"} CT</div>
+        </button>)}</div>
+        {active&&<div className="mt-6 rounded-2xl border border-cyan-300/15 bg-white/[0.035] p-6 text-center">
+          <div className="text-xs font-black uppercase tracking-[.2em] text-cyan-300">NHL Slate Summary</div>
+          <div className="mt-3 text-3xl font-black">{active.away} @ {active.home}</div>
+          <div className="mt-2 text-sm text-slate-400">{active.venue||"Venue pending"}</div>
+          <div className="mt-5 grid grid-cols-2 gap-3 text-left">
+            {[["Away Matchup",active.away_name||active.away,active.home],["Home Matchup",active.home_name||active.home,active.away]].map(([label,name,opp])=>
+              <div key={label} className="rounded-xl border border-cyan-300/15 bg-cyan-400/10 p-4"><div className="text-xs font-black uppercase tracking-widest text-cyan-200">{label}</div>
+                <div className="mt-2 font-black">{name} offense vs {opp} defense</div></div>)}
+          </div>
+        </div>}
+        {!games.length&&<p className="py-8 text-center text-slate-400">No games scheduled or NHL slate data has not been generated.</p>}
+      </Panel>
+      {active&&<Panel><div className="mb-5 flex justify-center"><div className="flex rounded-xl border border-white/10 bg-slate-950/70 p-1">
+        {[["goals","Anytime Goal Graph"],["history","Matchup History"]].map(([key,label])=><button key={key} onClick={()=>setTab(key as "goals"|"history")}
+          className={`rounded-lg px-5 py-3 text-xs font-black uppercase tracking-wider ${tab===key?"border border-cyan-300/50 bg-cyan-300/15 text-cyan-100":"text-slate-500"}`}>{label}</button>)}
+      </div></div>
+        <Title>{tab==="goals"?`${active.away} @ ${active.home} — Anytime Goal Rankings`:`${active.away} @ ${active.home} — Matchup History`}</Title>
+        {tab==="goals"?<><p className="mb-4 text-xs text-amber-200/80">Historical goal-rate estimates, not validated betting probabilities. Goalies, power-play roles and confirmed lines are not yet incorporated.</p>
+          <Table heads={["Rank","Player","Team","Anytime Goal %","Goals/G","Shots/G","Sample"]} rows={(goals||[]).map((p,i)=>[
+            i+1,p.name,p.team,<span key={p.player_id} className="inline-block min-w-[84px] rounded-lg px-3 py-2 text-center font-black text-white" style={{backgroundColor:pctColor(p.goal_probability,range.min,range.max)}}>{p.goal_probability.toFixed(1)}%</span>,
+            p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2),`${p.games} GP`
+          ])}/></>:<Table heads={["Date","Matchup","Final Score"]} rows={(history||[]).map(g=>[g.date,`${g.away} @ ${g.home}`,`${g.away_score} – ${g.home_score}`])}/>}
+      </Panel>}
+    </>:mode==="players"?<Panel><Title>NHL Skater Statistics</Title><Table heads={["Player","Team","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={players.map(p=>[p.name,p.team,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></Panel>
+    :mode==="teams"?<Panel><Title>NHL Team Statistics</Title><Table heads={["Team","GP","Wins","Goals For/G","Goals Against/G"]} rows={teams.map(t=>[t.team,t.games,t.wins,t.goals_for_per_game.toFixed(2),t.goals_against_per_game.toFixed(2)])}/></Panel>
+    :mode==="projections"?<Panel><Title>NHL Game Projections</Title><p className="mb-4 text-xs text-amber-200/80">Recent goals-for/against baseline, not sportsbook odds or a validated betting model.</p><Table heads={["Game","Away Goals","Home Goals","Projected Total","Sample"]} rows={projections.map(p=>[`${p.away} @ ${p.home}`,p.away_goals?.toFixed(2)??"—",p.home_goals?.toFixed(2)??"—",p.away_goals!=null&&p.home_goals!=null?(p.away_goals+p.home_goals).toFixed(2):"—",`${p.sample_games} GP`])}/></Panel>
+    :mode==="injuries"?<Panel><Title>NHL Injury Report</Title><p className="text-sm text-amber-200">{data.injuries?.message||"Verified NHL injury data unavailable. No injury statuses have been assumed."}</p></Panel>
+    :<Panel><Title>How to Read NHL Projections</Title><p className="space-y-3 text-sm leading-7 text-slate-300">Anytime goal percentage is currently a Poisson estimate from a player's observed recent goals per game, adjusted by the opponent's recent goals allowed. The heatmap is relative to players in the selected matchup. These are preliminary estimates, not verified market probabilities. Matchup history uses completed NHL games; unavailable data is shown as unavailable, never as zero. Confirm starting goaltenders, player availability, and line assignments before betting.</p></Panel>}
+  </main></AppShell>;
+}
