@@ -322,9 +322,7 @@ export function AppShell({
             : "/nba"
           : activeSport === "NHL"
             ? isNHLNextSection ? "/nhl/next" : "/nhl"
-          : activeSport === "NHL"
-          ? "/nhl"
-        : selectedSport.path;
+          : selectedSport.path;
 
   /*
    * Determine whether the current
@@ -337,6 +335,8 @@ export function AppShell({
         ? "/nfl"
         : activeSport === "NBA"
           ? "/nba"
+        : activeSport === "NHL"
+          ? "/nhl"
         : selectedSport.path;
 
   const nextSlateBase =
