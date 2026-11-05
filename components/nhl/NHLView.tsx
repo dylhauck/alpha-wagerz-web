@@ -206,7 +206,6 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
       </section>
 <div className="mb-5 flex flex-wrap justify-center gap-3">{["Full Game","1st Period","2nd Period","3rd Period"].map(period=><button key={period} type="button" onClick={()=>setProjectionPeriod(period)} className={`rounded-xl border px-4 py-2 text-sm font-black transition ${projectionPeriod===period?"border-cyan-300/70 bg-cyan-300/15 text-cyan-100":"border-white/10 bg-white/5 text-slate-300 hover:border-pink-300/40"}`}>{period}</button>)}</div>
       <Panel>
-        <Title>{projectionPeriod} — NHL Projections</Title>
         {(()=>{
           const full=projections.find(p=>p.game_id===active?.game_id);
           const period=((data.period_projections?.games||[]) as Array<{game_id:number;periods:Record<string,{away_goals:number|null;home_goals:number|null;sample_games:number}>}>).find(p=>p.game_id===active?.game_id)?.periods?.[projectionPeriod];
@@ -214,38 +213,59 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
           const homeGoals=projectionPeriod==="Full Game"?full?.home_goals:period?.home_goals;
           const total=awayGoals!=null&&homeGoals!=null?awayGoals+homeGoals:null;
           const margin=awayGoals!=null&&homeGoals!=null?homeGoals-awayGoals:null;
-          const label=active?`${active.away} @ ${active.home}`:"No matchup selected";
+          const fmt=(n:number|null|undefined)=>n==null?"—":n.toFixed(2);
+          const teamAway=active?.away||"Away",teamHome=active?.home||"Home";
+          const box="rounded-2xl border border-white/10 bg-white/[0.035] p-4";
+          const heading="mb-3 text-[11px] font-black uppercase tracking-wide text-slate-400";
           return <>
-            <div className="mb-4 flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.035] px-4 py-3">
-              <span className="font-black text-white">{label}</span>
-              <span className="text-xs font-bold text-slate-400">{projectionPeriod}</span>
+            <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h2 className="text-xl font-black text-white">{active?active.away_name+" @ "+active.home_name:"NHL Game Projections"}</h2>
+                <p className="mt-1 text-xs font-bold text-slate-400">{active?.venue||"Venue unavailable"} · {active?.start_time_utc?new Date(active.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"})+" CT":"Time TBD"} · {projectionPeriod}</p>
+              </div>
+              <span className="rounded-full border border-pink-300/30 bg-pink-300/10 px-3 py-1 text-[11px] font-black uppercase tracking-wide text-pink-200" title="A most confident bet requires verified sportsbook lines and calibrated model probabilities.">Most Confident Bet: Pending Data</span>
             </div>
-            <div className="grid gap-3 md:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
-                <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Moneyline (ML)</h3>
-                <div className="flex justify-between gap-3 text-sm font-bold"><span>{active?.away||"Away"}</span><span className="text-slate-400">Odds unavailable</span></div>
-                <div className="mt-2 flex justify-between gap-3 text-sm font-bold"><span>{active?.home||"Home"}</span><span className="text-slate-400">Odds unavailable</span></div>
-                <p className="mt-3 text-xs text-slate-500">NHL moneyline market feed and overtime-inclusive win probabilities are not connected.</p>
+            <div className="mb-4 grid gap-3 md:grid-cols-3">
+              <div className="rounded-2xl border border-cyan-300/15 bg-cyan-400/10 p-4">
+                <div className={heading}>Projected Score</div>
+                <p className="font-black text-white">{teamAway}: {fmt(awayGoals)}</p>
+                <p className="mt-1 font-black text-white">{teamHome}: {fmt(homeGoals)}</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
-                <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Puck Line / Spread</h3>
-                <div className="flex justify-between gap-3 text-sm font-bold"><span>Sportsbook puck line</span><span className="text-slate-400">Unavailable</span></div>
-                <div className="mt-2 flex justify-between gap-3 text-sm font-bold"><span>Projected home goal margin</span><span className="text-cyan-200">{margin==null?"—":`${margin>0?"+":""}${margin.toFixed(2)}`}</span></div>
-                <p className="mt-3 text-xs text-slate-500">Projected margin is not a sportsbook spread or cover probability.</p>
+              <div className="rounded-2xl border border-pink-300/15 bg-pink-300/10 p-4">
+                <div className={heading}>Win Probability</div>
+                <p className="text-sm font-bold text-slate-400">Not yet calibrated</p>
+                <p className="mt-2 text-xs text-slate-500">Overtime-inclusive NHL model required</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
-                <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Over / Under</h3>
-                <div className="flex justify-between gap-3 text-sm font-bold"><span>Sportsbook total</span><span className="text-slate-400">Unavailable</span></div>
-                <div className="mt-2 flex justify-between gap-3 text-sm font-bold"><span>Model projected total</span><span className="text-cyan-200">{total==null?"—":total.toFixed(2)}</span></div>
-                <p className="mt-3 text-xs text-slate-500">Over/under probabilities require a verified market line and calibrated distribution.</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
-                <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Projected Score</h3>
-                <div className="flex justify-between gap-3 text-sm font-bold"><span>{active?.away||"Away"}</span><span className="text-cyan-200">{awayGoals==null?"—":awayGoals.toFixed(2)}</span></div>
-                <div className="mt-2 flex justify-between gap-3 text-sm font-bold"><span>{active?.home||"Home"}</span><span className="text-cyan-200">{homeGoals==null?"—":homeGoals.toFixed(2)}</span></div>
-                <p className="mt-3 text-xs text-slate-500">Recent goals-for/against estimates; not validated betting odds.</p>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-4">
+                <div className={heading}>Projected Total</div>
+                <p className="text-3xl font-black text-white">{fmt(total)}</p>
+                <p className="mt-1 text-xs font-black text-cyan-200">Book total: unavailable</p>
               </div>
             </div>
+            <div className="grid gap-3 lg:grid-cols-2">
+              <div className={box}>
+                <div className={heading}>Moneyline</div>
+                <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Edge</span></div>
+                {[teamAway,teamHome].map(team=><div key={team} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team} —</span><span className="text-cyan-200">—</span><span>—</span></div>)}
+              </div>
+              <div className={box}>
+                <div className={heading}>Puck Line / Spread</div>
+                <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Cover %</span></div>
+                <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamHome} —</span><span className="text-cyan-200">{margin==null?"—":(margin>0?"+":"")+fmt(margin)}</span><span>—</span></div>
+                <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamAway} —</span><span className="text-cyan-200">{margin==null?"—":(margin<0?"+":"")+fmt(-margin)}</span><span>—</span></div>
+              </div>
+              <div className={box}>
+                <div className={heading}>Over / Under</div>
+                <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Probability</span></div>
+                {["Over","Under"].map(side=><div key={side} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{side} —</span><span className="text-cyan-200">{fmt(total)}</span><span>—</span></div>)}
+              </div>
+              <div className={box}>
+                <div className={heading}>Team Totals</div>
+                <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Team</span><span>Market</span><span>Model</span></div>
+                {[[teamAway,awayGoals],[teamHome,homeGoals]] .map(([team,goals])=><div key={String(team)} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team}</span><span>—</span><span className="text-cyan-200">{fmt(goals as number|null|undefined)}</span></div>)}
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-amber-200/80">NHL sportsbook markets and calibrated betting probabilities are not yet available. The displayed goal estimates are historical baselines, not verified betting recommendations.</p>
           </>;
         })()}
       </Panel></>
