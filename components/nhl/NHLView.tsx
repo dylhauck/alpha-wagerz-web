@@ -114,7 +114,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 {index===1&&<div className="hidden items-center justify-center xl:flex"><div className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-5 py-3 text-xl font-black text-white">@</div></div>}
                 <div className={`flex items-center gap-4 rounded-3xl border border-white/10 bg-white/[0.035] p-5 ${side==="home"?"justify-end text-right":""}`}>
                   {side==="away"&&<img src={logo||`https://assets.nhle.com/logos/nhl/svg/${abbr}_light.svg`} alt={`${name||abbr} logo`} width={78} height={78} className="h-[78px] w-[78px] object-contain"/>}
-                  <div><div className="text-xl font-black text-white sm:text-2xl">{name||abbr}</div><div className="mt-1 text-sm font-bold text-slate-400">{(()=>{const team=teams.find(t=>t.team===abbr);return team ? `${team.wins} W · ${team.games} GP` : "Record unavailable";})()}</div></div>
+                  <div className={side==="home"?"text-right":"text-left"}><div className="text-xl font-black text-white sm:text-2xl">{name||abbr}</div><div className="mt-1 text-sm font-bold text-slate-400">{(()=>{const team=teams.find(t=>t.team===abbr);return team && Number.isFinite(team.wins) && Number.isFinite(team.games) ? `${team.wins}-${Math.max(0,team.games-team.wins)}` : "—";})()}</div></div>
                   {side==="home"&&<img src={logo||`https://assets.nhle.com/logos/nhl/svg/${abbr}_light.svg`} alt={`${name||abbr} logo`} width={78} height={78} className="h-[78px] w-[78px] object-contain"/>}
                 </div>
               </div>
