@@ -8,7 +8,7 @@ type Game = {
   away_logo?: string; home_logo?: string; venue?: string;
 };
 type GoalPlayer = {
-  player_id: string; name: string; team: string; games: number;
+  player_id: string; name: string; team: string; position?: string; games: number;
   goals_per_game: number; shots_per_game: number; goal_probability: number;
   expected_goals: number;
 };
@@ -42,6 +42,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
   const [data,setData]=useState<Partial<Data>>({});
   const [selected,setSelected]=useState<number|null>(null);
   const [tab,setTab]=useState<"goals"|"history">("goals");
+  const [goalPosition,setGoalPosition]=useState("ALL");
   const [projectionPeriod,setProjectionPeriod]=useState("Full Game");
   const [loading,setLoading]=useState(true);
   useEffect(()=>{
@@ -71,6 +72,9 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
   const projections=(data.projections?.games||[]) as Projection[];
   const goals=(data.anytime_goals?.games||[]).find((g:{game_id:number})=>g.game_id===active?.game_id)?.players as GoalPlayer[]|undefined;
   const history=(data.matchup_history?.games||[]).find((g:History)=>g.game_id===active?.game_id)?.players as History["players"]|undefined;
+  const playerPositions=useMemo(()=>new Map(players.map(p=>[String(p.player_id),p.position?.toUpperCase()||""])),[players]);
+  const goalPositionOf=(p:GoalPlayer)=>String(p.position||playerPositions.get(String(p.player_id))||"").toUpperCase();
+  const visibleGoals=(goals||[]).filter(p=>goalPosition==="ALL"||goalPositionOf(p)===goalPosition);
   const range=useMemo(()=>({min:Math.min(...(goals||[]).map(p=>p.goal_probability)),max:Math.max(...(goals||[]).map(p=>p.goal_probability))}),[goals]);
   const date=next?"Next Slate":"Current Slate";
   return <main className="space-y-5 pb-16 text-white">
@@ -128,11 +132,15 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
         {[["goals","Anytime Goal Graph"],["history","Matchup History"]].map(([key,label])=><button key={key} onClick={()=>setTab(key as "goals"|"history")}
           className={`rounded-lg px-5 py-3 text-xs font-black uppercase tracking-wider ${tab===key?"border border-cyan-300/50 bg-cyan-300/15 text-cyan-100":"text-slate-500"}`}>{label}</button>)}
       </div></div>
+        {tab==="goals"&&<div className="mb-5 flex flex-wrap justify-center gap-2">
+          {["ALL","C","LW","RW","D"].map(position=><button key={position} type="button" onClick={()=>setGoalPosition(position)} aria-pressed={goalPosition===position}
+            className={`rounded-xl border px-5 py-2.5 text-xs font-black uppercase tracking-wider transition ${goalPosition===position?"border-cyan-300/60 bg-cyan-300/20 text-cyan-100":"border-white/10 bg-slate-950/60 text-slate-500 hover:border-white/30 hover:text-white"}`}>{position}</button>)}
+        </div>}
         <Title>{tab==="goals"?`${active.away} @ ${active.home} — Anytime Goal Rankings`:`${active.away} @ ${active.home} — Matchup History`}</Title>
         {tab==="goals"?<><p className="mb-4 text-xs text-amber-200/80">Historical goal-and-shot estimates, not validated betting probabilities. Starting goalies, power-play roles, injuries and confirmed lines are not yet incorporated.</p>
           <div className="grid gap-6">
             {[active.away,active.home].map(team=>{
-              const teamPlayers=(goals||[]).filter(p=>p.team?.toUpperCase()===team.toUpperCase());
+              const teamPlayers=visibleGoals.filter(p=>p.team?.toUpperCase()===team.toUpperCase());
               return <section key={team} className="overflow-hidden rounded-2xl border border-cyan-300/20 bg-slate-950/30">
                 <div className="flex items-center gap-3 border-b border-white/10 bg-cyan-300/[0.06] px-5 py-4">
                   <img src={`https://assets.nhle.com/logos/nhl/svg/${team}_light.svg`} alt="" width={36} height={36} className="h-9 w-9 object-contain"/>
