@@ -14,7 +14,7 @@ export async function GET(request: Request) {
   const teams = (data.standings || []).map((t:Record<string,unknown>)=>({
    team:label(t.teamAbbrev).toUpperCase(),games:Number(t.gamesPlayed),wins:Number(t.wins),
    losses:Number(t.losses),ot_losses:Number(t.otLosses),points:Number(t.points),
-   goals_for:Number(t.goalFor),goals_against:Number(t.goalAgainst)
+   goals_for:Number(t.goalFor),goals_against:Number(t.goalAgainst),streak:String(t.streakCode || "")+String(t.streakCount || ""),division_rank:t.divisionSequence ?? null,conference_rank:t.conferenceSequence ?? null,league_rank:t.leagueSequence ?? null,home_wins:t.homeWins,home_losses:t.homeLosses,home_ot_losses:t.homeOtLosses,away_wins:t.roadWins,away_losses:t.roadLosses,away_ot_losses:t.roadOtLosses
   })).filter((t:{team:string;games:number})=>t.team&&Number.isFinite(t.games));
   if (!teams.length) throw new Error("No standings");
   return NextResponse.json({teams});
