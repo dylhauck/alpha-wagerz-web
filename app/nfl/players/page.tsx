@@ -2752,16 +2752,7 @@ export default function NFLPlayersPage() {
           </div>
 
         </div>
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-          <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-cyan-200">
-            {
-              filteredPlayers.length
-            }{" "}
-            Players
-          </div>
-
-
-        </div>
+        <div className="mt-4 flex justify-center"><div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-cyan-200">{filteredPlayers.length.toLocaleString()} Players</div></div>
       </section>
 
       {(positionFilter ===
