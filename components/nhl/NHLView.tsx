@@ -73,7 +73,14 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
   const goals=(data.anytime_goals?.games||[]).find((g:{game_id:number})=>g.game_id===active?.game_id)?.players as GoalPlayer[]|undefined;
   const history=(data.matchup_history?.games||[]).find((g:History)=>g.game_id===active?.game_id)?.players as History["players"]|undefined;
   const playerPositions=useMemo(()=>new Map(players.map(p=>[String(p.player_id),p.position?.toUpperCase()||""])),[players]);
-  const goalPositionOf=(p:GoalPlayer)=>String(p.position||playerPositions.get(String(p.player_id))||"").toUpperCase();
+  const goalPositionOf=(p:GoalPlayer)=>{
+    const raw=String(p.position||playerPositions.get(String(p.player_id))||"").trim().toUpperCase();
+    if(raw==="L"||raw==="LEFT WING"||raw==="LEFT WINGER")return "LW";
+    if(raw==="R"||raw==="RIGHT WING"||raw==="RIGHT WINGER")return "RW";
+    if(raw==="CENTER"||raw==="CENTRE")return "C";
+    if(raw==="DEFENSE"||raw==="DEFENSEMAN"||raw==="DEFENCEMAN")return "D";
+    return raw;
+  };
   const visibleGoals=(goals||[]).filter(p=>goalPosition==="ALL"||goalPositionOf(p)===goalPosition);
   const range=useMemo(()=>({min:Math.min(...(goals||[]).map(p=>p.goal_probability)),max:Math.max(...(goals||[]).map(p=>p.goal_probability))}),[goals]);
   const date=next?"Next Slate":"Current Slate";
