@@ -1211,6 +1211,8 @@ export default function NBATeamsPage() {
               />
             </div>
 
+<div className="mt-4 flex flex-wrap justify-center gap-3"><div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-cyan-200">{(teamStats).length} Teams</div><div className="rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-slate-300">{(teamStats).length === 30 ? Math.round((teamStats).reduce((sum,team)=>sum+(Number(seasonStats(team,seasonView)?.games)||0),0)/2).toLocaleString() : "—"} Completed REG Games</div></div>
+
           </div>
         </div>
 
