@@ -316,8 +316,7 @@ function TeamMatchupCard({
     >
       {!right ? (
         <NBATeamLogo
-          team={teams.find((item) => (item.abbr || item.abbreviation ||  "").toUpperCase() === team.toUpperCase())?.full_name ||
-            teams.find((item) => (item.abbr || item.abbreviation || "").toUpperCase() === team.toUpperCase())?.name || team}
+          team={team}
           teams={teams}
           size={78}
         />
@@ -327,7 +326,7 @@ function TeamMatchupCard({
         
 
         <div className="mt-1 text-2xl font-black text-white">
-          {team}
+          {teams.find((item) => (item.abbr || item.abbreviation || "").toUpperCase() === team.toUpperCase())?.full_name || teams.find((item) => (item.abbr || item.abbreviation || "").toUpperCase() === team.toUpperCase())?.name || team}
         </div>
 
         <div className="mt-1 text-sm font-bold text-slate-400">
