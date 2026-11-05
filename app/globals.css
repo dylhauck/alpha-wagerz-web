@@ -49,6 +49,15 @@ body {
   color: transparent;
 }
 
+/* Reserve descender space for gradient headings (y, g, p, j, q).
+   Tight line boxes were clipping the bottom of Players/Projections titles. */
+h1.neon-text,
+h2.neon-text,
+h3.neon-text {
+  line-height: 1.2;
+  padding-bottom: 0.14em;
+}
+
 .table-scroll {
   overflow-x: auto;
 }
