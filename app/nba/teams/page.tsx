@@ -1229,20 +1229,6 @@ export default function NBATeamsPage() {
           </div>
         ) : (
           <>
-            <div className="border-b border-white/10 px-6 py-3 text-center text-xs font-black uppercase tracking-[0.16em] text-slate-500">
-              {rows.length} NBA Teams
-              {" • "}
-              {seasonView ===
-              "current"
-                ? "Current Season"
-                : "Last Season"}
-              {" • "}
-              {statView ===
-              "per_game"
-                ? "Per Game"
-                : "Totals"}
-            </div>
-
             <div className="table-scroll overflow-x-auto">
               <table className="w-full min-w-[2450px] border-collapse text-sm">
 
