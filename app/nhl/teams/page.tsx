@@ -2,15 +2,15 @@
 import {useEffect,useMemo,useState} from "react";
 import {Search,Trophy} from "lucide-react";
 
-type TeamStats={team:string;games:number;wins:number;losses?:number;ot_losses?:number;goals_for_per_game:number;goals_against_per_game:number};
+type TeamStats={team:string;games:number;wins:number;losses?:number;ot_losses?:number;points?:number;goals_for?:number;goals_against?:number;goals_for_per_game?:number;goals_against_per_game?:number};
 type Season="current"|"last";
 type View="perGame"|"totals";
-type SortKey="team"|"conference"|"division"|"games"|"wins"|"losses"|"winPct"|"goalsFor"|"goalsAgainst"|"goalDiff";
+type SortKey="team"|"conference"|"division"|"games"|"wins"|"losses"|"otLosses"|"points"|"winPct"|"goalsFor"|"goalsAgainst"|"goalDiff";
 const DIVISIONS:Record<string,[string,string]>={
  ANA:["WEST","Pacific"],BOS:["EAST","Atlantic"],BUF:["EAST","Atlantic"],CAR:["EAST","Metropolitan"],CBJ:["EAST","Metropolitan"],CGY:["WEST","Pacific"],CHI:["WEST","Central"],COL:["WEST","Central"],DAL:["WEST","Central"],DET:["EAST","Atlantic"],EDM:["WEST","Pacific"],FLA:["EAST","Atlantic"],LAK:["WEST","Pacific"],MIN:["WEST","Central"],MTL:["EAST","Atlantic"],NJD:["EAST","Metropolitan"],NSH:["WEST","Central"],NYI:["EAST","Metropolitan"],NYR:["EAST","Metropolitan"],OTT:["EAST","Atlantic"],PHI:["EAST","Metropolitan"],PIT:["EAST","Metropolitan"],SEA:["WEST","Pacific"],SJS:["WEST","Pacific"],STL:["WEST","Central"],TBL:["EAST","Atlantic"],TOR:["EAST","Atlantic"],UTA:["WEST","Central"],VAN:["WEST","Pacific"],VGK:["WEST","Pacific"],WPG:["WEST","Central"],WSH:["EAST","Metropolitan"]};
 const NAMES:Record<string,string>={
  ANA:"Anaheim Ducks",BOS:"Boston Bruins",BUF:"Buffalo Sabres",CAR:"Carolina Hurricanes",CBJ:"Columbus Blue Jackets",CGY:"Calgary Flames",CHI:"Chicago Blackhawks",COL:"Colorado Avalanche",DAL:"Dallas Stars",DET:"Detroit Red Wings",EDM:"Edmonton Oilers",FLA:"Florida Panthers",LAK:"Los Angeles Kings",MIN:"Minnesota Wild",MTL:"Montréal Canadiens",NJD:"New Jersey Devils",NSH:"Nashville Predators",NYI:"New York Islanders",NYR:"New York Rangers",OTT:"Ottawa Senators",PHI:"Philadelphia Flyers",PIT:"Pittsburgh Penguins",SEA:"Seattle Kraken",SJS:"San Jose Sharks",STL:"St. Louis Blues",TBL:"Tampa Bay Lightning",TOR:"Toronto Maple Leafs",UTA:"Utah Mammoth",VAN:"Vancouver Canucks",VGK:"Vegas Golden Knights",WPG:"Winnipeg Jets",WSH:"Washington Capitals"};
-const cols:[SortKey,string][]=[["team","Team"],["conference","Conference"],["division","Division"],["games","GP"],["wins","W"],["losses","L"],["winPct","Win %"],["goalsFor","GF"],["goalsAgainst","GA"],["goalDiff","Goal Diff"]];
+const cols:[SortKey,string][]=[["team","Team"],["conference","Conference"],["division","Division"],["games","GP"],["wins","W"],["losses","L"],["otLosses","OTL"],["points","PTS"],["winPct","Win %"],["goalsFor","GF"],["goalsAgainst","GA"],["goalDiff","Goal Diff"]];
 const n=(value:unknown)=>typeof value==="number"&&Number.isFinite(value)?value:null;
 export default function NHLTeamsPage(){
  const [season,setSeason]=useState<Season>("current");
@@ -25,14 +25,16 @@ export default function NHLTeamsPage(){
  const rows=useMemo(()=>{
   const data=datasets[season]||[];
   const metric=(t:TeamStats,key:SortKey):string|number|null=>{
-   const gp=n(t.games),w=n(t.wins),gf=n(t.goals_for_per_game),ga=n(t.goals_against_per_game);
+   const gp=n(t.games),w=n(t.wins),gf=n(t.goals_for_per_game)??(gp?n(t.goals_for)!/gp:null),ga=n(t.goals_against_per_game)??(gp?n(t.goals_against)!/gp:null);
    switch(key){
     case "team":return NAMES[t.team]||t.team;
     case "conference":return DIVISIONS[t.team]?.[0]||"";
     case "division":return DIVISIONS[t.team]?.[1]||"";
     case "games":return gp;
     case "wins":return w;
-    case "losses":return n(t.losses); // NHL overtime losses cannot be inferred from games minus wins
+    case "losses":return n(t.losses);
+    case "otLosses":return n(t.ot_losses);
+    case "points":return n(t.points);
     case "winPct":return gp&&w!==null?w/gp:null;
     case "goalsFor":return gf===null?null:view==="totals"&&gp!==null?gf*gp:gf;
     case "goalsAgainst":return ga===null?null:view==="totals"&&gp!==null?ga*gp:ga;
@@ -45,7 +47,7 @@ export default function NHLTeamsPage(){
   }).sort((a,b)=>{const av=metric(a,sort.key),bv=metric(b,sort.key);if(av===null)return bv===null?0:1;if(bv===null)return -1;const cmp=typeof av==="number"&&typeof bv==="number"?av-bv:String(av).localeCompare(String(bv));return sort.desc?-cmp:cmp;});
  },[datasets,season,conference,division,search,sort,view]);
  const display=(t:TeamStats,key:SortKey)=>{
-  const gp=n(t.games),w=n(t.wins),gf=n(t.goals_for_per_game),ga=n(t.goals_against_per_game);
+  const gp=n(t.games),w=n(t.wins),gf=n(t.goals_for_per_game)??(gp?n(t.goals_for)!/gp:null),ga=n(t.goals_against_per_game)??(gp?n(t.goals_against)!/gp:null);
   switch(key){
    case "team":return NAMES[t.team]||t.team;
    case "conference":return DIVISIONS[t.team]?.[0]==="EAST"?"East":"West";
@@ -53,10 +55,12 @@ export default function NHLTeamsPage(){
    case "games":return gp??"—";
    case "wins":return w??"—";
    case "losses":return n(t.losses)??"—";
+   case "otLosses":return n(t.ot_losses)??"—";
+   case "points":return n(t.points)??"—";
    case "winPct":return gp&&w!==null?(100*w/gp).toFixed(1)+"%":"—";
-   case "goalsFor":return gf===null?"—":view==="totals"&&gp!==null?(gf*gp).toFixed(1):gf.toFixed(2);
-   case "goalsAgainst":return ga===null?"—":view==="totals"&&gp!==null?(ga*gp).toFixed(1):ga.toFixed(2);
-   case "goalDiff":return gf===null||ga===null?"—":((gf-ga)*(view==="totals"?(gp||0):1)).toFixed(view==="totals"?1:2);
+   case "goalsFor":return gf===null?"—":view==="totals"&&gp!==null?String(t.goals_for??Math.round(gf*gp)):gf.toFixed(2);
+   case "goalsAgainst":return ga===null?"—":view==="totals"&&gp!==null?String(t.goals_against??Math.round(ga*gp)):ga.toFixed(2);
+   case "goalDiff":return gf===null||ga===null?"—":view==="totals"?String((t.goals_for??Math.round(gf*(gp||0)))-(t.goals_against??Math.round(ga*(gp||0)))):(gf-ga).toFixed(2);
   }
  };
  const button=(active:boolean,group:"season"|"mode"|"conference"|"division")=>{
@@ -75,5 +79,5 @@ export default function NHLTeamsPage(){
  <div className="mt-3 flex flex-wrap justify-center gap-2">{["ALL","EAST","WEST"].map(c=><button key={c} className={button(conference===c,"conference")} onClick={()=>{setConference(c);setDivision("ALL");}}>{c}</button>)}</div>
  <div className="mt-3 flex flex-wrap justify-center gap-2">{["ALL","Atlantic","Metropolitan","Central","Pacific"].map(d=><button key={d} className={button(division===d,"division")} onClick={()=>{setDivision(d);if(d!=="ALL")setConference(["Atlantic","Metropolitan"].includes(d)?"EAST":"WEST");}}>{d==="ALL"?"All Divisions":d}</button>)}</div>
 <label className="relative mx-auto mt-5 block w-full max-w-[360px]"><Search size={17} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"/><input type="text" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search team..." aria-label="Search NHL teams" className="w-full rounded-xl border border-white/10 bg-slate-950/60 py-3 pl-11 pr-4 text-sm font-bold text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/50"/></label></section>
- <section className="glass rounded-3xl p-5">{loading?<p className="py-8 text-center text-slate-400">Loading NHL teams…</p>:!datasets[season]?<p className="py-8 text-center text-amber-200">{season==="last"?"Last-season NHL team statistics have not been generated yet.":"Current NHL team statistics are unavailable."}</p>:<><div className="overflow-x-auto"><table className="w-full min-w-[950px] text-sm"><thead><tr className="border-b border-white/10">{cols.map(([key,label])=><th key={key} className="px-3 py-4 text-left"><button onClick={()=>setSort(s=>({key,desc:s.key===key?!s.desc:!["team","conference","division"].includes(key)}))} className="whitespace-nowrap font-black uppercase text-slate-300 hover:text-cyan-200">{label}{sort.key===key?(sort.desc?" ▼":" ▲"):" ↕"}</button></th>)}</tr></thead><tbody>{rows.map(t=><tr key={t.team} className="border-b border-white/5 hover:bg-white/5">{cols.map(([key])=><td key={key} className="whitespace-nowrap px-3 py-3 font-semibold text-slate-200">{key==="team"?<div className="flex items-center gap-3"><img src={`https://assets.nhle.com/logos/nhl/svg/${t.team}_light.svg`} alt="" width={32} height={32} className="h-8 w-8 object-contain"/>{display(t,key)}</div>:display(t,key)}</td>)}</tr>)}</tbody></table>{rows.length===0&&<p className="py-8 text-center text-slate-400">No teams match your filters.</p>}</div><p className="mt-4 text-xs text-slate-500">Goal totals are estimated from rounded per-game averages. Regulation and overtime losses are not available in the current data feed.</p></>}</section></main>;
+ <section className="glass rounded-3xl p-5">{loading?<p className="py-8 text-center text-slate-400">Loading NHL teams…</p>:!datasets[season]?<p className="py-8 text-center text-amber-200">{season==="last"?"Last-season NHL team statistics have not been generated yet.":"Current NHL team statistics are unavailable."}</p>:<><div className="overflow-x-auto"><table className="w-full min-w-[950px] text-sm"><thead><tr className="border-b border-white/10">{cols.map(([key,label])=><th key={key} className="px-3 py-4 text-left"><button onClick={()=>setSort(s=>({key,desc:s.key===key?!s.desc:!["team","conference","division"].includes(key)}))} className="whitespace-nowrap font-black uppercase text-slate-300 hover:text-cyan-200">{label}{sort.key===key?(sort.desc?" ▼":" ▲"):" ↕"}</button></th>)}</tr></thead><tbody>{rows.map(t=><tr key={t.team} className="border-b border-white/5 hover:bg-white/5">{cols.map(([key])=><td key={key} className="whitespace-nowrap px-3 py-3 font-semibold text-slate-200">{key==="team"?<div className="flex items-center gap-3"><img src={`https://assets.nhle.com/logos/nhl/svg/${t.team}_light.svg`} alt="" width={32} height={32} className="h-8 w-8 object-contain"/>{display(t,key)}</div>:display(t,key)}</td>)}</tr>)}</tbody></table>{rows.length===0&&<p className="py-8 text-center text-slate-400">No teams match your filters.</p>}</div><p className="mt-4 text-xs text-slate-500">NHL standings include regulation losses, overtime losses and points. Per-game goal averages are calculated from season totals.</p></>}</section></main>;
 }
