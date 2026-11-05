@@ -130,10 +130,22 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
       </div></div>
         <Title>{tab==="goals"?`${active.away} @ ${active.home} — Anytime Goal Rankings`:`${active.away} @ ${active.home} — Matchup History`}</Title>
         {tab==="goals"?<><p className="mb-4 text-xs text-amber-200/80">Historical goal-and-shot estimates, not validated betting probabilities. Starting goalies, power-play roles, injuries and confirmed lines are not yet incorporated.</p>
-          <Table heads={["Rank","Player","Team","Anytime Goal %","Goals/G","Shots/G","Sample"]} rows={(goals||[]).map((p,i)=>[
-            i+1,p.name,p.team,<span key={p.player_id} className="inline-block min-w-[84px] rounded-lg px-3 py-2 text-center font-black text-white" style={{backgroundColor:pctColor(p.goal_probability,range.min,range.max)}}>{p.goal_probability.toFixed(1)}%</span>,
-            p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2),`${p.games} GP`
-          ])}/></>:<><p className="mb-4 text-xs text-slate-400">Verified individual player statistics in completed games against today’s opponent. GP is the number of available head-to-head boxscores.</p><Table heads={["Player","Team","Opponent","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={(history||[]).map(p=>[p.player,p.team,p.opponent,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></>}
+          <div className="grid gap-6">
+            {[active.away,active.home].map(team=>{
+              const teamPlayers=(goals||[]).filter(p=>p.team?.toUpperCase()===team.toUpperCase());
+              return <section key={team} className="overflow-hidden rounded-2xl border border-cyan-300/20 bg-slate-950/30">
+                <div className="flex items-center gap-3 border-b border-white/10 bg-cyan-300/[0.06] px-5 py-4">
+                  <img src={`https://assets.nhle.com/logos/nhl/svg/${team}_light.svg`} alt="" width={36} height={36} className="h-9 w-9 object-contain"/>
+                  <div><h3 className="text-base font-black text-white">{team} — Anytime Goal Rankings</h3>
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">{teamPlayers.length} players</p></div>
+                </div>
+                <Table heads={["Rank","Player","Team","Anytime Goal %","Goals/G","Shots/G","Sample"]} rows={teamPlayers.map((p,i)=>[
+                  i+1,p.name,p.team,<span key={p.player_id} className="inline-block min-w-[84px] rounded-lg px-3 py-2 text-center font-black text-white" style={{backgroundColor:pctColor(p.goal_probability,range.min,range.max)}}>{p.goal_probability.toFixed(1)}%</span>,
+                  p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2),`${p.games} GP`
+                ])}/>
+              </section>;
+            })}
+          </div></>:<><p className="mb-4 text-xs text-slate-400">Verified individual player statistics in completed games against today’s opponent. GP is the number of available head-to-head boxscores.</p><Table heads={["Player","Team","Opponent","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={(history||[]).map(p=>[p.player,p.team,p.opponent,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></>}
       </Panel>}
     </>:mode==="players"?<><Panel><Title>NHL Skater Statistics</Title><p className="mb-3 text-xs text-slate-400">Completed games in the current historical sample. GP is observed appearances, not full-season totals.</p><Table heads={["Player","Team","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={players.map(p=>[p.name,p.team,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></Panel><Panel><Title>NHL Goaltenders</Title><p className="mb-3 text-xs text-amber-200/80">Historical appearances only; these are not confirmed starters for the upcoming slate.</p><Table heads={["Goalie","Team","GP","Saves","Shots Against","Goals Against","Save %","GA/Appearance"]} rows={goalies.map(g=>[g.name,g.team,g.games,g.saves,g.shots_against,g.goals_against,g.save_percentage==null?"—":(g.save_percentage*100).toFixed(1)+"%",g.goals_against_per_appearance.toFixed(2)])}/></Panel></>
     :mode==="teams"?<Panel><Title>NHL Team Statistics</Title><Table heads={["Team","GP","Wins","Goals For/G","Goals Against/G"]} rows={teams.map(t=>[t.team,t.games,t.wins,t.goals_for_per_game.toFixed(2),t.goals_against_per_game.toFixed(2)])}/></Panel>
