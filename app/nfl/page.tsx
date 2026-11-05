@@ -1665,11 +1665,6 @@ function TouchdownChanceGraph({
       }
       return (sort.direction === "asc" ? comparison : -comparison) || a.rank - b.rank;
     });
-  const teamGroups = Array.from(new Set(graphPlayers.map(p => String(p.team || "Unknown").toUpperCase()))).map(team => ({
-    team,
-    rows: sortedPlayers.filter(({ player }) => String(player.team || "Unknown").toUpperCase() === team),
-  }));
-
   const handleSort = (key: string) => {
     setSort(current => ({
       key,
@@ -1754,17 +1749,8 @@ function TouchdownChanceGraph({
                 {metrics.map(metric => renderSortHeader(metric.label, metric.description, "px-1"))}
               </tr>
             </thead>
-            {teamGroups.map(({ team, rows }) => (
-              <tbody key={team}>
-                <tr>
-                  <th colSpan={metrics.length + 2} scope="rowgroup" className="pt-5 pb-2 text-left">
-                    <div className="flex items-center gap-3 rounded-xl border border-cyan-300/20 bg-cyan-300/[0.07] px-4 py-3">
-                      <span className="text-sm font-black uppercase tracking-[0.12em] text-cyan-100">{team} — Touchdown Rankings</span>
-                      <span className="text-xs font-bold text-slate-400">{rows.length} players</span>
-                    </div>
-                  </th>
-                </tr>
-              {rows.map(({ player, rank }) => (
+            <tbody>
+              {sortedPlayers.map(({ player, rank }) => (
                 <tr key={`${player.player_id ?? touchdownPlayerName(player)}-${rank}`} className="bg-white/[0.035]">
                   <td className="rounded-l-xl border-y border-l border-white/10 px-1 py-2">
                     <div className="flex h-11 items-center justify-center rounded-lg border border-cyan-300/25 bg-cyan-300/10 font-black text-cyan-100">{rank}</div>
@@ -1786,8 +1772,7 @@ function TouchdownChanceGraph({
                   })}
                 </tr>
               ))}
-              </tbody>
-            ))}
+            </tbody>
           </table>
         </div>
       </div>
