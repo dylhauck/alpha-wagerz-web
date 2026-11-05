@@ -1,15 +1,17 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
 import {Search,Trophy} from "lucide-react";
+import StandingsTable, {type StandingsColumn} from "@/components/StandingsTable";
 
-type TeamStats={team:string;games:number;wins:number;losses?:number;ot_losses?:number;points?:number;goals_for?:number;goals_against?:number;goals_for_per_game?:number;goals_against_per_game?:number};
+type TeamStats={team:string;games:number;wins:number;losses?:number;ot_losses?:number;points?:number;goals_for?:number;goals_against?:number;goals_for_per_game?:number;goals_against_per_game?:number;streak?:string;division_rank?:number;conference_rank?:number;league_rank?:number;home_wins?:number;home_losses?:number;home_ot_losses?:number;away_wins?:number;away_losses?:number;away_ot_losses?:number};
 type Season="current"|"last";
 type View="perGame"|"totals";
-type SortKey="team"|"conference"|"division"|"games"|"wins"|"losses"|"otLosses"|"points"|"winPct"|"goalsFor"|"goalsAgainst"|"goalDiff";
+type SortKey="team"|"conference"|"division"|"games"|"wins"|"losses"|"otLosses"|"points"|"winPct"|"goalsFor"|"goalsAgainst"|"goalDiff"|"leagueRank"|"divisionRank"|"conferenceRank"|"record"|"home"|"away"|"streak";
 const DIVISIONS:Record<string,[string,string]>={
  ANA:["WEST","Pacific"],BOS:["EAST","Atlantic"],BUF:["EAST","Atlantic"],CAR:["EAST","Metropolitan"],CBJ:["EAST","Metropolitan"],CGY:["WEST","Pacific"],CHI:["WEST","Central"],COL:["WEST","Central"],DAL:["WEST","Central"],DET:["EAST","Atlantic"],EDM:["WEST","Pacific"],FLA:["EAST","Atlantic"],LAK:["WEST","Pacific"],MIN:["WEST","Central"],MTL:["EAST","Atlantic"],NJD:["EAST","Metropolitan"],NSH:["WEST","Central"],NYI:["EAST","Metropolitan"],NYR:["EAST","Metropolitan"],OTT:["EAST","Atlantic"],PHI:["EAST","Metropolitan"],PIT:["EAST","Metropolitan"],SEA:["WEST","Pacific"],SJS:["WEST","Pacific"],STL:["WEST","Central"],TBL:["EAST","Atlantic"],TOR:["EAST","Atlantic"],UTA:["WEST","Central"],VAN:["WEST","Pacific"],VGK:["WEST","Pacific"],WPG:["WEST","Central"],WSH:["EAST","Metropolitan"]};
 const NAMES:Record<string,string>={
  ANA:"Anaheim Ducks",BOS:"Boston Bruins",BUF:"Buffalo Sabres",CAR:"Carolina Hurricanes",CBJ:"Columbus Blue Jackets",CGY:"Calgary Flames",CHI:"Chicago Blackhawks",COL:"Colorado Avalanche",DAL:"Dallas Stars",DET:"Detroit Red Wings",EDM:"Edmonton Oilers",FLA:"Florida Panthers",LAK:"Los Angeles Kings",MIN:"Minnesota Wild",MTL:"Montréal Canadiens",NJD:"New Jersey Devils",NSH:"Nashville Predators",NYI:"New York Islanders",NYR:"New York Rangers",OTT:"Ottawa Senators",PHI:"Philadelphia Flyers",PIT:"Pittsburgh Penguins",SEA:"Seattle Kraken",SJS:"San Jose Sharks",STL:"St. Louis Blues",TBL:"Tampa Bay Lightning",TOR:"Toronto Maple Leafs",UTA:"Utah Mammoth",VAN:"Vancouver Canucks",VGK:"Vegas Golden Knights",WPG:"Winnipeg Jets",WSH:"Washington Capitals"};
+const record=(w?:number,l?:number,ot?:number)=>w==null||l==null?"—":`${w}-${l}${ot?", "+ot+" OTL":""}`;
 const cols:[SortKey,string][]=[["team","Team"],["conference","Conference"],["division","Division"],["games","GP"],["wins","W"],["losses","L"],["otLosses","OTL"],["points","PTS"],["winPct","Win %"],["goalsFor","GF"],["goalsAgainst","GA"],["goalDiff","Goal Diff"]];
 const n=(value:unknown)=>typeof value==="number"&&Number.isFinite(value)?value:null;
 export default function NHLTeamsPage(){
@@ -28,6 +30,13 @@ export default function NHLTeamsPage(){
    const gp=n(t.games),w=n(t.wins),gf=n(t.goals_for_per_game)??(gp?n(t.goals_for)!/gp:null),ga=n(t.goals_against_per_game)??(gp?n(t.goals_against)!/gp:null);
    switch(key){
     case "team":return NAMES[t.team]||t.team;
+    case "leagueRank":return n(t.league_rank);
+    case "divisionRank":return n(t.division_rank);
+    case "conferenceRank":return n(t.conference_rank);
+    case "record":return w!==null&&gp!==null?w/gp:null;
+    case "home":return n(t.home_wins);
+    case "away":return n(t.away_wins);
+    case "streak":return t.streak||"";
     case "conference":return DIVISIONS[t.team]?.[0]||"";
     case "division":return DIVISIONS[t.team]?.[1]||"";
     case "games":return gp;
@@ -63,6 +72,22 @@ export default function NHLTeamsPage(){
    case "goalDiff":return gf===null||ga===null?"—":view==="totals"?String((t.goals_for??Math.round(gf*(gp||0)))-(t.goals_against??Math.round(ga*(gp||0)))):(gf-ga).toFixed(2);
   }
  };
+ const overallColumns:StandingsColumn<TeamStats>[]=[
+ {key:"leagueRank",label:"NHL",value:t=>t.league_rank??null,render:t=><span className="font-black text-cyan-200">{t.league_rank?"#"+t.league_rank:"—"}</span>},
+ {key:"team",label:"Team",value:t=>NAMES[t.team]||t.team,render:t=><div className="flex min-w-[230px] items-center gap-3"><img src={`https://assets.nhle.com/logos/nhl/svg/${t.team}_light.svg`} width={36} height={36} alt="" className="h-9 w-9 shrink-0 object-contain"/><div><div className="text-[15px] font-black text-white">{NAMES[t.team]||t.team}</div><div className="text-[10px] font-black uppercase tracking-[0.16em] text-slate-500">{t.team}</div></div></div>},
+ {key:"conference",label:"Conf",value:t=>DIVISIONS[t.team]?.[0]||"—"},
+ {key:"division",label:"Division",value:t=>DIVISIONS[t.team]?.[1]||"—"},
+ {key:"divisionRank",label:"Div Rank",value:t=>t.division_rank??null,render:t=>t.division_rank?`${t.division_rank}${t.division_rank===1?"st":t.division_rank===2?"nd":t.division_rank===3?"rd":"th"}`:"—",align:"center"},
+ {key:"conferenceRank",label:"Conf Rank",value:t=>t.conference_rank??null,render:t=>t.conference_rank?"#"+t.conference_rank:"—",align:"center"},
+ {key:"record",label:"Record",value:t=>t.games?t.wins/t.games:null,render:t=>record(t.wins,t.losses,t.ot_losses),align:"center"},
+ {key:"winPct",label:"Win %",value:t=>t.games?t.wins/t.games:null,render:t=>t.games?(t.wins/t.games).toFixed(3).replace(/^0/,""):"—",align:"center"},
+ {key:"goalsFor",label:"GF",value:t=>t.goals_for??null,render:t=>t.goals_for??"—",align:"center"},
+ {key:"goalsAgainst",label:"GA",value:t=>t.goals_against??null,render:t=>t.goals_against??"—",align:"center"},
+ {key:"goalDiff",label:"Diff",value:t=>t.goals_for!=null&&t.goals_against!=null?t.goals_for-t.goals_against:null,render:t=>t.goals_for!=null&&t.goals_against!=null?((t.goals_for-t.goals_against)>0?"+":"")+(t.goals_for-t.goals_against):"—",align:"center"},
+ {key:"home",label:"Home",value:t=>t.home_wins??null,render:t=>record(t.home_wins,t.home_losses,t.home_ot_losses),align:"center"},
+ {key:"away",label:"Away",value:t=>t.away_wins??null,render:t=>record(t.away_wins,t.away_losses,t.away_ot_losses),align:"center"},
+ {key:"streak",label:"Streak",value:t=>t.streak||"",align:"center"}
+ ];
  const button=(active:boolean,group:"season"|"mode"|"conference"|"division")=>{
   const base="rounded-xl border px-4 py-2 text-xs font-black uppercase transition";
   const selected={
@@ -79,5 +104,5 @@ export default function NHLTeamsPage(){
  <div className="mt-3 flex flex-wrap justify-center gap-2">{["ALL","EAST","WEST"].map(c=><button key={c} className={button(conference===c,"conference")} onClick={()=>{setConference(c);setDivision("ALL");}}>{c}</button>)}</div>
  <div className="mt-3 flex flex-wrap justify-center gap-2">{["ALL","Atlantic","Metropolitan","Central","Pacific"].map(d=><button key={d} className={button(division===d,"division")} onClick={()=>{setDivision(d);if(d!=="ALL")setConference(["Atlantic","Metropolitan"].includes(d)?"EAST":"WEST");}}>{d==="ALL"?"All Divisions":d}</button>)}</div>
 <label className="relative mx-auto mt-5 block w-full max-w-[360px]"><Search size={17} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"/><input type="text" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search team..." aria-label="Search NHL teams" className="w-full rounded-xl border border-white/10 bg-slate-950/60 py-3 pl-11 pr-4 text-sm font-bold text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/50"/></label></section>
- <section className="glass rounded-3xl p-5">{loading?<p className="py-8 text-center text-slate-400">Loading NHL teams…</p>:!datasets[season]?<p className="py-8 text-center text-amber-200">{season==="last"?"Last-season NHL team statistics have not been generated yet.":"Current NHL team statistics are unavailable."}</p>:<><div className="overflow-x-auto"><table className="w-full min-w-[950px] text-sm"><thead><tr className="border-b border-white/10">{cols.map(([key,label])=><th key={key} className="px-3 py-4 text-left"><button onClick={()=>setSort(s=>({key,desc:s.key===key?!s.desc:!["team","conference","division"].includes(key)}))} className="whitespace-nowrap font-black uppercase text-slate-300 hover:text-cyan-200">{label}{sort.key===key?(sort.desc?" ▼":" ▲"):" ↕"}</button></th>)}</tr></thead><tbody>{rows.map(t=><tr key={t.team} className="border-b border-white/5 hover:bg-white/5">{cols.map(([key])=><td key={key} className="whitespace-nowrap px-3 py-3 font-semibold text-slate-200">{key==="team"?<div className="flex items-center gap-3"><img src={`https://assets.nhle.com/logos/nhl/svg/${t.team}_light.svg`} alt="" width={32} height={32} className="h-8 w-8 object-contain"/>{display(t,key)}</div>:display(t,key)}</td>)}</tr>)}</tbody></table>{rows.length===0&&<p className="py-8 text-center text-slate-400">No teams match your filters.</p>}</div><p className="mt-4 text-xs text-slate-500">NHL standings include regulation losses, overtime losses and points. Per-game goal averages are calculated from season totals.</p></>}</section></main>;
+ <section className="glass rounded-3xl p-5">{loading?<p className="py-8 text-center text-slate-400">Loading NHL teams…</p>:!datasets[season]?<p className="py-8 text-center text-amber-200">{season==="last"?"Last-season NHL team statistics have not been generated yet.":"Current NHL team statistics are unavailable."}</p>:<><StandingsTable rows={rows} columns={overallColumns} sortKey={sort.key} descending={sort.desc} onSort={key=>setSort(prev=>({key:key as SortKey,desc:prev.key===key?!prev.desc:!["team","conference","division"].includes(key)}))}/><p className="mt-4 text-xs text-slate-500">NHL standings include regulation losses, overtime losses and points. Per-game goal averages are calculated from season totals.</p></>}</section></main>;
 }
