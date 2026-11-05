@@ -11,6 +11,7 @@ import {
    TYPES
 ============================================================ */
 
+const NBA_DIVISIONS: Record<string,string> = {BOS:"Atlantic",BKN:"Atlantic",NYK:"Atlantic",PHI:"Atlantic",TOR:"Atlantic",CHI:"Central",CLE:"Central",DET:"Central",IND:"Central",MIL:"Central",ATL:"Southeast",CHA:"Southeast",MIA:"Southeast",ORL:"Southeast",WAS:"Southeast",DEN:"Northwest",MIN:"Northwest",OKC:"Northwest",POR:"Northwest",UTA:"Northwest",GSW:"Pacific",LAC:"Pacific",LAL:"Pacific",PHX:"Pacific",SAC:"Pacific",DAL:"Southwest",HOU:"Southwest",MEM:"Southwest",NOP:"Southwest",SAS:"Southwest"};
 type NBATeam = {
   abbr?: string;
   abbreviation?: string;
@@ -502,6 +503,7 @@ export default function NBATeamsPage() {
       "ALL",
     );
 
+  const [divisionFilter,setDivisionFilter] = useState("ALL");
   const [search, setSearch] =
     useState("");
 
@@ -632,6 +634,8 @@ export default function NBATeamsPage() {
           ) {
             return false;
           }
+
+          if (divisionFilter !== "ALL" && NBA_DIVISIONS[teamCode(team).toUpperCase()] !== divisionFilter) return false;
 
           if (
             normalizedSearch
@@ -1067,7 +1071,7 @@ export default function NBATeamsPage() {
                 className={`rounded-xl border px-5 py-2.5 text-xs font-black uppercase tracking-wide transition ${
                   seasonView ===
                   "current"
-                    ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100"
+                    ? "border-red-400/60 bg-red-500/20 text-red-100"
                     : "border-white/10 bg-slate-950/40 text-slate-400 hover:border-cyan-300/35 hover:text-cyan-100"
                 }`}
               >
@@ -1084,7 +1088,7 @@ export default function NBATeamsPage() {
                 className={`rounded-xl border px-5 py-2.5 text-xs font-black uppercase tracking-wide transition ${
                   seasonView ===
                   "last"
-                    ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100"
+                    ? "border-red-400/60 bg-red-500/20 text-red-100"
                     : "border-white/10 bg-slate-950/40 text-slate-400 hover:border-cyan-300/35 hover:text-cyan-100"
                 }`}
               >
@@ -1161,13 +1165,11 @@ export default function NBATeamsPage() {
                       }
                       type="button"
                       onClick={() =>
-                        setConferenceFilter(
-                          option.key as ConferenceFilter,
-                        )
+                        (setConferenceFilter(option.key as ConferenceFilter),setDivisionFilter("ALL"))
                       }
                       className={`rounded-xl border px-4 py-2 text-xs font-black uppercase tracking-wide transition ${
                         active
-                          ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100"
+                          ? "border-white/50 bg-white/15 text-white"
                           : "border-white/10 bg-slate-950/40 text-slate-400 hover:border-cyan-300/35 hover:text-cyan-100"
                       }`}
                     >
@@ -1180,6 +1182,8 @@ export default function NBATeamsPage() {
               )}
             </div>
 
+
+            <div className="mt-3 flex flex-wrap justify-center gap-2">{["ALL","Atlantic","Central","Southeast","Northwest","Pacific","Southwest"].map(d=><button key={d} type="button" onClick={()=>{setDivisionFilter(d);if(d!=="ALL")setConferenceFilter(["Atlantic","Central","Southeast"].includes(d)?"EAST":"WEST");}} className={`rounded-xl border px-4 py-2 text-xs font-black uppercase transition ${divisionFilter===d?"border-purple-400/60 bg-purple-500/20 text-purple-100":"border-white/10 bg-slate-950/40 text-slate-400"}`}>{d==="ALL"?"All Divisions":d}</button>)}</div>
 
             {/* SEARCH */}
 
