@@ -22,7 +22,7 @@ export default function NHLPlayersPage(){
   if(alive){setDatasets(Object.fromEntries(result) as Record<View,{players:Row[];goalies:Row[]}|null>);setLoading(false);}
  })();return()=>{alive=false};},[]);
  const data=datasets[view];
- const positions=useMemo(()=>["ALL",...new Set((data?.players||[]).map(p=>text(p.position).toUpperCase()).filter(Boolean))], [data]);
+ const positions=["ALL","G","G-F","F-G","F","F-C","C-F","C"] as const;
  const order=(rows:Row[],key:string,desc:boolean)=>[...rows].sort((a,b)=>{const av=a[key],bv=b[key];const cmp=(typeof av==="number"||typeof bv==="number")?num(av)-num(bv):text(av).localeCompare(text(bv),undefined,{numeric:true});return desc?-cmp:cmp;});
  const skaters=useMemo(()=>order((data?.players||[]).filter(p=>(position==="ALL"||text(p.position).toUpperCase()===position)&&[p.name,p.team,p.position].some(v=>text(v).toLowerCase().includes(query.toLowerCase()))),sort.key,sort.desc),[data,position,query,sort]);
  const goalies=useMemo(()=>order((data?.goalies||[]).filter(p=>[p.name,p.team].some(v=>text(v).toLowerCase().includes(query.toLowerCase()))),goalieSort.key,goalieSort.desc),[data,query,goalieSort]);
