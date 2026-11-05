@@ -909,6 +909,7 @@ export default function NBAPlayersPage() {
                 className="w-full rounded-xl border border-white/10 bg-slate-950/60 py-3 pl-11 pr-4 text-sm font-bold text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/50"
               />
             </div>
+            <div className="mt-4 flex justify-center"><div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-cyan-200">{rows.length.toLocaleString()} Players</div></div>
           </div>
         </div>
 
@@ -927,15 +928,6 @@ export default function NBAPlayersPage() {
         ) : (
           <>
             <div className="flex flex-col items-center justify-center gap-1 border-b border-white/10 px-6 py-3 text-center text-xs font-black uppercase tracking-[0.16em] text-slate-500 sm:flex-row sm:gap-3">
-              <span>
-                {rows.length.toLocaleString()}{" "}
-                Players
-              </span>
-
-              <span className="hidden sm:inline">
-                •
-              </span>
-
               <span>
                 {seasonView ===
                 "current_season"
