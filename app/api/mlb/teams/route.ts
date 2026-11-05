@@ -14,7 +14,7 @@ export async function GET(request:Request){
    id:r.team?.id,name:r.team?.name,divisionId:division.division?.id,
    wins:r.wins,losses:r.losses,gamesPlayed:r.gamesPlayed,
    runsScored:r.runsScored,runsAllowed:r.runsAllowed,
-   pct:r.winningPercentage,streak:r.streak?.streakCode??"—"
+   pct:r.winningPercentage,streak:r.streak?.streakCode??"—",divisionRank:r.divisionRank??null,leagueRank:r.leagueRank??null,sportRank:r.sportRank??null,home:r.records?.splitRecords?.find((x:Raw)=>x.type==="home")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="home").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="home").losses}`:null,away:r.records?.splitRecords?.find((x:Raw)=>x.type==="away")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="away").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="away").losses}`:null,divisionRecord:r.records?.splitRecords?.find((x:Raw)=>x.type==="vsDiv")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="vsDiv").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="vsDiv").losses}`:null,leagueRecord:r.records?.splitRecords?.find((x:Raw)=>x.type==="vsLeague")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="vsLeague").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="vsLeague").losses}`:null
   }))).filter((t:Raw)=>t.id&&t.name);
   return NextResponse.json({season,teams});
  }catch{return NextResponse.json({error:"MLB standings could not be loaded"},{status:502});}
