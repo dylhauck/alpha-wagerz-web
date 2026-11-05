@@ -1056,6 +1056,7 @@ export default function NBATeamsPage() {
           <div className="flex flex-col items-center text-center">
 
             <h1 className="mt-2 text-3xl font-black neon-text sm:text-5xl">
+              NBA Teams
             </h1>
 
             {/* SEASON */}
