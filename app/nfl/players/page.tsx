@@ -1,5 +1,6 @@
-import PlayersPagination from "@/components/PlayersPagination";
 "use client";
+
+import PlayersPagination from "@/components/PlayersPagination";
 
 import { useEffect, useMemo, useState } from "react";
 import {
