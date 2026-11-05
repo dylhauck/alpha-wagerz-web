@@ -1,3 +1,4 @@
+import PlayersPagination from "@/components/PlayersPagination";
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -2840,7 +2841,7 @@ export default function NFLPlayersPage() {
       ) : null}
 
 
-      {totalPages>1&&<nav aria-label="NFL players pages" className="flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-white/10 bg-slate-950/40 p-4"><button disabled={page===1} onClick={()=>setPage(p=>Math.max(1,p-1))} className="rounded-xl border border-white/15 px-4 py-2 text-sm font-bold disabled:opacity-30">Previous</button><span className="text-sm font-bold text-slate-300">Page {page} of {totalPages} · {filteredPlayers.length} players</span><button disabled={page===totalPages} onClick={()=>setPage(p=>Math.min(totalPages,p+1))} className="rounded-xl border border-white/15 px-4 py-2 text-sm font-bold disabled:opacity-30">Next</button></nav>}
+      {totalPages>1&&<PlayersPagination sport="NFL" page={page} totalPages={totalPages} totalPlayers={filteredPlayers.length} onPageChange={setPage}/>} 
 
       <PlayerPropsModal
         open={Boolean(selectedPlayer)}
