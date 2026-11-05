@@ -1363,7 +1363,7 @@ function TeamMatchupCard({
 
         <NFLTeamLogo
 
-          team={team}
+          team={teams.find((item) => (item.abbr ||  "").toUpperCase() === team.toUpperCase())?.name || team}
 
           teams={teams}
 
