@@ -79,8 +79,9 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
       <p className="mt-2 text-sm text-slate-400">{date} · {data.slate?.date||"Data pending"} · All game times Central</p>
     </header>
     {loading?<Panel><p className="text-center text-slate-400">Loading NHL data…</p></Panel>:mode==="summary"?<>
-      <Panel><div className="mb-4 text-center text-xs font-black uppercase tracking-[.2em] text-cyan-300">{games.length} NHL games loaded for {date.toLowerCase()}</div>
-        <div className="table-scroll w-full overflow-x-auto pb-2">
+      <div className="mb-4 flex justify-center"><div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">{games.length} NHL Games Loaded For {date}</div></div>
+      <section className="glass rounded-3xl p-4">
+        <div className="mb-4"><div className="table-scroll mt-2 pb-2">
           <div className="flex min-w-max gap-2">
             {games.map(g=><button key={g.game_id} type="button" onClick={()=>{setSelected(g.game_id);setTab("goals");}}
               className={`min-w-[150px] shrink-0 rounded-xl border bg-slate-950/80 px-3 py-2 transition ${active?.game_id===g.game_id?"border-cyan-300/70 bg-cyan-300/15 shadow-[0_0_20px_rgba(35,216,255,0.25)]":"border-white/10 bg-white/[0.035] hover:border-pink-300/40"}`}>
@@ -103,10 +104,10 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
               </div>
             </button>)}
           </div>
-        </div>
-        {active&&<div className="mt-6 rounded-2xl border border-cyan-300/15 bg-white/[0.035] p-6 text-center">
-          <div className="text-xs font-black uppercase tracking-[.2em] text-cyan-300">NHL Slate Summary</div>
-          <div className="mt-3 text-3xl font-black">{active.away} @ {active.home}</div>
+        </div></div>
+        {active&&<div className="rounded-3xl border border-cyan-300/15 bg-white/[0.035] p-5 text-center">
+          <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">NHL Slate Summary</div>
+          <h2 className="mx-auto mt-2 pb-2 text-3xl font-black leading-tight neon-text sm:text-5xl">{active.away} @ {active.home}</h2>
           <div className="mt-2 text-sm text-slate-400">{active.venue||"Venue pending"}</div>
           <div className="mt-5 grid grid-cols-2 gap-3 text-left">
             {[["Away Matchup",active.away_name||active.away,active.home],["Home Matchup",active.home_name||active.home,active.away]].map(([label,name,opp])=>
@@ -115,7 +116,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
           </div>
         </div>}
         {!games.length&&<p className="py-8 text-center text-slate-400">No games scheduled or NHL slate data has not been generated.</p>}
-      </Panel>
+      </section>
       {active&&<Panel><div className="mb-5 flex justify-center"><div className="flex rounded-xl border border-white/10 bg-slate-950/70 p-1">
         {[["goals","Anytime Goal Graph"],["history","Matchup History"]].map(([key,label])=><button key={key} onClick={()=>setTab(key as "goals"|"history")}
           className={`rounded-lg px-5 py-3 text-xs font-black uppercase tracking-wider ${tab===key?"border border-cyan-300/50 bg-cyan-300/15 text-cyan-100":"text-slate-500"}`}>{label}</button>)}
