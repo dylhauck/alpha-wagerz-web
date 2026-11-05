@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import {
   Search,
   Shield,
+  Trophy,
 } from "lucide-react";
 
 
@@ -1057,7 +1058,7 @@ export default function NBATeamsPage() {
 
             <h1 className="mt-2 text-3xl font-black neon-text sm:text-5xl">
               NBA Teams
-            </h1>
+            </h1><div className="mt-3 flex items-center justify-center gap-2 text-sm font-bold text-slate-400"><Trophy size={16} className="text-cyan-300" /> <span>{seasonView === "last" ? "2025–26 Season" : "2026–27 Season"} {statView === "totals" ? "Totals" : "Per-Game Averages"}</span></div>
 
             {/* SEASON */}
 
