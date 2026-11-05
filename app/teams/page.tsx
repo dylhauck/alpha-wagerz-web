@@ -39,14 +39,14 @@ export default function MLBTeamsPage(){
  {key:"leagueRank",label:"Lg Rank",value:t=>t.leagueRank?Number(t.leagueRank):null,render:t=>t.leagueRank?"#"+t.leagueRank:"—",align:"center"},
  {key:"record",label:"Record",value:t=>t.gamesPlayed?t.wins/t.gamesPlayed:null,render:t=>`${t.wins}-${t.losses}`,align:"center"},
  {key:"pct",label:"Win %",value:t=>t.gamesPlayed?t.wins/t.gamesPlayed:null,render:t=>t.gamesPlayed?(t.wins/t.gamesPlayed).toFixed(3).replace(/^0/,""):"—",align:"center"},
- {key:"runsScored",label:"RS",value:t=>t.runsScored??null,render:t=>t.runsScored??"—",align:"center"},
- {key:"runsAllowed",label:"RA",value:t=>t.runsAllowed??null,render:t=>t.runsAllowed??"—",align:"center"},
- {key:"diff",label:"Diff",value:t=>t.runsScored!=null&&t.runsAllowed!=null?t.runsScored-t.runsAllowed:null,render:t=>t.runsScored!=null&&t.runsAllowed!=null?((t.runsScored-t.runsAllowed)>0?"+":"")+(t.runsScored-t.runsAllowed):"—",align:"center"},
+ {key:"runsScored",label:"RS",value:t=>metric(t,"runsScored"),render:t=>display(t,"runsScored"),align:"center"},
+ {key:"runsAllowed",label:"RA",value:t=>metric(t,"runsAllowed"),render:t=>display(t,"runsAllowed"),align:"center"},
+ {key:"diff",label:"Diff",value:t=>metric(t,"diff"),render:t=>{const v=metric(t,"diff");return typeof v==="number"?(v>0?"+":"")+v.toFixed(mode==="totals"?0:2):"—"},align:"center"},
  {key:"home",label:"Home",value:t=>t.home||"",align:"center"},
  {key:"away",label:"Away",value:t=>t.away||"",align:"center"},
- {key:"divisionRecord",label:"Division",value:t=>t.divisionRecord||"",align:"center"},
- {key:"leagueRecord",label:"League",value:t=>t.leagueRecord||"",align:"center"},
- {key:"streak",label:"Streak",value:t=>t.streak||"",align:"center"}
+ {key:"divisionRecord",label:"Div Record",value:t=>t.divisionRecord||"",align:"center"},
+ {key:"leagueRecord",label:"Lg Record",value:t=>t.leagueRecord||"",align:"center"},
+ {key:"streak",label:"Streak",value:t=>t.streak||"—",align:"center"}
  ];
  return <AppShell><div className="mb-3 flex flex-col items-center pt-8"><div className="flex h-[92px] w-full items-center justify-center overflow-hidden"><Image src="/follow-alpha.png" alt="Follow The Alpha" width={640} height={180} priority className="h-auto w-[560px] max-w-full object-contain"/></div><div className="-mt-2 text-center text-xs font-bold uppercase tracking-[0.3em] text-slate-400">{new Date().toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric"})}</div></div><main className="space-y-5 pb-16 text-white"><section className="glass rounded-3xl p-6 text-center"><h1 className="mb-6 text-3xl font-black neon-text sm:text-5xl">MLB Teams</h1>
  <div className="flex flex-wrap justify-center gap-2">{(["current","last"] as const).map(s=><button key={s} className={button(season===s,"season")} onClick={()=>setSeason(s)}>{s==="current"?"Current Season":"Last Season"}</button>)}</div>
