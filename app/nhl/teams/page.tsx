@@ -1,6 +1,6 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
-import {Search} from "lucide-react";
+import {Search,Trophy} from "lucide-react";
 
 type TeamStats={team:string;games:number;wins:number;losses?:number;ot_losses?:number;goals_for_per_game:number;goals_against_per_game:number};
 type Season="current"|"last";
@@ -69,7 +69,7 @@ export default function NHLTeamsPage(){
   };
   return `${base} ${active?selected[group]:"border-white/10 bg-slate-950/60 text-slate-400 hover:border-white/25"}`;
  };
- return <main className="space-y-5 pb-16 text-white"><section className="glass rounded-3xl p-6 text-center"><h1 className="mb-6 text-3xl font-black neon-text sm:text-5xl">NHL Teams</h1>
+ return <main className="space-y-5 pb-16 text-white"><section className="glass rounded-3xl p-6 text-center"><h1 className="mb-6 text-3xl font-black neon-text sm:text-5xl">NHL Teams</h1><div className="mt-3 flex items-center justify-center gap-2 text-sm font-bold text-slate-400"><Trophy size={16} className="text-cyan-300" /> <span>{season === "last" ? "2025–26 Season" : "2026–27 Season"} {view === "totals" ? "Totals" : "Per-Game Averages"}</span></div>
  <div className="flex flex-wrap justify-center gap-2"><button className={button(season==="current","season")} onClick={()=>setSeason("current")}>Current Season</button><button className={button(season==="last","season")} onClick={()=>setSeason("last")}>Last Season</button></div>
  <div className="mt-3 flex justify-center gap-2"><button className={button(view==="perGame","mode")} onClick={()=>setView("perGame")}>Per Game</button><button className={button(view==="totals","mode")} onClick={()=>setView("totals")}>Totals</button></div>
  <div className="mt-3 flex flex-wrap justify-center gap-2">{["ALL","EAST","WEST"].map(c=><button key={c} className={button(conference===c,"conference")} onClick={()=>{setConference(c);setDivision("ALL");}}>{c}</button>)}</div>
