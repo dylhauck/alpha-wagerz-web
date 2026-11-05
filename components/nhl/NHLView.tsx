@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { AppShell } from "@/components/AppShell";
 
 type Game = {
   game_id: number; date: string; start_time_utc?: string;
@@ -73,11 +72,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
   const history=(data.matchup_history?.games||[]).find((g:History)=>g.game_id===active?.game_id)?.games as History["games"]|undefined;
   const range=useMemo(()=>({min:Math.min(...(goals||[]).map(p=>p.goal_probability)),max:Math.max(...(goals||[]).map(p=>p.goal_probability))}),[goals]);
   const date=next?"Next Slate":"Current Slate";
-  return <AppShell><main className="mx-auto max-w-[1500px] space-y-5 pb-16 text-white">
-    <header className="py-3 text-center"><p className="text-xs font-black uppercase tracking-[.25em] text-cyan-300">Alpha Wagerz · NHL</p>
-      <h1 className="mt-2 text-3xl font-black sm:text-4xl">{mode==="summary"?"NHL Slate Summary":mode==="how-to"?"NHL Model Guide":`NHL ${mode[0].toUpperCase()+mode.slice(1)}`}</h1>
-      <p className="mt-2 text-sm text-slate-400">{date} · {data.slate?.date||"Data pending"} · All game times Central</p>
-    </header>
+  return <main className="space-y-5 pb-16 text-white">
     {loading?<Panel><p className="text-center text-slate-400">Loading NHL data…</p></Panel>:mode==="summary"?<>
       <div className="mb-4 flex justify-center"><div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">{games.length} NHL Games Loaded For {date}</div></div>
       <section className="glass rounded-3xl p-4">
@@ -133,5 +128,5 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
     :mode==="projections"?<Panel><Title>NHL Game Projections</Title><p className="mb-4 text-xs text-amber-200/80">Recent goals-for/against baseline, not sportsbook odds or a validated betting model.</p><Table heads={["Game","Away Goals","Home Goals","Projected Total","Sample"]} rows={projections.map(p=>[`${p.away} @ ${p.home}`,p.away_goals?.toFixed(2)??"—",p.home_goals?.toFixed(2)??"—",p.away_goals!=null&&p.home_goals!=null?(p.away_goals+p.home_goals).toFixed(2):"—",`${p.sample_games} GP`])}/></Panel>
     :mode==="injuries"?<Panel><Title>NHL Injury Report</Title><p className="text-sm text-amber-200">{data.injuries?.message||"Verified NHL injury data unavailable. No injury statuses have been assumed."}</p></Panel>
     :<Panel><Title>How to Read NHL Projections</Title><p className="space-y-3 text-sm leading-7 text-slate-300">Anytime goal percentage is currently a Poisson estimate blending observed recent goals per game and shots-based scoring opportunity, adjusted by the opponent's recent goals allowed. The heatmap is relative to players in the selected matchup. These are preliminary estimates, not verified market probabilities. Matchup history uses completed NHL games; unavailable data is shown as unavailable, never as zero. Confirm starting goaltenders, player availability, and line assignments before betting.</p></Panel>}
-  </main></AppShell>;
+  </main>;
 }
