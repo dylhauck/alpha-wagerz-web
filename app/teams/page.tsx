@@ -7,7 +7,7 @@ type Team={id:number;name:string;divisionId:number;wins:number;losses:number;gam
 const divisions:Record<number,{league:"AL"|"NL";name:string}>={200:{league:"AL",name:"West"},201:{league:"AL",name:"East"},202:{league:"AL",name:"Central"},203:{league:"NL",name:"West"},204:{league:"NL",name:"East"},205:{league:"NL",name:"Central"}};
 type Sort="name"|"league"|"division"|"gamesPlayed"|"wins"|"losses"|"pct"|"runsScored"|"runsAllowed"|"diff";
 const columns:[Sort,string][]=[["name","Team"],["league","League"],["division","Division"],["gamesPlayed","GP"],["wins","W"],["losses","L"],["pct","Win %"],["runsScored","RS"],["runsAllowed","RA"],["diff","Run Diff"]];
-const button=(active:boolean,kind:"season"|"mode"|"league"|"division")=>`rounded-xl border px-4 py-2 text-xs font-black uppercase transition ${active?({season:"border-red-400/60 bg-red-500/20 text-red-100",mode:"border-cyan-300/60 bg-cyan-300/15 text-cyan-100",league:"border-white/50 bg-white/15 text-white",division:"border-purple-400/60 bg-purple-500/20 text-purple-100"}[kind]):"border-white/10 bg-slate-950/60 text-slate-400 hover:border-white/30"}`;
+const button=(active:boolean,kind:"season"|"mode"|"league"|"division")=>`rounded-xl border px-4 py-2 text-xs font-black uppercase transition ${active?({season:"border-pink-400/60 bg-pink-500/20 text-pink-100",mode:"border-cyan-300/60 bg-cyan-300/15 text-cyan-100",league:"border-white/50 bg-white/15 text-white",division:"border-purple-400/60 bg-purple-500/20 text-purple-100"}[kind]):"border-white/10 bg-slate-950/60 text-slate-400 hover:border-white/30"}`;
 export default function MLBTeamsPage(){
  const year=new Date().getFullYear();
  const [season,setSeason]=useState<"current"|"last">("current");
