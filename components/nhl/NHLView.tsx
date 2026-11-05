@@ -103,11 +103,22 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
         {active&&<div className="rounded-3xl border border-cyan-300/15 bg-white/[0.035] p-5 text-center">
           <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">NHL Slate Summary</div>
           <h2 className="mx-auto mt-2 pb-2 text-3xl font-black leading-tight neon-text sm:text-5xl">{active.away} @ {active.home}</h2>
-          <div className="mt-2 text-sm text-slate-400">{active.venue||"Venue pending"}</div>
-          <div className="mt-5 grid grid-cols-2 gap-3 text-left">
-            {[["Away Matchup",active.away_name||active.away,active.home],["Home Matchup",active.home_name||active.home,active.away]].map(([label,name,opp])=>
-              <div key={label} className="rounded-xl border border-cyan-300/15 bg-cyan-400/10 p-4"><div className="text-xs font-black uppercase tracking-widest text-cyan-200">{label}</div>
-                <div className="mt-2 font-black">{name} offense vs {opp} defense</div></div>)}
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-bold text-slate-400">
+            <span className="flex items-center gap-2"><span aria-hidden="true">▦</span>{active.date || data.slate?.date || "Date TBD"}</span>
+            <span className="flex items-center gap-2"><span aria-hidden="true">◷</span>{active.start_time_utc ? new Date(active.start_time_utc).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}) : "Time TBD"} CT</span>
+            <span className="flex items-center gap-2"><span aria-hidden="true">⌖</span>{active.venue || "Venue TBD"}</span>
+          </div>
+          <div className="mt-5 grid gap-4 xl:grid-cols-[1fr_auto_1fr] xl:items-center">
+            {([["away",active.away,active.away_name,active.away_logo],["home",active.home,active.home_name,active.home_logo]] as const).map(([side,abbr,name,logo],index)=>
+              <div key={side} className="contents">
+                {index===1&&<div className="hidden items-center justify-center xl:flex"><div className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-5 py-3 text-xl font-black text-white">@</div></div>}
+                <div className={`flex items-center gap-4 rounded-3xl border border-white/10 bg-white/[0.035] p-5 ${side==="home"?"justify-end text-right":""}`}>
+                  {side==="away"&&<img src={logo||`https://assets.nhle.com/logos/nhl/svg/${abbr}_light.svg`} alt={`${name||abbr} logo`} width={78} height={78} className="h-[78px] w-[78px] object-contain"/>}
+                  <div><div className="text-2xl font-black text-white">{abbr}</div><div className="mt-1 text-sm font-bold text-slate-400">{name||abbr}</div></div>
+                  {side==="home"&&<img src={logo||`https://assets.nhle.com/logos/nhl/svg/${abbr}_light.svg`} alt={`${name||abbr} logo`} width={78} height={78} className="h-[78px] w-[78px] object-contain"/>}
+                </div>
+              </div>
+            )}
           </div>
         </div>}
         {!games.length&&<p className="py-8 text-center text-slate-400">No games scheduled or NHL slate data has not been generated.</p>}
