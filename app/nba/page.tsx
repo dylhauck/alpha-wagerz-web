@@ -316,7 +316,8 @@ function TeamMatchupCard({
     >
       {!right ? (
         <NBATeamLogo
-          team={team}
+          team={teams.find((item) => (item.abbr || item.abbreviation ||  "").toUpperCase() === team.toUpperCase())?.full_name ||
+            teams.find((item) => (item.abbr || item.abbreviation || "").toUpperCase() === team.toUpperCase())?.name || team}
           teams={teams}
           size={78}
         />
