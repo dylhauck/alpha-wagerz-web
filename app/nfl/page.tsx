@@ -3518,10 +3518,6 @@ export default function NFLPage() {
 
           </div>
 
-
-
-          </div>
-
         </div>
 
       </section>
