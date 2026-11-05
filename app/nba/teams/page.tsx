@@ -1073,7 +1073,7 @@ export default function NBATeamsPage() {
                 className={`rounded-xl border px-5 py-2.5 text-xs font-black uppercase tracking-wide transition ${
                   seasonView ===
                   "current"
-                    ? "border-red-400/60 bg-red-500/20 text-red-100"
+                    ? "border-pink-400/60 bg-pink-500/20 text-pink-100"
                     : "border-white/10 bg-slate-950/40 text-slate-400 hover:border-cyan-300/35 hover:text-cyan-100"
                 }`}
               >
@@ -1090,7 +1090,7 @@ export default function NBATeamsPage() {
                 className={`rounded-xl border px-5 py-2.5 text-xs font-black uppercase tracking-wide transition ${
                   seasonView ===
                   "last"
-                    ? "border-red-400/60 bg-red-500/20 text-red-100"
+                    ? "border-pink-400/60 bg-pink-500/20 text-pink-100"
                     : "border-white/10 bg-slate-950/40 text-slate-400 hover:border-cyan-300/35 hover:text-cyan-100"
                 }`}
               >
