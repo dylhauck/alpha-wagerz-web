@@ -1368,7 +1368,7 @@ export default function NFLTeamsPage() {
           </div>
         </div>
 
-        <div className="mt-3 flex flex-wrap justify-center gap-2">{(["perGame","totals"] as const).map(mode => <button key={mode} type="button" onClick={() => setMetricMode(mode)} className={`rounded-xl border px-4 py-2 text-xs font-black uppercase transition ${metricMode === mode ? "border-green-400/60 bg-green-500/20 text-green-100" : "border-white/10 bg-slate-950/60 text-slate-400"}`}>{mode === "perGame" ? "Per Game" : "Totals"}</button>)}</div>
+        <div className="mt-3 flex flex-wrap justify-center gap-2">{(["perGame","totals"] as const).map(mode => <button key={mode} type="button" onClick={() => setMetricMode(mode)} className={`rounded-xl border px-4 py-2 text-xs font-black uppercase transition ${metricMode === mode ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100" : "border-white/10 bg-slate-950/60 text-slate-400"}`}>{mode === "perGame" ? "Per Game" : "Totals"}</button>)}</div>
 
         <div className="mt-3 flex justify-center">
           <div className="inline-flex rounded-xl border border-white/10 bg-white/[0.025] p-1">
