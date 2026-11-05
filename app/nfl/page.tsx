@@ -373,6 +373,8 @@ type PlayerColumn = {
 
 const POSITION_FILTERS: PositionFilter[] = [
 
+  "ALL",
+
   "QB",
 
   "RB",
@@ -1447,7 +1449,7 @@ function PositionButton({
 
       onClick={onClick}
 
-      className={`rounded-xl border px-5 py-3 text-sm font-black transition ${
+      className={`rounded-xl border px-5 py-2.5 text-xs font-black transition ${
 
         active
 
@@ -1727,20 +1729,20 @@ function TouchdownChanceGraph({
   }
 
   return (
-    <div className="border-t border-white/10 p-4">
-      <div className="rounded-3xl border border-cyan-300/20 bg-slate-950/35 p-4 shadow-[0_0_32px_rgba(35,216,255,0.06)]">
-        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+    <div className="border-t border-white/10 p-3">
+      <div className="rounded-2xl border border-cyan-300/20 bg-slate-950/35 p-3 shadow-[0_0_32px_rgba(35,216,255,0.06)]">
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <div className="text-lg font-black text-white">{position === "ALL" ? "All" : position} Touchdown Rankings</div>
+            <div className="text-base font-black text-white">{position === "ALL" ? "All" : position} Touchdown Rankings</div>
             <div className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{graphPlayers.length} players loaded</div>
           </div>
-          <div className="rounded-2xl border border-emerald-300/25 bg-emerald-400/10 px-5 py-3">
+          <div className="rounded-xl border border-emerald-300/25 bg-emerald-400/10 px-4 py-2">
             <div className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-200">TOP TARGET</div>
             <div className="mt-1 text-sm font-black text-white">{touchdownPlayerName(graphPlayers[0])}</div>
           </div>
         </div>
         <div className="table-scroll overflow-x-auto">
-          <table className="w-full min-w-[1240px] border-separate border-spacing-y-1.5 text-sm">
+          <table className="w-full min-w-[1240px] border-separate border-spacing-y-1 text-xs">
             <caption className="sr-only">Sortable touchdown projections. Rank and Top Target reflect touchdown chance regardless of sorting. Colors compare values within each column; missing or equal values are neutral.</caption>
             <thead>
               <tr className="text-[10px] font-black uppercase text-slate-300">
@@ -1823,7 +1825,7 @@ function PlayerMatchupTable({
 
   ] =
 
-    useState<PositionFilter>("QB");
+    useState<PositionFilter>("ALL");
 
 
 
@@ -2073,9 +2075,9 @@ function PlayerMatchupTable({
 
     <section className="glass overflow-hidden rounded-3xl">
 
-      <div className="p-5">
+      <div className="px-5 py-4">
 
-        <div className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200/70">
+        <div className="text-[11px] font-black uppercase tracking-[0.18em] text-cyan-200/70">
 
           {matchupView === "touchdown"
 
@@ -2087,7 +2089,7 @@ function PlayerMatchupTable({
 
 
 
-        <h2 className="mt-1 text-xl font-black text-white">
+        <h2 className="mt-1 text-lg font-black text-white">
 
           {title}
 
@@ -2095,7 +2097,7 @@ function PlayerMatchupTable({
 
 
 
-        <div className="mt-5 flex justify-center">
+        <div className="mt-3 flex justify-center">
 
           <div className="inline-flex rounded-2xl border border-white/10 bg-slate-950/50 p-1">
 
@@ -2113,7 +2115,7 @@ function PlayerMatchupTable({
 
               }
 
-              className={`rounded-xl px-6 py-3 text-sm font-black uppercase tracking-[0.12em] transition ${
+              className={`rounded-xl px-5 py-2.5 text-xs font-black uppercase tracking-[0.1em] transition ${
 
                 matchupView ===
 
@@ -2147,7 +2149,7 @@ function PlayerMatchupTable({
 
               }
 
-              className={`rounded-xl px-6 py-3 text-sm font-black uppercase tracking-[0.12em] transition ${
+              className={`rounded-xl px-5 py-2.5 text-xs font-black uppercase tracking-[0.1em] transition ${
 
                 matchupView ===
 
@@ -2171,7 +2173,7 @@ function PlayerMatchupTable({
 
 
 
-        <div className="mt-3 flex flex-wrap justify-center gap-2">
+        <div className="mt-2 flex flex-wrap justify-center gap-2">
 
           {POSITION_FILTERS.map(
 
