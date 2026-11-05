@@ -137,7 +137,33 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
       </Panel>}
     </>:mode==="players"?<><Panel><Title>NHL Skater Statistics</Title><p className="mb-3 text-xs text-slate-400">Completed games in the current historical sample. GP is observed appearances, not full-season totals.</p><Table heads={["Player","Team","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={players.map(p=>[p.name,p.team,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></Panel><Panel><Title>NHL Goaltenders</Title><p className="mb-3 text-xs text-amber-200/80">Historical appearances only; these are not confirmed starters for the upcoming slate.</p><Table heads={["Goalie","Team","GP","Saves","Shots Against","Goals Against","Save %","GA/Appearance"]} rows={goalies.map(g=>[g.name,g.team,g.games,g.saves,g.shots_against,g.goals_against,g.save_percentage==null?"—":(g.save_percentage*100).toFixed(1)+"%",g.goals_against_per_appearance.toFixed(2)])}/></Panel></>
     :mode==="teams"?<Panel><Title>NHL Team Statistics</Title><Table heads={["Team","GP","Wins","Goals For/G","Goals Against/G"]} rows={teams.map(t=>[t.team,t.games,t.wins,t.goals_for_per_game.toFixed(2),t.goals_against_per_game.toFixed(2)])}/></Panel>
-    :mode==="projections"?<Panel><Title>NHL Game Projections</Title><div className="mb-5 flex flex-wrap justify-center gap-3">{["Full Game","1st Period","2nd Period","3rd Period"].map(period=><button key={period} type="button" onClick={()=>setProjectionPeriod(period)} className={`rounded-xl border px-5 py-3 text-sm font-black transition ${projectionPeriod===period?"border-cyan-300/70 bg-cyan-300/15 text-cyan-100":"border-white/10 bg-slate-950/60 text-slate-300 hover:border-cyan-300/30"}`}>{period}</button>)}</div>{projectionPeriod==="Full Game"?<><p className="mb-4 text-xs text-amber-200/80">Recent goals-for/against baseline, not sportsbook odds or a validated betting model.</p><Table heads={["Game","Away Goals","Home Goals","Projected Total","Sample"]} rows={projections.map(p=>[`${p.away} @ ${p.home}`,p.away_goals?.toFixed(2)??"—",p.home_goals?.toFixed(2)??"—",p.away_goals!=null&&p.home_goals!=null?(p.away_goals+p.home_goals).toFixed(2):"—",`${p.sample_games} GP`])}/></>:<p className="py-8 text-center text-sm text-amber-200/80">Verified {projectionPeriod.toLowerCase()} projections are not available in the NHL model data yet. Full-game estimates are not divided into periods.</p>}</Panel>
+    :mode==="projections"?<>      <section className="glass rounded-3xl p-4">
+        <div className="mb-4"><div className="table-scroll mt-2 pb-2">
+          <div className="flex min-w-max gap-2">
+            {games.map(g=><button key={g.game_id} type="button" onClick={()=>{setSelected(g.game_id);setTab("goals");}}
+              className={`min-w-[150px] shrink-0 rounded-xl border bg-slate-950/80 px-3 py-2 transition ${active?.game_id===g.game_id?"border-cyan-300/70 bg-cyan-300/15 shadow-[0_0_20px_rgba(35,216,255,0.25)]":"border-white/10 bg-white/[0.035] hover:border-pink-300/40"}`}>
+              <div className="flex items-center justify-center gap-2">
+                {([["away",g.away,g.away_logo],["home",g.home,g.home_logo]] as const).map(([side,abbr,logo],index)=>
+                  <div key={side} className="contents">
+                    {index===1&&<span className="text-xs font-black text-slate-400">@</span>}
+                    <div className="relative flex h-11 w-11 items-center justify-center">
+                      <div className="absolute inset-0 rounded-xl bg-white/50 blur-xl"/>
+                      <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-white/50 bg-white/45 shadow-[0_0_24px_rgba(255,255,255,0.35)]">
+                        <img src={logo||`https://assets.nhle.com/logos/nhl/svg/${abbr}_light.svg`} alt={`${abbr} logo`} width={30} height={30} className="h-[30px] w-[30px] object-contain"
+                          onError={e=>{const img=e.currentTarget; if(img.dataset.fallback!=="1"){img.dataset.fallback="1";img.src=`https://a.espncdn.com/i/teamlogos/nhl/500/${abbr.toLowerCase()}.png`;}else{img.style.display="none";}}}/>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="mt-2 text-center text-sm font-black tracking-wide text-white">
+                {g.start_time_utc?new Date(g.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"}):"TBD"} CT
+              </div>
+            </button>)}
+          </div>
+        </div></div>
+      </section>
+<div className="mb-5 flex flex-wrap justify-center gap-3">{["Full Game","1st Period","2nd Period","3rd Period"].map(period=><button key={period} type="button" onClick={()=>setProjectionPeriod(period)} className={`rounded-xl border px-4 py-2 text-sm font-black transition ${projectionPeriod===period?"border-cyan-300/70 bg-cyan-300/15 text-cyan-100":"border-white/10 bg-white/5 text-slate-300 hover:border-pink-300/40"}`}>{period}</button>)}</div><Panel><Title>NHL Game Projections</Title>{projectionPeriod==="Full Game"?<><p className="mb-4 text-xs text-amber-200/80">Recent goals-for/against baseline, not sportsbook odds or a validated betting model.</p><Table heads={["Game","Away Goals","Home Goals","Projected Total","Sample"]} rows={projections.map(p=>[`${p.away} @ ${p.home}`,p.away_goals?.toFixed(2)??"—",p.home_goals?.toFixed(2)??"—",p.away_goals!=null&&p.home_goals!=null?(p.away_goals+p.home_goals).toFixed(2):"—",`${p.sample_games} GP`])}/></>:<p className="py-8 text-center text-sm text-amber-200/80">Verified {projectionPeriod.toLowerCase()} projections are not available in the NHL model data yet. Full-game estimates are not divided into periods.</p>}</Panel></>
     :mode==="injuries"?<Panel><Title>NHL Injury Report</Title><p className="text-sm text-amber-200">{data.injuries?.message||"Verified NHL injury data unavailable. No injury statuses have been assumed."}</p></Panel>
     :<Panel><Title>How to Read NHL Projections</Title><p className="space-y-3 text-sm leading-7 text-slate-300">Anytime goal percentage is currently a Poisson estimate blending observed recent goals per game and shots-based scoring opportunity, adjusted by the opponent's recent goals allowed. The heatmap is relative to players in the selected matchup. These are preliminary estimates, not verified market probabilities. Matchup history uses completed NHL games; unavailable data is shown as unavailable, never as zero. Confirm starting goaltenders, player availability, and line assignments before betting.</p></Panel>}
   </main>;
