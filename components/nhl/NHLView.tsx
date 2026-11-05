@@ -204,7 +204,51 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
           </div>
         </div></div>
       </section>
-<div className="mb-5 flex flex-wrap justify-center gap-3">{["Full Game","1st Period","2nd Period","3rd Period"].map(period=><button key={period} type="button" onClick={()=>setProjectionPeriod(period)} className={`rounded-xl border px-4 py-2 text-sm font-black transition ${projectionPeriod===period?"border-cyan-300/70 bg-cyan-300/15 text-cyan-100":"border-white/10 bg-white/5 text-slate-300 hover:border-pink-300/40"}`}>{period}</button>)}</div><Panel><Title>NHL Game Projections</Title>{projectionPeriod==="Full Game"?<><p className="mb-4 text-xs text-amber-200/80">Recent goals-for/against baseline, not sportsbook odds or a validated betting model.</p><Table heads={["Game","Away Goals","Home Goals","Projected Total","Sample"]} rows={projections.map(p=>[`${p.away} @ ${p.home}`,p.away_goals?.toFixed(2)??"—",p.home_goals?.toFixed(2)??"—",p.away_goals!=null&&p.home_goals!=null?(p.away_goals+p.home_goals).toFixed(2):"—",`${p.sample_games} GP`])}/></>:<Table heads={["Game","Away Goals","Home Goals","Projected Total","Sample"]} rows={((data.period_projections?.games||[]) as Array<{game_id:number;away:string;home:string;periods:Record<string,{away_goals:number|null;home_goals:number|null;sample_games:number}>}>).filter(p=>p.game_id===selected).map(p=>{const row=p.periods[projectionPeriod];return [`${p.away} @ ${p.home}`,row?.away_goals?.toFixed(2)??"—",row?.home_goals?.toFixed(2)??"—",row?.away_goals!=null&&row.home_goals!=null?(row.away_goals+row.home_goals).toFixed(2):"—",row?.sample_games??0]})}/>}</Panel></>
+<div className="mb-5 flex flex-wrap justify-center gap-3">{["Full Game","1st Period","2nd Period","3rd Period"].map(period=><button key={period} type="button" onClick={()=>setProjectionPeriod(period)} className={`rounded-xl border px-4 py-2 text-sm font-black transition ${projectionPeriod===period?"border-cyan-300/70 bg-cyan-300/15 text-cyan-100":"border-white/10 bg-white/5 text-slate-300 hover:border-pink-300/40"}`}>{period}</button>)}</div>
+      <Panel>
+        <Title>{projectionPeriod} — NHL Projections</Title>
+        {(()=>{
+          const full=projections.find(p=>p.game_id===active?.game_id);
+          const period=((data.period_projections?.games||[]) as Array<{game_id:number;periods:Record<string,{away_goals:number|null;home_goals:number|null;sample_games:number}>}>).find(p=>p.game_id===active?.game_id)?.periods?.[projectionPeriod];
+          const awayGoals=projectionPeriod==="Full Game"?full?.away_goals:period?.away_goals;
+          const homeGoals=projectionPeriod==="Full Game"?full?.home_goals:period?.home_goals;
+          const total=awayGoals!=null&&homeGoals!=null?awayGoals+homeGoals:null;
+          const margin=awayGoals!=null&&homeGoals!=null?homeGoals-awayGoals:null;
+          const label=active?`${active.away} @ ${active.home}`:"No matchup selected";
+          return <>
+            <div className="mb-4 flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.035] px-4 py-3">
+              <span className="font-black text-white">{label}</span>
+              <span className="text-xs font-bold text-slate-400">{projectionPeriod}</span>
+            </div>
+            <div className="grid gap-3 md:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+                <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Moneyline (ML)</h3>
+                <div className="flex justify-between gap-3 text-sm font-bold"><span>{active?.away||"Away"}</span><span className="text-slate-400">Odds unavailable</span></div>
+                <div className="mt-2 flex justify-between gap-3 text-sm font-bold"><span>{active?.home||"Home"}</span><span className="text-slate-400">Odds unavailable</span></div>
+                <p className="mt-3 text-xs text-slate-500">NHL moneyline market feed and overtime-inclusive win probabilities are not connected.</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+                <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Puck Line / Spread</h3>
+                <div className="flex justify-between gap-3 text-sm font-bold"><span>Sportsbook puck line</span><span className="text-slate-400">Unavailable</span></div>
+                <div className="mt-2 flex justify-between gap-3 text-sm font-bold"><span>Projected home goal margin</span><span className="text-cyan-200">{margin==null?"—":`${margin>0?"+":""}${margin.toFixed(2)}`}</span></div>
+                <p className="mt-3 text-xs text-slate-500">Projected margin is not a sportsbook spread or cover probability.</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+                <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Over / Under</h3>
+                <div className="flex justify-between gap-3 text-sm font-bold"><span>Sportsbook total</span><span className="text-slate-400">Unavailable</span></div>
+                <div className="mt-2 flex justify-between gap-3 text-sm font-bold"><span>Model projected total</span><span className="text-cyan-200">{total==null?"—":total.toFixed(2)}</span></div>
+                <p className="mt-3 text-xs text-slate-500">Over/under probabilities require a verified market line and calibrated distribution.</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+                <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Projected Score</h3>
+                <div className="flex justify-between gap-3 text-sm font-bold"><span>{active?.away||"Away"}</span><span className="text-cyan-200">{awayGoals==null?"—":awayGoals.toFixed(2)}</span></div>
+                <div className="mt-2 flex justify-between gap-3 text-sm font-bold"><span>{active?.home||"Home"}</span><span className="text-cyan-200">{homeGoals==null?"—":homeGoals.toFixed(2)}</span></div>
+                <p className="mt-3 text-xs text-slate-500">Recent goals-for/against estimates; not validated betting odds.</p>
+              </div>
+            </div>
+          </>;
+        })()}
+      </Panel></>
     :mode==="injuries"?<Panel><Title>NHL Injury Report</Title><p className="text-sm text-amber-200">{data.injuries?.message||"Verified NHL injury data unavailable. No injury statuses have been assumed."}</p></Panel>
     :<Panel><Title>How to Read NHL Projections</Title><p className="space-y-3 text-sm leading-7 text-slate-300">Anytime goal percentage is currently a Poisson estimate blending observed recent goals per game and shots-based scoring opportunity, adjusted by the opponent's recent goals allowed. The heatmap is relative to players in the selected matchup. These are preliminary estimates, not verified market probabilities. Matchup history uses completed NHL games; unavailable data is shown as unavailable, never as zero. Confirm starting goaltenders, player availability, and line assignments before betting.</p></Panel>}
   </main>;
