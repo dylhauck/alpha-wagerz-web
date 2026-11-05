@@ -44,8 +44,7 @@ export default function MLBTeamsPage(){
  {key:"diff",label:"Diff",value:t=>metric(t,"diff"),render:t=>{const v=metric(t,"diff");return typeof v==="number"?(v>0?"+":"")+v.toFixed(mode==="totals"?0:2):"—"},align:"center"},
  {key:"home",label:"Home",value:t=>t.home||"",align:"center"},
  {key:"away",label:"Away",value:t=>t.away||"",align:"center"},
- {key:"divisionRecord",label:"Div Record",value:t=>t.divisionRecord||"",align:"center"},
- {key:"leagueRecord",label:"Lg Record",value:t=>t.leagueRecord||"",align:"center"},
+ {key:"divisionRecord",label:"Div Record",value:t=>t.divisionRecord||"—",align:"center"},
  {key:"streak",label:"Streak",value:t=>t.streak||"—",align:"center"}
  ];
  return <AppShell><div className="mb-3 flex flex-col items-center pt-8"><div className="flex h-[92px] w-full items-center justify-center overflow-hidden"><Image src="/follow-alpha.png" alt="Follow The Alpha" width={640} height={180} priority className="h-auto w-[560px] max-w-full object-contain"/></div><div className="-mt-2 text-center text-xs font-bold uppercase tracking-[0.3em] text-slate-400">{new Date().toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric"})}</div></div><main className="space-y-5 pb-16 text-white"><section className="glass rounded-3xl p-6 text-center"><h1 className="mb-6 text-3xl font-black neon-text sm:text-5xl">MLB Teams</h1>
