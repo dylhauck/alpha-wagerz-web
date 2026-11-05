@@ -1506,8 +1506,6 @@ export default function NBAPage() {
             />
           </div>
 
-          </div>
-
           <div className="mt-7">
             <div className="mb-5 flex justify-center">
               <div className="inline-flex rounded-2xl border border-white/10 bg-slate-950/70 p-1">
