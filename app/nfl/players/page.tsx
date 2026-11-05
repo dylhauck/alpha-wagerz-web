@@ -2064,6 +2064,8 @@ export default function NFLPlayersPage() {
       "totals",
     );
 
+  const [page,setPage] = useState(1);
+
   const [
     positionFilter,
     setPositionFilter,
@@ -2503,8 +2505,12 @@ export default function NFLPlayersPage() {
       statMode,
     ]);
 
+  useEffect(()=>{setPage(1)},[search,positionFilter,dataView,statMode]);
+  const totalPages=Math.max(1,Math.ceil(filteredPlayers.length/25));
+  const pagePlayers=filteredPlayers.slice((page-1)*25,page*25);
+
   const quarterbacks =
-    filteredPlayers.filter(
+    pagePlayers.filter(
       (player) =>
         getPosition(
           player,
@@ -2512,7 +2518,7 @@ export default function NFLPlayersPage() {
     );
 
   const skillPlayers =
-    filteredPlayers.filter(
+    pagePlayers.filter(
       (player) =>
         getPosition(
           player,
@@ -2585,7 +2591,7 @@ export default function NFLPlayersPage() {
               className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-black transition ${
                 dataView ===
                 "season"
-                  ? "border-cyan-300/40 bg-cyan-300/15 text-cyan-100 shadow-[0_0_18px_rgba(35,216,255,0.12)]"
+                  ? "border-red-400/60 bg-red-500/20 text-red-100"
                   : "border-transparent text-slate-500 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
@@ -2606,7 +2612,7 @@ export default function NFLPlayersPage() {
               className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-black transition ${
                 dataView ===
                 "career"
-                  ? "border-cyan-300/40 bg-cyan-300/15 text-cyan-100 shadow-[0_0_18px_rgba(35,216,255,0.12)]"
+                  ? "border-red-400/60 bg-red-500/20 text-red-100"
                   : "border-transparent text-slate-500 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
@@ -2627,7 +2633,7 @@ export default function NFLPlayersPage() {
               className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-black transition ${
                 dataView ===
                 "matchup"
-                  ? "border-pink-300/40 bg-pink-500/15 text-pink-100 shadow-[0_0_18px_rgba(244,114,182,0.12)]"
+                  ? "border-red-400/60 bg-red-500/20 text-red-100"
                   : "border-transparent text-slate-500 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
@@ -2680,34 +2686,7 @@ export default function NFLPlayersPage() {
           </div>
         </div>
 
-        <div className="mt-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-          <div className="relative w-full lg:max-w-[420px]">
-            <Search
-              size={17}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
-            />
-
-            <input
-              type="text"
-              value={search}
-              onChange={(
-                event,
-              ) =>
-                setSearch(
-                  event.target
-                    .value,
-                )
-              }
-              placeholder={
-                dataView ===
-                "matchup"
-                  ? "Search player, team, or opponent..."
-                  : "Search player or team..."
-              }
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.035] py-3 pl-10 pr-4 text-sm font-bold text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/40"
-            />
-          </div>
-
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
           <div className="flex flex-wrap gap-2">
             {(
               [
@@ -2732,8 +2711,8 @@ export default function NFLPlayersPage() {
                   className={`rounded-xl border px-4 py-2 text-xs font-black transition ${
                     positionFilter ===
                     position
-                      ? "border-cyan-300/40 bg-cyan-300/15 text-cyan-100 shadow-[0_0_18px_rgba(35,216,255,0.10)]"
-                      : "border-white/10 bg-white/[0.025] text-slate-500 hover:border-pink-300/30 hover:text-white"
+                      ? "border-white/50 bg-white/15 text-white"
+                      : "border-white/10 bg-white/[0.025] text-slate-500 hover:border-white/30 hover:text-white"
                   }`}
                 >
                   {position}
@@ -2742,7 +2721,35 @@ export default function NFLPlayersPage() {
             )}
           </div>
         </div>
+        <div className="mt-5 flex justify-center">
+          <div className="relative mx-auto w-full max-w-md">
+            <Search
+              size={17}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
+            />
 
+            <input
+              type="text"
+              value={search}
+              onChange={(
+                event,
+              ) =>
+                setSearch(
+                  event.target
+                    .value,
+                )
+              }
+              placeholder={
+                dataView ===
+                "matchup"
+                  ? "Search player, team, or opponent..."
+                  : "Search player or team..."
+              }
+              className="w-full rounded-xl border border-white/10 bg-slate-950/60 py-3 pl-10 pr-4 text-sm font-bold text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/40"
+            />
+          </div>
+
+        </div>
         <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
           <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-cyan-200">
             {
@@ -2751,15 +2758,7 @@ export default function NFLPlayersPage() {
             Players
           </div>
 
-          <div className="text-xs font-bold text-slate-500">
-            {dataView ===
-            "season"
-              ? `${lastSeason} regular-season stats`
-              : dataView ===
-                  "career"
-                ? "Career regular-season stats"
-                : "Career history vs current opponent"}
-          </div>
+
         </div>
       </section>
 
@@ -2840,6 +2839,8 @@ export default function NFLPlayersPage() {
         </section>
       ) : null}
 
+
+      {totalPages>1&&<nav aria-label="NFL players pages" className="flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-white/10 bg-slate-950/40 p-4"><button disabled={page===1} onClick={()=>setPage(p=>Math.max(1,p-1))} className="rounded-xl border border-white/15 px-4 py-2 text-sm font-bold disabled:opacity-30">Previous</button><span className="text-sm font-bold text-slate-300">Page {page} of {totalPages} · {filteredPlayers.length} players</span><button disabled={page===totalPages} onClick={()=>setPage(p=>Math.min(totalPages,p+1))} className="rounded-xl border border-white/15 px-4 py-2 text-sm font-bold disabled:opacity-30">Next</button></nav>}
 
       <PlayerPropsModal
         open={Boolean(selectedPlayer)}
