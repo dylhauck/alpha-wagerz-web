@@ -868,6 +868,7 @@ export default function NFLProjectionsPage() {
   const [markets, setMarkets] = useState<MarketGame[]>([]);
   const [teams, setTeams] = useState<NFLTeam[]>([]);
   const [selectedGameId, setSelectedGameId] = useState("");
+  const [projectionPeriod, setProjectionPeriod] = useState("Full Game");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -1092,6 +1093,14 @@ export default function NFLProjectionsPage() {
         </div>
       </div>
 
+      <div className="flex flex-wrap justify-center gap-3 border-y border-cyan-300/15 py-5">
+        {["Full Game","Q1","Q2","1st Half","Q3","Q4","2nd Half"].map(period => (
+          <button key={period} type="button" onClick={() => setProjectionPeriod(period)} className={`rounded-xl border px-5 py-3 text-sm font-black transition ${projectionPeriod === period ? "border-cyan-300/70 bg-cyan-300/15 text-cyan-100" : "border-white/10 bg-slate-950/60 text-slate-300 hover:border-cyan-300/30"}`}>{period}</button>
+        ))}
+      </div>
+      {projectionPeriod !== "Full Game" ? (
+        <section className="glass rounded-3xl p-8 text-center text-sm text-amber-200/80">Verified {projectionPeriod} projections and corresponding market lines are not yet available in the NFL data pipeline. Full-game projections are not reused for individual quarters or halves.</section>
+      ) : (<>
       <GameSelector
         games={games}
         teams={teams}
@@ -1250,6 +1259,7 @@ export default function NFLProjectionsPage() {
           no-vig probability. These are model opinions, not guaranteed outcomes.
         </p>
       </section>
+      </>)}
     </div>
   );
 }
