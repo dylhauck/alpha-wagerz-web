@@ -62,7 +62,7 @@ export default function NHLTeamsPage(){
  const button=(active:boolean,group:"season"|"mode"|"conference"|"division")=>{
   const base="rounded-xl border px-4 py-2 text-xs font-black uppercase transition";
   const selected={
-   season:"border-red-400/60 bg-red-500/20 text-red-100",
+   season:"border-pink-400/60 bg-pink-500/20 text-pink-100",
    mode:"border-cyan-300/60 bg-cyan-300/15 text-cyan-100",
    conference:"border-white/50 bg-white/15 text-white",
    division:"border-purple-400/60 bg-purple-500/20 text-purple-100"
