@@ -16,7 +16,7 @@ type Goalie = { player_id: string; name: string; team: string; games: number; sa
 type Team = { team: string; games: number; wins: number; goals_for_per_game: number; goals_against_per_game: number };
 type Player = { player_id: string; name: string; team: string; position: string; games: number; goals: number; assists: number; points: number; shots: number; goals_per_game: number; shots_per_game: number };
 type Projection = { game_id: number; away: string; home: string; away_goals: number | null; home_goals: number | null; sample_games: number };
-type History = { game_id: number; games: Array<{ id: number; date: string; away: string; home: string; away_score: number; home_score: number }> };
+type History = { game_id: number; players: Array<{ player_id: string; player: string; team: string; opponent: string; position: string; games: number; goals: number; assists: number; points: number; shots: number; goals_per_game: number; shots_per_game: number }> };
 type Mode = "summary" | "players" | "teams" | "projections" | "injuries" | "how-to";
 const files = ["slate", "anytime_goals", "matchup_history", "players", "teams", "projections", "period_projections", "injuries"] as const;
 type Data = Record<(typeof files)[number], any>;
@@ -70,7 +70,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
   const teams=(data.teams?.teams||[]) as Team[];
   const projections=(data.projections?.games||[]) as Projection[];
   const goals=(data.anytime_goals?.games||[]).find((g:{game_id:number})=>g.game_id===active?.game_id)?.players as GoalPlayer[]|undefined;
-  const history=(data.matchup_history?.games||[]).find((g:History)=>g.game_id===active?.game_id)?.games as History["games"]|undefined;
+  const history=(data.matchup_history?.games||[]).find((g:History)=>g.game_id===active?.game_id)?.players as History["players"]|undefined;
   const range=useMemo(()=>({min:Math.min(...(goals||[]).map(p=>p.goal_probability)),max:Math.max(...(goals||[]).map(p=>p.goal_probability))}),[goals]);
   const date=next?"Next Slate":"Current Slate";
   return <main className="space-y-5 pb-16 text-white">
@@ -133,7 +133,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
           <Table heads={["Rank","Player","Team","Anytime Goal %","Goals/G","Shots/G","Sample"]} rows={(goals||[]).map((p,i)=>[
             i+1,p.name,p.team,<span key={p.player_id} className="inline-block min-w-[84px] rounded-lg px-3 py-2 text-center font-black text-white" style={{backgroundColor:pctColor(p.goal_probability,range.min,range.max)}}>{p.goal_probability.toFixed(1)}%</span>,
             p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2),`${p.games} GP`
-          ])}/></>:<Table heads={["Date","Matchup","Final Score"]} rows={(history||[]).map(g=>[g.date,`${g.away} @ ${g.home}`,`${g.away_score} – ${g.home_score}`])}/>}
+          ])}/></>:<><p className="mb-4 text-xs text-slate-400">Verified individual player statistics in completed games against today’s opponent. GP is the number of available head-to-head boxscores.</p><Table heads={["Player","Team","Opponent","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={(history||[]).map(p=>[p.player,p.team,p.opponent,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></>}
       </Panel>}
     </>:mode==="players"?<><Panel><Title>NHL Skater Statistics</Title><p className="mb-3 text-xs text-slate-400">Completed games in the current historical sample. GP is observed appearances, not full-season totals.</p><Table heads={["Player","Team","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={players.map(p=>[p.name,p.team,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></Panel><Panel><Title>NHL Goaltenders</Title><p className="mb-3 text-xs text-amber-200/80">Historical appearances only; these are not confirmed starters for the upcoming slate.</p><Table heads={["Goalie","Team","GP","Saves","Shots Against","Goals Against","Save %","GA/Appearance"]} rows={goalies.map(g=>[g.name,g.team,g.games,g.saves,g.shots_against,g.goals_against,g.save_percentage==null?"—":(g.save_percentage*100).toFixed(1)+"%",g.goals_against_per_appearance.toFixed(2)])}/></Panel></>
     :mode==="teams"?<Panel><Title>NHL Team Statistics</Title><Table heads={["Team","GP","Wins","Goals For/G","Goals Against/G"]} rows={teams.map(t=>[t.team,t.games,t.wins,t.goals_for_per_game.toFixed(2),t.goals_against_per_game.toFixed(2)])}/></Panel>
