@@ -323,11 +323,7 @@ function TeamMatchupCard({
       ) : null}
 
       <div>
-        <div className="text-xs font-black uppercase tracking-[0.2em] text-slate-500">
-          {right
-            ? "Home Team"
-            : "Away Team"}
-        </div>
+        
 
         <div className="mt-1 text-2xl font-black text-white">
           {team}
@@ -1510,30 +1506,6 @@ export default function NBAPage() {
             />
           </div>
 
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/10 p-4">
-              <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-cyan-200">
-                <Shield size={15} />
-                Away Matchup
-              </div>
-
-              <div className="mt-2 text-lg font-black text-white">
-                {awayCode} offense vs{" "}
-                {homeCode} defense
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-pink-300/15 bg-pink-500/10 p-4">
-              <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-pink-200">
-                <Trophy size={15} />
-                Home Matchup
-              </div>
-
-              <div className="mt-2 text-lg font-black text-white">
-                {homeCode} offense vs{" "}
-                {awayCode} defense
-              </div>
-            </div>
           </div>
 
           <div className="mt-7">
