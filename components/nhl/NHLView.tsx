@@ -135,17 +135,22 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
         </div>}
         {!games.length&&<p className="py-8 text-center text-slate-400">No games scheduled or NHL slate data has not been generated.</p>}
       </section>
-      {active&&<Panel><div className="mb-5 flex justify-center"><div className="flex rounded-xl border border-white/10 bg-slate-950/70 p-1">
+      {active&&<section className="glass overflow-hidden rounded-3xl">
+        <div className="px-5 py-4">
+          <div className="text-[11px] font-black uppercase tracking-[0.18em] text-cyan-200/70">{tab==="goals"?"Anytime Goal Probability":"Matchup History"}</div>
+          <h2 className="mt-1 text-lg font-black text-white">{active.away} Players vs {active.home}</h2>
+          <div className="mt-3 flex justify-center"><div className="flex rounded-xl border border-white/10 bg-slate-950/70 p-1">
         {[["goals","Anytime Goal Graph"],["history","Matchup History"]].map(([key,label])=><button key={key} onClick={()=>setTab(key as "goals"|"history")}
-          className={`rounded-lg px-5 py-3 text-xs font-black uppercase tracking-wider ${tab===key?"border border-cyan-300/50 bg-cyan-300/15 text-cyan-100":"text-slate-500"}`}>{label}</button>)}
+          className={`rounded-lg px-5 py-2.5 text-xs font-black uppercase tracking-wider ${tab===key?"border border-cyan-300/50 bg-cyan-300/15 text-cyan-100":"text-slate-500"}`}>{label}</button>)}
       </div></div>
-        {tab==="goals"&&<div className="mb-5 flex flex-wrap justify-center gap-2">
+        {tab==="goals"&&<div className="mt-2 flex flex-wrap justify-center gap-2">
           {["ALL","C","LW","RW","D"].map(position=><button key={position} type="button" onClick={()=>setGoalPosition(position)} aria-pressed={goalPosition===position}
             className={`rounded-xl border px-5 py-2.5 text-xs font-black uppercase tracking-wider transition ${goalPosition===position?"border-cyan-300/60 bg-cyan-300/20 text-cyan-100":"border-white/10 bg-slate-950/60 text-slate-500 hover:border-white/30 hover:text-white"}`}>{position}</button>)}
         </div>}
-        <Title>{tab==="goals"?`${active.away} @ ${active.home} — Anytime Goal Rankings`:`${active.away} @ ${active.home} — Matchup History`}</Title>
-        {tab==="goals"?<><p className="mb-4 text-xs text-amber-200/80">Historical goal-and-shot estimates, not validated betting probabilities. Starting goalies, power-play roles, injuries and confirmed lines are not yet incorporated.</p>
-          <div className="grid gap-6">
+        </div>
+        <div className="border-t border-white/10 p-3">
+        {tab==="goals"?<>
+          <div className="grid gap-3">
             {[active.away,active.home].map(team=>{
               const teamPlayers=visibleGoals.filter(p=>p.team?.toUpperCase()===team.toUpperCase());
               return <section key={team} className="overflow-hidden rounded-2xl border border-cyan-300/20 bg-slate-950/30">
@@ -161,7 +166,8 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
               </section>;
             })}
           </div></>:<><p className="mb-4 text-xs text-slate-400">Verified individual player statistics in completed games against today’s opponent. GP is the number of available head-to-head boxscores.</p><Table heads={["Player","Team","Opponent","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={(history||[]).map(p=>[p.player,p.team,p.opponent,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></>}
-      </Panel>}
+        </div>
+      </section>}
     </>:mode==="players"?<><Panel><Title>NHL Skater Statistics</Title><p className="mb-3 text-xs text-slate-400">Completed games in the current historical sample. GP is observed appearances, not full-season totals.</p><Table heads={["Player","Team","Pos","GP","Goals","Assists","Points","Shots","Goals/G","Shots/G"]} rows={players.map(p=>[p.name,p.team,p.position,p.games,p.goals,p.assists,p.points,p.shots,p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2)])}/></Panel><Panel><Title>NHL Goaltenders</Title><p className="mb-3 text-xs text-amber-200/80">Historical appearances only; these are not confirmed starters for the upcoming slate.</p><Table heads={["Goalie","Team","GP","Saves","Shots Against","Goals Against","Save %","GA/Appearance"]} rows={goalies.map(g=>[g.name,g.team,g.games,g.saves,g.shots_against,g.goals_against,g.save_percentage==null?"—":(g.save_percentage*100).toFixed(1)+"%",g.goals_against_per_appearance.toFixed(2)])}/></Panel></>
     :mode==="teams"?<Panel><Title>NHL Team Statistics</Title><Table heads={["Team","GP","Wins","Goals For/G","Goals Against/G"]} rows={teams.map(t=>[t.team,t.games,t.wins,t.goals_for_per_game.toFixed(2),t.goals_against_per_game.toFixed(2)])}/></Panel>
     :mode==="projections"?<>      <section className="glass rounded-3xl p-4">
