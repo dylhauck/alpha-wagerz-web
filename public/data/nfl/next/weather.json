@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T18:03:54.706682+00:00",
+  "generated_at": "2026-11-05T19:01:19.545882+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -11,27 +11,8 @@
       "longitude": -84.4008,
       "roof": "retractable",
       "kickoff": "2026-11-08T09:30",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-08T09:00",
-        "temperature_f": 55.4,
-        "feels_like_f": 51.0,
-        "humidity_pct": 54.0,
-        "precip_probability_pct": 0.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 4.2,
-        "wind_gust_mph": 7.4,
-        "weather_code": 0,
-        "conditions": "Clear"
-      },
-      "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "NEUTRAL"
-      }
+      "available": false,
+      "reason": "forecast_error: HTTP Error 503: Service Unavailable"
     },
     {
       "game_id": "2026_09_DEN_CAR",
@@ -76,12 +57,12 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-11-08T13:00",
-        "temperature_f": 56.5,
-        "feels_like_f": 49.1,
+        "temperature_f": 57.2,
+        "feels_like_f": 48.8,
         "humidity_pct": 26.0,
         "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
-        "wind_mph": 6.0,
+        "wind_mph": 8.3,
         "wind_gust_mph": 9.2,
         "weather_code": 0,
         "conditions": "Clear"
@@ -107,15 +88,15 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-11-08T13:00",
-        "temperature_f": 64.2,
-        "feels_like_f": 59.6,
-        "humidity_pct": 48.0,
+        "temperature_f": 65.5,
+        "feels_like_f": 60.4,
+        "humidity_pct": 46.0,
         "precip_probability_pct": 1.0,
         "precipitation_in": 0.0,
-        "wind_mph": 7.6,
+        "wind_mph": 8.9,
         "wind_gust_mph": 10.1,
-        "weather_code": 1,
-        "conditions": "Mainly Clear"
+        "weather_code": 0,
+        "conditions": "Clear"
       },
       "context": {
         "severity_score": 0.0,
@@ -138,23 +119,23 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-11-08T13:00",
-        "temperature_f": 82.3,
-        "feels_like_f": 83.2,
-        "humidity_pct": 56.0,
+        "temperature_f": 83.8,
+        "feels_like_f": 85.2,
+        "humidity_pct": 53.0,
         "precip_probability_pct": 11.0,
         "precipitation_in": 0.0,
-        "wind_mph": 11.2,
+        "wind_mph": 9.6,
         "wind_gust_mph": 9.6,
         "weather_code": 3,
         "conditions": "Overcast"
       },
       "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
       }
     },
     {
@@ -219,27 +200,8 @@
       "longitude": -76.8645,
       "roof": "outdoor",
       "kickoff": "2026-11-08T13:00",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-08T13:00",
-        "temperature_f": 60.7,
-        "feels_like_f": 53.0,
-        "humidity_pct": 46.0,
-        "precip_probability_pct": 0.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 12.6,
-        "wind_gust_mph": 19.0,
-        "weather_code": 0,
-        "conditions": "Clear"
-      },
-      "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
-      }
+      "available": false,
+      "reason": "forecast_error: HTTP Error 503: Service Unavailable"
     },
     {
       "game_id": "2026_09_HOU_LAC",
@@ -272,27 +234,8 @@
       "longitude": -121.97,
       "roof": "outdoor",
       "kickoff": "2026-11-08T16:05",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-08T16:00",
-        "temperature_f": 70.1,
-        "feels_like_f": 65.6,
-        "humidity_pct": 39.0,
-        "precip_probability_pct": 0.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 6.9,
-        "wind_gust_mph": 8.1,
-        "weather_code": 0,
-        "conditions": "Clear"
-      },
-      "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "NEUTRAL"
-      }
+      "available": false,
+      "reason": "forecast_error: HTTP Error 503: Service Unavailable"
     },
     {
       "game_id": "2026_09_GB_NE",
@@ -303,27 +246,8 @@
       "longitude": -71.2643,
       "roof": "outdoor",
       "kickoff": "2026-11-08T16:25",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-08T16:00",
-        "temperature_f": 49.0,
-        "feels_like_f": 41.9,
-        "humidity_pct": 78.0,
-        "precip_probability_pct": 3.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 12.2,
-        "wind_gust_mph": 18.6,
-        "weather_code": 2,
-        "conditions": "Partly Cloudy"
-      },
-      "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
-      }
+      "available": false,
+      "reason": "forecast_error: HTTP Error 503: Service Unavailable"
     },
     {
       "game_id": "2026_09_ARI_SEA",
@@ -365,27 +289,8 @@
       "longitude": -87.6167,
       "roof": "outdoor",
       "kickoff": "2026-11-08T20:20",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-08T20:00",
-        "temperature_f": 54.9,
-        "feels_like_f": 49.9,
-        "humidity_pct": 68.0,
-        "precip_probability_pct": 0.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 8.5,
-        "wind_gust_mph": 25.3,
-        "weather_code": 0,
-        "conditions": "Clear"
-      },
-      "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
-      }
+      "available": false,
+      "reason": "forecast_error: HTTP Error 503: Service Unavailable"
     }
   ]
 }
