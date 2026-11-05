@@ -154,10 +154,18 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
             {[active.away,active.home].map(team=>{
               const teamPlayers=visibleGoals.filter(p=>p.team?.toUpperCase()===team.toUpperCase());
               return <section key={team} className="overflow-hidden rounded-2xl border border-cyan-300/20 bg-slate-950/30">
-                <div className="flex items-center gap-3 border-b border-white/10 bg-cyan-300/[0.06] px-5 py-4">
-                  <img src={`https://assets.nhle.com/logos/nhl/svg/${team}_light.svg`} alt="" width={36} height={36} className="h-9 w-9 object-contain"/>
-                  <div><h3 className="text-base font-black text-white">{team} — Anytime Goal Rankings</h3>
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">{teamPlayers.length} players</p></div>
+                <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3">
+                  <div className="flex items-center gap-3">
+                    <img src={`https://assets.nhle.com/logos/nhl/svg/${team}_light.svg`} alt="" width={32} height={32} className="h-8 w-8 object-contain"/>
+                    <div>
+                      <h3 className="text-base font-black text-white">{team} Anytime Goal Rankings</h3>
+                      <p className="mt-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{teamPlayers.length} players loaded</p>
+                    </div>
+                  </div>
+                  {teamPlayers.length>0&&<div className="rounded-xl border border-emerald-300/25 bg-emerald-400/10 px-4 py-2">
+                    <div className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-200">Top Target</div>
+                    <div className="mt-1 text-sm font-black text-white">{[...teamPlayers].sort((a,b)=>b.goal_probability-a.goal_probability)[0].name}</div>
+                  </div>}
                 </div>
                 <Table heads={["Rank","Player","Team","Anytime Goal %","Goals/G","Shots/G","Sample"]} rows={teamPlayers.map((p,i)=>[
                   i+1,p.name,p.team,<span key={p.player_id} className="inline-block min-w-[84px] rounded-lg px-3 py-2 text-center font-black text-white" style={{backgroundColor:pctColor(p.goal_probability,range.min,range.max)}}>{p.goal_probability.toFixed(1)}%</span>,
