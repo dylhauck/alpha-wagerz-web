@@ -417,7 +417,7 @@ function FilterButton({
       onClick={onClick}
       className={`rounded-lg px-4 py-2 text-xs font-black uppercase tracking-[0.14em] transition ${
         active
-          ? "border border-cyan-300/30 bg-cyan-300/15 text-cyan-200 shadow-[0_0_18px_rgba(35,216,255,0.15)]"
+          ? "border border-white/50 bg-white/15 text-white"
           : "border border-transparent text-slate-400 hover:text-white"
       }`}
     >
@@ -1058,6 +1058,8 @@ export default function NFLTeamsPage() {
   const [conference, setConference] =
     useState<ConferenceFilter>("ALL");
 
+  const [divisionFilter,setDivisionFilter] = useState("ALL");
+
   const [statsView, setStatsView] =
     useState<StatsView>("overall");
 
@@ -1208,14 +1210,7 @@ export default function NFLTeamsPage() {
     const source =
       payload?.teams || [];
 
-    const filtered =
-      conference === "ALL"
-        ? source
-        : source.filter(
-            (team) =>
-              team.conference ===
-              conference,
-          );
+    const filtered = source.filter(team => (conference === "ALL" || team.conference === conference) && (divisionFilter === "ALL" || team.division === divisionFilter));
 
     return [...filtered].sort(
       (a, b) => {
@@ -1240,6 +1235,7 @@ export default function NFLTeamsPage() {
   }, [
     payload,
     conference,
+    divisionFilter,
     sortKey,
     sortDirection,
   ]);
@@ -1373,7 +1369,7 @@ export default function NFLTeamsPage() {
                   conference === option
                 }
                 onClick={() =>
-                  setConference(option)
+                  (setConference(option),setDivisionFilter("ALL"))
                 }
               >
                 {option === "ALL"
@@ -1383,6 +1379,8 @@ export default function NFLTeamsPage() {
             ))}
           </div>
         </div>
+
+        <div className="mt-3 flex flex-wrap justify-center gap-2">{["ALL","East","North","South","West"].map(d=><button key={d} type="button" onClick={()=>setDivisionFilter(d)} className={`rounded-xl border px-4 py-2 text-xs font-black uppercase transition ${divisionFilter===d?"border-purple-400/60 bg-purple-500/20 text-purple-100":"border-white/10 bg-slate-950/40 text-slate-400"}`}>{d==="ALL"?"All Divisions":d}</button>)}</div>
 
         <div className="mt-4 flex flex-wrap justify-center gap-3">
           <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-cyan-200">
