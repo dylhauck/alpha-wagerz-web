@@ -869,6 +869,7 @@ export default function NFLProjectionsPage() {
   const [teams, setTeams] = useState<NFLTeam[]>([]);
   const [selectedGameId, setSelectedGameId] = useState("");
   const [projectionPeriod, setProjectionPeriod] = useState("Full Game");
+  const [periodGames, setPeriodGames] = useState<Array<{game_id:string|number;away:string;home:string;periods:Record<string,{away_points:number|null;home_points:number|null;sample_games:number}>}>>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -878,12 +879,13 @@ export default function NFLProjectionsPage() {
       setLoading(true);
 
       try {
-        const [slateRes, projectionRes, marketRes, teamsRes] =
+        const [slateRes, projectionRes, marketRes, teamsRes, periodRes] =
           await Promise.all([
             fetch(SLATE_PATH, { cache: "no-store" }),
             fetch(PROJECTION_PATH, { cache: "no-store" }),
             fetch(MARKET_PATH, { cache: "no-store" }),
             fetch("/data/nfl/teams.json", { cache: "no-store" }),
+            fetch("/data/nfl/period_projections.json", { cache: "no-store" }),
           ]);
 
         const slatePayload = slateRes.ok ? await slateRes.json() : {};
@@ -892,6 +894,7 @@ export default function NFLProjectionsPage() {
           : {};
         const marketPayload = marketRes.ok ? await marketRes.json() : {};
         const teamsPayload = teamsRes.ok ? await teamsRes.json() : [];
+        const periodPayload = periodRes.ok ? await periodRes.json() : {};
 
         if (cancelled) {
           return;
@@ -900,6 +903,7 @@ export default function NFLProjectionsPage() {
         const loadedGames = getGames<NFLGame>(slatePayload);
 
         setGames(loadedGames);
+        setPeriodGames(Array.isArray(periodPayload.games) ? periodPayload.games : []);
         setProjections(getGames<ProjectionGame>(projectionPayload));
         setMarkets(getGames<MarketGame>(marketPayload));
         setTeams(
@@ -1106,7 +1110,7 @@ export default function NFLProjectionsPage() {
         ))}
       </div>
       {projectionPeriod !== "Full Game" ? (
-        <section className="glass rounded-3xl p-8 text-center text-sm text-amber-200/80">Verified {projectionPeriod} projections and corresponding market lines are not yet available in the NFL data pipeline. Full-game projections are not reused for individual quarters or halves.</section>
+        <section className="glass rounded-3xl p-6 text-center"><h2 className="text-xl font-black text-white">{away} @ {home} — {projectionPeriod}</h2>{(()=>{const game=periodGames.find(g=>String(g.game_id)===selectedGameId)||(periodGames.find(g=>sameTeam(g.away,away)&&sameTeam(g.home,home)));const stats=game?.periods?.[projectionPeriod];return stats?.away_points!=null&&stats.home_points!=null?<div className="mt-5 grid grid-cols-3 gap-3 text-sm font-black"><div>{away}<div className="mt-2 text-2xl text-cyan-200">{stats.away_points.toFixed(1)}</div></div><div>Projected Total<div className="mt-2 text-2xl text-white">{(stats.away_points+stats.home_points).toFixed(1)}</div></div><div>{home}<div className="mt-2 text-2xl text-cyan-200">{stats.home_points.toFixed(1)}</div></div></div>:<p className="mt-4 text-amber-200/80">Insufficient completed-quarter history for this matchup. No estimated score is displayed.</p>})()}<p className="mt-4 text-xs text-slate-400">Observed quarter-scoring baseline; not a sportsbook market or guaranteed prediction.</p></section>
       ) : (<>
       <section className="glass overflow-hidden rounded-3xl">
         <div className="border-b border-white/10 p-6 text-center">
