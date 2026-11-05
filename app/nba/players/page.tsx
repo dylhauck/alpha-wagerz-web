@@ -815,7 +815,7 @@ export default function NBAPlayersPage() {
                     }
                     className={`rounded-xl border px-4 py-2 text-xs font-black uppercase tracking-wide transition ${
                       active
-                        ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100"
+                        ? "border-pink-300/60 bg-pink-500/15 text-pink-100"
                         : "border-white/10 bg-slate-950/40 text-slate-400 hover:border-cyan-300/35 hover:text-cyan-100"
                     }`}
                   >
@@ -851,7 +851,7 @@ export default function NBAPlayersPage() {
                     }
                     className={`rounded-xl border px-4 py-2 text-xs font-black uppercase tracking-wide transition ${
                       active
-                        ? "border-pink-300/60 bg-pink-500/15 text-pink-100"
+                        ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100"
                         : "border-white/10 bg-slate-950/40 text-slate-400 hover:border-pink-300/35 hover:text-pink-100"
                     }`}
                   >
