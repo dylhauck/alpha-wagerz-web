@@ -33,10 +33,10 @@ export default function MLBTeamsPage(){
  const overallColumns:StandingsColumn<Team>[]=[
  {key:"sportRank",label:"MLB",value:t=>t.sportRank?Number(t.sportRank):null,render:t=><span className="font-black text-cyan-200">{t.sportRank?"#"+t.sportRank:"—"}</span>},
  {key:"name",label:"Team",value:t=>t.name,render:t=><div className="flex min-w-[220px] items-center gap-3"><img src={`https://www.mlbstatic.com/team-logos/${t.id}.svg`} width={36} height={36} alt="" className="h-9 w-9 shrink-0 object-contain"/><div><div className="text-[15px] font-black text-white">{t.name}</div><div className="text-[10px] font-black uppercase tracking-[0.16em] text-slate-500">{divisions[t.divisionId]?.league||"MLB"}</div></div></div>},
- {key:"league",label:"League",value:t=>divisions[t.divisionId]?.league||"—"},
+ {key:"league",label:"Conf",value:t=>divisions[t.divisionId]?.league||"—"},
  {key:"division",label:"Division",value:t=>divisions[t.divisionId]?.name||"—"},
  {key:"divisionRank",label:"Div Rank",value:t=>t.divisionRank?Number(t.divisionRank):null,render:t=>t.divisionRank?`${t.divisionRank}${t.divisionRank==="1"?"st":t.divisionRank==="2"?"nd":t.divisionRank==="3"?"rd":"th"}`:"—",align:"center"},
- {key:"leagueRank",label:"Lg Rank",value:t=>t.leagueRank?Number(t.leagueRank):null,render:t=>t.leagueRank?"#"+t.leagueRank:"—",align:"center"},
+ {key:"leagueRank",label:"Conf Rank",value:t=>t.leagueRank?Number(t.leagueRank):null,render:t=>t.leagueRank?"#"+t.leagueRank:"—",align:"center"},
  {key:"record",label:"Record",value:t=>t.gamesPlayed?t.wins/t.gamesPlayed:null,render:t=>`${t.wins}-${t.losses}`,align:"center"},
  {key:"pct",label:"Win %",value:t=>t.gamesPlayed?t.wins/t.gamesPlayed:null,render:t=>t.gamesPlayed?(t.wins/t.gamesPlayed).toFixed(3).replace(/^0/,""):"—",align:"center"},
  {key:"runsScored",label:"RS",value:t=>metric(t,"runsScored"),render:t=>display(t,"runsScored"),align:"center"},
@@ -44,8 +44,8 @@ export default function MLBTeamsPage(){
  {key:"diff",label:"Diff",value:t=>metric(t,"diff"),render:t=>{const v=metric(t,"diff");return typeof v==="number"?(v>0?"+":"")+v.toFixed(mode==="totals"?0:2):"—"},align:"center"},
  {key:"home",label:"Home",value:t=>t.home||"",align:"center"},
  {key:"away",label:"Away",value:t=>t.away||"",align:"center"},
- {key:"divisionRecord",label:"Div Record",value:t=>t.divisionRecord||"",align:"center"},
- {key:"leagueRecord",label:"Lg Record",value:t=>t.leagueRecord||"",align:"center"},
+ {key:"divisionRecord",label:"Division",value:t=>t.divisionRecord||"",align:"center"},
+ {key:"leagueRecord",label:"Conference",value:t=>t.leagueRecord||"",align:"center"},
  {key:"streak",label:"Streak",value:t=>t.streak||"—",align:"center"}
  ];
  return <AppShell><div className="mb-3 flex flex-col items-center pt-8"><div className="flex h-[92px] w-full items-center justify-center overflow-hidden"><Image src="/follow-alpha.png" alt="Follow The Alpha" width={640} height={180} priority className="h-auto w-[560px] max-w-full object-contain"/></div><div className="-mt-2 text-center text-xs font-bold uppercase tracking-[0.3em] text-slate-400">{new Date().toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric"})}</div></div><main className="space-y-5 pb-16 text-white"><section className="glass rounded-3xl p-6 text-center"><h1 className="mb-6 text-3xl font-black neon-text sm:text-5xl">MLB Teams</h1>
