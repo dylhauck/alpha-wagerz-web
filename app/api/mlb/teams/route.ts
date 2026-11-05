@@ -10,11 +10,19 @@ export async function GET(request:Request){
   const res=await fetch(`https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=${season}&standingsTypes=regularSeason`,{next:{revalidate:3600}});
   if(!res.ok)throw Error("MLB standings unavailable");
   const json=await res.json();
+  const splitRecord=(r:Raw,kind:"division"|"league")=>{
+   const splits:Array<Raw>=r.records?.splitRecords??[];
+   const entry=splits.find(x=>{
+    const type=String(x.type??"").toLowerCase().replace(/[.\s_-]/g,"");
+    return kind==="division"?["vsdiv","vsdivision","division"].includes(type):["vsleague","league"].includes(type);
+   });
+   return entry?.wins!=null&&entry?.losses!=null?`${entry.wins}-${entry.losses}`:null;
+  };
   const teams=(json.records||[]).flatMap((division:Raw)=>(division.teamRecords||[]).map((r:Raw)=>({
    id:r.team?.id,name:r.team?.name,divisionId:division.division?.id,
    wins:r.wins,losses:r.losses,gamesPlayed:r.gamesPlayed,
    runsScored:r.runsScored,runsAllowed:r.runsAllowed,
-   pct:r.winningPercentage,streak:r.streak?.streakCode??"—",divisionRank:r.divisionRank??null,leagueRank:r.leagueRank??null,sportRank:r.sportRank??null,home:r.records?.splitRecords?.find((x:Raw)=>x.type==="home")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="home").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="home").losses}`:null,away:r.records?.splitRecords?.find((x:Raw)=>x.type==="away")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="away").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="away").losses}`:null,divisionRecord:r.records?.splitRecords?.find((x:Raw)=>x.type==="vsDiv")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="vsDiv").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="vsDiv").losses}`:null,leagueRecord:r.records?.splitRecords?.find((x:Raw)=>x.type==="vsLeague")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="vsLeague").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="vsLeague").losses}`:null
+   pct:r.winningPercentage,streak:r.streak?.streakCode??"—",divisionRank:r.divisionRank??null,leagueRank:r.leagueRank??null,sportRank:r.sportRank??null,home:r.records?.splitRecords?.find((x:Raw)=>x.type==="home")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="home").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="home").losses}`:null,away:r.records?.splitRecords?.find((x:Raw)=>x.type==="away")?.wins!=null?`${r.records.splitRecords.find((x:Raw)=>x.type==="away").wins}-${r.records.splitRecords.find((x:Raw)=>x.type==="away").losses}`:null,divisionRecord:splitRecord(r,"division"),leagueRecord:splitRecord(r,"league")
   }))).filter((t:Raw)=>t.id&&t.name);
   return NextResponse.json({season,teams});
  }catch{return NextResponse.json({error:"MLB standings could not be loaded"},{status:502});}
