@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { BarChart3, Shield, Trophy } from "lucide-react";
+import { BarChart3, Search, Shield, Trophy } from "lucide-react";
 import { NFLTeamLogo } from "@/components/nfl/NFLTeamLogo";
 
 type ConferenceFilter = "ALL" | "AFC" | "NFC";
 type StatsView = "overall" | "offense" | "defense";
+type MetricMode = "perGame" | "totals";
 type SortDirection = "asc" | "desc";
 
 type Standings = {
@@ -550,6 +551,7 @@ function SortableHeader({
 function TeamRankingsTable({
   teams,
   view,
+  metricMode,
   sortKey,
   sortDirection,
   onSort,
@@ -557,6 +559,7 @@ function TeamRankingsTable({
 }: {
   teams: TeamRecord[];
   view: StatsView;
+  metricMode: MetricMode;
   sortKey: string;
   sortDirection: SortDirection;
   onSort: (key: string) => void;
@@ -587,7 +590,7 @@ function TeamRankingsTable({
 
         {view !== "overall" ? (
           <p className="mt-2 text-sm text-slate-400">
-            Season averages with NFL rank shown beneath each statistic.
+            {metricMode === "perGame" ? "Season averages" : "Season totals"} with NFL rank shown beneath each statistic.
           </p>
         ) : null}
       </div>
@@ -773,7 +776,7 @@ function TeamRankingsTable({
                   {stats.map((stat) => (
                     <SortableHeader
                       key={`${stat.side}-${stat.key}`}
-                      label={stat.label}
+                      label={metricMode === "totals" && stat.key.endsWith("_per_game") ? stat.label.replace(/\/G\b|\/Game\b/g, "") : stat.label}
                       sortKey={`${stat.side}.${stat.key}`}
                       activeSortKey={sortKey}
                       sortDirection={sortDirection}
@@ -881,7 +884,7 @@ function TeamRankingsTable({
                           className="px-4 py-3"
                         >
                           <StatCell
-                            value={stat.value(team)}
+                            value={metricMode === "totals" && stat.key.endsWith("_per_game") && stat.value(team) !== null ? stat.value(team)! * team.standings.games_played : stat.value(team)}
                             rank={getRank(team, stat.side, stat.key)}
                           />
                         </td>
@@ -968,6 +971,12 @@ function getSortValue(
   }
 
   return null;
+}
+
+function getDisplaySortValue(team: TeamRecord, key: string, mode: MetricMode) {
+  const value = getSortValue(team, key);
+  if (mode === "totals" && (key.startsWith("offense.") || key.startsWith("defense.")) && key.endsWith("_per_game") && typeof value === "number") return value * team.standings.games_played;
+  return value;
 }
 
 function compareValues(
@@ -1059,6 +1068,9 @@ export default function NFLTeamsPage() {
     useState<ConferenceFilter>("ALL");
 
   const [divisionFilter,setDivisionFilter] = useState("ALL");
+
+  const [metricMode, setMetricMode] = useState<MetricMode>("perGame");
+  const [search, setSearch] = useState("");
 
   const [statsView, setStatsView] =
     useState<StatsView>("overall");
@@ -1210,14 +1222,14 @@ export default function NFLTeamsPage() {
     const source =
       payload?.teams || [];
 
-    const filtered = source.filter(team => (conference === "ALL" || team.conference === conference) && (divisionFilter === "ALL" || team.division === divisionFilter));
+    const filtered = source.filter(team => (conference === "ALL" || team.conference === conference) && (divisionFilter === "ALL" || team.division === divisionFilter) && (teamName(team.team) + " " + team.team + " " + team.conference + " " + team.division).toLowerCase().includes(search.trim().toLowerCase()));
 
     return [...filtered].sort(
       (a, b) => {
         const comparison =
           compareValues(
-            getSortValue(a, sortKey),
-            getSortValue(b, sortKey),
+            getDisplaySortValue(a, sortKey, metricMode),
+            getDisplaySortValue(b, sortKey, metricMode),
             sortDirection,
           );
 
@@ -1236,6 +1248,8 @@ export default function NFLTeamsPage() {
     payload,
     conference,
     divisionFilter,
+    search,
+    metricMode,
     sortKey,
     sortDirection,
   ]);
@@ -1310,7 +1324,7 @@ export default function NFLTeamsPage() {
               }
               className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-black transition ${
                 statsView === "overall"
-                  ? "border-cyan-300/40 bg-cyan-300/15 text-cyan-100 shadow-[0_0_18px_rgba(35,216,255,0.12)]"
+                  ? "border-red-400/60 bg-red-500/20 text-red-100"
                   : "border-transparent text-slate-500 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
@@ -1327,7 +1341,7 @@ export default function NFLTeamsPage() {
               }
               className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-black transition ${
                 statsView === "offense"
-                  ? "border-cyan-300/40 bg-cyan-300/15 text-cyan-100 shadow-[0_0_18px_rgba(35,216,255,0.12)]"
+                  ? "border-red-400/60 bg-red-500/20 text-red-100"
                   : "border-transparent text-slate-500 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
@@ -1344,7 +1358,7 @@ export default function NFLTeamsPage() {
               }
               className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-black transition ${
                 statsView === "defense"
-                  ? "border-pink-300/40 bg-pink-500/15 text-pink-100 shadow-[0_0_18px_rgba(244,114,182,0.12)]"
+                  ? "border-red-400/60 bg-red-500/20 text-red-100"
                   : "border-transparent text-slate-500 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
@@ -1353,6 +1367,8 @@ export default function NFLTeamsPage() {
             </button>
           </div>
         </div>
+
+        <div className="mt-3 flex flex-wrap justify-center gap-2">{(["perGame","totals"] as const).map(mode => <button key={mode} type="button" onClick={() => setMetricMode(mode)} className={`rounded-xl border px-4 py-2 text-xs font-black uppercase transition ${metricMode === mode ? "border-green-400/60 bg-green-500/20 text-green-100" : "border-white/10 bg-slate-950/60 text-slate-400"}`}>{mode === "perGame" ? "Per Game" : "Totals"}</button>)}</div>
 
         <div className="mt-3 flex justify-center">
           <div className="inline-flex rounded-xl border border-white/10 bg-white/[0.025] p-1">
@@ -1382,6 +1398,8 @@ export default function NFLTeamsPage() {
 
         <div className="mt-3 flex flex-wrap justify-center gap-2">{["ALL","East","North","South","West"].map(d=><button key={d} type="button" onClick={()=>setDivisionFilter(d)} className={`rounded-xl border px-4 py-2 text-xs font-black uppercase transition ${divisionFilter===d?"border-purple-400/60 bg-purple-500/20 text-purple-100":"border-white/10 bg-slate-950/40 text-slate-400"}`}>{d==="ALL"?"All Divisions":d}</button>)}</div>
 
+        <label className="relative mx-auto mt-5 block w-full max-w-[360px]"><Search size={17} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"/><input type="text" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search team..." aria-label="Search NFL teams" className="w-full rounded-xl border border-white/10 bg-slate-950/60 py-3 pl-11 pr-4 text-sm font-bold text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/50"/></label>
+
         <div className="mt-4 flex flex-wrap justify-center gap-3">
           <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-cyan-200">
             {payload.teams.length} Teams
@@ -1402,6 +1420,7 @@ export default function NFLTeamsPage() {
       <TeamRankingsTable
         teams={teams}
         view={statsView}
+        metricMode={metricMode}
         sortKey={sortKey}
         sortDirection={sortDirection}
         onSort={handleSort}
