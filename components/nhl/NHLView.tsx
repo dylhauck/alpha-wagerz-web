@@ -80,10 +80,30 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
     </header>
     {loading?<Panel><p className="text-center text-slate-400">Loading NHL data…</p></Panel>:mode==="summary"?<>
       <Panel><div className="mb-4 text-center text-xs font-black uppercase tracking-[.2em] text-cyan-300">{games.length} NHL games loaded for {date.toLowerCase()}</div>
-        <div className="flex flex-wrap justify-center gap-3">{games.map(g=><button key={g.game_id} onClick={()=>{setSelected(g.game_id);setTab("goals");}}
-          className={`rounded-xl border px-5 py-3 font-black transition ${active?.game_id===g.game_id?"border-cyan-300 bg-cyan-400/15":"border-white/10 bg-slate-800/80 hover:border-cyan-300/40"}`}>
-          {g.away} @ {g.home}<div className="mt-1 text-xs font-semibold text-slate-400">{g.start_time_utc?new Date(g.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"}):"TBD"} CT</div>
-        </button>)}</div>
+        <div className="table-scroll w-full overflow-x-auto pb-2">
+          <div className="flex min-w-max gap-2">
+            {games.map(g=><button key={g.game_id} type="button" onClick={()=>{setSelected(g.game_id);setTab("goals");}}
+              className={`min-w-[150px] shrink-0 rounded-xl border bg-slate-950/80 px-3 py-2 transition ${active?.game_id===g.game_id?"border-cyan-300/70 bg-cyan-300/15 shadow-[0_0_20px_rgba(35,216,255,0.25)]":"border-white/10 bg-white/[0.035] hover:border-pink-300/40"}`}>
+              <div className="flex items-center justify-center gap-2">
+                {([["away",g.away,g.away_logo],["home",g.home,g.home_logo]] as const).map(([side,abbr,logo],index)=>
+                  <div key={side} className="contents">
+                    {index===1&&<span className="text-xs font-black text-slate-400">@</span>}
+                    <div className="relative flex h-11 w-11 items-center justify-center">
+                      <div className="absolute inset-0 rounded-xl bg-white/50 blur-xl"/>
+                      <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-xl border border-white/50 bg-white/45 shadow-[0_0_24px_rgba(255,255,255,0.35)]">
+                        <img src={logo||`https://assets.nhle.com/logos/nhl/svg/${abbr}_light.svg`} alt={`${abbr} logo`} width={30} height={30} className="h-[30px] w-[30px] object-contain"
+                          onError={e=>{const img=e.currentTarget; if(img.dataset.fallback!=="1"){img.dataset.fallback="1";img.src=`https://a.espncdn.com/i/teamlogos/nhl/500/${abbr.toLowerCase()}.png`;}else{img.style.display="none";}}}/>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="mt-2 text-center text-sm font-black tracking-wide text-white">
+                {g.start_time_utc?new Date(g.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"}):"TBD"} CT
+              </div>
+            </button>)}
+          </div>
+        </div>
         {active&&<div className="mt-6 rounded-2xl border border-cyan-300/15 bg-white/[0.035] p-6 text-center">
           <div className="text-xs font-black uppercase tracking-[.2em] text-cyan-300">NHL Slate Summary</div>
           <div className="mt-3 text-3xl font-black">{active.away} @ {active.home}</div>
