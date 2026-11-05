@@ -1093,14 +1093,6 @@ export default function NFLProjectionsPage() {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-3 border-y border-cyan-300/15 py-5">
-        {["Full Game","Q1","Q2","1st Half","Q3","Q4","2nd Half"].map(period => (
-          <button key={period} type="button" onClick={() => setProjectionPeriod(period)} className={`rounded-xl border px-5 py-3 text-sm font-black transition ${projectionPeriod === period ? "border-cyan-300/70 bg-cyan-300/15 text-cyan-100" : "border-white/10 bg-slate-950/60 text-slate-300 hover:border-cyan-300/30"}`}>{period}</button>
-        ))}
-      </div>
-      {projectionPeriod !== "Full Game" ? (
-        <section className="glass rounded-3xl p-8 text-center text-sm text-amber-200/80">Verified {projectionPeriod} projections and corresponding market lines are not yet available in the NFL data pipeline. Full-game projections are not reused for individual quarters or halves.</section>
-      ) : (<>
       <GameSelector
         games={games}
         teams={teams}
@@ -1108,6 +1100,14 @@ export default function NFLProjectionsPage() {
         onSelect={setSelectedGameId}
       />
 
+      <div className="mb-5 flex flex-wrap justify-center gap-3">
+        {["Full Game","Q1","Q2","1st Half","Q3","Q4","2nd Half"].map(period => (
+          <button key={period} type="button" onClick={() => setProjectionPeriod(period)} className={`rounded-xl border px-4 py-2 text-sm font-black transition ${projectionPeriod === period ? "border-cyan-300/70 bg-cyan-300/15 text-cyan-100" : "border-white/10 bg-white/5 text-slate-300 hover:border-pink-300/40"}`}>{period}</button>
+        ))}
+      </div>
+      {projectionPeriod !== "Full Game" ? (
+        <section className="glass rounded-3xl p-8 text-center text-sm text-amber-200/80">Verified {projectionPeriod} projections and corresponding market lines are not yet available in the NFL data pipeline. Full-game projections are not reused for individual quarters or halves.</section>
+      ) : (<>
       <section className="glass overflow-hidden rounded-3xl">
         <div className="border-b border-white/10 p-6 text-center">
           <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
