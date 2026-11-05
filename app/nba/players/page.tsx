@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { Search, Trophy } from "lucide-react";
 import PlayerPropsModal from "@/components/nba/PlayerPropsModal";
 
 type NBATeam = {
@@ -783,7 +783,7 @@ export default function NBAPlayersPage() {
           <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
             <h1 className="text-3xl font-black neon-text sm:text-5xl">
               NBA Players
-            </h1>
+            </h1><div className="mt-3 flex items-center justify-center gap-2 text-sm font-bold text-slate-400"><Trophy size={16} className="text-cyan-300" /> <span>{seasonView === "career" ? "Career" : seasonView === "last_season" ? "2025–26 Season" : "2026–27 Season"} {statView === "totals" ? "Totals" : "Per-Game Averages"}</span></div>
 
             <div className="mt-6 flex flex-wrap justify-center gap-2">
               {[
