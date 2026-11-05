@@ -927,22 +927,6 @@ export default function NBAPlayersPage() {
           </div>
         ) : (
           <>
-            <div className="flex flex-col items-center justify-center gap-1 border-b border-white/10 px-6 py-3 text-center text-xs font-black uppercase tracking-[0.16em] text-slate-500 sm:flex-row sm:gap-3">
-              <span>
-                {seasonView ===
-                "current_season"
-                  ? "Current Season"
-                  : seasonView ===
-                      "last_season"
-                    ? "Last Season"
-                    : "Career"}{" "}
-                •{" "}
-                {statView === "per_game"
-                  ? "Per Game"
-                  : "Totals"}
-              </span>
-            </div>
-
             <div className="table-scroll overflow-x-auto">
               <table className="w-full min-w-[1450px] border-collapse text-sm">
                 <thead>
