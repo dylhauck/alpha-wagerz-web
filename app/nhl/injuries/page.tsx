@@ -877,11 +877,7 @@ export default function NHLInjuryReportPage() {
     <div className="space-y-5">
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          {rows.length} NFL{" "}
-          {rows.length === 1
-            ? "Injury"
-            : "Injuries"}{" "}
-          Loaded For Current Slate`}
+          {feedStatus === "verified" ? `${rows.length} NHL ${rows.length === 1 ? "Injury" : "Injuries"} Loaded For Current Slate` : "NHL Injury Report — Feed Unavailable"}
         </div>
       </div>
 
