@@ -1324,7 +1324,7 @@ export default function NFLTeamsPage() {
               }
               className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-black transition ${
                 statsView === "overall"
-                  ? "border-red-400/60 bg-red-500/20 text-red-100"
+                  ? "border-pink-400/60 bg-pink-500/20 text-pink-100"
                   : "border-transparent text-slate-500 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
@@ -1341,7 +1341,7 @@ export default function NFLTeamsPage() {
               }
               className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-black transition ${
                 statsView === "offense"
-                  ? "border-red-400/60 bg-red-500/20 text-red-100"
+                  ? "border-pink-400/60 bg-pink-500/20 text-pink-100"
                   : "border-transparent text-slate-500 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
@@ -1358,7 +1358,7 @@ export default function NFLTeamsPage() {
               }
               className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-black transition ${
                 statsView === "defense"
-                  ? "border-red-400/60 bg-red-500/20 text-red-100"
+                  ? "border-pink-400/60 bg-pink-500/20 text-pink-100"
                   : "border-transparent text-slate-500 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
