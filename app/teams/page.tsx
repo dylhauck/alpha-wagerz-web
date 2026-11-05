@@ -6,7 +6,7 @@ import {AppShell} from "@/components/AppShell";
 import StandingsTable, {type StandingsColumn} from "@/components/StandingsTable";
 type Team={id:number;name:string;divisionId:number;wins:number;losses:number;gamesPlayed:number;runsScored?:number;runsAllowed?:number;pct?:string;streak?:string;divisionRank?:string;leagueRank?:string;sportRank?:string;home?:string;away?:string;divisionRecord?:string;leagueRecord?:string};
 const divisions:Record<number,{league:"AL"|"NL";name:string}>={200:{league:"AL",name:"West"},201:{league:"AL",name:"East"},202:{league:"AL",name:"Central"},203:{league:"NL",name:"West"},204:{league:"NL",name:"East"},205:{league:"NL",name:"Central"}};
-type Sort="name"|"league"|"division"|"gamesPlayed"|"wins"|"losses"|"pct"|"runsScored"|"runsAllowed"|"diff"|"sportRank"|"divisionRank"|"leagueRank"|"record"|"home"|"away"|"divisionRecord"|"leagueRecord"|"streak";
+type Sort="name"|"league"|"division"|"gamesPlayed"|"wins"|"losses"|"pct"|"runsScored"|"runsAllowed"|"diff"|"sportRank"|"divisionRank"|"leagueRank"|"record"|"home"|"away"|"divisionRecord"|"streak";
 const columns:[Sort,string][]=[["name","Team"],["league","League"],["division","Division"],["gamesPlayed","GP"],["wins","W"],["losses","L"],["pct","Win %"],["runsScored","RS"],["runsAllowed","RA"],["diff","Run Diff"]];
 const button=(active:boolean,kind:"season"|"mode"|"league"|"division")=>`rounded-xl border px-4 py-2 text-xs font-black uppercase transition ${active?({season:"border-pink-400/60 bg-pink-500/20 text-pink-100",mode:"border-cyan-300/60 bg-cyan-300/15 text-cyan-100",league:"border-white/50 bg-white/15 text-white",division:"border-purple-400/60 bg-purple-500/20 text-purple-100"}[kind]):"border-white/10 bg-slate-950/60 text-slate-400 hover:border-white/30"}`;
 export default function MLBTeamsPage(){
@@ -20,7 +20,7 @@ export default function MLBTeamsPage(){
  const metric=(t:Team,k:Sort):number|string|null=>{
   const d=divisions[t.divisionId];const gp=t.gamesPlayed||0;
   switch(k){
-   case "name":return t.name;case "sportRank":return t.sportRank?Number(t.sportRank):null;case "divisionRank":return t.divisionRank?Number(t.divisionRank):null;case "leagueRank":return t.leagueRank?Number(t.leagueRank):null;case "record":return t.gamesPlayed?t.wins/t.gamesPlayed:null;case "home":return t.home||"";case "away":return t.away||"";case "divisionRecord":return t.divisionRecord||"";case "leagueRecord":return t.leagueRecord||"";case "streak":return t.streak||"";case "league":return d?.league||"";case "division":return d?.name||"";
+   case "name":return t.name;case "sportRank":return t.sportRank?Number(t.sportRank):null;case "divisionRank":return t.divisionRank?Number(t.divisionRank):null;case "leagueRank":return t.leagueRank?Number(t.leagueRank):null;case "record":return t.gamesPlayed?t.wins/t.gamesPlayed:null;case "home":return t.home||"";case "away":return t.away||"";case "divisionRecord":return t.divisionRecord||"";case "streak":return t.streak||"";case "league":return d?.league||"";case "division":return d?.name||"";
    case "gamesPlayed":return t.gamesPlayed;case "wins":return t.wins;case "losses":return t.losses;
    case "pct":return gp?t.wins/gp:null;
    case "runsScored":return t.runsScored==null?null:mode==="totals"?t.runsScored:gp?t.runsScored/gp:null;
