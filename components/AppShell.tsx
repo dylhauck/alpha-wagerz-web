@@ -97,6 +97,11 @@ const mlbNavItems: NavItem[] = [
     icon: Swords,
   },
   {
+    label: "MLB Teams",
+    path: "/teams",
+    icon: Shield,
+  },
+  {
     label: "Weather Report",
     path: "/weather",
     icon: CloudSun,
