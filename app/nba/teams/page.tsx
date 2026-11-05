@@ -943,6 +943,18 @@ export default function NBATeamsPage() {
      TABLE HEADER
   ======================================================== */
 
+  // League standings rank is based on all 30 teams, not the current search or table sort.
+  const leagueRanks = useMemo(() => {
+    const ranked = [...teamStats].sort((a, b) => {
+      const ar = seasonStats(a, seasonView)?.record;
+      const br = seasonStats(b, seasonView)?.record;
+      const aPct = safeNumber(ar?.win_pct);
+      const bPct = safeNumber(br?.win_pct);
+      return bPct - aPct || safeNumber(br?.wins) - safeNumber(ar?.wins) || teamName(a).localeCompare(teamName(b));
+    });
+    return new Map(ranked.map((team, index) => [teamCode(team).toUpperCase(), index + 1]));
+  }, [teamStats, seasonView]);
+
   const headers: {
     key: SortKey;
     label: string;
@@ -1230,10 +1242,11 @@ export default function NBATeamsPage() {
         ) : (
           <>
             <div className="table-scroll overflow-x-auto">
-              <table className="w-full min-w-[2450px] border-collapse text-sm">
+              <table className="w-full min-w-[2510px] border-collapse text-sm">
 
                 <thead>
                   <tr className="border-b border-white/10 bg-slate-950/50">
+                    <th className="sticky left-0 z-20 bg-[#101b30] px-4 py-3 text-left text-xs font-black uppercase tracking-[0.12em] text-cyan-200">NBA ↕</th>
                     {headers.map(
                       (header) => (
                         <th
@@ -1310,6 +1323,8 @@ export default function NBATeamsPage() {
                           )}-${index}`}
                           className="border-b border-white/[0.06] transition last:border-b-0 hover:bg-white/[0.035]"
                         >
+
+                          <td className="whitespace-nowrap px-4 py-3 text-left text-base font-black text-cyan-200">#{leagueRanks.get(teamCode(team).toUpperCase()) ?? "—"}</td>
 
                           {/* TEAM */}
 
