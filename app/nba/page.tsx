@@ -1100,13 +1100,6 @@ function FirstBasketGraph({
           <h2 className="mt-1 text-xl font-black text-white">
             {awayTeam} @ {homeTeam} — First Basket Rankings
           </h2>
-          <p className="mt-1 text-xs font-bold text-amber-200/90">
-            {game?.lineup_status === "previous_confirmed_lineup"
-              ? "Lineup fallback: last verified starters · not confirmed for this game"
-              : game?.status === "estimated"
-                ? "Historical play-by-play model · projected, unconfirmed starters"
-                : "Verified first-basket projections pending"}
-          </p>
         </div>
         {candidates[0] && (
           <div className="rounded-xl border border-emerald-300/25 bg-emerald-400/10 px-4 py-2">
@@ -1119,11 +1112,6 @@ function FirstBasketGraph({
           </div>
         )}
       </div>
-      <p className="mt-3 text-xs text-slate-400">
-        {game?.reason || "The first-basket model has not produced verified data for this matchup."}
-        {game?.history_games ? ` · ${game.history_games} verified historical games available.` : ""}
-        {" "}First basket means the first made field goal, excluding free throws.
-      </p>
       <div className="table-scroll mt-4 overflow-x-auto">
         <table className="w-full min-w-[760px] border-separate border-spacing-y-2 text-sm">
           <thead>
