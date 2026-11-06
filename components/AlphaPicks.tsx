@@ -64,49 +64,59 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[]): Leg[
 }
 
 function makeParlays(legs: Leg[], minOdds: number): Ticket[] {
-  // Search distinct games only. Prioritize modeled probability, never invent
-  // prices or force five picks if the slate cannot support them.
-  const pool = legs.slice(0, 36);
+  const MIN_LEGS = 3;
+  const MAX_LEGS = 20;
+  // Keep one outcome per matchup, and consider as many as 20 distinct games.
+  // Beam search avoids the exponential cost of enumerating all combinations.
   const byGame = new Map<string, Leg[]>();
-  for (const leg of pool) byGame.set(leg.game, [...(byGame.get(leg.game) || []), leg]);
-  const games = [...byGame.values()].map(group => group.sort((a, b) => b.probability - a.probability));
-  const candidates: Ticket[] = [];
-  const seen = new Set<string>();
-  const sizes = minOdds === 500 ? Array.from({ length: Math.min(games.length, 12) - 1 }, (_, i) => i + 2) : Array.from({ length: Math.min(games.length, 12) - 2 }, (_, i) => i + 3);
-  for (const size of sizes) {
-    if (size > games.length) continue;
-    let visited = 0;
-    const walk = (index: number, chosen: Leg[]) => {
-      if (++visited > 100000) return;
-      if (chosen.length === size) {
-        const t = ticket(chosen);
-        if (t.odds < minOdds) return;
-        const signature = chosen.map(x => x.id).sort().join("|");
-        if (!seen.has(signature)) {
-          seen.add(signature);
-          candidates.push(t);
-          candidates.sort((a, b) => b.probability - a.probability);
-          if (candidates.length > 80) candidates.length = 80;
-        }
-        return;
-      }
-      if (games.length - index < size - chosen.length) return;
-      if (index >= games.length) return;
-      // Two highest-confidence sides per matchup, never both on one ticket.
-      for (const leg of games[index].slice(0, 2)) walk(index + 1, [...chosen, leg]);
-      walk(index + 1, chosen);
-    };
-    // Bound combinatorial growth; 12 games x 2 sides is ample for five tickets.
-    if (games.length <= 12) walk(0, []);
-    else {
-      const best = games.slice(0, 12);
-      const original = games.splice(0, games.length, ...best);
-      walk(0, []);
-      games.splice(0, games.length, ...original);
-    }
-    if (candidates.length >= 5) break;
+  for (const leg of legs) {
+    const group = byGame.get(leg.game) || [];
+    group.push(leg);
+    byGame.set(leg.game, group);
   }
-  return candidates.sort((a, b) => b.probability - a.probability).slice(0, 5);
+  const games = [...byGame.values()]
+    .map(group => group.sort((a, b) => b.probability - a.probability).slice(0, 2))
+    .sort((a, b) => b[0].probability - a[0].probability)
+    .slice(0, MAX_LEGS);
+  if (games.length < MIN_LEGS) return [];
+
+  type State = { legs: Leg[]; decimal: number; probability: number };
+  const beams: State[][] = Array.from({ length: MAX_LEGS + 1 }, () => []);
+  beams[0] = [{ legs: [], decimal: 1, probability: 1 }];
+  const results: Ticket[] = [];
+  const seen = new Set<string>();
+  const BEAM_WIDTH = 300;
+
+  for (const group of games) {
+    for (let count = MAX_LEGS - 1; count >= 0; count--) {
+      if (!beams[count].length) continue;
+      const expanded: State[] = [];
+      for (const state of beams[count]) {
+        for (const leg of group) {
+          const next: State = {
+            legs: [...state.legs, leg],
+            decimal: state.decimal * americanToDecimal(leg.odds),
+            probability: state.probability * leg.probability,
+          };
+          expanded.push(next);
+          if (next.legs.length >= MIN_LEGS && next.legs.length <= MAX_LEGS) {
+            const odds = decimalToAmerican(next.decimal);
+            if (odds >= minOdds) {
+              const signature = next.legs.map(x => x.id).sort().join("|");
+              if (!seen.has(signature)) {
+                seen.add(signature);
+                results.push({ legs: next.legs, odds, probability: next.probability });
+              }
+            }
+          }
+        }
+      }
+      beams[count + 1] = [...beams[count + 1], ...expanded]
+        .sort((a, b) => b.probability - a.probability)
+        .slice(0, BEAM_WIDTH);
+    }
+  }
+  return results.sort((a, b) => b.probability - a.probability).slice(0, 5);
 }
 
 function PickCard({ ticket: t, index }: { ticket: Ticket; index: number }) {
