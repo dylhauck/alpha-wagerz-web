@@ -35,6 +35,25 @@ const modeledOver = (mean: unknown, line: unknown, sd: unknown): number | null =
   const m = num(mean), l = num(line), sigma = num(sd);
   return m === null || l === null || sigma === null || sigma <= 0 ? null : normalCdf((m - l) / sigma);
 };
+
+// Exact independent-Poisson baseline for NHL full-game totals and puck lines.
+// Baseline is explicitly uncalibrated and does not account for goalie/injury changes.
+const poissonMass = (mean: number, max = 25): number[] => {
+  const out = [Math.exp(-mean)];
+  for (let i = 1; i <= max; i++) out.push(out[i - 1] * mean / i);
+  return out;
+};
+const nhlProbabilities = (awayMean: number, homeMean: number, line: number, kind: "total" | "home_spread" | "away_spread") => {
+  if (awayMean < 0 || homeMean < 0 || awayMean > 12 || homeMean > 12) return null;
+  const a = poissonMass(awayMean), h = poissonMass(homeMean);
+  let result = 0;
+  for (let i = 0; i < a.length; i++) for (let j = 0; j < h.length; j++) {
+    const wins = kind === "total" ? i + j > line : kind === "home_spread" ? j - i + line > 0 : i - j + line > 0;
+    if (wins) result += a[i] * h[j];
+  }
+  return Math.min(1, Math.max(0, result));
+};
+
 const list = (payload: any): any[] => Array.isArray(payload) ? payload : Array.isArray(payload?.games) ? payload.games : [];
 const key = (g: any) => String(g?.game_id ?? "");
 const matchup = (g: any) => String(g?.away_team ?? g?.away ?? "?") + " @ " + String(g?.home_team ?? g?.home ?? "?");
@@ -44,7 +63,7 @@ const ticket = (legs: Leg[]): Ticket => {
   return { legs, odds: decimalToAmerican(decimal), probability: legs.reduce((acc, leg) => acc * leg.probability, 1) };
 };
 
-function buildCandidates(sport: Sport, projections: any[], markets: any[]): Leg[] {
+function buildCandidates(sport: Sport, projections: any[], markets: any[], propMarkets: any[] = []): Leg[] {
   const out: Leg[] = [];
   const add = (game: any, pick: string, odds: unknown, probability: unknown, source: string, marketType: MarketType = "moneyline") => {
     const price = num(odds);
@@ -82,6 +101,22 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[]): Leg[
       const spread = full.spread ?? {};
       if (num(spread.away_line) === 1.5) add(game, away + " +1.5 puck line", spread.away_odds, p.away_puck_line_plus_1_5_probability, "NHL uncalibrated puck-line estimate", "spread");
       if (num(spread.home_line) === -1.5) add(game, home + " -1.5 puck line", spread.home_odds, p.home_puck_line_minus_1_5_probability, "NHL uncalibrated puck-line estimate", "spread");
+      const awayMean = num(game.away_goals), homeMean = num(game.home_goals);
+      if (awayMean !== null && homeMean !== null) {
+        const total = full.total ?? {};
+        const line = num(total.line);
+        if (line !== null && line % 1 !== 0) {
+          const over = nhlProbabilities(awayMean, homeMean, line, "total");
+          add(game, "Over " + line, total.over_odds, over, "NHL independent-Poisson baseline (uncalibrated)", "total");
+          add(game, "Under " + line, total.under_odds, over === null ? null : 1 - over, "NHL independent-Poisson baseline (uncalibrated)", "total");
+        }
+        for (const side of ["away", "home"] as const) {
+          const spreadLine = num(spread[side + "_line"]);
+          if (spreadLine === null || spreadLine % 1 === 0) continue;
+          const probability = nhlProbabilities(awayMean, homeMean, spreadLine, side === "home" ? "home_spread" : "away_spread");
+          add(game, (side === "home" ? home : away) + " " + spreadLine + " puck line", spread[side + "_odds"], probability, "NHL independent-Poisson baseline (uncalibrated)", "spread");
+        }
+      }
     } else if (sport === "nfl") {
       const ml = market.moneyline ?? {};
       const p = game.win_probability ?? {};
@@ -96,6 +131,27 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[]): Leg[
       const over = modeledOver(game.projected_total, total, game.total_sd);
       add(game, "Over " + total, market.game_total_prices?.over, over, "NFL model total distribution", "total");
       add(game, "Under " + total, market.game_total_prices?.under, over === null ? null : 1 - over, "NFL model total distribution", "total");
+    }
+  }
+  // Player props require both a real sportsbook price and a model distribution
+  // (explicit over/under probability or modeled mean plus modeled SD).
+  if (sport === "nba") {
+    for (const prop of propMarkets) {
+      const game = projections.find(g => key(g) === String(prop.game_id));
+      if (!game) continue;
+      const players = [...(game.player_projections?.away ?? []), ...(game.player_projections?.home ?? [])];
+      const player = players.find((p: any) => String(p.player_name).toLowerCase() === String(prop.player_name).toLowerCase());
+      if (!player) continue;
+      const metric = String(prop.prop_type ?? "");
+      const projection = player.projection ?? {};
+      const line = num(prop.line);
+      const mean = num(projection[metric]);
+      const sd = num(projection[metric + "_sd"]) ?? num(player.distribution?.[metric]?.sd);
+      const explicitOver = normalizeProbability(player.probabilities?.[metric]?.over);
+      const over = explicitOver ?? modeledOver(mean, line, sd);
+      if (line === null || over === null) continue;
+      add(game, prop.player_name + " Over " + line + " " + metric.toUpperCase(), prop.over_odds, over, "NBA player model distribution + sportsbook", "player_prop");
+      add(game, prop.player_name + " Under " + line + " " + metric.toUpperCase(), prop.under_odds, 1 - over, "NBA player model distribution + sportsbook", "player_prop");
     }
   }
   // A ticket cannot include both opposing outcomes from the same game.
@@ -213,14 +269,14 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       ufc: ["/data/ufc/game_projections.json", "/data/ufc/market.json"],
     };
     setLoading(true);
-    Promise.all(paths[sport].map(async path => {
+    Promise.all([...paths[sport], ...(sport === "nba" ? ["/data/nba/player_prop_markets.json"] : sport === "nfl" ? ["/data/nfl/player_props.json"] : [])].map(async path => {
       if (next) path = path.replace(`/data/${sport}/`, `/data/${sport}/next/`);
       const res = await fetch(path, { cache: "no-store" });
-      if (!res.ok) throw new Error("Missing " + path);
+      if (!res.ok) { if (path.includes("player_prop")) return {}; throw new Error("Missing " + path); }
       return res.json();
-    })).then(([p, m]) => {
+    })).then(([p, m, props]) => {
       if (!active) return;
-      const candidates = buildCandidates(sport, list(p), list(m));
+      const candidates = buildCandidates(sport, list(p), list(m), Array.isArray(props?.props) ? props.props : []);
       setLegs(candidates);
       setStatus(candidates.length ? "" : "No verified sportsbook odds and model-probability pairs are available for this slate.");
     }).catch(() => {
