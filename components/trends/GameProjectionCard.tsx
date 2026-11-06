@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { MostConfidentBet } from "@/components/projections/MostConfidentBet";
 import { PlayerNameButton } from "@/components/players/PlayerNameButton";
 import { PlayerProfileModal } from "@/components/players/PlayerProfileModal";
 
@@ -188,12 +189,10 @@ export function GameProjectionCard({
             </div>
           </div>
 
-          <EdgePill
-            label={
-              projection.best_lean ||
-              projection.moneyline_lean
-            }
-          />
+          <MostConfidentBet candidates={[
+            { label: `${away} ML`, probability: projection.away_win_probability },
+            { label: `${home} ML`, probability: projection.home_win_probability },
+          ]} note="Highest modeled win probability among available outcomes; not sportsbook value. Other markets require validated outcome probabilities." />
         </div>
 
         <div className="grid gap-3 sm:grid-cols-3">
