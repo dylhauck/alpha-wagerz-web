@@ -691,7 +691,7 @@ function SpreadCard({
 
   return (
     <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.04] p-5">
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid min-h-[190px] gap-3 md:grid-cols-2">
         <div className="rounded-xl border border-white/[0.07] bg-black/20 p-4">
           <div className="text-[10px] font-black uppercase tracking-[0.17em] text-slate-500">
             Sportsbook Spread
@@ -839,7 +839,7 @@ function MoneylineCard({
 
   return (
     <div className="rounded-2xl border border-pink-300/20 bg-pink-300/[0.04] p-5">
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid min-h-[190px] gap-3 md:grid-cols-2">
         {[
           {
             team: away,
