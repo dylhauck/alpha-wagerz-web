@@ -59,6 +59,7 @@ type NFLGame = {
   game_datetime_utc?: string;
   game_date?: string;
   game_time?: string;
+  venue?: string;
 };
 
 type ProjectionGame = {
@@ -533,7 +534,6 @@ function GameTotalCard({
         <StatCell
           label="Sportsbook Line"
           value={line === null ? "—" : fmt(line)}
-          subtext={sportsbook}
         />
         <StatCell
           label="Alpha Projection"
@@ -610,7 +610,6 @@ function TeamTotalCard({
         <StatCell
           label="Sportsbook Line"
           value={line === null ? "—" : fmt(line)}
-          subtext={sportsbook}
         />
         <StatCell
           label="Alpha Projection"
@@ -1169,7 +1168,7 @@ export default function NFLProjectionsPage() {
         <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
           <div>
             <h2 className="text-xl font-black text-white">{TEAM_NAMES[away] ?? away} @ {TEAM_NAMES[home] ?? home}{isPeriod ? ` — ${projectionPeriod}` : ""}</h2>
-            <p className="mt-1 text-sm font-bold text-slate-400">{PAGE_TITLE}</p>
+            <p className="mt-1 text-sm font-bold text-slate-400">{[selectedGame.venue, formatGameCardTime(selectedGame)].filter(value => value && value !== "TBD").join(" · ") || "Game details unavailable"}</p>
           </div>
           <div className="shrink-0">
         <MostConfidentBet candidates={[
