@@ -838,7 +838,7 @@ function MoneylineCard({
   }
 
   return (
-    <div className="rounded-2xl border border-pink-300/20 bg-pink-300/[0.04] p-5">
+    <div className="flex h-full flex-col rounded-2xl border border-pink-300/20 bg-pink-300/[0.04] p-5">
       <div className="grid gap-3 md:grid-cols-2">
         {[
           {
@@ -889,7 +889,7 @@ function MoneylineCard({
         ))}
       </div>
 
-      <div className="mt-3">
+      <div className="mt-auto pt-3">
         <PickBadge pick={pick} tone={tone} />
       </div>
     </div>
