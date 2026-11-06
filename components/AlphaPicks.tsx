@@ -179,9 +179,9 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
   return out.sort((a, b) => b.probability - a.probability);
 }
 
-function makeParlays(legs: Leg[], minOdds: number, mixed = false): Ticket[] {
-  const MIN_LEGS = 3;
-  const MAX_LEGS = 20;
+function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20): Ticket[] {
+  const MIN_LEGS = minLegs;
+  const MAX_LEGS = maxLegs;
   // Keep one outcome per matchup, and consider as many as 20 distinct games.
   // Beam search avoids the exponential cost of enumerating all combinations.
   const byGame = new Map<string, Leg[]>();
@@ -290,6 +290,7 @@ function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: numbe
 export default function AlphaPicks({ sport, next = false }: { sport: Sport; next?: boolean }) {
   const [legs, setLegs] = useState<Leg[]>([]);
   const [basketGames, setBasketGames] = useState<any[]>([]);
+  const [basketPrices, setBasketPrices] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
   const [mainTab, setMainTab] = useState<MainTab>("parlay");
@@ -308,19 +309,20 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       ufc: ["/data/ufc/game_projections.json", "/data/ufc/market.json"],
     };
     setLoading(true);
-    Promise.all([...paths[sport], ...(sport === "nba" ? ["/data/nba/player_prop_markets.json", "/data/nba/first_basket.json"] : sport === "nfl" ? ["/data/nfl/player_props.json"] : [])].map(async path => {
+    Promise.all([...paths[sport], ...(sport === "nba" ? ["/data/nba/player_prop_markets.json", "/data/nba/first_basket.json", "/data/nba/first_basket_markets.json"] : sport === "nfl" ? ["/data/nfl/player_props.json"] : [])].map(async path => {
       if (next) path = path.replace(`/data/${sport}/`, `/data/${sport}/next/`);
       const res = await fetch(path, { cache: "no-store" });
       if (!res.ok) { if (path.includes("player_prop") || path.includes("first_basket")) return {}; throw new Error("Missing " + path); }
       return res.json();
-    })).then(([p, m, props, baskets]) => {
+    })).then(([p, m, props, baskets, basketOdds]) => {
       if (!active) return;
       const candidates = buildCandidates(sport, list(p), list(m), Array.isArray(props?.props) ? props.props : []);
       setLegs(candidates);
       setBasketGames(Array.isArray(baskets?.games) ? baskets.games : []);
+      setBasketPrices(Array.isArray(basketOdds?.props) ? basketOdds.props : []);
       setStatus(candidates.length ? "" : "No verified sportsbook odds and model-probability pairs are available for this slate.");
     }).catch(() => {
-      if (active) { setLegs([]); setBasketGames([]); setStatus("Current slate projection or sportsbook data is unavailable."); }
+      if (active) { setLegs([]); setBasketGames([]); setBasketPrices([]); setStatus("Current slate projection or sportsbook data is unavailable."); }
     }).finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
   }, [sport, next]);
@@ -332,23 +334,29 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   // First-basket combinations use 2–4 distinct games. The source has
   // modeled probabilities but NO sportsbook first-basket odds.
   // Show projections only, never invent parlay prices or claim eligibility.
-  const basketTickets = useMemo(() => {
-    const options = basketGames.filter(g => g.status !== "unavailable" && Array.isArray(g.players) && g.players.length)
-      .map(g => ({ game: String(g.away_team) + " @ " + String(g.home_team), player: g.players[0] }))
-      .filter(x => normalizeProbability(x.player.probability) !== null)
-      .sort((a, b) => Number(b.player.probability) - Number(a.player.probability));
-    const result: typeof options[] = [];
-    for (const size of [2, 3, 4]) {
-      if (options.length >= size) result.push(options.slice(0, size));
-    }
-    for (let offset = 1; result.length < 5 && offset < options.length; offset++) {
-      for (const size of [2, 3, 4]) {
-        const subset = options.slice(offset, offset + size);
-        if (subset.length === size && result.length < 5) result.push(subset);
+  const basketLegs = useMemo(() => {
+    const normalizeName = (v: unknown) => String(v ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const results: Leg[] = [];
+    for (const game of basketGames) {
+      if (game.status === "unavailable" || !Array.isArray(game.players)) continue;
+      const matchupName = String(game.away_team) + " @ " + String(game.home_team);
+      for (const player of game.players) {
+        const probability = normalizeProbability(player.probability);
+        if (probability === null) continue;
+        const price = basketPrices.find(row => String(row.game_id) === String(game.game_id) && normalizeName(row.player_name) === normalizeName(player.player_name));
+        const odds = num(price?.odds);
+        if (odds === null || odds === 0 || Math.abs(odds) < 100) continue;
+        results.push({ id: String(game.game_id) + ":" + String(player.player_id), game: matchupName,
+          pick: String(player.player_name) + " · First Basket", odds, probability,
+          source: String(price.sportsbook) + " first-basket odds + Alpha Wagerz model", marketType: "player_prop" });
       }
     }
-    return result;
-  }, [basketGames]);
+    return results.sort((a, b) => b.probability - a.probability);
+  }, [basketGames, basketPrices]);
+  const basketTickets = useMemo(() => mainTab === "straight"
+    ? basketLegs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg]))
+    : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4),
+    [basketLegs, mainTab]);
   const section = mainTab === "parlay"
     ? { title: "Most Confident Parlays", subtitle: "Five highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
     : mainTab === "straight"
@@ -393,16 +401,9 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
           </div>
 
         </div>
-        {categoryTab === "first_basket" && sport === "nba" ? <>
-          <p className="text-sm text-slate-400">Model-ranked first-basket combinations · 2–4 legs · Sportsbook first-basket odds are not currently supplied, so these are projections, not verified betting tickets.</p>
-          {basketTickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {(mainTab === "straight" ? basketTickets.map(t => t.slice(0, 1)) : basketTickets).slice(0, 5).map((basket, idx) => <article key={idx} className="rounded-2xl border border-white/10 bg-[#0e192b] p-5">
-              <div className="mb-4 flex items-center justify-between"><span className="text-xs font-bold uppercase tracking-wider text-cyan-200">Alpha Selection {String(idx + 1).padStart(2, "0")}</span><span className="text-xs text-slate-400">{basket.length} {basket.length === 1 ? "pick" : "legs"}</span></div>
-              {basket.map(x => <div key={x.game} className="border-t border-white/10 py-3"><p className="text-xs text-slate-400">{x.game}</p><p className="mt-1 font-bold text-white">{x.player.player_name} · First Basket</p><p className="mt-1 text-xs text-cyan-200">Model estimate: {Number(x.player.probability).toFixed(1)}%</p></div>)}
-              <p className="mt-3 text-xs text-amber-200">Sportsbook odds unavailable — no verified parlay price.</p>
-            </article>)}
-          </div> : <p className="rounded-2xl border border-white/10 p-6 text-sm text-slate-400">No eligible first-basket projections are available for this slate.</p>}
-        </> : ["anytime_goal", "first_goal", "home_run", "anytime_td", "first_td"].includes(categoryTab) ? <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-center text-sm text-slate-400">This scorer market requires matching player-level model probabilities and verified sportsbook odds. No eligible priced selections are currently available. The category will remain empty rather than display invented odds.</p> : section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + categoryTab + i} ticket={t} index={i} category={section.category} />)}</div> :
+        {categoryTab === "first_basket" && sport === "nba" ? (basketTickets.length
+          ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{basketTickets.map((t, i) => <PickCard key={"basket" + mainTab + i} ticket={t} index={i} category={section.category} />)}</div>
+          : <p className="rounded-2xl border border-white/10 p-6 text-center text-sm text-slate-400">No first-basket selections meet this category’s price and model criteria on the current slate.</p>) : ["anytime_goal", "first_goal", "home_run", "anytime_td", "first_td"].includes(categoryTab) ? <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-center text-sm text-slate-400">This scorer market requires matching player-level model probabilities and verified sportsbook odds. No eligible priced selections are currently available. The category will remain empty rather than display invented odds.</p> : section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + categoryTab + i} ticket={t} index={i} category={section.category} />)}</div> :
           <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">No qualifying {pickTabs.find(tab => tab.id === categoryTab)?.label.toLowerCase()} {mainTab === "parlay" ? "parlay" : mainTab === "straight" ? "straight" : "lotto"} picks are available from verified sportsbook prices and model probabilities for this slate. No picks were fabricated.</p>}
       </section>
     </>}
