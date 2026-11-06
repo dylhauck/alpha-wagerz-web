@@ -401,202 +401,99 @@ function MarketPanel({
         ) * 100
       : undefined;
 
+  const marketBox = "rounded-2xl border border-white/10 bg-white/[0.035] p-4";
+  const innerBox = "rounded-xl border border-white/10 bg-slate-950/40 p-3";
+  const caption = "text-[10px] font-black uppercase tracking-widest text-slate-500";
+  const value = "mt-1 text-sm font-black text-white";
+  const metric = (label: string, content: React.ReactNode) => (
+    <div className={innerBox}><p className={caption}>{label}</p><div className={value}>{content}</div></div>
+  );
+  const edge = (win?: number, odds?: number) => {
+    const implied = americanImplied(odds);
+    return win == null || implied == null ? "Unavailable" : plus(win - implied) + "%";
+  };
+  const spreadLine = market?.spread?.home_line;
+  const homeMargin = p.home_margin;
+  const spreadPick = spreadLine == null || homeMargin == null ? null :
+    homeMargin + spreadLine >= 0 ? `${home} ${plus(spreadLine)}` : `${away} ${plus(market?.spread?.away_line)}`;
+  const totalLine = market?.total?.line;
+  const totalPick = totalLine == null || p.projected_total == null ? null :
+    `${p.projected_total >= totalLine ? "OVER" : "UNDER"} ${fmt(totalLine)}`;
+  const pick = (text: string | null) => (
+    <div className="mt-3 rounded-xl border border-pink-300/25 bg-pink-300/10 px-4 py-3 text-center">
+      <p className="text-[10px] font-black uppercase tracking-widest text-pink-200/75">Alpha Pick</p>
+      <p className="mt-1 text-xl font-black text-pink-200">{text || "Unavailable"}</p>
+    </div>
+  );
   return (
     <div className="mt-4 grid gap-3 lg:grid-cols-2">
-      {/* MONEYLINE */}
-
-      <Card title="Moneyline">
-        <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase tracking-wide text-slate-500">
-          <span>Market</span>
-          <span>Model</span>
-          <span>Edge</span>
-        </div>
-
-        {(["away", "home"] as const).map(
-          (side) => {
-            const team =
-              side === "away"
-                ? away
-                : home;
-
-            const odds =
-              market?.moneyline?.[side];
-
-            const win =
-              side === "away"
-                ? awayWin
-                : homeWin;
-
-            return (
-              <div
-                key={side}
-                className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"
-              >
-                <span>
-                  {team} {odds == null ? "Unavailable" : plus(odds)}
-                </span>
-
-                <span className="text-cyan-200">
-                  {fmt(win)}%
-                </span>
-
-                <PctEdge
-                  model={win}
-                  odds={odds}
-                />
+      <div className={marketBox}>
+        <h3 className="mb-3 text-xs font-black uppercase text-slate-400">Moneyline</h3>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {(["away", "home"] as const).map(side => {
+            const team = side === "away" ? away : home;
+            const odds = market?.moneyline?.[side];
+            const win = side === "away" ? awayWin : homeWin;
+            return <div key={side} className="rounded-xl border border-white/10 bg-purple-300/[0.045] p-3">
+              <p className="mb-3 text-base font-black text-white">{team} ML {odds == null ? "Unavailable" : plus(odds)}</p>
+              <div className="grid grid-cols-3 gap-2">
+                {metric("Market Prob.", americanImplied(odds) == null ? "Unavailable" : fmt(americanImplied(odds)) + "%")}
+                {metric("Alpha Prob.", win == null ? "Unavailable" : fmt(win) + "%")}
+                {metric("Probability Edge", edge(win, odds))}
               </div>
-            );
-          }
-        )}
-
-        {!market?.moneyline && (
-          <p className="mt-3 text-xs text-slate-500">
-            Sportsbook moneyline unavailable.
-          </p>
-        )}
-      </Card>
-
-      {/* SPREAD */}
-
-      <Card title="Spread">
-        <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase tracking-wide text-slate-500">
-          <span>Market</span>
-          <span>Model</span>
-          <span>Cover %</span>
+            </div>;
+          })}
         </div>
-
-        <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
-          <span>
-            {home}{" "}
-            {market?.spread?.home_line == null ? "Unavailable" : plus(market.spread.home_line)}
-          </span>
-
-          <span className="text-cyan-200">
-            {plus(
-              p.home_margin === undefined
-                ? undefined
-                : -p.home_margin
-            )}
-          </span>
-
-          <span>
-            {fmt(homeCover)}
-            {homeCover === undefined
-              ? ""
-              : "%"}
-          </span>
+        {pick(awayWin == null || homeWin == null ? null : `${awayWin >= homeWin ? away : home} ML ${market?.moneyline?.[awayWin >= homeWin ? "away" : "home"] == null ? "" : plus(market?.moneyline?.[awayWin >= homeWin ? "away" : "home"])}`)}
+      </div>
+      <div className={marketBox}>
+        <h3 className="mb-3 text-xs font-black uppercase text-slate-400">Spread</h3>
+        <div className="rounded-xl border border-cyan-300/20 bg-cyan-300/[0.045] p-3">
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div className={innerBox}>
+              <p className={caption}>Sportsbook Spread</p>
+              <p className={value}>{home} {spreadLine == null ? "Unavailable" : plus(spreadLine)}</p>
+              <p className={value}>{away} {market?.spread?.away_line == null ? "Unavailable" : plus(market.spread.away_line)}</p>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              {metric("Alpha Score", `${away} ${fmt(p.away_score)} · ${home} ${fmt(p.home_score)}`)}
+              {metric("Alpha Margin", homeMargin == null ? "Unavailable" : `${homeMargin >= 0 ? home : away} by ${fmt(Math.abs(homeMargin))}`)}
+              {metric("Market Margin", spreadLine == null ? "Unavailable" : fmt(Math.abs(spreadLine)))}
+              {metric("Spread Edge", homeMargin == null || spreadLine == null ? "Unavailable" : plus(homeMargin + spreadLine))}
+            </div>
+          </div>
+          {pick(spreadPick)}
         </div>
-
-        <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
-          <span>
-            {away}{" "}
-            {market?.spread?.away_line == null ? "Unavailable" : plus(market.spread.away_line)}
-          </span>
-
-          <span className="text-cyan-200">
-            {plus(p.home_margin)}
-          </span>
-
-          <span>
-            {fmt(
-              homeCover === undefined
-                ? undefined
-                : 100 - homeCover
-            )}
-            {homeCover === undefined
-              ? ""
-              : "%"}
-          </span>
+      </div>
+      <div className={marketBox + " lg:col-span-2"}>
+        <h3 className="mb-3 text-xs font-black uppercase text-slate-400">Over / Under</h3>
+        <div className="grid gap-3 sm:grid-cols-4">
+          {metric("Sportsbook Line", totalLine == null ? "Unavailable" : fmt(totalLine))}
+          {metric("Alpha Projection", fmt(p.projected_total))}
+          {metric("Difference", totalLine == null || p.projected_total == null ? "Unavailable" : plus(p.projected_total - totalLine))}
+          {metric("Over Probability", over == null ? "Unavailable" : fmt(over) + "%")}
         </div>
-      </Card>
-
-      {/* OVER / UNDER */}
-
-      <Card title="Over / Under" wide>
-        <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase tracking-wide text-slate-500">
-          <span>Market</span>
-          <span>Model</span>
-          <span>Probability</span>
+        {pick(totalPick)}
+      </div>
+      <div className={marketBox + " lg:col-span-2"}>
+        <h3 className="mb-3 text-xs font-black uppercase text-slate-400">Team Totals</h3>
+        <div className="grid gap-3 lg:grid-cols-2">
+          {(["away", "home"] as const).map(side => {
+            const team = side === "away" ? away : home;
+            const line = market?.team_totals?.[side];
+            const projected = side === "away" ? p.away_score : p.home_score;
+            return <div key={side} className="rounded-xl border border-white/10 bg-white/[0.025] p-3">
+              <p className="mb-3 text-base font-black text-white">{team}</p>
+              <div className="grid grid-cols-3 gap-2">
+                {metric("Sportsbook Line", line == null ? "Unavailable" : fmt(line))}
+                {metric("Alpha Projection", fmt(projected))}
+                {metric("Difference", line == null || projected == null ? "Unavailable" : plus(projected - line))}
+              </div>
+              {pick(line == null || projected == null ? null : `${projected >= line ? "OVER" : "UNDER"} ${fmt(line)}`)}
+            </div>;
+          })}
         </div>
-
-        <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
-          <span>
-            Over{" "}
-            {market?.total?.line == null ? "Unavailable" : fmt(market.total.line)}
-          </span>
-
-          <span className="text-cyan-200">
-            {fmt(p.projected_total)}
-          </span>
-
-          <span>
-            {fmt(over)}
-            {over === undefined
-              ? ""
-              : "%"}
-          </span>
-        </div>
-
-        <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
-          <span>
-            Under{" "}
-            {market?.total?.line == null ? "Unavailable" : fmt(market.total.line)}
-          </span>
-
-          <span className="text-cyan-200">
-            {fmt(p.projected_total)}
-          </span>
-
-          <span>
-            {fmt(
-              over === undefined
-                ? undefined
-                : 100 - over
-            )}
-            {over === undefined
-              ? ""
-              : "%"}
-          </span>
-        </div>
-      </Card>
-
-      {/* TEAM TOTALS */}
-
-      <Card title="Team Totals" wide>
-        <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase tracking-wide text-slate-500">
-          <span>Team</span>
-          <span>Market</span>
-          <span>Model</span>
-        </div>
-
-        <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
-          <span>{away}</span>
-
-          <span>
-            {fmt(
-              market?.team_totals?.away
-            )}
-          </span>
-
-          <span className="text-cyan-200">
-            {fmt(p.away_score)}
-          </span>
-        </div>
-
-        <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
-          <span>{home}</span>
-
-          <span>
-            {fmt(
-              market?.team_totals?.home
-            )}
-          </span>
-
-          <span className="text-cyan-200">
-            {fmt(p.home_score)}
-          </span>
-        </div>
-      </Card>
+      </div>
     </div>
   );
 }
