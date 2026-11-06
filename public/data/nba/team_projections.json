@@ -1,139 +1,139 @@
 {
-  "generated_at": "2026-11-05T19:02:37.951737+00:00",
-  "slate_date": "2026-11-05",
+  "generated_at": "2026-11-06T13:22:56.601406+00:00",
+  "slate_date": "2026-11-06",
   "season": "2026-27",
-  "game_count": 2,
+  "game_count": 9,
   "period_methodology": "Historical 2025-26 NBA quarter scoring averages redistribute existing full-game model totals. Opponent defensive quarter scoring uses a neutral league baseline. Win probabilities use assumed normal-distribution uncertainty and are not backtested.",
   "games": [
     {
-      "game_id": "0022600187",
+      "game_id": "0022600025",
       "season": "2026-27",
       "game_type": "REG",
-      "game_date": "2026-11-05",
-      "game_time": "1900-01-01T21:00:00Z",
-      "game_datetime": "2026-11-05T21:00:00Z",
-      "game_datetime_utc": "2026-11-06T02:00:00Z",
-      "status": "9:00 pm ET",
+      "game_date": "2026-11-06",
+      "game_time": "1900-01-01T19:00:00Z",
+      "game_datetime": "2026-11-06T19:00:00Z",
+      "game_datetime_utc": "2026-11-07T00:00:00Z",
+      "status": "7:00 pm ET",
       "status_code": 1,
-      "venue": "Mortgage Matchup Center",
-      "arena": "Mortgage Matchup Center",
-      "arena_city": "Phoenix",
-      "arena_state": "AZ",
+      "venue": "State Farm Arena",
+      "arena": "State Farm Arena",
+      "arena_city": "Atlanta",
+      "arena_state": "GA",
       "week_number": 3,
       "week_name": "Week 3",
-      "away_team": "ORL",
-      "home_team": "PHX",
-      "away_record": "2-5",
-      "home_record": "1-5",
+      "away_team": "WAS",
+      "home_team": "ATL",
+      "away_record": "4-4",
+      "home_record": "5-4",
       "model": {
-        "away_score": 117.6,
-        "home_score": 111.2,
-        "projected_total": 228.7,
-        "home_margin": -6.4,
-        "away_margin": 6.4,
-        "projected_winner": "ORL",
-        "away_win_probability": 64.2,
-        "home_win_probability": 35.8,
-        "confidence": 66.4
+        "away_score": 122.2,
+        "home_score": 130.8,
+        "projected_total": 253.0,
+        "home_margin": 8.6,
+        "away_margin": -8.6,
+        "projected_winner": "ATL",
+        "away_win_probability": 31.3,
+        "home_win_probability": 68.7,
+        "confidence": 69.9
       },
       "team_profiles": {
         "away": {
-          "team": "ORL",
-          "team_name": "Orlando Magic",
+          "team": "WAS",
+          "team_name": "Washington Wizards",
           "conference": "East",
           "games": {
-            "current": 7,
+            "current": 8,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.35,
-            "last_season": 0.65
+            "current_season": 0.4,
+            "last_season": 0.6
           },
           "per_game": {
-            "pts": 118.95,
-            "pts_allowed": 121.01,
-            "point_diff": -2.06,
-            "reb": 41.86,
-            "ast": 27.73,
-            "tov": 16.23,
-            "fg3m": 12.15
+            "pts": 118.94,
+            "pts_allowed": 121.34,
+            "point_diff": -2.4,
+            "reb": 42.74,
+            "ast": 26.2,
+            "tov": 14.62,
+            "fg3m": 10.2
           },
           "percentages": {
-            "fg_pct": 0.47,
-            "fg3_pct": 0.337,
-            "ft_pct": 0.79
+            "fg_pct": 0.487,
+            "fg3_pct": 0.301,
+            "ft_pct": 0.772
           },
           "ratings": {
-            "offense_index": 1.037,
-            "defense_index": 1.0549
+            "offense_index": 1.0368,
+            "defense_index": 1.0577
           }
         },
         "home": {
-          "team": "PHX",
-          "team_name": "Phoenix Suns",
-          "conference": "West",
+          "team": "ATL",
+          "team_name": "Atlanta Hawks",
+          "conference": "East",
           "games": {
-            "current": 6,
+            "current": 9,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.3,
-            "last_season": 0.7
+            "current_season": 0.45,
+            "last_season": 0.55
           },
           "per_game": {
-            "pts": 103.72,
-            "pts_allowed": 114.97,
-            "point_diff": -11.25,
-            "reb": 41.87,
-            "ast": 21.42,
-            "tov": 14.95,
-            "fg3m": 12.16
+            "pts": 124.58,
+            "pts_allowed": 120.05,
+            "point_diff": 4.47,
+            "reb": 42.83,
+            "ast": 29.16,
+            "tov": 15.46,
+            "fg3m": 14.33
           },
           "percentages": {
-            "fg_pct": 0.426,
-            "fg3_pct": 0.309,
-            "ft_pct": 0.768
+            "fg_pct": 0.481,
+            "fg3_pct": 0.379,
+            "ft_pct": 0.801
           },
           "ratings": {
-            "offense_index": 0.9042,
-            "defense_index": 1.0022
+            "offense_index": 1.0859,
+            "defense_index": 1.0465
           }
         }
       },
       "standings": {
         "away": {
-          "record": "2-5",
-          "wins": 2,
-          "losses": 5,
-          "win_pct": 0.2857142857142857,
-          "nba_rank": 18,
-          "conference_rank": 10,
-          "division_rank": 4,
-          "home_record": "0-1",
+          "record": "4-4",
+          "wins": 4,
+          "losses": 4,
+          "win_pct": 0.5,
+          "nba_rank": 9,
+          "conference_rank": 5,
+          "division_rank": 2,
+          "home_record": "1-0",
           "road_record": "0-0",
-          "last_10": "0-1",
-          "conference_record": "1.5",
-          "division_record": "1.0",
-          "points_per_game": 125.0,
-          "opponent_points_per_game": 132.0,
-          "point_differential": -7.0
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 128.0,
+          "opponent_points_per_game": 116.0,
+          "point_differential": 12.0
         },
         "home": {
-          "record": "1-5",
-          "wins": 1,
-          "losses": 5,
-          "win_pct": 0.16666666666666666,
-          "nba_rank": 29,
-          "conference_rank": 14,
-          "division_rank": 5,
+          "record": "5-4",
+          "wins": 5,
+          "losses": 4,
+          "win_pct": 0.5555555555555556,
+          "nba_rank": 11,
+          "conference_rank": 3,
+          "division_rank": 1,
           "home_record": "0-0",
-          "road_record": "0-1",
-          "last_10": "0-1",
-          "conference_record": "1.5",
-          "division_record": "1.0",
-          "points_per_game": 83.0,
-          "opponent_points_per_game": 124.0,
-          "point_differential": -41.0
+          "road_record": "1-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 132.0,
+          "opponent_points_per_game": 125.0,
+          "point_differential": 7.0
         }
       },
       "markets": {
@@ -151,40 +151,40 @@
       "periods_status": "unavailable: historical quarter splits missing; full-game model projection is current"
     },
     {
-      "game_id": "0022600188",
+      "game_id": "0022600026",
       "season": "2026-27",
       "game_type": "REG",
-      "game_date": "2026-11-05",
-      "game_time": "1900-01-01T22:00:00Z",
-      "game_datetime": "2026-11-05T22:00:00Z",
-      "game_datetime_utc": "2026-11-06T03:00:00Z",
-      "status": "10:00 pm ET",
+      "game_date": "2026-11-06",
+      "game_time": "1900-01-01T19:00:00Z",
+      "game_datetime": "2026-11-06T19:00:00Z",
+      "game_datetime_utc": "2026-11-07T00:00:00Z",
+      "status": "7:00 pm ET",
       "status_code": 1,
-      "venue": "Chase Center",
-      "arena": "Chase Center",
-      "arena_city": "San Francisco",
-      "arena_state": "CA",
+      "venue": "Spectrum Center",
+      "arena": "Spectrum Center",
+      "arena_city": "Charlotte",
+      "arena_state": "NC",
       "week_number": 3,
       "week_name": "Week 3",
-      "away_team": "MIA",
-      "home_team": "GSW",
-      "away_record": "3-5",
-      "home_record": "5-3",
+      "away_team": "BOS",
+      "home_team": "CHA",
+      "away_record": "6-2",
+      "home_record": "3-6",
       "model": {
-        "away_score": 118.4,
-        "home_score": 119.8,
-        "projected_total": 238.2,
-        "home_margin": 1.4,
-        "away_margin": -1.4,
-        "projected_winner": "GSW",
-        "away_win_probability": 46.8,
-        "home_win_probability": 53.2,
-        "confidence": 69.0
+        "away_score": 106.8,
+        "home_score": 112.8,
+        "projected_total": 219.6,
+        "home_margin": 6.0,
+        "away_margin": -6.0,
+        "projected_winner": "CHA",
+        "away_win_probability": 36.6,
+        "home_win_probability": 63.4,
+        "confidence": 69.9
       },
       "team_profiles": {
         "away": {
-          "team": "MIA",
-          "team_name": "Miami Heat",
+          "team": "BOS",
+          "team_name": "Boston Celtics",
           "conference": "East",
           "games": {
             "current": 8,
@@ -195,27 +195,286 @@
             "last_season": 0.6
           },
           "per_game": {
-            "pts": 114.94,
-            "pts_allowed": 123.5,
-            "point_diff": -8.62,
-            "reb": 41.38,
-            "ast": 28.2,
-            "tov": 15.82,
-            "fg3m": 11.42
+            "pts": 114.14,
+            "pts_allowed": 112.72,
+            "point_diff": 1.42,
+            "reb": 43.44,
+            "ast": 25.96,
+            "tov": 13.04,
+            "fg3m": 16.1
           },
           "percentages": {
-            "fg_pct": 0.473,
-            "fg3_pct": 0.313,
-            "ft_pct": 0.783
+            "fg_pct": 0.462,
+            "fg3_pct": 0.382,
+            "ft_pct": 0.789
           },
           "ratings": {
-            "offense_index": 1.002,
-            "defense_index": 1.0766
+            "offense_index": 0.9949,
+            "defense_index": 0.9826
           }
         },
         "home": {
-          "team": "GSW",
-          "team_name": "Golden State Warriors",
+          "team": "CHA",
+          "team_name": "Charlotte Hornets",
+          "conference": "East",
+          "games": {
+            "current": 9,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.45,
+            "last_season": 0.55
+          },
+          "per_game": {
+            "pts": 113.3,
+            "pts_allowed": 107.51,
+            "point_diff": 5.79,
+            "reb": 45.16,
+            "ast": 26.17,
+            "tov": 17.92,
+            "fg3m": 15.77
+          },
+          "percentages": {
+            "fg_pct": 0.451,
+            "fg3_pct": 0.348,
+            "ft_pct": 0.84
+          },
+          "ratings": {
+            "offense_index": 0.9876,
+            "defense_index": 0.9372
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "6-2",
+          "wins": 6,
+          "losses": 2,
+          "win_pct": 0.75,
+          "nba_rank": 19,
+          "conference_rank": 11,
+          "division_rank": 5,
+          "home_record": "0-0",
+          "road_record": "0-1",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.5",
+          "points_per_game": 113.0,
+          "opponent_points_per_game": 121.0,
+          "point_differential": -8.0
+        },
+        "home": {
+          "record": "3-6",
+          "wins": 3,
+          "losses": 6,
+          "win_pct": 0.3333333333333333,
+          "nba_rank": 12,
+          "conference_rank": 6,
+          "division_rank": 3,
+          "home_record": "0-0",
+          "road_record": "1-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 110.0,
+          "opponent_points_per_game": 103.0,
+          "point_differential": 7.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {},
+      "periods_status": "unavailable: historical quarter splits missing; full-game model projection is current"
+    },
+    {
+      "game_id": "0022600027",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-06",
+      "game_time": "1900-01-01T19:30:00Z",
+      "game_datetime": "2026-11-06T19:30:00Z",
+      "game_datetime_utc": "2026-11-07T00:30:00Z",
+      "status": "7:30 pm ET",
+      "status_code": 1,
+      "venue": "Rocket Arena",
+      "arena": "Rocket Arena",
+      "arena_city": "Cleveland",
+      "arena_state": "OH",
+      "week_number": 3,
+      "week_name": "Week 3",
+      "away_team": "PHI",
+      "home_team": "CLE",
+      "away_record": "8-1",
+      "home_record": "4-4",
+      "model": {
+        "away_score": 112.4,
+        "home_score": 111.3,
+        "projected_total": 223.8,
+        "home_margin": -1.1,
+        "away_margin": 1.1,
+        "projected_winner": "PHI",
+        "away_win_probability": 52.5,
+        "home_win_probability": 47.5,
+        "confidence": 69.9
+      },
+      "team_profiles": {
+        "away": {
+          "team": "PHI",
+          "team_name": "Philadelphia 76ers",
+          "conference": "East",
+          "games": {
+            "current": 9,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.45,
+            "last_season": 0.55
+          },
+          "per_game": {
+            "pts": 113.25,
+            "pts_allowed": 110.21,
+            "point_diff": 3.04,
+            "reb": 44.01,
+            "ast": 25.23,
+            "tov": 14.01,
+            "fg3m": 10.82
+          },
+          "percentages": {
+            "fg_pct": 0.45,
+            "fg3_pct": 0.311,
+            "ft_pct": 0.792
+          },
+          "ratings": {
+            "offense_index": 0.9871,
+            "defense_index": 0.9606
+          }
+        },
+        "home": {
+          "team": "CLE",
+          "team_name": "Cleveland Cavaliers",
+          "conference": "East",
+          "games": {
+            "current": 8,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.4,
+            "last_season": 0.6
+          },
+          "per_game": {
+            "pts": 114.1,
+            "pts_allowed": 114.84,
+            "point_diff": -0.74,
+            "reb": 45.04,
+            "ast": 24.18,
+            "tov": 16.8,
+            "fg3m": 11.38
+          },
+          "percentages": {
+            "fg_pct": 0.468,
+            "fg3_pct": 0.312,
+            "ft_pct": 0.766
+          },
+          "ratings": {
+            "offense_index": 0.9946,
+            "defense_index": 1.001
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "8-1",
+          "wins": 8,
+          "losses": 1,
+          "win_pct": 0.8888888888888888,
+          "nba_rank": 13,
+          "conference_rank": 1,
+          "division_rank": 1,
+          "home_record": "1-0",
+          "road_record": "1-0",
+          "last_10": "2-0",
+          "conference_record": "",
+          "division_record": "",
+          "points_per_game": 110.0,
+          "opponent_points_per_game": 103.0,
+          "point_differential": 7.0
+        },
+        "home": {
+          "record": "4-4",
+          "wins": 4,
+          "losses": 4,
+          "win_pct": 0.5,
+          "nba_rank": 20,
+          "conference_rank": 12,
+          "division_rank": 3,
+          "home_record": "0-0",
+          "road_record": "0-1",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.0",
+          "points_per_game": 106.0,
+          "opponent_points_per_game": 114.0,
+          "point_differential": -8.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {},
+      "periods_status": "unavailable: historical quarter splits missing; full-game model projection is current"
+    },
+    {
+      "game_id": "0022600028",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-06",
+      "game_time": "1900-01-01T20:00:00Z",
+      "game_datetime": "2026-11-06T20:00:00Z",
+      "game_datetime_utc": "2026-11-07T01:00:00Z",
+      "status": "8:00 pm ET",
+      "status_code": 1,
+      "venue": "American Airlines Center",
+      "arena": "American Airlines Center",
+      "arena_city": "Dallas",
+      "arena_state": "TX",
+      "week_number": 3,
+      "week_name": "Week 3",
+      "away_team": "UTA",
+      "home_team": "DAL",
+      "away_record": "1-7",
+      "home_record": "4-4",
+      "model": {
+        "away_score": 118.1,
+        "home_score": 122.5,
+        "projected_total": 240.6,
+        "home_margin": 4.4,
+        "away_margin": -4.4,
+        "projected_winner": "DAL",
+        "away_win_probability": 40.0,
+        "home_win_probability": 60.0,
+        "confidence": 69.0
+      },
+      "team_profiles": {
+        "away": {
+          "team": "UTA",
+          "team_name": "Utah Jazz",
           "conference": "West",
           "games": {
             "current": 8,
@@ -226,32 +485,515 @@
             "last_season": 0.6
           },
           "per_game": {
-            "pts": 110.76,
-            "pts_allowed": 119.92,
-            "point_diff": -9.16,
-            "reb": 39.78,
-            "ast": 27.34,
-            "tov": 15.82,
-            "fg3m": 12.62
+            "pts": 111.76,
+            "pts_allowed": 124.8,
+            "point_diff": -13.04,
+            "reb": 41.48,
+            "ast": 27.76,
+            "tov": 16.5,
+            "fg3m": 11.96
           },
           "percentages": {
-            "fg_pct": 0.442,
-            "fg3_pct": 0.302,
-            "ft_pct": 0.795
+            "fg_pct": 0.467,
+            "fg3_pct": 0.345,
+            "ft_pct": 0.738
           },
           "ratings": {
-            "offense_index": 0.9655,
-            "defense_index": 1.0454
+            "offense_index": 0.9742,
+            "defense_index": 1.0879
+          }
+        },
+        "home": {
+          "team": "DAL",
+          "team_name": "Dallas Mavericks",
+          "conference": "West",
+          "games": {
+            "current": 8,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.4,
+            "last_season": 0.6
+          },
+          "per_game": {
+            "pts": 112.46,
+            "pts_allowed": 122.96,
+            "point_diff": -10.5,
+            "reb": 40.02,
+            "ast": 23.18,
+            "tov": 17.1,
+            "fg3m": 11.0
+          },
+          "percentages": {
+            "fg_pct": 0.487,
+            "fg3_pct": 0.325,
+            "ft_pct": 0.715
+          },
+          "ratings": {
+            "offense_index": 0.9803,
+            "defense_index": 1.0718
           }
         }
       },
       "standings": {
         "away": {
-          "record": "3-5",
-          "wins": 3,
-          "losses": 5,
-          "win_pct": 0.375,
-          "nba_rank": 27,
+          "record": "1-7",
+          "wins": 1,
+          "losses": 7,
+          "win_pct": 0.125,
+          "nba_rank": 25,
+          "conference_rank": 11,
+          "division_rank": 5,
+          "home_record": "0-0",
+          "road_record": "0-1",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.5",
+          "points_per_game": 103.0,
+          "opponent_points_per_game": 123.0,
+          "point_differential": -20.0
+        },
+        "home": {
+          "record": "4-4",
+          "wins": 4,
+          "losses": 4,
+          "win_pct": 0.5,
+          "nba_rank": 24,
+          "conference_rank": 10,
+          "division_rank": 3,
+          "home_record": "0-0",
+          "road_record": "0-1",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.0",
+          "points_per_game": 110.0,
+          "opponent_points_per_game": 128.0,
+          "point_differential": -18.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {},
+      "periods_status": "unavailable: historical quarter splits missing; full-game model projection is current"
+    },
+    {
+      "game_id": "0022600029",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-06",
+      "game_time": "1900-01-01T20:00:00Z",
+      "game_datetime": "2026-11-06T20:00:00Z",
+      "game_datetime_utc": "2026-11-07T01:00:00Z",
+      "status": "8:00 pm ET",
+      "status_code": 1,
+      "venue": "FedExForum",
+      "arena": "FedExForum",
+      "arena_city": "Memphis",
+      "arena_state": "TN",
+      "week_number": 3,
+      "week_name": "Week 3",
+      "away_team": "OKC",
+      "home_team": "MEM",
+      "away_record": "6-2",
+      "home_record": "6-2",
+      "model": {
+        "away_score": 111.9,
+        "home_score": 107.5,
+        "projected_total": 219.4,
+        "home_margin": -4.3,
+        "away_margin": 4.3,
+        "projected_winner": "OKC",
+        "away_win_probability": 59.7,
+        "home_win_probability": 40.3,
+        "confidence": 69.0
+      },
+      "team_profiles": {
+        "away": {
+          "team": "OKC",
+          "team_name": "Oklahoma City Thunder",
+          "conference": "West",
+          "games": {
+            "current": 8,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.4,
+            "last_season": 0.6
+          },
+          "per_game": {
+            "pts": 113.8,
+            "pts_allowed": 102.34,
+            "point_diff": 11.46,
+            "reb": 45.06,
+            "ast": 24.68,
+            "tov": 12.76,
+            "fg3m": 13.28
+          },
+          "percentages": {
+            "fg_pct": 0.457,
+            "fg3_pct": 0.354,
+            "ft_pct": 0.831
+          },
+          "ratings": {
+            "offense_index": 0.992,
+            "defense_index": 0.8921
+          }
+        },
+        "home": {
+          "team": "MEM",
+          "team_name": "Memphis Grizzlies",
+          "conference": "West",
+          "games": {
+            "current": 8,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.4,
+            "last_season": 0.6
+          },
+          "per_game": {
+            "pts": 118.02,
+            "pts_allowed": 113.62,
+            "point_diff": 4.4,
+            "reb": 47.26,
+            "ast": 25.88,
+            "tov": 15.06,
+            "fg3m": 13.54
+          },
+          "percentages": {
+            "fg_pct": 0.463,
+            "fg3_pct": 0.365,
+            "ft_pct": 0.79
+          },
+          "ratings": {
+            "offense_index": 1.0288,
+            "defense_index": 0.9904
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "6-2",
+          "wins": 6,
+          "losses": 2,
+          "win_pct": 0.75,
+          "nba_rank": 8,
+          "conference_rank": 1,
+          "division_rank": 1,
+          "home_record": "1-0",
+          "road_record": "1-0",
+          "last_10": "2-0",
+          "conference_record": "",
+          "division_record": "",
+          "points_per_game": 106.0,
+          "opponent_points_per_game": 94.0,
+          "point_differential": 12.0
+        },
+        "home": {
+          "record": "6-2",
+          "wins": 6,
+          "losses": 2,
+          "win_pct": 0.75,
+          "nba_rank": 6,
+          "conference_rank": 6,
+          "division_rank": 2,
+          "home_record": "1-0",
+          "road_record": "0-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 123.0,
+          "opponent_points_per_game": 103.0,
+          "point_differential": 20.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {},
+      "periods_status": "unavailable: historical quarter splits missing; full-game model projection is current"
+    },
+    {
+      "game_id": "0022600030",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-06",
+      "game_time": "1900-01-01T20:00:00Z",
+      "game_datetime": "2026-11-06T20:00:00Z",
+      "game_datetime_utc": "2026-11-07T01:00:00Z",
+      "status": "8:00 pm ET",
+      "status_code": 1,
+      "venue": "Fiserv Forum",
+      "arena": "Fiserv Forum",
+      "arena_city": "Milwaukee",
+      "arena_state": "WI",
+      "week_number": 3,
+      "week_name": "Week 3",
+      "away_team": "TOR",
+      "home_team": "MIL",
+      "away_record": "4-4",
+      "home_record": "1-7",
+      "model": {
+        "away_score": 126.9,
+        "home_score": 104.7,
+        "projected_total": 231.6,
+        "home_margin": -22.2,
+        "away_margin": 22.2,
+        "projected_winner": "TOR",
+        "away_win_probability": 88.2,
+        "home_win_probability": 11.8,
+        "confidence": 69.0
+      },
+      "team_profiles": {
+        "away": {
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
+          "conference": "East",
+          "games": {
+            "current": 8,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.4,
+            "last_season": 0.6
+          },
+          "per_game": {
+            "pts": 122.76,
+            "pts_allowed": 103.88,
+            "point_diff": 18.88,
+            "reb": 45.66,
+            "ast": 30.1,
+            "tov": 12.62,
+            "fg3m": 10.84
+          },
+          "percentages": {
+            "fg_pct": 0.469,
+            "fg3_pct": 0.342,
+            "ft_pct": 0.783
+          },
+          "ratings": {
+            "offense_index": 1.0701,
+            "defense_index": 0.9055
+          }
+        },
+        "home": {
+          "team": "MIL",
+          "team_name": "Milwaukee Bucks",
+          "conference": "East",
+          "games": {
+            "current": 8,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.4,
+            "last_season": 0.6
+          },
+          "per_game": {
+            "pts": 112.76,
+            "pts_allowed": 121.28,
+            "point_diff": -8.52,
+            "reb": 40.82,
+            "ast": 26.68,
+            "tov": 15.52,
+            "fg3m": 15.06
+          },
+          "percentages": {
+            "fg_pct": 0.467,
+            "fg3_pct": 0.379,
+            "ft_pct": 0.768
+          },
+          "ratings": {
+            "offense_index": 0.9829,
+            "defense_index": 1.0572
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "4-4",
+          "wins": 4,
+          "losses": 4,
+          "win_pct": 0.5,
+          "nba_rank": 1,
+          "conference_rank": 4,
+          "division_rank": 2,
+          "home_record": "1-0",
+          "road_record": "0-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "0.5",
+          "points_per_game": 135.0,
+          "opponent_points_per_game": 92.0,
+          "point_differential": 43.0
+        },
+        "home": {
+          "record": "1-7",
+          "wins": 1,
+          "losses": 7,
+          "win_pct": 0.125,
+          "nba_rank": 22,
+          "conference_rank": 13,
+          "division_rank": 4,
+          "home_record": "0-0",
+          "road_record": "0-1",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.0",
+          "points_per_game": 116.0,
+          "opponent_points_per_game": 128.0,
+          "point_differential": -12.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {},
+      "periods_status": "unavailable: historical quarter splits missing; full-game model projection is current"
+    },
+    {
+      "game_id": "0022600031",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-06",
+      "game_time": "1900-01-01T20:00:00Z",
+      "game_datetime": "2026-11-06T20:00:00Z",
+      "game_datetime_utc": "2026-11-07T01:00:00Z",
+      "status": "8:00 pm ET",
+      "status_code": 1,
+      "venue": "Smoothie King Center",
+      "arena": "Smoothie King Center",
+      "arena_city": "New Orleans",
+      "arena_state": "LA",
+      "week_number": 3,
+      "week_name": "Week 3",
+      "away_team": "MIN",
+      "home_team": "NOP",
+      "away_record": "6-3",
+      "home_record": "4-4",
+      "model": {
+        "away_score": 127.8,
+        "home_score": 114.5,
+        "projected_total": 242.3,
+        "home_margin": -13.3,
+        "away_margin": 13.3,
+        "projected_winner": "MIN",
+        "away_win_probability": 77.0,
+        "home_win_probability": 23.0,
+        "confidence": 69.9
+      },
+      "team_profiles": {
+        "away": {
+          "team": "MIN",
+          "team_name": "Minnesota Timberwolves",
+          "conference": "West",
+          "games": {
+            "current": 9,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.45,
+            "last_season": 0.55
+          },
+          "per_game": {
+            "pts": 123.85,
+            "pts_allowed": 110.73,
+            "point_diff": 13.12,
+            "reb": 47.66,
+            "ast": 23.36,
+            "tov": 15.34,
+            "fg3m": 17.04
+          },
+          "percentages": {
+            "fg_pct": 0.476,
+            "fg3_pct": 0.393,
+            "ft_pct": 0.693
+          },
+          "ratings": {
+            "offense_index": 1.0796,
+            "defense_index": 0.9652
+          }
+        },
+        "home": {
+          "team": "NOP",
+          "team_name": "New Orleans Pelicans",
+          "conference": "West",
+          "games": {
+            "current": 8,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.4,
+            "last_season": 0.6
+          },
+          "per_game": {
+            "pts": 117.3,
+            "pts_allowed": 121.2,
+            "point_diff": -3.9,
+            "reb": 45.94,
+            "ast": 24.26,
+            "tov": 14.52,
+            "fg3m": 10.66
+          },
+          "percentages": {
+            "fg_pct": 0.45,
+            "fg3_pct": 0.341,
+            "ft_pct": 0.838
+          },
+          "ratings": {
+            "offense_index": 1.0225,
+            "defense_index": 1.0565
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "6-3",
+          "wins": 6,
+          "losses": 3,
+          "win_pct": 0.6666666666666666,
+          "nba_rank": 4,
+          "conference_rank": 7,
+          "division_rank": 3,
+          "home_record": "0-0",
+          "road_record": "1-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "0.5",
+          "points_per_game": 131.0,
+          "opponent_points_per_game": 106.0,
+          "point_differential": 25.0
+        },
+        "home": {
+          "record": "4-4",
+          "wins": 4,
+          "losses": 4,
+          "win_pct": 0.5,
+          "nba_rank": 15,
           "conference_rank": 15,
           "division_rank": 5,
           "home_record": "0-1",
@@ -259,26 +1001,299 @@
           "last_10": "0-1",
           "conference_record": "1.5",
           "division_record": "1.0",
-          "points_per_game": 106.0,
-          "opponent_points_per_game": 131.0,
-          "point_differential": -25.0
+          "points_per_game": 120.0,
+          "opponent_points_per_game": 123.0,
+          "point_differential": -3.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {},
+      "periods_status": "unavailable: historical quarter splits missing; full-game model projection is current"
+    },
+    {
+      "game_id": "0022600032",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-06",
+      "game_time": "1900-01-01T22:00:00Z",
+      "game_datetime": "2026-11-06T22:00:00Z",
+      "game_datetime_utc": "2026-11-07T03:00:00Z",
+      "status": "10:00 pm ET",
+      "status_code": 1,
+      "venue": "Crypto.com Arena",
+      "arena": "Crypto.com Arena",
+      "arena_city": "Los Angeles",
+      "arena_state": "CA",
+      "week_number": 3,
+      "week_name": "Week 3",
+      "away_team": "POR",
+      "home_team": "LAL",
+      "away_record": "6-1",
+      "home_record": "7-2",
+      "model": {
+        "away_score": 112.9,
+        "home_score": 111.8,
+        "projected_total": 224.7,
+        "home_margin": -1.1,
+        "away_margin": 1.1,
+        "projected_winner": "POR",
+        "away_win_probability": 52.5,
+        "home_win_probability": 47.5,
+        "confidence": 69.0
+      },
+      "team_profiles": {
+        "away": {
+          "team": "POR",
+          "team_name": "Portland Trail Blazers",
+          "conference": "West",
+          "games": {
+            "current": 7,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.35,
+            "last_season": 0.65
+          },
+          "per_game": {
+            "pts": 118.47,
+            "pts_allowed": 104.32,
+            "point_diff": 14.15,
+            "reb": 49.5,
+            "ast": 27.52,
+            "tov": 17.2,
+            "fg3m": 16.07
+          },
+          "percentages": {
+            "fg_pct": 0.462,
+            "fg3_pct": 0.364,
+            "ft_pct": 0.789
+          },
+          "ratings": {
+            "offense_index": 1.0327,
+            "defense_index": 0.9093
+          }
         },
         "home": {
-          "record": "5-3",
-          "wins": 5,
-          "losses": 3,
-          "win_pct": 0.625,
-          "nba_rank": 26,
-          "conference_rank": 12,
-          "division_rank": 3,
+          "team": "LAL",
+          "team_name": "Los Angeles Lakers",
+          "conference": "West",
+          "games": {
+            "current": 9,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.45,
+            "last_season": 0.55
+          },
+          "per_game": {
+            "pts": 121.12,
+            "pts_allowed": 110.28,
+            "point_diff": 10.89,
+            "reb": 41.9,
+            "ast": 26.84,
+            "tov": 16.07,
+            "fg3m": 11.44
+          },
+          "percentages": {
+            "fg_pct": 0.532,
+            "fg3_pct": 0.374,
+            "ft_pct": 0.82
+          },
+          "ratings": {
+            "offense_index": 1.0557,
+            "defense_index": 0.9613
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "6-1",
+          "wins": 6,
+          "losses": 1,
+          "win_pct": 0.8571428571428571,
+          "nba_rank": 2,
+          "conference_rank": 4,
+          "division_rank": 2,
+          "home_record": "1-0",
+          "road_record": "0-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "0.5",
+          "points_per_game": 124.0,
+          "opponent_points_per_game": 83.0,
+          "point_differential": 41.0
+        },
+        "home": {
+          "record": "7-2",
+          "wins": 7,
+          "losses": 2,
+          "win_pct": 0.7777777777777778,
+          "nba_rank": 5,
+          "conference_rank": 5,
+          "division_rank": 2,
+          "home_record": "1-0",
+          "road_record": "0-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 127.0,
+          "opponent_points_per_game": 105.0,
+          "point_differential": 22.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {},
+      "periods_status": "unavailable: historical quarter splits missing; full-game model projection is current"
+    },
+    {
+      "game_id": "0022600033",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-06",
+      "game_time": "1900-01-01T22:00:00Z",
+      "game_datetime": "2026-11-06T22:00:00Z",
+      "game_datetime_utc": "2026-11-07T03:00:00Z",
+      "status": "10:00 pm ET",
+      "status_code": 1,
+      "venue": "Golden 1 Center",
+      "arena": "Golden 1 Center",
+      "arena_city": "Sacramento",
+      "arena_state": "CA",
+      "week_number": 3,
+      "week_name": "Week 3",
+      "away_team": "SAS",
+      "home_team": "SAC",
+      "away_record": "6-2",
+      "home_record": "1-7",
+      "model": {
+        "away_score": 118.0,
+        "home_score": 106.1,
+        "projected_total": 224.1,
+        "home_margin": -11.9,
+        "away_margin": 11.9,
+        "projected_winner": "SAS",
+        "away_win_probability": 74.6,
+        "home_win_probability": 25.4,
+        "confidence": 69.0
+      },
+      "team_profiles": {
+        "away": {
+          "team": "SAS",
+          "team_name": "San Antonio Spurs",
+          "conference": "West",
+          "games": {
+            "current": 8,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.4,
+            "last_season": 0.6
+          },
+          "per_game": {
+            "pts": 113.48,
+            "pts_allowed": 113.3,
+            "point_diff": 0.18,
+            "reb": 46.2,
+            "ast": 25.26,
+            "tov": 13.7,
+            "fg3m": 12.16
+          },
+          "percentages": {
+            "fg_pct": 0.445,
+            "fg3_pct": 0.323,
+            "ft_pct": 0.824
+          },
+          "ratings": {
+            "offense_index": 0.9892,
+            "defense_index": 0.9876
+          }
+        },
+        "home": {
+          "team": "SAC",
+          "team_name": "Sacramento Kings",
+          "conference": "West",
+          "games": {
+            "current": 8,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.4,
+            "last_season": 0.6
+          },
+          "per_game": {
+            "pts": 105.0,
+            "pts_allowed": 121.0,
+            "point_diff": -16.0,
+            "reb": 42.18,
+            "ast": 24.1,
+            "tov": 15.38,
+            "fg3m": 9.38
+          },
+          "percentages": {
+            "fg_pct": 0.45,
+            "fg3_pct": 0.318,
+            "ft_pct": 0.692
+          },
+          "ratings": {
+            "offense_index": 0.9153,
+            "defense_index": 1.0547
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "6-2",
+          "wins": 6,
+          "losses": 2,
+          "win_pct": 0.75,
+          "nba_rank": 23,
+          "conference_rank": 9,
+          "division_rank": 4,
+          "home_record": "0-1",
+          "road_record": "0-0",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.0",
+          "points_per_game": 104.0,
+          "opponent_points_per_game": 116.0,
+          "point_differential": -12.0
+        },
+        "home": {
+          "record": "1-7",
+          "wins": 1,
+          "losses": 7,
+          "win_pct": 0.125,
+          "nba_rank": 28,
+          "conference_rank": 13,
+          "division_rank": 4,
           "home_record": "0-0",
           "road_record": "0-1",
           "last_10": "0-1",
           "conference_record": "1.5",
           "division_record": "1.0",
-          "points_per_game": 105.0,
-          "opponent_points_per_game": 127.0,
-          "point_differential": -22.0
+          "points_per_game": 96.0,
+          "opponent_points_per_game": 121.0,
+          "point_differential": -25.0
         }
       },
       "markets": {
