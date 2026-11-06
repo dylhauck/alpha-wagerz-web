@@ -1135,8 +1135,6 @@ function FirstBasketGraph({
                   <span className="inline-block min-w-[88px] rounded-lg px-3 py-2 font-black text-white" style={{ backgroundColor: firstBasketHeatColor(row.probability, lowChance, highChance) }}>
                     {row.probability.toFixed(1)}%
                   </span>
-                  {row.estimate_source === "statistical_fallback" && (
-                  )}
                 </td>
                 <td className="px-3 py-3 text-center font-bold text-slate-300">{row.first_shot_rate == null ? "—" : `${row.first_shot_rate.toFixed(1)}%`}</td>
                 <td className="px-3 py-3 text-center font-bold text-slate-300">{row.first_basket_rate == null ? "—" : `${row.first_basket_rate.toFixed(1)}%`}</td>
