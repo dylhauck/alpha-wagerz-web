@@ -1146,20 +1146,6 @@ export default function NFLProjectionsPage() {
         ]} note="Highest modeled win probability among available outcomes. Sportsbook odds and value are not selection factors." />
       </div>
       <section className="glass overflow-hidden rounded-3xl">
-        <div className="border-b border-white/10 p-6 text-center">
-          <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
-            Alpha Game Projections
-          </div>
-
-          <h1 className="mx-auto mt-2 pb-2 text-3xl font-black leading-tight neon-text sm:text-5xl">
-            {away} @ {home}{isPeriod ? ` — ${projectionPeriod}` : ""}
-          </h1>
-
-          <div className="mt-1 text-sm font-bold text-slate-400">
-            {isPeriod ? "Quarter/half model projections; period sportsbook lines unavailable" : "Sportsbook lines compared directly with Alpha\u0027s independent model"}
-          </div>
-        </div>
-
         <div className="p-5 sm:p-6">
           <div className="grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
             <TeamProjection
