@@ -34,8 +34,8 @@ function Panel({ children }: { children: React.ReactNode }) {
 function Title({ children }: { children: React.ReactNode }) {
   return <h2 className="mb-4 text-xl font-black text-white">{children}</h2>;
 }
-function Table({ heads, rows }: { heads: string[]; rows: React.ReactNode[][] }) {
-  return <div className="overflow-x-auto"><table className="w-full min-w-[600px] border-separate border-spacing-y-2 text-sm">
+function Table({ heads, rows, fixedColumns = false }: { heads: string[]; rows: React.ReactNode[][]; fixedColumns?: boolean }) {
+  return <div className="overflow-x-auto"><table className={`w-full min-w-[600px] border-separate border-spacing-y-2 text-sm ${fixedColumns ? "table-fixed" : ""}`}>{fixedColumns&&<colgroup>{["8%","24%","12%","17%","13%","13%","13%"].map((width,i)=><col key={i} style={{width}} />)}</colgroup>}
     <thead><tr>{heads.map(h=><th key={h} className="px-3 py-3 text-left text-[11px] font-black uppercase tracking-wider text-slate-400">{h}</th>)}</tr></thead>
     <tbody>{rows.map((row,i)=><tr key={i} className="bg-white/[0.045]">{row.map((cell,j)=><td key={j} className="px-3 py-3 font-semibold text-slate-200">{cell}</td>)}</tr>)}</tbody>
   </table>{!rows.length&&<p className="py-8 text-center text-sm text-slate-400">No verified data available.</p>}</div>;
@@ -169,7 +169,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                     <div className="mt-1 text-sm font-black text-white">{[...teamPlayers].sort((a,b)=>b.goal_probability-a.goal_probability)[0].name}</div>
                   </div>}
                 </div>
-                <Table heads={["Rank","Player","Team","Anytime Goal %","Goals/G","Shots/G","Sample"]} rows={teamPlayers.map((p,i)=>[
+                <Table fixedColumns heads={["Rank","Player","Team","Anytime Goal %","Goals/G","Shots/G","Sample"]} rows={teamPlayers.map((p,i)=>[
                   i+1,p.name,p.team,<span key={p.player_id} className="inline-block min-w-[84px] rounded-lg px-3 py-2 text-center font-black text-white" style={{backgroundColor:pctColor(p.goal_probability,range.min,range.max)}}>{p.goal_probability.toFixed(1)}%</span>,
                   p.goals_per_game.toFixed(2),p.shots_per_game.toFixed(2),`${p.games} GP`
                 ])}/>
