@@ -70,6 +70,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
     const p = normalizeProbability(probability);
     if (price === null || price === 0 || p === null || price < -100000 || price > 100000) return;
     // Only genuine sportsbook prices and independently modeled probabilities qualify.
+    if (out.some(existing => existing.id === key(game) + ":" + pick)) return;
     out.push({ id: key(game) + ":" + pick, game: matchup(game), pick, odds: price, probability: p, source, marketType });
   };
   for (const game of projections) {
@@ -92,6 +93,18 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       const over = modeledOver(model.projected_total, total.line, model.total_sd);
       add(game, "Over " + total.line, total.over_odds, over, "NBA model total distribution", "total");
       add(game, "Under " + total.line, total.under_odds, over === null ? null : 1 - over, "NBA model total distribution", "total");
+      // NBA game projections provide means but no standard deviations.
+      // Use an explicit approximate game-level variance, never sportsbook-implied odds.
+      if (num(model.margin_sd) === null && homeMargin !== null) {
+        const estimatedMarginSd = 12;
+        add(game, home + " " + spread.home_line + " spread", spread.home_odds, modeledCover(homeMargin, spread.home_line, estimatedMarginSd), "NBA projection + approximate 12-point margin SD", "spread");
+        add(game, away + " " + spread.away_line + " spread", spread.away_odds, modeledCover(-homeMargin, spread.away_line, estimatedMarginSd), "NBA projection + approximate 12-point margin SD", "spread");
+      }
+      if (num(model.total_sd) === null && num(model.projected_total) !== null) {
+        const approximateOver = modeledOver(model.projected_total, total.line, 17);
+        add(game, "Over " + total.line, total.over_odds, approximateOver, "NBA projection + approximate 17-point total SD", "total");
+        add(game, "Under " + total.line, total.under_odds, approximateOver === null ? null : 1 - approximateOver, "NBA projection + approximate 17-point total SD", "total");
+      }
     } else if (sport === "nhl") {
       const p = game.probabilities ?? {};
       const full = market.full_game ?? {};
@@ -129,6 +142,16 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       const over = modeledOver(game.projected_total, total, game.total_sd);
       add(game, "Over " + total, market.game_total_prices?.over, over, "NFL model total distribution", "total");
       add(game, "Under " + total, market.game_total_prices?.under, over === null ? null : 1 - over, "NFL model total distribution", "total");
+      // NFL outputs contain projected margins/totals but no distribution SD.
+      if (num(game.margin_sd) === null && homeMargin !== null) {
+        add(game, home + " " + spread.home + " spread", spread.home_price, modeledCover(homeMargin, spread.home, 13.5), "NFL projection + approximate 13.5-point margin SD", "spread");
+        add(game, away + " " + spread.away + " spread", spread.away_price, modeledCover(-homeMargin, spread.away, 13.5), "NFL projection + approximate 13.5-point margin SD", "spread");
+      }
+      if (num(game.total_sd) === null) {
+        const approximateOver = modeledOver(game.projected_total, total, 14);
+        add(game, "Over " + total, market.game_total_prices?.over, approximateOver, "NFL projection + approximate 14-point total SD", "total");
+        add(game, "Under " + total, market.game_total_prices?.under, approximateOver === null ? null : 1 - approximateOver, "NFL projection + approximate 14-point total SD", "total");
+      }
     }
   }
   // Player props require both a real sportsbook price and a model distribution
@@ -295,9 +318,9 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     ? { title: "Most Confident Straight Bets", subtitle: "Five highest-confidence qualifying straight bets per market", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
     : { title: "Lotto Parlays", subtitle: "Five highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
   const pickTabs: { id: PickTab; label: string }[] = [
-    { id: "moneyline", label: "Moneyline" },
-    { id: "spread", label: "Spread" },
-    { id: "total", label: "Over / Under" },
+    { id: "moneyline", label: "Moneylines" },
+    { id: "spread", label: "Spreads" },
+    { id: "total", label: "Over / Unders" },
     { id: "player_prop", label: "Player Props" },
     { id: "combos", label: "Combos" },
     ...(sport === "nba" ? [{ id: "first_basket" as const, label: "First Baskets" }] : []),
@@ -313,9 +336,6 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
         {([{ id: "parlay", label: "Parlays" }, { id: "straight", label: "Straight Bets" }, { id: "lotto", label: "Lottos" }] as const).map(tab => <button key={tab.id} type="button" role="tab" aria-selected={mainTab === tab.id} onClick={() => setMainTab(tab.id)} className={"rounded-xl border px-5 py-2.5 text-xs font-extrabold uppercase tracking-wide transition sm:text-sm " + (mainTab === tab.id ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100" : "border-white/10 bg-[#0b1020] text-slate-400 hover:border-white/25 hover:text-white")}>{tab.label}</button>)}
       </div>
     </header>
-    <div className="rounded-2xl border border-amber-300/15 bg-amber-300/[0.045] px-5 py-4 text-xs leading-6 text-slate-300 sm:text-sm">
-      <span className="mr-2 font-black text-amber-200">Model notes</span> Picks use real sportsbook prices and model probabilities. Combined probabilities assume independent games. NHL estimates are uncalibrated. Lotto parlays are high risk. No outcomes are guaranteed or fabricated.
-    </div>
     {loading ? <p className="rounded-2xl border border-white/10 p-8 text-center text-slate-400">Loading sportsbook and projection data…</p> : <>
       {status && <p className="rounded-xl border border-white/10 p-4 text-center text-slate-300">{status}</p>}
       <div role="tablist" aria-label={mainTab + " market categories"} className="flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.025] p-3">
