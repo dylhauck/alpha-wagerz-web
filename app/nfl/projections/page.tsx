@@ -877,7 +877,7 @@ function MoneylineCard({
                 value={percent(row.model)}
               />
               <StatCell
-                label="Probability Edge"
+                label="Margin Edge"
                 value={
                   row.edge === null
                     ? "—"
