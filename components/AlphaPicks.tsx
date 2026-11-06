@@ -238,13 +238,13 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   const chosen: Ticket[] = [];
   const usedLengths = new Set<number>();
   for (const t of ranked) {
-    if (chosen.length >= 5) break;
+    if (chosen.length >= 6) break;
     if (usedLengths.has(t.legs.length)) continue;
     chosen.push(t);
     usedLengths.add(t.legs.length);
   }
   for (const t of ranked) {
-    if (chosen.length >= 5) break;
+    if (chosen.length >= 6) break;
     if (!chosen.includes(t)) chosen.push(t);
   }
   return chosen.sort((a, b) => b.probability - a.probability);
@@ -328,7 +328,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   }, [sport, next]);
   const categoryTab = mainTab === "parlay" ? parlayTab : mainTab === "straight" ? straightTab : lottoTab;
   const eligibleLegs = useMemo(() => categoryTab === "combos" ? legs : legs.filter(leg => leg.marketType === categoryTab), [legs, categoryTab]);
-  const straights = useMemo(() => eligibleLegs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg])), [eligibleLegs]);
+  const straights = useMemo(() => eligibleLegs.filter(leg => leg.odds >= -150).slice(0, 6).map(leg => ticket([leg])), [eligibleLegs]);
   const parlays = useMemo(() => makeParlays(eligibleLegs, 500, categoryTab === "combos"), [eligibleLegs, categoryTab]);
   const lottos = useMemo(() => makeParlays(eligibleLegs, 10000, categoryTab === "combos"), [eligibleLegs, categoryTab]);
   // First-basket combinations use 2–4 distinct games. The source has
@@ -354,14 +354,14 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     return results.sort((a, b) => b.probability - a.probability);
   }, [basketGames, basketPrices]);
   const basketTickets = useMemo(() => mainTab === "straight"
-    ? basketLegs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg]))
+    ? basketLegs.filter(leg => leg.odds >= -150).slice(0, 6).map(leg => ticket([leg]))
     : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4),
     [basketLegs, mainTab]);
   const section = mainTab === "parlay"
-    ? { title: "Most Confident Parlays", subtitle: "Five highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
+    ? { title: "Most Confident Parlays", subtitle: "Six highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
     : mainTab === "straight"
-    ? { title: "Most Confident Straight Bets", subtitle: "Five highest-confidence qualifying straight bets per market", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
-    : { title: "Lotto Parlays", subtitle: "Five highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
+    ? { title: "Most Confident Straight Bets", subtitle: "Six highest-confidence qualifying straight bets per market", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
+    : { title: "Lotto Parlays", subtitle: "Six highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
   const pickTabs: { id: PickTab; label: string }[] = [
     { id: "moneyline", label: "Moneylines" },
     { id: "spread", label: "Spreads" },
