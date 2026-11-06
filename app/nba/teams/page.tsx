@@ -929,15 +929,6 @@ export default function NBATeamsPage() {
      LOADING
   ======================================================== */
 
-  if (loading) {
-    return (
-      <section className="glass rounded-3xl p-8 text-center text-slate-400">
-        Loading NBA team
-        statistics...
-      </section>
-    );
-  }
-
 
   /* ========================================================
      TABLE HEADER
@@ -954,6 +945,15 @@ export default function NBATeamsPage() {
     });
     return new Map(ranked.map((team, index) => [teamCode(team).toUpperCase(), index + 1]));
   }, [teamStats, seasonView]);
+
+  if (loading) {
+    return (
+      <section className="glass rounded-3xl p-8 text-center text-slate-400">
+        Loading NBA team
+        statistics...
+      </section>
+    );
+  }
 
   const headers: {
     key: SortKey;
