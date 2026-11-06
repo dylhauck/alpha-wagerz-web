@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MostConfidentBet } from "@/components/projections/MostConfidentBet";
+import { MostConfidentBet, normalOutcomeProbability } from "@/components/projections/MostConfidentBet";
 import { PlayerNameButton } from "@/components/players/PlayerNameButton";
 import { PlayerProfileModal } from "@/components/players/PlayerProfileModal";
 
@@ -192,6 +192,12 @@ export function GameProjectionCard({
           <MostConfidentBet candidates={[
             { label: `${away} ML`, probability: projection.away_win_probability },
             { label: `${home} ML`, probability: projection.home_win_probability },
+            { label: `${home} ${projection.market?.spread?.home} run line`, probability: normalOutcomeProbability(projection.projected_margin, projection.market?.spread?.home == null ? null : -projection.market.spread.home, projection.margin_sd) },
+            { label: `${away} ${projection.market?.spread?.away} run line`, probability: normalOutcomeProbability(projection.projected_margin == null ? null : -projection.projected_margin, projection.market?.spread?.away == null ? null : -projection.market.spread.away, projection.margin_sd) },
+            { label: `Over ${projection.market?.total}`, probability: normalOutcomeProbability(projection.projected_total, projection.market?.total, projection.total_sd) },
+            { label: `Under ${projection.market?.total}`, probability: normalOutcomeProbability(projection.market?.total, projection.projected_total, projection.total_sd) },
+            { label: `${away} Over ${projection.market?.team_totals?.away}`, probability: normalOutcomeProbability(projection.away_projected_runs, projection.market?.team_totals?.away, projection.away_runs_sd) },
+            { label: `${home} Over ${projection.market?.team_totals?.home}`, probability: normalOutcomeProbability(projection.home_projected_runs, projection.market?.team_totals?.home, projection.home_runs_sd) },
           ]} note="Highest modeled win probability among available outcomes; not sportsbook value. Other markets require validated outcome probabilities." />
         </div>
 
