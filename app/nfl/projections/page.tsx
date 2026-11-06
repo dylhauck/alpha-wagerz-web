@@ -5,6 +5,43 @@ import { MostConfidentBet, normalOutcomeProbability } from "@/components/project
 import { useEffect, useMemo, useState } from "react";
 import { NFLTeamLogo } from "@/components/nfl/NFLTeamLogo";
 
+const TEAM_NAMES: Record<string, string> = {
+  ARI: "Arizona Cardinals",
+  ATL: "Atlanta Falcons",
+  BAL: "Baltimore Ravens",
+  BUF: "Buffalo Bills",
+  CAR: "Carolina Panthers",
+  CHI: "Chicago Bears",
+  CIN: "Cincinnati Bengals",
+  CLE: "Cleveland Browns",
+  DAL: "Dallas Cowboys",
+  DEN: "Denver Broncos",
+  DET: "Detroit Lions",
+  GB: "Green Bay Packers",
+  HOU: "Houston Texans",
+  IND: "Indianapolis Colts",
+  JAX: "Jacksonville Jaguars",
+  JAC: "Jacksonville Jaguars",
+  KC: "Kansas City Chiefs",
+  LV: "Las Vegas Raiders",
+  LAC: "Los Angeles Chargers",
+  LAR: "Los Angeles Rams",
+  LA: "Los Angeles Rams",
+  MIA: "Miami Dolphins",
+  MIN: "Minnesota Vikings",
+  NE: "New England Patriots",
+  NO: "New Orleans Saints",
+  NYG: "New York Giants",
+  NYJ: "New York Jets",
+  PHI: "Philadelphia Eagles",
+  PIT: "Pittsburgh Steelers",
+  SEA: "Seattle Seahawks",
+  SF: "San Francisco 49ers",
+  TB: "Tampa Bay Buccaneers",
+  TEN: "Tennessee Titans",
+  WAS: "Washington Commanders",
+};
+
 type NFLTeam = {
   abbr?: string;
   name?: string;
@@ -1134,7 +1171,7 @@ export default function NFLProjectionsPage() {
       <section className="glass rounded-3xl p-5 sm:p-6">
         <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
           <div>
-            <h2 className="text-xl font-black text-white">{away} @ {home}{isPeriod ? ` — ${projectionPeriod}` : ""}</h2>
+            <h2 className="text-xl font-black text-white">{TEAM_NAMES[away] ?? away} @ {TEAM_NAMES[home] ?? home}{isPeriod ? ` — ${projectionPeriod}` : ""}</h2>
             <p className="mt-1 text-sm font-bold text-slate-400">{PAGE_TITLE}</p>
           </div>
           <div className="shrink-0">
