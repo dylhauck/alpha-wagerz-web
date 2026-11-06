@@ -855,10 +855,6 @@ function MoneylineCard({
         ))}
       </div>
 
-      <div className="mt-3 text-[11px] font-bold text-slate-500">
-        Market probability uses the no-vig probability when available • {sportsbook}
-      </div>
-
       <div className="mt-3">
         <PickBadge pick={pick} tone={tone} />
       </div>
