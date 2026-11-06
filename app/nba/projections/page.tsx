@@ -1,5 +1,6 @@
-import { MostConfidentBet } from "@/components/projections/MostConfidentBet";
 "use client";
+import { MostConfidentBet } from "@/components/projections/MostConfidentBet";
+
 
 import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
