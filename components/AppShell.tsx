@@ -582,18 +582,7 @@ export function AppShell({
             </Link>
           )}
 
-          <div className="rounded-xl border border-cyan-300/15 bg-white/[0.035] p-3">
-            <div className="text-sm font-black text-white">
-              Model Engine
-            </div>
 
-            <div className="text-xs text-slate-400">
-              v1.0.0
-            </div>
-
-            <div className="mt-2 text-xs font-bold text-emerald-300">
-              ● All Systems Active
-            </div>
           </div>
         </div>
       </>
