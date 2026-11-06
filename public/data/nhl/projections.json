@@ -7,7 +7,17 @@
       "away_goals": 2.9,
       "home_goals": 2.68,
       "model": "recent_goals_for_against_baseline",
-      "sample_games": 5
+      "sample_games": 5,
+      "probabilities": {
+        "away_win_probability": 0.53569,
+        "home_win_probability": 0.46431,
+        "away_puck_line_plus_1_5_probability": 0.77208,
+        "home_puck_line_minus_1_5_probability": 0.22792,
+        "method": "independent_poisson_goals_regulation_tie_split_equally",
+        "calibrated": false,
+        "sample_games": 5,
+        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
+      }
     },
     {
       "game_id": 2026020263,
@@ -16,7 +26,17 @@
       "away_goals": 2.14,
       "home_goals": 3.64,
       "model": "recent_goals_for_against_baseline",
-      "sample_games": 7
+      "sample_games": 7,
+      "probabilities": {
+        "away_win_probability": 0.26943,
+        "home_win_probability": 0.73057,
+        "away_puck_line_plus_1_5_probability": 0.50802,
+        "home_puck_line_minus_1_5_probability": 0.49198,
+        "method": "independent_poisson_goals_regulation_tie_split_equally",
+        "calibrated": false,
+        "sample_games": 7,
+        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
+      }
     },
     {
       "game_id": 2026020264,
@@ -25,7 +45,17 @@
       "away_goals": 3.48,
       "home_goals": 3.66,
       "model": "recent_goals_for_against_baseline",
-      "sample_games": 7
+      "sample_games": 7,
+      "probabilities": {
+        "away_win_probability": 0.47384,
+        "home_win_probability": 0.52616,
+        "away_puck_line_plus_1_5_probability": 0.69405,
+        "home_puck_line_minus_1_5_probability": 0.30595,
+        "method": "independent_poisson_goals_regulation_tie_split_equally",
+        "calibrated": false,
+        "sample_games": 7,
+        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
+      }
     }
   ]
 }
