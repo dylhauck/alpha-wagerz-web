@@ -226,13 +226,14 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 <p className="mt-1 text-xs font-bold text-slate-400">{active?.venue||"Venue unavailable"} · {active?.start_time_utc?new Date(active.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"})+" CT":"Time TBD"} · {projectionPeriod}</p>
               </div>
 
-            </div>
-            <div className="mb-4 flex justify-end"><MostConfidentBet candidates={projectionPeriod==="Full Game"&&full?.probabilities?[
+            <div className="shrink-0"><MostConfidentBet candidates={projectionPeriod==="Full Game"&&full?.probabilities?[
                 {label:`${teamAway} ML`,probability:full.probabilities.away_win_probability},
                 {label:`${teamHome} ML`,probability:full.probabilities.home_win_probability},
                 {label:`${teamAway} +1.5`,probability:full.probabilities.away_puck_line_plus_1_5_probability},
                 {label:`${teamHome} -1.5`,probability:full.probabilities.home_puck_line_minus_1_5_probability},
               ]:[]} note="Uncalibrated Poisson baseline from observed goals. Overtime ties split evenly. No goalie/injury adjustments or sportsbook payout inputs; use cautiously." /></div>
+            </div>
+
             <div className="mb-4 grid gap-3 md:grid-cols-3">
               <div className="rounded-2xl border border-cyan-300/15 bg-cyan-400/10 p-4">
                 <div className={heading}>Projected Score</div>
