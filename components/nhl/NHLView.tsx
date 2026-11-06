@@ -249,30 +249,30 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
               <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-4">
                 <div className={heading}>Projected Total</div>
                 <p className="text-3xl font-black text-white">{fmt(total)}</p>
-                <p className="mt-1 text-xs font-black text-cyan-200">Book total: unavailable</p>
+                <p className="mt-1 text-xs font-black text-cyan-200">Book total: Unavailable</p>
               </div>
             </div>
             <div className="grid gap-3 lg:grid-cols-2">
               <div className={box}>
                 <div className={heading}>Moneyline</div>
                 <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Edge</span></div>
-                {[teamAway,teamHome].map(team=><div key={team} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team} —</span><span className="text-cyan-200">—</span><span>—</span></div>)}
+                {[teamAway,teamHome].map(team=><div key={team} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team} unavailable</span><span className="text-cyan-200">—</span><span>—</span></div>)}
               </div>
               <div className={box}>
                 <div className={heading}>Puck Line / Spread</div>
                 <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Cover %</span></div>
-                <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamHome} —</span><span className="text-cyan-200">{margin==null?"—":(margin>0?"+":"")+fmt(margin)}</span><span>—</span></div>
-                <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamAway} —</span><span className="text-cyan-200">{margin==null?"—":(margin<0?"+":"")+fmt(-margin)}</span><span>—</span></div>
+                <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamHome} unavailable</span><span className="text-cyan-200">{margin==null?"—":(margin>0?"+":"")+fmt(margin)}</span><span>—</span></div>
+                <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamAway} unavailable</span><span className="text-cyan-200">{margin==null?"—":(margin<0?"+":"")+fmt(-margin)}</span><span>—</span></div>
               </div>
               <div className={box}>
                 <div className={heading}>Over / Under</div>
                 <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Probability</span></div>
-                {["Over","Under"].map(side=><div key={side} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{side} —</span><span className="text-cyan-200">{fmt(total)}</span><span>—</span></div>)}
+                {["Over","Under"].map(side=><div key={side} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{side} unavailable</span><span className="text-cyan-200">{fmt(total)}</span><span>—</span></div>)}
               </div>
               <div className={box}>
                 <div className={heading}>Team Totals</div>
                 <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Team</span><span>Market</span><span>Model</span></div>
-                {[[teamAway,awayGoals],[teamHome,homeGoals]] .map(([team,goals])=><div key={String(team)} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team}</span><span>—</span><span className="text-cyan-200">{fmt(goals as number|null|undefined)}</span></div>)}
+                {[[teamAway,awayGoals],[teamHome,homeGoals]] .map(([team,goals])=><div key={String(team)} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team}</span><span>Unavailable</span><span className="text-cyan-200">{fmt(goals as number|null|undefined)}</span></div>)}
               </div>
             </div>
           </>;
