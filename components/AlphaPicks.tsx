@@ -20,6 +20,21 @@ const decimalToAmerican = (decimal: number) => decimal >= 2 ? Math.round((decima
 const fmtOdds = (n: number) => n > 0 ? "+" + Math.round(n).toLocaleString("en-US") : String(Math.round(n));
 const percent = (n: number) => (n * 100).toFixed(1) + "%";
 const probabilityFromOdds = (odds: number) => 1 / americanToDecimal(odds);
+// Normal CDF approximation, used only when the model provides a positive SD.
+const normalCdf = (x: number) => {
+  const t = 1 / (1 + 0.2316419 * Math.abs(x));
+  const d = 0.3989422804014327 * Math.exp(-x * x / 2);
+  const c = 1 - d * t * (0.319381530 + t * (-0.356563782 + t * (1.781477937 + t * (-1.821255978 + t * 1.330274429))));
+  return x >= 0 ? c : 1 - c;
+};
+const modeledCover = (mean: unknown, line: unknown, sd: unknown): number | null => {
+  const m = num(mean), l = num(line), sigma = num(sd);
+  return m === null || l === null || sigma === null || sigma <= 0 ? null : normalCdf((m + l) / sigma);
+};
+const modeledOver = (mean: unknown, line: unknown, sd: unknown): number | null => {
+  const m = num(mean), l = num(line), sigma = num(sd);
+  return m === null || l === null || sigma === null || sigma <= 0 ? null : normalCdf((m - l) / sigma);
+};
 const list = (payload: any): any[] => Array.isArray(payload) ? payload : Array.isArray(payload?.games) ? payload.games : [];
 const key = (g: any) => String(g?.game_id ?? "");
 const matchup = (g: any) => String(g?.away_team ?? g?.away ?? "?") + " @ " + String(g?.home_team ?? g?.home ?? "?");
@@ -46,20 +61,41 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[]): Leg[
     if (!away || !home) continue;
     if (sport === "nba") {
       const model = game.model ?? {};
-      const ml = market.full_game?.moneyline;
+      const full = market.full_game ?? {};
+      const ml = full.moneyline;
       add(game, away + " ML", ml?.away, model.away_win_probability, "NBA model + live sportsbook");
       add(game, home + " ML", ml?.home, model.home_win_probability, "NBA model + live sportsbook");
+      const spread = full.spread ?? {};
+      const homeMargin = num(model.home_margin) ?? (num(model.home_score) !== null && num(model.away_score) !== null ? model.home_score - model.away_score : null);
+      add(game, home + " " + spread.home_line + " spread", spread.home_odds, modeledCover(homeMargin, spread.home_line, model.margin_sd), "NBA model margin distribution", "spread");
+      add(game, away + " " + spread.away_line + " spread", spread.away_odds, modeledCover(homeMargin === null ? null : -homeMargin, spread.away_line, model.margin_sd), "NBA model margin distribution", "spread");
+      const total = full.total ?? {};
+      const over = modeledOver(model.projected_total, total.line, model.total_sd);
+      add(game, "Over " + total.line, total.over_odds, over, "NBA model total distribution", "total");
+      add(game, "Under " + total.line, total.under_odds, over === null ? null : 1 - over, "NBA model total distribution", "total");
     } else if (sport === "nhl") {
       const p = game.probabilities ?? {};
-      const ml = market.full_game?.moneyline;
-      // NHL baseline win probabilities are not calibrated; clearly label them.
+      const full = market.full_game ?? {};
+      const ml = full.moneyline;
       add(game, away + " ML", ml?.away, p.away_win_probability, "NHL uncalibrated baseline + live sportsbook");
       add(game, home + " ML", ml?.home, p.home_win_probability, "NHL uncalibrated baseline + live sportsbook");
+      const spread = full.spread ?? {};
+      if (num(spread.away_line) === 1.5) add(game, away + " +1.5 puck line", spread.away_odds, p.away_puck_line_plus_1_5_probability, "NHL uncalibrated puck-line estimate", "spread");
+      if (num(spread.home_line) === -1.5) add(game, home + " -1.5 puck line", spread.home_odds, p.home_puck_line_minus_1_5_probability, "NHL uncalibrated puck-line estimate", "spread");
     } else if (sport === "nfl") {
-      const ml = market.moneyline;
+      const ml = market.moneyline ?? {};
       const p = game.win_probability ?? {};
-      add(game, away + " ML", ml?.away, p.away ?? game.away_win_probability, "NFL model + sportsbook");
-      add(game, home + " ML", ml?.home, p.home ?? game.home_win_probability, "NFL model + sportsbook");
+      add(game, away + " ML", ml.away, p.away ?? game.away_win_probability, "NFL model + sportsbook");
+      add(game, home + " ML", ml.home, p.home ?? game.home_win_probability, "NFL model + sportsbook");
+      const spread = market.spread ?? {};
+      const homeMargin = num(game.expected_margin) ?? num(game.projected_margin) ??
+        (num(game.projected_score?.home) !== null && num(game.projected_score?.away) !== null ? game.projected_score.home - game.projected_score.away : null);
+      add(game, home + " " + spread.home + " spread", spread.home_price, modeledCover(homeMargin, spread.home, game.margin_sd), "NFL model margin distribution", "spread");
+      add(game, away + " " + spread.away + " spread", spread.away_price, modeledCover(homeMargin === null ? null : -homeMargin, spread.away, game.margin_sd), "NFL model margin distribution", "spread");
+      const total = num(market.game_total);
+      const over = modeledOver(game.projected_total, total, game.total_sd);
+      add(game, "Over " + total, market.game_total_prices?.over, over, "NFL model total distribution", "total");
+      add(game, "Under " + total, market.game_total_prices?.under, over === null ? null : 1 - over, "NFL model total distribution", "total");
     }
   }
   // A ticket cannot include both opposing outcomes from the same game.
