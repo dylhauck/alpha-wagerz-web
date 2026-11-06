@@ -1136,7 +1136,6 @@ function FirstBasketGraph({
                     {row.probability.toFixed(1)}%
                   </span>
                   {row.estimate_source === "statistical_fallback" && (
-                    <div className="mt-1 text-[10px] font-bold text-amber-300">Limited-data estimate</div>
                   )}
                 </td>
                 <td className="px-3 py-3 text-center font-bold text-slate-300">{row.first_shot_rate == null ? "—" : `${row.first_shot_rate.toFixed(1)}%`}</td>
