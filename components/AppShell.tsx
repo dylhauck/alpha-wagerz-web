@@ -209,6 +209,7 @@ const nhlNavItems: NavItem[] = [
 ];
 
 const placeholderNavItems: NavItem[] = [
+  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Slate Summary",
     path: "",
