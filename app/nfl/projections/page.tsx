@@ -1135,7 +1135,14 @@ export default function NFLProjectionsPage() {
         ))}
       </div>
       {isPeriod && !periodStats && <p className="rounded-xl border border-amber-300/20 p-4 text-center text-amber-200">Period model data unavailable for this matchup.</p>}
-      <div className="flex justify-end">
+      <section className="glass rounded-3xl p-5 sm:p-6">
+        <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h2 className="text-xl font-black text-white">{away} @ {home}{isPeriod ? ` — ${projectionPeriod}` : ""}</h2>
+            <p className="mt-1 text-sm font-bold text-slate-400">{PAGE_TITLE}</p>
+          </div>
+        </div>
+      <div className="mb-5 flex justify-end">
         <MostConfidentBet candidates={[
           { label: `${away} ML`, probability: shownAwayWin },
           { label: `${home} ML`, probability: shownHomeWin },
@@ -1145,13 +1152,6 @@ export default function NFLProjectionsPage() {
           { label: `Under ${totalLine}`, probability: normalOutcomeProbability(shownTotalLine, shownTotal, selectedProjection?.total_sd) },
         ]} note="Highest modeled win probability among available outcomes. Sportsbook odds and value are not selection factors." />
       </div>
-      <section className="glass rounded-3xl p-5 sm:p-6">
-        <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <h2 className="text-xl font-black text-white">{away} @ {home}{isPeriod ? ` — ${projectionPeriod}` : ""}</h2>
-            <p className="mt-1 text-sm font-bold text-slate-400">{PAGE_TITLE}</p>
-          </div>
-        </div>
         <div className="grid gap-3 md:grid-cols-3">
           <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
             <div className="mb-3 text-xs font-black uppercase text-slate-400">Projected Score</div>
