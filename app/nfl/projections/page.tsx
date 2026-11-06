@@ -1,3 +1,4 @@
+import { MostConfidentBet } from "@/components/projections/MostConfidentBet";
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -1112,6 +1113,12 @@ export default function NFLProjectionsPage() {
       {projectionPeriod !== "Full Game" ? (
         <section className="glass rounded-3xl p-6 text-center"><h2 className="text-xl font-black text-white">{away} @ {home} — {projectionPeriod}</h2>{(()=>{const game=periodGames.find(g=>String(g.game_id)===selectedGameId)||(periodGames.find(g=>sameTeam(g.away,away)&&sameTeam(g.home,home)));const stats=game?.periods?.[projectionPeriod];return stats?.away_points!=null&&stats.home_points!=null?<div className="mt-5 grid grid-cols-3 gap-3 text-sm font-black"><div>{away}<div className="mt-2 text-2xl text-cyan-200">{stats.away_points.toFixed(1)}</div></div><div>Projected Total<div className="mt-2 text-2xl text-white">{(stats.away_points+stats.home_points).toFixed(1)}</div></div><div>{home}<div className="mt-2 text-2xl text-cyan-200">{stats.home_points.toFixed(1)}</div></div></div>:<p className="mt-4 text-amber-200/80">Insufficient completed-quarter history for this matchup. No estimated score is displayed.</p>})()}<p className="mt-4 text-xs text-slate-400">Observed quarter-scoring baseline; not a sportsbook market or guaranteed prediction.</p></section>
       ) : (<>
+      <div className="flex justify-end">
+        <MostConfidentBet candidates={[
+          { label: `${away} ML`, probability: awayWin },
+          { label: `${home} ML`, probability: homeWin },
+        ]} note="Highest modeled win probability among available outcomes. Sportsbook odds and value are not selection factors." />
+      </div>
       <section className="glass overflow-hidden rounded-3xl">
         <div className="border-b border-white/10 p-6 text-center">
           <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
