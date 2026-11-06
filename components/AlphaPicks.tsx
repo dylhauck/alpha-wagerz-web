@@ -303,13 +303,14 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     ...(sport === "nba" ? [{ id: "first_basket" as const, label: "First Baskets" }] : []),
   ];
   return <main className="mx-auto max-w-7xl space-y-9 px-3 pb-20 sm:px-5">
-    <header className="relative overflow-hidden rounded-3xl border border-cyan-300/15 bg-gradient-to-br from-cyan-400/[0.09] via-[#0b1425] to-fuchsia-400/[0.08] px-6 py-9 text-center shadow-[0_20px_60px_rgba(0,0,0,0.18)] sm:py-12">
-      <div className="pointer-events-none absolute inset-x-1/4 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
-      <p className="text-[11px] font-black uppercase tracking-[0.32em] text-cyan-300">FollowTheAlpha 🐺</p>
-      <h1 className="mt-3 text-4xl font-black tracking-tight text-white sm:text-5xl">Alpha <span className="text-cyan-300">Picks</span></h1>
-      <p className="mt-3 text-sm font-medium text-slate-300">{sport.toUpperCase()} <span className="mx-2 text-slate-600">•</span> {next ? "Next Slate" : "Current Slate"} <span className="mx-2 text-slate-600">•</span> Model-Ranked Selections</p>
-      <div role="tablist" aria-label="Alpha Picks categories" className="mx-auto mt-7 flex max-w-xl flex-wrap items-center justify-center gap-2">
-        {([{ id: "parlay", label: "Parlays" }, { id: "straight", label: "Straight Bets" }, { id: "lotto", label: "Lottos" }] as const).map(tab => <button key={tab.id} type="button" role="tab" aria-selected={mainTab === tab.id} onClick={() => setMainTab(tab.id)} className={"rounded-xl border px-5 py-2.5 text-sm font-extrabold transition " + (mainTab === tab.id ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100 shadow-[0_0_22px_rgba(35,216,255,0.12)]" : "border-white/10 bg-white/[0.05] text-slate-300 hover:border-white/25 hover:text-white")}>{tab.label}</button>)}
+    <header className="pt-1 text-center">
+      <h1 className="text-4xl font-black tracking-tight sm:text-5xl">
+        <span className="bg-gradient-to-r from-cyan-400 via-sky-200 to-fuchsia-400 bg-clip-text text-transparent">{sport.toUpperCase()}</span>{" "}
+        <span className="bg-gradient-to-r from-white via-pink-100 to-pink-400 bg-clip-text text-transparent">Alpha Picks</span>
+      </h1>
+      <p className="mt-3 text-sm font-semibold text-slate-400">🏆 {next ? "Next Slate" : "Current Slate"} · Model-Ranked Selections</p>
+      <div role="tablist" aria-label="Alpha Picks categories" className="mt-6 flex flex-wrap items-center justify-center gap-2">
+        {([{ id: "parlay", label: "Parlays" }, { id: "straight", label: "Straight Bets" }, { id: "lotto", label: "Lottos" }] as const).map(tab => <button key={tab.id} type="button" role="tab" aria-selected={mainTab === tab.id} onClick={() => setMainTab(tab.id)} className={"rounded-xl border px-5 py-2.5 text-xs font-extrabold uppercase tracking-wide transition sm:text-sm " + (mainTab === tab.id ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100" : "border-white/10 bg-[#0b1020] text-slate-400 hover:border-white/25 hover:text-white")}>{tab.label}</button>)}
       </div>
     </header>
     <div className="rounded-2xl border border-amber-300/15 bg-amber-300/[0.045] px-5 py-4 text-xs leading-6 text-slate-300 sm:text-sm">
