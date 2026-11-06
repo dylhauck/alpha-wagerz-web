@@ -581,9 +581,6 @@ export function AppShell({
               {nextSlateLabel}
             </Link>
           )}
-
-
-          </div>
         </div>
       </>
     );
