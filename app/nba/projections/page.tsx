@@ -1,5 +1,5 @@
 "use client";
-import { MostConfidentBet } from "@/components/projections/MostConfidentBet";
+import { MostConfidentBet, normalOutcomeProbability } from "@/components/projections/MostConfidentBet";
 
 
 import { useEffect, useMemo, useState } from "react";
@@ -1036,6 +1036,10 @@ export default function NBAProjectionsPage() {
             <MostConfidentBet candidates={[
               { label: `${abbr(selected, "away")} ML`, probability: model?.away_win_probability },
               { label: `${abbr(selected, "home")} ML`, probability: model?.home_win_probability },
+              { label: `${abbr(selected, "home")} ${market?.spread?.home_line && market.spread.home_line > 0 ? "+" : ""}${market?.spread?.home_line} spread`, probability: normalOutcomeProbability(model?.home_margin, market?.spread?.home_line == null ? null : -market.spread.home_line, model?.margin_sd) },
+              { label: `${abbr(selected, "away")} ${market?.spread?.away_line && market.spread.away_line > 0 ? "+" : ""}${market?.spread?.away_line} spread`, probability: normalOutcomeProbability(model?.home_margin == null ? null : -model.home_margin, market?.spread?.away_line == null ? null : -market.spread.away_line, model?.margin_sd) },
+              { label: `Over ${market?.total?.line}`, probability: normalOutcomeProbability(model?.projected_total, market?.total?.line, model?.total_sd) },
+              { label: `Under ${market?.total?.line}`, probability: normalOutcomeProbability(market?.total?.line, model?.projected_total, model?.total_sd) },
             ]} note="Highest available model win probability. Odds and expected value are not selection factors; other markets need validated outcome probabilities." />
           </div>
 
