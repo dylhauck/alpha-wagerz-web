@@ -1,3 +1,4 @@
+import { MostConfidentBet } from "@/components/projections/MostConfidentBet";
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -1031,21 +1032,10 @@ export default function NBAProjectionsPage() {
               </p>
             </div>
 
-            {model?.home_margin !==
-              undefined && (
-              <span className="rounded-full border border-pink-300/30 bg-pink-300/10 px-3 py-1 text-xs font-black uppercase tracking-widest text-pink-200">
-                {model.home_margin >= 0
-                  ? abbr(
-                      selected,
-                      "home"
-                    )
-                  : abbr(
-                      selected,
-                      "away"
-                    )}{" "}
-                projected winner
-              </span>
-            )}
+            <MostConfidentBet candidates={[
+              { label: `${abbr(selected, "away")} ML`, probability: model?.away_win_probability },
+              { label: `${abbr(selected, "home")} ML`, probability: model?.home_win_probability },
+            ]} note="Highest available model win probability. Odds and expected value are not selection factors; other markets need validated outcome probabilities." />
           </div>
 
           {model ? (
