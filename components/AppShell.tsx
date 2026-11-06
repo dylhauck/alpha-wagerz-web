@@ -14,6 +14,7 @@ import {
   LineChart,
   Swords,
   Target,
+  Trophy,
   Users,
   Shield,
   Menu,
@@ -81,6 +82,7 @@ const sports: {
 ];
 
 const mlbNavItems: NavItem[] = [
+  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Slate Summary",
     path: "",
@@ -124,6 +126,7 @@ const mlbNavItems: NavItem[] = [
 ];
 
 const nflNavItems: NavItem[] = [
+  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Slate Summary",
     path: "",
@@ -162,6 +165,7 @@ const nflNavItems: NavItem[] = [
 ];
 
 const nbaNavItems: NavItem[] = [
+  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Slate Summary",
     path: "",
@@ -195,6 +199,7 @@ const nbaNavItems: NavItem[] = [
 ];
 
 const nhlNavItems: NavItem[] = [
+  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   { label: "Slate Summary", path: "", icon: Home },
   { label: "NHL Players", path: "/players", icon: Users },
   { label: "NHL Teams", path: "/teams", icon: Shield },
