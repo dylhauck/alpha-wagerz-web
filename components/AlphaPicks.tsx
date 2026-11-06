@@ -63,7 +63,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[]): Leg[
   return out.sort((a, b) => b.probability - a.probability);
 }
 
-function makeParlays(legs: Leg[], minOdds: number | null): Ticket[] {
+function makeParlays(legs: Leg[], minOdds: number): Ticket[] {
   // Search distinct games only. Prioritize modeled probability, never invent
   // prices or force five picks if the slate cannot support them.
   const pool = legs.slice(0, 36);
@@ -72,7 +72,7 @@ function makeParlays(legs: Leg[], minOdds: number | null): Ticket[] {
   const games = [...byGame.values()].map(group => group.sort((a, b) => b.probability - a.probability));
   const candidates: Ticket[] = [];
   const seen = new Set<string>();
-  const sizes = minOdds === null ? [2, 3] : Array.from({ length: Math.min(games.length, 12) - 2 }, (_, i) => i + 3);
+  const sizes = minOdds === 500 ? Array.from({ length: Math.min(games.length, 12) - 1 }, (_, i) => i + 2) : Array.from({ length: Math.min(games.length, 12) - 2 }, (_, i) => i + 3);
   for (const size of sizes) {
     if (size > games.length) continue;
     let visited = 0;
@@ -80,7 +80,7 @@ function makeParlays(legs: Leg[], minOdds: number | null): Ticket[] {
       if (++visited > 100000) return;
       if (chosen.length === size) {
         const t = ticket(chosen);
-        if (minOdds !== null && t.odds < minOdds) return;
+        if (t.odds < minOdds) return;
         const signature = chosen.map(x => x.id).sort().join("|");
         if (!seen.has(signature)) {
           seen.add(signature);
@@ -155,12 +155,12 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     }).finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
   }, [sport, next]);
-  const straights = useMemo(() => legs.slice(0, 5).map(leg => ticket([leg])), [legs]);
-  const parlays = useMemo(() => makeParlays(legs, null), [legs]);
+  const straights = useMemo(() => legs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg])), [legs]);
+  const parlays = useMemo(() => makeParlays(legs, 500), [legs]);
   const lottos = useMemo(() => makeParlays(legs, 10000), [legs]);
   const sections = [
-    { title: "Top 5 Parlays", subtitle: "Highest modeled combined probability, regardless of odds", tickets: parlays },
-    { title: "Top 5 Straight Bets", subtitle: "Highest individual model probabilities with verified sportsbook prices", tickets: straights },
+    { title: "Top 5 Parlays", subtitle: "Highest modeled combined probability with combined odds of +500 or higher", tickets: parlays },
+    { title: "Top 5 Straight Bets", subtitle: "Highest individual model probabilities with sportsbook odds of -150 or better", tickets: straights },
     { title: "5 Lotto Parlays", subtitle: "Verified combined American odds of +10,000 or higher", tickets: lottos },
   ];
   return <main className="mx-auto max-w-7xl space-y-7 px-2 pb-16">
