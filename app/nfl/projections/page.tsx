@@ -1145,129 +1145,52 @@ export default function NFLProjectionsPage() {
           { label: `Under ${totalLine}`, probability: normalOutcomeProbability(shownTotalLine, shownTotal, selectedProjection?.total_sd) },
         ]} note="Highest modeled win probability among available outcomes. Sportsbook odds and value are not selection factors." />
       </div>
-      <section className="glass overflow-hidden rounded-3xl">
-        <div className="p-5 sm:p-6">
-          <div className="grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
-            <TeamProjection
-              team={away}
-              teams={teams}
-              points={shownAway}
-              winProbability={shownAwayWin}
-              side="away"
-            />
-
-            <div className="hidden md:block">
-              <div className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-lg font-black text-slate-400">
-                @
-              </div>
-            </div>
-
-            <TeamProjection
-              team={home}
-              teams={teams}
-              points={shownHome}
-              winProbability={shownHomeWin}
-              side="home"
-            />
+      <section className="glass rounded-3xl p-5 sm:p-6">
+        <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h2 className="text-xl font-black text-white">{away} @ {home}{isPeriod ? ` — ${projectionPeriod}` : ""}</h2>
+            <p className="mt-1 text-sm font-bold text-slate-400">{PAGE_TITLE}</p>
           </div>
-
-          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <StatCell
-              label="Projected Total"
-              value={fmt(shownTotal)}
-            />
-            <StatCell
-              label="Projected Margin"
-              value={
-                shownMargin === null
-                  ? "—"
-                  : shownMargin > 0
-                    ? `${home} by ${fmt(shownMargin)}`
-                    : shownMargin < 0
-                      ? `${away} by ${fmt(Math.abs(shownMargin))}`
-                      : "PICK"
-              }
-            />
-            <StatCell label={`${away} Win`} value={percent(shownAwayWin)} />
-            <StatCell label={`${home} Win`} value={percent(shownHomeWin)} />
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+            <div className="mb-3 text-xs font-black uppercase text-slate-400">Projected Score</div>
+            <p className="text-lg font-black text-white">{away}: {shownAway === null ? "Unavailable" : fmt(shownAway)}</p>
+            <p className="text-lg font-black text-white">{home}: {shownHome === null ? "Unavailable" : fmt(shownHome)}</p>
+          </div>
+          <div className="rounded-2xl border border-pink-300/20 bg-pink-300/10 p-4">
+            <div className="mb-3 text-xs font-black uppercase text-slate-400">Win Probability</div>
+            <p className="text-lg font-black text-white">{away}: {shownAwayWin === null ? "Unavailable" : percent(shownAwayWin)}</p>
+            <p className="text-lg font-black text-white">{home}: {shownHomeWin === null ? "Unavailable" : percent(shownHomeWin)}</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-4">
+            <div className="mb-3 text-xs font-black uppercase text-slate-400">Projected Total</div>
+            <p className="text-3xl font-black text-white">{shownTotal === null ? "Unavailable" : fmt(shownTotal)}</p>
+            <p className="mt-2 text-xs font-black uppercase tracking-wider text-cyan-200">Book total {shownTotalLine === null ? "Unavailable" : fmt(shownTotalLine)}</p>
+          </div>
+        </div>
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+            <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Moneyline</h3>
+            <MoneylineCard away={away} home={home} teams={teams} awayOdds={shownAwayMoneyline} homeOdds={shownHomeMoneyline} awayMarketProbability={shownAwayMarketProbability} homeMarketProbability={shownHomeMarketProbability} awayModelProbability={shownAwayWin} homeModelProbability={shownHomeWin} sportsbook={sportsbook} />
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+            <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Spread</h3>
+            <SpreadCard away={away} home={home} teams={teams} awaySpread={shownAwaySpread} homeSpread={shownHomeSpread} awayPrice={isPeriod ? null : awaySpreadPrice} homePrice={isPeriod ? null : homeSpreadPrice} awayPoints={shownAway} homePoints={shownHome} sportsbook={sportsbook} />
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+            <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Over / Under</h3>
+            <GameTotalCard line={shownTotalLine} projection={shownTotal} overPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.over)} underPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.under)} sportsbook={sportsbook} />
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+            <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Team Totals</h3>
+            <div className="grid gap-3">
+              <TeamTotalCard team={away} teams={teams} line={shownAwayTeamTotal} projection={shownAway} sportsbook={sportsbook} />
+              <TeamTotalCard team={home} teams={teams} line={shownHomeTeamTotal} projection={shownHome} sportsbook={sportsbook} />
+            </div>
           </div>
         </div>
       </section>
-
-      <MarketSection
-        eyebrow="Game Market"
-        title="Game Total"
-        description="Compare the sportsbook total with Alpha's projected combined score."
-      >
-        <GameTotalCard
-          line={shownTotalLine}
-          projection={shownTotal}
-          overPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.over)}
-          underPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.under)}
-          sportsbook={sportsbook}
-        />
-      </MarketSection>
-
-      <MarketSection
-        eyebrow="Team Markets"
-        title="Team Totals"
-        description="The market-implied team totals are compared with Alpha's projected points for each team."
-      >
-        <div className="grid gap-3 lg:grid-cols-2">
-          <TeamTotalCard
-            team={away}
-            teams={teams}
-            line={shownAwayTeamTotal}
-            projection={shownAway}
-            sportsbook={sportsbook}
-          />
-          <TeamTotalCard
-            team={home}
-            teams={teams}
-            line={shownHomeTeamTotal}
-            projection={shownHome}
-            sportsbook={sportsbook}
-          />
-        </div>
-      </MarketSection>
-
-      <MarketSection
-        eyebrow="Side Market"
-        title="Spread"
-        description="Alpha compares its projected scoring margin with the sportsbook spread and identifies the side the model favors against the number."
-      >
-        <SpreadCard
-          away={away}
-          home={home}
-          teams={teams}
-          awaySpread={shownAwaySpread}
-          homeSpread={shownHomeSpread}
-          awayPrice={isPeriod ? null : awaySpreadPrice}
-          homePrice={isPeriod ? null : homeSpreadPrice}
-          awayPoints={shownAway}
-          homePoints={shownHome}
-          sportsbook={sportsbook}
-        />
-      </MarketSection>
-
-      <MarketSection
-        eyebrow="Winner Market"
-        title="Moneyline"
-        description="Alpha compares its win probability with the sportsbook's no-vig market probability and favors the side with the stronger probability edge."
-      >
-        <MoneylineCard
-          away={away}
-          home={home}
-          teams={teams}
-          awayOdds={shownAwayMoneyline}
-          homeOdds={shownHomeMoneyline}
-          awayMarketProbability={shownAwayMarketProbability}
-          homeMarketProbability={shownHomeMarketProbability}
-          awayModelProbability={shownAwayWin}
-          homeModelProbability={shownHomeWin}
-          sportsbook={sportsbook}
-        />
-      </MarketSection>
 
       <section className="rounded-3xl border border-white/10 bg-white/[0.025] p-5">
         <div className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200/70">
