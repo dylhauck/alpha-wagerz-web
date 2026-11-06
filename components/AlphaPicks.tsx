@@ -300,7 +300,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     { id: "total", label: "Over / Under" },
     { id: "player_prop", label: "Player Props" },
     { id: "combos", label: "Combos" },
-    ...((mainTab === "straight" || mainTab === "lotto") && sport === "nba" ? [{ id: "first_basket" as const, label: "First Baskets" }] : []),
+    ...(sport === "nba" ? [{ id: "first_basket" as const, label: "First Baskets" }] : []),
   ];
   return <main className="mx-auto max-w-7xl space-y-9 px-3 pb-20 sm:px-5">
     <header className="relative overflow-hidden rounded-3xl border border-cyan-300/15 bg-gradient-to-br from-cyan-400/[0.09] via-[#0b1425] to-fuchsia-400/[0.08] px-6 py-9 text-center shadow-[0_20px_60px_rgba(0,0,0,0.18)] sm:py-12">
