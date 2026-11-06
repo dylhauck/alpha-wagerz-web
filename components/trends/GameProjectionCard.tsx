@@ -75,15 +75,17 @@ function MarketBox({
   model,
   edge,
   lean,
+  wide = false,
 }: {
   title: string;
   market: string;
   model: string;
   edge: string;
   lean: string;
+  wide?: boolean;
 }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#11182c] p-4">
+    <div className={`rounded-2xl border border-white/10 bg-[#11182c] p-4 ${wide ? "xl:col-span-2" : ""}`}>
       <div className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
         {title}
       </div>
@@ -189,6 +191,10 @@ export function GameProjectionCard({
             </div>
           </div>
 
+
+        </div>
+
+        <div className="mb-4 flex justify-end">
           <MostConfidentBet candidates={[
             { label: `${away} ML`, probability: projection.away_win_probability },
             { label: `${home} ML`, probability: projection.home_win_probability },
@@ -291,7 +297,8 @@ export function GameProjectionCard({
           />
 
           <MarketBox
-            title="Game Total"
+            title="Over / Under"
+            wide
             market={fmt(projection.market?.total)}
             model={fmt(projection.projected_total)}
             edge={fmt(projection.total_edge)}
@@ -303,6 +310,7 @@ export function GameProjectionCard({
 
           <MarketBox
             title="Team Totals"
+            wide
             market={`${away} ${fmt(
               projection.market?.team_totals?.away,
             )} / ${home} ${fmt(
