@@ -243,7 +243,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 {projectionPeriod==="Full Game"&&full?.probabilities?<>
                   <p className="font-black text-white">{teamAway}: {(full.probabilities.away_win_probability*100).toFixed(1)}%</p>
                   <p className="mt-1 font-black text-white">{teamHome}: {(full.probabilities.home_win_probability*100).toFixed(1)}%</p>
-                  <p className="mt-2 text-xs text-amber-200">Uncalibrated historical baseline · OT estimated</p>
+                  
                 </>:<p className="text-sm font-bold text-slate-400">Insufficient data for probability estimate</p>}
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-4">
