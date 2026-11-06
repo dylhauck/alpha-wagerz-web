@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 
 type Sport = "mlb" | "nfl" | "nba" | "nhl" | "wnba" | "mls" | "ufc";
 type MarketType = "moneyline" | "spread" | "total" | "player_prop";
-type PickTab = "moneyline" | "spread" | "total" | "player_prop" | "combos" | "first_basket";
+type PickTab = "moneyline" | "spread" | "total" | "player_prop" | "combos" | "first_basket" | "anytime_goal" | "first_goal" | "home_run" | "anytime_td" | "first_td";
 type MainTab = "parlay" | "straight" | "lotto";
 type Leg = { id: string; game: string; pick: string; odds: number; probability: number; source: string; marketType: MarketType };
 type Ticket = { legs: Leg[]; odds: number; probability: number };
@@ -361,6 +361,9 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     { id: "player_prop", label: "Player Props" },
     { id: "combos", label: "Combos" },
     ...(sport === "nba" ? [{ id: "first_basket" as const, label: "First Baskets" }] : []),
+    ...(sport === "nhl" ? [{ id: "anytime_goal" as const, label: "Anytime Goal Scorers" }, { id: "first_goal" as const, label: "First Goal Scorers" }] : []),
+    ...(sport === "mlb" ? [{ id: "home_run" as const, label: "Home Runs" }] : []),
+    ...(sport === "nfl" ? [{ id: "anytime_td" as const, label: "Anytime TD Scorers" }, { id: "first_td" as const, label: "First TD Scorers" }] : []),
   ];
   return <main className="mx-auto max-w-7xl space-y-9 px-3 pb-20 sm:px-5">
     <header className="pt-1 text-center">
@@ -390,7 +393,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
           </div>
 
         </div>
-        {categoryTab === "first_basket" ? <>
+        {categoryTab === "first_basket" && sport === "nba" ? <>
           <p className="text-sm text-slate-400">Model-ranked first-basket combinations · 2–4 legs · Sportsbook first-basket odds are not currently supplied, so these are projections, not verified betting tickets.</p>
           {basketTickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
             {(mainTab === "straight" ? basketTickets.map(t => t.slice(0, 1)) : basketTickets).slice(0, 5).map((basket, idx) => <article key={idx} className="rounded-2xl border border-white/10 bg-[#0e192b] p-5">
@@ -399,7 +402,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
               <p className="mt-3 text-xs text-amber-200">Sportsbook odds unavailable — no verified parlay price.</p>
             </article>)}
           </div> : <p className="rounded-2xl border border-white/10 p-6 text-sm text-slate-400">No eligible first-basket projections are available for this slate.</p>}
-        </> : section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + categoryTab + i} ticket={t} index={i} category={section.category} />)}</div> :
+        </> : ["anytime_goal", "first_goal", "home_run", "anytime_td", "first_td"].includes(categoryTab) ? <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-center text-sm text-slate-400">This scorer market requires matching player-level model probabilities and verified sportsbook odds. No eligible priced selections are currently available. The category will remain empty rather than display invented odds.</p> : section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + categoryTab + i} ticket={t} index={i} category={section.category} />)}</div> :
           <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">No qualifying {pickTabs.find(tab => tab.id === categoryTab)?.label.toLowerCase()} {mainTab === "parlay" ? "parlay" : mainTab === "straight" ? "straight" : "lotto"} picks are available from verified sportsbook prices and model probabilities for this slate. No picks were fabricated.</p>}
       </section>
     </>}
