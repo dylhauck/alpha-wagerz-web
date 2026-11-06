@@ -225,13 +225,14 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 <h2 className="text-xl font-black text-white">{active?active.away_name+" @ "+active.home_name:"NHL Game Projections"}</h2>
                 <p className="mt-1 text-xs font-bold text-slate-400">{active?.venue||"Venue unavailable"} · {active?.start_time_utc?new Date(active.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"})+" CT":"Time TBD"} · {projectionPeriod}</p>
               </div>
-              <MostConfidentBet candidates={projectionPeriod==="Full Game"&&full?.probabilities?[
+
+            </div>
+            <div className="mb-4 flex justify-end"><MostConfidentBet candidates={projectionPeriod==="Full Game"&&full?.probabilities?[
                 {label:`${teamAway} ML`,probability:full.probabilities.away_win_probability},
                 {label:`${teamHome} ML`,probability:full.probabilities.home_win_probability},
                 {label:`${teamAway} +1.5`,probability:full.probabilities.away_puck_line_plus_1_5_probability},
                 {label:`${teamHome} -1.5`,probability:full.probabilities.home_puck_line_minus_1_5_probability},
-              ]:[]} note="Uncalibrated Poisson baseline from observed goals. Overtime ties split evenly. No goalie/injury adjustments or sportsbook payout inputs; use cautiously." />
-            </div>
+              ]:[]} note="Uncalibrated Poisson baseline from observed goals. Overtime ties split evenly. No goalie/injury adjustments or sportsbook payout inputs; use cautiously." /></div>
             <div className="mb-4 grid gap-3 md:grid-cols-3">
               <div className="rounded-2xl border border-cyan-300/15 bg-cyan-400/10 p-4">
                 <div className={heading}>Projected Score</div>
@@ -264,12 +265,12 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamHome} unavailable</span><span className="text-cyan-200">{margin==null?"—":(margin>0?"+":"")+fmt(margin)}</span><span>—</span></div>
                 <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamAway} unavailable</span><span className="text-cyan-200">{margin==null?"—":(margin<0?"+":"")+fmt(-margin)}</span><span>—</span></div>
               </div>
-              <div className={box}>
+              <div className={box+" lg:col-span-2"}>
                 <div className={heading}>Over / Under</div>
                 <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Probability</span></div>
                 {["Over","Under"].map(side=><div key={side} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{side} unavailable</span><span className="text-cyan-200">{fmt(total)}</span><span>—</span></div>)}
               </div>
-              <div className={box}>
+              <div className={box+" lg:col-span-2"}>
                 <div className={heading}>Team Totals</div>
                 <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Team</span><span>Market</span><span>Model</span></div>
                 {[[teamAway,awayGoals],[teamHome,homeGoals]] .map(([team,goals])=><div key={String(team)} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team}</span><span>Unavailable</span><span className="text-cyan-200">{fmt(goals as number|null|undefined)}</span></div>)}
