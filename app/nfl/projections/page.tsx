@@ -899,6 +899,7 @@ export default function NFLProjectionsPage() {
   const [games, setGames] = useState<NFLGame[]>([]);
   const [projections, setProjections] = useState<ProjectionGame[]>([]);
   const [markets, setMarkets] = useState<MarketGame[]>([]);
+  const [periodMarkets, setPeriodMarkets] = useState<Array<{game_id?:string|number;away_team?:string;home_team?:string;periods?:Record<string,{moneyline?:{away?:number;home?:number};spread?:{away_line?:number;home_line?:number;away_odds?:number;home_odds?:number};total?:{line?:number};team_totals?:{away?:number;home?:number}}>}>>([]);
   const [teams, setTeams] = useState<NFLTeam[]>([]);
   const [selectedGameId, setSelectedGameId] = useState("");
   const [projectionPeriod, setProjectionPeriod] = useState("Full Game");
@@ -912,13 +913,14 @@ export default function NFLProjectionsPage() {
       setLoading(true);
 
       try {
-        const [slateRes, projectionRes, marketRes, teamsRes, periodRes] =
+        const [slateRes, projectionRes, marketRes, teamsRes, periodRes, periodMarketRes] =
           await Promise.all([
             fetch(SLATE_PATH, { cache: "no-store" }),
             fetch(PROJECTION_PATH, { cache: "no-store" }),
             fetch(MARKET_PATH, { cache: "no-store" }),
             fetch("/data/nfl/teams.json", { cache: "no-store" }),
             fetch("/data/nfl/period_projections.json", { cache: "no-store" }),
+            fetch("/data/nfl/period_markets.json", { cache: "no-store" }),
           ]);
 
         const slatePayload = slateRes.ok ? await slateRes.json() : {};
@@ -928,6 +930,7 @@ export default function NFLProjectionsPage() {
         const marketPayload = marketRes.ok ? await marketRes.json() : {};
         const teamsPayload = teamsRes.ok ? await teamsRes.json() : [];
         const periodPayload = periodRes.ok ? await periodRes.json() : {};
+        const periodMarketPayload = periodMarketRes.ok ? await periodMarketRes.json() : {};
 
         if (cancelled) {
           return;
@@ -937,6 +940,7 @@ export default function NFLProjectionsPage() {
 
         setGames(loadedGames);
         setPeriodGames(Array.isArray(periodPayload.games) ? periodPayload.games : []);
+        setPeriodMarkets(Array.isArray(periodMarketPayload.games) ? periodMarketPayload.games : []);
         setProjections(getGames<ProjectionGame>(projectionPayload));
         setMarkets(getGames<MarketGame>(marketPayload));
         setTeams(
@@ -1133,15 +1137,23 @@ export default function NFLProjectionsPage() {
   const shownMargin = isPeriod ? (periodAway !== null && periodHome !== null ? periodHome - periodAway : null) : projectedMargin;
   const shownAwayWin = isPeriod ? null : awayWin;
   const shownHomeWin = isPeriod ? null : homeWin;
-  const shownTotalLine = isPeriod ? null : totalLine;
-  const shownAwayTeamTotal = isPeriod ? null : awayTeamTotal;
-  const shownHomeTeamTotal = isPeriod ? null : homeTeamTotal;
-  const shownAwaySpread = isPeriod ? null : awaySpread;
-  const shownHomeSpread = isPeriod ? null : homeSpread;
-  const shownAwayMoneyline = isPeriod ? null : awayMoneyline;
-  const shownHomeMoneyline = isPeriod ? null : homeMoneyline;
-  const shownAwayMarketProbability = isPeriod ? null : awayMarketProbability;
-  const shownHomeMarketProbability = isPeriod ? null : homeMarketProbability;
+  const periodMarketGame = periodMarkets.find(g => String(g.game_id) === selectedGameId) || periodMarkets.find(g => sameTeam(g.away_team, away) && sameTeam(g.home_team, home));
+  const periodKey = projectionPeriod === "1st Half" ? "1H" : projectionPeriod === "2nd Half" ? "2H" : projectionPeriod;
+  const periodMarket = periodMarketGame?.periods?.[periodKey];
+  const periodMoneyline = periodMarket?.moneyline;
+  const periodSpread = periodMarket?.spread;
+  const periodTotal = periodMarket?.total;
+  const periodTeamTotals = periodMarket?.team_totals;
+  const impliedOdds = (price: number | null): number | null => price === null || price === 0 ? null : price > 0 ? 100 / (100 + price) : -price / (100 - price);
+  const shownTotalLine = isPeriod ? num(periodTotal?.line) : totalLine;
+  const shownAwayTeamTotal = isPeriod ? num(periodTeamTotals?.away) : awayTeamTotal;
+  const shownHomeTeamTotal = isPeriod ? num(periodTeamTotals?.home) : homeTeamTotal;
+  const shownAwaySpread = isPeriod ? num(periodSpread?.away_line) : awaySpread;
+  const shownHomeSpread = isPeriod ? num(periodSpread?.home_line) : homeSpread;
+  const shownAwayMoneyline = isPeriod ? num(periodMoneyline?.away) : awayMoneyline;
+  const shownHomeMoneyline = isPeriod ? num(periodMoneyline?.home) : homeMoneyline;
+  const shownAwayMarketProbability = isPeriod ? impliedOdds(num(periodMoneyline?.away)) : awayMarketProbability;
+  const shownHomeMarketProbability = isPeriod ? impliedOdds(num(periodMoneyline?.home)) : homeMarketProbability;
 
   return (
     <div className="space-y-5 pt-4">
@@ -1206,7 +1218,7 @@ export default function NFLProjectionsPage() {
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
             <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Spread</h3>
-            <SpreadCard away={away} home={home} teams={teams} awaySpread={shownAwaySpread} homeSpread={shownHomeSpread} awayPrice={isPeriod ? null : awaySpreadPrice} homePrice={isPeriod ? null : homeSpreadPrice} awayPoints={shownAway} homePoints={shownHome} sportsbook={sportsbook} />
+            <SpreadCard away={away} home={home} teams={teams} awaySpread={shownAwaySpread} homeSpread={shownHomeSpread} awayPrice={isPeriod ? num(periodSpread?.away_odds) : awaySpreadPrice} homePrice={isPeriod ? num(periodSpread?.home_odds) : homeSpreadPrice} awayPoints={shownAway} homePoints={shownHome} sportsbook={sportsbook} />
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 lg:col-span-2">
             <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Over / Under</h3>
