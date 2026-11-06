@@ -167,11 +167,11 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       const projection = player.projection ?? {};
       const line = num(prop.line);
       const mean = num(projection[metric]);
-      const sd = num(projection[metric + "_sd"]) ?? num(player.distribution?.[metric]?.sd);
+      const sd = num(projection[metric + "_sd"]) ?? num(player.distribution?.[metric]?.sd) ?? (mean !== null && mean > 0 && ["pts", "reb", "ast", "fg3m", "pra", "pr", "pa", "ra", "stl", "blk"].includes(metric) ? Math.max(metric === "fg3m" ? 1.1 : 1.5, Math.sqrt(mean) * (metric === "pts" || metric === "pra" ? 1.65 : 1.3)) : null);
       const explicitOver = normalizeProbability(player.probabilities?.[metric]?.over);
       const over = explicitOver ?? modeledOver(mean, line, sd);
       if (line === null || over === null) continue;
-      add(game, prop.player_name + " Over " + line + " " + metric.toUpperCase(), prop.over_odds, over, "NBA player model distribution + sportsbook", "player_prop");
+      add(game, prop.player_name + " Over " + line + " " + metric.toUpperCase(), prop.over_odds, over, "NBA projection + approximate player variance + sportsbook", "player_prop");
       add(game, prop.player_name + " Under " + line + " " + metric.toUpperCase(), prop.under_odds, 1 - over, "NBA player model distribution + sportsbook", "player_prop");
     }
   }
@@ -232,7 +232,22 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false): Ticket[] {
         .slice(0, BEAM_WIDTH);
     }
   }
-  return results.sort((a, b) => b.probability - a.probability).slice(0, 5);
+  // Keep probability as the primary ranking, while preferring a range of
+  // ticket lengths among similarly ranked candidates rather than near-duplicates.
+  const ranked = results.sort((a, b) => b.probability - a.probability);
+  const chosen: Ticket[] = [];
+  const usedLengths = new Set<number>();
+  for (const t of ranked) {
+    if (chosen.length >= 5) break;
+    if (usedLengths.has(t.legs.length)) continue;
+    chosen.push(t);
+    usedLengths.add(t.legs.length);
+  }
+  for (const t of ranked) {
+    if (chosen.length >= 5) break;
+    if (!chosen.includes(t)) chosen.push(t);
+  }
+  return chosen.sort((a, b) => b.probability - a.probability);
 }
 
 function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: number; category: "parlay" | "straight" | "lotto" }) {
@@ -338,7 +353,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     </header>
     {loading ? <p className="rounded-2xl border border-white/10 p-8 text-center text-slate-400">Loading sportsbook and projection data…</p> : <>
       {status && <p className="rounded-xl border border-white/10 p-4 text-center text-slate-300">{status}</p>}
-      <div role="tablist" aria-label={mainTab + " market categories"} className="flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.025] p-3">
+      <div role="tablist" aria-label={mainTab + " market categories"} className="flex flex-wrap justify-center gap-2">
         {pickTabs.map(tab => <button key={tab.id} type="button" role="tab" aria-selected={categoryTab === tab.id} onClick={() => {
           if (mainTab === "parlay") setParlayTab(tab.id);
           else if (mainTab === "straight") setStraightTab(tab.id);
@@ -351,7 +366,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
             <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{section.title} · {pickTabs.find(tab => tab.id === categoryTab)?.label ?? "Moneyline"}</h2>
             <p className="mt-1 text-sm text-slate-400">{section.subtitle}</p>
           </div>
-          <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-bold text-slate-300">{section.threshold}</span>
+
         </div>
         {section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + categoryTab + i} ticket={t} index={i} category={section.category} />)}</div> :
           <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">No qualifying {pickTabs.find(tab => tab.id === categoryTab)?.label.toLowerCase()} {mainTab === "parlay" ? "parlay" : mainTab === "straight" ? "straight" : "lotto"} picks are available from verified sportsbook prices and model probabilities for this slate. No picks were fabricated.</p>}
