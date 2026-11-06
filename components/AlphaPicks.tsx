@@ -232,22 +232,9 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
         .slice(0, BEAM_WIDTH);
     }
   }
-  // Keep probability as the primary ranking, while preferring a range of
-  // ticket lengths among similarly ranked candidates rather than near-duplicates.
-  const ranked = results.sort((a, b) => b.probability - a.probability);
-  const chosen: Ticket[] = [];
-  const usedLengths = new Set<number>();
-  for (const t of ranked) {
-    if (chosen.length >= 6) break;
-    if (usedLengths.has(t.legs.length)) continue;
-    chosen.push(t);
-    usedLengths.add(t.legs.length);
-  }
-  for (const t of ranked) {
-    if (chosen.length >= 6) break;
-    if (!chosen.includes(t)) chosen.push(t);
-  }
-  return chosen.sort((a, b) => b.probability - a.probability);
+  // Rank solely by modeled joint probability. Leg count is never used
+  // as a diversity target or a tiebreaker.
+  return results.sort((a, b) => b.probability - a.probability).slice(0, 6);
 }
 
 function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: number; category: "parlay" | "straight" | "lotto" }) {
