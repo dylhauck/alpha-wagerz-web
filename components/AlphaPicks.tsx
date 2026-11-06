@@ -64,33 +64,47 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[]): Leg[
 }
 
 function makeParlays(legs: Leg[], minOdds: number | null): Ticket[] {
-  const results: Ticket[] = [];
+  // Search distinct games only. Prioritize modeled probability, never invent
+  // prices or force five picks if the slate cannot support them.
+  const pool = legs.slice(0, 36);
+  const byGame = new Map<string, Leg[]>();
+  for (const leg of pool) byGame.set(leg.game, [...(byGame.get(leg.game) || []), leg]);
+  const games = [...byGame.values()].map(group => group.sort((a, b) => b.probability - a.probability));
+  const candidates: Ticket[] = [];
   const seen = new Set<string>();
-  // Standard parlays use two independent matchups; lotto tickets use enough
-  // different matchups to clear +10000 with actual combined sportsbook prices.
-  const sizes = minOdds === null ? [2, 3] : [4, 5, 6, 7, 8, 9, 10];
-  const pool = legs.slice(0, 24);
-  let explored = 0;
+  const sizes = minOdds === null ? [2, 3] : Array.from({ length: Math.min(games.length, 12) - 2 }, (_, i) => i + 3);
   for (const size of sizes) {
-    const choose = (start: number, selected: Leg[]) => {
-      if (results.length >= 100 || explored++ > 25000) return;
-      if (selected.length === size) {
-        const t = ticket(selected);
+    if (size > games.length) continue;
+    const walk = (index: number, chosen: Leg[]) => {
+      if (chosen.length === size) {
+        const t = ticket(chosen);
         if (minOdds !== null && t.odds < minOdds) return;
-        const signature = selected.map(x => x.id).sort().join("|");
-        if (!seen.has(signature)) { seen.add(signature); results.push(t); }
+        const signature = chosen.map(x => x.id).sort().join("|");
+        if (!seen.has(signature)) {
+          seen.add(signature);
+          candidates.push(t);
+          candidates.sort((a, b) => b.probability - a.probability);
+          if (candidates.length > 80) candidates.length = 80;
+        }
         return;
       }
-      for (let i = start; i < pool.length; i++) {
-        if (selected.some(x => x.game === pool[i].game)) continue;
-        choose(i + 1, [...selected, pool[i]]);
-        if (results.length >= 100 || explored > 25000) return;
-      }
+      if (games.length - index < size - chosen.length) return;
+      if (index >= games.length) return;
+      // Two highest-confidence sides per matchup, never both on one ticket.
+      for (const leg of games[index].slice(0, 2)) walk(index + 1, [...chosen, leg]);
+      walk(index + 1, chosen);
     };
-    choose(0, []);
-    if (results.length >= 100 || explored > 25000) break;
+    // Bound combinatorial growth; 12 games x 2 sides is ample for five tickets.
+    if (games.length <= 12) walk(0, []);
+    else {
+      const best = games.slice(0, 12);
+      const original = games.splice(0, games.length, ...best);
+      walk(0, []);
+      games.splice(0, games.length, ...original);
+    }
+    if (candidates.length >= 5) break;
   }
-  return results.sort((a, b) => b.probability - a.probability).slice(0, 5);
+  return candidates.sort((a, b) => b.probability - a.probability).slice(0, 5);
 }
 
 function PickCard({ ticket: t, index }: { ticket: Ticket; index: number }) {
@@ -108,7 +122,7 @@ function PickCard({ ticket: t, index }: { ticket: Ticket; index: number }) {
   </article>;
 }
 
-export default function AlphaPicks({ sport }: { sport: Sport }) {
+export default function AlphaPicks({ sport, next = false }: { sport: Sport; next?: boolean }) {
   const [legs, setLegs] = useState<Leg[]>([]);
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
@@ -124,7 +138,7 @@ export default function AlphaPicks({ sport }: { sport: Sport }) {
       ufc: ["/data/ufc/game_projections.json", "/data/ufc/market.json"],
     };
     setLoading(true);
-    Promise.all(paths[sport].map(async path => {
+    Promise.all(paths[sport].map(async path => {\n      if (next) path = path.replace(`/data/${sport}/`, `/data/${sport}/next/`);
       const res = await fetch(path, { cache: "no-store" });
       if (!res.ok) throw new Error("Missing " + path);
       return res.json();
@@ -137,7 +151,7 @@ export default function AlphaPicks({ sport }: { sport: Sport }) {
       if (active) { setLegs([]); setStatus("Current slate projection or sportsbook data is unavailable."); }
     }).finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
-  }, [sport]);
+  }, [sport, next]);
   const straights = useMemo(() => legs.slice(0, 5).map(leg => ticket([leg])), [legs]);
   const parlays = useMemo(() => makeParlays(legs, null), [legs]);
   const lottos = useMemo(() => makeParlays(legs, 10000), [legs]);
@@ -149,7 +163,7 @@ export default function AlphaPicks({ sport }: { sport: Sport }) {
   return <main className="mx-auto max-w-7xl space-y-7 px-2 pb-16">
     <header className="text-center"><p className="text-xs font-black uppercase tracking-[0.3em] text-cyan-300">FollowTheAlpha 🐺</p>
       <h1 className="mt-2 text-4xl font-black text-white">Alpha Picks</h1>
-      <p className="mt-3 text-sm text-slate-400">{sport.toUpperCase()} • Current slate • Model-ranked picks, not guarantees</p>
+      <p className="mt-3 text-sm text-slate-400">{sport.toUpperCase()} • {next ? "Next slate" : "Current slate"} • Model-ranked picks, not guarantees</p>
     </header>
     <div className="rounded-xl border border-amber-300/20 bg-amber-300/5 p-4 text-sm text-amber-100">
       Picks require both a real sportsbook price and a model probability. Parlays assume independent games; actual outcomes are uncertain. NHL estimates are uncalibrated. Lotto parlays are highly unlikely to hit. No invented lines or filler selections.
