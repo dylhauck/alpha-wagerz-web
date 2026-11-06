@@ -510,7 +510,7 @@ function MarketPanel({
 
       {/* OVER / UNDER */}
 
-      <Card title="Over / Under">
+      <Card title="Over / Under" wide>
         <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase tracking-wide text-slate-500">
           <span>Market</span>
           <span>Model</span>
@@ -560,7 +560,7 @@ function MarketPanel({
 
       {/* TEAM TOTALS */}
 
-      <Card title="Team Totals">
+      <Card title="Team Totals" wide>
         <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase tracking-wide text-slate-500">
           <span>Team</span>
           <span>Market</span>
