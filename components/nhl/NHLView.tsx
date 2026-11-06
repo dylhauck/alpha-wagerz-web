@@ -217,13 +217,13 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
           const margin=awayGoals!=null&&homeGoals!=null?homeGoals-awayGoals:null;
           const fmt=(n:number|null|undefined)=>n==null?"—":n.toFixed(2);
           const teamAway=active?.away||"Away",teamHome=active?.home||"Home";
-          const box="rounded-2xl border border-white/10 bg-white/[0.035] p-4";
+          const box="flex min-w-0 flex-col rounded-2xl border border-white/10 bg-white/[0.035] p-4";
           const heading="mb-3 text-[11px] font-black uppercase tracking-wide text-slate-400";
           return <>
             <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
               <div>
                 <h2 className="text-xl font-black text-white">{active?active.away_name+" @ "+active.home_name:"NHL Game Projections"}</h2>
-                <p className="mt-1 text-xs font-bold text-slate-400">{active?.venue||"Venue unavailable"} · {active?.start_time_utc?new Date(active.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"})+" CT":"Time TBD"} · {projectionPeriod}</p>
+                <p className="mt-1 text-xs font-bold text-slate-400">{active?.venue||"Venue unavailable"} · {active?.start_time_utc?new Date(active.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"})+" CT":"Time TBD"}</p>
               </div>
 
             <div className="shrink-0"><MostConfidentBet candidates={projectionPeriod==="Full Game"&&full?.probabilities?[
@@ -257,30 +257,29 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
             <div className="mt-4 grid gap-3 lg:grid-cols-2">
               <div className={box}>
                 <div className={heading}>Moneyline</div>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {[teamAway,teamHome].map((team,index)=><div key={team} className="rounded-xl border border-white/10 bg-purple-300/[0.045] p-3">
-                    <p className="mb-3 text-base font-black text-white">{team} ML Unavailable</p>
+                <div className="grid min-h-[190px] gap-3 md:grid-cols-2">
+                  {[teamAway,teamHome].map((team,index)=><div key={team} className="min-w-0 rounded-xl border border-white/10 bg-black/20 p-4">
+                    <div className="mb-3 flex items-center gap-3"><img src={team===teamAway?active?.away_logo:active?.home_logo} alt="" width={34} height={34} className="h-[34px] w-[34px] shrink-0 object-contain"/><p className="text-lg font-black text-white">{team} ML Unavailable</p></div>
                     <div className="grid grid-cols-3 gap-2">
-                      {[["Market Prob.","Unavailable"],["Alpha Prob.",projectionPeriod==="Full Game"&&full?.probabilities?(100*(index===0?full.probabilities.away_win_probability:full.probabilities.home_win_probability)).toFixed(1)+"%":"Unavailable"],["Probability Edge","Unavailable"]].map(([label,value])=><div key={label} className="rounded-xl border border-white/10 bg-slate-950/40 p-3"><p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p><p className="mt-1 text-sm font-black text-white">{value}</p></div>)}
+                      {[["Market Prob.","Unavailable"],["Alpha Prob.",projectionPeriod==="Full Game"&&full?.probabilities?(100*(index===0?full.probabilities.away_win_probability:full.probabilities.home_win_probability)).toFixed(1)+"%":"Unavailable"],["Margin Edge","Unavailable"]].map(([label,value])=><div key={label} className="rounded-xl border border-white/10 bg-slate-950/40 p-3"><p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p><p className="mt-1 text-sm font-black text-white">{value}</p></div>)}
                     </div>
                   </div>)}
                 </div>
-                <div className="mt-3 rounded-xl border border-pink-300/25 bg-pink-300/10 px-4 py-3 text-center"><p className="text-[10px] font-black uppercase tracking-widest text-pink-200/75">Alpha Pick</p><p className="mt-1 text-xl font-black text-pink-200">Unavailable — no sportsbook line</p></div>
+                <div className="mt-auto pt-3"><div className="rounded-xl border border-pink-300/25 bg-pink-300/10 px-4 py-3 text-center"><p className="text-[10px] font-black uppercase tracking-widest text-pink-200/75">Alpha Pick</p><p className="mt-1 text-xl font-black text-pink-200">Unavailable — no sportsbook line</p></div></div>
               </div>
               <div className={box}>
                 <div className={heading}>Puck Line / Spread</div>
-                <div className="rounded-xl border border-cyan-300/20 bg-cyan-300/[0.045] p-3">
-                  <div className="grid gap-3 sm:grid-cols-2">
+                <div className="flex flex-1 flex-col rounded-xl border border-cyan-300/20 bg-cyan-300/[0.045] p-4">
+                  <div className="grid min-h-[190px] gap-3 md:grid-cols-2">
                     <div className="rounded-xl border border-white/10 bg-slate-950/40 p-3">
                       <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">Sportsbook Spread</p>
-                      <p className="mt-2 text-sm font-black text-white">{teamAway} Unavailable</p>
-                      <p className="mt-2 text-sm font-black text-white">{teamHome} Unavailable</p>
+                      {([teamAway,teamHome] as string[]).map(team=><div key={team} className="mt-3 flex items-center gap-2"><img src={team===teamAway?active?.away_logo:active?.home_logo} alt="" width={30} height={30} className="h-[30px] w-[30px] shrink-0 object-contain"/><p className="text-sm font-black text-white">{team} Unavailable</p></div>)}
                     </div>
                     <div className="grid grid-cols-2 gap-2">
-                      {([["Alpha Score",teamAway+" "+fmt(awayGoals)+" · "+teamHome+" "+fmt(homeGoals)],["Alpha Margin",margin==null?"Unavailable":(margin>=0?teamHome:teamAway)+" by "+fmt(Math.abs(margin))],["Market Margin","Unavailable"],["Spread Edge","Unavailable"]] as [string,string][]).map(([label,value])=><div key={label} className="rounded-xl border border-white/10 bg-slate-950/40 p-3"><p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p><p className="mt-1 text-sm font-black text-white">{value}</p></div>)}
+                      {([["Alpha Score",teamAway+" "+fmt(awayGoals)+" · "+teamHome+" "+fmt(homeGoals)],["Alpha Margin",margin==null?"Unavailable":(margin>=0?teamHome:teamAway)+" by "+fmt(Math.abs(margin))],["Market Margin","Unavailable"],["Margin Edge","Unavailable"]] as [string,string][]).map(([label,value])=><div key={label} className="rounded-xl border border-white/10 bg-slate-950/40 p-3"><p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p><p className="mt-1 text-sm font-black text-white">{value}</p></div>)}
                     </div>
                   </div>
-                  <div className="mt-3 rounded-xl border border-pink-300/25 bg-pink-300/10 px-4 py-3 text-center"><p className="text-[10px] font-black uppercase tracking-widest text-pink-200/75">Alpha Pick</p><p className="mt-1 text-xl font-black text-pink-200">Unavailable — no sportsbook line</p></div>
+                  <div className="mt-auto pt-3"><div className="rounded-xl border border-pink-300/25 bg-pink-300/10 px-4 py-3 text-center"><p className="text-[10px] font-black uppercase tracking-widest text-pink-200/75">Alpha Pick</p><p className="mt-1 text-xl font-black text-pink-200">Unavailable — no sportsbook line</p></div></div>
                 </div>
               </div>
               <div className={box+" lg:col-span-2"}>
@@ -294,7 +293,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 <div className={heading}>Team Totals</div>
                 <div className="grid gap-3 lg:grid-cols-2">
                   {([[teamAway,awayGoals],[teamHome,homeGoals]] as [string,number|null|undefined][]).map(([team,goals])=><div key={team} className="rounded-xl border border-white/10 bg-white/[0.025] p-3">
-                    <p className="mb-3 text-base font-black text-white">{team}</p>
+                    <div className="mb-3 flex items-center gap-3"><img src={team===teamAway?active?.away_logo:active?.home_logo} alt="" width={40} height={40} className="h-10 w-10 shrink-0 object-contain"/><p className="text-xl font-black text-white">{team}</p></div>
                     <div className="grid grid-cols-3 gap-2">
                       {([["Sportsbook Line","Unavailable"],["Alpha Projection",fmt(goals)],["Difference","Unavailable"]] as [string,string][]).map(([label,value])=><div key={label} className="rounded-xl border border-white/10 bg-slate-950/40 p-3"><p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p><p className="mt-1 text-sm font-black text-white">{value}</p></div>)}
                     </div>
