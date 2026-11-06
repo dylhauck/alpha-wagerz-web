@@ -20,7 +20,7 @@ const probabilityFromOdds = (odds: number) => 1 / americanToDecimal(odds);
 const list = (payload: any): any[] => Array.isArray(payload) ? payload : Array.isArray(payload?.games) ? payload.games : [];
 const key = (g: any) => String(g?.game_id ?? "");
 const matchup = (g: any) => String(g?.away_team ?? g?.away ?? "?") + " @ " + String(g?.home_team ?? g?.home ?? "?");
-const same = (a: any, b: any) => key(a) && key(a) === key(b) || matchup(a) === matchup(b);
+const same = (a: any, b: any) => (Boolean(key(a)) && key(a) === key(b)) || matchup(a) === matchup(b);
 const ticket = (legs: Leg[]): Ticket => {
   const decimal = legs.reduce((acc, leg) => acc * americanToDecimal(leg.odds), 1);
   return { legs, odds: decimalToAmerican(decimal), probability: legs.reduce((acc, leg) => acc * leg.probability, 1) };
@@ -70,9 +70,10 @@ function makeParlays(legs: Leg[], minOdds: number | null): Ticket[] {
   // different matchups to clear +10000 with actual combined sportsbook prices.
   const sizes = minOdds === null ? [2, 3] : [4, 5, 6, 7, 8, 9, 10];
   const pool = legs.slice(0, 24);
+  let explored = 0;
   for (const size of sizes) {
     const choose = (start: number, selected: Leg[]) => {
-      if (results.length >= 100) return;
+      if (results.length >= 100 || explored++ > 25000) return;
       if (selected.length === size) {
         const t = ticket(selected);
         if (minOdds !== null && t.odds < minOdds) return;
@@ -83,11 +84,11 @@ function makeParlays(legs: Leg[], minOdds: number | null): Ticket[] {
       for (let i = start; i < pool.length; i++) {
         if (selected.some(x => x.game === pool[i].game)) continue;
         choose(i + 1, [...selected, pool[i]]);
-        if (results.length >= 100) return;
+        if (results.length >= 100 || explored > 25000) return;
       }
     };
     choose(0, []);
-    if (results.length >= 100) break;
+    if (results.length >= 100 || explored > 25000) break;
   }
   return results.sort((a, b) => b.probability - a.probability).slice(0, 5);
 }
