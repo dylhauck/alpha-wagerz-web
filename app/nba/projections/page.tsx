@@ -238,16 +238,18 @@ function Card({
   title,
   children,
   tint = "",
+  wide = false,
 }: {
   title: string;
   children: React.ReactNode;
   tint?: string;
+  wide?: boolean;
 }) {
   return (
     <div
       className={`rounded-2xl border border-white/10 p-4 ${
         tint || "bg-white/[0.035]"
-      }`}
+      } ${wide ? "lg:col-span-2" : ""}`}
     >
       <div className="mb-2 text-[11px] font-black uppercase tracking-wide text-slate-400">
         {title}
