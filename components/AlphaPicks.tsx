@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type Sport = "mlb" | "nfl" | "nba" | "nhl";
+type Sport = "mlb" | "nfl" | "nba" | "nhl" | "wnba" | "mls" | "ufc";
 type Leg = { id: string; game: string; pick: string; odds: number; probability: number; source: string };
 type Ticket = { legs: Leg[]; odds: number; probability: number };
 const num = (x: unknown): number | null => typeof x === "number" && Number.isFinite(x) ? x : null;
@@ -119,6 +119,9 @@ export default function AlphaPicks({ sport }: { sport: Sport }) {
       nhl: ["/data/nhl/projections.json", "/data/nhl/live_team_markets.json"],
       nfl: ["/data/nfl/game_projections.json", "/data/nfl/market.json"],
       mlb: ["/data/mlb/game_projections.json", "/data/mlb/market_lines.json"],
+      wnba: ["/data/wnba/game_projections.json", "/data/wnba/market.json"],
+      mls: ["/data/mls/game_projections.json", "/data/mls/market.json"],
+      ufc: ["/data/ufc/game_projections.json", "/data/ufc/market.json"],
     };
     setLoading(true);
     Promise.all(paths[sport].map(async path => {
