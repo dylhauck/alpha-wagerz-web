@@ -1,5 +1,5 @@
 "use client";
-import { MostConfidentBet } from "@/components/projections/MostConfidentBet";
+import { MostConfidentBet, normalOutcomeProbability } from "@/components/projections/MostConfidentBet";
 
 
 import { useEffect, useMemo, useState } from "react";
@@ -48,6 +48,8 @@ type ProjectionGame = {
   projected_home_points?: number;
 
   projected_total?: number;
+  margin_sd?: number;
+  total_sd?: number;
 
   expected_margin?: number;
   projected_margin?: number;
@@ -1118,6 +1120,10 @@ export default function NFLProjectionsPage() {
         <MostConfidentBet candidates={[
           { label: `${away} ML`, probability: awayWin },
           { label: `${home} ML`, probability: homeWin },
+          { label: `${home} ${homeSpread != null && homeSpread > 0 ? "+" : ""}${homeSpread} spread`, probability: normalOutcomeProbability(projectedMargin, homeSpread == null ? null : -homeSpread, selectedProjection?.margin_sd) },
+          { label: `${away} ${awaySpread != null && awaySpread > 0 ? "+" : ""}${awaySpread} spread`, probability: normalOutcomeProbability(projectedMargin == null ? null : -projectedMargin, awaySpread == null ? null : -awaySpread, selectedProjection?.margin_sd) },
+          { label: `Over ${totalLine}`, probability: normalOutcomeProbability(projectedTotal, totalLine, selectedProjection?.total_sd) },
+          { label: `Under ${totalLine}`, probability: normalOutcomeProbability(totalLine, projectedTotal, selectedProjection?.total_sd) },
         ]} note="Highest modeled win probability among available outcomes. Sportsbook odds and value are not selection factors." />
       </div>
       <section className="glass overflow-hidden rounded-3xl">
