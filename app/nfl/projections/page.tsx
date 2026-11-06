@@ -1139,8 +1139,8 @@ export default function NFLProjectionsPage() {
         <MostConfidentBet candidates={[
           { label: `${away} ML`, probability: shownAwayWin },
           { label: `${home} ML`, probability: shownHomeWin },
-          { label: `${home} ${homeSpread != null && homeSpread > 0 ? "+" : ""}${homeSpread} spread`, probability: normalOutcomeProbability(shownMargin, homeSpread == null ? null : -homeSpread, selectedProjection?.margin_sd) },
-          { label: `${away} ${awaySpread != null && awaySpread > 0 ? "+" : ""}${awaySpread} spread`, probability: normalOutcomeProbability(shownMargin == null ? null : -shownMargin, awaySpread == null ? null : -awaySpread, selectedProjection?.margin_sd) },
+          { label: `${home} ${homeSpread != null && homeSpread > 0 ? "+" : ""}${homeSpread} spread`, probability: isPeriod ? null : normalOutcomeProbability(shownMargin, homeSpread == null ? null : -homeSpread, selectedProjection?.margin_sd) },
+          { label: `${away} ${awaySpread != null && awaySpread > 0 ? "+" : ""}${awaySpread} spread`, probability: isPeriod ? null : normalOutcomeProbability(shownMargin == null ? null : -shownMargin, awaySpread == null ? null : -awaySpread, selectedProjection?.margin_sd) },
           { label: `Over ${totalLine}`, probability: normalOutcomeProbability(shownTotal, shownTotalLine, selectedProjection?.total_sd) },
           { label: `Under ${totalLine}`, probability: normalOutcomeProbability(shownTotalLine, shownTotal, selectedProjection?.total_sd) },
         ]} note="Highest modeled win probability among available outcomes. Sportsbook odds and value are not selection factors." />
@@ -1216,8 +1216,8 @@ export default function NFLProjectionsPage() {
         <GameTotalCard
           line={shownTotalLine}
           projection={shownTotal}
-          overPrice={num(selectedMarket?.game_total_prices?.over)}
-          underPrice={num(selectedMarket?.game_total_prices?.under)}
+          overPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.over)}
+          underPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.under)}
           sportsbook={sportsbook}
         />
       </MarketSection>
@@ -1256,8 +1256,8 @@ export default function NFLProjectionsPage() {
           teams={teams}
           awaySpread={shownAwaySpread}
           homeSpread={shownHomeSpread}
-          awayPrice={awaySpreadPrice}
-          homePrice={homeSpreadPrice}
+          awayPrice={isPeriod ? null : awaySpreadPrice}
+          homePrice={isPeriod ? null : homeSpreadPrice}
           awayPoints={shownAway}
           homePoints={shownHome}
           sportsbook={sportsbook}
