@@ -3,7 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 
 type Sport = "mlb" | "nfl" | "nba" | "nhl" | "wnba" | "mls" | "ufc";
-type Leg = { id: string; game: string; pick: string; odds: number; probability: number; source: string };
+type MarketType = "moneyline" | "spread" | "total" | "player_prop";
+type LottoTab = "moneyline" | "spread" | "total" | "player_prop" | "combos";
+type MainTab = "parlay" | "straight" | "lotto";
+type Leg = { id: string; game: string; pick: string; odds: number; probability: number; source: string; marketType: MarketType };
 type Ticket = { legs: Leg[]; odds: number; probability: number };
 const num = (x: unknown): number | null => typeof x === "number" && Number.isFinite(x) ? x : null;
 const normalizeProbability = (x: unknown): number | null => {
@@ -28,12 +31,12 @@ const ticket = (legs: Leg[]): Ticket => {
 
 function buildCandidates(sport: Sport, projections: any[], markets: any[]): Leg[] {
   const out: Leg[] = [];
-  const add = (game: any, pick: string, odds: unknown, probability: unknown, source: string) => {
+  const add = (game: any, pick: string, odds: unknown, probability: unknown, source: string, marketType: MarketType = "moneyline") => {
     const price = num(odds);
     const p = normalizeProbability(probability);
     if (price === null || price === 0 || p === null || price < -100000 || price > 100000) return;
     // Only genuine sportsbook prices and independently modeled probabilities qualify.
-    out.push({ id: key(game) + ":" + pick, game: matchup(game), pick, odds: price, probability: p, source });
+    out.push({ id: key(game) + ":" + pick, game: matchup(game), pick, odds: price, probability: p, source, marketType });
   };
   for (const game of projections) {
     const market = markets.find(m => same(m, game));
@@ -160,6 +163,8 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   const [legs, setLegs] = useState<Leg[]>([]);
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
+  const [mainTab, setMainTab] = useState<MainTab>("parlay");
+  const [lottoTab, setLottoTab] = useState<LottoTab>("moneyline");
   useEffect(() => {
     let active = true;
     const paths: Record<Sport, [string, string]> = {
@@ -189,11 +194,19 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   }, [sport, next]);
   const straights = useMemo(() => legs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg])), [legs]);
   const parlays = useMemo(() => makeParlays(legs, 500), [legs]);
-  const lottos = useMemo(() => makeParlays(legs, 10000), [legs]);
-  const sections: { title: string; subtitle: string; tickets: Ticket[]; category: "parlay" | "straight" | "lotto"; threshold: string }[] = [
-    { title: "Most Confident Parlays", subtitle: "Highest modeled combined probability among qualifying tickets", tickets: parlays, category: "parlay", threshold: "+500 minimum · 3–20 legs" },
-    { title: "Most Confident Straight Bets", subtitle: "Top individual model probabilities at eligible sportsbook prices", tickets: straights, category: "straight", threshold: "-150 or better · 1 leg" },
-    { title: "Lotto Parlays", subtitle: "Long-shot combinations ranked by modeled probability", tickets: lottos, category: "lotto", threshold: "+10,000 minimum · 3–20 legs" },
+  const lottoLegs = useMemo(() => lottoTab === "combos" ? legs : legs.filter(leg => leg.marketType === lottoTab), [legs, lottoTab]);
+  const lottos = useMemo(() => makeParlays(lottoLegs, 10000), [lottoLegs]);
+  const section = mainTab === "parlay"
+    ? { title: "Most Confident Parlays", subtitle: "Five highest-confidence qualifying tickets", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
+    : mainTab === "straight"
+    ? { title: "Most Confident Straight Bets", subtitle: "Five highest-confidence qualifying straight bets", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
+    : { title: "Lotto Parlays", subtitle: "Five highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
+  const lottoTabs: { id: LottoTab; label: string }[] = [
+    { id: "moneyline", label: "Moneyline" },
+    { id: "spread", label: "Spread" },
+    { id: "total", label: "Over / Under" },
+    { id: "player_prop", label: "Player Props" },
+    { id: "combos", label: "Combos" },
   ];
   return <main className="mx-auto max-w-7xl space-y-9 px-3 pb-20 sm:px-5">
     <header className="relative overflow-hidden rounded-3xl border border-cyan-300/15 bg-gradient-to-br from-cyan-400/[0.09] via-[#0b1425] to-fuchsia-400/[0.08] px-6 py-9 text-center shadow-[0_20px_60px_rgba(0,0,0,0.18)] sm:py-12">
@@ -201,8 +214,8 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       <p className="text-[11px] font-black uppercase tracking-[0.32em] text-cyan-300">FollowTheAlpha 🐺</p>
       <h1 className="mt-3 text-4xl font-black tracking-tight text-white sm:text-5xl">Alpha <span className="text-cyan-300">Picks</span></h1>
       <p className="mt-3 text-sm font-medium text-slate-300">{sport.toUpperCase()} <span className="mx-2 text-slate-600">•</span> {next ? "Next Slate" : "Current Slate"} <span className="mx-2 text-slate-600">•</span> Model-Ranked Selections</p>
-      <div className="mx-auto mt-6 flex max-w-xl flex-wrap items-center justify-center gap-2">
-        {["5 Parlays", "5 Straight Bets", "5 Lottos"].map(label => <span key={label} className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-bold text-slate-200">{label}</span>)}
+      <div role="tablist" aria-label="Alpha Picks categories" className="mx-auto mt-7 flex max-w-xl flex-wrap items-center justify-center gap-2">
+        {([{ id: "parlay", label: "Parlays" }, { id: "straight", label: "Straight Bets" }, { id: "lotto", label: "Lottos" }] as const).map(tab => <button key={tab.id} type="button" role="tab" aria-selected={mainTab === tab.id} onClick={() => setMainTab(tab.id)} className={"rounded-xl border px-5 py-2.5 text-sm font-extrabold transition " + (mainTab === tab.id ? "border-cyan-300/60 bg-cyan-300/15 text-cyan-100 shadow-[0_0_22px_rgba(35,216,255,0.12)]" : "border-white/10 bg-white/[0.05] text-slate-300 hover:border-white/25 hover:text-white")}>{tab.label}</button>)}
       </div>
     </header>
     <div className="rounded-2xl border border-amber-300/15 bg-amber-300/[0.045] px-5 py-4 text-xs leading-6 text-slate-300 sm:text-sm">
@@ -210,20 +223,20 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     </div>
     {loading ? <p className="rounded-2xl border border-white/10 p-8 text-center text-slate-400">Loading sportsbook and projection data…</p> : <>
       {status && <p className="rounded-xl border border-white/10 p-4 text-center text-slate-300">{status}</p>}
-      {sections.map((section, sectionIndex) => <section key={section.title} className="space-y-5">
+      {mainTab === "lotto" && <div role="tablist" aria-label="Lotto market categories" className="flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.025] p-3">
+        {lottoTabs.map(tab => <button key={tab.id} type="button" role="tab" aria-selected={lottoTab === tab.id} onClick={() => setLottoTab(tab.id)} className={"rounded-xl border px-4 py-2 text-xs font-bold transition sm:text-sm " + (lottoTab === tab.id ? "border-fuchsia-300/50 bg-fuchsia-300/15 text-fuchsia-100" : "border-white/10 bg-slate-900/50 text-slate-400 hover:text-white")}>{tab.label}</button>)}
+      </div>}
+      <section className="space-y-5">
         <div className="flex flex-wrap items-end justify-between gap-3 border-b border-white/10 pb-4">
-          <div className="flex items-start gap-4">
-            <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-300/20 bg-cyan-300/10 text-sm font-black text-cyan-200">0{sectionIndex + 1}</span>
-            <div>
-              <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{section.title}</h2>
-              <p className="mt-1 text-sm text-slate-400">{section.subtitle}</p>
-            </div>
+          <div>
+            <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{section.title}{mainTab === "lotto" ? " · " + lottoTabs.find(tab => tab.id === lottoTab)?.label : ""}</h2>
+            <p className="mt-1 text-sm text-slate-400">{section.subtitle}</p>
           </div>
           <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-bold text-slate-300">{section.threshold}</span>
         </div>
-        {section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={section.title + i} ticket={t} index={i} category={section.category} />)}</div> :
-          <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">Not enough verified selections to generate this category. No picks were fabricated.</p>}
-      </section>)}
+        {section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + lottoTab + i} ticket={t} index={i} category={section.category} />)}</div> :
+          <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">No qualifying {mainTab === "lotto" ? lottoTabs.find(tab => tab.id === lottoTab)?.label.toLowerCase() + " lotto" : mainTab === "straight" ? "straight" : "parlay"} picks are available from verified sportsbook prices and model probabilities for this slate. No picks were fabricated.</p>}
+      </section>
     </>}
   </main>;
 }
