@@ -361,10 +361,12 @@ function MarketPanel({
   game,
   p,
   market,
+  teams,
 }: {
   game: SlateGame;
   p: Projection;
   market?: Market;
+  teams: Team[];
 }) {
   const away = abbr(game, "away");
   const home = abbr(game, "home");
@@ -401,10 +403,10 @@ function MarketPanel({
         ) * 100
       : undefined;
 
-  const marketBox = "rounded-2xl border border-white/10 bg-white/[0.035] p-4";
-  const innerBox = "rounded-xl border border-white/10 bg-slate-950/40 p-3";
+  const marketBox = "flex min-w-0 flex-col rounded-2xl border border-white/10 bg-white/[0.035] p-4";
+  const innerBox = "min-w-0 rounded-xl border border-white/10 bg-slate-950/40 p-3";
   const caption = "text-[10px] font-black uppercase tracking-widest text-slate-500";
-  const value = "mt-1 text-sm font-black text-white";
+  const value = "mt-1 break-words text-base font-black text-white";
   const metric = (label: string, content: React.ReactNode) => (
     <div className={innerBox}><p className={caption}>{label}</p><div className={value}>{content}</div></div>
   );
@@ -429,40 +431,39 @@ function MarketPanel({
     <div className="mt-4 grid gap-3 lg:grid-cols-2">
       <div className={marketBox}>
         <h3 className="mb-3 text-xs font-black uppercase text-slate-400">Moneyline</h3>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid min-h-[190px] gap-3 md:grid-cols-2">
           {(["away", "home"] as const).map(side => {
             const team = side === "away" ? away : home;
             const odds = market?.moneyline?.[side];
             const win = side === "away" ? awayWin : homeWin;
-            return <div key={side} className="rounded-xl border border-white/10 bg-purple-300/[0.045] p-3">
-              <p className="mb-3 text-base font-black text-white">{team} ML {odds == null ? "Unavailable" : plus(odds)}</p>
+            return <div key={side} className="rounded-xl border border-white/10 bg-black/20 p-4">
+              <div className="mb-3 flex items-center gap-3"><img src={teams.find(t => (t.abbr || t.abbreviation || "").toUpperCase() === team)?.logo || ""} alt="" width={34} height={34} className="h-[34px] w-[34px] shrink-0 object-contain" /><p className="text-lg font-black text-white">{team} ML {odds == null ? "Unavailable" : plus(odds)}</p></div>
               <div className="grid grid-cols-3 gap-2">
                 {metric("Market Prob.", americanImplied(odds) == null ? "Unavailable" : fmt(americanImplied(odds)) + "%")}
                 {metric("Alpha Prob.", win == null ? "Unavailable" : fmt(win) + "%")}
-                {metric("Probability Edge", edge(win, odds))}
+                {metric("Margin Edge", edge(win, odds))}
               </div>
             </div>;
           })}
         </div>
-        {pick(awayWin == null || homeWin == null ? null : `${awayWin >= homeWin ? away : home} ML ${market?.moneyline?.[awayWin >= homeWin ? "away" : "home"] == null ? "" : plus(market?.moneyline?.[awayWin >= homeWin ? "away" : "home"])}`)}
+        <div className="mt-auto pt-3">{pick(awayWin == null || homeWin == null ? null : `${awayWin >= homeWin ? away : home} ML ${market?.moneyline?.[awayWin >= homeWin ? "away" : "home"] == null ? "" : plus(market?.moneyline?.[awayWin >= homeWin ? "away" : "home"])}`)}</div>
       </div>
       <div className={marketBox}>
         <h3 className="mb-3 text-xs font-black uppercase text-slate-400">Spread</h3>
-        <div className="rounded-xl border border-cyan-300/20 bg-cyan-300/[0.045] p-3">
-          <div className="grid gap-3 sm:grid-cols-2">
+        <div className="flex flex-1 flex-col rounded-xl border border-cyan-300/20 bg-cyan-300/[0.045] p-4">
+          <div className="grid min-h-[190px] gap-3 md:grid-cols-2">
             <div className={innerBox}>
               <p className={caption}>Sportsbook Spread</p>
-              <p className={value}>{home} {spreadLine == null ? "Unavailable" : plus(spreadLine)}</p>
-              <p className={value}>{away} {market?.spread?.away_line == null ? "Unavailable" : plus(market.spread.away_line)}</p>
+              {(["away", "home"] as const).map(side => { const team = side === "away" ? away : home; const line = side === "away" ? market?.spread?.away_line : spreadLine; const price = side === "away" ? market?.spread?.away_odds : market?.spread?.home_odds; return <div key={side} className="mt-3 flex items-center justify-between gap-2"><div className="flex items-center gap-2"><img src={teams.find(t => (t.abbr || t.abbreviation || "").toUpperCase() === team)?.logo || ""} alt="" width={30} height={30} className="h-[30px] w-[30px] shrink-0 object-contain" /><span className="font-black text-white">{team} {line == null ? "Unavailable" : plus(line)}</span></div><span className="text-sm font-black text-slate-400">{price == null ? "—" : plus(price)}</span></div>; })}
             </div>
             <div className="grid grid-cols-2 gap-2">
               {metric("Alpha Score", `${away} ${fmt(p.away_score)} · ${home} ${fmt(p.home_score)}`)}
               {metric("Alpha Margin", homeMargin == null ? "Unavailable" : `${homeMargin >= 0 ? home : away} by ${fmt(Math.abs(homeMargin))}`)}
               {metric("Market Margin", spreadLine == null ? "Unavailable" : fmt(Math.abs(spreadLine)))}
-              {metric("Spread Edge", homeMargin == null || spreadLine == null ? "Unavailable" : plus(homeMargin + spreadLine))}
+              {metric("Margin Edge", homeMargin == null || spreadLine == null ? "Unavailable" : plus(homeMargin + spreadLine))}
             </div>
           </div>
-          {pick(spreadPick)}
+          <div className="mt-auto pt-3">{pick(spreadPick)}</div>
         </div>
       </div>
       <div className={marketBox + " lg:col-span-2"}>
@@ -1026,6 +1027,7 @@ export default function NBAProjectionsPage() {
                 game={selected}
                 p={model}
                 market={market}
+                teams={teams}
               />
 
               {market?.bookmaker && (
