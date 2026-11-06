@@ -190,11 +190,7 @@ export function GameProjectionCard({
               {projection.game_time || "Time TBD"}
             </div>
           </div>
-
-
-        </div>
-
-        <div className="mb-4 flex justify-end">
+        <div className="shrink-0">
           <MostConfidentBet candidates={[
             { label: `${away} ML`, probability: projection.away_win_probability },
             { label: `${home} ML`, probability: projection.home_win_probability },
@@ -206,6 +202,11 @@ export function GameProjectionCard({
             { label: `${home} Over ${projection.market?.team_totals?.home}`, probability: normalOutcomeProbability(projection.home_projected_runs, projection.market?.team_totals?.home, projection.home_runs_sd) },
           ]} note="Highest modeled win probability among available outcomes; not sportsbook value. Other markets require validated outcome probabilities." />
         </div>
+
+
+
+        </div>
+
 
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/10 p-4">
