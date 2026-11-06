@@ -431,6 +431,7 @@ function MarketPanel({
     <div className="mt-4 grid gap-3 lg:grid-cols-2">
       <div className={marketBox}>
         <h3 className="mb-3 text-xs font-black uppercase text-slate-400">Moneyline</h3>
+        <div className="flex flex-1 flex-col rounded-xl border border-pink-300/20 bg-pink-300/[0.045] p-4">
         <div className="grid min-h-[190px] gap-3 md:grid-cols-2">
           {(["away", "home"] as const).map(side => {
             const team = side === "away" ? away : home;
@@ -447,6 +448,7 @@ function MarketPanel({
           })}
         </div>
         <div className="mt-auto pt-3">{pick(awayWin == null || homeWin == null ? null : `${awayWin >= homeWin ? away : home} ML ${market?.moneyline?.[awayWin >= homeWin ? "away" : "home"] == null ? "" : plus(market?.moneyline?.[awayWin >= homeWin ? "away" : "home"])}`)}</div>
+        </div>
       </div>
       <div className={marketBox}>
         <h3 className="mb-3 text-xs font-black uppercase text-slate-400">Spread</h3>
