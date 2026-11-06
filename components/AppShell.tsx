@@ -82,7 +82,6 @@ const sports: {
 ];
 
 const mlbNavItems: NavItem[] = [
-  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Slate Summary",
     path: "",
@@ -113,6 +112,7 @@ const mlbNavItems: NavItem[] = [
     path: "/projections",
     icon: LineChart,
   },
+  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Injury Report",
     path: "/injury-report",
@@ -126,7 +126,6 @@ const mlbNavItems: NavItem[] = [
 ];
 
 const nflNavItems: NavItem[] = [
-  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Slate Summary",
     path: "",
@@ -152,6 +151,7 @@ const nflNavItems: NavItem[] = [
     path: "/projections",
     icon: LineChart,
   },
+  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Injury Report",
     path: "/injuries",
@@ -165,7 +165,6 @@ const nflNavItems: NavItem[] = [
 ];
 
 const nbaNavItems: NavItem[] = [
-  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Slate Summary",
     path: "",
@@ -186,6 +185,7 @@ const nbaNavItems: NavItem[] = [
     path: "/projections",
     icon: LineChart,
   },
+  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   {
     label: "Injury Report",
     path: "/injuries",
@@ -199,11 +199,11 @@ const nbaNavItems: NavItem[] = [
 ];
 
 const nhlNavItems: NavItem[] = [
-  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   { label: "Slate Summary", path: "", icon: Home },
   { label: "NHL Players", path: "/players", icon: Users },
   { label: "NHL Teams", path: "/teams", icon: Shield },
   { label: "Projections", path: "/projections", icon: LineChart },
+  { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
   { label: "Injury Report", path: "/injuries", icon: BarChart3 },
   { label: "How To", path: "/how-to", icon: BookOpen },
 ];
