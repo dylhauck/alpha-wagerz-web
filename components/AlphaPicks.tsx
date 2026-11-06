@@ -119,18 +119,40 @@ function makeParlays(legs: Leg[], minOdds: number): Ticket[] {
   return results.sort((a, b) => b.probability - a.probability).slice(0, 5);
 }
 
-function PickCard({ ticket: t, index }: { ticket: Ticket; index: number }) {
-  return <article className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
-    <div className="mb-3 flex items-center justify-between gap-2">
-      <span className="text-xs font-black uppercase tracking-wider text-cyan-200">#{index + 1}</span>
-      <span className="rounded-lg border border-pink-300/30 bg-pink-300/10 px-3 py-1 text-sm font-black text-pink-200">{fmtOdds(t.odds)}</span>
+function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: number; category: "parlay" | "straight" | "lotto" }) {
+  const accent = category === "lotto" ? "text-fuchsia-200 border-fuchsia-400/25 bg-fuchsia-400/10" : category === "straight" ? "text-emerald-200 border-emerald-400/25 bg-emerald-400/10" : "text-cyan-200 border-cyan-400/25 bg-cyan-400/10";
+  return <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#121d30] via-[#0c1525] to-[#0a1020] shadow-[0_12px_35px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:border-cyan-300/25 hover:shadow-[0_18px_45px_rgba(0,0,0,0.3)]">
+    <div className="h-[2px] bg-gradient-to-r from-cyan-400/80 via-fuchsia-400/60 to-transparent" />
+    <div className="flex items-start justify-between gap-3 border-b border-white/[0.07] px-5 py-4">
+      <div>
+        <p className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-400">Alpha Selection {String(index + 1).padStart(2, "0")}</p>
+        <p className="mt-1 text-lg font-black text-white">{t.legs.length === 1 ? "Straight Bet" : t.legs.length + "-Leg " + (category === "lotto" ? "Lotto" : "Parlay")}</p>
+      </div>
+      <div className="text-right">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Total Odds</p>
+        <span className="mt-1 inline-block rounded-lg border border-fuchsia-300/25 bg-fuchsia-300/10 px-3 py-1 text-lg font-black tabular-nums text-fuchsia-200">{fmtOdds(t.odds)}</span>
+      </div>
     </div>
-    <div className="space-y-3">{t.legs.map(leg => <div key={leg.id} className="border-t border-white/10 pt-2">
-      <p className="text-xs font-bold text-slate-400">{leg.game}</p>
-      <p className="font-black text-white">{leg.pick} <span className="text-cyan-200">{fmtOdds(leg.odds)}</span></p>
-      <p className="text-xs text-slate-400">Model estimate: {percent(leg.probability)}</p>
-    </div>)}</div>
-    <p className="mt-3 border-t border-white/10 pt-3 text-xs text-slate-400">Combined modeled probability (independence assumption): {percent(t.probability)}</p>
+    <div className="flex-1 px-5 py-2">
+      {t.legs.map((leg, i) => <div key={leg.id} className={"flex items-start gap-3 py-3 " + (i ? "border-t border-white/[0.07]" : "")}>
+        <span className={"mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border text-[11px] font-black " + accent}>{String(i + 1).padStart(2, "0")}</span>
+        <div className="min-w-0 flex-1">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">{leg.game}</p>
+          <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+            <p className="text-[15px] font-extrabold leading-snug text-white">{leg.pick}</p>
+            <span className="text-sm font-black tabular-nums text-cyan-200">{fmtOdds(leg.odds)}</span>
+          </div>
+          <p className="mt-1 text-xs text-slate-400">Model estimate <span className="font-bold tabular-nums text-slate-200">{percent(leg.probability)}</span></p>
+        </div>
+      </div>)}
+    </div>
+    <div className="mt-auto flex items-center justify-between gap-3 border-t border-white/10 bg-white/[0.025] px-5 py-4">
+      <div>
+        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{t.legs.length === 1 ? "Modeled Probability" : "Combined Model Estimate"}</p>
+        <p className="mt-1 text-xl font-black tabular-nums text-white">{percent(t.probability)}</p>
+      </div>
+      <span className={"rounded-full border px-3 py-1 text-[10px] font-black uppercase tracking-wider " + accent}>{category === "lotto" ? "High Risk" : category === "straight" ? "Straight" : "Parlay"}</span>
+    </div>
   </article>;
 }
 
@@ -168,25 +190,39 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   const straights = useMemo(() => legs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg])), [legs]);
   const parlays = useMemo(() => makeParlays(legs, 500), [legs]);
   const lottos = useMemo(() => makeParlays(legs, 10000), [legs]);
-  const sections = [
-    { title: "Top 5 Parlays", subtitle: "Highest modeled combined probability with combined odds of +500 or higher", tickets: parlays },
-    { title: "Top 5 Straight Bets", subtitle: "Highest individual model probabilities with sportsbook odds of -150 or better", tickets: straights },
-    { title: "5 Lotto Parlays", subtitle: "Verified combined American odds of +10,000 or higher", tickets: lottos },
+  const sections: { title: string; subtitle: string; tickets: Ticket[]; category: "parlay" | "straight" | "lotto"; threshold: string }[] = [
+    { title: "Most Confident Parlays", subtitle: "Highest modeled combined probability among qualifying tickets", tickets: parlays, category: "parlay", threshold: "+500 minimum · 3–20 legs" },
+    { title: "Most Confident Straight Bets", subtitle: "Top individual model probabilities at eligible sportsbook prices", tickets: straights, category: "straight", threshold: "-150 or better · 1 leg" },
+    { title: "Lotto Parlays", subtitle: "Long-shot combinations ranked by modeled probability", tickets: lottos, category: "lotto", threshold: "+10,000 minimum · 3–20 legs" },
   ];
-  return <main className="mx-auto max-w-7xl space-y-7 px-2 pb-16">
-    <header className="text-center"><p className="text-xs font-black uppercase tracking-[0.3em] text-cyan-300">FollowTheAlpha 🐺</p>
-      <h1 className="mt-2 text-4xl font-black text-white">Alpha Picks</h1>
-      <p className="mt-3 text-sm text-slate-400">{sport.toUpperCase()} • {next ? "Next slate" : "Current slate"} • Model-ranked picks, not guarantees</p>
+  return <main className="mx-auto max-w-7xl space-y-9 px-3 pb-20 sm:px-5">
+    <header className="relative overflow-hidden rounded-3xl border border-cyan-300/15 bg-gradient-to-br from-cyan-400/[0.09] via-[#0b1425] to-fuchsia-400/[0.08] px-6 py-9 text-center shadow-[0_20px_60px_rgba(0,0,0,0.18)] sm:py-12">
+      <div className="pointer-events-none absolute inset-x-1/4 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
+      <p className="text-[11px] font-black uppercase tracking-[0.32em] text-cyan-300">FollowTheAlpha 🐺</p>
+      <h1 className="mt-3 text-4xl font-black tracking-tight text-white sm:text-5xl">Alpha <span className="text-cyan-300">Picks</span></h1>
+      <p className="mt-3 text-sm font-medium text-slate-300">{sport.toUpperCase()} <span className="mx-2 text-slate-600">•</span> {next ? "Next Slate" : "Current Slate"} <span className="mx-2 text-slate-600">•</span> Model-Ranked Selections</p>
+      <div className="mx-auto mt-6 flex max-w-xl flex-wrap items-center justify-center gap-2">
+        {["5 Parlays", "5 Straight Bets", "5 Lottos"].map(label => <span key={label} className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-bold text-slate-200">{label}</span>)}
+      </div>
     </header>
-    <div className="rounded-xl border border-amber-300/20 bg-amber-300/5 p-4 text-sm text-amber-100">
-      Picks require both a real sportsbook price and a model probability. Parlays assume independent games; actual outcomes are uncertain. NHL estimates are uncalibrated. Lotto parlays are highly unlikely to hit. No invented lines or filler selections.
+    <div className="rounded-2xl border border-amber-300/15 bg-amber-300/[0.045] px-5 py-4 text-xs leading-6 text-slate-300 sm:text-sm">
+      <span className="mr-2 font-black text-amber-200">Model notes</span> Picks use real sportsbook prices and model probabilities. Combined probabilities assume independent games. NHL estimates are uncalibrated. Lotto parlays are high risk. No outcomes are guaranteed or fabricated.
     </div>
-    {loading ? <p className="text-center text-slate-400">Loading sportsbook and projection data…</p> : <>
+    {loading ? <p className="rounded-2xl border border-white/10 p-8 text-center text-slate-400">Loading sportsbook and projection data…</p> : <>
       {status && <p className="rounded-xl border border-white/10 p-4 text-center text-slate-300">{status}</p>}
-      {sections.map(section => <section key={section.title}>
-        <div className="mb-4"><h2 className="text-2xl font-black text-white">{section.title}</h2><p className="text-sm text-slate-400">{section.subtitle}</p></div>
-        {section.tickets.length ? <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={section.title + i} ticket={t} index={i} />)}</div> :
-          <p className="rounded-xl border border-white/10 bg-white/[0.035] p-5 text-sm text-slate-400">Not enough verified, distinct-game selections to generate this category. No picks were fabricated.</p>}
+      {sections.map((section, sectionIndex) => <section key={section.title} className="space-y-5">
+        <div className="flex flex-wrap items-end justify-between gap-3 border-b border-white/10 pb-4">
+          <div className="flex items-start gap-4">
+            <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-300/20 bg-cyan-300/10 text-sm font-black text-cyan-200">0{sectionIndex + 1}</span>
+            <div>
+              <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{section.title}</h2>
+              <p className="mt-1 text-sm text-slate-400">{section.subtitle}</p>
+            </div>
+          </div>
+          <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-bold text-slate-300">{section.threshold}</span>
+        </div>
+        {section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={section.title + i} ticket={t} index={i} category={section.category} />)}</div> :
+          <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">Not enough verified selections to generate this category. No picks were fabricated.</p>}
       </section>)}
     </>}
   </main>;
