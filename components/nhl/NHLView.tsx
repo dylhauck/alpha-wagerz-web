@@ -17,7 +17,7 @@ type GoalPlayer = {
 type Goalie = { player_id: string; name: string; team: string; games: number; saves: number; shots_against: number; goals_against: number; save_percentage: number | null; goals_against_per_appearance: number };
 type Team = { team: string; games: number; wins: number; goals_for_per_game: number; goals_against_per_game: number };
 type Player = { player_id: string; name: string; team: string; position: string; games: number; goals: number; assists: number; points: number; shots: number; goals_per_game: number; shots_per_game: number };
-type Projection = { game_id: number; away: string; home: string; away_goals: number | null; home_goals: number | null; sample_games: number };
+type Projection = { game_id: number; away: string; home: string; away_goals: number | null; home_goals: number | null; sample_games: number; probabilities?: { away_win_probability: number; home_win_probability: number; away_puck_line_plus_1_5_probability: number; home_puck_line_minus_1_5_probability: number; calibrated: boolean; method: string } | null };
 type History = { game_id: number; players: Array<{ player_id: string; player: string; team: string; opponent: string; position: string; games: number; goals: number; assists: number; points: number; shots: number; goals_per_game: number; shots_per_game: number }> };
 type Mode = "summary" | "players" | "teams" | "projections" | "injuries" | "how-to";
 const files = ["slate", "anytime_goals", "matchup_history", "players", "teams", "projections", "period_projections", "injuries"] as const;
@@ -225,7 +225,12 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 <h2 className="text-xl font-black text-white">{active?active.away_name+" @ "+active.home_name:"NHL Game Projections"}</h2>
                 <p className="mt-1 text-xs font-bold text-slate-400">{active?.venue||"Venue unavailable"} · {active?.start_time_utc?new Date(active.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"})+" CT":"Time TBD"} · {projectionPeriod}</p>
               </div>
-              <MostConfidentBet candidates={[]} note="NHL probability calibration is still required. A projected goal total alone does not establish a verified most-confident betting probability." />
+              <MostConfidentBet candidates={projectionPeriod==="Full Game"&&full?.probabilities?[
+                {label:`${teamAway} ML`,probability:full.probabilities.away_win_probability},
+                {label:`${teamHome} ML`,probability:full.probabilities.home_win_probability},
+                {label:`${teamAway} +1.5`,probability:full.probabilities.away_puck_line_plus_1_5_probability},
+                {label:`${teamHome} -1.5`,probability:full.probabilities.home_puck_line_minus_1_5_probability},
+              ]:[]} note="Uncalibrated Poisson baseline from observed goals. Overtime ties split evenly. No goalie/injury adjustments or sportsbook payout inputs; use cautiously." />
             </div>
             <div className="mb-4 grid gap-3 md:grid-cols-3">
               <div className="rounded-2xl border border-cyan-300/15 bg-cyan-400/10 p-4">
@@ -235,8 +240,11 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
               </div>
               <div className="rounded-2xl border border-pink-300/15 bg-pink-300/10 p-4">
                 <div className={heading}>Win Probability</div>
-                <p className="text-sm font-bold text-slate-400">Not yet calibrated</p>
-                <p className="mt-2 text-xs text-slate-500">Overtime-inclusive NHL model required</p>
+                {projectionPeriod==="Full Game"&&full?.probabilities?<>
+                  <p className="font-black text-white">{teamAway}: {(full.probabilities.away_win_probability*100).toFixed(1)}%</p>
+                  <p className="mt-1 font-black text-white">{teamHome}: {(full.probabilities.home_win_probability*100).toFixed(1)}%</p>
+                  <p className="mt-2 text-xs text-amber-200">Uncalibrated historical baseline · OT estimated</p>
+                </>:<p className="text-sm font-bold text-slate-400">Insufficient data for probability estimate</p>}
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-4">
                 <div className={heading}>Projected Total</div>
