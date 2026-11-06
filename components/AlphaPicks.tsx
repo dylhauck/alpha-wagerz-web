@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 
 type Sport = "mlb" | "nfl" | "nba" | "nhl" | "wnba" | "mls" | "ufc";
 type MarketType = "moneyline" | "spread" | "total" | "player_prop";
-type ParlayTab = "moneyline" | "spread" | "total" | "player_prop" | "combos";
+type PickTab = "moneyline" | "spread" | "total" | "player_prop" | "combos" | "first_basket";
 type MainTab = "parlay" | "straight" | "lotto";
 type Leg = { id: string; game: string; pick: string; odds: number; probability: number; source: string; marketType: MarketType };
 type Ticket = { legs: Leg[]; odds: number; probability: number };
@@ -254,7 +254,9 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
   const [mainTab, setMainTab] = useState<MainTab>("parlay");
-  const [parlayTab, setParlayTab] = useState<ParlayTab>("moneyline");
+  const [parlayTab, setParlayTab] = useState<PickTab>("moneyline");
+  const [straightTab, setStraightTab] = useState<PickTab>("moneyline");
+  const [lottoTab, setLottoTab] = useState<PickTab>("moneyline");
   useEffect(() => {
     let active = true;
     const paths: Record<Sport, [string, string]> = {
@@ -282,21 +284,23 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     }).finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
   }, [sport, next]);
-  const straights = useMemo(() => legs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg])), [legs]);
-  const parlayLegs = useMemo(() => parlayTab === "combos" ? legs : legs.filter(leg => leg.marketType === parlayTab), [legs, parlayTab]);
-  const parlays = useMemo(() => makeParlays(parlayLegs, 500, parlayTab === "combos"), [parlayLegs, parlayTab]);
-  const lottos = useMemo(() => makeParlays(legs, 10000), [legs]);
+  const categoryTab = mainTab === "parlay" ? parlayTab : mainTab === "straight" ? straightTab : lottoTab;
+  const eligibleLegs = useMemo(() => categoryTab === "combos" ? legs : legs.filter(leg => leg.marketType === categoryTab), [legs, categoryTab]);
+  const straights = useMemo(() => eligibleLegs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg])), [eligibleLegs]);
+  const parlays = useMemo(() => makeParlays(eligibleLegs, 500, categoryTab === "combos"), [eligibleLegs, categoryTab]);
+  const lottos = useMemo(() => makeParlays(eligibleLegs, 10000, categoryTab === "combos"), [eligibleLegs, categoryTab]);
   const section = mainTab === "parlay"
     ? { title: "Most Confident Parlays", subtitle: "Five highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
     : mainTab === "straight"
-    ? { title: "Most Confident Straight Bets", subtitle: "Five highest-confidence qualifying straight bets", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
-    : { title: "Lotto Parlays", subtitle: "Five highest-confidence qualifying long shots", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
-  const parlayTabs: { id: ParlayTab; label: string }[] = [
+    ? { title: "Most Confident Straight Bets", subtitle: "Five highest-confidence qualifying straight bets per market", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
+    : { title: "Lotto Parlays", subtitle: "Five highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
+  const pickTabs: { id: PickTab; label: string }[] = [
     { id: "moneyline", label: "Moneyline" },
     { id: "spread", label: "Spread" },
     { id: "total", label: "Over / Under" },
     { id: "player_prop", label: "Player Props" },
     { id: "combos", label: "Combos" },
+    ...((mainTab === "straight" || mainTab === "lotto") && sport === "nba" ? [{ id: "first_basket" as const, label: "First Baskets" }] : []),
   ];
   return <main className="mx-auto max-w-7xl space-y-9 px-3 pb-20 sm:px-5">
     <header className="relative overflow-hidden rounded-3xl border border-cyan-300/15 bg-gradient-to-br from-cyan-400/[0.09] via-[#0b1425] to-fuchsia-400/[0.08] px-6 py-9 text-center shadow-[0_20px_60px_rgba(0,0,0,0.18)] sm:py-12">
@@ -313,19 +317,23 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     </div>
     {loading ? <p className="rounded-2xl border border-white/10 p-8 text-center text-slate-400">Loading sportsbook and projection data…</p> : <>
       {status && <p className="rounded-xl border border-white/10 p-4 text-center text-slate-300">{status}</p>}
-      {mainTab === "parlay" && <div role="tablist" aria-label="Parlay market categories" className="flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.025] p-3">
-        {parlayTabs.map(tab => <button key={tab.id} type="button" role="tab" aria-selected={parlayTab === tab.id} onClick={() => setParlayTab(tab.id)} className={"rounded-xl border px-4 py-2 text-xs font-bold transition sm:text-sm " + (lottoTab === tab.id ? "border-fuchsia-300/50 bg-fuchsia-300/15 text-fuchsia-100" : "border-white/10 bg-slate-900/50 text-slate-400 hover:text-white")}>{tab.label}</button>)}
-      </div>}
+      <div role="tablist" aria-label={mainTab + " market categories"} className="flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.025] p-3">
+        {pickTabs.map(tab => <button key={tab.id} type="button" role="tab" aria-selected={categoryTab === tab.id} onClick={() => {
+          if (mainTab === "parlay") setParlayTab(tab.id);
+          else if (mainTab === "straight") setStraightTab(tab.id);
+          else setLottoTab(tab.id);
+        }} className={"rounded-xl border px-4 py-2 text-xs font-bold transition sm:text-sm " + (categoryTab === tab.id ? "border-fuchsia-300/50 bg-fuchsia-300/15 text-fuchsia-100" : "border-white/10 bg-slate-900/50 text-slate-400 hover:text-white")}>{tab.label}</button>)}
+      </div>
       <section className="space-y-5">
         <div className="flex flex-wrap items-end justify-between gap-3 border-b border-white/10 pb-4">
           <div>
-            <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{section.title}{mainTab === "parlay" ? " · " + parlayTabs.find(tab => tab.id === parlayTab)?.label : ""}</h2>
+            <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{section.title} · {pickTabs.find(tab => tab.id === categoryTab)?.label ?? "Moneyline"}</h2>
             <p className="mt-1 text-sm text-slate-400">{section.subtitle}</p>
           </div>
           <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-bold text-slate-300">{section.threshold}</span>
         </div>
-        {section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + parlayTab + i} ticket={t} index={i} category={section.category} />)}</div> :
-          <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">No qualifying {mainTab === "parlay" ? parlayTabs.find(tab => tab.id === parlayTab)?.label.toLowerCase() + " parlay" : mainTab === "straight" ? "straight" : "lotto"} picks are available from verified sportsbook prices and model probabilities for this slate. No picks were fabricated.</p>}
+        {section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + categoryTab + i} ticket={t} index={i} category={section.category} />)}</div> :
+          <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">No qualifying {pickTabs.find(tab => tab.id === categoryTab)?.label.toLowerCase()} {mainTab === "parlay" ? "parlay" : mainTab === "straight" ? "straight" : "lotto"} picks are available from verified sportsbook prices and model probabilities for this slate. No picks were fabricated.</p>}
       </section>
     </>}
   </main>;
