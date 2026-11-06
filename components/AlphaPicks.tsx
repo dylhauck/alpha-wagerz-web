@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 
 type Sport = "mlb" | "nfl" | "nba" | "nhl" | "wnba" | "mls" | "ufc";
 type MarketType = "moneyline" | "spread" | "total" | "player_prop";
-type LottoTab = "moneyline" | "spread" | "total" | "player_prop" | "combos";
+type ParlayTab = "moneyline" | "spread" | "total" | "player_prop" | "combos";
 type MainTab = "parlay" | "straight" | "lotto";
 type Leg = { id: string; game: string; pick: string; odds: number; probability: number; source: string; marketType: MarketType };
 type Ticket = { legs: Leg[]; odds: number; probability: number };
@@ -200,7 +200,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
   const [mainTab, setMainTab] = useState<MainTab>("parlay");
-  const [lottoTab, setLottoTab] = useState<LottoTab>("moneyline");
+  const [parlayTab, setParlayTab] = useState<ParlayTab>("moneyline");
   useEffect(() => {
     let active = true;
     const paths: Record<Sport, [string, string]> = {
@@ -229,15 +229,15 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     return () => { active = false; };
   }, [sport, next]);
   const straights = useMemo(() => legs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg])), [legs]);
-  const parlays = useMemo(() => makeParlays(legs, 500), [legs]);
-  const lottoLegs = useMemo(() => lottoTab === "combos" ? legs : legs.filter(leg => leg.marketType === lottoTab), [legs, lottoTab]);
-  const lottos = useMemo(() => makeParlays(lottoLegs, 10000), [lottoLegs]);
+  const parlayLegs = useMemo(() => parlayTab === "combos" ? legs : legs.filter(leg => leg.marketType === parlayTab), [legs, parlayTab]);
+  const parlays = useMemo(() => makeParlays(parlayLegs, 500).filter(t => parlayTab !== "combos" || new Set(t.legs.map(l => l.marketType)).size >= 2), [parlayLegs, parlayTab]);
+  const lottos = useMemo(() => makeParlays(legs, 10000), [legs]);
   const section = mainTab === "parlay"
-    ? { title: "Most Confident Parlays", subtitle: "Five highest-confidence qualifying tickets", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
+    ? { title: "Most Confident Parlays", subtitle: "Five highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
     : mainTab === "straight"
     ? { title: "Most Confident Straight Bets", subtitle: "Five highest-confidence qualifying straight bets", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
-    : { title: "Lotto Parlays", subtitle: "Five highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
-  const lottoTabs: { id: LottoTab; label: string }[] = [
+    : { title: "Lotto Parlays", subtitle: "Five highest-confidence qualifying long shots", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
+  const parlayTabs: { id: ParlayTab; label: string }[] = [
     { id: "moneyline", label: "Moneyline" },
     { id: "spread", label: "Spread" },
     { id: "total", label: "Over / Under" },
@@ -259,19 +259,19 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     </div>
     {loading ? <p className="rounded-2xl border border-white/10 p-8 text-center text-slate-400">Loading sportsbook and projection data…</p> : <>
       {status && <p className="rounded-xl border border-white/10 p-4 text-center text-slate-300">{status}</p>}
-      {mainTab === "lotto" && <div role="tablist" aria-label="Lotto market categories" className="flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.025] p-3">
-        {lottoTabs.map(tab => <button key={tab.id} type="button" role="tab" aria-selected={lottoTab === tab.id} onClick={() => setLottoTab(tab.id)} className={"rounded-xl border px-4 py-2 text-xs font-bold transition sm:text-sm " + (lottoTab === tab.id ? "border-fuchsia-300/50 bg-fuchsia-300/15 text-fuchsia-100" : "border-white/10 bg-slate-900/50 text-slate-400 hover:text-white")}>{tab.label}</button>)}
+      {mainTab === "parlay" && <div role="tablist" aria-label="Parlay market categories" className="flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-white/[0.025] p-3">
+        {parlayTabs.map(tab => <button key={tab.id} type="button" role="tab" aria-selected={parlayTab === tab.id} onClick={() => setParlayTab(tab.id)} className={"rounded-xl border px-4 py-2 text-xs font-bold transition sm:text-sm " + (lottoTab === tab.id ? "border-fuchsia-300/50 bg-fuchsia-300/15 text-fuchsia-100" : "border-white/10 bg-slate-900/50 text-slate-400 hover:text-white")}>{tab.label}</button>)}
       </div>}
       <section className="space-y-5">
         <div className="flex flex-wrap items-end justify-between gap-3 border-b border-white/10 pb-4">
           <div>
-            <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{section.title}{mainTab === "lotto" ? " · " + lottoTabs.find(tab => tab.id === lottoTab)?.label : ""}</h2>
+            <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{section.title}{mainTab === "parlay" ? " · " + parlayTabs.find(tab => tab.id === parlayTab)?.label : ""}</h2>
             <p className="mt-1 text-sm text-slate-400">{section.subtitle}</p>
           </div>
           <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-bold text-slate-300">{section.threshold}</span>
         </div>
-        {section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + lottoTab + i} ticket={t} index={i} category={section.category} />)}</div> :
-          <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">No qualifying {mainTab === "lotto" ? lottoTabs.find(tab => tab.id === lottoTab)?.label.toLowerCase() + " lotto" : mainTab === "straight" ? "straight" : "parlay"} picks are available from verified sportsbook prices and model probabilities for this slate. No picks were fabricated.</p>}
+        {section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + parlayTab + i} ticket={t} index={i} category={section.category} />)}</div> :
+          <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">No qualifying {mainTab === "parlay" ? parlayTabs.find(tab => tab.id === parlayTab)?.label.toLowerCase() + " parlay" : mainTab === "straight" ? "straight" : "lotto"} picks are available from verified sportsbook prices and model probabilities for this slate. No picks were fabricated.</p>}
       </section>
     </>}
   </main>;
