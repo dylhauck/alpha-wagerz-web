@@ -431,7 +431,7 @@ function MarketPanel({
                 className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"
               >
                 <span>
-                  {team} {plus(odds)}
+                  {team} {odds == null ? "Unavailable" : plus(odds)}
                 </span>
 
                 <span className="text-cyan-200">
@@ -466,9 +466,7 @@ function MarketPanel({
         <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
           <span>
             {home}{" "}
-            {plus(
-              market?.spread?.home_line
-            )}
+            {market?.spread?.home_line == null ? "Unavailable" : plus(market.spread.home_line)}
           </span>
 
           <span className="text-cyan-200">
@@ -490,9 +488,7 @@ function MarketPanel({
         <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
           <span>
             {away}{" "}
-            {plus(
-              market?.spread?.away_line
-            )}
+            {market?.spread?.away_line == null ? "Unavailable" : plus(market.spread.away_line)}
           </span>
 
           <span className="text-cyan-200">
@@ -524,7 +520,7 @@ function MarketPanel({
         <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
           <span>
             Over{" "}
-            {fmt(market?.total?.line)}
+            {market?.total?.line == null ? "Unavailable" : fmt(market.total.line)}
           </span>
 
           <span className="text-cyan-200">
@@ -542,7 +538,7 @@ function MarketPanel({
         <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold">
           <span>
             Under{" "}
-            {fmt(market?.total?.line)}
+            {market?.total?.line == null ? "Unavailable" : fmt(market.total.line)}
           </span>
 
           <span className="text-cyan-200">
