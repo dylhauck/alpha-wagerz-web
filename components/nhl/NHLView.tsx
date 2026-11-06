@@ -1,3 +1,4 @@
+import { MostConfidentBet } from "@/components/projections/MostConfidentBet";
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -223,7 +224,7 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 <h2 className="text-xl font-black text-white">{active?active.away_name+" @ "+active.home_name:"NHL Game Projections"}</h2>
                 <p className="mt-1 text-xs font-bold text-slate-400">{active?.venue||"Venue unavailable"} · {active?.start_time_utc?new Date(active.start_time_utc).toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"})+" CT":"Time TBD"} · {projectionPeriod}</p>
               </div>
-              <span className="rounded-full border border-pink-300/30 bg-pink-300/10 px-3 py-1 text-[11px] font-black uppercase tracking-wide text-pink-200" title="A most confident bet requires verified sportsbook lines and calibrated model probabilities.">Most Confident Bet: Pending Data</span>
+              <MostConfidentBet candidates={[]} note="NHL probability calibration is still required. A projected goal total alone does not establish a verified most-confident betting probability." />
             </div>
             <div className="mb-4 grid gap-3 md:grid-cols-3">
               <div className="rounded-2xl border border-cyan-300/15 bg-cyan-400/10 p-4">
