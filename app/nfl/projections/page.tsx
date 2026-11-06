@@ -1141,8 +1141,7 @@ export default function NFLProjectionsPage() {
             <h2 className="text-xl font-black text-white">{away} @ {home}{isPeriod ? ` — ${projectionPeriod}` : ""}</h2>
             <p className="mt-1 text-sm font-bold text-slate-400">{PAGE_TITLE}</p>
           </div>
-        </div>
-      <div className="mb-5 flex justify-end">
+          <div className="shrink-0">
         <MostConfidentBet candidates={[
           { label: `${away} ML`, probability: shownAwayWin },
           { label: `${home} ML`, probability: shownHomeWin },
@@ -1151,7 +1150,9 @@ export default function NFLProjectionsPage() {
           { label: `Over ${totalLine}`, probability: normalOutcomeProbability(shownTotal, shownTotalLine, selectedProjection?.total_sd) },
           { label: `Under ${totalLine}`, probability: normalOutcomeProbability(shownTotalLine, shownTotal, selectedProjection?.total_sd) },
         ]} note="Highest modeled win probability among available outcomes. Sportsbook odds and value are not selection factors." />
-      </div>
+          </div>
+
+        </div>
         <div className="grid gap-3 md:grid-cols-3">
           <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
             <div className="mb-3 text-xs font-black uppercase text-slate-400">Projected Score</div>
