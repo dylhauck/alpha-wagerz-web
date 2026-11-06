@@ -99,8 +99,6 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       add(game, away + " ML", ml?.away, p.away_win_probability, "NHL uncalibrated baseline + live sportsbook");
       add(game, home + " ML", ml?.home, p.home_win_probability, "NHL uncalibrated baseline + live sportsbook");
       const spread = full.spread ?? {};
-      if (num(spread.away_line) === 1.5) add(game, away + " +1.5 puck line", spread.away_odds, p.away_puck_line_plus_1_5_probability, "NHL uncalibrated puck-line estimate", "spread");
-      if (num(spread.home_line) === -1.5) add(game, home + " -1.5 puck line", spread.home_odds, p.home_puck_line_minus_1_5_probability, "NHL uncalibrated puck-line estimate", "spread");
       const awayMean = num(game.away_goals), homeMean = num(game.home_goals);
       if (awayMean !== null && homeMean !== null) {
         const total = full.total ?? {};
@@ -158,7 +156,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
   return out.sort((a, b) => b.probability - a.probability);
 }
 
-function makeParlays(legs: Leg[], minOdds: number): Ticket[] {
+function makeParlays(legs: Leg[], minOdds: number, mixed = false): Ticket[] {
   const MIN_LEGS = 3;
   const MAX_LEGS = 20;
   // Keep one outcome per matchup, and consider as many as 20 distinct games.
@@ -196,7 +194,7 @@ function makeParlays(legs: Leg[], minOdds: number): Ticket[] {
           expanded.push(next);
           if (next.legs.length >= MIN_LEGS && next.legs.length <= MAX_LEGS) {
             const odds = decimalToAmerican(next.decimal);
-            if (odds >= minOdds) {
+            if (odds >= minOdds && (!mixed || new Set(next.legs.map(l => l.marketType)).size >= 2)) {
               const signature = next.legs.map(x => x.id).sort().join("|");
               if (!seen.has(signature)) {
                 seen.add(signature);
@@ -286,7 +284,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   }, [sport, next]);
   const straights = useMemo(() => legs.filter(leg => leg.odds >= -150).slice(0, 5).map(leg => ticket([leg])), [legs]);
   const parlayLegs = useMemo(() => parlayTab === "combos" ? legs : legs.filter(leg => leg.marketType === parlayTab), [legs, parlayTab]);
-  const parlays = useMemo(() => makeParlays(parlayLegs, 500).filter(t => parlayTab !== "combos" || new Set(t.legs.map(l => l.marketType)).size >= 2), [parlayLegs, parlayTab]);
+  const parlays = useMemo(() => makeParlays(parlayLegs, 500, parlayTab === "combos"), [parlayLegs, parlayTab]);
   const lottos = useMemo(() => makeParlays(legs, 10000), [legs]);
   const section = mainTab === "parlay"
     ? { title: "Most Confident Parlays", subtitle: "Five highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
