@@ -1178,13 +1178,13 @@ export default function NFLProjectionsPage() {
             <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Spread</h3>
             <SpreadCard away={away} home={home} teams={teams} awaySpread={shownAwaySpread} homeSpread={shownHomeSpread} awayPrice={isPeriod ? null : awaySpreadPrice} homePrice={isPeriod ? null : homeSpreadPrice} awayPoints={shownAway} homePoints={shownHome} sportsbook={sportsbook} />
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 lg:col-span-2">
             <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Over / Under</h3>
             <GameTotalCard line={shownTotalLine} projection={shownTotal} overPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.over)} underPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.under)} sportsbook={sportsbook} />
           </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 lg:col-span-2">
             <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Team Totals</h3>
-            <div className="grid gap-3">
+            <div className="grid gap-3 lg:grid-cols-2">
               <TeamTotalCard team={away} teams={teams} line={shownAwayTeamTotal} projection={shownAway} sportsbook={sportsbook} />
               <TeamTotalCard team={home} teams={teams} line={shownHomeTeamTotal} projection={shownHome} sportsbook={sportsbook} />
             </div>
