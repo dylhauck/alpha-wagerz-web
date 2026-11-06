@@ -75,7 +75,9 @@ function makeParlays(legs: Leg[], minOdds: number | null): Ticket[] {
   const sizes = minOdds === null ? [2, 3] : Array.from({ length: Math.min(games.length, 12) - 2 }, (_, i) => i + 3);
   for (const size of sizes) {
     if (size > games.length) continue;
+    let visited = 0;
     const walk = (index: number, chosen: Leg[]) => {
+      if (++visited > 100000) return;
       if (chosen.length === size) {
         const t = ticket(chosen);
         if (minOdds !== null && t.odds < minOdds) return;
@@ -138,7 +140,8 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       ufc: ["/data/ufc/game_projections.json", "/data/ufc/market.json"],
     };
     setLoading(true);
-    Promise.all(paths[sport].map(async path => {\n      if (next) path = path.replace(`/data/${sport}/`, `/data/${sport}/next/`);
+    Promise.all(paths[sport].map(async path => {
+      if (next) path = path.replace(`/data/${sport}/`, `/data/${sport}/next/`);
       const res = await fetch(path, { cache: "no-store" });
       if (!res.ok) throw new Error("Missing " + path);
       return res.json();
