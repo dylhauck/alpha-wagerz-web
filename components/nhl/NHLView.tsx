@@ -254,27 +254,53 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 <p className="mt-1 text-xs font-black text-cyan-200">Book total: Unavailable</p>
               </div>
             </div>
-            <div className="grid gap-3 lg:grid-cols-2">
+            <div className="mt-4 grid gap-3 lg:grid-cols-2">
               <div className={box}>
                 <div className={heading}>Moneyline</div>
-                <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Edge</span></div>
-                {[teamAway,teamHome].map(team=><div key={team} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team} unavailable</span><span className="text-cyan-200">—</span><span>—</span></div>)}
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {[teamAway,teamHome].map((team,index)=><div key={team} className="rounded-xl border border-white/10 bg-purple-300/[0.045] p-3">
+                    <p className="mb-3 text-base font-black text-white">{team} ML Unavailable</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      {[["Market Prob.","Unavailable"],["Alpha Prob.",projectionPeriod==="Full Game"&&full?.probabilities?(100*(index===0?full.probabilities.away_win_probability:full.probabilities.home_win_probability)).toFixed(1)+"%":"Unavailable"],["Probability Edge","Unavailable"]].map(([label,value])=><div key={label} className="rounded-xl border border-white/10 bg-slate-950/40 p-3"><p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p><p className="mt-1 text-sm font-black text-white">{value}</p></div>)}
+                    </div>
+                  </div>)}
+                </div>
+                <div className="mt-3 rounded-xl border border-pink-300/25 bg-pink-300/10 px-4 py-3 text-center"><p className="text-[10px] font-black uppercase tracking-widest text-pink-200/75">Alpha Pick</p><p className="mt-1 text-xl font-black text-pink-200">Unavailable — no sportsbook line</p></div>
               </div>
               <div className={box}>
                 <div className={heading}>Puck Line / Spread</div>
-                <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Cover %</span></div>
-                <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamHome} unavailable</span><span className="text-cyan-200">{margin==null?"—":(margin>0?"+":"")+fmt(margin)}</span><span>—</span></div>
-                <div className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{teamAway} unavailable</span><span className="text-cyan-200">{margin==null?"—":(margin<0?"+":"")+fmt(-margin)}</span><span>—</span></div>
+                <div className="rounded-xl border border-cyan-300/20 bg-cyan-300/[0.045] p-3">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-xl border border-white/10 bg-slate-950/40 p-3">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">Sportsbook Spread</p>
+                      <p className="mt-2 text-sm font-black text-white">{teamAway} Unavailable</p>
+                      <p className="mt-2 text-sm font-black text-white">{teamHome} Unavailable</p>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {([["Alpha Score",teamAway+" "+fmt(awayGoals)+" · "+teamHome+" "+fmt(homeGoals)],["Alpha Margin",margin==null?"Unavailable":(margin>=0?teamHome:teamAway)+" by "+fmt(Math.abs(margin))],["Market Margin","Unavailable"],["Spread Edge","Unavailable"]] as [string,string][]).map(([label,value])=><div key={label} className="rounded-xl border border-white/10 bg-slate-950/40 p-3"><p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p><p className="mt-1 text-sm font-black text-white">{value}</p></div>)}
+                    </div>
+                  </div>
+                  <div className="mt-3 rounded-xl border border-pink-300/25 bg-pink-300/10 px-4 py-3 text-center"><p className="text-[10px] font-black uppercase tracking-widest text-pink-200/75">Alpha Pick</p><p className="mt-1 text-xl font-black text-pink-200">Unavailable — no sportsbook line</p></div>
+                </div>
               </div>
               <div className={box+" lg:col-span-2"}>
                 <div className={heading}>Over / Under</div>
-                <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Market</span><span>Model</span><span>Probability</span></div>
-                {["Over","Under"].map(side=><div key={side} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{side} unavailable</span><span className="text-cyan-200">{fmt(total)}</span><span>—</span></div>)}
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {([["Sportsbook Line","Unavailable"],["Alpha Projection",fmt(total)],["Difference","Unavailable"]] as [string,string][]).map(([label,value])=><div key={label} className="rounded-xl border border-white/10 bg-slate-950/40 p-3"><p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p><p className="mt-1 text-sm font-black text-white">{value}</p></div>)}
+                </div>
+                <div className="mt-3 rounded-xl border border-pink-300/25 bg-pink-300/10 px-4 py-3 text-center"><p className="text-[10px] font-black uppercase tracking-widest text-pink-200/75">Alpha Pick</p><p className="mt-1 text-xl font-black text-pink-200">Unavailable — no sportsbook line</p></div>
               </div>
               <div className={box+" lg:col-span-2"}>
                 <div className={heading}>Team Totals</div>
-                <div className="grid grid-cols-3 gap-2 text-[10px] font-black uppercase text-slate-500"><span>Team</span><span>Market</span><span>Model</span></div>
-                {[[teamAway,awayGoals],[teamHome,homeGoals]] .map(([team,goals])=><div key={String(team)} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team}</span><span>Unavailable</span><span className="text-cyan-200">{fmt(goals as number|null|undefined)}</span></div>)}
+                <div className="grid gap-3 lg:grid-cols-2">
+                  {([[teamAway,awayGoals],[teamHome,homeGoals]] as [string,number|null|undefined][]).map(([team,goals])=><div key={team} className="rounded-xl border border-white/10 bg-white/[0.025] p-3">
+                    <p className="mb-3 text-base font-black text-white">{team}</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      {([["Sportsbook Line","Unavailable"],["Alpha Projection",fmt(goals)],["Difference","Unavailable"]] as [string,string][]).map(([label,value])=><div key={label} className="rounded-xl border border-white/10 bg-slate-950/40 p-3"><p className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</p><p className="mt-1 text-sm font-black text-white">{value}</p></div>)}
+                    </div>
+                    <div className="mt-3 rounded-xl border border-pink-300/25 bg-pink-300/10 px-4 py-3 text-center"><p className="text-[10px] font-black uppercase tracking-widest text-pink-200/75">Alpha Pick</p><p className="mt-1 text-xl font-black text-pink-200">Unavailable — no sportsbook line</p></div>
+                  </div>)}
+                </div>
               </div>
             </div>
           </>;
