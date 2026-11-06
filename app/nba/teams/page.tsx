@@ -130,6 +130,7 @@ type SortDirection =
   | "desc";
 
 type SortKey =
+  | "rank"
   | "team"
   | "games"
   | "wins"
@@ -689,7 +690,11 @@ export default function NBATeamsPage() {
 
       let comparison = 0;
 
-      if (sortKey === "team") {
+      if (sortKey === "rank") {
+        comparison = safeNumber(aSeason?.record?.win_pct) - safeNumber(bSeason?.record?.win_pct)
+          || safeNumber(aSeason?.record?.wins) - safeNumber(bSeason?.record?.wins)
+          || teamName(b).localeCompare(teamName(a));
+      } else if (sortKey === "team") {
         comparison =
           teamName(a).localeCompare(
             teamName(b),
@@ -904,7 +909,7 @@ export default function NBATeamsPage() {
 
     setSortKey(key);
 
-    if (key === "team") {
+    if (key === "team" || key === "rank") {
       setSortDirection("asc");
     } else {
       setSortDirection("desc");
@@ -1246,7 +1251,7 @@ export default function NBATeamsPage() {
 
                 <thead>
                   <tr className="border-b border-white/10 bg-slate-950/50">
-                    <th className="sticky left-0 z-20 bg-[#101b30] px-4 py-3 text-left text-xs font-black uppercase tracking-[0.12em] text-cyan-200">NBA ↕</th>
+                    <th className="sticky left-0 z-20 bg-[#101b30] px-4 py-3 text-left text-xs font-black uppercase tracking-[0.12em] text-cyan-200"><button type="button" onClick={() => handleSort("rank")} className="cursor-pointer transition hover:text-white" aria-label="Sort by NBA league rank" aria-sort={sortKey === "rank" ? (sortDirection === "asc" ? "ascending" : "descending") : "none"}>NBA</button></th>
                     {headers.map(
                       (header) => (
                         <th
