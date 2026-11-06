@@ -275,7 +275,6 @@ export default function NHLView({ mode, next = false }: { mode: Mode; next?: boo
                 {[[teamAway,awayGoals],[teamHome,homeGoals]] .map(([team,goals])=><div key={String(team)} className="mt-2 grid grid-cols-3 gap-2 text-sm font-bold"><span>{team}</span><span>—</span><span className="text-cyan-200">{fmt(goals as number|null|undefined)}</span></div>)}
               </div>
             </div>
-            <p className="mt-4 text-xs text-amber-200/80">NHL sportsbook markets and calibrated betting probabilities are not yet available. The displayed goal estimates are historical baselines, not verified betting recommendations.</p>
           </>;
         })()}
       </Panel></>
