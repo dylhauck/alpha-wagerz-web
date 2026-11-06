@@ -721,9 +721,6 @@ function SpreadCard({
             </span>
           </div>
 
-          <div className="mt-3 text-[11px] font-bold text-slate-500">
-            {sportsbook}
-          </div>
         </div>
 
         <div className="grid gap-2 sm:grid-cols-2">
