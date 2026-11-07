@@ -239,9 +239,37 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
         .slice(0, BEAM_WIDTH);
     }
   }
-  // Rank solely by modeled joint probability. Leg count is never used
-  // as a diversity target or a tiebreaker.
-  return results.sort((a, b) => b.probability - a.probability).slice(0, 6);
+  // Rank by confidence, but avoid publishing six near-identical tickets.
+  // A different prop for the same player still counts as the same player.
+  // No forced leg counts or over/under quotas.
+  const ranked = results.sort((a, b) => b.probability - a.probability);
+  if (!ranked.length) return [];
+  const playerKey = (leg: Leg) => {
+    const name = leg.pick.split(/\\s+(?:Over|Under)\\s+/i)[0]
+      .replace(/\\s*·\\s*(?:First Basket|First Goal|Anytime Goal).*$/i, "")
+      .trim().toLowerCase();
+    return leg.marketType === "player_prop" ? name : leg.id.toLowerCase();
+  };
+  const keys = (t: Ticket) => new Set(t.legs.map(playerKey));
+  const similarity = (a: Ticket, b: Ticket) => {
+    const ka = keys(a), kb = keys(b);
+    const common = [...ka].filter(k => kb.has(k)).length;
+    return common / Math.min(ka.size, kb.size);
+  };
+  const selected: Ticket[] = [];
+  const choose = (maxOverlap: number, confidenceFloor: number) => {
+    for (const t of ranked) {
+      if (selected.length === 6) break;
+      if (t.probability < ranked[0].probability * confidenceFloor) continue;
+      if (selected.some(existing => similarity(existing, t) > maxOverlap)) continue;
+      selected.push(t);
+    }
+  };
+  choose(0.5, 0.8);
+  choose(0.67, 0.7);
+  // Prefer fewer genuinely distinct selections over filling all six slots
+  // with the same names and marginally changed prop lines.
+  return selected.sort((a, b) => b.probability - a.probability);
 }
 
 function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: number; category: "parlay" | "straight" | "lotto" }) {
