@@ -167,10 +167,17 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       const projection = player.projection ?? {};
       const line = num(prop.line);
       const mean = num(projection[metric]);
+      // Do not treat a zero-minute or inactive player's baseline as a
+      // confident under. A valid active-minute projection is required.
+      const projectedMinutes = num(projection.min);
+      if (projectedMinutes === null || projectedMinutes < 12 || mean === null || mean <= 0) continue;
       const sd = num(projection[metric + "_sd"]) ?? num(player.distribution?.[metric]?.sd) ?? (mean !== null && mean > 0 && ["pts", "reb", "ast", "fg3m", "pra", "pr", "pa", "ra", "stl", "blk"].includes(metric) ? Math.max(metric === "fg3m" ? 1.1 : 1.5, Math.sqrt(mean) * (metric === "pts" || metric === "pra" ? 1.65 : 1.3)) : null);
       const explicitOver = normalizeProbability(player.probabilities?.[metric]?.over);
       const over = explicitOver ?? modeledOver(mean, line, sd);
       if (line === null || over === null) continue;
+      // Near-certainty from an approximate variance is a warning sign,
+      // not evidence of a 99–100% hit rate. Suppress these estimates.
+      if (over < 0.05 || over > 0.95) continue;
       add(game, prop.player_name + " Over " + line + " " + metric.toUpperCase(), prop.over_odds, over, "NBA projection + approximate player variance + sportsbook", "player_prop");
       add(game, prop.player_name + " Under " + line + " " + metric.toUpperCase(), prop.under_odds, 1 - over, "NBA player model distribution + sportsbook", "player_prop");
     }
