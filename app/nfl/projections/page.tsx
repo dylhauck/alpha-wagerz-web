@@ -903,7 +903,7 @@ export default function NFLProjectionsPage() {
   const [teams, setTeams] = useState<NFLTeam[]>([]);
   const [selectedGameId, setSelectedGameId] = useState("");
   const [projectionPeriod, setProjectionPeriod] = useState("Full Game");
-  const [periodGames, setPeriodGames] = useState<Array<{game_id:string|number;away:string;home:string;periods:Record<string,{away_points:number|null;home_points:number|null;sample_games:number}>}>>([]);
+  const [periodGames, setPeriodGames] = useState<Array<{game_id:string|number;away:string;home:string;periods:Record<string,{away_points:number|null;home_points:number|null;away_win_probability?:number|null;home_win_probability?:number|null;sample_games:number}>}>>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
