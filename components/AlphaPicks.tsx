@@ -322,8 +322,12 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   };
   choose(0.5, 0.8);
   choose(0.67, 0.7);
-  // Prefer fewer genuinely distinct selections over filling all six slots
-  // with the same names and marginally changed prop lines.
+  // Always fill the six selection slots when six distinct qualifying
+  // tickets exist. Diversity is a preference, not a hard cap.
+  for (const t of ranked) {
+    if (selected.length === 6) break;
+    if (!selected.includes(t)) selected.push(t);
+  }
   return selected.sort((a, b) => b.probability - a.probability);
 }
 
