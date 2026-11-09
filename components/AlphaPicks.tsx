@@ -211,8 +211,14 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   const MAX_LEGS = maxLegs;
   // Keep one outcome per matchup, and consider as many as 20 distinct games.
   // Beam search avoids the exponential cost of enumerating all combinations.
+  // Standard parlays must use individually favored model outcomes.
+  // A low-confidence underdog must not be inserted merely to reach +500.
+  // Lottos retain their separate long-shot eligibility.
+  const qualifyingLegs = minOdds < 10000
+    ? legs.filter(leg => leg.probability >= 0.60)
+    : legs;
   const byGame = new Map<string, Leg[]>();
-  for (const leg of legs) {
+  for (const leg of qualifyingLegs) {
     const group = byGame.get(leg.game) || [];
     group.push(leg);
     byGame.set(leg.game, group);
