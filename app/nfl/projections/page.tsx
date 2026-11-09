@@ -1135,8 +1135,8 @@ export default function NFLProjectionsPage() {
   const shownHome = isPeriod ? periodHome : homePoints;
   const shownTotal = isPeriod ? (periodAway !== null && periodHome !== null ? periodAway + periodHome : null) : projectedTotal;
   const shownMargin = isPeriod ? (periodAway !== null && periodHome !== null ? periodHome - periodAway : null) : projectedMargin;
-  const shownAwayWin = isPeriod ? null : awayWin;
-  const shownHomeWin = isPeriod ? null : homeWin;
+  const shownAwayWin = isPeriod ? num(periodStats?.away_win_probability) : awayWin;
+  const shownHomeWin = isPeriod ? num(periodStats?.home_win_probability) : homeWin;
   const periodMarketGame = periodMarkets.find(g => String(g.game_id) === selectedGameId) || periodMarkets.find(g => sameTeam(g.away_team, away) && sameTeam(g.home_team, home));
   const periodKey = projectionPeriod === "1st Half" ? "1H" : projectionPeriod === "2nd Half" ? "2H" : projectionPeriod;
   const periodMarket = periodMarketGame?.periods?.[periodKey];
