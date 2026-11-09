@@ -68,7 +68,7 @@ const injuryKey = (value: unknown) => String(value ?? "").toLowerCase().normaliz
 const injuryStatus = (row: InjuryRow) => String(row.status ?? "").toUpperCase().replace(/[^A-Z]/g, "");
 const isUnavailable = (status: string) => /^(OUT|IR|INJUREDRESERVE|PUP|NFI|SUSPENDED|DOUBTFUL)$/.test(status);
 const isUncertain = (status: string) => /^(QUESTIONABLE|GAMETIMEDECISION|GTD|DAYTODAY)$/.test(status);
-function buildCandidates(sport: Sport, projections: any[], markets: any[], propMarkets: any[] = [], injuryRows: InjuryRow[] = []): Leg[] {
+function buildCandidates(sport: Sport, projections: any[], markets: any[], propMarkets: any[] = [], injuryRows: InjuryRow[] = [], nflPlayers: any[] = []): Leg[] {
   const out: Leg[] = [];
   const injuries = new Map(injuryRows.filter(row => row.team && (row.player_name || row.player || row.name)).map(row => [injuryKey(row.team) + ":" + injuryKey(row.player_name ?? row.player ?? row.name), injuryStatus(row)]));
   const add = (game: any, pick: string, odds: unknown, probability: unknown, source: string, marketType: MarketType = "moneyline") => {
@@ -200,6 +200,45 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       if (over < 0.05 || over > 0.95) continue;
       add(game, prop.player_name + " Over " + line + " " + metric.toUpperCase(), prop.over_odds, over, "NBA projection + approximate player variance + sportsbook", "player_prop");
       add(game, prop.player_name + " Under " + line + " " + metric.toUpperCase(), prop.under_odds, 1 - over, "NBA player model distribution + sportsbook", "player_prop");
+    }
+  }
+  if (sport === "nfl") {
+    // NFL player-prop projections live in a separate file, not inside game projections.
+    // Match verified sportsbook prices to independent player means; never infer odds.
+    const statPaths: Record<string, string[]> = {
+      passing_yards: ["passing", "yards"], passing_touchdowns: ["passing", "touchdowns"],
+      passing_attempts: ["passing", "attempts"], passing_completions: ["passing", "completions"],
+      interceptions: ["passing", "interceptions"], rushing_yards: ["rushing", "yards"],
+      rushing_attempts: ["rushing", "carries"], receiving_yards: ["receiving", "yards"],
+      receptions: ["receiving", "receptions"], longest_reception: ["receiving", "longest"],
+    };
+    const projectionRows = nflPlayers;
+    for (const prop of propMarkets) {
+      const metric = String(prop.prop_type ?? "");
+      const path = statPaths[metric];
+      if (!path) continue;
+      const game = projections.find(g => key(g) === String(prop.game_id));
+      if (!game) continue;
+      const player = projectionRows.find((p: any) =>
+        key(p) === key(game) &&
+        injuryKey(p.player_name ?? p.player ?? p.name) === injuryKey(prop.player_name));
+      if (!player) continue;
+      const status = injuries.get(injuryKey(player.team) + ":" + injuryKey(prop.player_name));
+      if (status && (isUnavailable(status) || isUncertain(status))) continue;
+      const mean = num(player.projection?.[path[0]]?.[path[1]]);
+      const line = num(prop.line);
+      if (mean === null || mean <= 0 || line === null) continue;
+      // Approximate dispersion is explicitly labeled, not sportsbook-derived.
+      const sd = num(player.distribution?.[metric]?.sd) ??
+        Math.max(metric.includes("yards") ? 7 : 1.25, Math.sqrt(mean) * 1.7);
+      const over = modeledOver(mean, line, sd);
+      if (over === null || over <= 0.05 || over >= 0.95) continue;
+      if (num(prop.over_odds) !== null && num(prop.under_odds) !== null) {
+        add(game, prop.player_name + " Over " + line + " " + metric.replace(/_/g, " ").toUpperCase(),
+          prop.over_odds, over, "NFL player projection + approximate variance + sportsbook", "player_prop");
+        add(game, prop.player_name + " Under " + line + " " + metric.replace(/_/g, " ").toUpperCase(),
+          prop.under_odds, 1 - over, "NFL player projection + approximate variance + sportsbook", "player_prop");
+      }
     }
   }
   // A ticket cannot include both opposing outcomes from the same game.
@@ -390,7 +429,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       ufc: ["/data/ufc/game_projections.json", "/data/ufc/market.json"],
     };
     setLoading(true);
-    Promise.all([...paths[sport], ...(sport === "nba" ? ["/data/nba/player_prop_markets.json", "/data/nba/first_basket.json", "/data/nba/first_basket_markets.json"] : sport === "nfl" ? ["/data/nfl/player_props.json"] : []), "/data/" + sport + "/injuries.json"].map(async path => {
+    Promise.all([...paths[sport], ...(sport === "nba" ? ["/data/nba/player_prop_markets.json", "/data/nba/first_basket.json", "/data/nba/first_basket_markets.json"] : sport === "nfl" ? ["/data/nfl/player_props.json", "/data/nfl/player_projections.json"] : []), "/data/" + sport + "/injuries.json"].map(async path => {
       if (next) path = path.replace(`/data/${sport}/`, `/data/${sport}/next/`);
       const res = await fetch(path, { cache: "no-store" });
       if (!res.ok) { if (path.includes("player_prop") || path.includes("first_basket") || path.includes("injuries")) return {}; throw new Error("Missing " + path); }
@@ -403,7 +442,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       const injuryData = payloads[payloads.length - 1];
       const injuryRows: InjuryRow[] = Array.isArray(injuryData?.injuries) ? injuryData.injuries : [];
       if (!active) return;
-      const candidates = buildCandidates(sport, list(p), list(m), Array.isArray(props?.props) ? props.props : [], injuryRows);
+      const candidates = buildCandidates(sport, list(p), list(m), Array.isArray(props?.props) ? props.props : [], injuryRows, sport === "nfl" && Array.isArray(payloads[3]?.players) ? payloads[3].players : []);
       setLegs(candidates);
       const injuryLookup = new Map(injuryRows.filter(row => row.team).map(row => [injuryKey(row.team) + ":" + injuryKey(row.player_name ?? row.player ?? row.name), injuryStatus(row)]));
       setBasketGames(Array.isArray(baskets?.games) ? baskets.games.map((game: any) => ({
