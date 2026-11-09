@@ -7,7 +7,7 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 40.9,
+        "total": 41.5,
         "home_margin": "",
         "away_win_probability": 0.405,
         "home_win_probability": 0.595,
@@ -127,18 +127,6 @@
                 "line": 42.5,
                 "over_price": -105.0,
                 "under_price": -116.0
-              },
-              "team_total": {
-                "home": {
-                  "line": 31.5,
-                  "over_price": 550.0,
-                  "under_price": -833.0
-                },
-                "away": {
-                  "line": 30.5,
-                  "over_price": 500.0,
-                  "under_price": -769.0
-                }
               }
             }
           }
@@ -151,13 +139,6 @@
           "edge": 0.062,
           "confidence_score": 51.8,
           "confidence_label": "LEAN"
-        },
-        {
-          "market": "game_total",
-          "selection": "UNDER 42.5",
-          "edge": 1.6,
-          "confidence_score": 31.1,
-          "confidence_label": "PASS"
         }
       ],
       "best_bet": {
@@ -179,21 +160,11 @@
       "edge": 0.062,
       "confidence_score": 51.8,
       "confidence_label": "LEAN"
-    },
-    {
-      "game_id": "2026_10_WAS_NYG",
-      "away_team": "WAS",
-      "home_team": "NYG",
-      "market": "game_total",
-      "selection": "UNDER 42.5",
-      "edge": 1.6,
-      "confidence_score": 31.1,
-      "confidence_label": "PASS"
     }
   ],
   "counts": {
     "games": 1,
-    "bets": 2,
+    "bets": 1,
     "missing_projection": 0
   },
   "model": {
