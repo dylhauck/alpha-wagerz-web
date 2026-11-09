@@ -442,14 +442,15 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
         }
       }
     };
-    // Include other market types when within five percentage points of the
-    // sixth-best candidate; otherwise the six strongest picks still win.
-    const cutoff = ranked[Math.min(5, ranked.length - 1)]?.probability ?? 0;
-    const competitive = ranked.filter(leg => leg.probability >= cutoff - 0.05);
-    const types = [...new Set(competitive.map(leg => leg.marketType))];
-    for (const type of types) {
-      const best = competitive.find(leg => leg.marketType === type);
-      if (best) choose([best]);
+    if (categoryTab === "combos") {
+      // Combos must represent different market families, not repeat the
+      // Player Props leaderboard. Reserve one qualifying selection from
+      // each available family, then fill by model confidence.
+      const families: MarketType[] = ["moneyline", "spread", "total", "player_prop"];
+      for (const family of families) {
+        const best = ranked.find(leg => leg.marketType === family);
+        if (best) choose([best]);
+      }
     }
     choose(ranked);
     return selected.slice(0, 6).map(leg => ticket([leg]));
