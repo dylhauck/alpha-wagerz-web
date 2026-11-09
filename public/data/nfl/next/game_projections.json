@@ -1,22 +1,22 @@
 {
   "games": [
     {
-      "game_id": "2026_09_BUF_MIN",
-      "away_team": "BUF",
-      "home_team": "MIN",
+      "game_id": "2026_10_WAS_NYG",
+      "away_team": "WAS",
+      "home_team": "NYG",
       "away_projection": {
-        "projected_points": 22.0,
+        "projected_points": 19.9,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": 0.13,
-          "matchup_adjustment": 0.15,
+          "efficiency_adjustment": -0.37,
+          "matchup_adjustment": -0.66,
           "home_field_adjustment": -0.75,
-          "pre_injury_projection": 22.03,
+          "pre_injury_projection": 20.72,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 22.03,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "post_injury_projection": 20.72,
+          "weather_scoring_factor": 0.961,
+          "weather_adjustment_points": -0.81
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -26,90 +26,108 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "fixed",
-          "stadium": "U.S. Bank Stadium",
+          "roof": "outdoor",
+          "stadium": "MetLife Stadium",
           "weather": {
-            "conditions": "Indoor"
+            "forecast_time": "2026-11-12T20:00",
+            "temperature_f": 55.3,
+            "feels_like_f": 50.9,
+            "humidity_pct": 87.0,
+            "precip_probability_pct": 67.0,
+            "precipitation_in": 0.122,
+            "wind_mph": 11.5,
+            "wind_gust_mph": 23.5,
+            "weather_code": 81,
+            "conditions": "Rain Showers"
           },
-          "classification": "INDOOR",
-          "severity_score": 0.0,
+          "classification": "MODERATE",
+          "severity_score": 3.0,
+          "scoring_factor": 0.961,
+          "passing_factor": 0.946,
+          "rushing_factor": 1.015,
+          "kicking_factor": 0.94
+        },
+        "matchup_rating": -8.0,
+        "matchup_label": "Difficult",
+        "passing_matchup": {
+          "rating": -18.4,
+          "label": "Poor"
+        },
+        "rushing_matchup": {
+          "rating": 5.5,
+          "label": "Favorable"
+        }
+      },
+      "home_projection": {
+        "projected_points": 22.5,
+        "components": {
+          "base_scoring": 22.5,
+          "efficiency_adjustment": -0.0,
+          "matchup_adjustment": 0.13,
+          "home_field_adjustment": 0.75,
+          "pre_injury_projection": 23.38,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 23.38,
+          "weather_scoring_factor": 0.961,
+          "weather_adjustment_points": -0.91
+        },
+        "injury_context": {
           "scoring_factor": 1.0,
           "passing_factor": 1.0,
           "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "key_absences": []
+        },
+        "weather_context": {
+          "available": true,
+          "roof": "outdoor",
+          "stadium": "MetLife Stadium",
+          "weather": {
+            "forecast_time": "2026-11-12T20:00",
+            "temperature_f": 55.3,
+            "feels_like_f": 50.9,
+            "humidity_pct": 87.0,
+            "precip_probability_pct": 67.0,
+            "precipitation_in": 0.122,
+            "wind_mph": 11.5,
+            "wind_gust_mph": 23.5,
+            "weather_code": 81,
+            "conditions": "Rain Showers"
+          },
+          "classification": "MODERATE",
+          "severity_score": 3.0,
+          "scoring_factor": 0.961,
+          "passing_factor": 0.946,
+          "rushing_factor": 1.015,
+          "kicking_factor": 0.94
         },
         "matchup_rating": 1.9,
         "matchup_label": "Neutral",
         "passing_matchup": {
-          "rating": -9.8,
-          "label": "Difficult"
+          "rating": -0.2,
+          "label": "Neutral"
         },
         "rushing_matchup": {
-          "rating": 21.8,
-          "label": "Strong"
-        }
-      },
-      "home_projection": {
-        "projected_points": 22.6,
-        "components": {
-          "base_scoring": 22.5,
-          "efficiency_adjustment": -0.3,
-          "matchup_adjustment": -0.38,
-          "home_field_adjustment": 0.75,
-          "pre_injury_projection": 22.57,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 22.57,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
-        },
-        "injury_context": {
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "key_absences": []
-        },
-        "weather_context": {
-          "available": true,
-          "roof": "fixed",
-          "stadium": "U.S. Bank Stadium",
-          "weather": {
-            "conditions": "Indoor"
-          },
-          "classification": "INDOOR",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
-        },
-        "matchup_rating": -4.3,
-        "matchup_label": "Neutral",
-        "passing_matchup": {
-          "rating": -5.6,
-          "label": "Difficult"
-        },
-        "rushing_matchup": {
-          "rating": -5.9,
-          "label": "Difficult"
+          "rating": 3.9,
+          "label": "Neutral"
         }
       },
       "projected_score": {
-        "away": 22.0,
-        "home": 22.6
+        "away": 19.9,
+        "home": 22.5
       },
-      "projected_total": 44.6,
-      "expected_margin": 0.6,
-      "projected_winner": "MIN",
+      "projected_total": 42.4,
+      "expected_margin": 2.6,
+      "projected_winner": "NYG",
       "win_probability": {
-        "away": 47.7,
-        "home": 52.3
+        "away": 40.1,
+        "home": 59.9
       },
-      "projection_confidence": 51.1,
+      "projection_confidence": 51.7,
       "injury_context": {
         "away": {
           "team_context": {
-            "team": "BUF",
+            "team": "WAS",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -135,7 +153,7 @@
         },
         "home": {
           "team_context": {
-            "team": "MIN",
+            "team": "NYG",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -161,25 +179,34 @@
         }
       },
       "weather_context": {
-        "game_id": "2026_09_BUF_MIN",
-        "away_team": "BUF",
-        "home_team": "MIN",
-        "stadium": "U.S. Bank Stadium",
-        "latitude": 44.9736,
-        "longitude": -93.2575,
-        "roof": "fixed",
-        "kickoff": "2026-11-09T20:15",
+        "game_id": "2026_10_WAS_NYG",
+        "away_team": "WAS",
+        "home_team": "NYG",
+        "stadium": "MetLife Stadium",
+        "latitude": 40.8135,
+        "longitude": -74.0745,
+        "roof": "outdoor",
+        "kickoff": "2026-11-12T20:15",
         "available": true,
         "weather": {
-          "conditions": "Indoor"
+          "forecast_time": "2026-11-12T20:00",
+          "temperature_f": 55.3,
+          "feels_like_f": 50.9,
+          "humidity_pct": 87.0,
+          "precip_probability_pct": 67.0,
+          "precipitation_in": 0.122,
+          "wind_mph": 11.5,
+          "wind_gust_mph": 23.5,
+          "weather_code": 81,
+          "conditions": "Rain Showers"
         },
         "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "INDOOR"
+          "severity_score": 3.0,
+          "passing_factor": 0.946,
+          "rushing_factor": 1.015,
+          "scoring_factor": 0.961,
+          "kicking_factor": 0.94,
+          "classification": "MODERATE"
         }
       },
       "model": {
@@ -191,20 +218,20 @@
   "league_baselines": {
     "points_per_game": 22.5,
     "points_allowed_per_game": 22.5,
-    "offensive_epa": 0.0011562500000000002,
-    "defensive_epa": 0.0008125000000000001,
-    "offensive_success": 43.50984375,
-    "defensive_success": 43.5011875,
-    "offensive_ypp": 5.40340625,
-    "defensive_ypp": 5.40959375,
-    "offensive_explosive": 9.10778125,
-    "defensive_explosive": 9.10778125,
-    "offensive_third_down": 39.882,
-    "defensive_third_down": 39.624625,
-    "offensive_red_zone": 19.6113125,
-    "defensive_red_zone": 19.484750000000002,
-    "offensive_turnovers": 1.18346875,
-    "defensive_takeaways": 1.18015625
+    "offensive_epa": -0.00031249999999999984,
+    "defensive_epa": -0.0033750000000000004,
+    "offensive_success": 43.38125,
+    "defensive_success": 43.31640625,
+    "offensive_ypp": 5.41621875,
+    "defensive_ypp": 5.404375,
+    "offensive_explosive": 9.1890625,
+    "defensive_explosive": 9.11365625,
+    "offensive_third_down": 39.87734375,
+    "defensive_third_down": 39.63359375,
+    "offensive_red_zone": 19.56328125,
+    "defensive_red_zone": 19.202749999999998,
+    "offensive_turnovers": 1.20925,
+    "defensive_takeaways": 1.21834375
   },
   "model": {
     "name": "Alpha Wagerz NFL Projection Model",

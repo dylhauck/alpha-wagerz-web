@@ -1,108 +1,53 @@
 {
   "players": [
     {
-      "player_id": "00-0034857",
-      "player": "Josh Allen",
-      "team": "BUF",
-      "opponent": "MIN",
+      "player_id": "00-0040691",
+      "player": "Jaxson Dart",
+      "team": "NYG",
+      "opponent": "WAS",
       "position": "QB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 67.0,
-      "touchdown_lambda": 1.1084,
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 35.2,
+      "touchdown_lambda": 0.4335,
       "scoring": {
-        "rushing_td_probability": 66.8,
-        "receiving_td_probability": 0.7,
-        "rushing_lambda": 1.1017,
-        "receiving_lambda": 0.0067
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.943
-      },
-      "matchup": {
-        "overall_factor": 0.974,
-        "rushing_factor": 1.086,
-        "passing_factor": 0.958
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 1.29,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.66,
-        "career_receiving_td_rate": 0.02,
-        "regressed_rushing_td_rate": 0.954,
-        "regressed_receiving_td_rate": 0.011,
-        "usage_factor": 1.051,
-        "projected_rushing_tds": 1.37,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 100.0
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 1.29,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.66,
-        "career_receiving_tds_per_game": 0.02,
-        "projected_rushing_tds": 1.37,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0034577",
-      "player": "Kyle Allen",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "QB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 9.9,
-      "touchdown_lambda": 0.1046,
-      "scoring": {
-        "rushing_td_probability": 9.9,
+        "rushing_td_probability": 35.2,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1046,
+        "rushing_lambda": 0.4335,
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.978
+        "projected_team_points": 22.5,
+        "scoring_factor": 0.947
       },
       "matchup": {
-        "overall_factor": 1.006,
-        "rushing_factor": 1.018,
-        "passing_factor": 0.961
+        "overall_factor": 0.897,
+        "rushing_factor": 1.03,
+        "passing_factor": 0.868
       },
       "inputs": {
-        "current_games": 1,
+        "current_games": 2,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.12,
+        "career_rushing_td_rate": 0.56,
         "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.107,
+        "regressed_rushing_td_rate": 0.448,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.98,
+        "usage_factor": 0.968,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 0.0
+        "usage_percentage": 29.4
       },
       "actual_data": {
-        "current_games": 1,
+        "current_games": 2,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.12,
+        "career_rushing_tds_per_game": 0.56,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -111,53 +56,328 @@
       }
     },
     {
-      "player_id": "00-0037248",
-      "player": "James Cook",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "RB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 62.4,
-      "touchdown_lambda": 0.979,
+      "player_id": "00-0039923",
+      "player": "J.J. McCarthy",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "QB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 15.8,
+      "touchdown_lambda": 0.1719,
       "scoring": {
-        "rushing_td_probability": 60.8,
-        "receiving_td_probability": 4.3,
-        "rushing_lambda": 0.9354,
-        "receiving_lambda": 0.0437
+        "rushing_td_probability": 15.8,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.1719,
+        "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 1.06
+        "projected_team_points": 22.5,
+        "scoring_factor": 0.96
+      },
+      "matchup": {
+        "overall_factor": 0.88,
+        "rushing_factor": 1.027,
+        "passing_factor": 0.868
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.29,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.193,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.889,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 29.4
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.29,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0031503",
+      "player": "Jameis Winston",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "QB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 11.3,
+      "touchdown_lambda": 0.1201,
+      "scoring": {
+        "rushing_td_probability": 11.1,
+        "receiving_td_probability": 0.3,
+        "rushing_lambda": 0.1171,
+        "receiving_lambda": 0.003
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 0.947
+      },
+      "matchup": {
+        "overall_factor": 0.877,
+        "rushing_factor": 1.033,
+        "passing_factor": 0.868
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.14,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.08,
+        "career_receiving_td_rate": 0.01,
+        "regressed_rushing_td_rate": 0.108,
+        "regressed_receiving_td_rate": 0.005,
+        "usage_factor": 0.943,
+        "projected_rushing_tds": 0.14,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 41.1
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.14,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.08,
+        "career_receiving_tds_per_game": 0.01,
+        "projected_rushing_tds": 0.14,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040715",
+      "player": "Cam Skattebo",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "RB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 36.0,
+      "touchdown_lambda": 0.4469,
+      "scoring": {
+        "rushing_td_probability": 32.8,
+        "receiving_td_probability": 4.8,
+        "rushing_lambda": 0.3978,
+        "receiving_lambda": 0.049
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.03
+      },
+      "matchup": {
+        "overall_factor": 1.048,
+        "rushing_factor": 1.072,
+        "passing_factor": 0.916
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.33,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.5,
+        "career_receiving_td_rate": 0.14,
+        "regressed_rushing_td_rate": 0.427,
+        "regressed_receiving_td_rate": 0.08,
+        "usage_factor": 1.022,
+        "projected_rushing_tds": 0.34,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 26.3
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.33,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.5,
+        "career_receiving_tds_per_game": 0.14,
+        "projected_rushing_tds": 0.34,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0035250",
+      "player": "Devin Singletary",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "RB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 29.5,
+      "touchdown_lambda": 0.3497,
+      "scoring": {
+        "rushing_td_probability": 19.5,
+        "receiving_td_probability": 12.4,
+        "rushing_lambda": 0.2168,
+        "receiving_lambda": 0.1329
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
+      },
+      "matchup": {
+        "overall_factor": 1.017,
+        "rushing_factor": 1.072,
+        "passing_factor": 0.921
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.2,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.26,
+        "career_receiving_td_rate": 0.04,
+        "regressed_rushing_td_rate": 0.237,
+        "regressed_receiving_td_rate": 0.102,
+        "usage_factor": 0.934,
+        "projected_rushing_tds": 0.21,
+        "projected_receiving_tds": 0.19,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 14.3
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.2,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.26,
+        "career_receiving_tds_per_game": 0.04,
+        "projected_rushing_tds": 0.21,
+        "projected_receiving_tds": 0.19,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039384",
+      "player": "Tyrone Tracy Jr.",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "RB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 29.0,
+      "touchdown_lambda": 0.342,
+      "scoring": {
+        "rushing_td_probability": 21.1,
+        "receiving_td_probability": 10.0,
+        "rushing_lambda": 0.2365,
+        "receiving_lambda": 0.1056
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
+      },
+      "matchup": {
+        "overall_factor": 0.996,
+        "rushing_factor": 1.069,
+        "passing_factor": 0.921
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.29,
+        "current_receiving_td_rate": 0.14,
+        "career_rushing_td_rate": 0.23,
+        "career_receiving_td_rate": 0.1,
+        "regressed_rushing_td_rate": 0.258,
+        "regressed_receiving_td_rate": 0.119,
+        "usage_factor": 0.752,
+        "projected_rushing_tds": 0.3,
+        "projected_receiving_tds": 0.13,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 5.2
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.29,
+        "current_receiving_tds_per_game": 0.14,
+        "career_rushing_tds_per_game": 0.23,
+        "career_receiving_tds_per_game": 0.1,
+        "projected_rushing_tds": 0.3,
+        "projected_receiving_tds": 0.13,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036893",
+      "player": "Najee Harris",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "RB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 19.3,
+      "touchdown_lambda": 0.2142,
+      "scoring": {
+        "rushing_td_probability": 16.1,
+        "receiving_td_probability": 3.7,
+        "rushing_lambda": 0.1761,
+        "receiving_lambda": 0.0381
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
       },
       "matchup": {
         "overall_factor": 1.062,
-        "rushing_factor": 1.077,
-        "passing_factor": 0.968
+        "rushing_factor": 1.071,
+        "passing_factor": 0.9
       },
       "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 1.0,
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.53,
-        "career_receiving_td_rate": 0.12,
-        "regressed_rushing_td_rate": 0.749,
-        "regressed_receiving_td_rate": 0.064,
-        "usage_factor": 1.137,
-        "projected_rushing_tds": 1.06,
+        "career_rushing_td_rate": 0.37,
+        "career_receiving_td_rate": 0.08,
+        "regressed_rushing_td_rate": 0.228,
+        "regressed_receiving_td_rate": 0.049,
+        "usage_factor": 0.773,
+        "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 39.6
+        "usage_percentage": 9.1
       },
       "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 1.0,
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.53,
-        "career_receiving_tds_per_game": 0.12,
-        "projected_rushing_tds": 1.06,
+        "career_rushing_tds_per_game": 0.37,
+        "career_receiving_tds_per_game": 0.08,
+        "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -166,53 +386,53 @@
       }
     },
     {
-      "player_id": "00-0035537",
-      "player": "Ty Johnson",
-      "team": "BUF",
-      "opponent": "MIN",
+      "player_id": "00-0033376",
+      "player": "Patrick Ricard",
+      "team": "NYG",
+      "opponent": "WAS",
       "position": "RB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 9.2,
-      "touchdown_lambda": 0.0967,
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 7.9,
+      "touchdown_lambda": 0.0828,
       "scoring": {
-        "rushing_td_probability": 4.5,
-        "receiving_td_probability": 5.0,
-        "rushing_lambda": 0.0455,
-        "receiving_lambda": 0.0512
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 7.9,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0828
       },
       "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.978
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
       },
       "matchup": {
-        "overall_factor": 0.976,
-        "rushing_factor": 1.1,
-        "passing_factor": 0.968
+        "overall_factor": 1.0,
+        "rushing_factor": 1.0,
+        "passing_factor": 1.0
       },
       "inputs": {
-        "current_games": 5,
+        "current_games": 2,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.08,
+        "career_rushing_td_rate": 0.0,
         "career_receiving_td_rate": 0.09,
-        "regressed_rushing_td_rate": 0.049,
-        "regressed_receiving_td_rate": 0.055,
-        "usage_factor": 0.925,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.072,
+        "usage_factor": 1.15,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 7.6
+        "usage_percentage": 2.1
       },
       "actual_data": {
-        "current_games": 5,
+        "current_games": 2,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.08,
+        "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.09,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -221,67 +441,12 @@
       }
     },
     {
-      "player_id": "00-0039875",
-      "player": "Ray Davis",
-      "team": "BUF",
-      "opponent": "MIN",
+      "player_id": "00-0041376",
+      "player": "Gregory Desrosiers",
+      "team": "NYG",
+      "opponent": "WAS",
       "position": "RB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 8.3,
-      "touchdown_lambda": 0.0869,
-      "scoring": {
-        "rushing_td_probability": 3.2,
-        "receiving_td_probability": 5.3,
-        "rushing_lambda": 0.032,
-        "receiving_lambda": 0.0549
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.978
-      },
-      "matchup": {
-        "overall_factor": 1.024,
-        "rushing_factor": 1.071,
-        "passing_factor": 0.975
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.07,
-        "career_receiving_td_rate": 0.12,
-        "regressed_rushing_td_rate": 0.04,
-        "regressed_receiving_td_rate": 0.069,
-        "usage_factor": 0.8,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 4.2
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.07,
-        "career_receiving_tds_per_game": 0.12,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039471",
-      "player": "Frank Gore Jr.",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "RB",
-      "game_id": "2026_09_BUF_MIN",
+      "game_id": "2026_10_WAS_NYG",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -291,13 +456,13 @@
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.978
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
       },
       "matchup": {
-        "overall_factor": 1.067,
-        "rushing_factor": 1.067,
-        "passing_factor": 0.961
+        "overall_factor": 1.07,
+        "rushing_factor": 1.07,
+        "passing_factor": 0.945
       },
       "inputs": {
         "current_games": 1,
@@ -310,624 +475,19 @@
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 1.8
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038933",
-      "player": "Dalton Kincaid",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "TE",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 22.9,
-      "touchdown_lambda": 0.2606,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 22.9,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2606
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.931
-      },
-      "matchup": {
-        "overall_factor": 0.958,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.958
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.29,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.23,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.258,
-        "usage_factor": 0.986,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.27,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 9.0
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.29,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.23,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.27,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035689",
-      "player": "Dawson Knox",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "TE",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 14.5,
-      "touchdown_lambda": 0.1569,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 14.5,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1569
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.929
-      },
-      "matchup": {
-        "overall_factor": 0.95,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.95
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.14,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.27,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.209,
-        "usage_factor": 0.835,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.13,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 3.1
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.14,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.27,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.13,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040194",
-      "player": "Jackson Hawes",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "TE",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 9.7,
-      "touchdown_lambda": 0.1024,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 9.7,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1024
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.978
-      },
-      "matchup": {
-        "overall_factor": 0.971,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.971
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.18,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.12,
-        "usage_factor": 0.853,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 1.3
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.18,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040363",
-      "player": "Keleki Latu",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "TE",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.978
-      },
-      "matchup": {
-        "overall_factor": 1.006,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.961
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 0.0
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039901",
-      "player": "Keon Coleman",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 31.5,
-      "touchdown_lambda": 0.3778,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 31.5,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3778
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.93
-      },
-      "matchup": {
-        "overall_factor": 0.959,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.959
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.43,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.34,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.382,
-        "usage_factor": 0.95,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.4,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 6.9
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.43,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.34,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.4,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0034827",
-      "player": "DJ Moore",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 29.4,
-      "touchdown_lambda": 0.3479,
-      "scoring": {
-        "rushing_td_probability": 0.3,
-        "receiving_td_probability": 29.1,
-        "rushing_lambda": 0.0034,
-        "receiving_lambda": 0.3445
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.95
-      },
-      "matchup": {
-        "overall_factor": 0.926,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.958
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.4,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.32,
-        "regressed_rushing_td_rate": 0.006,
-        "regressed_receiving_td_rate": 0.351,
-        "usage_factor": 0.915,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.38,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 9.8
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.4,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.32,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.38,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036988",
-      "player": "Josh Palmer",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 24.3,
-      "touchdown_lambda": 0.2782,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 24.3,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2782
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.95
-      },
-      "matchup": {
-        "overall_factor": 0.957,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.957
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.4,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.16,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.252,
-        "usage_factor": 0.834,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.38,
         "availability_factor": 1.0,
         "injury_status": "",
         "usage_percentage": 4.3
       },
       "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.4,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.16,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.38,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037261",
-      "player": "Khalil Shakir",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 14.6,
-      "touchdown_lambda": 0.1573,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 14.6,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1573
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.929
-      },
-      "matchup": {
-        "overall_factor": 0.957,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.957
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.14,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.19,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.167,
-        "usage_factor": 1.053,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.13,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 9.8
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.14,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.19,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.13,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035500",
-      "player": "Greg Dortch",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 7.2,
-      "touchdown_lambda": 0.0747,
-      "scoring": {
-        "rushing_td_probability": 0.5,
-        "receiving_td_probability": 6.7,
-        "rushing_lambda": 0.0053,
-        "receiving_lambda": 0.0693
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.978
-      },
-      "matchup": {
-        "overall_factor": 1.006,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.961
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.13,
-        "regressed_rushing_td_rate": 0.005,
-        "regressed_receiving_td_rate": 0.069,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 0.0
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.13,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0034487",
-      "player": "Trent Sherfield",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 6.0,
-      "touchdown_lambda": 0.0622,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 6.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0622
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.978
-      },
-      "matchup": {
-        "overall_factor": 1.006,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.961
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.07,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.062,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 0.0
-      },
-      "actual_data": {
         "current_games": 1,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.07,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0041443",
-      "player": "Skyler Bell",
-      "team": "BUF",
-      "opponent": "MIN",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 22.0,
-        "scoring_factor": 0.978
-      },
-      "matchup": {
-        "overall_factor": 1.006,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.961
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 2.7
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.0,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -936,548 +496,53 @@
       }
     },
     {
-      "player_id": "00-0035228",
-      "player": "Kyler Murray",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "QB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 16.5,
-      "touchdown_lambda": 0.1808,
-      "scoring": {
-        "rushing_td_probability": 16.5,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1808,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 0.976
-      },
-      "matchup": {
-        "overall_factor": 0.965,
-        "rushing_factor": 0.977,
-        "passing_factor": 0.963
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.34,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.194,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.93,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 56.9
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.34,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0032950",
-      "player": "Carson Wentz",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "QB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 8.7,
-      "touchdown_lambda": 0.0908,
-      "scoring": {
-        "rushing_td_probability": 8.7,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0908,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 0.98
-      },
-      "matchup": {
-        "overall_factor": 0.964,
-        "rushing_factor": 0.96,
-        "passing_factor": 0.964
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.11,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.088,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.031,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 43.1
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.11,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0033293",
-      "player": "Aaron Jones",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "RB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 32.2,
-      "touchdown_lambda": 0.3879,
-      "scoring": {
-        "rushing_td_probability": 28.4,
-        "receiving_td_probability": 5.2,
-        "rushing_lambda": 0.3343,
-        "receiving_lambda": 0.0536
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 0.966
-      },
-      "matchup": {
-        "overall_factor": 0.982,
-        "rushing_factor": 0.984,
-        "passing_factor": 0.972
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.29,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.41,
-        "career_receiving_td_rate": 0.16,
-        "regressed_rushing_td_rate": 0.354,
-        "regressed_receiving_td_rate": 0.085,
-        "usage_factor": 1.047,
-        "projected_rushing_tds": 0.28,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 29.2
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.29,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.41,
-        "career_receiving_tds_per_game": 0.16,
-        "projected_rushing_tds": 0.28,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0037525",
-      "player": "Jordan Mason",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "RB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 27.7,
-      "touchdown_lambda": 0.3243,
-      "scoring": {
-        "rushing_td_probability": 27.7,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.3243,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 0.97
-      },
-      "matchup": {
-        "overall_factor": 0.986,
-        "rushing_factor": 0.986,
-        "passing_factor": 0.978
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.33,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.24,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.265,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.237,
-        "projected_rushing_tds": 0.32,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 20.8
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.33,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.24,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.32,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036425",
-      "player": "DeeJay Dallas",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "RB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 3.0,
-      "touchdown_lambda": 0.0304,
-      "scoring": {
-        "rushing_td_probability": 2.2,
-        "receiving_td_probability": 0.9,
-        "rushing_lambda": 0.0217,
-        "receiving_lambda": 0.0087
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
-      },
-      "matchup": {
-        "overall_factor": 0.977,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.967
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.05,
-        "career_receiving_td_rate": 0.02,
-        "regressed_rushing_td_rate": 0.027,
-        "regressed_receiving_td_rate": 0.011,
-        "usage_factor": 0.816,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 1.9
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.05,
-        "career_receiving_tds_per_game": 0.02,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0041104",
-      "player": "Demond Claiborne",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "RB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
-      },
-      "matchup": {
-        "overall_factor": 0.971,
-        "rushing_factor": 0.985,
-        "passing_factor": 0.95
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 3.1
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0041081",
-      "player": "Max Bredeson",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "RB",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
-      },
-      "matchup": {
-        "overall_factor": 0.987,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.978
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 0.8
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035229",
-      "player": "T.J. Hockenson",
-      "team": "MIN",
-      "opponent": "BUF",
+      "player_id": "00-0037838",
+      "player": "Isaiah Likely",
+      "team": "NYG",
+      "opponent": "WAS",
       "position": "TE",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 30.6,
-      "touchdown_lambda": 0.3652,
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 50.6,
+      "touchdown_lambda": 0.7052,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 30.6,
+        "receiving_td_probability": 50.6,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.3652
+        "receiving_lambda": 0.7052
       },
       "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 0.977
+        "projected_team_points": 22.5,
+        "scoring_factor": 0.947
       },
       "matchup": {
-        "overall_factor": 0.963,
+        "overall_factor": 0.868,
         "rushing_factor": 1.0,
-        "passing_factor": 0.963
+        "passing_factor": 0.868
       },
       "inputs": {
-        "current_games": 7,
+        "current_games": 8,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.43,
+        "current_receiving_td_rate": 0.75,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.28,
+        "career_receiving_td_rate": 0.33,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.35,
-        "usage_factor": 0.939,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.42,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 8.0
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.43,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.28,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.42,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035249",
-      "player": "Josh Oliver",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "TE",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 11.1,
-      "touchdown_lambda": 0.1182,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 11.1,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1182
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
-      },
-      "matchup": {
-        "overall_factor": 0.965,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.965
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.17,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.124,
-        "usage_factor": 0.956,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 2.5
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.17,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040509",
-      "player": "Ben Yurosek",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "TE",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
-      },
-      "matchup": {
-        "overall_factor": 0.965,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.965
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.54,
         "usage_factor": 1.3,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
+        "projected_receiving_tds": 0.71,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 2.3
+        "usage_percentage": 10.9
       },
       "actual_data": {
-        "current_games": 2,
+        "current_games": 8,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.75,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.33,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
+        "projected_receiving_tds": 0.71,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -1486,53 +551,53 @@
       }
     },
     {
-      "player_id": "00-0040215",
-      "player": "Gavin Bartholomew",
-      "team": "MIN",
-      "opponent": "BUF",
+      "player_id": "00-0039847",
+      "player": "Theo Johnson",
+      "team": "NYG",
+      "opponent": "WAS",
       "position": "TE",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 19.3,
+      "touchdown_lambda": 0.2149,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
+        "receiving_td_probability": 19.3,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
+        "receiving_lambda": 0.2149
       },
       "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
+        "projected_team_points": 22.5,
+        "scoring_factor": 0.96
       },
       "matchup": {
-        "overall_factor": 0.961,
+        "overall_factor": 0.865,
         "rushing_factor": 1.0,
-        "passing_factor": 0.961
+        "passing_factor": 0.865
       },
       "inputs": {
-        "current_games": 3,
+        "current_games": 4,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
+        "current_receiving_td_rate": 0.25,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
+        "career_receiving_td_rate": 0.23,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
+        "regressed_receiving_td_rate": 0.237,
+        "usage_factor": 0.838,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
+        "projected_receiving_tds": 0.24,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 4.0
+        "usage_percentage": 2.9
       },
       "actual_data": {
-        "current_games": 3,
+        "current_games": 4,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.25,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
+        "projected_receiving_tds": 0.24,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -1541,218 +606,53 @@
       }
     },
     {
-      "player_id": "00-0036322",
-      "player": "Justin Jefferson",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 43.3,
-      "touchdown_lambda": 0.5667,
+      "player_id": "00-0031484",
+      "player": "Chris Manhertz",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "TE",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 3.9,
+      "touchdown_lambda": 0.04,
       "scoring": {
-        "rushing_td_probability": 0.3,
-        "receiving_td_probability": 43.1,
-        "rushing_lambda": 0.0031,
-        "receiving_lambda": 0.5636
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 3.9,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.04
       },
       "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 0.985
-      },
-      "matchup": {
-        "overall_factor": 0.964,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.964
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.67,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.46,
-        "regressed_rushing_td_rate": 0.006,
-        "regressed_receiving_td_rate": 0.55,
-        "usage_factor": 0.908,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.66,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 10.2
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.67,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.46,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.66,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038994",
-      "player": "Jordan Addison",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 23.7,
-      "touchdown_lambda": 0.2711,
-      "scoring": {
-        "rushing_td_probability": 1.3,
-        "receiving_td_probability": 22.7,
-        "rushing_lambda": 0.0134,
-        "receiving_lambda": 0.2577
-      },
-      "environment": {
-        "projected_team_points": 22.6,
+        "projected_team_points": 22.5,
         "scoring_factor": 1.0
       },
       "matchup": {
-        "overall_factor": 0.956,
+        "overall_factor": 1.006,
         "rushing_factor": 1.0,
-        "passing_factor": 0.964
+        "passing_factor": 0.945
       },
       "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.17,
-        "career_rushing_td_rate": 0.04,
-        "career_receiving_td_rate": 0.44,
-        "regressed_rushing_td_rate": 0.023,
-        "regressed_receiving_td_rate": 0.324,
-        "usage_factor": 0.975,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 8.3
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.17,
-        "career_rushing_tds_per_game": 0.04,
-        "career_receiving_tds_per_game": 0.44,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.17,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0031235",
-      "player": "Odell Beckham Jr.",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 22.4,
-      "touchdown_lambda": 0.2533,
-      "scoring": {
-        "rushing_td_probability": 0.7,
-        "receiving_td_probability": 21.9,
-        "rushing_lambda": 0.0067,
-        "receiving_lambda": 0.2467
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
-      },
-      "matchup": {
-        "overall_factor": 0.987,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.978
-      },
-      "inputs": {
-        "current_games": 1,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.37,
-        "regressed_rushing_td_rate": 0.009,
-        "regressed_receiving_td_rate": 0.329,
-        "usage_factor": 0.75,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 1.5
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.37,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036259",
-      "player": "Jauan Jennings",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
-      "touchdown_probability": 11.8,
-      "touchdown_lambda": 0.1254,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 11.8,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1254
-      },
-      "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
-      },
-      "matchup": {
-        "overall_factor": 0.967,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.967
-      },
-      "inputs": {
-        "current_games": 6,
+        "current_games": 2,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.28,
+        "career_receiving_td_rate": 0.05,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.16,
-        "usage_factor": 0.784,
+        "regressed_receiving_td_rate": 0.04,
+        "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 2.5
+        "usage_percentage": 0.0
       },
       "actual_data": {
-        "current_games": 6,
+        "current_games": 2,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.28,
+        "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -1761,12 +661,12 @@
       }
     },
     {
-      "player_id": "00-0039710",
-      "player": "Jeshaun Jones",
-      "team": "MIN",
-      "opponent": "BUF",
-      "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
+      "player_id": "00-0040225",
+      "player": "Thomas Fidone II",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "TE",
+      "game_id": "2026_10_WAS_NYG",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1776,13 +676,13 @@
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
       },
       "matchup": {
-        "overall_factor": 0.963,
+        "overall_factor": 0.869,
         "rushing_factor": 1.0,
-        "passing_factor": 0.963
+        "passing_factor": 0.869
       },
       "inputs": {
         "current_games": 2,
@@ -1797,7 +697,7 @@
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 0.8
+        "usage_percentage": 0.7
       },
       "actual_data": {
         "current_games": 2,
@@ -1807,7 +707,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -1816,12 +716,232 @@
       }
     },
     {
-      "player_id": "00-0040506",
-      "player": "Myles Price",
-      "team": "MIN",
-      "opponent": "BUF",
+      "player_id": "00-0039337",
+      "player": "Malik Nabers",
+      "team": "NYG",
+      "opponent": "WAS",
       "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 25.0,
+      "touchdown_lambda": 0.288,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 25.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.288
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 0.96
+      },
+      "matchup": {
+        "overall_factor": 0.868,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.868
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.25,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.41,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.33,
+        "usage_factor": 0.97,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.24,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 12.4
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.25,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.41,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.24,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041042",
+      "player": "Malachi Fields",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 11.0,
+      "touchdown_lambda": 0.116,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 11.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.116
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 0.917
+      },
+      "matchup": {
+        "overall_factor": 0.869,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.869
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.12,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.12,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.12,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.11,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 5.5
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.12,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.12,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.11,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036309",
+      "player": "Darnell Mooney",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 7.9,
+      "touchdown_lambda": 0.0826,
+      "scoring": {
+        "rushing_td_probability": 0.4,
+        "receiving_td_probability": 7.5,
+        "rushing_lambda": 0.0043,
+        "receiving_lambda": 0.0782
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
+      },
+      "matchup": {
+        "overall_factor": 0.742,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.867
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.18,
+        "regressed_rushing_td_rate": 0.005,
+        "regressed_receiving_td_rate": 0.09,
+        "usage_factor": 0.869,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 4.1
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.18,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0034419",
+      "player": "Braxton Berrios",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 4.9,
+      "touchdown_lambda": 0.05,
+      "scoring": {
+        "rushing_td_probability": 2.0,
+        "receiving_td_probability": 3.0,
+        "rushing_lambda": 0.02,
+        "receiving_lambda": 0.03
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
+      },
+      "matchup": {
+        "overall_factor": 1.006,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.945
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.04,
+        "career_receiving_td_rate": 0.06,
+        "regressed_rushing_td_rate": 0.027,
+        "regressed_receiving_td_rate": 0.04,
+        "usage_factor": 0.75,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.3
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.04,
+        "career_receiving_tds_per_game": 0.06,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038576",
+      "player": "Charlie Jones",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1831,38 +951,38 @@
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
       },
       "matchup": {
-        "overall_factor": 0.9,
+        "overall_factor": 0.871,
         "rushing_factor": 1.0,
-        "passing_factor": 0.97
+        "passing_factor": 0.871
       },
       "inputs": {
-        "current_games": 7,
+        "current_games": 5,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
         "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.3,
+        "usage_factor": 1.138,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 1.5
+        "usage_percentage": 0.8
       },
       "actual_data": {
-        "current_games": 7,
+        "current_games": 5,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
+        "projected_team_points": 22.5,
         "injury_status": ""
       },
       "model": {
@@ -1871,12 +991,12 @@
       }
     },
     {
-      "player_id": "00-0040154",
-      "player": "Tai Felton",
-      "team": "MIN",
-      "opponent": "BUF",
+      "player_id": "00-0040431",
+      "player": "Dalen Cambre",
+      "team": "NYG",
+      "opponent": "WAS",
       "position": "WR",
-      "game_id": "2026_09_BUF_MIN",
+      "game_id": "2026_10_WAS_NYG",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1886,23 +1006,518 @@
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 22.6,
-        "scoring_factor": 1.004
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
       },
       "matchup": {
-        "overall_factor": 0.966,
+        "overall_factor": 1.006,
         "rushing_factor": 1.0,
-        "passing_factor": 0.966
+        "passing_factor": 0.945
       },
       "inputs": {
-        "current_games": 4,
+        "current_games": 1,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
         "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.3,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.0
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038938",
+      "player": "Jalin Hyatt",
+      "team": "NYG",
+      "opponent": "WAS",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 22.5,
+        "scoring_factor": 1.0
+      },
+      "matchup": {
+        "overall_factor": 1.006,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.945
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.792,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 1.2
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 22.5,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039910",
+      "player": "Jayden Daniels",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "QB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 25.5,
+      "touchdown_lambda": 0.2941,
+      "scoring": {
+        "rushing_td_probability": 25.5,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.2941,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.778
+      },
+      "matchup": {
+        "overall_factor": 0.878,
+        "rushing_factor": 1.038,
+        "passing_factor": 0.845
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.33,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.33,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.33,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.879,
+        "projected_rushing_tds": 0.3,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 37.5
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.33,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.33,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.3,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0032268",
+      "player": "Marcus Mariota",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "QB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 10.9,
+      "touchdown_lambda": 0.1152,
+      "scoring": {
+        "rushing_td_probability": 10.9,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.1152,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.774
+      },
+      "matchup": {
+        "overall_factor": 0.869,
+        "rushing_factor": 1.035,
+        "passing_factor": 0.845
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.19,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.138,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.834,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 21.2
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.19,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041117",
+      "player": "Athan Kaliakmanis",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "QB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.77
+      },
+      "matchup": {
+        "overall_factor": 0.861,
+        "rushing_factor": 1.038,
+        "passing_factor": 0.846
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 41.3
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040242",
+      "player": "Jacory Croskey-Merritt",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "RB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 34.8,
+      "touchdown_lambda": 0.4284,
+      "scoring": {
+        "rushing_td_probability": 34.8,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.4284,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.925
+      },
+      "matchup": {
+        "overall_factor": 0.982,
+        "rushing_factor": 0.996,
+        "passing_factor": 0.9
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.4,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.45,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.431,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.085,
+        "projected_rushing_tds": 0.37,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 19.4
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.4,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.45,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.37,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037256",
+      "player": "Rachaad White",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "RB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 30.8,
+      "touchdown_lambda": 0.3677,
+      "scoring": {
+        "rushing_td_probability": 14.0,
+        "receiving_td_probability": 19.5,
+        "rushing_lambda": 0.1508,
+        "receiving_lambda": 0.2169
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.814
+      },
+      "matchup": {
+        "overall_factor": 0.961,
+        "rushing_factor": 0.995,
+        "passing_factor": 0.901
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.14,
+        "current_receiving_td_rate": 0.29,
+        "career_rushing_td_rate": 0.21,
+        "career_receiving_td_rate": 0.18,
+        "regressed_rushing_td_rate": 0.177,
+        "regressed_receiving_td_rate": 0.231,
+        "usage_factor": 0.929,
+        "projected_rushing_tds": 0.13,
+        "projected_receiving_tds": 0.22,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 14.2
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.14,
+        "current_receiving_tds_per_game": 0.29,
+        "career_rushing_tds_per_game": 0.21,
+        "career_receiving_tds_per_game": 0.18,
+        "projected_rushing_tds": 0.13,
+        "projected_receiving_tds": 0.22,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033699",
+      "player": "Austin Ekeler",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "RB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 26.1,
+      "touchdown_lambda": 0.3028,
+      "scoring": {
+        "rushing_td_probability": 16.4,
+        "receiving_td_probability": 11.7,
+        "rushing_lambda": 0.1787,
+        "receiving_lambda": 0.1241
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.962,
+        "rushing_factor": 0.994,
+        "passing_factor": 0.906
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.36,
+        "career_receiving_td_rate": 0.25,
+        "regressed_rushing_td_rate": 0.222,
+        "regressed_receiving_td_rate": 0.154,
+        "usage_factor": 0.807,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 8.4
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.36,
+        "career_receiving_tds_per_game": 0.25,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033955",
+      "player": "Jeremy McNichols",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "RB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 9.0,
+      "touchdown_lambda": 0.0942,
+      "scoring": {
+        "rushing_td_probability": 7.4,
+        "receiving_td_probability": 1.7,
+        "rushing_lambda": 0.0771,
+        "receiving_lambda": 0.0171
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.98,
+        "rushing_factor": 0.994,
+        "passing_factor": 0.914
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.09,
+        "career_receiving_td_rate": 0.02,
+        "regressed_rushing_td_rate": 0.072,
+        "regressed_receiving_td_rate": 0.016,
+        "usage_factor": 1.07,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 7.2
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.09,
+        "career_receiving_tds_per_game": 0.02,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0035567",
+      "player": "Craig Reynolds",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "RB",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 2.1,
+      "touchdown_lambda": 0.0212,
+      "scoring": {
+        "rushing_td_probability": 2.1,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0212,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 1.0,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.876
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.03,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.027,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.794,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -1910,6 +1525,721 @@
         "usage_percentage": 2.6
       },
       "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.03,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039912",
+      "player": "Ben Sinnott",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "TE",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 6.7,
+      "touchdown_lambda": 0.0699,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 6.7,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0699
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.85,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.85
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.11,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.08,
+        "usage_factor": 0.873,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.8
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.11,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037809",
+      "player": "Chig Okonkwo",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "TE",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 6.5,
+      "touchdown_lambda": 0.0674,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 6.5,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0674
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.844,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.844
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.11,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.063,
+        "usage_factor": 1.072,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 6.8
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.11,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036628",
+      "player": "John Bates",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "TE",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 2.7,
+      "touchdown_lambda": 0.0275,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 2.7,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0275
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.852,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.852
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.05,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.031,
+        "usage_factor": 0.894,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 1.6
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.05,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039686",
+      "player": "Colson Yankoff",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "TE",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.836,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.836
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.253,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.8
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0031588",
+      "player": "Stefon Diggs",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 42.4,
+      "touchdown_lambda": 0.5517,
+      "scoring": {
+        "rushing_td_probability": 0.3,
+        "receiving_td_probability": 42.2,
+        "rushing_lambda": 0.003,
+        "receiving_lambda": 0.5488
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.775
+      },
+      "matchup": {
+        "overall_factor": 0.845,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.845
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.71,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.48,
+        "regressed_rushing_td_rate": 0.005,
+        "regressed_receiving_td_rate": 0.587,
+        "usage_factor": 0.933,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.55,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 9.2
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.71,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.48,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.55,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036415",
+      "player": "Van Jefferson",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 25.8,
+      "touchdown_lambda": 0.2978,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 25.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.2978
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.78
+      },
+      "matchup": {
+        "overall_factor": 0.845,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.845
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.5,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.16,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.228,
+        "usage_factor": 1.037,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.39,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 5.3
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.5,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.16,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.39,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0035659",
+      "player": "Terry McLaurin",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 20.5,
+      "touchdown_lambda": 0.229,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 20.5,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.229
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.75
+      },
+      "matchup": {
+        "overall_factor": 0.846,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.846
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.38,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.311,
+        "usage_factor": 0.906,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.15,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 7.0
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.38,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.15,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037742",
+      "player": "Treylon Burks",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 19.9,
+      "touchdown_lambda": 0.222,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 19.9,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.222
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.788
+      },
+      "matchup": {
+        "overall_factor": 0.845,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.845
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.1,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.199,
+        "usage_factor": 0.991,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.26,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 4.7
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.1,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.26,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041040",
+      "player": "Antonio Williams",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 10.2,
+      "touchdown_lambda": 0.108,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 10.2,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.108
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.75
+      },
+      "matchup": {
+        "overall_factor": 0.845,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.845
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.12,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.12,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.12,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.09,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 6.4
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.12,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.12,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.09,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039355",
+      "player": "Luke McCaffrey",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 5.0,
+      "touchdown_lambda": 0.0508,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 5.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0508
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.833,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.833
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.11,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.068,
+        "usage_factor": 0.75,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.5
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.11,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036626",
+      "player": "Dyami Brown",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 3.6,
+      "touchdown_lambda": 0.0364,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 3.6,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0364
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.849,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.849
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.07,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.037,
+        "usage_factor": 0.976,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 3.0
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.07,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041176",
+      "player": "Jaden Bradley",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.842,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.842
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 1.4
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040164",
+      "player": "Jaylin Lane",
+      "team": "WAS",
+      "opponent": "NYG",
+      "position": "WR",
+      "game_id": "2026_10_WAS_NYG",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.848,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.848
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.75,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.7
+      },
+      "actual_data": {
         "current_games": 4,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
@@ -1917,7 +2247,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 22.6,
+        "projected_team_points": 19.9,
         "injury_status": ""
       },
       "model": {
@@ -1927,10 +2257,10 @@
     }
   ],
   "counts": {
-    "total": 35,
-    "QB": 4,
-    "RB": 9,
-    "WR": 14,
+    "total": 41,
+    "QB": 6,
+    "RB": 11,
+    "WR": 16,
     "TE": 8
   },
   "diagnostics": {
