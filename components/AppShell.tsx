@@ -558,7 +558,8 @@ export function AppShell({
 
           {(activeSport === "MLB" ||
             activeSport === "NBA" ||
-            activeSport === "NFL") && (
+            activeSport === "NFL" ||
+            activeSport === "NHL") && (
             <Link
               href={nextSlateBase}
               onClick={() => {
