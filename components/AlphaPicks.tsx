@@ -163,7 +163,24 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
   // Player props require both a real sportsbook price and a model distribution
   // (explicit over/under probability or modeled mean plus modeled SD).
   if (sport === "nba") {
+    // Provider sometimes supplies an alternate 0.5 made-three line with a
+    // one-sided or mismatched price even when a normal 2.5+ line exists.
+    // Require a two-sided quote, and never prefer that suspect alternate.
+    const mainThreeLines = new Set(
+      propMarkets.filter((p: any) =>
+        String(p.prop_type) === "fg3m" && num(p.line) !== null && num(p.line)! >= 1.5 &&
+        num(p.over_odds) !== null && num(p.under_odds) !== null
+      ).map((p: any) =>
+        [String(p.game_id), String(p.player_name).trim().toLowerCase(), String(p.sportsbook ?? "").toLowerCase()].join("|")
+      )
+    );
     for (const prop of propMarkets) {
+      const quotedOver = num(prop.over_odds);
+      const quotedUnder = num(prop.under_odds);
+      if (quotedOver === null || quotedUnder === null ||
+          Math.abs(quotedOver) < 100 || Math.abs(quotedUnder) < 100) continue;
+      const threeKey = [String(prop.game_id), String(prop.player_name).trim().toLowerCase(), String(prop.sportsbook ?? "").toLowerCase()].join("|");
+      if (String(prop.prop_type) === "fg3m" && num(prop.line) === 0.5 && mainThreeLines.has(threeKey)) continue;
       const game = projections.find(g => key(g) === String(prop.game_id));
       if (!game) continue;
       const players = [...(game.player_projections?.away ?? []), ...(game.player_projections?.home ?? [])];
