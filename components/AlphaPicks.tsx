@@ -421,7 +421,39 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   }, [sport, next]);
   const categoryTab = mainTab === "parlay" ? parlayTab : mainTab === "straight" ? straightTab : lottoTab;
   const eligibleLegs = useMemo(() => categoryTab === "combos" ? legs : legs.filter(leg => leg.marketType === categoryTab), [legs, categoryTab]);
-  const straights = useMemo(() => eligibleLegs.filter(leg => leg.odds >= -150).slice(0, 6).map(leg => ticket([leg])), [eligibleLegs]);
+  const straights = useMemo(() => {
+    const ranked = eligibleLegs.filter(leg => leg.odds >= -150)
+      .sort((a, b) => b.probability - a.probability);
+    if (categoryTab !== "combos") return ranked.slice(0, 6).map(leg => ticket([leg]));
+    // Combos can draw from every market. Favor variety only when candidates
+    // are genuinely close in model confidence; never force a weak ML/spread.
+    const selected: Leg[] = [];
+    const playerCounts = new Map<string, number>();
+    const playerName = (leg: Leg) => leg.pick.split(/\\s+(?:Over|Under)\\s+/i)[0].trim().toLowerCase();
+    const choose = (options: Leg[]) => {
+      for (const leg of options) {
+        if (selected.length >= 6) break;
+        if (selected.includes(leg)) continue;
+        if (leg.marketType === "player_prop" && (playerCounts.get(playerName(leg)) ?? 0) >= 2) continue;
+        selected.push(leg);
+        if (leg.marketType === "player_prop") {
+          const name = playerName(leg);
+          playerCounts.set(name, (playerCounts.get(name) ?? 0) + 1);
+        }
+      }
+    };
+    // Include other market types when within five percentage points of the
+    // sixth-best candidate; otherwise the six strongest picks still win.
+    const cutoff = ranked[Math.min(5, ranked.length - 1)]?.probability ?? 0;
+    const competitive = ranked.filter(leg => leg.probability >= cutoff - 0.05);
+    const types = [...new Set(competitive.map(leg => leg.marketType))];
+    for (const type of types) {
+      const best = competitive.find(leg => leg.marketType === type);
+      if (best) choose([best]);
+    }
+    choose(ranked);
+    return selected.slice(0, 6).map(leg => ticket([leg]));
+  }, [eligibleLegs, categoryTab]);
   const parlays = useMemo(() => makeParlays(eligibleLegs, 500, categoryTab === "combos"), [eligibleLegs, categoryTab]);
   const lottos = useMemo(() => makeParlays(eligibleLegs, 10000, categoryTab === "combos"), [eligibleLegs, categoryTab]);
   // First-basket combinations use 2–4 distinct games. The source has
