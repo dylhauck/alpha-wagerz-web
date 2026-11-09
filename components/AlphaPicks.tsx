@@ -218,7 +218,20 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     byGame.set(leg.game, group);
   }
   const games = [...byGame.values()]
-    .map(group => group.sort((a, b) => b.probability - a.probability).slice(0, 2))
+    .map(group => {
+      const ranked = [...group].sort((a, b) => b.probability - a.probability);
+      if (!mixed) return ranked.slice(0, 2);
+      // Preserve representatives of every available market type. The
+      // previous top-two-only selection could discard all but player props,
+      // making a mixed-market parlay mathematically impossible.
+      const byType = new Map<MarketType, Leg[]>();
+      for (const leg of ranked) {
+        const options = byType.get(leg.marketType) ?? [];
+        if (options.length < 2) options.push(leg);
+        byType.set(leg.marketType, options);
+      }
+      return [...byType.values()].flat();
+    })
     .sort((a, b) => b[0].probability - a[0].probability)
     .slice(0, MAX_LEGS);
   if (games.length < MIN_LEGS) return [];
@@ -228,7 +241,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   beams[0] = [{ legs: [], decimal: 1, probability: 1 }];
   const results: Ticket[] = [];
   const seen = new Set<string>();
-  const BEAM_WIDTH = 300;
+  const BEAM_WIDTH = mixed ? 700 : 300;
 
   for (const group of games) {
     for (let count = MAX_LEGS - 1; count >= 0; count--) {
@@ -254,9 +267,25 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
           }
         }
       }
-      beams[count + 1] = [...beams[count + 1], ...expanded]
-        .sort((a, b) => b.probability - a.probability)
-        .slice(0, BEAM_WIDTH);
+      const candidates = [...beams[count + 1], ...expanded];
+      if (mixed) {
+        // Retain diverse market-type combinations in the beam, rather
+        // than pruning every mixed state behind high-probability props.
+        const buckets = new Map<string, State[]>();
+        for (const state of candidates) {
+          const signature = [...new Set(state.legs.map(l => l.marketType))].sort().join("|");
+          const bucket = buckets.get(signature) ?? [];
+          bucket.push(state);
+          buckets.set(signature, bucket);
+        }
+        const perBucket = Math.max(8, Math.floor(BEAM_WIDTH / Math.max(1, buckets.size)));
+        beams[count + 1] = [...buckets.values()]
+          .flatMap(bucket => bucket.sort((a, b) => b.probability - a.probability).slice(0, perBucket))
+          .sort((a, b) => b.probability - a.probability)
+          .slice(0, BEAM_WIDTH);
+      } else {
+        beams[count + 1] = candidates.sort((a, b) => b.probability - a.probability).slice(0, BEAM_WIDTH);
+      }
     }
   }
   // Rank by confidence, but avoid publishing six near-identical tickets.
