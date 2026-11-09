@@ -206,7 +206,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
   return out.sort((a, b) => b.probability - a.probability);
 }
 
-function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20): Ticket[] {
+function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20, minimumLegConfidence = 0.60): Ticket[] {
   const MIN_LEGS = minLegs;
   const MAX_LEGS = maxLegs;
   // Keep one outcome per matchup, and consider as many as 20 distinct games.
@@ -215,7 +215,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   // A low-confidence underdog must not be inserted merely to reach +500.
   // Lottos retain their separate long-shot eligibility.
   const qualifyingLegs = minOdds < 10000
-    ? legs.filter(leg => leg.probability >= 0.60)
+    ? legs.filter(leg => leg.probability >= minimumLegConfidence)
     : legs;
   const byGame = new Map<string, Leg[]>();
   for (const leg of qualifyingLegs) {
@@ -468,7 +468,14 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       for (const player of game.players) {
         const probability = normalizeProbability(player.probability);
         if (probability === null) continue;
-        const price = basketPrices.find(row => String(row.game_id) === String(game.game_id) && normalizeName(row.player_name) === normalizeName(player.player_name));
+        const prices = basketPrices.filter(row =>
+          String(row.game_id) === String(game.game_id) &&
+          normalizeName(row.player_name) === normalizeName(player.player_name) &&
+          (!row.market_type || row.market_type === "first_made_field_goal") &&
+          num(row.odds) !== null && Math.abs(num(row.odds)!) >= 100
+        );
+        // Choose the best actual quoted price across supported books.
+        const price = prices.sort((a, b) => (num(b.odds) ?? -Infinity) - (num(a.odds) ?? -Infinity))[0];
         const odds = num(price?.odds);
         if (odds === null || odds === 0 || Math.abs(odds) < 100) continue;
         results.push({ id: String(game.game_id) + ":" + String(player.player_id), game: matchupName,
@@ -480,7 +487,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   }, [basketGames, basketPrices]);
   const basketTickets = useMemo(() => mainTab === "straight"
     ? basketLegs.filter(leg => leg.odds >= -150).slice(0, 6).map(leg => ticket([leg]))
-    : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4),
+    : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4, 0),
     [basketLegs, mainTab]);
   const section = mainTab === "parlay"
     ? { title: "Most Confident Parlays", subtitle: "Six highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
