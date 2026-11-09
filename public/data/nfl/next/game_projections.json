@@ -5,7 +5,7 @@
       "away_team": "WAS",
       "home_team": "NYG",
       "away_projection": {
-        "projected_points": 19.9,
+        "projected_points": 19.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.37,
@@ -15,8 +15,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 20.72,
-          "weather_scoring_factor": 0.961,
-          "weather_adjustment_points": -0.81
+          "weather_scoring_factor": 0.948,
+          "weather_adjustment_points": -1.08
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -33,19 +33,19 @@
             "temperature_f": 55.3,
             "feels_like_f": 50.9,
             "humidity_pct": 87.0,
-            "precip_probability_pct": 67.0,
+            "precip_probability_pct": 70.0,
             "precipitation_in": 0.122,
             "wind_mph": 11.5,
             "wind_gust_mph": 23.5,
             "weather_code": 81,
             "conditions": "Rain Showers"
           },
-          "classification": "MODERATE",
-          "severity_score": 3.0,
-          "scoring_factor": 0.961,
-          "passing_factor": 0.946,
-          "rushing_factor": 1.015,
-          "kicking_factor": 0.94
+          "classification": "SIGNIFICANT",
+          "severity_score": 4.0,
+          "scoring_factor": 0.948,
+          "passing_factor": 0.928,
+          "rushing_factor": 1.02,
+          "kicking_factor": 0.92
         },
         "matchup_rating": -8.0,
         "matchup_label": "Difficult",
@@ -59,7 +59,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 22.5,
+        "projected_points": 22.2,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.0,
@@ -69,8 +69,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 23.38,
-          "weather_scoring_factor": 0.961,
-          "weather_adjustment_points": -0.91
+          "weather_scoring_factor": 0.948,
+          "weather_adjustment_points": -1.22
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -87,19 +87,19 @@
             "temperature_f": 55.3,
             "feels_like_f": 50.9,
             "humidity_pct": 87.0,
-            "precip_probability_pct": 67.0,
+            "precip_probability_pct": 70.0,
             "precipitation_in": 0.122,
             "wind_mph": 11.5,
             "wind_gust_mph": 23.5,
             "weather_code": 81,
             "conditions": "Rain Showers"
           },
-          "classification": "MODERATE",
-          "severity_score": 3.0,
-          "scoring_factor": 0.961,
-          "passing_factor": 0.946,
-          "rushing_factor": 1.015,
-          "kicking_factor": 0.94
+          "classification": "SIGNIFICANT",
+          "severity_score": 4.0,
+          "scoring_factor": 0.948,
+          "passing_factor": 0.928,
+          "rushing_factor": 1.02,
+          "kicking_factor": 0.92
         },
         "matchup_rating": 1.9,
         "matchup_label": "Neutral",
@@ -113,10 +113,10 @@
         }
       },
       "projected_score": {
-        "away": 19.9,
-        "home": 22.5
+        "away": 19.6,
+        "home": 22.2
       },
-      "projected_total": 42.4,
+      "projected_total": 41.8,
       "expected_margin": 2.6,
       "projected_winner": "NYG",
       "win_probability": {
@@ -193,7 +193,7 @@
           "temperature_f": 55.3,
           "feels_like_f": 50.9,
           "humidity_pct": 87.0,
-          "precip_probability_pct": 67.0,
+          "precip_probability_pct": 70.0,
           "precipitation_in": 0.122,
           "wind_mph": 11.5,
           "wind_gust_mph": 23.5,
@@ -201,12 +201,12 @@
           "conditions": "Rain Showers"
         },
         "context": {
-          "severity_score": 3.0,
-          "passing_factor": 0.946,
-          "rushing_factor": 1.015,
-          "scoring_factor": 0.961,
-          "kicking_factor": 0.94,
-          "classification": "MODERATE"
+          "severity_score": 4.0,
+          "passing_factor": 0.928,
+          "rushing_factor": 1.02,
+          "scoring_factor": 0.948,
+          "kicking_factor": 0.92,
+          "classification": "SIGNIFICANT"
         }
       },
       "model": {
