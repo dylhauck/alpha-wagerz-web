@@ -1,27 +1,36 @@
 {
-  "generated_at": "2026-11-09T22:12:22.251044+00:00",
+  "generated_at": "2026-11-10T17:21:02.891421+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_09_BUF_MIN",
-      "away_team": "BUF",
-      "home_team": "MIN",
-      "stadium": "U.S. Bank Stadium",
-      "latitude": 44.9736,
-      "longitude": -93.2575,
-      "roof": "fixed",
-      "kickoff": "2026-11-09T20:15",
+      "game_id": "2026_10_WAS_NYG",
+      "away_team": "WAS",
+      "home_team": "NYG",
+      "stadium": "MetLife Stadium",
+      "latitude": 40.8135,
+      "longitude": -74.0745,
+      "roof": "outdoor",
+      "kickoff": "2026-11-12T20:15",
       "available": true,
       "weather": {
-        "conditions": "Indoor"
+        "forecast_time": "2026-11-12T20:00",
+        "temperature_f": 52.9,
+        "feels_like_f": 47.8,
+        "humidity_pct": 79.0,
+        "precip_probability_pct": 55.0,
+        "precipitation_in": 0.004,
+        "wind_mph": 10.1,
+        "wind_gust_mph": 19.9,
+        "weather_code": 51,
+        "conditions": "Light Drizzle"
       },
       "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "INDOOR"
+        "severity_score": 2.0,
+        "passing_factor": 0.964,
+        "rushing_factor": 1.01,
+        "scoring_factor": 0.974,
+        "kicking_factor": 0.96,
+        "classification": "MODERATE"
       }
     }
   ]
