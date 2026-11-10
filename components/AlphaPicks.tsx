@@ -245,17 +245,16 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
   return out.sort((a, b) => b.probability - a.probability);
 }
 
-function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20, minimumLegConfidence = 0.60): Ticket[] {
+function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20): Ticket[] {
   const MIN_LEGS = minLegs;
   const MAX_LEGS = maxLegs;
   // Keep one outcome per matchup, and consider as many as 20 distinct games.
   // Beam search avoids the exponential cost of enumerating all combinations.
-  // Standard parlays must use individually favored model outcomes.
-  // A low-confidence underdog must not be inserted merely to reach +500.
-  // Lottos retain their separate long-shot eligibility.
-  const qualifyingLegs = minOdds < 10000
-    ? legs.filter(leg => leg.probability >= minimumLegConfidence)
-    : legs;
+  // Rank all independently modeled selections by their relative confidence.
+  // A fixed 60% leg threshold incorrectly removes the strongest available
+  // selections on balanced slates. Keep the sportsbook + model validation
+  // performed by buildCandidates; do not invent legs to meet ticket targets.
+  const qualifyingLegs = legs;
   const byGame = new Map<string, Leg[]>();
   for (const leg of qualifyingLegs) {
     const group = byGame.get(leg.game) || [];
@@ -527,7 +526,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   }, [basketGames, basketPrices]);
   const basketTickets = useMemo(() => mainTab === "straight"
     ? basketLegs.filter(leg => leg.odds >= -150).slice(0, 6).map(leg => ticket([leg]))
-    : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4, 0),
+    : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4),
     [basketLegs, mainTab]);
   const section = mainTab === "parlay"
     ? { title: "Most Confident Parlays", subtitle: "Six highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
