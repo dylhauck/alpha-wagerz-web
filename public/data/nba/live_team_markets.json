@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T22:04:21.232179+00:00",
+  "generated_at": "2026-11-10T22:37:46.145437+00:00",
   "games": [
     {
       "game_id": "0022600211",
@@ -64,6 +64,16 @@
           },
           "team_totals": null
         },
+        "Q2": {
+          "bookmaker": "DraftKings",
+          "moneyline": null,
+          "spread": null,
+          "total": null,
+          "team_totals": {
+            "away": 24.5,
+            "home": 28.5
+          }
+        },
         "Q1": {
           "bookmaker": "DraftKings",
           "moneyline": null,
@@ -71,17 +81,7 @@
           "total": null,
           "team_totals": {
             "home": 29.5,
-            "away": 25.5
-          }
-        },
-        "Q2": {
-          "bookmaker": "DraftKings",
-          "moneyline": null,
-          "spread": null,
-          "total": null,
-          "team_totals": {
-            "away": 23.5,
-            "home": 28.5
+            "away": 24.5
           }
         }
       }
@@ -214,23 +214,23 @@
             "under_odds": -118
           },
           "team_totals": {
-            "home": 55.5,
-            "away": 61.5
+            "away": 60.5,
+            "home": 55.5
           }
         },
         "2H": {
-          "bookmaker": "FanDuel",
+          "bookmaker": "DraftKings",
           "moneyline": null,
           "spread": {
-            "home_line": 4.5,
-            "away_line": -4.5,
-            "home_odds": -118,
-            "away_odds": -108
+            "home_line": 3.5,
+            "away_line": -3.5,
+            "home_odds": -109,
+            "away_odds": -112
           },
           "total": {
-            "line": 110.5,
-            "over_odds": -118,
-            "under_odds": -104
+            "line": 111.5,
+            "over_odds": -111,
+            "under_odds": -120
           },
           "team_totals": null
         },
@@ -299,34 +299,8 @@
             "under_odds": -115
           },
           "team_totals": {
-            "away": 58.5,
-            "home": 55.5
-          }
-        },
-        "2H": {
-          "bookmaker": "FanDuel",
-          "moneyline": null,
-          "spread": {
-            "home_line": 2.5,
-            "away_line": -2.5,
-            "home_odds": -115,
-            "away_odds": -111
-          },
-          "total": {
-            "line": 107.5,
-            "over_odds": -110,
-            "under_odds": -110
-          },
-          "team_totals": null
-        },
-        "Q2": {
-          "bookmaker": "DraftKings",
-          "moneyline": null,
-          "spread": null,
-          "total": null,
-          "team_totals": {
-            "home": 27.5,
-            "away": 28.5
+            "home": 55.5,
+            "away": 58.5
           }
         },
         "Q1": {
@@ -337,6 +311,32 @@
           "team_totals": {
             "home": 27.5,
             "away": 29.5
+          }
+        },
+        "2H": {
+          "bookmaker": "DraftKings",
+          "moneyline": null,
+          "spread": {
+            "home_line": 2.5,
+            "away_line": -2.5,
+            "home_odds": -111,
+            "away_odds": -111
+          },
+          "total": {
+            "line": 107.5,
+            "over_odds": -120,
+            "under_odds": -111
+          },
+          "team_totals": null
+        },
+        "Q2": {
+          "bookmaker": "DraftKings",
+          "moneyline": null,
+          "spread": null,
+          "total": null,
+          "team_totals": {
+            "away": 28.5,
+            "home": 27.5
           }
         }
       }
@@ -385,22 +385,22 @@
           },
           "team_totals": {
             "away": 55.5,
-            "home": 54.5
+            "home": 55.5
           }
         },
         "2H": {
-          "bookmaker": "FanDuel",
+          "bookmaker": "DraftKings",
           "moneyline": null,
           "spread": {
-            "home_line": 0.5,
-            "away_line": -0.5,
-            "home_odds": -113,
-            "away_odds": -113
+            "home_line": -0.5,
+            "away_line": 0.5,
+            "home_odds": -102,
+            "away_odds": -119
           },
           "total": {
             "line": 114.5,
-            "over_odds": -108,
-            "under_odds": -112
+            "over_odds": -116,
+            "under_odds": -116
           },
           "team_totals": null
         },
@@ -410,8 +410,8 @@
           "spread": null,
           "total": null,
           "team_totals": {
-            "away": 27.5,
-            "home": 27.5
+            "home": 27.5,
+            "away": 27.5
           }
         },
         "Q1": {
@@ -431,7 +431,25 @@
       "event_id": 73719624,
       "away_team": "OKC",
       "home_team": "POR",
-      "full_game": {},
+      "full_game": {
+        "bookmaker": "DraftKings",
+        "moneyline": {
+          "home": 111,
+          "away": -133
+        },
+        "spread": {
+          "home_line": 2.5,
+          "away_line": -2.5,
+          "home_odds": -111,
+          "away_odds": -110
+        },
+        "total": {
+          "line": 224.5,
+          "over_odds": -109,
+          "under_odds": -112
+        },
+        "team_totals": null
+      },
       "periods": {}
     }
   ]
