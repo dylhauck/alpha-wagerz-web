@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import NBAPlayerPropsModal from "@/components/nba/PlayerPropsModal";
 
 type Sport = "mlb" | "nfl" | "nba" | "nhl" | "wnba" | "mls" | "ufc";
 type MarketType = "moneyline" | "spread" | "total" | "player_prop";
@@ -370,7 +369,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   return selected.sort((a, b) => b.probability - a.probability);
 }
 
-function PickCard({ ticket: t, index, category, onPlayerClick }: { ticket: Ticket; index: number; category: "parlay" | "straight" | "lotto"; onPlayerClick?: (name: string) => void }) {
+function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: number; category: "parlay" | "straight" | "lotto" }) {
   const accent = category === "lotto" ? "text-fuchsia-200 border-fuchsia-400/25 bg-fuchsia-400/10" : category === "straight" ? "text-emerald-200 border-emerald-400/25 bg-emerald-400/10" : "text-cyan-200 border-cyan-400/25 bg-cyan-400/10";
   return <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#121d30] via-[#0c1525] to-[#0a1020] shadow-[0_12px_35px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:border-cyan-300/25 hover:shadow-[0_18px_45px_rgba(0,0,0,0.3)]">
     <div className="h-[2px] bg-gradient-to-r from-cyan-400/80 via-fuchsia-400/60 to-transparent" />
@@ -390,15 +389,7 @@ function PickCard({ ticket: t, index, category, onPlayerClick }: { ticket: Ticke
         <div className="min-w-0 flex-1">
           <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">{leg.game}</p>
           <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-            {onPlayerClick && leg.pick.endsWith(" · First Basket") ? (
-              <p className="text-[15px] font-extrabold leading-snug text-white">
-                <button type="button" onClick={() => onPlayerClick(leg.pick.slice(0, -" · First Basket".length))}
-                  className="text-left text-cyan-200 underline decoration-cyan-400/50 underline-offset-4 transition hover:text-fuchsia-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300"
-                  aria-label={"View " + leg.pick.slice(0, -" · First Basket".length) + " player props"}>
-                  {leg.pick.slice(0, -" · First Basket".length)}
-                </button>{" · First Basket"}
-              </p>
-            ) : <p className="text-[15px] font-extrabold leading-snug text-white">{leg.pick}</p>}
+            <p className="text-[15px] font-extrabold leading-snug text-white">{leg.pick}</p>
             <span className="text-sm font-black tabular-nums text-cyan-200">{fmtOdds(leg.odds)}</span>
           </div>
           <p className="mt-1 text-xs text-slate-400">Model estimate <span className="font-bold tabular-nums text-slate-200">{percent(leg.probability)}</span></p>
@@ -419,7 +410,6 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   const [legs, setLegs] = useState<Leg[]>([]);
   const [basketGames, setBasketGames] = useState<any[]>([]);
   const [basketPrices, setBasketPrices] = useState<any[]>([]);
-  const [selectedBasketPlayer, setSelectedBasketPlayer] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
   const [mainTab, setMainTab] = useState<MainTab>("parlay");
@@ -583,15 +573,10 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
 
         </div>
         {categoryTab === "first_basket" && sport === "nba" ? (basketTickets.length
-          ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{basketTickets.map((t, i) => <PickCard key={"basket" + mainTab + i} ticket={t} index={i} category={section.category} onPlayerClick={setSelectedBasketPlayer} />)}</div>
+          ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{basketTickets.map((t, i) => <PickCard key={"basket" + mainTab + i} ticket={t} index={i} category={section.category} />)}</div>
           : <p className="rounded-2xl border border-white/10 p-6 text-center text-sm text-slate-400">No first-basket selections meet this category’s price and model criteria on the current slate.</p>) : ["anytime_goal", "first_goal", "home_run", "anytime_td", "first_td"].includes(categoryTab) ? <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-center text-sm text-slate-400">This scorer market requires matching player-level model probabilities and verified sportsbook odds. No eligible priced selections are currently available. The category will remain empty rather than display invented odds.</p> : section.tickets.length ? <div className="grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">{section.tickets.map((t, i) => <PickCard key={mainTab + categoryTab + i} ticket={t} index={i} category={section.category} />)}</div> :
           <p className="rounded-2xl border border-white/10 bg-white/[0.035] p-6 text-sm text-slate-400">No qualifying {pickTabs.find(tab => tab.id === categoryTab)?.label.toLowerCase()} {mainTab === "parlay" ? "parlay" : mainTab === "straight" ? "straight" : "lotto"} picks are available from verified sportsbook prices and model probabilities for this slate. No picks were fabricated.</p>}
       </section>
     </>}
-    {sport === "nba" && <NBAPlayerPropsModal
-      open={selectedBasketPlayer !== null}
-      onClose={() => setSelectedBasketPlayer(null)}
-      playerName={selectedBasketPlayer}
-    />}
   </main>;
 }
