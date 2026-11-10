@@ -328,7 +328,23 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
           .sort((a, b) => b.probability - a.probability)
           .slice(0, BEAM_WIDTH);
       } else {
-        beams[count + 1] = candidates.sort((a, b) => b.probability - a.probability).slice(0, BEAM_WIDTH);
+        // Confidence-only pruning keeps short-priced favorites and can
+        // eliminate every path to the lotto odds threshold. Retain both
+        // confident and higher-priced valid combinations at each leg count.
+        const byConfidence = [...candidates].sort((a, b) => b.probability - a.probability);
+        const byPrice = [...candidates].sort((a, b) => b.decimal - a.decimal || b.probability - a.probability);
+        const byBalance = [...candidates].sort((a, b) =>
+          b.probability * Math.sqrt(b.decimal) - a.probability * Math.sqrt(a.decimal));
+        const retained = new Map<string, State>();
+        for (const ranking of [byConfidence, byPrice, byBalance]) {
+          for (const state of ranking.slice(0, BEAM_WIDTH)) {
+            const signature = state.legs.map(leg => leg.id).sort().join("|");
+            if (!retained.has(signature)) retained.set(signature, state);
+          }
+        }
+        beams[count + 1] = [...retained.values()]
+          .sort((a, b) => b.probability * Math.sqrt(b.decimal) - a.probability * Math.sqrt(a.decimal))
+          .slice(0, BEAM_WIDTH);
       }
     }
   }
@@ -494,7 +510,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     return selected.slice(0, 6).map(leg => ticket([leg]));
   }, [eligibleLegs, categoryTab]);
   const parlays = useMemo(() => makeParlays(eligibleLegs, 500, categoryTab === "combos"), [eligibleLegs, categoryTab]);
-  const lottos = useMemo(() => makeParlays(eligibleLegs, 10000, categoryTab === "combos"), [eligibleLegs, categoryTab]);
+  const lottos = useMemo(() => makeParlays(eligibleLegs, 7500, categoryTab === "combos"), [eligibleLegs, categoryTab]);
   // First-basket combinations use 2–4 distinct games. The source has
   // modeled probabilities but NO sportsbook first-basket odds.
   // Show projections only, never invent parlay prices or claim eligibility.
@@ -526,13 +542,13 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   }, [basketGames, basketPrices]);
   const basketTickets = useMemo(() => mainTab === "straight"
     ? basketLegs.filter(leg => leg.odds >= -150).slice(0, 6).map(leg => ticket([leg]))
-    : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4),
+    : makeParlays(basketLegs, mainTab === "lotto" ? 7500 : 500, false, 2, 4),
     [basketLegs, mainTab]);
   const section = mainTab === "parlay"
     ? { title: "Most Confident Parlays", subtitle: "Six highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
     : mainTab === "straight"
     ? { title: "Most Confident Straight Bets", subtitle: "Six highest-confidence qualifying straight bets per market", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
-    : { title: "Lotto Parlays", subtitle: "Six highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
+    : { title: "Lotto Parlays", subtitle: "Six highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+7,500 minimum · 3–20 legs" };
   const pickTabs: { id: PickTab; label: string }[] = [
     { id: "moneyline", label: "Moneylines" },
     { id: "spread", label: "Spreads" },
