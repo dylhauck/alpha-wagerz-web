@@ -1044,12 +1044,14 @@ function FirstBasketGraph({
   homeTeam,
   awayPlayers,
   homePlayers,
+  onPlayerClick,
 }: {
   game: FirstBasketGame | null;
   awayTeam: string;
   homeTeam: string;
   awayPlayers: NBAPlayerMatchup[];
   homePlayers: NBAPlayerMatchup[];
+  onPlayerClick: (player: NBAPlayerMatchup) => void;
 }) {
   const candidates = game?.status === "estimated" ? game.players : [];
   const chanceValues = candidates.map((candidate) => candidate.probability);
@@ -1106,7 +1108,7 @@ function FirstBasketGraph({
             {candidates.map((row, index) => (
               <tr key={`${row.team}-${row.player_id ?? row.player_name}`} className="bg-white/[0.04]">
                 <td className="rounded-l-xl px-3 py-3 text-center font-black text-cyan-200">{index + 1}</td>
-                <td className="px-3 py-3 font-black text-white">{row.player_name}</td>
+                <td className="px-3 py-3 font-black text-white"><button type="button" onClick={() => onPlayerClick({ player_id: row.player_id, player_name: row.player_name, team: row.team } as NBAPlayerMatchup)} className="text-left text-cyan-200 underline decoration-cyan-400/50 underline-offset-4 hover:text-fuchsia-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" aria-label={`View ${row.player_name} player props`}>{row.player_name}</button></td>
                 <td className="px-3 py-3 text-center font-bold text-slate-300">{row.team}</td>
                 <td className="px-3 py-3 text-center">
                   <span className="inline-block min-w-[88px] rounded-lg px-3 py-2 font-black text-white" style={{ backgroundColor: firstBasketHeatColor(row.probability, lowChance, highChance) }}>
@@ -1121,7 +1123,7 @@ function FirstBasketGraph({
             {!candidates.length && projectedLineup.map((row, index) => (
               <tr key={`pending-${row.team}-${row.player_id}`} className="bg-white/[0.04]">
                 <td className="rounded-l-xl px-3 py-3 text-center font-black text-cyan-200">{index + 1}</td>
-                <td className="px-3 py-3 font-black text-white">{row.player_name}</td>
+                <td className="px-3 py-3 font-black text-white"><button type="button" onClick={() => onPlayerClick({ player_id: row.player_id, player_name: row.player_name, team: row.team } as NBAPlayerMatchup)} className="text-left text-cyan-200 underline decoration-cyan-400/50 underline-offset-4 hover:text-fuchsia-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300" aria-label={`View ${row.player_name} player props`}>{row.player_name}</button></td>
                 <td className="px-3 py-3 text-center font-bold text-slate-300">{row.team}</td>
                 <td colSpan={4} className="rounded-r-xl px-3 py-3 text-center font-bold text-slate-500">
                   — · insufficient verified first-basket data
@@ -1495,6 +1497,7 @@ export default function NBAPage() {
                 homeTeam={homeCode}
                 awayPlayers={awayPlayers}
                 homePlayers={homePlayers}
+                onPlayerClick={setSelectedPropPlayer}
               />
             ) : (
             <>
