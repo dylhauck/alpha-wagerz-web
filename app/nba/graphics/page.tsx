@@ -126,63 +126,66 @@ function footer(w: number, h: number, top?: Selection, footerImage?: string) {
 }
 function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait", markets: Market[], footerImage?: string) {
   const w = size === "landscape" ? 1600 : 1080;
-  const compact = selected.length >= 7;
+  const compact = selected.length > 6;
   const cols = compact ? 1 : 2;
-  const gap = 24, left = 56, top = 228;
-  const cardH = compact ? 118 : 338;
+  const gap = 18, left = 22, top = 284;
+  const cardH = compact ? 142 : 310;
   const rows = Math.ceil(selected.length / cols);
-  const minHeight = size === "landscape" ? 900 : 1350;
-  const h = Math.max(minHeight, top + rows * (cardH + gap) + 200);
-  const cardW = (w - left * 2 - gap * (cols-1)) / cols;
-  const best = selected.flatMap(g => choices(g, markets.find(m => m.game_id === g.game_id && m.away_team === g.away_team && m.home_team === g.home_team))).sort((a,b) => b.confidence-a.confidence)[0];
+  const h = Math.max(size === "landscape" ? 900 : 1350, top + rows * (cardH + gap) + 210);
+  const cardW = (w - left * 2 - gap * (cols - 1)) / cols;
+  const matching = (g: Game) => markets.find(m => m.game_id === g.game_id && (!m.home_team || m.home_team === g.home_team) && (!m.away_team || m.away_team === g.away_team));
+  const best = selected.flatMap(g => choices(g, matching(g))).sort((a,b) => b.confidence - a.confidence)[0];
+  const label = (text: string, max = 29) => esc(text.length > max ? text.slice(0, max-1) + "…" : text);
   const body = selected.map((game, i) => {
-    const x = left + (i%cols)*(cardW+gap), y = top + Math.floor(i/cols)*(cardH+gap);
-    const m = game.model || {}, market = markets.find(k => k.game_id === game.game_id);
+    const x = left + (i % cols) * (cardW + gap), y = top + Math.floor(i / cols) * (cardH + gap);
+    const m = game.model || {}, market = matching(game);
     const lines = marketSummary(game, market);
-    const topPick = choices(game, market)[0];
-    const awayPct = pct(m.away_win_probability), homePct = pct(m.home_win_probability);
-    const winning = numeric(m.away_win_probability) && numeric(m.home_win_probability)
-      ? (m.away_win_probability >= m.home_win_probability ? game.away_team : game.home_team) : "—";
-    const frame = `<rect x="${x}" y="${y}" width="${cardW}" height="${cardH}" rx="18" fill="#071327" stroke="${i%2 ? "#ff49d4" : "#1fe9ff"}" stroke-width="3" filter="url(#glow)"/>`;
+    const pick = choices(game, market)[0];
+    const edge = i % 2 ? "#ff4adf" : "#15eaff";
+    const frame = `<rect x="${x}" y="${y}" width="${cardW}" height="${cardH}" rx="19" fill="#030913" stroke="${edge}" stroke-width="4" filter="url(#glow)"/><rect x="${x+8}" y="${y+8}" width="${cardW-16}" height="${cardH-16}" rx="14" fill="#030b1b" stroke="#3379ac" stroke-opacity=".55"/>`;
     if (compact) return `<g font-family="Arial,sans-serif">${frame}
-      ${logo(game.away_team,x+16,y+13,65)} ${logo(game.home_team,x+93,y+13,65)}
-      <text x="${x+170}" y="${y+38}" font-size="23" font-weight="900" fill="#fff">${esc(game.away_team)} VS ${esc(game.home_team)}</text>
-      <text x="${x+170}" y="${y+72}" font-size="20" fill="#49eaff">SCORE ${score(m.away_score)} – ${score(m.home_score)}</text>
-      <text x="${x+cardW*.52}" y="${y+38}" font-size="23" font-weight="900" fill="#fff">${esc(winning)} ${pct(Math.max(m.away_win_probability ?? NaN,m.home_win_probability ?? NaN))}</text>
-      <text x="${x+cardW*.52}" y="${y+72}" font-size="18" fill="#ef92df">ML: ${esc(lines.ml)}</text>
-      <text x="${x+cardW-18}" y="${y+38}" text-anchor="end" font-size="20" fill="#fff">SPREAD ${esc(lines.spread)}</text>
-      <text x="${x+cardW-18}" y="${y+72}" text-anchor="end" font-size="20" fill="#49eaff">${esc(lines.total)}</text>
+      ${logo(game.away_team,x+17,y+15,83)} ${logo(game.home_team,x+cardW*.35,y+15,83)}
+      <text x="${x+110}" y="${y+48}" font-size="26" font-weight="900" fill="white">${esc(game.away_team)}</text>
+      <text x="${x+cardW*.35+92}" y="${y+48}" font-size="26" font-weight="900" fill="white">${esc(game.home_team)}</text>
+      <text x="${x+cardW*.24}" y="${y+43}" font-size="25" font-weight="900" fill="#2deaff">VS</text>
+      <text x="${x+110}" y="${y+82}" font-size="19" fill="#a8c7e5">PROJECTED ${score(m.away_score)} – ${score(m.home_score)}</text>
+      <text x="${x+cardW*.59}" y="${y+40}" font-size="20" fill="#32eaff">WIN % ${pct(m.away_win_probability)} / ${pct(m.home_win_probability)}</text>
+      <text x="${x+cardW*.59}" y="${y+77}" font-size="19" fill="#fff">ML: ${label(lines.ml,32)}</text>
+      <text x="${x+22}" y="${y+123}" font-size="19" fill="#fff">SPREAD: ${label(lines.spread,25)}</text>
+      <text x="${x+cardW*.54}" y="${y+123}" font-size="19" fill="#fff">TOTAL: ${esc(lines.total)}</text>
     </g>`;
-    const half = cardW / 2;
-    const label = (value: string, max = 25) => esc(value.length > max ? value.slice(0, max - 1) + "…" : value);
+    const center = x + cardW/2;
+    const sideW = cardW*.39;
     return `<g font-family="Arial,sans-serif">${frame}
-      <rect x="${x+14}" y="${y+14}" width="${cardW-28}" height="136" rx="12" fill="#0c1d35"/>
-      ${logo(game.away_team,x+28,y+24,74)} ${logo(game.home_team,x+cardW-102,y+24,74)}
-      <text x="${x+65}" y="${y+121}" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">${esc(game.away_team)}</text>
-      <text x="${x+cardW-65}" y="${y+121}" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">${esc(game.home_team)}</text>
-      <text x="${x+half}" y="${y+57}" text-anchor="middle" font-size="22" font-weight="900" fill="#3beaff">VS</text>
-      <text x="${x+half}" y="${y+90}" text-anchor="middle" font-size="23" font-weight="900" fill="#fff">${score(m.away_score)} – ${score(m.home_score)}</text>
-      <text x="${x+half}" y="${y+115}" text-anchor="middle" font-size="14" fill="#91aecf">PROJECTED SCORE</text>
-      <text x="${x+24}" y="${y+179}" font-size="17" font-weight="800" fill="#40e9ff">MODEL WIN PROBABILITY</text>
-      <text x="${x+cardW-24}" y="${y+179}" text-anchor="end" font-size="18" font-weight="900" fill="#fff">${awayPct} / ${homePct}</text>
-      <rect x="${x+24}" y="${y+192}" width="${cardW-48}" height="6" rx="3" fill="#213c60"/>
-      <rect x="${x+24}" y="${y+192}" width="${numeric(m.away_win_probability) ? (cardW-48)*Math.min(1,Math.max(0,m.away_win_probability > 1 ? m.away_win_probability/100 : m.away_win_probability)) : 0}" height="6" rx="3" fill="#30dfff"/>
-      <path d="M${x+20} ${y+212} H${x+cardW-20}" stroke="#2d537a" stroke-width="1.5"/>
-      <text x="${x+24}" y="${y+235}" font-size="14" font-weight="800" fill="#42eaff">MONEYLINE</text>
-      <text x="${x+cardW-24}" y="${y+235}" text-anchor="end" font-size="17" font-weight="800" fill="#fff">${label(lines.ml,29)}</text>
-      <text x="${x+24}" y="${y+269}" font-size="14" font-weight="800" fill="#42eaff">SPREAD</text>
-      <text x="${x+cardW-24}" y="${y+269}" text-anchor="end" font-size="17" font-weight="800" fill="#fff">${label(lines.spread,24)}</text>
-      <text x="${x+24}" y="${y+303}" font-size="14" font-weight="800" fill="#42eaff">OVER / UNDER</text>
-      <text x="${x+cardW-24}" y="${y+303}" text-anchor="end" font-size="17" font-weight="800" fill="#fff">${esc(lines.total)}</text>
+      ${logo(game.away_team,x+23,y+14,82)} ${logo(game.home_team,x+cardW-105,y+14,82)}
+      <text x="${x+118}" y="${y+46}" font-size="21" font-weight="900" fill="#fff">${esc(game.away_team)}</text>
+      <text x="${x+cardW-118}" y="${y+46}" text-anchor="end" font-size="21" font-weight="900" fill="#fff">${esc(game.home_team)}</text>
+      <text x="${center}" y="${y+47}" text-anchor="middle" font-size="29" font-weight="900" fill="#29eaff">VS</text>
+      <rect x="${x+48}" y="${y+107}" width="${cardW-96}" height="34" rx="10" fill="#260c30" stroke="#fa51d8" stroke-width="2.5" filter="url(#glow)"/>
+      <text x="${center}" y="${y+130}" text-anchor="middle" font-size="19" font-weight="900" font-style="italic" fill="#fff">MODEL GAME PROJECTIONS</text>
+      <rect x="${x+14}" y="${y+150}" width="${cardW-28}" height="65" rx="8" fill="#07152b" stroke="#1ce5ff" stroke-width="2"/>
+      <path d="M${center} ${y+150} v65" stroke="#1ce5ff" stroke-width="1.5"/>
+      <text x="${x+28}" y="${y+170}" font-size="14" font-weight="800" fill="#41edff">PROJECTED SCORE</text>
+      <text x="${x+28}" y="${y+201}" font-size="24" font-weight="900" fill="#fff">${score(m.away_score)} – ${score(m.home_score)}</text>
+      <text x="${center+14}" y="${y+170}" font-size="14" font-weight="800" fill="#41edff">MODEL WIN %</text>
+      <text x="${center+14}" y="${y+201}" font-size="21" font-weight="900" fill="#fff">${pct(m.away_win_probability)} / ${pct(m.home_win_probability)}</text>
+      <rect x="${x+14}" y="${y+221}" width="${cardW-28}" height="72" rx="8" fill="#07152b" stroke="#f251d9" stroke-width="2"/>
+      <path d="M${x+14+sideW} ${y+221} v72 M${x+14+sideW*2} ${y+221} v72" stroke="#27dfff" stroke-width="1.5"/>
+      <text x="${x+23}" y="${y+243}" font-size="13" font-weight="800" fill="#3ceaff">MONEYLINE</text>
+      <text x="${x+23}" y="${y+274}" font-size="17" font-weight="900" fill="#fff">${label(lines.ml,17)}</text>
+      <text x="${x+22+sideW}" y="${y+243}" font-size="13" font-weight="800" fill="#3ceaff">SPREAD</text>
+      <text x="${x+22+sideW}" y="${y+274}" font-size="17" font-weight="900" fill="#fff">${label(lines.spread,14)}</text>
+      <text x="${x+22+sideW*2}" y="${y+243}" font-size="13" font-weight="800" fill="#3ceaff">OVER / UNDER</text>
+      <text x="${x+22+sideW*2}" y="${y+274}" font-size="17" font-weight="900" fill="#fff">${esc(lines.total)}</text>
     </g>`;
   }).join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
-    ${background(w,h)}${header(w,data.slate_date || "DATE UNAVAILABLE",selected.length)}
+    ${background(w,h)}
+    ${header(w,data.slate_date || "DATE UNAVAILABLE",selected.length)}
     ${body}${footer(w,h,best,footerImage)}
   </svg>`;
 }
-// Keep brand art as separate same-origin layers so PNG export remains reliable.
-const branding = ["/alphawolf.png", "/awlogo2.png"];
+
 function brandPlacement(width: number) {
   const shieldSize = width === 1600 ? 194 : 154;
   // Align the bottom of the cropped wolf art to the first card's top edge.
