@@ -181,12 +181,15 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
 // Keep brand art as separate same-origin layers so PNG export remains reliable.
 const branding = ["/alphawolf.png", "/awlogo2.png"];
 function brandPlacement(width: number) {
-  const imageWidth = width === 1600 ? 194 : 154;
-  // The wolf rests on the top edge of the first matchup card (x=56, y=228).
-  // Its transparent lower edge overlaps the card border instead of floating in the header.
-  const wolfSize = width === 1600 ? 160 : 150;
-  return [{ x: 60, y: 228 - wolfSize + 20, w: wolfSize, h: wolfSize },
-    { x: width - imageWidth - 24, y: 22, w: imageWidth, h: imageWidth }];
+  const shieldSize = width === 1600 ? 194 : 154;
+  // Place the wolf's shoulders across the first card's top border, like the
+  // approved reference. Keep the face above the border and away from the title.
+  const wolfSize = width === 1600 ? 255 : 225;
+  const cardTop = 228;
+  return [
+    { x: 18, y: cardTop - wolfSize + 60, w: wolfSize, h: wolfSize },
+    { x: width - shieldSize - 24, y: 22, w: shieldSize, h: shieldSize }
+  ];
 }
 function previewSvg(svg: string, brandImages: string[] = branding) {
   const width = Number(svg.match(/width="(\d+)"/)?.[1] || 1080);
