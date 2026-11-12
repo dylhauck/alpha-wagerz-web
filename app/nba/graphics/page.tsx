@@ -133,7 +133,7 @@ export default function GraphicsPage() {
         <label className="text-sm font-bold text-slate-200">Format <select value={format} onChange={e => setFormat(e.target.value as "landscape" | "portrait")} className="ml-2 rounded-lg border border-white/20 bg-[#071426] px-3 py-2"><option value="landscape">Landscape · 1600 × 900</option><option value="portrait">Portrait · 1080 × 1350</option></select></label>
         <button type="button" onClick={download} disabled={!svg} className="rounded-xl bg-gradient-to-r from-cyan-400 to-fuchsia-500 px-6 py-2 font-black text-[#071426] disabled:opacity-40">Download PNG</button>
       </div>
-      <p className="mt-3 text-xs text-slate-400">NBA Game Projections · Select up to ${limit} matchups per graphic. Additional graphics can be downloaded by changing the selection.</p>
+      <p className="mt-3 text-xs text-slate-400">NBA Game Projections · Select up to {limit} matchups per graphic. Additional graphics can be downloaded by changing the selection.</p>
       {busy && <p className="mt-4 text-cyan-300">Loading current model projections…</p>}
       {error && <p role="alert" className="mt-4 text-rose-300">{error}</p>}
       {payload && <div className="mt-4 flex flex-wrap gap-2">{(payload.games || []).map(g => <label key={String(g.game_id)} className="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs text-slate-200"><input type="checkbox" checked={selectedIds.includes(String(g.game_id))} onChange={e => setSelectedIds(ids => e.target.checked ? [...ids, String(g.game_id)] : ids.filter(id => id !== String(g.game_id)))} />{g.away_team} @ {g.home_team}</label>)}</div>}
