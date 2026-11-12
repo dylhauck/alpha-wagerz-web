@@ -15,6 +15,7 @@ import {
   Swords,
   Target,
   Trophy,
+  ImageIcon,
   Users,
   Shield,
   Menu,
@@ -152,6 +153,7 @@ const nflNavItems: NavItem[] = [
     icon: LineChart,
   },
   { label: "Alpha Picks", path: "/alpha-picks", icon: Trophy },
+  { label: "Graphics", path: "/graphics", icon: ImageIcon },
   {
     label: "Injury Report",
     path: "/injuries",
