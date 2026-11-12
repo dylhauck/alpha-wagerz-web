@@ -77,6 +77,9 @@ const background = (w: number, h: number) => `<defs>
   </defs>
   <rect width="${w}" height="${h}" fill="url(#bg)"/>
   <ellipse cx="${w*.08}" cy="110" rx="${w*.22}" ry="230" fill="url(#cyanAtmos)"/>
+  <!-- Cyan/magenta atmospheric glow behind the wolf ties its edges into the card border. -->
+  <ellipse cx="176" cy="202" rx="190" ry="138" fill="url(#cyanAtmos)" opacity=".72"/>
+  <ellipse cx="225" cy="198" rx="130" ry="116" fill="url(#pinkAtmos)" opacity=".45"/>
   <ellipse cx="${w*.92}" cy="110" rx="${w*.22}" ry="230" fill="url(#pinkAtmos)"/>
   <ellipse cx="${w*.5}" cy="${h*.6}" rx="${w*.58}" ry="${h*.52}" fill="url(#cyanAtmos)" opacity=".16"/>
   <rect width="${w}" height="${h}" fill="url(#grid)"/>
@@ -182,12 +185,12 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
 const branding = ["/alphawolf.png", "/awlogo2.png"];
 function brandPlacement(width: number) {
   const shieldSize = width === 1600 ? 194 : 154;
-  // Place the wolf's shoulders across the first card's top border, like the
-  // approved reference. Keep the face above the border and away from the title.
-  const wolfSize = width === 1600 ? 255 : 225;
+  // Align the bottom of the cropped wolf art to the first card's top edge.
+  // Do not overlap the team logo or projected-score content below that edge.
+  const wolfSize = width === 1600 ? 205 : 180;
   const cardTop = 228;
   return [
-    { x: 18, y: cardTop - wolfSize + 60, w: wolfSize, h: wolfSize },
+    { x: 74, y: cardTop - wolfSize + 2, w: wolfSize, h: wolfSize },
     { x: width - shieldSize - 24, y: 22, w: shieldSize, h: shieldSize }
   ];
 }
