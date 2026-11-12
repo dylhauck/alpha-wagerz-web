@@ -72,7 +72,6 @@ const background = (w: number, h: number) => `<defs>
   <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   <radialGradient id="cyanAtmos"><stop stop-color="#04cfff" stop-opacity=".42"/><stop offset=".48" stop-color="#0751aa" stop-opacity=".18"/><stop offset="1" stop-color="#071327" stop-opacity="0"/></radialGradient>
   <radialGradient id="pinkAtmos"><stop stop-color="#ff24cf" stop-opacity=".38"/><stop offset=".52" stop-color="#8b1d9d" stop-opacity=".16"/><stop offset="1" stop-color="#071327" stop-opacity="0"/></radialGradient>
-  <radialGradient id="courtLight"><stop stop-color="#0dbbe7" stop-opacity=".10"/><stop offset="1" stop-color="#040c20" stop-opacity="0"/></radialGradient>
   <filter id="brandHalo" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="18"/></filter>
   <pattern id="grid" width="45" height="45" patternUnits="userSpaceOnUse"><path d="M45 0H0V45" fill="none" stroke="#24568a" stroke-opacity=".12"/></pattern>
   </defs>
@@ -81,15 +80,6 @@ const background = (w: number, h: number) => `<defs>
   <ellipse cx="${w*.92}" cy="110" rx="${w*.22}" ry="230" fill="url(#pinkAtmos)"/>
   <ellipse cx="${w*.5}" cy="${h*.6}" rx="${w*.58}" ry="${h*.52}" fill="url(#cyanAtmos)" opacity=".16"/>
   <rect width="${w}" height="${h}" fill="url(#grid)"/>
-  <!-- Dim full-court geometry behind the data; scaled for every canvas height. -->
-  <g transform="translate(${w*.5} ${h*.54}) scale(${w/1600} ${Math.min(h/1100,1.6)})" fill="none" stroke="#36bde8" stroke-width="3" opacity=".11">
-    <rect x="-690" y="-345" width="1380" height="690" rx="8"/>
-    <path d="M0 -345 V345 M0 -100 A100 100 0 1 0 0 100 A100 100 0 1 0 0 -100"/>
-    <rect x="-690" y="-180" width="190" height="360"/><rect x="500" y="-180" width="190" height="360"/>
-    <circle cx="-500" cy="0" r="85"/><circle cx="500" cy="0" r="85"/>
-    <path d="M-690 -240 Q-210 0 -690 240 M690 -240 Q210 0 690 240"/>
-  </g>
-  <ellipse cx="${w*.5}" cy="${h*.54}" rx="${w*.55}" ry="${h*.38}" fill="url(#courtLight)"/>
   <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".38">
     <path d="M0 ${h*.37} l${w*.07} -24 l${w*.023} 37 l${w*.08} -62 l${w*.028} 29 l${w*.12} -48" stroke="#1cdeff" stroke-width="2.8" filter="url(#glow)"/>
     <path d="M${w} ${h*.47} l-${w*.07} -33 l-${w*.025} 39 l-${w*.09} -59 l-${w*.025} 26 l-${w*.1} -44" stroke="#fa43d5" stroke-width="2.8" filter="url(#glow)"/>
@@ -192,7 +182,10 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
 const branding = ["/alphawolf.png", "/awlogo2.png"];
 function brandPlacement(width: number) {
   const imageWidth = width === 1600 ? 194 : 154;
-  return [{ x: 24, y: 22, w: imageWidth, h: imageWidth },
+  // The wolf rests on the top edge of the first matchup card (x=56, y=228).
+  // Its transparent lower edge overlaps the card border instead of floating in the header.
+  const wolfSize = width === 1600 ? 160 : 150;
+  return [{ x: 60, y: 228 - wolfSize + 20, w: wolfSize, h: wolfSize },
     { x: width - imageWidth - 24, y: 22, w: imageWidth, h: imageWidth }];
 }
 function previewSvg(svg: string, brandImages: string[] = branding) {
