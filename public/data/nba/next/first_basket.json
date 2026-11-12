@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T16:46:55.572866+00:00",
+  "generated_at": "2026-11-12T21:25:34.827757+00:00",
   "slate_type": "next",
   "games": [
     {
@@ -1268,17 +1268,17 @@
       "lineup_status": "previous_confirmed_lineup",
       "lineup_sources": {
         "away": "previous_confirmed_lineup",
-        "away_previous_game_id": "401909974",
+        "away_previous_game_id": "401909905",
         "home": "previous_confirmed_lineup",
         "home_previous_game_id": "401909969"
       },
       "projected_starters": [
         {
-          "player_id": 203110,
-          "player_name": "Draymond Green",
+          "player_id": 1627777,
+          "player_name": "Georges Niang",
           "team": "GSW",
           "side": "away",
-          "minutes": 27.8,
+          "minutes": 0.0,
           "fg_pct": 0.0
         },
         {
@@ -1290,19 +1290,19 @@
           "fg_pct": 0.0
         },
         {
-          "player_id": 201143,
-          "player_name": "Al Horford",
+          "player_id": 1629646,
+          "player_name": "Charles Bassey",
           "team": "GSW",
           "side": "away",
-          "minutes": 24.3,
+          "minutes": 0.0,
           "fg_pct": 0.0
         },
         {
-          "player_id": 201939,
-          "player_name": "Stephen Curry",
+          "player_id": 1629001,
+          "player_name": "De'Anthony Melton",
           "team": "GSW",
           "side": "away",
-          "minutes": 35.0,
+          "minutes": 25.0,
           "fg_pct": 0.0
         },
         {
@@ -1391,21 +1391,10 @@
           "lineup_status": "previous_confirmed_lineup"
         },
         {
-          "player_id": 201939,
-          "player_name": "Stephen Curry",
+          "player_id": 1629001,
+          "player_name": "De'Anthony Melton",
           "team": "GSW",
-          "probability": 10.49,
-          "first_shot_rate": 16.67,
-          "first_basket_rate": 16.67,
-          "starts_sample": 6,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
-        },
-        {
-          "player_id": 201143,
-          "player_name": "Al Horford",
-          "team": "GSW",
-          "probability": 6.53,
+          "probability": 6.59,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 1,
@@ -1413,14 +1402,25 @@
           "lineup_status": "previous_confirmed_lineup"
         },
         {
-          "player_id": 203110,
-          "player_name": "Draymond Green",
+          "player_id": 1627777,
+          "player_name": "Georges Niang",
+          "team": "GSW",
+          "probability": 4.55,
+          "first_shot_rate": 100.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 1,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 1629646,
+          "player_name": "Charles Bassey",
           "team": "GSW",
           "probability": 4.55,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
-          "starts_sample": 6,
-          "estimate_source": "historical_blend",
+          "starts_sample": 1,
+          "estimate_source": "statistical_fallback",
           "lineup_status": "previous_confirmed_lineup"
         },
         {
