@@ -72,6 +72,8 @@ const background = (w: number, h: number) => `<defs>
   <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   <radialGradient id="cyanAtmos"><stop stop-color="#04cfff" stop-opacity=".42"/><stop offset=".48" stop-color="#0751aa" stop-opacity=".18"/><stop offset="1" stop-color="#071327" stop-opacity="0"/></radialGradient>
   <radialGradient id="pinkAtmos"><stop stop-color="#ff24cf" stop-opacity=".38"/><stop offset=".52" stop-color="#8b1d9d" stop-opacity=".16"/><stop offset="1" stop-color="#071327" stop-opacity="0"/></radialGradient>
+  <radialGradient id="courtLight"><stop stop-color="#0dbbe7" stop-opacity=".10"/><stop offset="1" stop-color="#040c20" stop-opacity="0"/></radialGradient>
+  <filter id="brandHalo" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="18"/></filter>
   <pattern id="grid" width="45" height="45" patternUnits="userSpaceOnUse"><path d="M45 0H0V45" fill="none" stroke="#24568a" stroke-opacity=".12"/></pattern>
   </defs>
   <rect width="${w}" height="${h}" fill="url(#bg)"/>
@@ -79,6 +81,21 @@ const background = (w: number, h: number) => `<defs>
   <ellipse cx="${w*.92}" cy="110" rx="${w*.22}" ry="230" fill="url(#pinkAtmos)"/>
   <ellipse cx="${w*.5}" cy="${h*.6}" rx="${w*.58}" ry="${h*.52}" fill="url(#cyanAtmos)" opacity=".16"/>
   <rect width="${w}" height="${h}" fill="url(#grid)"/>
+  <!-- Dim full-court geometry behind the data; scaled for every canvas height. -->
+  <g transform="translate(${w*.5} ${h*.54}) scale(${w/1600} ${Math.min(h/1100,1.6)})" fill="none" stroke="#36bde8" stroke-width="3" opacity=".11">
+    <rect x="-690" y="-345" width="1380" height="690" rx="8"/>
+    <path d="M0 -345 V345 M0 -100 A100 100 0 1 0 0 100 A100 100 0 1 0 0 -100"/>
+    <rect x="-690" y="-180" width="190" height="360"/><rect x="500" y="-180" width="190" height="360"/>
+    <circle cx="-500" cy="0" r="85"/><circle cx="500" cy="0" r="85"/>
+    <path d="M-690 -240 Q-210 0 -690 240 M690 -240 Q210 0 690 240"/>
+  </g>
+  <ellipse cx="${w*.5}" cy="${h*.54}" rx="${w*.55}" ry="${h*.38}" fill="url(#courtLight)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".38">
+    <path d="M0 ${h*.37} l${w*.07} -24 l${w*.023} 37 l${w*.08} -62 l${w*.028} 29 l${w*.12} -48" stroke="#1cdeff" stroke-width="2.8" filter="url(#glow)"/>
+    <path d="M${w} ${h*.47} l-${w*.07} -33 l-${w*.025} 39 l-${w*.09} -59 l-${w*.025} 26 l-${w*.1} -44" stroke="#fa43d5" stroke-width="2.8" filter="url(#glow)"/>
+    <path d="M0 ${h*.77} l${w*.09} -32 l${w*.023} 21 l${w*.09} -50 l${w*.04} 25 l${w*.12} -28" stroke="#4d7fff" stroke-width="2.3" filter="url(#glow)"/>
+    <path d="M${w} ${h*.83} l-${w*.09} -32 l-${w*.023} 21 l-${w*.09} -50 l-${w*.04} 25 l-${w*.12} -28" stroke="#f745cf" stroke-width="2.3" filter="url(#glow)"/>
+  </g>
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M0 150 L48 123 L64 155 L110 112 L126 135 L174 85 L200 112 L${w*.27} 35" stroke="#17dfff" stroke-width="2.8" opacity=".7" filter="url(#glow)"/>
     <path d="M${w} 155 L${w-46} 124 L${w-70} 148 L${w-117} 94 L${w-143} 120 L${w-198} 62 L${w*.75} 35" stroke="#ff3ed6" stroke-width="2.8" opacity=".7" filter="url(#glow)"/>
@@ -174,14 +191,14 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
 // Keep brand art as separate same-origin layers so PNG export remains reliable.
 const branding = ["/alphawolf.png", "/awlogo2.png"];
 function brandPlacement(width: number) {
-  const imageWidth = width === 1600 ? 180 : 142;
+  const imageWidth = width === 1600 ? 194 : 154;
   return [{ x: 24, y: 22, w: imageWidth, h: imageWidth },
     { x: width - imageWidth - 24, y: 22, w: imageWidth, h: imageWidth }];
 }
-function previewSvg(svg: string) {
+function previewSvg(svg: string, brandImages: string[] = branding) {
   const width = Number(svg.match(/width="(\d+)"/)?.[1] || 1080);
   const overlays = brandPlacement(width).map((b, i) =>
-    `<image href="${branding[i]}" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" preserveAspectRatio="xMidYMid meet"/>`).join("");
+    `<image href="${brandImages[i] || branding[i]}" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" preserveAspectRatio="xMidYMid meet"/>`).join("");
   return svg.replace("</svg>", overlays + "</svg>")
     .replace("<svg ", '<svg style="width:100%;height:auto;display:block" ');
 }
@@ -202,8 +219,8 @@ async function inlineTeamLogos(svg: string) {
   }
   return output;
 }
-async function drawBranding(ctx: CanvasRenderingContext2D, width: number) {
-  await Promise.all(branding.map(async (src, i) => {
+async function drawBranding(ctx: CanvasRenderingContext2D, width: number, brandImages: string[]) {
+  await Promise.all(brandImages.map(async (src, i) => {
     const image = new Image();
     image.src = src;
     try {
@@ -212,6 +229,31 @@ async function drawBranding(ctx: CanvasRenderingContext2D, width: number) {
       ctx.drawImage(image, x, y, w, h);
     } catch { throw new Error(`Unable to load branding asset: ${src}`); }
   }));
+}
+
+async function cropTransparentAsset(src: string): Promise<string> {
+  const image = new Image();
+  image.src = src;
+  await image.decode();
+  const canvas = document.createElement("canvas");
+  canvas.width = image.naturalWidth; canvas.height = image.naturalHeight;
+  const context = canvas.getContext("2d");
+  if (!context) return src;
+  context.drawImage(image, 0, 0);
+  const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+  let left = canvas.width, top = canvas.height, right = -1, bottom = -1;
+  for (let y = 0; y < canvas.height; y++) for (let x = 0; x < canvas.width; x++) {
+    const i = (y * canvas.width + x) * 4;
+    if (pixels[i + 3] > 24) {
+      left = Math.min(left, x); right = Math.max(right, x);
+      top = Math.min(top, y); bottom = Math.max(bottom, y);
+    }
+  }
+  if (right < left) return src;
+  const out = document.createElement("canvas");
+  out.width = right - left + 1; out.height = bottom - top + 1;
+  out.getContext("2d")?.drawImage(canvas, left, top, out.width, out.height, 0, 0, out.width, out.height);
+  return out.toDataURL("image/png");
 }
 
 async function loadCroppedFooter(): Promise<string> {
@@ -247,6 +289,8 @@ export default function GraphicsPage() {
   const [payload, setPayload] = useState<Payload | null>(null);
   const [markets, setMarkets] = useState<Market[]>([]);
   const [footerImage, setFooterImage] = useState<string>();
+  const [brandImages, setBrandImages] = useState<string[]>(branding);
+  useEffect(() => { Promise.all(branding.map(cropTransparentAsset)).then(setBrandImages).catch(() => {}); }, []);
   useEffect(() => { loadCroppedFooter().then(setFooterImage).catch(() => {}); }, []);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [error, setError] = useState("");
@@ -286,7 +330,7 @@ export default function GraphicsPage() {
         const ctx = canvas.getContext("2d");
         if (!ctx) throw new Error("Canvas is unavailable.");
         ctx.drawImage(image, 0, 0);
-        await drawBranding(ctx, canvas.width);
+        await drawBranding(ctx, canvas.width, brandImages);
 
         const blob = await new Promise<Blob>((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error("Unable to export PNG.")), "image/png"));
         const url = URL.createObjectURL(blob);
@@ -312,7 +356,7 @@ export default function GraphicsPage() {
       {payload && <div className="mt-4 flex flex-wrap gap-2">{(payload.games || []).map(g => <label key={String(g.game_id)} className="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs text-slate-200"><input type="checkbox" checked={selectedIds.includes(String(g.game_id))} onChange={e => setSelectedIds(ids => e.target.checked ? [...ids, String(g.game_id)] : ids.filter(id => id !== String(g.game_id)))} />{g.away_team} @ {g.home_team}</label>)}</div>}
     </div>
     <div className="mt-6 overflow-hidden rounded-2xl border border-fuchsia-400/20 bg-[#070f20] p-2">
-      {svg ? <div className="w-full" dangerouslySetInnerHTML={{ __html: previewSvg(svg) }} /> : <p className="p-10 text-center text-slate-400">No valid projections selected for this slate.</p>}
+      {svg ? <div className="w-full" dangerouslySetInnerHTML={{ __html: previewSvg(svg, brandImages) }} /> : <p className="p-10 text-center text-slate-400">No valid projections selected for this slate.</p>}
     </div>
   </main>;
 }
