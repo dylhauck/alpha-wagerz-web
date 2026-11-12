@@ -45,6 +45,7 @@ const marketSummary = (game: Game, market?: Market) => {
     total: numeric(lines?.total?.line) ? `O/U ${lines!.total!.line}` : "N/A",
   };
 };
+const branding = ["/alphawolf.png", "/awlogo2.png"];
 const names: Record<string, string> = {
   ATL: "Atlanta Hawks", BOS: "Boston Celtics", BKN: "Brooklyn Nets", CHA: "Charlotte Hornets",
   CHI: "Chicago Bulls", CLE: "Cleveland Cavaliers", DAL: "Dallas Mavericks", DEN: "Denver Nuggets",
