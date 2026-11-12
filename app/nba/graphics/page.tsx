@@ -86,7 +86,7 @@ function footer(w: number, h: number, top?: Selection) {
   return `<g font-family="Arial,sans-serif">
     <rect x="64" y="${h-154}" width="${w-128}" height="74" rx="18" fill="#110b2d" stroke="#f34acb" stroke-width="3" filter="url(#glow)"/>
     <text x="${w/2}" y="${h-111}" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">${line}</text>
-    <text x="65" y="${h-36}" font-size="27" font-weight="900" fill="#42eaff">FollowTheAlpha</text>
+    <image href="/follow-alpha.png" x="${w/2-270}" y="${h-79}" width="540" height="68" preserveAspectRatio="xMidYMid meet"/>
     <text x="${w-65}" y="${h-36}" text-anchor="end" font-size="17" fill="#b8c5db">MODEL PROJECTIONS · NOT FINAL SCORES</text>
   </g>`;
 }
@@ -190,6 +190,13 @@ async function drawBranding(ctx: CanvasRenderingContext2D, width: number) {
   }));
 }
 
+async function drawFooterLogo(ctx: CanvasRenderingContext2D, width: number, height: number) {
+  const image = new Image();
+  image.src = "/follow-alpha.png";
+  await image.decode();
+  ctx.drawImage(image, width / 2 - 270, height - 79, 540, 68);
+}
+
 export default function GraphicsPage() {
   const [slate, setSlate] = useState<"current" | "next">("current");
   const [format, setFormat] = useState<"landscape" | "portrait">("portrait");
@@ -234,6 +241,7 @@ export default function GraphicsPage() {
         if (!ctx) throw new Error("Canvas is unavailable.");
         ctx.drawImage(image, 0, 0);
         await drawBranding(ctx, canvas.width);
+        await drawFooterLogo(ctx, canvas.width, canvas.height);
         const blob = await new Promise<Blob>((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error("Unable to export PNG.")), "image/png"));
         const url = URL.createObjectURL(blob);
         const anchor = document.createElement("a");
