@@ -16,6 +16,36 @@ type Game = {
   };
 };
 type Payload = { slate_date?: string; generated_at?: string; games?: Game[] };
+type Market = { game_id: string; full_game?: { moneyline?: { home?: number; away?: number }; spread?: { home_line?: number; away_line?: number }; total?: { line?: number } } };
+type Team = { abbr: string; logo: string };
+type Selection = { label: string; confidence: number };
+const numeric = (n: unknown): n is number => typeof n === "number" && Number.isFinite(n);
+function choices(game: Game, market?: Market): Selection[] {
+  const m = game.model || {};
+  const lines = market?.full_game;
+  const results: Selection[] = [];
+  const home = m.home_win_probability, away = m.away_win_probability;
+  const normalized = (n: number) => n <= 1 ? n * 100 : n;
+  if (numeric(home) && numeric(away) && lines?.moneyline) {
+    const side = normalized(home) >= normalized(away) ? "home" : "away";
+    const odds = lines.moneyline[side];
+    if (numeric(odds)) results.push({ label: `${side === "home" ? game.home_team : game.away_team} ML (${odds > 0 ? "+" : ""}${odds})`, confidence: normalized(side === "home" ? home : away) });
+  }
+  // Do not assign model confidence to spreads or totals without a corresponding market probability.
+  return results;
+}
+const marketSummary = (game: Game, market?: Market) => {
+  const lines = market?.full_game;
+  const m = game.model || {};
+  const winner = numeric(m.home_win_probability) && numeric(m.away_win_probability)
+    ? (m.home_win_probability >= m.away_win_probability ? "home" : "away") : null;
+  const spread = winner && lines?.spread ? lines.spread[winner + "_line" as "home_line" | "away_line"] : undefined;
+  return {
+    ml: choices(game, market)[0]?.label || "N/A",
+    spread: numeric(spread) ? `${winner === "home" ? game.home_team : game.away_team} ${spread > 0 ? "+" : ""}${spread}` : "N/A",
+    total: numeric(lines?.total?.line) ? `O/U ${lines!.total!.line}` : "N/A",
+  };
+};
 const names: Record<string, string> = {
   ATL: "Atlanta Hawks", BOS: "Boston Celtics", BKN: "Brooklyn Nets", CHA: "Charlotte Hornets",
   CHI: "Chicago Bulls", CLE: "Cleveland Cavaliers", DAL: "Dallas Mavericks", DEN: "Denver Nuggets",
@@ -31,8 +61,8 @@ const pct = (value?: number) => typeof value === "number" && Number.isFinite(val
   ? (value <= 1 ? value * 100 : value).toFixed(1) + "%" : "—";
 const score = (value?: number) => typeof value === "number" && Number.isFinite(value) ? value.toFixed(1) : "—";
 
-function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait") {
-  if (selected.length >= 7) return buildTableSvg(data, selected, size);
+function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait", markets: Market[]) {
+  if (selected.length >= 7) return buildTableSvg(data, selected, size, markets);
   const width = size === "landscape" ? 1600 : 1080;
   const height = size === "landscape" ? 900 : 1350;
   const left = size === "landscape" ? 90 : 64;
@@ -47,6 +77,8 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
     const col = index % columns, row = Math.floor(index / columns);
     const x = left + col * (cardWidth + gap), y = top + row * (cardHeight + gap);
     const model = game.model || {};
+    const market = markets.find(m => m.game_id === game.game_id);
+    const picks = marketSummary(game, market);
     const valid = [model.away_score, model.home_score, model.away_win_probability, model.home_win_probability]
       .every(v => typeof v === "number" && Number.isFinite(v));
     const teamFont = size === "landscape" ? 25 : 30;
@@ -80,7 +112,7 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
     <text x="${width - left}" y="${height - 44}" text-anchor="end" fill="#9fb6d0" font-size="18" font-family="Arial,sans-serif">MODEL PROJECTIONS • NOT FINAL SCORES</text>
   </svg>`;
 }
-function buildTableSvg(data: Payload, selected: Game[], size: "landscape" | "portrait") {
+function buildTableSvg(data: Payload, selected: Game[], size: "landscape" | "portrait", markets: Market[]) {
   const width = size === "landscape" ? 1600 : 1080;
   const margin = 60;
   const rowHeight = size === "landscape" ? 76 : 86;
@@ -89,6 +121,8 @@ function buildTableSvg(data: Payload, selected: Game[], size: "landscape" | "por
   const body = selected.map((game, index) => {
     const y = 245 + index * rowHeight;
     const model = game.model || {};
+    const market = markets.find(m => m.game_id === game.game_id);
+    const pick = choices(game, market)[0];
     const away = model.away_win_probability, home = model.home_win_probability;
     const winner = typeof away === "number" && typeof home === "number"
       ? (away >= home ? game.away_team : game.home_team) : "—";
@@ -100,7 +134,7 @@ function buildTableSvg(data: Payload, selected: Game[], size: "landscape" | "por
       <text x="${margin + 22}" y="${y + 32}" font-size="${size === "landscape" ? 26 : 23}" font-weight="800" fill="white">${title}</text>
       <text x="${margin + 22}" y="${y + 57}" font-size="17" fill="#7eefff">MODEL SCORES: ${score(model.away_score)} – ${score(model.home_score)}</text>
       <text x="${leftWidth + 40}" y="${y + 34}" font-size="24" font-weight="800" fill="#f4a7e8">${esc(winner)} ${probability}</text>
-      <text x="${leftWidth + 40}" y="${y + 57}" font-size="16" fill="#a6bfd8">MODEL WIN PROBABILITY</text>
+      <text x="${leftWidth + 40}" y="${y + 57}" font-size="16" fill="#a6bfd8">${pick ? esc(pick.label) : "MODEL WIN PROBABILITY"}</text>
       <text x="${width - margin - 24}" y="${y + 34}" text-anchor="end" font-size="24" font-weight="800" fill="#42eaff">${score(model.projected_total)}</text>
       <text x="${width - margin - 24}" y="${y + 57}" text-anchor="end" font-size="16" fill="#a6bfd8">PROJECTED TOTAL</text>
     </g>`;
@@ -148,6 +182,8 @@ export default function GraphicsPage() {
   const [slate, setSlate] = useState<"current" | "next">("current");
   const [format, setFormat] = useState<"landscape" | "portrait">("landscape");
   const [payload, setPayload] = useState<Payload | null>(null);
+  const [markets, setMarkets] = useState<Market[]>([]);
+  const [teams, setTeams] = useState<Team[]>([]);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -155,7 +191,9 @@ export default function GraphicsPage() {
   const [page, setPage] = useState(0);
   useEffect(() => {
     let active = true;
-    setBusy(true); setError(""); setPayload(null);
+    setBusy(true); setError(""); setPayload(null); setMarkets([]);
+    fetch(`/data/nba/${slate === "next" ? "next/" : ""}live_team_markets.json`, { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(d => { if (active) setMarkets(d?.games || []); }).catch(() => { if (active) setMarkets([]); });
+    fetch("/data/nba/teams.json").then(r => r.json()).then(d => { if (active) setTeams(Array.isArray(d) ? d : []); }).catch(() => {});
     fetch(`/data/nba/${slate === "next" ? "next/" : ""}betting_projections.json`, { cache: "no-store" })
       .then(async r => { if (!r.ok) throw new Error("NBA projection data is unavailable."); return r.json(); })
       .then((data: Payload) => { if (!active) return; setPayload(data); setSelectedIds((data.games || []).map(g => String(g.game_id))); })
@@ -168,8 +206,9 @@ export default function GraphicsPage() {
   const pageCount = Math.max(1, Math.ceil(games.length / limit));
   const currentPage = Math.min(page, pageCount - 1);
   const selected = games.slice(currentPage * limit, (currentPage + 1) * limit);
-  const svg = payload && selected.length ? buildSvg(payload, selected, format) : "";
+  const svg = payload && selected.length ? buildSvg(payload, selected, format, markets) : "";
   useEffect(() => { setPage(0); }, [slate, format, selectedIds]);
+  const best = games.flatMap(g => choices(g, markets.find(m => m.game_id === g.game_id)).map(p => ({ ...p, game: g }))).sort((a,b) => b.confidence - a.confidence)[0];
   const download = async () => {
     if (!svg) return;
     setError("");
@@ -205,6 +244,7 @@ export default function GraphicsPage() {
       </div>
       <p className="mt-3 text-xs text-slate-400">NBA Game Projections · Adaptive cards for 1–6 games and a compact table for 7+ games. All selected matchups are included across pages.</p>
       {pageCount > 1 && <div className="mt-4 flex items-center gap-3 text-sm text-slate-200"><button type="button" disabled={currentPage === 0} onClick={() => setPage(p => Math.max(0, p - 1))} className="rounded border border-cyan-400/50 px-3 py-2 disabled:opacity-30">Previous</button><span>Graphic {currentPage + 1} of {pageCount}</span><button type="button" disabled={currentPage >= pageCount - 1} onClick={() => setPage(p => Math.min(pageCount - 1, p + 1))} className="rounded border border-cyan-400/50 px-3 py-2 disabled:opacity-30">Next</button></div>}
+      {best && <p className="mt-3 text-sm font-bold text-cyan-300">Most Confident Available Moneyline: {best.label} · {best.confidence.toFixed(1)}% model win probability</p>}
       {busy && <p className="mt-4 text-cyan-300">Loading current model projections…</p>}
       {error && <p role="alert" className="mt-4 text-rose-300">{error}</p>}
       {payload && <div className="mt-4 flex flex-wrap gap-2">{(payload.games || []).map(g => <label key={String(g.game_id)} className="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs text-slate-200"><input type="checkbox" checked={selectedIds.includes(String(g.game_id))} onChange={e => setSelectedIds(ids => e.target.checked ? [...ids, String(g.game_id)] : ids.filter(id => id !== String(g.game_id)))} />{g.away_team} @ {g.home_team}</label>)}</div>}
