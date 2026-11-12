@@ -112,8 +112,8 @@ function header(w: number, date: string, total: number) {
       <text x="${center}" y="141" font-size="${subtitleSize}" fill="#28dfff" opacity=".6" filter="url(#titleGlow)">NBA GAME PROJECTIONS</text>
       <text x="${center}" y="141" font-size="${subtitleSize}" fill="url(#titleSport)" stroke="#b8ecff" stroke-width=".65" paint-order="stroke fill">NBA GAME PROJECTIONS</text>
     </g>
-    <text x="${center}" y="183" font-family="Arial,sans-serif" font-size="23" font-weight="800" fill="#40eaff">${esc(date)}  •  ${total} GAMES</text>
-    <path d="M65 202 H${w-65}" stroke="url(#neon)" stroke-width="3" filter="url(#glow)"/>
+    <path d="M120 183 L142 210 H${w-142} L${w-120} 183 L${w-142} 156 H142 Z" fill="#07122b" stroke="url(#neon)" stroke-width="3" filter="url(#glow)"/>
+    <text x="${center}" y="192" font-family="Arial,sans-serif" font-size="23" font-weight="900" fill="#fff">${esc(date)}  •  ${total} GAMES</text>
   </g>`;
 }
 function footer(w: number, h: number, top?: Selection, footerImage?: string) {
@@ -140,7 +140,6 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
     const x = left + (i % cols) * (cardW + gap), y = top + Math.floor(i / cols) * (cardH + gap);
     const m = game.model || {}, market = matching(game);
     const lines = marketSummary(game, market);
-    const pick = choices(game, market)[0];
     const edge = i % 2 ? "#ff4adf" : "#15eaff";
     const frame = `<rect x="${x}" y="${y}" width="${cardW}" height="${cardH}" rx="19" fill="#030913" stroke="${edge}" stroke-width="4" filter="url(#glow)"/><rect x="${x+8}" y="${y+8}" width="${cardW-16}" height="${cardH-16}" rx="14" fill="#030b1b" stroke="#3379ac" stroke-opacity=".55"/>`;
     if (compact) return `<g font-family="Arial,sans-serif">${frame}
@@ -155,7 +154,7 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
       <text x="${x+cardW*.54}" y="${y+123}" font-size="19" fill="#fff">TOTAL: ${esc(lines.total)}</text>
     </g>`;
     const center = x + cardW/2;
-    const sideW = cardW*.39;
+    const sideW = (cardW-28)/3;
     return `<g font-family="Arial,sans-serif">${frame}
       ${logo(game.away_team,x+23,y+14,82)} ${logo(game.home_team,x+cardW-105,y+14,82)}
       <text x="${x+118}" y="${y+46}" font-size="21" font-weight="900" fill="#fff">${esc(game.away_team)}</text>
@@ -191,9 +190,9 @@ function brandPlacement(width: number) {
   // Align the bottom of the cropped wolf art to the first card's top edge.
   // Do not overlap the team logo or projected-score content below that edge.
   const wolfSize = width === 1600 ? 205 : 180;
-  const cardTop = 228;
+  const cardTop = 284;
   return [
-    { x: 74, y: cardTop - wolfSize + 2, w: wolfSize, h: wolfSize },
+    { x: 22, y: cardTop - wolfSize - 28, w: wolfSize, h: wolfSize },
     { x: width - shieldSize - 24, y: 22, w: shieldSize, h: shieldSize }
   ];
 }
