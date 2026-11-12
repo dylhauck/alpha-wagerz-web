@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Game = {
   game_id: string;
@@ -16,8 +16,7 @@ type Game = {
   };
 };
 type Payload = { slate_date?: string; generated_at?: string; games?: Game[] };
-type Market = { game_id: string; full_game?: { moneyline?: { home?: number; away?: number }; spread?: { home_line?: number; away_line?: number }; total?: { line?: number } } };
-type Team = { abbr: string; logo: string };
+type Market = { game_id: string; away_team?: string; home_team?: string; full_game?: { moneyline?: { home?: number; away?: number }; spread?: { home_line?: number; away_line?: number }; total?: { line?: number } } };
 type Selection = { label: string; confidence: number };
 const numeric = (n: unknown): n is number => typeof n === "number" && Number.isFinite(n);
 function choices(game: Game, market?: Market): Selection[] {
@@ -61,97 +60,86 @@ const pct = (value?: number) => typeof value === "number" && Number.isFinite(val
   ? (value <= 1 ? value * 100 : value).toFixed(1) + "%" : "—";
 const score = (value?: number) => typeof value === "number" && Number.isFinite(value) ? value.toFixed(1) : "—";
 
-function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait", markets: Market[]) {
-  if (selected.length >= 7) return buildTableSvg(data, selected, size, markets);
-  const width = size === "landscape" ? 1600 : 1080;
-  const height = size === "landscape" ? 900 : 1350;
-  const left = size === "landscape" ? 90 : 64;
-  const top = size === "landscape" ? 220 : 255;
-  const gap = size === "landscape" ? 20 : 22;
-  const columns = size === "landscape" ? 2 : 1;
-  const rows = Math.max(1, Math.ceil(selected.length / columns));
-  const cardWidth = (width - left * 2 - gap * (columns - 1)) / columns;
-  const available = height - top - 115;
-  const cardHeight = Math.min(size === "landscape" ? 245 : 220, (available - gap * (rows - 1)) / rows);
-  const body = selected.map((game, index) => {
-    const col = index % columns, row = Math.floor(index / columns);
-    const x = left + col * (cardWidth + gap), y = top + row * (cardHeight + gap);
-    const model = game.model || {};
-    const market = markets.find(m => m.game_id === game.game_id);
-    const picks = marketSummary(game, market);
-    const valid = [model.away_score, model.home_score, model.away_win_probability, model.home_win_probability]
-      .every(v => typeof v === "number" && Number.isFinite(v));
-    const teamFont = size === "landscape" ? 25 : 30;
-    const row1 = y + Math.min(83, cardHeight * 0.36), row2 = y + Math.min(145, cardHeight * 0.66);
-    return `<g>
-      <rect x="${x}" y="${y}" width="${cardWidth}" height="${cardHeight}" rx="23" fill="#101c33" stroke="#29d9f5" stroke-opacity=".4" stroke-width="2"/>
-      <rect x="${x}" y="${y}" width="7" height="${cardHeight}" rx="3" fill="#f653c9"/>
-      <text x="${x + 27}" y="${y + 35}" fill="#9cb2cf" font-size="16" font-weight="700">MATCHUP ${String(index + 1).padStart(2, "0")}</text>
-      <text x="${x + 27}" y="${row1}" fill="#ffffff" font-size="${teamFont}" font-weight="800">${esc(names[game.away_team] || game.away_team)}</text>
-      <text x="${x + cardWidth - 26}" y="${row1}" text-anchor="end" fill="#46e9ff" font-size="25" font-weight="800">${valid ? score(model.away_score) : "—"}</text>
-      <text x="${x + 27}" y="${row2}" fill="#ffffff" font-size="${teamFont}" font-weight="800">${esc(names[game.home_team] || game.home_team)}</text>
-      <text x="${x + cardWidth - 26}" y="${row2}" text-anchor="end" fill="#46e9ff" font-size="25" font-weight="800">${valid ? score(model.home_score) : "—"}</text>
-      <line x1="${x + 25}" y1="${y + cardHeight - 60}" x2="${x + cardWidth - 25}" y2="${y + cardHeight - 60}" stroke="#ffffff" stroke-opacity=".13"/>
-      <text x="${x + 27}" y="${y + cardHeight - 29}" fill="#e8a1e9" font-size="18" font-weight="700">WIN PROB. ${valid ? pct(model.away_win_probability) + " / " + pct(model.home_win_probability) : "UNAVAILABLE"}</text>
-      <text x="${x + cardWidth - 26}" y="${y + cardHeight - 29}" text-anchor="end" fill="#9eb9ce" font-size="17">TOTAL ${valid ? score(model.projected_total) : "—"}</text>
-    </g>`;
-  }).join("");
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
-    <defs>
-      <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071426"/><stop offset=".55" stop-color="#0c1730"/><stop offset="1" stop-color="#200e35"/></linearGradient>
-      <linearGradient id="accent"><stop stop-color="#22e6ff"/><stop offset=".52" stop-color="#4d78ff"/><stop offset="1" stop-color="#f653c9"/></linearGradient>
-    </defs>
-    <rect width="${width}" height="${height}" fill="url(#bg)"/>
-    <rect x="0" y="0" width="${width}" height="12" fill="url(#accent)"/>
-    <text x="${width / 2}" y="90" text-anchor="middle" fill="#f65ec9" font-size="54" font-weight="900" font-family="Arial,sans-serif" letter-spacing="2">ALPHA WAGERZ</text>
-    <text x="${width / 2}" y="148" text-anchor="middle" fill="#ffffff" font-size="35" font-weight="800" font-family="Arial,sans-serif">NBA GAME PROJECTIONS</text>
-    <text x="${width / 2}" y="186" text-anchor="middle" fill="#9fb6d0" font-size="23" font-family="Arial,sans-serif">SLATE: ${esc(data.slate_date || "UNAVAILABLE")}</text>
-    <g font-family="Arial,sans-serif">${body}</g>
-    <rect x="${left}" y="${height - 87}" width="${width - 2 * left}" height="2" fill="url(#accent)"/>
-    <text x="${left}" y="${height - 44}" fill="#51e8ff" font-size="25" font-weight="800" font-family="Arial,sans-serif">FollowTheAlpha 🐺</text>
-    <text x="${width - left}" y="${height - 44}" text-anchor="end" fill="#9fb6d0" font-size="18" font-family="Arial,sans-serif">MODEL PROJECTIONS • NOT FINAL SCORES</text>
-  </svg>`;
-}
-function buildTableSvg(data: Payload, selected: Game[], size: "landscape" | "portrait", markets: Market[]) {
-  const width = size === "landscape" ? 1600 : 1080;
-  const margin = 60;
-  const rowHeight = size === "landscape" ? 76 : 86;
-  const height = Math.max(size === "landscape" ? 900 : 1350, 280 + selected.length * rowHeight + 120);
-  const leftWidth = width * .34;
-  const body = selected.map((game, index) => {
-    const y = 245 + index * rowHeight;
-    const model = game.model || {};
-    const market = markets.find(m => m.game_id === game.game_id);
-    const pick = choices(game, market)[0];
-    const away = model.away_win_probability, home = model.home_win_probability;
-    const winner = typeof away === "number" && typeof home === "number"
-      ? (away >= home ? game.away_team : game.home_team) : "—";
-    const probability = typeof away === "number" && typeof home === "number"
-      ? pct(Math.max(away, home)) : "—";
-    const title = esc(game.away_team + "  VS  " + game.home_team);
-    return `<g font-family="Arial,sans-serif">
-      <rect x="${margin}" y="${y}" width="${width - margin * 2}" height="${rowHeight - 8}" rx="14" fill="#0b1a31" stroke="${index % 2 ? "#f64cc9" : "#1adfff"}" stroke-width="3"/>
-      <text x="${margin + 22}" y="${y + 32}" font-size="${size === "landscape" ? 26 : 23}" font-weight="800" fill="white">${title}</text>
-      <text x="${margin + 22}" y="${y + 57}" font-size="17" fill="#7eefff">MODEL SCORES: ${score(model.away_score)} – ${score(model.home_score)}</text>
-      <text x="${leftWidth + 40}" y="${y + 34}" font-size="24" font-weight="800" fill="#f4a7e8">${esc(winner)} ${probability}</text>
-      <text x="${leftWidth + 40}" y="${y + 57}" font-size="16" fill="#a6bfd8">${pick ? esc(pick.label) : "MODEL WIN PROBABILITY"}</text>
-      <text x="${width - margin - 24}" y="${y + 34}" text-anchor="end" font-size="24" font-weight="800" fill="#42eaff">${score(model.projected_total)}</text>
-      <text x="${width - margin - 24}" y="${y + 57}" text-anchor="end" font-size="16" fill="#a6bfd8">PROJECTED TOTAL</text>
-    </g>`;
-  }).join("");
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
-    <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#061426"/><stop offset="1" stop-color="#250c39"/></linearGradient><linearGradient id="accent"><stop stop-color="#1ceaff"/><stop offset="1" stop-color="#f34acb"/></linearGradient></defs>
-    <rect width="${width}" height="${height}" fill="url(#bg)"/><rect width="${width}" height="12" fill="url(#accent)"/>
-    <text x="${width / 2}" y="96" text-anchor="middle" fill="#f45acb" font-family="Arial,sans-serif" font-size="55" font-weight="900">ALPHA WAGERZ</text>
-    <text x="${width / 2}" y="152" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="37" font-weight="800">NBA GAME PROJECTIONS</text>
-    <text x="${width / 2}" y="196" text-anchor="middle" fill="#83eaff" font-family="Arial,sans-serif" font-size="24">SLATE: ${esc(data.slate_date || "UNAVAILABLE")}  •  ${selected.length} MATCHUPS</text>
-    ${body}
-    <rect x="${margin}" y="${height - 92}" width="${width - margin * 2}" height="3" fill="url(#accent)"/>
-    <text x="${margin}" y="${height - 48}" fill="#48eaff" font-family="Arial,sans-serif" font-size="27" font-weight="800">FollowTheAlpha</text>
-    <text x="${width - margin}" y="${height - 48}" text-anchor="end" fill="#a6bfd8" font-family="Arial,sans-serif" font-size="18">MODEL PROJECTIONS • NOT FINAL SCORES</text>
-  </svg>`;
-}
 
+const logo = (abbr: string, x: number, y: number, size: number) =>
+  `<image href="/api/graphics/team-logo/${esc(abbr)}" x="${x}" y="${y}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet"/>`;
+const background = (w: number, h: number) => `<defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#030a1b"/><stop offset=".55" stop-color="#07142a"/><stop offset="1" stop-color="#230a33"/></linearGradient>
+  <linearGradient id="neon"><stop stop-color="#08dfff"/><stop offset=".52" stop-color="#3277ff"/><stop offset="1" stop-color="#ff35c7"/></linearGradient>
+  <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="grid" width="45" height="45" patternUnits="userSpaceOnUse"><path d="M45 0H0V45" fill="none" stroke="#24568a" stroke-opacity=".12"/></pattern>
+  </defs>
+  <rect width="${w}" height="${h}" fill="url(#bg)"/><rect width="${w}" height="${h}" fill="url(#grid)"/>
+  <path d="M0 10 L${w} 10 M0 ${h-10} L${w} ${h-10}" stroke="url(#neon)" stroke-width="8" filter="url(#glow)"/>
+  <path d="M0 ${h*.8} Q${w*.2} ${h*.68} ${w*.4} ${h*.85} T${w} ${h*.76}" fill="none" stroke="#ff26d0" stroke-opacity=".17" stroke-width="5"/>
+  <path d="M0 ${h*.18} Q${w*.3} ${h*.3} ${w*.5} ${h*.12} T${w} ${h*.22}" fill="none" stroke="#09e8ff" stroke-opacity=".13" stroke-width="5"/>`;
+function header(w: number, date: string, total: number) {
+  return `<g font-family="Arial,sans-serif">
+    <text x="${w/2}" y="82" text-anchor="middle" font-size="52" font-weight="900" fill="#f958d9">ALPHA WAGERZ</text>
+    <text x="${w/2}" y="136" text-anchor="middle" font-size="36" font-weight="900" fill="white">NBA GAME PROJECTIONS</text>
+    <text x="${w/2}" y="183" text-anchor="middle" font-size="23" font-weight="700" fill="#36eaff">${esc(date)}  •  ${total} GAMES</text>
+    <path d="M65 202 H${w-65}" stroke="url(#neon)" stroke-width="3" filter="url(#glow)"/>
+  </g>`;
+}
+function footer(w: number, h: number, top?: Selection) {
+  const line = top ? `MOST CONFIDENT AVAILABLE ML: ${esc(top.label)}  •  ${top.confidence.toFixed(1)}%` : "NO VERIFIED MONEYLINE SELECTION AVAILABLE";
+  return `<g font-family="Arial,sans-serif">
+    <rect x="64" y="${h-154}" width="${w-128}" height="74" rx="18" fill="#110b2d" stroke="#f34acb" stroke-width="3" filter="url(#glow)"/>
+    <text x="${w/2}" y="${h-111}" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">${line}</text>
+    <text x="65" y="${h-36}" font-size="27" font-weight="900" fill="#42eaff">FollowTheAlpha</text>
+    <text x="${w-65}" y="${h-36}" text-anchor="end" font-size="17" fill="#b8c5db">MODEL PROJECTIONS · NOT FINAL SCORES</text>
+  </g>`;
+}
+function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait", markets: Market[]) {
+  const w = size === "landscape" ? 1600 : 1080;
+  const compact = selected.length >= 7;
+  const cols = compact ? 1 : 2;
+  const gap = 20, left = 60, top = 238;
+  const cardH = compact ? 102 : 270;
+  const rows = Math.ceil(selected.length / cols);
+  const minHeight = size === "landscape" ? 900 : 1350;
+  const h = Math.max(minHeight, top + rows * (cardH + gap) + 190);
+  const cardW = (w - left * 2 - gap * (cols-1)) / cols;
+  const best = selected.flatMap(g => choices(g, markets.find(m => m.game_id === g.game_id && m.away_team === g.away_team && m.home_team === g.home_team))).sort((a,b) => b.confidence-a.confidence)[0];
+  const body = selected.map((game, i) => {
+    const x = left + (i%cols)*(cardW+gap), y = top + Math.floor(i/cols)*(cardH+gap);
+    const m = game.model || {}, market = markets.find(k => k.game_id === game.game_id);
+    const lines = marketSummary(game, market);
+    const topPick = choices(game, market)[0];
+    const awayPct = pct(m.away_win_probability), homePct = pct(m.home_win_probability);
+    const winning = numeric(m.away_win_probability) && numeric(m.home_win_probability)
+      ? (m.away_win_probability >= m.home_win_probability ? game.away_team : game.home_team) : "—";
+    const name = (abbr: string) => esc(names[abbr] || abbr);
+    const frame = `<rect x="${x}" y="${y}" width="${cardW}" height="${cardH}" rx="18" fill="#071327" stroke="${i%2 ? "#ff49d4" : "#1fe9ff"}" stroke-width="3" filter="url(#glow)"/>`;
+    if (compact) return `<g font-family="Arial,sans-serif">${frame}
+      ${logo(game.away_team,x+16,y+13,65)} ${logo(game.home_team,x+93,y+13,65)}
+      <text x="${x+170}" y="${y+38}" font-size="23" font-weight="900" fill="#fff">${esc(game.away_team)} VS ${esc(game.home_team)}</text>
+      <text x="${x+170}" y="${y+72}" font-size="20" fill="#49eaff">SCORE ${score(m.away_score)} – ${score(m.home_score)}</text>
+      <text x="${x+cardW*.52}" y="${y+38}" font-size="23" font-weight="900" fill="#fff">${esc(winning)} ${pct(Math.max(m.away_win_probability ?? NaN,m.home_win_probability ?? NaN))}</text>
+      <text x="${x+cardW*.52}" y="${y+72}" font-size="18" fill="#ef92df">ML: ${esc(lines.ml)}</text>
+      <text x="${x+cardW-18}" y="${y+38}" text-anchor="end" font-size="20" fill="#fff">SPREAD ${esc(lines.spread)}</text>
+      <text x="${x+cardW-18}" y="${y+72}" text-anchor="end" font-size="20" fill="#49eaff">${esc(lines.total)}</text>
+    </g>`;
+    return `<g font-family="Arial,sans-serif">${frame}
+      ${logo(game.away_team,x+45,y+12,82)} ${logo(game.home_team,x+cardW-127,y+12,82)}
+      <text x="${x+cardW/2}" y="${y+61}" text-anchor="middle" font-size="27" font-weight="900" fill="#27e8ff">VS</text>
+      <text x="${x+95}" y="${y+115}" text-anchor="middle" font-size="22" font-weight="900" fill="white">${esc(game.away_team)}</text>
+      <text x="${x+cardW-95}" y="${y+115}" text-anchor="middle" font-size="22" font-weight="900" fill="white">${esc(game.home_team)}</text>
+      <text x="${x+cardW/2}" y="${y+114}" text-anchor="middle" font-size="20" fill="#b1c5e1">${score(m.away_score)} – ${score(m.home_score)}</text>
+      <text x="${x+24}" y="${y+152}" font-size="19" font-weight="800" fill="#31e8ff">MODEL WIN %</text>
+      <text x="${x+cardW-24}" y="${y+152}" text-anchor="end" font-size="20" font-weight="800" fill="white">${awayPct} / ${homePct}</text>
+      <path d="M${x+20} ${y+166} H${x+cardW-20}" stroke="#2389bb" stroke-width="2"/>
+      <text x="${x+24}" y="${y+194}" font-size="18" fill="#fff">ML: ${esc(lines.ml)}</text>
+      <text x="${x+24}" y="${y+225}" font-size="18" fill="#fff">SPREAD: ${esc(lines.spread)}</text>
+      <text x="${x+24}" y="${y+253}" font-size="18" fill="#fff">TOTAL: ${esc(lines.total)}</text>
+      <text x="${x+cardW-20}" y="${y+253}" text-anchor="end" font-size="16" fill="#50eaff">${topPick ? topPick.confidence.toFixed(1)+"% ML" : "NO ML"}</text>
+    </g>`;
+  }).join("");
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+    ${background(w,h)}${header(w,data.slate_date || "DATE UNAVAILABLE",selected.length)}
+    ${body}${footer(w,h,best)}
+  </svg>`;
+}
 // Keep brand art as separate same-origin layers so PNG export remains reliable.
 const branding = ["/alphawolf.png", "/awlogo2.png"];
 function brandPlacement(width: number) {
@@ -180,20 +168,17 @@ async function drawBranding(ctx: CanvasRenderingContext2D, width: number) {
 
 export default function GraphicsPage() {
   const [slate, setSlate] = useState<"current" | "next">("current");
-  const [format, setFormat] = useState<"landscape" | "portrait">("landscape");
+  const [format, setFormat] = useState<"landscape" | "portrait">("portrait");
   const [payload, setPayload] = useState<Payload | null>(null);
   const [markets, setMarkets] = useState<Market[]>([]);
-  const [teams, setTeams] = useState<Team[]>([]);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
-  const preview = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
   useEffect(() => {
     let active = true;
     setBusy(true); setError(""); setPayload(null); setMarkets([]);
     fetch(`/data/nba/${slate === "next" ? "next/" : ""}live_team_markets.json`, { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(d => { if (active) setMarkets(d?.games || []); }).catch(() => { if (active) setMarkets([]); });
-    fetch("/data/nba/teams.json").then(r => r.json()).then(d => { if (active) setTeams(Array.isArray(d) ? d : []); }).catch(() => {});
     fetch(`/data/nba/${slate === "next" ? "next/" : ""}betting_projections.json`, { cache: "no-store" })
       .then(async r => { if (!r.ok) throw new Error("NBA projection data is unavailable."); return r.json(); })
       .then((data: Payload) => { if (!active) return; setPayload(data); setSelectedIds((data.games || []).map(g => String(g.game_id))); })
@@ -202,7 +187,7 @@ export default function GraphicsPage() {
     return () => { active = false; };
   }, [slate]);
   const games = useMemo(() => (payload?.games || []).filter(g => selectedIds.includes(String(g.game_id))), [payload, selectedIds]);
-  const limit = games.length <= 6 ? (format === "landscape" ? 6 : 6) : 12;
+  const limit = games.length <= 6 ? 6 : 12;
   const pageCount = Math.max(1, Math.ceil(games.length / limit));
   const currentPage = Math.min(page, pageCount - 1);
   const selected = games.slice(currentPage * limit, (currentPage + 1) * limit);
@@ -242,14 +227,14 @@ export default function GraphicsPage() {
         <label className="text-sm font-bold text-slate-200">Format <select value={format} onChange={e => setFormat(e.target.value as "landscape" | "portrait")} className="ml-2 rounded-lg border border-white/20 bg-[#071426] px-3 py-2"><option value="landscape">Landscape · 1600 × 900</option><option value="portrait">Portrait · 1080 × 1350</option></select></label>
         <button type="button" onClick={download} disabled={!svg} className="rounded-xl bg-gradient-to-r from-cyan-400 to-fuchsia-500 px-6 py-2 font-black text-[#071426] disabled:opacity-40">Download PNG</button>
       </div>
-      <p className="mt-3 text-xs text-slate-400">NBA Game Projections · Adaptive cards for 1–6 games and a compact table for 7+ games. All selected matchups are included across pages.</p>
+      <p className="mt-3 text-xs text-slate-400">NBA Game Projections · Adaptive cards for 1–6 games and a compact table for 7+ games. All selected matchups are included across pages. Spreads/totals show available market lines, not unverified model probabilities.</p>
       {pageCount > 1 && <div className="mt-4 flex items-center gap-3 text-sm text-slate-200"><button type="button" disabled={currentPage === 0} onClick={() => setPage(p => Math.max(0, p - 1))} className="rounded border border-cyan-400/50 px-3 py-2 disabled:opacity-30">Previous</button><span>Graphic {currentPage + 1} of {pageCount}</span><button type="button" disabled={currentPage >= pageCount - 1} onClick={() => setPage(p => Math.min(pageCount - 1, p + 1))} className="rounded border border-cyan-400/50 px-3 py-2 disabled:opacity-30">Next</button></div>}
       {best && <p className="mt-3 text-sm font-bold text-cyan-300">Most Confident Available Moneyline: {best.label} · {best.confidence.toFixed(1)}% model win probability</p>}
       {busy && <p className="mt-4 text-cyan-300">Loading current model projections…</p>}
       {error && <p role="alert" className="mt-4 text-rose-300">{error}</p>}
       {payload && <div className="mt-4 flex flex-wrap gap-2">{(payload.games || []).map(g => <label key={String(g.game_id)} className="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs text-slate-200"><input type="checkbox" checked={selectedIds.includes(String(g.game_id))} onChange={e => setSelectedIds(ids => e.target.checked ? [...ids, String(g.game_id)] : ids.filter(id => id !== String(g.game_id)))} />{g.away_team} @ {g.home_team}</label>)}</div>}
     </div>
-    <div ref={preview} className="mt-6 overflow-hidden rounded-2xl border border-fuchsia-400/20 bg-[#070f20] p-2">
+    <div className="mt-6 overflow-hidden rounded-2xl border border-fuchsia-400/20 bg-[#070f20] p-2">
       {svg ? <div className="w-full" dangerouslySetInnerHTML={{ __html: previewSvg(svg) }} /> : <p className="p-10 text-center text-slate-400">No valid projections selected for this slate.</p>}
     </div>
   </main>;
