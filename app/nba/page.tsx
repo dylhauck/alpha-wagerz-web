@@ -1057,18 +1057,12 @@ function FirstBasketGraph({
   const chanceValues = candidates.map((candidate) => candidate.probability);
   const lowChance = chanceValues.length ? Math.min(...chanceValues) : 0;
   const highChance = chanceValues.length ? Math.max(...chanceValues) : 0;
-  const projectedLineup = game?.projected_starters?.length
-    ? game.projected_starters
-    : [
-    ...[{ team: awayTeam, players: awayPlayers }, { team: homeTeam, players: homePlayers }]
-      .flatMap(({ team, players }) => players
-        .filter((player) => (player.splits?.current_season?.min_per_game || player.splits?.last_season?.min_per_game || 0) > 0)
-        .sort((a, b) =>
-          (b.splits?.current_season?.min_per_game || b.splits?.last_season?.min_per_game || 0) -
-          (a.splits?.current_season?.min_per_game || a.splits?.last_season?.min_per_game || 0))
-        .slice(0, 5)
-        .map((player) => ({ team, player_name: player.player_name, player_id: player.player_id }))),
-  ];
+  // Never synthesize a ranked starting five from minutes when the model
+  // explicitly marks a matchup unavailable. That fallback ignores injuries
+  // and can display players who are ruled out or on another roster.
+  const projectedLineup = game?.status === "estimated"
+    ? (game.projected_starters || [])
+    : [];
   return (
     <div className="rounded-2xl border border-cyan-300/20 bg-slate-950/40 p-4 sm:p-5">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -1132,7 +1126,7 @@ function FirstBasketGraph({
             ))}
             {!candidates.length && !projectedLineup.length && (
               <tr><td colSpan={7} className="px-4 py-8 text-center text-slate-400">
-                Projected lineup and first-basket data unavailable.
+                {game?.reason || "Verified starting lineup and first-basket projections unavailable."}
               </td></tr>
             )}
           </tbody>
