@@ -1,47 +1,18 @@
 {
   "games": [
     {
-      "game_id": 2026020309,
-      "away": "CAR",
-      "home": "SEA",
-      "away_goals": 4.12,
-      "home_goals": 2.5,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 4,
-      "probabilities": null
-    },
-    {
-      "game_id": 2026020299,
-      "away": "MTL",
-      "home": "BOS",
-      "away_goals": 3.11,
-      "home_goals": 3.02,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 6,
-      "probabilities": {
-        "away_win_probability": 0.51314,
-        "home_win_probability": 0.48686,
-        "away_puck_line_plus_1_5_probability": 0.74404,
-        "home_puck_line_minus_1_5_probability": 0.25596,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 6,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020300,
-      "away": "MIN",
-      "home": "TOR",
-      "away_goals": 3.71,
+      "game_id": 2026020310,
+      "away": "NYR",
+      "home": "VAN",
+      "away_goals": 3.33,
       "home_goals": 2.25,
       "model": "recent_goals_for_against_baseline",
       "sample_games": 6,
       "probabilities": {
-        "away_win_probability": 0.72267,
-        "home_win_probability": 0.27733,
-        "away_puck_line_plus_1_5_probability": 0.89361,
-        "home_puck_line_minus_1_5_probability": 0.10639,
+        "away_win_probability": 0.67357,
+        "home_win_probability": 0.32643,
+        "away_puck_line_plus_1_5_probability": 0.86892,
+        "home_puck_line_minus_1_5_probability": 0.13108,
         "method": "independent_poisson_goals_regulation_tie_split_equally",
         "calibrated": false,
         "sample_games": 6,
@@ -49,151 +20,18 @@
       }
     },
     {
-      "game_id": 2026020301,
-      "away": "COL",
-      "home": "OTT",
-      "away_goals": 3.71,
-      "home_goals": 2.93,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 7,
-      "probabilities": {
-        "away_win_probability": 0.61769,
-        "home_win_probability": 0.38231,
-        "away_puck_line_plus_1_5_probability": 0.81711,
-        "home_puck_line_minus_1_5_probability": 0.18289,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 7,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020303,
-      "away": "WSH",
-      "home": "NJD",
-      "away_goals": 3.27,
-      "home_goals": 3.75,
+      "game_id": 2026020311,
+      "away": "NSH",
+      "home": "VGK",
+      "away_goals": 3.04,
+      "home_goals": 2.5,
       "model": "recent_goals_for_against_baseline",
       "sample_games": 6,
       "probabilities": {
-        "away_win_probability": 0.42951,
-        "home_win_probability": 0.57049,
-        "away_puck_line_plus_1_5_probability": 0.65495,
-        "home_puck_line_minus_1_5_probability": 0.34505,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 6,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020304,
-      "away": "TBL",
-      "home": "CBJ",
-      "away_goals": 3.58,
-      "home_goals": 2.94,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 6,
-      "probabilities": {
-        "away_win_probability": 0.59754,
-        "home_win_probability": 0.40246,
-        "away_puck_line_plus_1_5_probability": 0.80401,
-        "home_puck_line_minus_1_5_probability": 0.19599,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 6,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020302,
-      "away": "DET",
-      "home": "FLA",
-      "away_goals": 2.71,
-      "home_goals": 3.43,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 7,
-      "probabilities": {
-        "away_win_probability": 0.38875,
-        "home_win_probability": 0.61125,
-        "away_puck_line_plus_1_5_probability": 0.63074,
-        "home_puck_line_minus_1_5_probability": 0.36926,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 7,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020305,
-      "away": "BUF",
-      "home": "CHI",
-      "away_goals": 3.94,
-      "home_goals": 2.4,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 6,
-      "probabilities": {
-        "away_win_probability": 0.72623,
-        "home_win_probability": 0.27377,
-        "away_puck_line_plus_1_5_probability": 0.89159,
-        "home_puck_line_minus_1_5_probability": 0.10841,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 6,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020306,
-      "away": "WPG",
-      "home": "DAL",
-      "away_goals": 3.38,
-      "home_goals": 3.54,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 6,
-      "probabilities": {
-        "away_win_probability": 0.4752,
-        "home_win_probability": 0.5248,
-        "away_puck_line_plus_1_5_probability": 0.69866,
-        "home_puck_line_minus_1_5_probability": 0.30134,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 6,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020307,
-      "away": "STL",
-      "home": "UTA",
-      "away_goals": 3.2,
-      "home_goals": 2.85,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 6,
-      "probabilities": {
-        "away_win_probability": 0.55653,
-        "home_win_probability": 0.44347,
-        "away_puck_line_plus_1_5_probability": 0.78017,
-        "home_puck_line_minus_1_5_probability": 0.21983,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 6,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020308,
-      "away": "NYI",
-      "home": "LAK",
-      "away_goals": 3.08,
-      "home_goals": 3.42,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 6,
-      "probabilities": {
-        "away_win_probability": 0.449,
-        "home_win_probability": 0.551,
-        "away_puck_line_plus_1_5_probability": 0.68172,
-        "home_puck_line_minus_1_5_probability": 0.31828,
+        "away_win_probability": 0.58807,
+        "home_win_probability": 0.41193,
+        "away_puck_line_plus_1_5_probability": 0.81234,
+        "home_puck_line_minus_1_5_probability": 0.18766,
         "method": "independent_poisson_goals_regulation_tie_split_equally",
         "calibrated": false,
         "sample_games": 6,

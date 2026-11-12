@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T22:43:43.998187+00:00",
+  "generated_at": "2026-11-12T13:55:00.211780+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -26,13 +26,13 @@
     }
   },
   "counts": {
-    "game_bets": 1,
+    "game_bets": 2,
     "player_props": 0,
-    "all_candidates": 1,
+    "all_candidates": 2,
     "best_bets": 0,
     "strong_plays": 0,
     "leans": 0,
-    "passes": 1
+    "passes": 2
   },
   "best_bets": [],
   "strong_plays": [],
@@ -41,11 +41,11 @@
     {
       "ranking_type": "game_bet",
       "tier": "PASS",
-      "ranking_score": 47.07,
-      "confidence": 42.1,
+      "ranking_score": 50.21,
+      "confidence": 44.3,
       "upstream_label": "PASS",
-      "edge_strength": 1.76,
-      "edge": 0.044,
+      "edge_strength": 1.92,
+      "edge": 0.048,
       "market_type": "moneyline",
       "game_id": "2026_10_WAS_NYG",
       "matchup": "WAS @ NYG",
@@ -65,8 +65,40 @@
         "home_team": "NYG",
         "market": "moneyline",
         "selection": "NYG",
-        "edge": 0.044,
-        "confidence_score": 42.1,
+        "edge": 0.048,
+        "confidence_score": 44.3,
+        "confidence_label": "PASS"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 37.34,
+      "confidence": 34.3,
+      "upstream_label": "PASS",
+      "edge_strength": 1.3333,
+      "edge": 2.0,
+      "market_type": "game_total",
+      "game_id": "2026_10_WAS_NYG",
+      "matchup": "WAS @ NYG",
+      "away_team": "WAS",
+      "home_team": "NYG",
+      "team": "",
+      "pick": "OVER 40.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_10_WAS_NYG",
+        "away_team": "WAS",
+        "home_team": "NYG",
+        "market": "game_total",
+        "selection": "OVER 40.5",
+        "edge": 2.0,
+        "confidence_score": 34.3,
         "confidence_label": "PASS"
       }
     }
@@ -76,11 +108,11 @@
     {
       "ranking_type": "game_bet",
       "tier": "PASS",
-      "ranking_score": 47.07,
-      "confidence": 42.1,
+      "ranking_score": 50.21,
+      "confidence": 44.3,
       "upstream_label": "PASS",
-      "edge_strength": 1.76,
-      "edge": 0.044,
+      "edge_strength": 1.92,
+      "edge": 0.048,
       "market_type": "moneyline",
       "game_id": "2026_10_WAS_NYG",
       "matchup": "WAS @ NYG",
@@ -100,8 +132,40 @@
         "home_team": "NYG",
         "market": "moneyline",
         "selection": "NYG",
-        "edge": 0.044,
-        "confidence_score": 42.1,
+        "edge": 0.048,
+        "confidence_score": 44.3,
+        "confidence_label": "PASS"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 37.34,
+      "confidence": 34.3,
+      "upstream_label": "PASS",
+      "edge_strength": 1.3333,
+      "edge": 2.0,
+      "market_type": "game_total",
+      "game_id": "2026_10_WAS_NYG",
+      "matchup": "WAS @ NYG",
+      "away_team": "WAS",
+      "home_team": "NYG",
+      "team": "",
+      "pick": "OVER 40.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_10_WAS_NYG",
+        "away_team": "WAS",
+        "home_team": "NYG",
+        "market": "game_total",
+        "selection": "OVER 40.5",
+        "edge": 2.0,
+        "confidence_score": 34.3,
         "confidence_label": "PASS"
       }
     }
