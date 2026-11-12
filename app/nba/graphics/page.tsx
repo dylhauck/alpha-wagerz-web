@@ -70,9 +70,24 @@ const background = (w: number, h: number) => `<defs>
   <linearGradient id="titleSport" x1="0%" y1="0%" x2="100%" y2="25%"><stop offset="0%" stop-color="#ff55d7"/><stop offset="25%" stop-color="#fff7ff"/><stop offset="60%" stop-color="#ffffff"/><stop offset="100%" stop-color="#54edff"/></linearGradient>
   <filter id="titleGlow" x="-35%" y="-70%" width="170%" height="240%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="5" result="halo"/><feMerge><feMergeNode in="halo"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <radialGradient id="cyanAtmos"><stop stop-color="#04cfff" stop-opacity=".42"/><stop offset=".48" stop-color="#0751aa" stop-opacity=".18"/><stop offset="1" stop-color="#071327" stop-opacity="0"/></radialGradient>
+  <radialGradient id="pinkAtmos"><stop stop-color="#ff24cf" stop-opacity=".38"/><stop offset=".52" stop-color="#8b1d9d" stop-opacity=".16"/><stop offset="1" stop-color="#071327" stop-opacity="0"/></radialGradient>
   <pattern id="grid" width="45" height="45" patternUnits="userSpaceOnUse"><path d="M45 0H0V45" fill="none" stroke="#24568a" stroke-opacity=".12"/></pattern>
   </defs>
-  <rect width="${w}" height="${h}" fill="url(#bg)"/><rect width="${w}" height="${h}" fill="url(#grid)"/>
+  <rect width="${w}" height="${h}" fill="url(#bg)"/>
+  <ellipse cx="${w*.08}" cy="110" rx="${w*.22}" ry="230" fill="url(#cyanAtmos)"/>
+  <ellipse cx="${w*.92}" cy="110" rx="${w*.22}" ry="230" fill="url(#pinkAtmos)"/>
+  <ellipse cx="${w*.5}" cy="${h*.6}" rx="${w*.58}" ry="${h*.52}" fill="url(#cyanAtmos)" opacity=".16"/>
+  <rect width="${w}" height="${h}" fill="url(#grid)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 150 L48 123 L64 155 L110 112 L126 135 L174 85 L200 112 L${w*.27} 35" stroke="#17dfff" stroke-width="2.8" opacity=".7" filter="url(#glow)"/>
+    <path d="M${w} 155 L${w-46} 124 L${w-70} 148 L${w-117} 94 L${w-143} 120 L${w-198} 62 L${w*.75} 35" stroke="#ff3ed6" stroke-width="2.8" opacity=".7" filter="url(#glow)"/>
+    <path d="M0 210 L${w*.14} 186 L${w*.23} 202 M${w} 210 L${w*.86} 186 L${w*.77} 202" stroke="url(#neon)" stroke-width="2.5" opacity=".7"/>
+  </g>
+  <g opacity=".8">
+    <path d="M${w*.025} 25 H${w*.22} M${w*.78} 25 H${w*.975}" stroke="url(#neon)" stroke-width="3" filter="url(#glow)"/>
+    <path d="M${w*.035} 190 H${w*.22} M${w*.78} 190 H${w*.965}" stroke="url(#neon)" stroke-width="2" opacity=".65"/>
+  </g>
   <path d="M0 10 L${w} 10 M0 ${h-10} L${w} ${h-10}" stroke="url(#neon)" stroke-width="8" filter="url(#glow)"/>
   <path d="M0 ${h*.8} Q${w*.2} ${h*.68} ${w*.4} ${h*.85} T${w} ${h*.76}" fill="none" stroke="#ff26d0" stroke-opacity=".17" stroke-width="5"/>
   <path d="M0 ${h*.18} Q${w*.3} ${h*.3} ${w*.5} ${h*.12} T${w} ${h*.22}" fill="none" stroke="#09e8ff" stroke-opacity=".13" stroke-width="5"/>`;
