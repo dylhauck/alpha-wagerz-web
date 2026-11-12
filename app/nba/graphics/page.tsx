@@ -36,7 +36,7 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
   const width = size === "landscape" ? 1600 : 1080;
   const height = size === "landscape" ? 900 : 1350;
   const left = size === "landscape" ? 90 : 64;
-  const top = size === "landscape" ? 220 : 230;
+  const top = size === "landscape" ? 220 : 255;
   const gap = size === "landscape" ? 20 : 22;
   const columns = size === "landscape" ? 2 : 1;
   const rows = Math.max(1, Math.ceil(selected.length / columns));
@@ -71,9 +71,9 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
     </defs>
     <rect width="${width}" height="${height}" fill="url(#bg)"/>
     <rect x="0" y="0" width="${width}" height="12" fill="url(#accent)"/>
-    <text x="${left}" y="93" fill="#f65ec9" font-size="54" font-weight="900" font-family="Arial,sans-serif" letter-spacing="2">ALPHA WAGERZ</text>
-    <text x="${left}" y="148" fill="#ffffff" font-size="35" font-weight="800" font-family="Arial,sans-serif">NBA GAME PROJECTIONS</text>
-    <text x="${left}" y="186" fill="#9fb6d0" font-size="23" font-family="Arial,sans-serif">SLATE: ${esc(data.slate_date || "UNAVAILABLE")}</text>
+    <text x="${width / 2}" y="90" text-anchor="middle" fill="#f65ec9" font-size="54" font-weight="900" font-family="Arial,sans-serif" letter-spacing="2">ALPHA WAGERZ</text>
+    <text x="${width / 2}" y="148" text-anchor="middle" fill="#ffffff" font-size="35" font-weight="800" font-family="Arial,sans-serif">NBA GAME PROJECTIONS</text>
+    <text x="${width / 2}" y="186" text-anchor="middle" fill="#9fb6d0" font-size="23" font-family="Arial,sans-serif">SLATE: ${esc(data.slate_date || "UNAVAILABLE")}</text>
     <g font-family="Arial,sans-serif">${body}</g>
     <rect x="${left}" y="${height - 87}" width="${width - 2 * left}" height="2" fill="url(#accent)"/>
     <text x="${left}" y="${height - 44}" fill="#51e8ff" font-size="25" font-weight="800" font-family="Arial,sans-serif">FollowTheAlpha 🐺</text>
@@ -108,14 +108,40 @@ function buildTableSvg(data: Payload, selected: Game[], size: "landscape" | "por
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
     <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#061426"/><stop offset="1" stop-color="#250c39"/></linearGradient><linearGradient id="accent"><stop stop-color="#1ceaff"/><stop offset="1" stop-color="#f34acb"/></linearGradient></defs>
     <rect width="${width}" height="${height}" fill="url(#bg)"/><rect width="${width}" height="12" fill="url(#accent)"/>
-    <text x="${margin}" y="96" fill="#f45acb" font-family="Arial,sans-serif" font-size="60" font-weight="900">ALPHA WAGERZ</text>
-    <text x="${margin}" y="152" fill="white" font-family="Arial,sans-serif" font-size="39" font-weight="800">NBA GAME PROJECTIONS</text>
-    <text x="${margin}" y="196" fill="#83eaff" font-family="Arial,sans-serif" font-size="24">SLATE: ${esc(data.slate_date || "UNAVAILABLE")}  •  ${selected.length} MATCHUPS</text>
+    <text x="${width / 2}" y="96" text-anchor="middle" fill="#f45acb" font-family="Arial,sans-serif" font-size="55" font-weight="900">ALPHA WAGERZ</text>
+    <text x="${width / 2}" y="152" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="37" font-weight="800">NBA GAME PROJECTIONS</text>
+    <text x="${width / 2}" y="196" text-anchor="middle" fill="#83eaff" font-family="Arial,sans-serif" font-size="24">SLATE: ${esc(data.slate_date || "UNAVAILABLE")}  •  ${selected.length} MATCHUPS</text>
     ${body}
     <rect x="${margin}" y="${height - 92}" width="${width - margin * 2}" height="3" fill="url(#accent)"/>
     <text x="${margin}" y="${height - 48}" fill="#48eaff" font-family="Arial,sans-serif" font-size="27" font-weight="800">FollowTheAlpha</text>
     <text x="${width - margin}" y="${height - 48}" text-anchor="end" fill="#a6bfd8" font-family="Arial,sans-serif" font-size="18">MODEL PROJECTIONS • NOT FINAL SCORES</text>
   </svg>`;
+}
+
+// Keep brand art as separate same-origin layers so PNG export remains reliable.
+const branding = ["/alphawolf.png", "/awlogo2.png"];
+function brandPlacement(width: number) {
+  const imageWidth = width === 1600 ? 180 : 142;
+  return [{ x: 24, y: 22, w: imageWidth, h: imageWidth },
+    { x: width - imageWidth - 24, y: 22, w: imageWidth, h: imageWidth }];
+}
+function previewSvg(svg: string) {
+  const width = Number(svg.match(/width="(\\d+)"/)?.[1] || 1080);
+  const overlays = brandPlacement(width).map((b, i) =>
+    `<image href="${branding[i]}" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" preserveAspectRatio="xMidYMid meet"/>`).join("");
+  return svg.replace("</svg>", overlays + "</svg>")
+    .replace("<svg ", '<svg style="width:100%;height:auto;display:block" ');
+}
+async function drawBranding(ctx: CanvasRenderingContext2D, width: number) {
+  await Promise.all(branding.map(async (src, i) => {
+    const image = new Image();
+    image.src = src;
+    try {
+      await image.decode();
+      const { x, y, w, h } = brandPlacement(width)[i];
+      ctx.drawImage(image, x, y, w, h);
+    } catch { throw new Error(`Unable to load branding asset: ${src}`); }
+  }));
 }
 
 export default function GraphicsPage() {
@@ -158,6 +184,7 @@ export default function GraphicsPage() {
         const ctx = canvas.getContext("2d");
         if (!ctx) throw new Error("Canvas is unavailable.");
         ctx.drawImage(image, 0, 0);
+        await drawBranding(ctx, canvas.width);
         const blob = await new Promise<Blob>((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error("Unable to export PNG.")), "image/png"));
         const url = URL.createObjectURL(blob);
         const anchor = document.createElement("a");
@@ -183,7 +210,7 @@ export default function GraphicsPage() {
       {payload && <div className="mt-4 flex flex-wrap gap-2">{(payload.games || []).map(g => <label key={String(g.game_id)} className="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs text-slate-200"><input type="checkbox" checked={selectedIds.includes(String(g.game_id))} onChange={e => setSelectedIds(ids => e.target.checked ? [...ids, String(g.game_id)] : ids.filter(id => id !== String(g.game_id)))} />{g.away_team} @ {g.home_team}</label>)}</div>}
     </div>
     <div ref={preview} className="mt-6 overflow-hidden rounded-2xl border border-fuchsia-400/20 bg-[#070f20] p-2">
-      {svg ? <div className="w-full" dangerouslySetInnerHTML={{ __html: svg.replace("<svg ", '<svg style="width:100%;height:auto;display:block" ') }} /> : <p className="p-10 text-center text-slate-400">No valid projections selected for this slate.</p>}
+      {svg ? <div className="w-full" dangerouslySetInnerHTML={{ __html: previewSvg(svg) }} /> : <p className="p-10 text-center text-slate-400">No valid projections selected for this slate.</p>}
     </div>
   </main>;
 }
