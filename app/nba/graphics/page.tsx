@@ -155,7 +155,7 @@ function previewSvg(svg: string) {
     .replace("<svg ", '<svg style="width:100%;height:auto;display:block" ');
 }
 async function inlineTeamLogos(svg: string) {
-  const urls = [...new Set([...svg.matchAll(/href="(\\/api\\/graphics\\/team-logo\\/[A-Z]+)"/g)].map(match => match[1]))];
+  const urls = [...new Set([...svg.matchAll(/href="(\/api\/graphics\/team-logo\/[A-Z]+)"/g)].map(match => match[1]))];
   let output = svg;
   for (const url of urls) {
     const response = await fetch(url);
