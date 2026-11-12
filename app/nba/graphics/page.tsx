@@ -97,7 +97,6 @@ function footer(w: number, h: number, top?: Selection, footerImage?: string) {
     <rect x="64" y="${h-154}" width="${w-128}" height="74" rx="18" fill="#110b2d" stroke="#f34acb" stroke-width="3" filter="url(#glow)"/>
     <text x="${w/2}" y="${h-111}" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">${line}</text>
     ${footerImage ? `<image href="${footerImage}" x="${w*.13}" y="${h-90}" width="${w*.74}" height="86" preserveAspectRatio="xMidYMid meet"/>` : ""}
-    <text x="${w-65}" y="${h-36}" text-anchor="end" font-size="17" fill="#b8c5db">MODEL PROJECTIONS · NOT FINAL SCORES</text>
   </g>`;
 }
 function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait", markets: Market[], footerImage?: string) {
