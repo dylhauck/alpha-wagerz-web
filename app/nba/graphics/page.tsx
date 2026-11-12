@@ -32,6 +32,7 @@ const pct = (value?: number) => typeof value === "number" && Number.isFinite(val
 const score = (value?: number) => typeof value === "number" && Number.isFinite(value) ? value.toFixed(1) : "—";
 
 function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait") {
+  if (selected.length >= 7) return buildTableSvg(data, selected, size);
   const width = size === "landscape" ? 1600 : 1080;
   const height = size === "landscape" ? 900 : 1350;
   const left = size === "landscape" ? 90 : 64;
@@ -79,6 +80,44 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
     <text x="${width - left}" y="${height - 44}" text-anchor="end" fill="#9fb6d0" font-size="18" font-family="Arial,sans-serif">MODEL PROJECTIONS • NOT FINAL SCORES</text>
   </svg>`;
 }
+function buildTableSvg(data: Payload, selected: Game[], size: "landscape" | "portrait") {
+  const width = size === "landscape" ? 1600 : 1080;
+  const margin = 60;
+  const rowHeight = size === "landscape" ? 76 : 86;
+  const height = Math.max(size === "landscape" ? 900 : 1350, 280 + selected.length * rowHeight + 120);
+  const leftWidth = width * .34;
+  const body = selected.map((game, index) => {
+    const y = 245 + index * rowHeight;
+    const model = game.model || {};
+    const away = model.away_win_probability, home = model.home_win_probability;
+    const winner = typeof away === "number" && typeof home === "number"
+      ? (away >= home ? game.away_team : game.home_team) : "—";
+    const probability = typeof away === "number" && typeof home === "number"
+      ? pct(Math.max(away, home)) : "—";
+    const title = esc(game.away_team + "  VS  " + game.home_team);
+    return `<g font-family="Arial,sans-serif">
+      <rect x="${margin}" y="${y}" width="${width - margin * 2}" height="${rowHeight - 8}" rx="14" fill="#0b1a31" stroke="${index % 2 ? "#f64cc9" : "#1adfff"}" stroke-width="3"/>
+      <text x="${margin + 22}" y="${y + 32}" font-size="${size === "landscape" ? 26 : 23}" font-weight="800" fill="white">${title}</text>
+      <text x="${margin + 22}" y="${y + 57}" font-size="17" fill="#7eefff">MODEL SCORES: ${score(model.away_score)} – ${score(model.home_score)}</text>
+      <text x="${leftWidth + 40}" y="${y + 34}" font-size="24" font-weight="800" fill="#f4a7e8">${esc(winner)} ${probability}</text>
+      <text x="${leftWidth + 40}" y="${y + 57}" font-size="16" fill="#a6bfd8">MODEL WIN PROBABILITY</text>
+      <text x="${width - margin - 24}" y="${y + 34}" text-anchor="end" font-size="24" font-weight="800" fill="#42eaff">${score(model.projected_total)}</text>
+      <text x="${width - margin - 24}" y="${y + 57}" text-anchor="end" font-size="16" fill="#a6bfd8">PROJECTED TOTAL</text>
+    </g>`;
+  }).join("");
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+    <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#061426"/><stop offset="1" stop-color="#250c39"/></linearGradient><linearGradient id="accent"><stop stop-color="#1ceaff"/><stop offset="1" stop-color="#f34acb"/></linearGradient></defs>
+    <rect width="${width}" height="${height}" fill="url(#bg)"/><rect width="${width}" height="12" fill="url(#accent)"/>
+    <text x="${margin}" y="96" fill="#f45acb" font-family="Arial,sans-serif" font-size="60" font-weight="900">ALPHA WAGERZ</text>
+    <text x="${margin}" y="152" fill="white" font-family="Arial,sans-serif" font-size="39" font-weight="800">NBA GAME PROJECTIONS</text>
+    <text x="${margin}" y="196" fill="#83eaff" font-family="Arial,sans-serif" font-size="24">SLATE: ${esc(data.slate_date || "UNAVAILABLE")}  •  ${selected.length} MATCHUPS</text>
+    ${body}
+    <rect x="${margin}" y="${height - 92}" width="${width - margin * 2}" height="3" fill="url(#accent)"/>
+    <text x="${margin}" y="${height - 48}" fill="#48eaff" font-family="Arial,sans-serif" font-size="27" font-weight="800">FollowTheAlpha</text>
+    <text x="${width - margin}" y="${height - 48}" text-anchor="end" fill="#a6bfd8" font-family="Arial,sans-serif" font-size="18">MODEL PROJECTIONS • NOT FINAL SCORES</text>
+  </svg>`;
+}
+
 export default function GraphicsPage() {
   const [slate, setSlate] = useState<"current" | "next">("current");
   const [format, setFormat] = useState<"landscape" | "portrait">("landscape");
@@ -87,6 +126,7 @@ export default function GraphicsPage() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const preview = useRef<HTMLDivElement>(null);
+  const [page, setPage] = useState(0);
   useEffect(() => {
     let active = true;
     setBusy(true); setError(""); setPayload(null);
@@ -98,9 +138,12 @@ export default function GraphicsPage() {
     return () => { active = false; };
   }, [slate]);
   const games = useMemo(() => (payload?.games || []).filter(g => selectedIds.includes(String(g.game_id))), [payload, selectedIds]);
-  const limit = format === "landscape" ? 4 : 5;
-  const selected = games.slice(0, limit);
+  const limit = games.length <= 6 ? (format === "landscape" ? 6 : 6) : 12;
+  const pageCount = Math.max(1, Math.ceil(games.length / limit));
+  const currentPage = Math.min(page, pageCount - 1);
+  const selected = games.slice(currentPage * limit, (currentPage + 1) * limit);
   const svg = payload && selected.length ? buildSvg(payload, selected, format) : "";
+  useEffect(() => { setPage(0); }, [slate, format, selectedIds]);
   const download = async () => {
     if (!svg) return;
     setError("");
@@ -110,15 +153,15 @@ export default function GraphicsPage() {
       try {
         await new Promise<void>((resolve, reject) => { image.onload = () => resolve(); image.onerror = () => reject(new Error("Unable to render PNG.")); image.src = svgUrl; });
         const canvas = document.createElement("canvas");
-        canvas.width = format === "landscape" ? 1600 : 1080;
-        canvas.height = format === "landscape" ? 900 : 1350;
+        canvas.width = image.naturalWidth;
+        canvas.height = image.naturalHeight;
         const ctx = canvas.getContext("2d");
         if (!ctx) throw new Error("Canvas is unavailable.");
         ctx.drawImage(image, 0, 0);
         const blob = await new Promise<Blob>((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error("Unable to export PNG.")), "image/png"));
         const url = URL.createObjectURL(blob);
         const anchor = document.createElement("a");
-        anchor.href = url; anchor.download = `alpha-wagerz-nba-projections-${payload?.slate_date || slate}.png`;
+        anchor.href = url; anchor.download = `alpha-wagerz-nba-projections-${payload?.slate_date || slate}-${currentPage + 1}.png`;
         anchor.click();
         window.setTimeout(() => URL.revokeObjectURL(url), 1000);
       } finally { URL.revokeObjectURL(svgUrl); }
@@ -133,7 +176,8 @@ export default function GraphicsPage() {
         <label className="text-sm font-bold text-slate-200">Format <select value={format} onChange={e => setFormat(e.target.value as "landscape" | "portrait")} className="ml-2 rounded-lg border border-white/20 bg-[#071426] px-3 py-2"><option value="landscape">Landscape · 1600 × 900</option><option value="portrait">Portrait · 1080 × 1350</option></select></label>
         <button type="button" onClick={download} disabled={!svg} className="rounded-xl bg-gradient-to-r from-cyan-400 to-fuchsia-500 px-6 py-2 font-black text-[#071426] disabled:opacity-40">Download PNG</button>
       </div>
-      <p className="mt-3 text-xs text-slate-400">NBA Game Projections · Select up to {limit} matchups per graphic. Additional graphics can be downloaded by changing the selection.</p>
+      <p className="mt-3 text-xs text-slate-400">NBA Game Projections · Adaptive cards for 1–6 games and a compact table for 7+ games. All selected matchups are included across pages.</p>
+      {pageCount > 1 && <div className="mt-4 flex items-center gap-3 text-sm text-slate-200"><button type="button" disabled={currentPage === 0} onClick={() => setPage(p => Math.max(0, p - 1))} className="rounded border border-cyan-400/50 px-3 py-2 disabled:opacity-30">Previous</button><span>Graphic {currentPage + 1} of {pageCount}</span><button type="button" disabled={currentPage >= pageCount - 1} onClick={() => setPage(p => Math.min(pageCount - 1, p + 1))} className="rounded border border-cyan-400/50 px-3 py-2 disabled:opacity-30">Next</button></div>}
       {busy && <p className="mt-4 text-cyan-300">Loading current model projections…</p>}
       {error && <p role="alert" className="mt-4 text-rose-300">{error}</p>}
       {payload && <div className="mt-4 flex flex-wrap gap-2">{(payload.games || []).map(g => <label key={String(g.game_id)} className="flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-xs text-slate-200"><input type="checkbox" checked={selectedIds.includes(String(g.game_id))} onChange={e => setSelectedIds(ids => e.target.checked ? [...ids, String(g.game_id)] : ids.filter(id => id !== String(g.game_id)))} />{g.away_team} @ {g.home_team}</label>)}</div>}
