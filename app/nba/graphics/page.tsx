@@ -74,7 +74,7 @@ const background = (w: number, h: number) => `<defs>
   <radialGradient id="cyanAtmos"><stop stop-color="#04cfff" stop-opacity=".42"/><stop offset=".48" stop-color="#0751aa" stop-opacity=".18"/><stop offset="1" stop-color="#071327" stop-opacity="0"/></radialGradient>
   <radialGradient id="pinkAtmos"><stop stop-color="#ff24cf" stop-opacity=".38"/><stop offset=".52" stop-color="#8b1d9d" stop-opacity=".16"/><stop offset="1" stop-color="#071327" stop-opacity="0"/></radialGradient>
   <filter id="brandHalo" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="18"/></filter>
-  <pattern id="grid" width="45" height="45" patternUnits="userSpaceOnUse"><path d="M45 0H0V45" fill="none" stroke="#24568a" stroke-opacity=".12"/></pattern>
+  <pattern id="grid" width="45" height="45" patternUnits="userSpaceOnUse"><path d="M45 0H0V45" fill="none" stroke="#24568a" stroke-opacity=".045"/></pattern>
   </defs>
   <rect width="${w}" height="${h}" fill="url(#bg)"/>
   <ellipse cx="${w*.08}" cy="110" rx="${w*.22}" ry="230" fill="url(#cyanAtmos)"/>
@@ -84,11 +84,17 @@ const background = (w: number, h: number) => `<defs>
   <ellipse cx="${w*.92}" cy="110" rx="${w*.22}" ry="230" fill="url(#pinkAtmos)"/>
   <ellipse cx="${w*.5}" cy="${h*.6}" rx="${w*.58}" ry="${h*.52}" fill="url(#cyanAtmos)" opacity=".16"/>
   <rect width="${w}" height="${h}" fill="url(#grid)"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".38">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".68">
     <path d="M0 ${h*.37} l${w*.07} -24 l${w*.023} 37 l${w*.08} -62 l${w*.028} 29 l${w*.12} -48" stroke="#1cdeff" stroke-width="2.8" filter="url(#glow)"/>
     <path d="M${w} ${h*.47} l-${w*.07} -33 l-${w*.025} 39 l-${w*.09} -59 l-${w*.025} 26 l-${w*.1} -44" stroke="#fa43d5" stroke-width="2.8" filter="url(#glow)"/>
     <path d="M0 ${h*.77} l${w*.09} -32 l${w*.023} 21 l${w*.09} -50 l${w*.04} 25 l${w*.12} -28" stroke="#4d7fff" stroke-width="2.3" filter="url(#glow)"/>
     <path d="M${w} ${h*.83} l-${w*.09} -32 l-${w*.023} 21 l-${w*.09} -50 l-${w*.04} 25 l-${w*.12} -28" stroke="#f745cf" stroke-width="2.3" filter="url(#glow)"/>
+  </g>
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)">
+    <path d="M0 ${h*.33} l65 -54 22 34 76 -81 18 38 91 -86" stroke="#17dfff" stroke-width="4" opacity=".68"/>
+    <path d="M${w} ${h*.32} l-67 -57 -28 37 -70 -81 -21 34 -87 -77" stroke="#ff38d8" stroke-width="4" opacity=".72"/>
+    <path d="M0 ${h*.72} l74 -38 21 36 68 -74 30 26 81 -66" stroke="#2c8fff" stroke-width="3" opacity=".48"/>
+    <path d="M${w} ${h*.78} l-80 -47 -25 35 -70 -69 -32 30 -83 -75" stroke="#ff4adf" stroke-width="3" opacity=".52"/>
   </g>
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M0 150 L48 123 L64 155 L110 112 L126 135 L174 85 L200 112 L${w*.27} 35" stroke="#17dfff" stroke-width="2.8" opacity=".7" filter="url(#glow)"/>
@@ -155,28 +161,35 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
       <text x="${x+cardW*.54}" y="${y+123}" font-size="19" fill="#fff">TOTAL: ${esc(lines.total)}</text>
     </g>`;
     const center = x + cardW/2;
-    const sideW = (cardW-28)/3;
-    return `<g font-family="Arial,sans-serif">${frame}
-      ${logo(game.away_team,x+23,y+14,82)} ${logo(game.home_team,x+cardW-105,y+14,82)}
-      <text x="${x+118}" y="${y+46}" font-size="21" font-weight="900" fill="#fff">${esc(game.away_team)}</text>
-      <text x="${x+cardW-118}" y="${y+46}" text-anchor="end" font-size="21" font-weight="900" fill="#fff">${esc(game.home_team)}</text>
-      <text x="${center}" y="${y+47}" text-anchor="middle" font-size="29" font-weight="900" fill="#29eaff">VS</text>
-      <rect x="${x+48}" y="${y+107}" width="${cardW-96}" height="34" rx="10" fill="#260c30" stroke="#fa51d8" stroke-width="2.5" filter="url(#glow)"/>
-      <text x="${center}" y="${y+130}" text-anchor="middle" font-size="19" font-weight="900" font-style="italic" fill="#fff">MODEL GAME PROJECTIONS</text>
-      <rect x="${x+14}" y="${y+150}" width="${cardW-28}" height="65" rx="8" fill="#07152b" stroke="#1ce5ff" stroke-width="2"/>
-      <path d="M${center} ${y+150} v65" stroke="#1ce5ff" stroke-width="1.5"/>
-      <text x="${x+28}" y="${y+170}" font-size="14" font-weight="800" fill="#41edff">PROJECTED SCORE</text>
-      <text x="${x+28}" y="${y+201}" font-size="24" font-weight="900" fill="#fff">${score(m.away_score)} – ${score(m.home_score)}</text>
-      <text x="${center+14}" y="${y+170}" font-size="14" font-weight="800" fill="#41edff">MODEL WIN %</text>
-      <text x="${center+14}" y="${y+201}" font-size="21" font-weight="900" fill="#fff">${pct(m.away_win_probability)} / ${pct(m.home_win_probability)}</text>
-      <rect x="${x+14}" y="${y+221}" width="${cardW-28}" height="72" rx="8" fill="#07152b" stroke="#f251d9" stroke-width="2"/>
-      <path d="M${x+14+sideW} ${y+221} v72 M${x+14+sideW*2} ${y+221} v72" stroke="#27dfff" stroke-width="1.5"/>
-      <text x="${x+23}" y="${y+243}" font-size="13" font-weight="800" fill="#3ceaff">MONEYLINE</text>
-      <text x="${x+23}" y="${y+274}" font-size="17" font-weight="900" fill="#fff">${label(lines.ml,17)}</text>
-      <text x="${x+22+sideW}" y="${y+243}" font-size="13" font-weight="800" fill="#3ceaff">SPREAD</text>
-      <text x="${x+22+sideW}" y="${y+274}" font-size="17" font-weight="900" fill="#fff">${label(lines.spread,14)}</text>
-      <text x="${x+22+sideW*2}" y="${y+243}" font-size="13" font-weight="800" fill="#3ceaff">OVER / UNDER</text>
-      <text x="${x+22+sideW*2}" y="${y+274}" font-size="17" font-weight="900" fill="#fff">${esc(lines.total)}</text>
+    const inner = cardW - 28;
+    const cell = inner / 3;
+    const awayName = names[game.away_team] || game.away_team;
+    const homeName = names[game.home_team] || game.home_team;
+    const teamText = (full: string, max: number) => esc(full.length > max ? full.slice(0,max-1)+"…" : full);
+    return `<g font-family="Arial Narrow,Arial,sans-serif">${frame}
+      <rect x="${x+14}" y="${y+12}" width="${cardW-28}" height="94" rx="12" fill="#040d1c"/>
+      ${logo(game.away_team,x+24,y+17,74)}
+      ${logo(game.home_team,x+cardW-98,y+17,74)}
+      <text x="${x+105}" y="${y+47}" font-size="19" font-weight="900" fill="#fff">${teamText(awayName,17)}</text>
+      <text x="${x+cardW-105}" y="${y+47}" text-anchor="end" font-size="19" font-weight="900" fill="#fff">${teamText(homeName,17)}</text>
+      <text x="${center}" y="${y+55}" text-anchor="middle" font-size="27" font-weight="900" font-style="italic" fill="#23eaff" filter="url(#titleGlow)">VS</text>
+      <path d="M${x+22} ${y+102} H${x+cardW-22}" stroke="#1bdfff" stroke-width="2" opacity=".7"/>
+      <path d="M${x+88} ${y+111} H${x+cardW-88} L${x+cardW-64} ${y+129} L${x+cardW-88} ${y+147} H${x+88} L${x+64} ${y+129} Z" fill="#1b0b2c" stroke="#ff48da" stroke-width="3" filter="url(#glow)"/>
+      <text x="${center}" y="${y+136}" text-anchor="middle" font-size="18" font-weight="900" font-style="italic" fill="#fff">MODEL GAME PROJECTIONS</text>
+      <rect x="${x+14}" y="${y+157}" width="${inner}" height="62" rx="7" fill="#020d1b" stroke="#17e9ff" stroke-width="2"/>
+      <path d="M${center} ${y+157} v62" stroke="#16dfff" stroke-width="1.5"/>
+      <text x="${x+25}" y="${y+176}" font-size="13" font-weight="900" fill="#2beaff">PROJECTED SCORE</text>
+      <text x="${x+25}" y="${y+204}" font-size="22" font-weight="900" fill="#fff">${esc(game.away_team)} ${score(m.away_score)}  ·  ${esc(game.home_team)} ${score(m.home_score)}</text>
+      <text x="${center+12}" y="${y+176}" font-size="13" font-weight="900" fill="#2beaff">MODEL WIN %</text>
+      <text x="${center+12}" y="${y+204}" font-size="20" font-weight="900" fill="#fff">${esc(game.away_team)} ${pct(m.away_win_probability)}  /  ${esc(game.home_team)} ${pct(m.home_win_probability)}</text>
+      <rect x="${x+14}" y="${y+225}" width="${inner}" height="69" rx="7" fill="#020b19" stroke="#ff43d7" stroke-width="2.5"/>
+      <path d="M${x+14+cell} ${y+225} v69 M${x+14+cell*2} ${y+225} v69" stroke="#2ceaff" stroke-width="1.5"/>
+      <text x="${x+22}" y="${y+245}" font-size="13" font-weight="900" fill="#2deaff">MONEYLINE</text>
+      <text x="${x+22}" y="${y+276}" font-size="16" font-weight="900" fill="#fff">${label(lines.ml,19)}</text>
+      <text x="${x+22+cell}" y="${y+245}" font-size="13" font-weight="900" fill="#2deaff">SPREAD</text>
+      <text x="${x+22+cell}" y="${y+276}" font-size="16" font-weight="900" fill="#fff">${label(lines.spread,15)}</text>
+      <text x="${x+22+cell*2}" y="${y+245}" font-size="13" font-weight="900" fill="#2deaff">OVER / UNDER</text>
+      <text x="${x+22+cell*2}" y="${y+276}" font-size="16" font-weight="900" fill="#fff">${esc(lines.total)}</text>
     </g>`;
   }).join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
@@ -190,10 +203,10 @@ function brandPlacement(width: number) {
   const shieldSize = width === 1600 ? 194 : 154;
   // Align the bottom of the cropped wolf art to the first card's top edge.
   // Do not overlap the team logo or projected-score content below that edge.
-  const wolfSize = width === 1600 ? 205 : 180;
+  const wolfSize = width === 1600 ? 225 : 190;
   const cardTop = 284;
   return [
-    { x: 22, y: cardTop - wolfSize - 28, w: wolfSize, h: wolfSize },
+    { x: 16, y: 24, w: wolfSize, h: wolfSize },
     { x: width - shieldSize - 24, y: 22, w: shieldSize, h: shieldSize }
   ];
 }
