@@ -164,7 +164,7 @@ function brandPlacement(width: number) {
     { x: width - imageWidth - 24, y: 22, w: imageWidth, h: imageWidth }];
 }
 function previewSvg(svg: string) {
-  const width = Number(svg.match(/width="(\\d+)"/)?.[1] || 1080);
+  const width = Number(svg.match(/width="(\d+)"/)?.[1] || 1080);
   const overlays = brandPlacement(width).map((b, i) =>
     `<image href="${branding[i]}" x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" preserveAspectRatio="xMidYMid meet"/>`).join("");
   return svg.replace("</svg>", overlays + "</svg>")
