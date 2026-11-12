@@ -81,16 +81,16 @@ function header(w: number, date: string, total: number) {
     <path d="M65 202 H${w-65}" stroke="url(#neon)" stroke-width="3" filter="url(#glow)"/>
   </g>`;
 }
-function footer(w: number, h: number, top?: Selection) {
+function footer(w: number, h: number, top?: Selection, footerImage?: string) {
   const line = top ? `MOST CONFIDENT AVAILABLE ML: ${esc(top.label)}  •  ${top.confidence.toFixed(1)}%` : "NO VERIFIED MONEYLINE SELECTION AVAILABLE";
   return `<g font-family="Arial,sans-serif">
     <rect x="64" y="${h-154}" width="${w-128}" height="74" rx="18" fill="#110b2d" stroke="#f34acb" stroke-width="3" filter="url(#glow)"/>
     <text x="${w/2}" y="${h-111}" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">${line}</text>
-    <image href="/follow-alpha.png" x="${w/2-270}" y="${h-79}" width="540" height="68" preserveAspectRatio="xMidYMid meet"/>
+    ${footerImage ? `<image href="${footerImage}" x="${w*.13}" y="${h-90}" width="${w*.74}" height="86" preserveAspectRatio="xMidYMid meet"/>` : ""}
     <text x="${w-65}" y="${h-36}" text-anchor="end" font-size="17" fill="#b8c5db">MODEL PROJECTIONS · NOT FINAL SCORES</text>
   </g>`;
 }
-function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait", markets: Market[]) {
+function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait", markets: Market[], footerImage?: string) {
   const w = size === "landscape" ? 1600 : 1080;
   const compact = selected.length >= 7;
   const cols = compact ? 1 : 2;
@@ -144,7 +144,7 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
   }).join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
     ${background(w,h)}${header(w,data.slate_date || "DATE UNAVAILABLE",selected.length)}
-    ${body}${footer(w,h,best)}
+    ${body}${footer(w,h,best,footerImage)}
   </svg>`;
 }
 // Keep brand art as separate same-origin layers so PNG export remains reliable.
@@ -190,11 +190,31 @@ async function drawBranding(ctx: CanvasRenderingContext2D, width: number) {
   }));
 }
 
-async function drawFooterLogo(ctx: CanvasRenderingContext2D, width: number, height: number) {
-  const image = new Image();
-  image.src = "/follow-alpha.png";
-  await image.decode();
-  ctx.drawImage(image, width / 2 - 270, height - 79, 540, 68);
+async function loadCroppedFooter(): Promise<string> {
+  const img = new Image();
+  img.src = "/follow-alpha.png";
+  await img.decode();
+  const source = document.createElement("canvas");
+  source.width = img.naturalWidth;
+  source.height = img.naturalHeight;
+  const context = source.getContext("2d");
+  if (!context) throw new Error("Unable to process footer image");
+  context.drawImage(img, 0, 0);
+  const pixels = context.getImageData(0, 0, source.width, source.height).data;
+  let left = source.width, right = -1, top = source.height, bottom = -1;
+  for (let y = 0; y < source.height; y++) for (let x = 0; x < source.width; x++) {
+    const index = (y * source.width + x) * 4;
+    if (pixels[index + 3] > 20) {
+      left = Math.min(left, x); right = Math.max(right, x);
+      top = Math.min(top, y); bottom = Math.max(bottom, y);
+    }
+  }
+  if (right < left) return img.src;
+  const crop = document.createElement("canvas");
+  crop.width = right - left + 1;
+  crop.height = bottom - top + 1;
+  crop.getContext("2d")?.drawImage(source, left, top, crop.width, crop.height, 0, 0, crop.width, crop.height);
+  return crop.toDataURL("image/png");
 }
 
 export default function GraphicsPage() {
@@ -202,6 +222,8 @@ export default function GraphicsPage() {
   const [format, setFormat] = useState<"landscape" | "portrait">("portrait");
   const [payload, setPayload] = useState<Payload | null>(null);
   const [markets, setMarkets] = useState<Market[]>([]);
+  const [footerImage, setFooterImage] = useState<string>();
+  useEffect(() => { loadCroppedFooter().then(setFooterImage).catch(() => {}); }, []);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -222,7 +244,7 @@ export default function GraphicsPage() {
   const pageCount = Math.max(1, Math.ceil(games.length / limit));
   const currentPage = Math.min(page, pageCount - 1);
   const selected = games.slice(currentPage * limit, (currentPage + 1) * limit);
-  const svg = payload && selected.length ? buildSvg(payload, selected, format, markets) : "";
+  const svg = payload && selected.length ? buildSvg(payload, selected, format, markets, footerImage) : "";
   useEffect(() => { setPage(0); }, [slate, format, selectedIds]);
   const best = games.flatMap(g => choices(g, markets.find(m => m.game_id === g.game_id)).map(p => ({ ...p, game: g }))).sort((a,b) => b.confidence - a.confidence)[0];
   const download = async () => {
@@ -241,7 +263,7 @@ export default function GraphicsPage() {
         if (!ctx) throw new Error("Canvas is unavailable.");
         ctx.drawImage(image, 0, 0);
         await drawBranding(ctx, canvas.width);
-        await drawFooterLogo(ctx, canvas.width, canvas.height);
+
         const blob = await new Promise<Blob>((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error("Unable to export PNG.")), "image/png"));
         const url = URL.createObjectURL(blob);
         const anchor = document.createElement("a");
