@@ -94,11 +94,11 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
   const w = size === "landscape" ? 1600 : 1080;
   const compact = selected.length >= 7;
   const cols = compact ? 1 : 2;
-  const gap = 20, left = 60, top = 238;
-  const cardH = compact ? 102 : 270;
+  const gap = 24, left = 56, top = 228;
+  const cardH = compact ? 118 : 338;
   const rows = Math.ceil(selected.length / cols);
   const minHeight = size === "landscape" ? 900 : 1350;
-  const h = Math.max(minHeight, top + rows * (cardH + gap) + 190);
+  const h = Math.max(minHeight, top + rows * (cardH + gap) + 200);
   const cardW = (w - left * 2 - gap * (cols-1)) / cols;
   const best = selected.flatMap(g => choices(g, markets.find(m => m.game_id === g.game_id && m.away_team === g.away_team && m.home_team === g.home_team))).sort((a,b) => b.confidence-a.confidence)[0];
   const body = selected.map((game, i) => {
@@ -109,7 +109,6 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
     const awayPct = pct(m.away_win_probability), homePct = pct(m.home_win_probability);
     const winning = numeric(m.away_win_probability) && numeric(m.home_win_probability)
       ? (m.away_win_probability >= m.home_win_probability ? game.away_team : game.home_team) : "—";
-    const name = (abbr: string) => esc(names[abbr] || abbr);
     const frame = `<rect x="${x}" y="${y}" width="${cardW}" height="${cardH}" rx="18" fill="#071327" stroke="${i%2 ? "#ff49d4" : "#1fe9ff"}" stroke-width="3" filter="url(#glow)"/>`;
     if (compact) return `<g font-family="Arial,sans-serif">${frame}
       ${logo(game.away_team,x+16,y+13,65)} ${logo(game.home_team,x+93,y+13,65)}
@@ -120,19 +119,27 @@ function buildSvg(data: Payload, selected: Game[], size: "landscape" | "portrait
       <text x="${x+cardW-18}" y="${y+38}" text-anchor="end" font-size="20" fill="#fff">SPREAD ${esc(lines.spread)}</text>
       <text x="${x+cardW-18}" y="${y+72}" text-anchor="end" font-size="20" fill="#49eaff">${esc(lines.total)}</text>
     </g>`;
+    const half = cardW / 2;
+    const label = (value: string, max = 25) => esc(value.length > max ? value.slice(0, max - 1) + "…" : value);
     return `<g font-family="Arial,sans-serif">${frame}
-      ${logo(game.away_team,x+45,y+12,82)} ${logo(game.home_team,x+cardW-127,y+12,82)}
-      <text x="${x+cardW/2}" y="${y+61}" text-anchor="middle" font-size="27" font-weight="900" fill="#27e8ff">VS</text>
-      <text x="${x+95}" y="${y+115}" text-anchor="middle" font-size="22" font-weight="900" fill="white">${esc(game.away_team)}</text>
-      <text x="${x+cardW-95}" y="${y+115}" text-anchor="middle" font-size="22" font-weight="900" fill="white">${esc(game.home_team)}</text>
-      <text x="${x+cardW/2}" y="${y+114}" text-anchor="middle" font-size="20" fill="#b1c5e1">${score(m.away_score)} – ${score(m.home_score)}</text>
-      <text x="${x+24}" y="${y+152}" font-size="19" font-weight="800" fill="#31e8ff">MODEL WIN %</text>
-      <text x="${x+cardW-24}" y="${y+152}" text-anchor="end" font-size="20" font-weight="800" fill="white">${awayPct} / ${homePct}</text>
-      <path d="M${x+20} ${y+166} H${x+cardW-20}" stroke="#2389bb" stroke-width="2"/>
-      <text x="${x+24}" y="${y+194}" font-size="18" fill="#fff">ML: ${esc(lines.ml)}</text>
-      <text x="${x+24}" y="${y+225}" font-size="18" fill="#fff">SPREAD: ${esc(lines.spread)}</text>
-      <text x="${x+24}" y="${y+253}" font-size="18" fill="#fff">TOTAL: ${esc(lines.total)}</text>
-      <text x="${x+cardW-20}" y="${y+253}" text-anchor="end" font-size="16" fill="#50eaff">${topPick ? topPick.confidence.toFixed(1)+"% ML" : "NO ML"}</text>
+      <rect x="${x+14}" y="${y+14}" width="${cardW-28}" height="136" rx="12" fill="#0c1d35"/>
+      ${logo(game.away_team,x+28,y+24,74)} ${logo(game.home_team,x+cardW-102,y+24,74)}
+      <text x="${x+65}" y="${y+121}" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">${esc(game.away_team)}</text>
+      <text x="${x+cardW-65}" y="${y+121}" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">${esc(game.home_team)}</text>
+      <text x="${x+half}" y="${y+57}" text-anchor="middle" font-size="22" font-weight="900" fill="#3beaff">VS</text>
+      <text x="${x+half}" y="${y+90}" text-anchor="middle" font-size="23" font-weight="900" fill="#fff">${score(m.away_score)} – ${score(m.home_score)}</text>
+      <text x="${x+half}" y="${y+115}" text-anchor="middle" font-size="14" fill="#91aecf">PROJECTED SCORE</text>
+      <text x="${x+24}" y="${y+179}" font-size="17" font-weight="800" fill="#40e9ff">MODEL WIN PROBABILITY</text>
+      <text x="${x+cardW-24}" y="${y+179}" text-anchor="end" font-size="18" font-weight="900" fill="#fff">${awayPct} / ${homePct}</text>
+      <rect x="${x+24}" y="${y+192}" width="${cardW-48}" height="6" rx="3" fill="#213c60"/>
+      <rect x="${x+24}" y="${y+192}" width="${numeric(m.away_win_probability) ? (cardW-48)*Math.min(1,Math.max(0,m.away_win_probability > 1 ? m.away_win_probability/100 : m.away_win_probability)) : 0}" height="6" rx="3" fill="#30dfff"/>
+      <path d="M${x+20} ${y+212} H${x+cardW-20}" stroke="#2d537a" stroke-width="1.5"/>
+      <text x="${x+24}" y="${y+235}" font-size="14" font-weight="800" fill="#42eaff">MONEYLINE</text>
+      <text x="${x+cardW-24}" y="${y+235}" text-anchor="end" font-size="17" font-weight="800" fill="#fff">${label(lines.ml,29)}</text>
+      <text x="${x+24}" y="${y+269}" font-size="14" font-weight="800" fill="#42eaff">SPREAD</text>
+      <text x="${x+cardW-24}" y="${y+269}" text-anchor="end" font-size="17" font-weight="800" fill="#fff">${label(lines.spread,24)}</text>
+      <text x="${x+24}" y="${y+303}" font-size="14" font-weight="800" fill="#42eaff">OVER / UNDER</text>
+      <text x="${x+cardW-24}" y="${y+303}" text-anchor="end" font-size="17" font-weight="800" fill="#fff">${esc(lines.total)}</text>
     </g>`;
   }).join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
