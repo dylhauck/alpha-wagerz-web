@@ -66,6 +66,9 @@ const logo = (abbr: string, x: number, y: number, size: number) =>
 const background = (w: number, h: number) => `<defs>
   <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#030a1b"/><stop offset=".55" stop-color="#07142a"/><stop offset="1" stop-color="#230a33"/></linearGradient>
   <linearGradient id="neon"><stop stop-color="#08dfff"/><stop offset=".52" stop-color="#3277ff"/><stop offset="1" stop-color="#ff35c7"/></linearGradient>
+  <linearGradient id="titleBrand" x1="0%" y1="0%" x2="100%" y2="25%"><stop offset="0%" stop-color="#19f4ff"/><stop offset="42%" stop-color="#79eaff"/><stop offset="68%" stop-color="#f1b7ff"/><stop offset="100%" stop-color="#ff39d4"/></linearGradient>
+  <linearGradient id="titleSport" x1="0%" y1="0%" x2="100%" y2="25%"><stop offset="0%" stop-color="#ff55d7"/><stop offset="25%" stop-color="#fff7ff"/><stop offset="60%" stop-color="#ffffff"/><stop offset="100%" stop-color="#54edff"/></linearGradient>
+  <filter id="titleGlow" x="-35%" y="-70%" width="170%" height="240%" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="5" result="halo"/><feMerge><feMergeNode in="halo"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   <pattern id="grid" width="45" height="45" patternUnits="userSpaceOnUse"><path d="M45 0H0V45" fill="none" stroke="#24568a" stroke-opacity=".12"/></pattern>
   </defs>
@@ -74,10 +77,17 @@ const background = (w: number, h: number) => `<defs>
   <path d="M0 ${h*.8} Q${w*.2} ${h*.68} ${w*.4} ${h*.85} T${w} ${h*.76}" fill="none" stroke="#ff26d0" stroke-opacity=".17" stroke-width="5"/>
   <path d="M0 ${h*.18} Q${w*.3} ${h*.3} ${w*.5} ${h*.12} T${w} ${h*.22}" fill="none" stroke="#09e8ff" stroke-opacity=".13" stroke-width="5"/>`;
 function header(w: number, date: string, total: number) {
-  return `<g font-family="Arial,sans-serif">
-    <text x="${w/2}" y="82" text-anchor="middle" font-size="52" font-weight="900" fill="#f958d9">ALPHA WAGERZ</text>
-    <text x="${w/2}" y="136" text-anchor="middle" font-size="36" font-weight="900" fill="white">NBA GAME PROJECTIONS</text>
-    <text x="${w/2}" y="183" text-anchor="middle" font-size="23" font-weight="700" fill="#36eaff">${esc(date)}  •  ${total} GAMES</text>
+  const center = w / 2;
+  const brandSize = w === 1080 ? 55 : 66;
+  const subtitleSize = w === 1080 ? 36 : 47;
+  return `<g font-family="Arial Black,Arial,sans-serif" text-anchor="middle">
+    <g font-weight="900" font-style="italic" letter-spacing="1.2">
+      <text x="${center}" y="85" font-size="${brandSize}" fill="#1eefff" opacity=".55" filter="url(#titleGlow)">ALPHA WAGERZ</text>
+      <text x="${center}" y="85" font-size="${brandSize}" fill="url(#titleBrand)" stroke="#f4d9ff" stroke-width=".7" paint-order="stroke fill">ALPHA WAGERZ</text>
+      <text x="${center}" y="141" font-size="${subtitleSize}" fill="#28dfff" opacity=".6" filter="url(#titleGlow)">NBA GAME PROJECTIONS</text>
+      <text x="${center}" y="141" font-size="${subtitleSize}" fill="url(#titleSport)" stroke="#b8ecff" stroke-width=".65" paint-order="stroke fill">NBA GAME PROJECTIONS</text>
+    </g>
+    <text x="${center}" y="183" font-family="Arial,sans-serif" font-size="23" font-weight="800" fill="#40eaff">${esc(date)}  •  ${total} GAMES</text>
     <path d="M65 202 H${w-65}" stroke="url(#neon)" stroke-width="3" filter="url(#glow)"/>
   </g>`;
 }
