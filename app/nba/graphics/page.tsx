@@ -154,6 +154,23 @@ function previewSvg(svg: string) {
   return svg.replace("</svg>", overlays + "</svg>")
     .replace("<svg ", '<svg style="width:100%;height:auto;display:block" ');
 }
+async function inlineTeamLogos(svg: string) {
+  const urls = [...new Set([...svg.matchAll(/href="(\\/api\\/graphics\\/team-logo\\/[A-Z]+)"/g)].map(match => match[1]))];
+  let output = svg;
+  for (const url of urls) {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Team logo unavailable: ${url.split("/").pop()}`);
+    const blob = await response.blob();
+    const dataUrl = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result));
+      reader.onerror = () => reject(new Error("Unable to embed team logo"));
+      reader.readAsDataURL(blob);
+    });
+    output = output.split(`href="${url}"`).join(`href="${dataUrl}"`);
+  }
+  return output;
+}
 async function drawBranding(ctx: CanvasRenderingContext2D, width: number) {
   await Promise.all(branding.map(async (src, i) => {
     const image = new Image();
@@ -199,7 +216,8 @@ export default function GraphicsPage() {
     setError("");
     try {
       const image = new Image();
-      const svgUrl = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml;charset=utf-8" }));
+      const exportSvg = await inlineTeamLogos(svg);
+      const svgUrl = URL.createObjectURL(new Blob([exportSvg], { type: "image/svg+xml;charset=utf-8" }));
       try {
         await new Promise<void>((resolve, reject) => { image.onload = () => resolve(); image.onerror = () => reject(new Error("Unable to render PNG.")); image.src = svgUrl; });
         const canvas = document.createElement("canvas");
