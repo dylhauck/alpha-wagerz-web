@@ -252,9 +252,7 @@ export default function GraphicsPage() {
     } catch (e) { setError(e instanceof Error ? e.message : "Download failed."); }
   };
   return <main className="mx-auto max-w-7xl px-4 pb-16 pt-6">
-    <h1 className="text-center text-4xl font-black text-fuchsia-400">Graphics</h1>
-    <p className="mt-2 text-center text-sm text-slate-300">NBA Graphics Studio · Live model-backed graphics</p>
-    <div className="mt-8 rounded-2xl border border-cyan-400/20 bg-[#101b30] p-5">
+    <div className="rounded-2xl border border-cyan-400/20 bg-[#101b30] p-5">
       <div className="flex flex-wrap items-center gap-4">
         <label className="text-sm font-bold text-slate-200">Slate <select value={slate} onChange={e => setSlate(e.target.value as "current" | "next")} className="ml-2 rounded-lg border border-white/20 bg-[#071426] px-3 py-2"><option value="current">Current</option><option value="next">Next</option></select></label>
         <label className="text-sm font-bold text-slate-200">Format <select value={format} onChange={e => setFormat(e.target.value as "landscape" | "portrait")} className="ml-2 rounded-lg border border-white/20 bg-[#071426] px-3 py-2"><option value="landscape">Landscape · 1600 × 900</option><option value="portrait">Portrait · 1080 × 1350</option></select></label>
