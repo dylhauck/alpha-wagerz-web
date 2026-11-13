@@ -212,21 +212,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "Mercedes-Benz Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 54.6,
-            "feels_like_f": 48.8,
-            "humidity_pct": 27.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 2.0,
-            "wind_gust_mph": 2.9,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -266,21 +255,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "Mercedes-Benz Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 54.6,
-            "feels_like_f": 48.8,
-            "humidity_pct": 27.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 2.0,
-            "wind_gust_mph": 2.9,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -374,27 +352,8 @@
         "longitude": -84.4008,
         "roof": "retractable",
         "kickoff": "2026-11-15T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-15T13:00",
-          "temperature_f": 54.6,
-          "feels_like_f": 48.8,
-          "humidity_pct": 27.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 2.0,
-          "wind_gust_mph": 2.9,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -406,7 +365,7 @@
       "away_team": "HOU",
       "home_team": "CLE",
       "away_projection": {
-        "projected_points": 21.8,
+        "projected_points": 22.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.28,
@@ -416,8 +375,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 22.38,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.58
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -426,27 +385,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Huntington Bank Field",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 46.5,
-            "feels_like_f": 38.3,
-            "humidity_pct": 68.0,
-            "precip_probability_pct": 25.0,
-            "precipitation_in": 0.004,
-            "wind_mph": 12.1,
-            "wind_gust_mph": 13.6,
-            "weather_code": 51,
-            "conditions": "Light Drizzle"
-          },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 4.7,
         "matchup_label": "Neutral",
@@ -460,7 +408,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 21.5,
+        "projected_points": 22.1,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.45,
@@ -470,8 +418,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 22.09,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.57
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -480,27 +428,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Huntington Bank Field",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 46.5,
-            "feels_like_f": 38.3,
-            "humidity_pct": 68.0,
-            "precip_probability_pct": 25.0,
-            "precipitation_in": 0.004,
-            "wind_mph": 12.1,
-            "wind_gust_mph": 13.6,
-            "weather_code": 51,
-            "conditions": "Light Drizzle"
-          },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": -9.0,
         "matchup_label": "Difficult",
@@ -514,10 +451,10 @@
         }
       },
       "projected_score": {
-        "away": 21.8,
-        "home": 21.5
+        "away": 22.4,
+        "home": 22.1
       },
-      "projected_total": 43.3,
+      "projected_total": 44.5,
       "expected_margin": -0.3,
       "projected_winner": "HOU",
       "win_probability": {
@@ -588,27 +525,8 @@
         "longitude": -81.6995,
         "roof": "outdoor",
         "kickoff": "2026-11-15T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-15T13:00",
-          "temperature_f": 46.5,
-          "feels_like_f": 38.3,
-          "humidity_pct": 68.0,
-          "precip_probability_pct": 25.0,
-          "precipitation_in": 0.004,
-          "wind_mph": 12.1,
-          "wind_gust_mph": 13.6,
-          "weather_code": 51,
-          "conditions": "Light Drizzle"
-        },
-        "context": {
-          "severity_score": 2.0,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "scoring_factor": 0.974,
-          "kicking_factor": 0.96,
-          "classification": "MODERATE"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -640,21 +558,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Lambeau Field",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 43.7,
-            "feels_like_f": 38.1,
-            "humidity_pct": 51.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 2.6,
-            "wind_gust_mph": 2.7,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -694,21 +601,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Lambeau Field",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 43.7,
-            "feels_like_f": 38.1,
-            "humidity_pct": 51.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 2.6,
-            "wind_gust_mph": 2.7,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -802,27 +698,8 @@
         "longitude": -88.0622,
         "roof": "outdoor",
         "kickoff": "2026-11-15T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-15T13:00",
-          "temperature_f": 43.7,
-          "feels_like_f": 38.1,
-          "humidity_pct": 51.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 2.6,
-          "wind_gust_mph": 2.7,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -854,21 +731,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "Lucas Oil Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 47.9,
-            "feels_like_f": 41.9,
-            "humidity_pct": 50.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.3,
-            "wind_gust_mph": 4.3,
-            "weather_code": 2,
-            "conditions": "Partly Cloudy"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -908,21 +774,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "Lucas Oil Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 47.9,
-            "feels_like_f": 41.9,
-            "humidity_pct": 50.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.3,
-            "wind_gust_mph": 4.3,
-            "weather_code": 2,
-            "conditions": "Partly Cloudy"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1016,27 +871,8 @@
         "longitude": -86.1639,
         "roof": "retractable",
         "kickoff": "2026-11-15T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-15T13:00",
-          "temperature_f": 47.9,
-          "feels_like_f": 41.9,
-          "humidity_pct": 50.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 4.3,
-          "wind_gust_mph": 4.3,
-          "weather_code": 2,
-          "conditions": "Partly Cloudy"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1235,7 +1071,7 @@
       "away_team": "BUF",
       "home_team": "NYJ",
       "away_projection": {
-        "projected_points": 24.0,
+        "projected_points": 24.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.84,
@@ -1245,8 +1081,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 24.36,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.32
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1255,27 +1091,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 49.2,
-            "feels_like_f": 38.9,
-            "humidity_pct": 37.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 12.7,
-            "wind_gust_mph": 16.8,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 20.8,
         "matchup_label": "Strong",
@@ -1289,7 +1114,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.1,
+        "projected_points": 23.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.04,
@@ -1299,8 +1124,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 23.37,
-          "weather_scoring_factor": 0.987,
-          "weather_adjustment_points": -0.3
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1309,27 +1134,16 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 49.2,
-            "feels_like_f": 38.9,
-            "humidity_pct": 37.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 12.7,
-            "wind_gust_mph": 16.8,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
-          "classification": "MINOR",
-          "severity_score": 1.0,
-          "scoring_factor": 0.987,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "kicking_factor": 0.98
+          "weather": {},
+          "classification": "NEUTRAL",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
         },
         "matchup_rating": 1.4,
         "matchup_label": "Neutral",
@@ -1343,15 +1157,15 @@
         }
       },
       "projected_score": {
-        "away": 24.0,
-        "home": 23.1
+        "away": 24.4,
+        "home": 23.4
       },
-      "projected_total": 47.1,
-      "expected_margin": -0.9,
+      "projected_total": 47.8,
+      "expected_margin": -1.0,
       "projected_winner": "BUF",
       "win_probability": {
-        "away": 53.5,
-        "home": 46.5
+        "away": 53.8,
+        "home": 46.2
       },
       "projection_confidence": 53.9,
       "injury_context": {
@@ -1417,27 +1231,8 @@
         "longitude": -74.0745,
         "roof": "outdoor",
         "kickoff": "2026-11-15T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-15T13:00",
-          "temperature_f": 49.2,
-          "feels_like_f": 38.9,
-          "humidity_pct": 37.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 12.7,
-          "wind_gust_mph": 16.8,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 1.0,
-          "passing_factor": 0.982,
-          "rushing_factor": 1.005,
-          "scoring_factor": 0.987,
-          "kicking_factor": 0.98,
-          "classification": "MINOR"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1469,21 +1264,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Nissan Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 54.1,
-            "feels_like_f": 47.9,
-            "humidity_pct": 39.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.1,
-            "wind_gust_mph": 6.5,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1523,21 +1307,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Nissan Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T13:00",
-            "temperature_f": 54.1,
-            "feels_like_f": 47.9,
-            "humidity_pct": 39.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 5.1,
-            "wind_gust_mph": 6.5,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1631,27 +1404,8 @@
         "longitude": -86.7713,
         "roof": "outdoor",
         "kickoff": "2026-11-15T13:00",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-15T13:00",
-          "temperature_f": 54.1,
-          "feels_like_f": 47.9,
-          "humidity_pct": 39.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 5.1,
-          "wind_gust_mph": 6.5,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1683,21 +1437,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "State Farm Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T16:00",
-            "temperature_f": 73.2,
-            "feels_like_f": 70.5,
-            "humidity_pct": 31.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 1.1,
-            "wind_gust_mph": 1.6,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1737,21 +1480,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "State Farm Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T16:00",
-            "temperature_f": 73.2,
-            "feels_like_f": 70.5,
-            "humidity_pct": 31.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 1.1,
-            "wind_gust_mph": 1.6,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1845,27 +1577,8 @@
         "longitude": -112.2626,
         "roof": "retractable",
         "kickoff": "2026-11-15T16:05",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-15T16:00",
-          "temperature_f": 73.2,
-          "feels_like_f": 70.5,
-          "humidity_pct": 31.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 1.1,
-          "wind_gust_mph": 1.6,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -2084,21 +1797,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "AT&T Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T16:00",
-            "temperature_f": 52.7,
-            "feels_like_f": 47.4,
-            "humidity_pct": 76.0,
-            "precip_probability_pct": 58.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 9.7,
-            "wind_gust_mph": 16.1,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2138,21 +1840,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "AT&T Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T16:00",
-            "temperature_f": 52.7,
-            "feels_like_f": 47.4,
-            "humidity_pct": 76.0,
-            "precip_probability_pct": 58.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 9.7,
-            "wind_gust_mph": 16.1,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2246,27 +1937,8 @@
         "longitude": -97.0945,
         "roof": "retractable",
         "kickoff": "2026-11-15T16:25",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-15T16:00",
-          "temperature_f": 52.7,
-          "feels_like_f": 47.4,
-          "humidity_pct": 76.0,
-          "precip_probability_pct": 58.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 9.7,
-          "wind_gust_mph": 16.1,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -2298,21 +1970,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Paycor Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T20:00",
-            "temperature_f": 46.3,
-            "feels_like_f": 40.5,
-            "humidity_pct": 54.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.0,
-            "wind_gust_mph": 6.3,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2352,21 +2013,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "Paycor Stadium",
-          "weather": {
-            "forecast_time": "2026-11-15T20:00",
-            "temperature_f": 46.3,
-            "feels_like_f": 40.5,
-            "humidity_pct": 54.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.0,
-            "wind_gust_mph": 6.3,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -2460,27 +2110,8 @@
         "longitude": -84.516,
         "roof": "outdoor",
         "kickoff": "2026-11-15T20:20",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-15T20:00",
-          "temperature_f": 46.3,
-          "feels_like_f": 40.5,
-          "humidity_pct": 54.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 4.0,
-          "wind_gust_mph": 6.3,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,

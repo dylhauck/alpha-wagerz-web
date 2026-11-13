@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T19:36:59.208063+00:00",
+  "generated_at": "2026-11-13T20:53:52.973833+00:00",
   "slate_type": "next",
   "games": [
     {
@@ -61,14 +61,6 @@
           "fg_pct": 0.68
         },
         {
-          "player_id": 1627749,
-          "player_name": "Dejounte Murray",
-          "team": "NOP",
-          "side": "home",
-          "minutes": 32.5,
-          "fg_pct": 0.448
-        },
-        {
           "player_id": 1630180,
           "player_name": "Saddiq Bey",
           "team": "NOP",
@@ -91,6 +83,14 @@
           "side": "home",
           "minutes": 23.5,
           "fg_pct": 0.346
+        },
+        {
+          "player_id": 1630529,
+          "player_name": "Herbert Jones",
+          "team": "NOP",
+          "side": "home",
+          "minutes": 17.5,
+          "fg_pct": 0.25
         }
       ],
       "source": "ESPN NBA play-by-play",
@@ -100,7 +100,7 @@
           "player_id": 1629627,
           "player_name": "Zion Williamson",
           "team": "NOP",
-          "probability": 16.4,
+          "probability": 16.71,
           "first_shot_rate": 16.67,
           "first_basket_rate": 33.33,
           "starts_sample": 6,
@@ -111,7 +111,7 @@
           "player_id": 203999,
           "player_name": "Nikola Jokić",
           "team": "DEN",
-          "probability": 12.04,
+          "probability": 12.27,
           "first_shot_rate": 40.0,
           "first_basket_rate": 20.0,
           "starts_sample": 5,
@@ -122,7 +122,7 @@
           "player_id": 1631128,
           "player_name": "Christian Braun",
           "team": "DEN",
-          "probability": 11.98,
+          "probability": 12.21,
           "first_shot_rate": 20.0,
           "first_basket_rate": 20.0,
           "starts_sample": 5,
@@ -133,7 +133,7 @@
           "player_id": 1627750,
           "player_name": "Jamal Murray",
           "team": "DEN",
-          "probability": 11.7,
+          "probability": 11.92,
           "first_shot_rate": 20.0,
           "first_basket_rate": 20.0,
           "starts_sample": 5,
@@ -144,7 +144,7 @@
           "player_id": 1642350,
           "player_name": "Trevon Brazile",
           "team": "DEN",
-          "probability": 9.2,
+          "probability": 9.37,
           "first_shot_rate": null,
           "first_basket_rate": null,
           "starts_sample": 0,
@@ -155,7 +155,7 @@
           "player_id": 1642852,
           "player_name": "Derik Queen",
           "team": "NOP",
-          "probability": 8.72,
+          "probability": 8.89,
           "first_shot_rate": null,
           "first_basket_rate": null,
           "starts_sample": 0,
@@ -166,7 +166,7 @@
           "player_id": 1630180,
           "player_name": "Saddiq Bey",
           "team": "NOP",
-          "probability": 7.44,
+          "probability": 7.58,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 1,
@@ -174,21 +174,10 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1627749,
-          "player_name": "Dejounte Murray",
-          "team": "NOP",
-          "probability": 6.25,
-          "first_shot_rate": 20.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 5,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
           "player_id": 203932,
           "player_name": "Aaron Gordon",
           "team": "DEN",
-          "probability": 5.58,
+          "probability": 5.68,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 5,
@@ -199,10 +188,21 @@
           "player_id": 1642847,
           "player_name": "Jeremiah Fears",
           "team": "NOP",
-          "probability": 4.68,
+          "probability": 4.77,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630529,
+          "player_name": "Herbert Jones",
+          "team": "NOP",
+          "probability": 4.59,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 5,
           "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         }

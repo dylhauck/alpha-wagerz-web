@@ -25,21 +25,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "M&T Bank Stadium",
-          "weather": {
-            "forecast_time": "2026-11-16T20:00",
-            "temperature_f": 47.2,
-            "feels_like_f": 41.3,
-            "humidity_pct": 54.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.7,
-            "wind_gust_mph": 14.8,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -79,21 +68,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "outdoor",
           "stadium": "M&T Bank Stadium",
-          "weather": {
-            "forecast_time": "2026-11-16T20:00",
-            "temperature_f": 47.2,
-            "feels_like_f": 41.3,
-            "humidity_pct": 54.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.7,
-            "wind_gust_mph": 14.8,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -187,27 +165,8 @@
         "longitude": -76.6227,
         "roof": "outdoor",
         "kickoff": "2026-11-16T20:15",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-16T20:00",
-          "temperature_f": 47.2,
-          "feels_like_f": 41.3,
-          "humidity_pct": 54.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 4.7,
-          "wind_gust_mph": 14.8,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
