@@ -5941,6 +5941,61 @@
       }
     },
     {
+      "player_id": "00-0038519",
+      "player": "Nikko Remigio",
+      "team": "HOU",
+      "opponent": "CLE",
+      "position": "WR",
+      "game_id": "2026_10_HOU_CLE",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 21.8,
+        "scoring_factor": 0.969
+      },
+      "matchup": {
+        "overall_factor": 1.014,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.983
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.0
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 21.8,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
       "player_id": "00-0036971",
       "player": "Trevor Lawrence",
       "team": "JAX",
@@ -9666,61 +9721,6 @@
       },
       "actual_data": {
         "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038519",
-      "player": "Nikko Remigio",
-      "team": "KC",
-      "opponent": "ATL",
-      "position": "WR",
-      "game_id": "2026_10_KC_ATL",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 23.9,
-        "scoring_factor": 1.062
-      },
-      "matchup": {
-        "overall_factor": 1.049,
-        "rushing_factor": 1.0,
-        "passing_factor": 1.066
-      },
-      "inputs": {
-        "current_games": 8,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 0.0
-      },
-      "actual_data": {
-        "current_games": 8,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
