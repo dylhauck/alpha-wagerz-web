@@ -555,7 +555,6 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     { id: "total", label: "Over / Unders" },
     { id: "player_prop", label: "Player Props" },
     { id: "combos", label: "Combos" },
-    ...(sport === "nba" ? [{ id: "first_basket" as const, label: "First Baskets" }] : []),
     ...(sport === "nhl" ? [{ id: "anytime_goal" as const, label: "Anytime Goal Scorers" }, { id: "first_goal" as const, label: "First Goal Scorers" }] : []),
     ...(sport === "mlb" ? [{ id: "home_run" as const, label: "Home Runs" }] : []),
     ...(sport === "nfl" ? [{ id: "anytime_td" as const, label: "Anytime TD Scorers" }, { id: "first_td" as const, label: "First TD Scorers" }] : []),
