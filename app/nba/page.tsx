@@ -920,55 +920,55 @@ function PlayerMatchupTable({
                   </td>
 
                   <td className="px-4 py-3 text-center font-black text-white">
-                    {player.matchup_history_unavailable ? "—" : stats.games}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : stats.games}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatStat(stats.min_per_game)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.min_per_game)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatStat(stats.pts_per_game)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.pts_per_game)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatStat(stats.fg3m_per_game)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.fg3m_per_game)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatStat(stats.reb_per_game)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.reb_per_game)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatStat(stats.ast_per_game)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.ast_per_game)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatStat(stats.stl_per_game)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.stl_per_game)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatStat(stats.blk_per_game)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.blk_per_game)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatStat(stats.tov_per_game)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.tov_per_game)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatPercentage(stats.fg_pct)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatPercentage(stats.fg_pct)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatPercentage(stats.fg3_pct)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatPercentage(stats.fg3_pct)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-bold text-slate-300">
-                    {player.matchup_history_unavailable ? "—" : formatPercentage(stats.ft_pct)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatPercentage(stats.ft_pct)}
                   </td>
 
                   <td className="px-4 py-3 text-center font-black text-white">
-                    {player.matchup_history_unavailable ? "—" : formatStat(stats.fantasy_per_game)}
+                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.fantasy_per_game)}
                   </td>
                 </tr>
               ),
