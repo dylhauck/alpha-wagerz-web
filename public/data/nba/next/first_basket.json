@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T17:42:57.247905+00:00",
+  "generated_at": "2026-11-13T19:36:59.208063+00:00",
   "slate_type": "next",
   "games": [
     {
@@ -53,14 +53,6 @@
           "fg_pct": 0.55
         },
         {
-          "player_id": 1630530,
-          "player_name": "Trey Murphy III",
-          "team": "NOP",
-          "side": "home",
-          "minutes": 33.5,
-          "fg_pct": 0.5
-        },
-        {
           "player_id": 1629627,
           "player_name": "Zion Williamson",
           "team": "NOP",
@@ -91,6 +83,14 @@
           "side": "home",
           "minutes": 25.0,
           "fg_pct": 0.562
+        },
+        {
+          "player_id": 1642847,
+          "player_name": "Jeremiah Fears",
+          "team": "NOP",
+          "side": "home",
+          "minutes": 23.5,
+          "fg_pct": 0.346
         }
       ],
       "source": "ESPN NBA play-by-play",
@@ -100,7 +100,7 @@
           "player_id": 1629627,
           "player_name": "Zion Williamson",
           "team": "NOP",
-          "probability": 15.17,
+          "probability": 16.4,
           "first_shot_rate": 16.67,
           "first_basket_rate": 33.33,
           "starts_sample": 6,
@@ -108,21 +108,10 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1630530,
-          "player_name": "Trey Murphy III",
-          "team": "NOP",
-          "probability": 11.41,
-          "first_shot_rate": 50.0,
-          "first_basket_rate": 25.0,
-          "starts_sample": 4,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
           "player_id": 203999,
           "player_name": "Nikola Jokić",
           "team": "DEN",
-          "probability": 11.14,
+          "probability": 12.04,
           "first_shot_rate": 40.0,
           "first_basket_rate": 20.0,
           "starts_sample": 5,
@@ -133,7 +122,7 @@
           "player_id": 1631128,
           "player_name": "Christian Braun",
           "team": "DEN",
-          "probability": 11.08,
+          "probability": 11.98,
           "first_shot_rate": 20.0,
           "first_basket_rate": 20.0,
           "starts_sample": 5,
@@ -144,7 +133,7 @@
           "player_id": 1627750,
           "player_name": "Jamal Murray",
           "team": "DEN",
-          "probability": 10.82,
+          "probability": 11.7,
           "first_shot_rate": 20.0,
           "first_basket_rate": 20.0,
           "starts_sample": 5,
@@ -155,7 +144,7 @@
           "player_id": 1642350,
           "player_name": "Trevon Brazile",
           "team": "DEN",
-          "probability": 8.5,
+          "probability": 9.2,
           "first_shot_rate": null,
           "first_basket_rate": null,
           "starts_sample": 0,
@@ -166,7 +155,7 @@
           "player_id": 1642852,
           "player_name": "Derik Queen",
           "team": "NOP",
-          "probability": 8.07,
+          "probability": 8.72,
           "first_shot_rate": null,
           "first_basket_rate": null,
           "starts_sample": 0,
@@ -177,7 +166,7 @@
           "player_id": 1630180,
           "player_name": "Saddiq Bey",
           "team": "NOP",
-          "probability": 6.88,
+          "probability": 7.44,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 1,
@@ -188,7 +177,7 @@
           "player_id": 1627749,
           "player_name": "Dejounte Murray",
           "team": "NOP",
-          "probability": 5.78,
+          "probability": 6.25,
           "first_shot_rate": 20.0,
           "first_basket_rate": 0.0,
           "starts_sample": 5,
@@ -199,10 +188,21 @@
           "player_id": 203932,
           "player_name": "Aaron Gordon",
           "team": "DEN",
-          "probability": 5.16,
+          "probability": 5.58,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642847,
+          "player_name": "Jeremiah Fears",
+          "team": "NOP",
+          "probability": 4.68,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
           "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         }
