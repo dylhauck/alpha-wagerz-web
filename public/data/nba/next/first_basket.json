@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-13T20:53:52.973833+00:00",
+  "generated_at": "2026-11-14T14:59:17.864364+00:00",
   "slate_type": "next",
   "games": [
     {
-      "game_id": "0022600231",
-      "away_team": "DEN",
-      "home_team": "NOP",
+      "game_id": "0022600236",
+      "away_team": "IND",
+      "home_team": "PHI",
       "lineup_status": "projected_by_minutes",
       "lineup_sources": {
         "away": "projected_by_minutes",
@@ -13,105 +13,116 @@
       },
       "projected_starters": [
         {
-          "player_id": 1627750,
-          "player_name": "Jamal Murray",
-          "team": "DEN",
+          "player_id": 1629614,
+          "player_name": "Andrew Nembhard",
+          "team": "IND",
           "side": "away",
-          "minutes": 40.5,
-          "fg_pct": 0.477
+          "minutes": 35.0,
+          "fg_pct": 0.312
         },
         {
-          "player_id": 203999,
-          "player_name": "Nikola Jokić",
-          "team": "DEN",
-          "side": "away",
-          "minutes": 39.0,
-          "fg_pct": 0.556
-        },
-        {
-          "player_id": 1631128,
-          "player_name": "Christian Braun",
-          "team": "DEN",
-          "side": "away",
-          "minutes": 38.0,
-          "fg_pct": 0.542
-        },
-        {
-          "player_id": 203932,
-          "player_name": "Aaron Gordon",
-          "team": "DEN",
+          "player_id": 1627783,
+          "player_name": "Pascal Siakam",
+          "team": "IND",
           "side": "away",
           "minutes": 34.0,
-          "fg_pct": 0.263
+          "fg_pct": 0.647
         },
         {
-          "player_id": 1642350,
-          "player_name": "Trevon Brazile",
-          "team": "DEN",
+          "player_id": 1627826,
+          "player_name": "Ivica Zubac",
+          "team": "IND",
+          "side": "away",
+          "minutes": 33.5,
+          "fg_pct": 0.625
+        },
+        {
+          "player_id": 1626162,
+          "player_name": "Kelly Oubre Jr.",
+          "team": "IND",
           "side": "away",
           "minutes": 30.0,
-          "fg_pct": 0.55
+          "fg_pct": 0.5
         },
         {
-          "player_id": 1629627,
-          "player_name": "Zion Williamson",
-          "team": "NOP",
-          "side": "home",
-          "minutes": 32.5,
-          "fg_pct": 0.68
+          "player_id": 1630174,
+          "player_name": "Aaron Nesmith",
+          "team": "IND",
+          "side": "away",
+          "minutes": 27.0,
+          "fg_pct": 0.312
         },
         {
-          "player_id": 1630180,
-          "player_name": "Saddiq Bey",
-          "team": "NOP",
+          "player_id": 203954,
+          "player_name": "Joel Embiid",
+          "team": "PHI",
           "side": "home",
-          "minutes": 25.5,
-          "fg_pct": 0.316
+          "minutes": 39.0,
+          "fg_pct": 0.529
         },
         {
-          "player_id": 1642852,
-          "player_name": "Derik Queen",
-          "team": "NOP",
+          "player_id": 1630178,
+          "player_name": "Tyrese Maxey",
+          "team": "PHI",
           "side": "home",
-          "minutes": 25.0,
-          "fg_pct": 0.562
+          "minutes": 36.0,
+          "fg_pct": 0.444
         },
         {
-          "player_id": 1642847,
-          "player_name": "Jeremiah Fears",
-          "team": "NOP",
+          "player_id": 1627759,
+          "player_name": "Jaylen Brown",
+          "team": "PHI",
           "side": "home",
-          "minutes": 23.5,
-          "fg_pct": 0.346
+          "minutes": 34.0,
+          "fg_pct": 0.538
         },
         {
-          "player_id": 1630529,
-          "player_name": "Herbert Jones",
-          "team": "NOP",
+          "player_id": 2544,
+          "player_name": "LeBron James",
+          "team": "PHI",
           "side": "home",
-          "minutes": 17.5,
-          "fg_pct": 0.25
+          "minutes": 33.0,
+          "fg_pct": 0.417
+        },
+        {
+          "player_id": 1641712,
+          "player_name": "Rayan Rupert",
+          "team": "PHI",
+          "side": "home",
+          "minutes": 33.0,
+          "fg_pct": 0.444
         }
       ],
       "source": "ESPN NBA play-by-play",
       "history_games": 100,
       "players": [
         {
-          "player_id": 1629627,
-          "player_name": "Zion Williamson",
-          "team": "NOP",
-          "probability": 16.71,
-          "first_shot_rate": 16.67,
+          "player_id": 1626162,
+          "player_name": "Kelly Oubre Jr.",
+          "team": "IND",
+          "probability": 13.43,
+          "first_shot_rate": 0.0,
           "first_basket_rate": 33.33,
+          "starts_sample": 3,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1627783,
+          "player_name": "Pascal Siakam",
+          "team": "IND",
+          "probability": 12.1,
+          "first_shot_rate": 33.33,
+          "first_basket_rate": 16.67,
           "starts_sample": 6,
           "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 203999,
-          "player_name": "Nikola Jokić",
-          "team": "DEN",
-          "probability": 12.27,
+          "player_id": 2544,
+          "player_name": "LeBron James",
+          "team": "PHI",
+          "probability": 11.72,
           "first_shot_rate": 40.0,
           "first_basket_rate": 20.0,
           "starts_sample": 5,
@@ -119,437 +130,10 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1631128,
-          "player_name": "Christian Braun",
-          "team": "DEN",
-          "probability": 12.21,
-          "first_shot_rate": 20.0,
-          "first_basket_rate": 20.0,
-          "starts_sample": 5,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1627750,
-          "player_name": "Jamal Murray",
-          "team": "DEN",
-          "probability": 11.92,
-          "first_shot_rate": 20.0,
-          "first_basket_rate": 20.0,
-          "starts_sample": 5,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1642350,
-          "player_name": "Trevon Brazile",
-          "team": "DEN",
-          "probability": 9.37,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1642852,
-          "player_name": "Derik Queen",
-          "team": "NOP",
-          "probability": 8.89,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1630180,
-          "player_name": "Saddiq Bey",
-          "team": "NOP",
-          "probability": 7.58,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 1,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 203932,
-          "player_name": "Aaron Gordon",
-          "team": "DEN",
-          "probability": 5.68,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 5,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1642847,
-          "player_name": "Jeremiah Fears",
-          "team": "NOP",
-          "probability": 4.77,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 7,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1630529,
-          "player_name": "Herbert Jones",
-          "team": "NOP",
-          "probability": 4.59,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 5,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        }
-      ],
-      "status": "estimated",
-      "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
-    },
-    {
-      "game_id": "0022600232",
-      "away_team": "DAL",
-      "home_team": "CLE",
-      "lineup_status": "projected_by_minutes",
-      "lineup_sources": {
-        "away": "projected_by_minutes",
-        "home": "projected_by_minutes"
-      },
-      "projected_starters": [
-        {
-          "player_id": 1629023,
-          "player_name": "P.J. Washington",
-          "team": "DAL",
-          "side": "away",
-          "minutes": 33.0,
-          "fg_pct": 0.5
-        },
-        {
-          "player_id": 1642843,
-          "player_name": "Cooper Flagg",
-          "team": "DAL",
-          "side": "away",
-          "minutes": 31.0,
-          "fg_pct": 0.545
-        },
-        {
-          "player_id": 1630230,
-          "player_name": "Naji Marshall",
-          "team": "DAL",
-          "side": "away",
-          "minutes": 29.5,
-          "fg_pct": 0.625
-        },
-        {
-          "player_id": 1631108,
-          "player_name": "Max Christie",
-          "team": "DAL",
-          "side": "away",
-          "minutes": 28.0,
-          "fg_pct": 0.583
-        },
-        {
-          "player_id": 1630583,
-          "player_name": "Santi Aldama",
-          "team": "DAL",
-          "side": "away",
-          "minutes": 25.0,
-          "fg_pct": 0.556
-        },
-        {
-          "player_id": 201935,
-          "player_name": "James Harden",
-          "team": "CLE",
-          "side": "home",
-          "minutes": 38.8,
-          "fg_pct": 0.431
-        },
-        {
-          "player_id": 1628378,
-          "player_name": "Donovan Mitchell",
-          "team": "CLE",
-          "side": "home",
-          "minutes": 34.0,
-          "fg_pct": 0.525
-        },
-        {
-          "player_id": 1631212,
-          "player_name": "Peyton Watson",
-          "team": "CLE",
-          "side": "home",
-          "minutes": 28.2,
-          "fg_pct": 0.513
-        },
-        {
-          "player_id": 1642281,
-          "player_name": "Jaylon Tyson",
-          "team": "CLE",
-          "side": "home",
-          "minutes": 20.0,
-          "fg_pct": 0.5
-        },
-        {
-          "player_id": 1628418,
-          "player_name": "Thomas Bryant",
-          "team": "CLE",
-          "side": "home",
-          "minutes": 17.0,
-          "fg_pct": 0.778
-        }
-      ],
-      "source": "ESPN NBA play-by-play",
-      "history_games": 100,
-      "players": [
-        {
-          "player_id": 1630230,
-          "player_name": "Naji Marshall",
-          "team": "DAL",
-          "probability": 11.1,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1631108,
-          "player_name": "Max Christie",
-          "team": "DAL",
-          "probability": 10.63,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 2,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1628418,
-          "player_name": "Thomas Bryant",
-          "team": "CLE",
-          "probability": 10.34,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1630583,
-          "player_name": "Santi Aldama",
-          "team": "DAL",
-          "probability": 10.08,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1642281,
-          "player_name": "Jaylon Tyson",
-          "team": "CLE",
-          "probability": 9.13,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1631212,
-          "player_name": "Peyton Watson",
-          "team": "CLE",
-          "probability": 7.2,
-          "first_shot_rate": 20.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 5,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1628378,
-          "player_name": "Donovan Mitchell",
-          "team": "CLE",
-          "probability": 6.94,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 7,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1642843,
-          "player_name": "Cooper Flagg",
-          "team": "DAL",
-          "probability": 6.79,
-          "first_shot_rate": 42.86,
-          "first_basket_rate": 0.0,
-          "starts_sample": 7,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1629023,
-          "player_name": "P.J. Washington",
-          "team": "DAL",
-          "probability": 6.75,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 7,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 201935,
-          "player_name": "James Harden",
-          "team": "CLE",
-          "probability": 6.67,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 7,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        }
-      ],
-      "status": "estimated",
-      "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
-    },
-    {
-      "game_id": "0022600233",
-      "away_team": "DET",
-      "home_team": "MIA",
-      "lineup_status": "projected_by_minutes",
-      "lineup_sources": {
-        "away": "projected_by_minutes",
-        "home": "projected_by_minutes"
-      },
-      "projected_starters": [
-        {
-          "player_id": 1630595,
-          "player_name": "Cade Cunningham",
-          "team": "DET",
-          "side": "away",
-          "minutes": 30.0,
-          "fg_pct": 0.625
-        },
-        {
-          "player_id": 1628381,
-          "player_name": "John Collins",
-          "team": "DET",
-          "side": "away",
-          "minutes": 29.0,
-          "fg_pct": 0.6
-        },
-        {
-          "player_id": 1629130,
-          "player_name": "Duncan Robinson",
-          "team": "DET",
-          "side": "away",
-          "minutes": 28.0,
-          "fg_pct": 0.417
-        },
-        {
-          "player_id": 1630194,
-          "player_name": "Paul Reed",
-          "team": "DET",
-          "side": "away",
-          "minutes": 26.0,
-          "fg_pct": 0.727
-        },
-        {
-          "player_id": 1641842,
-          "player_name": "Ronald Holland II",
-          "team": "DET",
-          "side": "away",
-          "minutes": 22.0,
-          "fg_pct": 0.5
-        },
-        {
-          "player_id": 203507,
-          "player_name": "Giannis Antetokounmpo",
-          "team": "MIA",
-          "side": "home",
-          "minutes": 33.0,
-          "fg_pct": 0.577
-        },
-        {
-          "player_id": 1630558,
-          "player_name": "Davion Mitchell",
-          "team": "MIA",
-          "side": "home",
-          "minutes": 33.0,
-          "fg_pct": 0.429
-        },
-        {
-          "player_id": 1641796,
-          "player_name": "Pelle Larsson",
-          "team": "MIA",
-          "side": "home",
-          "minutes": 29.0,
-          "fg_pct": 0.143
-        },
-        {
-          "player_id": 203952,
-          "player_name": "Andrew Wiggins",
-          "team": "MIA",
-          "side": "home",
-          "minutes": 26.0,
-          "fg_pct": 0.25
-        },
-        {
-          "player_id": 202691,
-          "player_name": "Klay Thompson",
-          "team": "MIA",
-          "side": "home",
-          "minutes": 24.0,
-          "fg_pct": 0.182
-        }
-      ],
-      "source": "ESPN NBA play-by-play",
-      "history_games": 100,
-      "players": [
-        {
-          "player_id": 1628381,
-          "player_name": "John Collins",
-          "team": "DET",
-          "probability": 12.63,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 16.67,
-          "starts_sample": 6,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 203952,
-          "player_name": "Andrew Wiggins",
-          "team": "MIA",
-          "probability": 12.28,
-          "first_shot_rate": 50.0,
-          "first_basket_rate": 25.0,
-          "starts_sample": 4,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1630558,
-          "player_name": "Davion Mitchell",
-          "team": "MIA",
-          "probability": 12.2,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 16.67,
-          "starts_sample": 6,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1629130,
-          "player_name": "Duncan Robinson",
-          "team": "DET",
-          "probability": 11.77,
+          "player_id": 1629614,
+          "player_name": "Andrew Nembhard",
+          "team": "IND",
+          "probability": 10.76,
           "first_shot_rate": 33.33,
           "first_basket_rate": 16.67,
           "starts_sample": 6,
@@ -557,10 +141,21 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1641842,
-          "player_name": "Ronald Holland II",
-          "team": "DET",
-          "probability": 9.25,
+          "player_id": 1630174,
+          "player_name": "Aaron Nesmith",
+          "team": "IND",
+          "probability": 10.25,
+          "first_shot_rate": 16.67,
+          "first_basket_rate": 16.67,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1641712,
+          "player_name": "Rayan Rupert",
+          "team": "PHI",
+          "probability": 9.27,
           "first_shot_rate": null,
           "first_basket_rate": null,
           "starts_sample": 0,
@@ -568,10 +163,448 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1630194,
-          "player_name": "Paul Reed",
-          "team": "DET",
-          "probability": 8.36,
+          "player_id": 1627826,
+          "player_name": "Ivica Zubac",
+          "team": "IND",
+          "probability": 7.38,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 203954,
+          "player_name": "Joel Embiid",
+          "team": "PHI",
+          "probability": 6.75,
+          "first_shot_rate": 33.33,
+          "first_basket_rate": 0.0,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1627759,
+          "player_name": "Jaylen Brown",
+          "team": "PHI",
+          "probability": 6.29,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630178,
+          "player_name": "Tyrese Maxey",
+          "team": "PHI",
+          "probability": 6.05,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        }
+      ],
+      "status": "estimated",
+      "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
+    },
+    {
+      "game_id": "0022600237",
+      "away_team": "LAL",
+      "home_team": "PHX",
+      "lineup_status": "projected_by_minutes",
+      "lineup_sources": {
+        "away": "projected_by_minutes",
+        "home": "projected_by_minutes"
+      },
+      "projected_starters": [
+        {
+          "player_id": 1629012,
+          "player_name": "Collin Sexton",
+          "team": "LAL",
+          "side": "away",
+          "minutes": 34.5,
+          "fg_pct": 0.471
+        },
+        {
+          "player_id": 1629029,
+          "player_name": "Luka Dončić",
+          "team": "LAL",
+          "side": "away",
+          "minutes": 32.8,
+          "fg_pct": 0.471
+        },
+        {
+          "player_id": 1631117,
+          "player_name": "Walker Kessler",
+          "team": "LAL",
+          "side": "away",
+          "minutes": 32.0,
+          "fg_pct": 0.647
+        },
+        {
+          "player_id": 1630559,
+          "player_name": "Austin Reaves",
+          "team": "LAL",
+          "side": "away",
+          "minutes": 28.6,
+          "fg_pct": 0.5
+        },
+        {
+          "player_id": 1629656,
+          "player_name": "Quentin Grimes",
+          "team": "LAL",
+          "side": "away",
+          "minutes": 27.5,
+          "fg_pct": 0.455
+        },
+        {
+          "player_id": 1628970,
+          "player_name": "Miles Bridges",
+          "team": "PHX",
+          "side": "home",
+          "minutes": 36.5,
+          "fg_pct": 0.625
+        },
+        {
+          "player_id": 1631221,
+          "player_name": "Collin Gillespie",
+          "team": "PHX",
+          "side": "home",
+          "minutes": 27.5,
+          "fg_pct": 0.485
+        },
+        {
+          "player_id": 1630311,
+          "player_name": "Pat Spencer",
+          "team": "PHX",
+          "side": "home",
+          "minutes": 26.6,
+          "fg_pct": 0.4
+        },
+        {
+          "player_id": 1628415,
+          "player_name": "Dillon Brooks",
+          "team": "PHX",
+          "side": "home",
+          "minutes": 25.6,
+          "fg_pct": 0.565
+        },
+        {
+          "player_id": 1630224,
+          "player_name": "Jalen Green",
+          "team": "PHX",
+          "side": "home",
+          "minutes": 24.0,
+          "fg_pct": 0.267
+        }
+      ],
+      "source": "ESPN NBA play-by-play",
+      "history_games": 100,
+      "players": [
+        {
+          "player_id": 1629029,
+          "player_name": "Luka Dončić",
+          "team": "LAL",
+          "probability": 12.25,
+          "first_shot_rate": 16.67,
+          "first_basket_rate": 16.67,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630559,
+          "player_name": "Austin Reaves",
+          "team": "LAL",
+          "probability": 12.05,
+          "first_shot_rate": 50.0,
+          "first_basket_rate": 16.67,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629012,
+          "player_name": "Collin Sexton",
+          "team": "LAL",
+          "probability": 10.43,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630224,
+          "player_name": "Jalen Green",
+          "team": "PHX",
+          "probability": 10.18,
+          "first_shot_rate": 28.57,
+          "first_basket_rate": 14.29,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1631221,
+          "player_name": "Collin Gillespie",
+          "team": "PHX",
+          "probability": 9.7,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629656,
+          "player_name": "Quentin Grimes",
+          "team": "LAL",
+          "probability": 9.52,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 1,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630311,
+          "player_name": "Pat Spencer",
+          "team": "PHX",
+          "probability": 9.07,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1628970,
+          "player_name": "Miles Bridges",
+          "team": "PHX",
+          "probability": 7.37,
+          "first_shot_rate": 28.57,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1631117,
+          "player_name": "Walker Kessler",
+          "team": "LAL",
+          "probability": 7.14,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1628415,
+          "player_name": "Dillon Brooks",
+          "team": "PHX",
+          "probability": 6.3,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        }
+      ],
+      "status": "estimated",
+      "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
+    },
+    {
+      "game_id": "0022600238",
+      "away_team": "CHA",
+      "home_team": "LAC",
+      "lineup_status": "projected_by_minutes",
+      "lineup_sources": {
+        "away": "projected_by_minutes",
+        "home": "projected_by_minutes"
+      },
+      "projected_starters": [
+        {
+          "player_id": 1628960,
+          "player_name": "Grayson Allen",
+          "team": "CHA",
+          "side": "away",
+          "minutes": 33.0,
+          "fg_pct": 0.397
+        },
+        {
+          "player_id": 1629632,
+          "player_name": "Coby White",
+          "team": "CHA",
+          "side": "away",
+          "minutes": 31.0,
+          "fg_pct": 0.562
+        },
+        {
+          "player_id": 1631217,
+          "player_name": "Moussa Diabaté",
+          "team": "CHA",
+          "side": "away",
+          "minutes": 30.0,
+          "fg_pct": 0.571
+        },
+        {
+          "player_id": 1626220,
+          "player_name": "Royce O'Neale",
+          "team": "CHA",
+          "side": "away",
+          "minutes": 29.8,
+          "fg_pct": 0.447
+        },
+        {
+          "player_id": 1641706,
+          "player_name": "Brandon Miller",
+          "team": "CHA",
+          "side": "away",
+          "minutes": 29.5,
+          "fg_pct": 0.448
+        },
+        {
+          "player_id": 1629636,
+          "player_name": "Darius Garland",
+          "team": "LAC",
+          "side": "home",
+          "minutes": 34.5,
+          "fg_pct": 0.5
+        },
+        {
+          "player_id": 1629060,
+          "player_name": "Rui Hachimura",
+          "team": "LAC",
+          "side": "home",
+          "minutes": 27.0,
+          "fg_pct": 0.625
+        },
+        {
+          "player_id": 1642920,
+          "player_name": "Kobe Sanders",
+          "team": "LAC",
+          "side": "home",
+          "minutes": 26.5,
+          "fg_pct": 0.353
+        },
+        {
+          "player_id": 1629618,
+          "player_name": "Jalen Pickett",
+          "team": "LAC",
+          "side": "home",
+          "minutes": 25.0,
+          "fg_pct": 0.6
+        },
+        {
+          "player_id": 1627739,
+          "player_name": "Kris Dunn",
+          "team": "LAC",
+          "side": "home",
+          "minutes": 24.0,
+          "fg_pct": 0.273
+        }
+      ],
+      "source": "ESPN NBA play-by-play",
+      "history_games": 100,
+      "players": [
+        {
+          "player_id": 1631217,
+          "player_name": "Moussa Diabaté",
+          "team": "CHA",
+          "probability": 13.7,
+          "first_shot_rate": 25.0,
+          "first_basket_rate": 25.0,
+          "starts_sample": 4,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629060,
+          "player_name": "Rui Hachimura",
+          "team": "LAC",
+          "probability": 12.87,
+          "first_shot_rate": 40.0,
+          "first_basket_rate": 20.0,
+          "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629636,
+          "player_name": "Darius Garland",
+          "team": "LAC",
+          "probability": 12.22,
+          "first_shot_rate": 16.67,
+          "first_basket_rate": 16.67,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629618,
+          "player_name": "Jalen Pickett",
+          "team": "LAC",
+          "probability": 9.88,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1626220,
+          "player_name": "Royce O'Neale",
+          "team": "CHA",
+          "probability": 9.5,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642920,
+          "player_name": "Kobe Sanders",
+          "team": "LAC",
+          "probability": 8.56,
+          "first_shot_rate": 100.0,
+          "first_basket_rate": 100.0,
+          "starts_sample": 1,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1628960,
+          "player_name": "Grayson Allen",
+          "team": "CHA",
+          "probability": 7.62,
+          "first_shot_rate": 33.33,
+          "first_basket_rate": 0.0,
+          "starts_sample": 3,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629632,
+          "player_name": "Coby White",
+          "team": "CHA",
+          "probability": 7.32,
+          "first_shot_rate": 20.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1641706,
+          "player_name": "Brandon Miller",
+          "team": "CHA",
+          "probability": 7.11,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 4,
@@ -579,44 +612,11 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1641796,
-          "player_name": "Pelle Larsson",
-          "team": "MIA",
-          "probability": 7.76,
+          "player_id": 1627739,
+          "player_name": "Kris Dunn",
+          "team": "LAC",
+          "probability": 5.22,
           "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 2,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 203507,
-          "player_name": "Giannis Antetokounmpo",
-          "team": "MIA",
-          "probability": 7.39,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 6,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1630595,
-          "player_name": "Cade Cunningham",
-          "team": "DET",
-          "probability": 7.35,
-          "first_shot_rate": 16.67,
-          "first_basket_rate": 0.0,
-          "starts_sample": 6,
-          "estimate_source": "historical_blend",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 202691,
-          "player_name": "Klay Thompson",
-          "team": "MIA",
-          "probability": 5.03,
-          "first_shot_rate": 16.67,
           "first_basket_rate": 0.0,
           "starts_sample": 6,
           "estimate_source": "historical_blend",
@@ -627,9 +627,218 @@
       "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
     },
     {
-      "game_id": "0022600234",
-      "away_team": "BKN",
-      "home_team": "MEM",
+      "game_id": "0022600239",
+      "away_team": "SAS",
+      "home_team": "UTA",
+      "lineup_status": "previous_confirmed_lineup",
+      "lineup_sources": {
+        "away": "previous_confirmed_lineup",
+        "away_previous_game_id": "401909302",
+        "home": "projected_by_minutes"
+      },
+      "projected_starters": [
+        {
+          "player_id": 1641705,
+          "player_name": "Victor Wembanyama",
+          "team": "SAS",
+          "side": "away",
+          "minutes": 0.0,
+          "fg_pct": 0.0
+        },
+        {
+          "player_id": 1628368,
+          "player_name": "De'Aaron Fox",
+          "team": "SAS",
+          "side": "away",
+          "minutes": 0.0,
+          "fg_pct": 0.0
+        },
+        {
+          "player_id": 1630170,
+          "player_name": "Devin Vassell",
+          "team": "SAS",
+          "side": "away",
+          "minutes": 0.0,
+          "fg_pct": 0.0
+        },
+        {
+          "player_id": 1642264,
+          "player_name": "Stephon Castle",
+          "team": "SAS",
+          "side": "away",
+          "minutes": 0.0,
+          "fg_pct": 0.0
+        },
+        {
+          "player_id": 1642844,
+          "player_name": "Dylan Harper",
+          "team": "SAS",
+          "side": "away",
+          "minutes": 0.0,
+          "fg_pct": 0.0
+        },
+        {
+          "player_id": 1642846,
+          "player_name": "Ace Bailey",
+          "team": "UTA",
+          "side": "home",
+          "minutes": 29.3,
+          "fg_pct": 0.378
+        },
+        {
+          "player_id": 1643408,
+          "player_name": "Darryn Peterson",
+          "team": "UTA",
+          "side": "home",
+          "minutes": 27.7,
+          "fg_pct": 0.389
+        },
+        {
+          "player_id": 1641718,
+          "player_name": "Keyonte George",
+          "team": "UTA",
+          "side": "home",
+          "minutes": 25.0,
+          "fg_pct": 0.413
+        },
+        {
+          "player_id": 1629637,
+          "player_name": "Jaxson Hayes",
+          "team": "UTA",
+          "side": "home",
+          "minutes": 24.7,
+          "fg_pct": 0.5
+        },
+        {
+          "player_id": 1642268,
+          "player_name": "Isaiah Collier",
+          "team": "UTA",
+          "side": "home",
+          "minutes": 19.3,
+          "fg_pct": 0.529
+        }
+      ],
+      "source": "ESPN NBA play-by-play",
+      "history_games": 100,
+      "players": [
+        {
+          "player_id": 1628368,
+          "player_name": "De'Aaron Fox",
+          "team": "SAS",
+          "probability": 18.66,
+          "first_shot_rate": 28.57,
+          "first_basket_rate": 42.86,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 1641705,
+          "player_name": "Victor Wembanyama",
+          "team": "SAS",
+          "probability": 13.4,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 28.57,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 1641718,
+          "player_name": "Keyonte George",
+          "team": "UTA",
+          "probability": 11.06,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 14.29,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642846,
+          "player_name": "Ace Bailey",
+          "team": "UTA",
+          "probability": 10.67,
+          "first_shot_rate": 37.5,
+          "first_basket_rate": 12.5,
+          "starts_sample": 8,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642268,
+          "player_name": "Isaiah Collier",
+          "team": "UTA",
+          "probability": 9.21,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642264,
+          "player_name": "Stephon Castle",
+          "team": "SAS",
+          "probability": 8.14,
+          "first_shot_rate": 42.86,
+          "first_basket_rate": 14.29,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 1629637,
+          "player_name": "Jaxson Hayes",
+          "team": "UTA",
+          "probability": 5.82,
+          "first_shot_rate": 12.5,
+          "first_basket_rate": 0.0,
+          "starts_sample": 8,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1643408,
+          "player_name": "Darryn Peterson",
+          "team": "UTA",
+          "probability": 5.6,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 8,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630170,
+          "player_name": "Devin Vassell",
+          "team": "SAS",
+          "probability": 3.21,
+          "first_shot_rate": 20.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 1642844,
+          "player_name": "Dylan Harper",
+          "team": "SAS",
+          "probability": 2.87,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        }
+      ],
+      "status": "estimated",
+      "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
+    },
+    {
+      "game_id": "0022600240",
+      "away_team": "DAL",
+      "home_team": "BOS",
       "lineup_status": "projected_by_minutes",
       "lineup_sources": {
         "away": "projected_by_minutes",
@@ -637,94 +846,116 @@
       },
       "projected_starters": [
         {
-          "player_id": 203944,
-          "player_name": "Julius Randle",
-          "team": "BKN",
+          "player_id": 1642843,
+          "player_name": "Cooper Flagg",
+          "team": "DAL",
           "side": "away",
-          "minutes": 36.5,
+          "minutes": 33.5,
+          "fg_pct": 0.404
+        },
+        {
+          "player_id": 1631108,
+          "player_name": "Max Christie",
+          "team": "DAL",
+          "side": "away",
+          "minutes": 29.5,
+          "fg_pct": 0.364
+        },
+        {
+          "player_id": 1629023,
+          "player_name": "P.J. Washington",
+          "team": "DAL",
+          "side": "away",
+          "minutes": 29.0,
+          "fg_pct": 0.222
+        },
+        {
+          "player_id": 1641724,
+          "player_name": "Jett Howard",
+          "team": "DAL",
+          "side": "away",
+          "minutes": 29.0,
           "fg_pct": 0.478
         },
         {
-          "player_id": 1642856,
-          "player_name": "Egor Dëmin",
-          "team": "BKN",
+          "player_id": 1630230,
+          "player_name": "Naji Marshall",
+          "team": "DAL",
           "side": "away",
           "minutes": 28.0,
-          "fg_pct": 0.4
+          "fg_pct": 0.37
         },
         {
-          "player_id": 1642962,
-          "player_name": "Drake Powell",
-          "team": "BKN",
-          "side": "away",
+          "player_id": 1628401,
+          "player_name": "Derrick White",
+          "team": "BOS",
+          "side": "home",
+          "minutes": 34.5,
+          "fg_pct": 0.414
+        },
+        {
+          "player_id": 1630202,
+          "player_name": "Payton Pritchard",
+          "team": "BOS",
+          "side": "home",
+          "minutes": 34.5,
+          "fg_pct": 0.541
+        },
+        {
+          "player_id": 202331,
+          "player_name": "Paul George",
+          "team": "BOS",
+          "side": "home",
+          "minutes": 33.0,
+          "fg_pct": 0.455
+        },
+        {
+          "player_id": 1642269,
+          "player_name": "Devin Carter",
+          "team": "BOS",
+          "side": "home",
+          "minutes": 32.0,
+          "fg_pct": 0.462
+        },
+        {
+          "player_id": 1629674,
+          "player_name": "Neemias Queta",
+          "team": "BOS",
+          "side": "home",
           "minutes": 27.0,
-          "fg_pct": 0.429
-        },
-        {
-          "player_id": 1642874,
-          "player_name": "Danny Wolf",
-          "team": "BKN",
-          "side": "away",
-          "minutes": 26.5,
-          "fg_pct": 0.391
-        },
-        {
-          "player_id": 1629611,
-          "player_name": "Terance Mann",
-          "team": "BKN",
-          "side": "away",
-          "minutes": 26.0,
-          "fg_pct": 0.5
-        },
-        {
-          "player_id": 203924,
-          "player_name": "Jerami Grant",
-          "team": "MEM",
-          "side": "home",
-          "minutes": 32.0,
-          "fg_pct": 0.385
-        },
-        {
-          "player_id": 1641765,
-          "player_name": "Olivier-Maxence Prosper",
-          "team": "MEM",
-          "side": "home",
-          "minutes": 32.0,
-          "fg_pct": 0.5
-        },
-        {
-          "player_id": 1642914,
-          "player_name": "Javon Small",
-          "team": "MEM",
-          "side": "home",
-          "minutes": 32.0,
-          "fg_pct": 0.5
-        },
-        {
-          "player_id": 1642942,
-          "player_name": "Jahmai Mashack",
-          "team": "MEM",
-          "side": "home",
-          "minutes": 31.0,
-          "fg_pct": 0.5
-        },
-        {
-          "player_id": 1631200,
-          "player_name": "Kris Murray",
-          "team": "MEM",
-          "side": "home",
-          "minutes": 28.0,
-          "fg_pct": 0.75
+          "fg_pct": 0.714
         }
       ],
       "source": "ESPN NBA play-by-play",
       "history_games": 100,
       "players": [
         {
-          "player_id": 1631200,
-          "player_name": "Kris Murray",
-          "team": "MEM",
-          "probability": 11.45,
+          "player_id": 202331,
+          "player_name": "Paul George",
+          "team": "BOS",
+          "probability": 13.13,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 20.0,
+          "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1628401,
+          "player_name": "Derrick White",
+          "team": "BOS",
+          "probability": 11.68,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 14.29,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630202,
+          "player_name": "Payton Pritchard",
+          "team": "BOS",
+          "probability": 11.09,
           "first_shot_rate": null,
           "first_basket_rate": null,
           "starts_sample": 0,
@@ -732,10 +963,10 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1641765,
-          "player_name": "Olivier-Maxence Prosper",
-          "team": "MEM",
-          "probability": 10.34,
+          "player_id": 1642269,
+          "player_name": "Devin Carter",
+          "team": "BOS",
+          "probability": 10.25,
           "first_shot_rate": null,
           "first_basket_rate": null,
           "starts_sample": 0,
@@ -743,10 +974,10 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1642914,
-          "player_name": "Javon Small",
-          "team": "MEM",
-          "probability": 10.34,
+          "player_id": 1641724,
+          "player_name": "Jett Howard",
+          "team": "DAL",
+          "probability": 10.0,
           "first_shot_rate": null,
           "first_basket_rate": null,
           "starts_sample": 0,
@@ -754,54 +985,10 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1642942,
-          "player_name": "Jahmai Mashack",
-          "team": "MEM",
-          "probability": 10.22,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1629611,
-          "player_name": "Terance Mann",
-          "team": "BKN",
-          "probability": 9.63,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 203924,
-          "player_name": "Jerami Grant",
-          "team": "MEM",
-          "probability": 9.57,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1642962,
-          "player_name": "Drake Powell",
-          "team": "BKN",
-          "probability": 9.3,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1642856,
-          "player_name": "Egor Dëmin",
-          "team": "BKN",
-          "probability": 9.23,
+          "player_id": 1631108,
+          "player_name": "Max Christie",
+          "team": "DAL",
+          "probability": 9.31,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 1,
@@ -809,10 +996,185 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1642874,
-          "player_name": "Danny Wolf",
-          "team": "BKN",
-          "probability": 7.2,
+          "player_id": 1630230,
+          "player_name": "Naji Marshall",
+          "team": "DAL",
+          "probability": 9.19,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629674,
+          "player_name": "Neemias Queta",
+          "team": "BOS",
+          "probability": 7.12,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642843,
+          "player_name": "Cooper Flagg",
+          "team": "DAL",
+          "probability": 6.68,
+          "first_shot_rate": 50.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629023,
+          "player_name": "P.J. Washington",
+          "team": "DAL",
+          "probability": 5.55,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        }
+      ],
+      "status": "estimated",
+      "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
+    },
+    {
+      "game_id": "0022600241",
+      "away_team": "NYK",
+      "home_team": "TOR",
+      "lineup_status": "projected_by_minutes",
+      "lineup_sources": {
+        "away": "projected_by_minutes",
+        "home": "projected_by_minutes"
+      },
+      "projected_starters": [
+        {
+          "player_id": 1628404,
+          "player_name": "Josh Hart",
+          "team": "NYK",
+          "side": "away",
+          "minutes": 33.4,
+          "fg_pct": 0.674
+        },
+        {
+          "player_id": 1628384,
+          "player_name": "OG Anunoby",
+          "team": "NYK",
+          "side": "away",
+          "minutes": 31.0,
+          "fg_pct": 0.2
+        },
+        {
+          "player_id": 1628969,
+          "player_name": "Mikal Bridges",
+          "team": "NYK",
+          "side": "away",
+          "minutes": 30.0,
+          "fg_pct": 0.667
+        },
+        {
+          "player_id": 1626157,
+          "player_name": "Karl-Anthony Towns",
+          "team": "NYK",
+          "side": "away",
+          "minutes": 29.0,
+          "fg_pct": 0.5
+        },
+        {
+          "player_id": 1628973,
+          "player_name": "Jalen Brunson",
+          "team": "NYK",
+          "side": "away",
+          "minutes": 29.0,
+          "fg_pct": 0.467
+        },
+        {
+          "player_id": 1629628,
+          "player_name": "RJ Barrett",
+          "team": "TOR",
+          "side": "home",
+          "minutes": 27.0,
+          "fg_pct": 0.5
+        },
+        {
+          "player_id": 1630193,
+          "player_name": "Immanuel Quickley",
+          "team": "TOR",
+          "side": "home",
+          "minutes": 25.0,
+          "fg_pct": 0.444
+        },
+        {
+          "player_id": 1627751,
+          "player_name": "Jakob Poeltl",
+          "team": "TOR",
+          "side": "home",
+          "minutes": 22.0,
+          "fg_pct": 0.714
+        },
+        {
+          "player_id": 1642867,
+          "player_name": "Collin Murray-Boyles",
+          "team": "TOR",
+          "side": "home",
+          "minutes": 19.0,
+          "fg_pct": 0.733
+        },
+        {
+          "player_id": 1642266,
+          "player_name": "Ja'Kobe Walter",
+          "team": "TOR",
+          "side": "home",
+          "minutes": 19.0,
+          "fg_pct": 0.429
+        }
+      ],
+      "source": "ESPN NBA play-by-play",
+      "history_games": 100,
+      "players": [
+        {
+          "player_id": 1628973,
+          "player_name": "Jalen Brunson",
+          "team": "NYK",
+          "probability": 17.08,
+          "first_shot_rate": 50.0,
+          "first_basket_rate": 33.33,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642266,
+          "player_name": "Ja'Kobe Walter",
+          "team": "TOR",
+          "probability": 15.33,
+          "first_shot_rate": 57.14,
+          "first_basket_rate": 28.57,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1627751,
+          "player_name": "Jakob Poeltl",
+          "team": "TOR",
+          "probability": 13.69,
+          "first_shot_rate": 25.0,
+          "first_basket_rate": 25.0,
+          "starts_sample": 4,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1628404,
+          "player_name": "Josh Hart",
+          "team": "NYK",
+          "probability": 9.19,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 3,
@@ -820,11 +1182,274 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 203944,
-          "player_name": "Julius Randle",
-          "team": "BKN",
-          "probability": 6.73,
+          "player_id": 1628969,
+          "player_name": "Mikal Bridges",
+          "team": "NYK",
+          "probability": 7.33,
           "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642867,
+          "player_name": "Collin Murray-Boyles",
+          "team": "TOR",
+          "probability": 7.03,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1626157,
+          "player_name": "Karl-Anthony Towns",
+          "team": "NYK",
+          "probability": 6.54,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630193,
+          "player_name": "Immanuel Quickley",
+          "team": "TOR",
+          "probability": 6.36,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629628,
+          "player_name": "RJ Barrett",
+          "team": "TOR",
+          "probability": 6.05,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1628384,
+          "player_name": "OG Anunoby",
+          "team": "NYK",
+          "probability": 5.4,
+          "first_shot_rate": 16.67,
+          "first_basket_rate": 0.0,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        }
+      ],
+      "status": "estimated",
+      "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
+    },
+    {
+      "game_id": "0022600242",
+      "away_team": "HOU",
+      "home_team": "WAS",
+      "lineup_status": "projected_by_minutes",
+      "lineup_sources": {
+        "away": "projected_by_minutes",
+        "home": "projected_by_minutes"
+      },
+      "projected_starters": [
+        {
+          "player_id": 201142,
+          "player_name": "Kevin Durant",
+          "team": "HOU",
+          "side": "away",
+          "minutes": 34.0,
+          "fg_pct": 0.484
+        },
+        {
+          "player_id": 1642263,
+          "player_name": "Reed Sheppard",
+          "team": "HOU",
+          "side": "away",
+          "minutes": 33.5,
+          "fg_pct": 0.517
+        },
+        {
+          "player_id": 1630578,
+          "player_name": "Alperen Sengun",
+          "team": "HOU",
+          "side": "away",
+          "minutes": 33.0,
+          "fg_pct": 0.545
+        },
+        {
+          "player_id": 1641708,
+          "player_name": "Amen Thompson",
+          "team": "HOU",
+          "side": "away",
+          "minutes": 33.0,
+          "fg_pct": 0.692
+        },
+        {
+          "player_id": 1631095,
+          "player_name": "Jabari Smith Jr.",
+          "team": "HOU",
+          "side": "away",
+          "minutes": 30.0,
+          "fg_pct": 0.462
+        },
+        {
+          "player_id": 203076,
+          "player_name": "Anthony Davis",
+          "team": "WAS",
+          "side": "home",
+          "minutes": 34.5,
+          "fg_pct": 0.676
+        },
+        {
+          "player_id": 1642259,
+          "player_name": "Alex Sarr",
+          "team": "WAS",
+          "side": "home",
+          "minutes": 32.0,
+          "fg_pct": 0.667
+        },
+        {
+          "player_id": 1629028,
+          "player_name": "Deandre Ayton",
+          "team": "WAS",
+          "side": "home",
+          "minutes": 31.4,
+          "fg_pct": 0.64
+        },
+        {
+          "player_id": 1642273,
+          "player_name": "Kyshawn George",
+          "team": "WAS",
+          "side": "home",
+          "minutes": 29.0,
+          "fg_pct": 0.4
+        },
+        {
+          "player_id": 1641731,
+          "player_name": "Bilal Coulibaly",
+          "team": "WAS",
+          "side": "home",
+          "minutes": 27.0,
+          "fg_pct": 0.562
+        }
+      ],
+      "source": "ESPN NBA play-by-play",
+      "history_games": 100,
+      "players": [
+        {
+          "player_id": 201142,
+          "player_name": "Kevin Durant",
+          "team": "HOU",
+          "probability": 16.1,
+          "first_shot_rate": 16.67,
+          "first_basket_rate": 33.33,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630578,
+          "player_name": "Alperen Sengun",
+          "team": "HOU",
+          "probability": 11.38,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 16.67,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1631095,
+          "player_name": "Jabari Smith Jr.",
+          "team": "HOU",
+          "probability": 10.83,
+          "first_shot_rate": 16.67,
+          "first_basket_rate": 16.67,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1629028,
+          "player_name": "Deandre Ayton",
+          "team": "WAS",
+          "probability": 10.11,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 2,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642263,
+          "player_name": "Reed Sheppard",
+          "team": "HOU",
+          "probability": 9.6,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1641731,
+          "player_name": "Bilal Coulibaly",
+          "team": "WAS",
+          "probability": 9.15,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 1,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 203076,
+          "player_name": "Anthony Davis",
+          "team": "WAS",
+          "probability": 7.54,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1641708,
+          "player_name": "Amen Thompson",
+          "team": "HOU",
+          "probability": 7.07,
+          "first_shot_rate": 16.67,
+          "first_basket_rate": 0.0,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642259,
+          "player_name": "Alex Sarr",
+          "team": "WAS",
+          "probability": 6.89,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1642273,
+          "player_name": "Kyshawn George",
+          "team": "WAS",
+          "probability": 5.33,
+          "first_shot_rate": 14.29,
           "first_basket_rate": 0.0,
           "starts_sample": 7,
           "estimate_source": "historical_blend",
@@ -835,9 +1460,9 @@
       "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
     },
     {
-      "game_id": "0022600235",
-      "away_team": "CHI",
-      "home_team": "MIN",
+      "game_id": "0022600243",
+      "away_team": "ATL",
+      "home_team": "MIL",
       "lineup_status": "projected_by_minutes",
       "lineup_sources": {
         "away": "projected_by_minutes",
@@ -845,198 +1470,407 @@
       },
       "projected_starters": [
         {
-          "player_id": 1629651,
-          "player_name": "Nic Claxton",
-          "team": "CHI",
+          "player_id": 1630552,
+          "player_name": "Jalen Johnson",
+          "team": "ATL",
           "side": "away",
-          "minutes": 30.5,
-          "fg_pct": 0.8
+          "minutes": 36.3,
+          "fg_pct": 0.459
         },
         {
-          "player_id": 1630171,
-          "player_name": "Isaac Okoro",
-          "team": "CHI",
+          "player_id": 1629638,
+          "player_name": "Nickeil Alexander-Walker",
+          "team": "ATL",
           "side": "away",
-          "minutes": 23.0,
-          "fg_pct": 0.273
+          "minutes": 35.0,
+          "fg_pct": 0.521
         },
         {
-          "player_id": 1643517,
-          "player_name": "Dailyn Swain",
-          "team": "CHI",
+          "player_id": 1630700,
+          "player_name": "Dyson Daniels",
+          "team": "ATL",
           "side": "away",
-          "minutes": 21.0,
+          "minutes": 31.0,
+          "fg_pct": 0.559
+        },
+        {
+          "player_id": 1630168,
+          "player_name": "Onyeka Okongwu",
+          "team": "ATL",
+          "side": "away",
+          "minutes": 30.7,
+          "fg_pct": 0.423
+        },
+        {
+          "player_id": 203468,
+          "player_name": "CJ McCollum",
+          "team": "ATL",
+          "side": "away",
+          "minutes": 29.5,
+          "fg_pct": 0.467
+        },
+        {
+          "player_id": 1631157,
+          "player_name": "Ryan Rollins",
+          "team": "MIL",
+          "side": "home",
+          "minutes": 31.7,
+          "fg_pct": 0.529
+        },
+        {
+          "player_id": 1631260,
+          "player_name": "AJ Green",
+          "team": "MIL",
+          "side": "home",
+          "minutes": 29.0,
+          "fg_pct": 0.444
+        },
+        {
+          "player_id": 1631170,
+          "player_name": "Jaime Jaquez Jr.",
+          "team": "MIL",
+          "side": "home",
+          "minutes": 27.0,
+          "fg_pct": 0.535
+        },
+        {
+          "player_id": 1628398,
+          "player_name": "Kyle Kuzma",
+          "team": "MIL",
+          "side": "home",
+          "minutes": 25.7,
           "fg_pct": 0.6
         },
         {
-          "player_id": 1631159,
-          "player_name": "Leonard Miller",
-          "team": "CHI",
-          "side": "away",
-          "minutes": 21.0,
-          "fg_pct": 0.429
-        },
-        {
-          "player_id": 1641824,
-          "player_name": "Matas Buzelis",
-          "team": "CHI",
-          "side": "away",
-          "minutes": 19.0,
-          "fg_pct": 0.556
-        },
-        {
-          "player_id": 1642389,
-          "player_name": "Zyon Pullin",
-          "team": "MIN",
+          "player_id": 1626167,
+          "player_name": "Myles Turner",
+          "team": "MIL",
           "side": "home",
-          "minutes": 38.0,
-          "fg_pct": 0.333
-        },
-        {
-          "player_id": 203497,
-          "player_name": "Rudy Gobert",
-          "team": "MIN",
-          "side": "home",
-          "minutes": 30.0,
-          "fg_pct": 0.636
-        },
-        {
-          "player_id": 1642912,
-          "player_name": "Isaiah Evans",
-          "team": "MIN",
-          "side": "home",
-          "minutes": 30.0,
-          "fg_pct": 0.462
-        },
-        {
-          "player_id": 1641740,
-          "player_name": "Jaylen Clark",
-          "team": "MIN",
-          "side": "home",
-          "minutes": 29.0,
-          "fg_pct": 0.5
-        },
-        {
-          "player_id": 1630183,
-          "player_name": "Jaden McDaniels",
-          "team": "MIN",
-          "side": "home",
-          "minutes": 27.3,
-          "fg_pct": 0.44
+          "minutes": 24.7,
+          "fg_pct": 0.478
         }
       ],
       "source": "ESPN NBA play-by-play",
       "history_games": 100,
       "players": [
         {
-          "player_id": 1629651,
-          "player_name": "Nic Claxton",
-          "team": "CHI",
-          "probability": 12.41,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
+          "player_id": 1629638,
+          "player_name": "Nickeil Alexander-Walker",
+          "team": "ATL",
+          "probability": 16.89,
+          "first_shot_rate": 28.57,
+          "first_basket_rate": 42.86,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1641740,
-          "player_name": "Jaylen Clark",
-          "team": "MIN",
-          "probability": 10.21,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
+          "player_id": 1631170,
+          "player_name": "Jaime Jaquez Jr.",
+          "team": "MIL",
+          "probability": 13.27,
+          "first_shot_rate": 16.67,
+          "first_basket_rate": 33.33,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1642912,
-          "player_name": "Isaiah Evans",
-          "team": "MIN",
-          "probability": 10.08,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
+          "player_id": 1626167,
+          "player_name": "Myles Turner",
+          "team": "MIL",
+          "probability": 12.27,
+          "first_shot_rate": 28.57,
+          "first_basket_rate": 28.57,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1642389,
-          "player_name": "Zyon Pullin",
-          "team": "MIN",
-          "probability": 9.87,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
+          "player_id": 1630552,
+          "player_name": "Jalen Johnson",
+          "team": "ATL",
+          "probability": 10.61,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 25.0,
+          "starts_sample": 4,
+          "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1643517,
-          "player_name": "Dailyn Swain",
-          "team": "CHI",
-          "probability": 9.84,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
+          "player_id": 1630168,
+          "player_name": "Onyeka Okongwu",
+          "team": "ATL",
+          "probability": 8.53,
+          "first_shot_rate": 28.57,
+          "first_basket_rate": 14.29,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1631159,
-          "player_name": "Leonard Miller",
-          "team": "CHI",
-          "probability": 8.82,
-          "first_shot_rate": null,
-          "first_basket_rate": null,
-          "starts_sample": 0,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "projected_by_minutes"
-        },
-        {
-          "player_id": 1630171,
-          "player_name": "Isaac Okoro",
-          "team": "CHI",
-          "probability": 8.1,
-          "first_shot_rate": 50.0,
-          "first_basket_rate": 50.0,
+          "player_id": 1631157,
+          "player_name": "Ryan Rollins",
+          "team": "MIL",
+          "probability": 7.95,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
           "starts_sample": 2,
           "estimate_source": "statistical_fallback",
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 203497,
-          "player_name": "Rudy Gobert",
-          "team": "MIN",
-          "probability": 7.93,
+          "player_id": 203468,
+          "player_name": "CJ McCollum",
+          "team": "ATL",
+          "probability": 7.45,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
-          "starts_sample": 5,
+          "starts_sample": 2,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1631260,
+          "player_name": "AJ Green",
+          "team": "MIL",
+          "probability": 7.29,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630700,
+          "player_name": "Dyson Daniels",
+          "team": "ATL",
+          "probability": 5.08,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
           "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1641824,
-          "player_name": "Matas Buzelis",
-          "team": "CHI",
-          "probability": 6.59,
-          "first_shot_rate": 0.0,
+          "player_id": 1628398,
+          "player_name": "Kyle Kuzma",
+          "team": "MIL",
+          "probability": 4.65,
+          "first_shot_rate": 12.5,
           "first_basket_rate": 0.0,
-          "starts_sample": 5,
+          "starts_sample": 8,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        }
+      ],
+      "status": "estimated",
+      "reason": "Observed first-basket rates where available; limited-history players use estimated scoring-efficiency priors. Starting lineups are not confirmed and opening-tip odds are not included."
+    },
+    {
+      "game_id": "0022600244",
+      "away_team": "OKC",
+      "home_team": "SAC",
+      "lineup_status": "previous_confirmed_lineup",
+      "lineup_sources": {
+        "away": "projected_by_minutes",
+        "home": "previous_confirmed_lineup",
+        "home_previous_game_id": "401909303"
+      },
+      "projected_starters": [
+        {
+          "player_id": 1628983,
+          "player_name": "Shai Gilgeous-Alexander",
+          "team": "OKC",
+          "side": "away",
+          "minutes": 33.7,
+          "fg_pct": 0.543
+        },
+        {
+          "player_id": 1628392,
+          "player_name": "Isaiah Hartenstein",
+          "team": "OKC",
+          "side": "away",
+          "minutes": 29.7,
+          "fg_pct": 0.773
+        },
+        {
+          "player_id": 1627936,
+          "player_name": "Alex Caruso",
+          "team": "OKC",
+          "side": "away",
+          "minutes": 22.3,
+          "fg_pct": 0.267
+        },
+        {
+          "player_id": 1642272,
+          "player_name": "Jared McCain",
+          "team": "OKC",
+          "side": "away",
+          "minutes": 15.0,
+          "fg_pct": 0.5
+        },
+        {
+          "player_id": 1642964,
+          "player_name": "Brooks Barnhizer",
+          "team": "OKC",
+          "side": "away",
+          "minutes": 4.3,
+          "fg_pct": 0.333
+        },
+        {
+          "player_id": 1627734,
+          "player_name": "Domantas Sabonis",
+          "team": "SAC",
+          "side": "home",
+          "minutes": 35.0,
+          "fg_pct": 0.333
+        },
+        {
+          "player_id": 1629631,
+          "player_name": "De'Andre Hunter",
+          "team": "SAC",
+          "side": "home",
+          "minutes": 26.0,
+          "fg_pct": 0.231
+        },
+        {
+          "player_id": 1631099,
+          "player_name": "Keegan Murray",
+          "team": "SAC",
+          "side": "home",
+          "minutes": 0.0,
+          "fg_pct": 0.0
+        },
+        {
+          "player_id": 203897,
+          "player_name": "Zach LaVine",
+          "team": "SAC",
+          "side": "home",
+          "minutes": 31.3,
+          "fg_pct": 0.464
+        },
+        {
+          "player_id": 1643411,
+          "player_name": "Darius Acuff Jr.",
+          "team": "SAC",
+          "side": "home",
+          "minutes": 0.0,
+          "fg_pct": 0.0
+        }
+      ],
+      "source": "ESPN NBA play-by-play",
+      "history_games": 100,
+      "players": [
+        {
+          "player_id": 1643411,
+          "player_name": "Darius Acuff Jr.",
+          "team": "SAC",
+          "probability": 13.4,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 28.57,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 1642272,
+          "player_name": "Jared McCain",
+          "team": "OKC",
+          "probability": 12.64,
+          "first_shot_rate": 50.0,
+          "first_basket_rate": 25.0,
+          "starts_sample": 4,
           "estimate_source": "historical_blend",
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1630183,
-          "player_name": "Jaden McDaniels",
-          "team": "MIN",
-          "probability": 6.41,
-          "first_shot_rate": 33.33,
+          "player_id": 1629631,
+          "player_name": "De'Andre Hunter",
+          "team": "SAC",
+          "probability": 10.98,
+          "first_shot_rate": 16.67,
+          "first_basket_rate": 16.67,
+          "starts_sample": 6,
+          "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 1627936,
+          "player_name": "Alex Caruso",
+          "team": "OKC",
+          "probability": 7.99,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 1,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1628392,
+          "player_name": "Isaiah Hartenstein",
+          "team": "OKC",
+          "probability": 7.65,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1628983,
+          "player_name": "Shai Gilgeous-Alexander",
+          "team": "OKC",
+          "probability": 7.0,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1627734,
+          "player_name": "Domantas Sabonis",
+          "team": "SAC",
+          "probability": 6.51,
+          "first_shot_rate": 16.67,
           "first_basket_rate": 0.0,
           "starts_sample": 6,
           "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 203897,
+          "player_name": "Zach LaVine",
+          "team": "SAC",
+          "probability": 6.47,
+          "first_shot_rate": 14.29,
+          "first_basket_rate": 0.0,
+          "starts_sample": 7,
+          "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 1642964,
+          "player_name": "Brooks Barnhizer",
+          "team": "OKC",
+          "probability": 6.46,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
           "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1631099,
+          "player_name": "Keegan Murray",
+          "team": "SAC",
+          "probability": 4.55,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 1,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "previous_confirmed_lineup"
         }
       ],
       "status": "estimated",

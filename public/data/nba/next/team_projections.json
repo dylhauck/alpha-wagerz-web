@@ -1,77 +1,518 @@
 {
-  "generated_at": "2026-11-13T20:53:44.563145+00:00",
-  "slate_date": "2026-11-14",
+  "generated_at": "2026-11-14T14:59:09.619721+00:00",
+  "slate_date": "2026-11-15",
   "season": "2026-27",
-  "game_count": 5,
+  "game_count": 9,
   "period_methodology": "Historical 2025-26 NBA quarter scoring averages redistribute existing full-game model totals. Opponent defensive quarter scoring uses a neutral league baseline. Win probabilities use assumed normal-distribution uncertainty and are not backtested.",
   "games": [
     {
-      "game_id": "0022600231",
+      "game_id": "0022600236",
       "season": "2026-27",
       "game_type": "REG",
-      "game_date": "2026-11-14",
-      "game_time": "1900-01-01T19:00:00Z",
-      "game_datetime": "2026-11-14T19:00:00Z",
-      "game_datetime_utc": "2026-11-15T00:00:00Z",
-      "status": "7:00 pm ET",
+      "game_date": "2026-11-15",
+      "game_time": "1900-01-01T13:00:00Z",
+      "game_datetime": "2026-11-15T13:00:00Z",
+      "game_datetime_utc": "2026-11-15T18:00:00Z",
+      "status": "1:00 pm ET",
       "status_code": 1,
-      "venue": "Smoothie King Center",
-      "arena": "Smoothie King Center",
-      "arena_city": "New Orleans",
-      "arena_state": "LA",
+      "venue": "Xfinity Mobile Arena",
+      "arena": "Xfinity Mobile Arena",
+      "arena_city": "Philadelphia",
+      "arena_state": "PA",
       "week_number": 4,
       "week_name": "Week 4",
-      "away_team": "DEN",
-      "home_team": "NOP",
-      "away_record": "6-4",
-      "home_record": "4-8",
+      "away_team": "IND",
+      "home_team": "PHI",
+      "away_record": "5-8",
+      "home_record": "10-3",
       "model": {
-        "away_score": 124.2,
-        "home_score": 117.9,
-        "projected_total": 242.1,
-        "home_margin": -6.3,
-        "away_margin": 6.3,
-        "projected_winner": "DEN",
-        "away_win_probability": 63.9,
-        "home_win_probability": 36.1,
-        "confidence": 74.2
+        "away_score": 108.6,
+        "home_score": 115.3,
+        "projected_total": 224.0,
+        "home_margin": 6.7,
+        "away_margin": -6.7,
+        "projected_winner": "PHI",
+        "away_win_probability": 35.2,
+        "home_win_probability": 64.8,
+        "confidence": 77.8
       },
       "team_profiles": {
         "away": {
-          "team": "DEN",
-          "team_name": "Denver Nuggets",
-          "conference": "West",
+          "team": "IND",
+          "team_name": "Indiana Pacers",
+          "conference": "East",
           "games": {
-            "current": 10,
+            "current": 13,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.5,
-            "last_season": 0.5
+            "current_season": 0.65,
+            "last_season": 0.35
           },
           "per_game": {
-            "pts": 118.3,
-            "pts_allowed": 115.1,
-            "point_diff": 3.15,
-            "reb": 22.0,
-            "ast": 14.5,
-            "tov": 6.45,
-            "fg3m": 7.1
+            "pts": 111.62,
+            "pts_allowed": 115.72,
+            "point_diff": -4.17,
+            "reb": 14.66,
+            "ast": 9.69,
+            "tov": 5.07,
+            "fg3m": 4.69
           },
           "percentages": {
-            "fg_pct": 0.248,
-            "fg3_pct": 0.198,
-            "ft_pct": 0.404
+            "fg_pct": 0.16,
+            "fg3_pct": 0.125,
+            "ft_pct": 0.272
           },
           "ratings": {
-            "offense_index": 1.0347,
-            "defense_index": 1.0067
+            "offense_index": 0.9765,
+            "defense_index": 1.0124
           }
         },
         "home": {
-          "team": "NOP",
-          "team_name": "New Orleans Pelicans",
+          "team": "PHI",
+          "team_name": "Philadelphia 76ers",
+          "conference": "East",
+          "games": {
+            "current": 13,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.65,
+            "last_season": 0.35
+          },
+          "per_game": {
+            "pts": 112.84,
+            "pts_allowed": 111.75,
+            "point_diff": 1.1,
+            "reb": 15.26,
+            "ast": 8.61,
+            "tov": 4.76,
+            "fg3m": 4.3
+          },
+          "percentages": {
+            "fg_pct": 0.162,
+            "fg3_pct": 0.122,
+            "ft_pct": 0.283
+          },
+          "ratings": {
+            "offense_index": 0.9872,
+            "defense_index": 0.9776
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "5-8",
+          "wins": 5,
+          "losses": 8,
+          "win_pct": 0.38461538461538464,
+          "nba_rank": 14,
+          "conference_rank": 7,
+          "division_rank": 2,
+          "home_record": "0-0",
+          "road_record": "1-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 123.0,
+          "opponent_points_per_game": 120.0,
+          "point_differential": 3.0
+        },
+        "home": {
+          "record": "10-3",
+          "wins": 10,
+          "losses": 3,
+          "win_pct": 0.7692307692307693,
+          "nba_rank": 13,
+          "conference_rank": 1,
+          "division_rank": 1,
+          "home_record": "1-0",
+          "road_record": "1-0",
+          "last_10": "2-0",
+          "conference_record": "",
+          "division_record": "",
+          "points_per_game": 110.0,
+          "opponent_points_per_game": 103.0,
+          "point_differential": 7.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {
+        "Q1": {
+          "away_score": 27.1,
+          "home_score": 28.8,
+          "projected_total": 56.0,
+          "home_margin": 1.7,
+          "away_margin": -1.7,
+          "home_win_probability": 58.3,
+          "away_win_probability": 41.7,
+          "home_spread": -1.7,
+          "away_spread": 1.7,
+          "projected_winner": "home",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q2": {
+          "away_score": 27.1,
+          "home_score": 28.8,
+          "projected_total": 56.0,
+          "home_margin": 1.7,
+          "away_margin": -1.7,
+          "home_win_probability": 58.3,
+          "away_win_probability": 41.7,
+          "home_spread": -1.7,
+          "away_spread": 1.7,
+          "projected_winner": "home",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q3": {
+          "away_score": 27.1,
+          "home_score": 28.8,
+          "projected_total": 56.0,
+          "home_margin": 1.7,
+          "away_margin": -1.7,
+          "home_win_probability": 58.3,
+          "away_win_probability": 41.7,
+          "home_spread": -1.7,
+          "away_spread": 1.7,
+          "projected_winner": "home",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q4": {
+          "away_score": 27.1,
+          "home_score": 28.8,
+          "projected_total": 56.0,
+          "home_margin": 1.7,
+          "away_margin": -1.7,
+          "home_win_probability": 58.3,
+          "away_win_probability": 41.7,
+          "home_spread": -1.7,
+          "away_spread": 1.7,
+          "projected_winner": "home",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "1H": {
+          "away_score": 54.3,
+          "home_score": 57.6,
+          "projected_total": 111.9,
+          "home_margin": 3.4,
+          "away_margin": -3.4,
+          "home_win_probability": 61.6,
+          "away_win_probability": 38.4,
+          "home_spread": -3.4,
+          "away_spread": 3.4,
+          "projected_winner": "home",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        },
+        "2H": {
+          "away_score": 54.3,
+          "home_score": 57.6,
+          "projected_total": 111.9,
+          "home_margin": 3.4,
+          "away_margin": -3.4,
+          "home_win_probability": 61.6,
+          "away_win_probability": 38.4,
+          "home_spread": -3.4,
+          "away_spread": 3.4,
+          "projected_winner": "home",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        }
+      },
+      "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
+    },
+    {
+      "game_id": "0022600237",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-15",
+      "game_time": "1900-01-01T16:00:00Z",
+      "game_datetime": "2026-11-15T16:00:00Z",
+      "game_datetime_utc": "2026-11-15T21:00:00Z",
+      "status": "4:00 pm ET",
+      "status_code": 1,
+      "venue": "Mortgage Matchup Center",
+      "arena": "Mortgage Matchup Center",
+      "arena_city": "Phoenix",
+      "arena_state": "AZ",
+      "week_number": 4,
+      "week_name": "Week 4",
+      "away_team": "LAL",
+      "home_team": "PHX",
+      "away_record": "11-2",
+      "home_record": "5-6",
+      "model": {
+        "away_score": 117.9,
+        "home_score": 113.5,
+        "projected_total": 231.4,
+        "home_margin": -4.4,
+        "away_margin": 4.4,
+        "projected_winner": "LAL",
+        "away_win_probability": 59.9,
+        "home_win_probability": 40.1,
+        "confidence": 76.0
+      },
+      "team_profiles": {
+        "away": {
+          "team": "LAL",
+          "team_name": "Los Angeles Lakers",
           "conference": "West",
+          "games": {
+            "current": 13,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.65,
+            "last_season": 0.35
+          },
+          "per_game": {
+            "pts": 120.14,
+            "pts_allowed": 114.34,
+            "point_diff": 5.77,
+            "reb": 14.35,
+            "ast": 9.06,
+            "tov": 5.07,
+            "fg3m": 4.13
+          },
+          "percentages": {
+            "fg_pct": 0.176,
+            "fg3_pct": 0.126,
+            "ft_pct": 0.267
+          },
+          "ratings": {
+            "offense_index": 1.051,
+            "defense_index": 1.0003
+          }
+        },
+        "home": {
+          "team": "PHX",
+          "team_name": "Phoenix Suns",
+          "conference": "West",
+          "games": {
+            "current": 11,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.55,
+            "last_season": 0.45
+          },
+          "per_game": {
+            "pts": 112.11,
+            "pts_allowed": 113.85,
+            "point_diff": -1.75,
+            "reb": 19.39,
+            "ast": 11.07,
+            "tov": 6.52,
+            "fg3m": 6.66
+          },
+          "percentages": {
+            "fg_pct": 0.205,
+            "fg3_pct": 0.162,
+            "ft_pct": 0.351
+          },
+          "ratings": {
+            "offense_index": 0.9808,
+            "defense_index": 0.996
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "11-2",
+          "wins": 11,
+          "losses": 2,
+          "win_pct": 0.8461538461538461,
+          "nba_rank": 5,
+          "conference_rank": 5,
+          "division_rank": 2,
+          "home_record": "1-0",
+          "road_record": "0-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 127.0,
+          "opponent_points_per_game": 105.0,
+          "point_differential": 22.0
+        },
+        "home": {
+          "record": "5-6",
+          "wins": 5,
+          "losses": 6,
+          "win_pct": 0.45454545454545453,
+          "nba_rank": 29,
+          "conference_rank": 14,
+          "division_rank": 5,
+          "home_record": "0-0",
+          "road_record": "0-1",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.0",
+          "points_per_game": 83.0,
+          "opponent_points_per_game": 124.0,
+          "point_differential": -41.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {
+        "Q1": {
+          "away_score": 29.5,
+          "home_score": 28.4,
+          "projected_total": 57.9,
+          "home_margin": -1.1,
+          "away_margin": 1.1,
+          "home_win_probability": 44.5,
+          "away_win_probability": 55.5,
+          "home_spread": 1.1,
+          "away_spread": -1.1,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q2": {
+          "away_score": 29.5,
+          "home_score": 28.4,
+          "projected_total": 57.9,
+          "home_margin": -1.1,
+          "away_margin": 1.1,
+          "home_win_probability": 44.5,
+          "away_win_probability": 55.5,
+          "home_spread": 1.1,
+          "away_spread": -1.1,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q3": {
+          "away_score": 29.5,
+          "home_score": 28.4,
+          "projected_total": 57.9,
+          "home_margin": -1.1,
+          "away_margin": 1.1,
+          "home_win_probability": 44.5,
+          "away_win_probability": 55.5,
+          "home_spread": 1.1,
+          "away_spread": -1.1,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q4": {
+          "away_score": 29.5,
+          "home_score": 28.4,
+          "projected_total": 57.9,
+          "home_margin": -1.1,
+          "away_margin": 1.1,
+          "home_win_probability": 44.5,
+          "away_win_probability": 55.5,
+          "home_spread": 1.1,
+          "away_spread": -1.1,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "1H": {
+          "away_score": 59.0,
+          "home_score": 56.8,
+          "projected_total": 115.7,
+          "home_margin": -2.2,
+          "away_margin": 2.2,
+          "home_win_probability": 42.3,
+          "away_win_probability": 57.7,
+          "home_spread": 2.2,
+          "away_spread": -2.2,
+          "projected_winner": "away",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        },
+        "2H": {
+          "away_score": 59.0,
+          "home_score": 56.8,
+          "projected_total": 115.7,
+          "home_margin": -2.2,
+          "away_margin": 2.2,
+          "home_win_probability": 42.3,
+          "away_win_probability": 57.7,
+          "home_spread": 2.2,
+          "away_spread": -2.2,
+          "projected_winner": "away",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        }
+      },
+      "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
+    },
+    {
+      "game_id": "0022600238",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-15",
+      "game_time": "1900-01-01T16:30:00Z",
+      "game_datetime": "2026-11-15T16:30:00Z",
+      "game_datetime_utc": "2026-11-15T21:30:00Z",
+      "status": "4:30 pm ET",
+      "status_code": 1,
+      "venue": "Intuit Dome",
+      "arena": "Intuit Dome",
+      "arena_city": "Inglewood",
+      "arena_state": "CA",
+      "week_number": 4,
+      "week_name": "Week 4",
+      "away_team": "CHA",
+      "home_team": "LAC",
+      "away_record": "4-8",
+      "home_record": "3-8",
+      "model": {
+        "away_score": 106.3,
+        "home_score": 110.7,
+        "projected_total": 217.0,
+        "home_margin": 4.4,
+        "away_margin": -4.4,
+        "projected_winner": "LAC",
+        "away_win_probability": 40.2,
+        "home_win_probability": 59.8,
+        "confidence": 75.1
+      },
+      "team_profiles": {
+        "away": {
+          "team": "CHA",
+          "team_name": "Charlotte Hornets",
+          "conference": "East",
           "games": {
             "current": 12,
             "previous": 82
@@ -81,59 +522,326 @@
             "last_season": 0.4
           },
           "per_game": {
-            "pts": 116.34,
-            "pts_allowed": 122.52,
-            "point_diff": -6.18,
-            "reb": 17.56,
-            "ast": 10.04,
-            "tov": 5.68,
-            "fg3m": 4.44
+            "pts": 105.56,
+            "pts_allowed": 110.24,
+            "point_diff": -4.68,
+            "reb": 18.44,
+            "ast": 10.52,
+            "tov": 6.16,
+            "fg3m": 6.56
           },
           "percentages": {
-            "fg_pct": 0.186,
-            "fg3_pct": 0.139,
-            "ft_pct": 0.314
+            "fg_pct": 0.184,
+            "fg3_pct": 0.151,
+            "ft_pct": 0.327
           },
           "ratings": {
-            "offense_index": 1.0175,
-            "defense_index": 1.0716
+            "offense_index": 0.9235,
+            "defense_index": 0.9645
+          }
+        },
+        "home": {
+          "team": "LAC",
+          "team_name": "LA Clippers",
+          "conference": "West",
+          "games": {
+            "current": 11,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.55,
+            "last_season": 0.45
+          },
+          "per_game": {
+            "pts": 112.97,
+            "pts_allowed": 115.29,
+            "point_diff": -2.42,
+            "reb": 18.27,
+            "ast": 10.66,
+            "tov": 6.43,
+            "fg3m": 5.58
+          },
+          "percentages": {
+            "fg_pct": 0.218,
+            "fg3_pct": 0.166,
+            "ft_pct": 0.37
+          },
+          "ratings": {
+            "offense_index": 0.9884,
+            "defense_index": 1.0087
           }
         }
       },
       "standings": {
         "away": {
-          "record": "6-4",
-          "wins": 6,
-          "losses": 4,
-          "win_pct": 0.6,
-          "nba_rank": 21,
-          "conference_rank": 8,
-          "division_rank": 4,
-          "home_record": "0-0",
-          "road_record": "0-1",
-          "last_10": "0-1",
-          "conference_record": "1.5",
-          "division_record": "1.5",
-          "points_per_game": 84.0,
-          "opponent_points_per_game": 96.0,
-          "point_differential": -12.0
-        },
-        "home": {
           "record": "4-8",
           "wins": 4,
           "losses": 8,
           "win_pct": 0.3333333333333333,
-          "nba_rank": 15,
-          "conference_rank": 15,
-          "division_rank": 5,
+          "nba_rank": 12,
+          "conference_rank": 6,
+          "division_rank": 3,
+          "home_record": "0-0",
+          "road_record": "1-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 110.0,
+          "opponent_points_per_game": 103.0,
+          "point_differential": 7.0
+        },
+        "home": {
+          "record": "3-8",
+          "wins": 3,
+          "losses": 8,
+          "win_pct": 0.2727272727272727,
+          "nba_rank": 3,
+          "conference_rank": 2,
+          "division_rank": 1,
+          "home_record": "1-0",
+          "road_record": "0-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 121.0,
+          "opponent_points_per_game": 96.0,
+          "point_differential": 25.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {
+        "Q1": {
+          "away_score": 26.6,
+          "home_score": 27.7,
+          "projected_total": 54.2,
+          "home_margin": 1.1,
+          "away_margin": -1.1,
+          "home_win_probability": 55.5,
+          "away_win_probability": 44.5,
+          "home_spread": -1.1,
+          "away_spread": 1.1,
+          "projected_winner": "home",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q2": {
+          "away_score": 26.6,
+          "home_score": 27.7,
+          "projected_total": 54.2,
+          "home_margin": 1.1,
+          "away_margin": -1.1,
+          "home_win_probability": 55.5,
+          "away_win_probability": 44.5,
+          "home_spread": -1.1,
+          "away_spread": 1.1,
+          "projected_winner": "home",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q3": {
+          "away_score": 26.6,
+          "home_score": 27.7,
+          "projected_total": 54.2,
+          "home_margin": 1.1,
+          "away_margin": -1.1,
+          "home_win_probability": 55.5,
+          "away_win_probability": 44.5,
+          "home_spread": -1.1,
+          "away_spread": 1.1,
+          "projected_winner": "home",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q4": {
+          "away_score": 26.6,
+          "home_score": 27.7,
+          "projected_total": 54.2,
+          "home_margin": 1.1,
+          "away_margin": -1.1,
+          "home_win_probability": 55.5,
+          "away_win_probability": 44.5,
+          "home_spread": -1.1,
+          "away_spread": 1.1,
+          "projected_winner": "home",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "1H": {
+          "away_score": 53.1,
+          "home_score": 55.4,
+          "projected_total": 108.5,
+          "home_margin": 2.2,
+          "away_margin": -2.2,
+          "home_win_probability": 57.7,
+          "away_win_probability": 42.3,
+          "home_spread": -2.2,
+          "away_spread": 2.2,
+          "projected_winner": "home",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        },
+        "2H": {
+          "away_score": 53.1,
+          "home_score": 55.4,
+          "projected_total": 108.5,
+          "home_margin": 2.2,
+          "away_margin": -2.2,
+          "home_win_probability": 57.7,
+          "away_win_probability": 42.3,
+          "home_spread": -2.2,
+          "away_spread": 2.2,
+          "projected_winner": "home",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        }
+      },
+      "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
+    },
+    {
+      "game_id": "0022600239",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-15",
+      "game_time": "1900-01-01T17:00:00Z",
+      "game_datetime": "2026-11-15T17:00:00Z",
+      "game_datetime_utc": "2026-11-15T22:00:00Z",
+      "status": "5:00 pm ET",
+      "status_code": 1,
+      "venue": "Delta Center",
+      "arena": "Delta Center",
+      "arena_city": "Salt Lake City",
+      "arena_state": "UT",
+      "week_number": 4,
+      "week_name": "Week 4",
+      "away_team": "SAS",
+      "home_team": "UTA",
+      "away_record": "11-2",
+      "home_record": "1-12",
+      "model": {
+        "away_score": 124.2,
+        "home_score": 107.2,
+        "projected_total": 231.4,
+        "home_margin": -17.0,
+        "away_margin": 17.0,
+        "projected_winner": "SAS",
+        "away_win_probability": 82.5,
+        "home_win_probability": 17.5,
+        "confidence": 77.8
+      },
+      "team_profiles": {
+        "away": {
+          "team": "SAS",
+          "team_name": "San Antonio Spurs",
+          "conference": "West",
+          "games": {
+            "current": 13,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.65,
+            "last_season": 0.35
+          },
+          "per_game": {
+            "pts": 119.6,
+            "pts_allowed": 108.06,
+            "point_diff": 11.48,
+            "reb": 16.45,
+            "ast": 9.83,
+            "tov": 4.72,
+            "fg3m": 4.76
+          },
+          "percentages": {
+            "fg_pct": 0.169,
+            "fg3_pct": 0.126,
+            "ft_pct": 0.275
+          },
+          "ratings": {
+            "offense_index": 1.0464,
+            "defense_index": 0.9453
+          }
+        },
+        "home": {
+          "team": "UTA",
+          "team_name": "Utah Jazz",
+          "conference": "West",
+          "games": {
+            "current": 13,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.65,
+            "last_season": 0.35
+          },
+          "per_game": {
+            "pts": 111.03,
+            "pts_allowed": 121.19,
+            "point_diff": -10.22,
+            "reb": 15.33,
+            "ast": 10.36,
+            "tov": 5.42,
+            "fg3m": 4.41
+          },
+          "percentages": {
+            "fg_pct": 0.163,
+            "fg3_pct": 0.121,
+            "ft_pct": 0.275
+          },
+          "ratings": {
+            "offense_index": 0.9714,
+            "defense_index": 1.0603
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "11-2",
+          "wins": 11,
+          "losses": 2,
+          "win_pct": 0.8461538461538461,
+          "nba_rank": 23,
+          "conference_rank": 9,
+          "division_rank": 4,
           "home_record": "0-1",
           "road_record": "0-0",
           "last_10": "0-1",
           "conference_record": "1.5",
           "division_record": "1.0",
-          "points_per_game": 120.0,
+          "points_per_game": 104.0,
+          "opponent_points_per_game": 116.0,
+          "point_differential": -12.0
+        },
+        "home": {
+          "record": "1-12",
+          "wins": 1,
+          "losses": 12,
+          "win_pct": 0.07692307692307693,
+          "nba_rank": 25,
+          "conference_rank": 11,
+          "division_rank": 5,
+          "home_record": "0-0",
+          "road_record": "0-1",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.5",
+          "points_per_game": 103.0,
           "opponent_points_per_game": 123.0,
-          "point_differential": -3.0
+          "point_differential": -20.0
         }
       },
       "markets": {
@@ -150,14 +858,14 @@
       "periods": {
         "Q1": {
           "away_score": 31.1,
-          "home_score": 29.5,
-          "projected_total": 60.5,
-          "home_margin": -1.6,
-          "away_margin": 1.6,
-          "home_win_probability": 42.2,
-          "away_win_probability": 57.8,
-          "home_spread": 1.6,
-          "away_spread": -1.6,
+          "home_score": 26.8,
+          "projected_total": 57.9,
+          "home_margin": -4.2,
+          "away_margin": 4.2,
+          "home_win_probability": 29.8,
+          "away_win_probability": 70.2,
+          "home_spread": 4.2,
+          "away_spread": -4.2,
           "projected_winner": "away",
           "margin_sd": 8.0,
           "total_sd": 10.0,
@@ -165,14 +873,14 @@
         },
         "Q2": {
           "away_score": 31.1,
-          "home_score": 29.5,
-          "projected_total": 60.5,
-          "home_margin": -1.6,
-          "away_margin": 1.6,
-          "home_win_probability": 42.2,
-          "away_win_probability": 57.8,
-          "home_spread": 1.6,
-          "away_spread": -1.6,
+          "home_score": 26.8,
+          "projected_total": 57.9,
+          "home_margin": -4.2,
+          "away_margin": 4.2,
+          "home_win_probability": 29.8,
+          "away_win_probability": 70.2,
+          "home_spread": 4.2,
+          "away_spread": -4.2,
           "projected_winner": "away",
           "margin_sd": 8.0,
           "total_sd": 10.0,
@@ -180,14 +888,14 @@
         },
         "Q3": {
           "away_score": 31.1,
-          "home_score": 29.5,
-          "projected_total": 60.5,
-          "home_margin": -1.6,
-          "away_margin": 1.6,
-          "home_win_probability": 42.2,
-          "away_win_probability": 57.8,
-          "home_spread": 1.6,
-          "away_spread": -1.6,
+          "home_score": 26.8,
+          "projected_total": 57.9,
+          "home_margin": -4.2,
+          "away_margin": 4.2,
+          "home_win_probability": 29.8,
+          "away_win_probability": 70.2,
+          "home_spread": 4.2,
+          "away_spread": -4.2,
           "projected_winner": "away",
           "margin_sd": 8.0,
           "total_sd": 10.0,
@@ -195,14 +903,14 @@
         },
         "Q4": {
           "away_score": 31.1,
-          "home_score": 29.5,
-          "projected_total": 60.5,
-          "home_margin": -1.6,
-          "away_margin": 1.6,
-          "home_win_probability": 42.2,
-          "away_win_probability": 57.8,
-          "home_spread": 1.6,
-          "away_spread": -1.6,
+          "home_score": 26.8,
+          "projected_total": 57.9,
+          "home_margin": -4.2,
+          "away_margin": 4.2,
+          "home_win_probability": 29.8,
+          "away_win_probability": 70.2,
+          "home_spread": 4.2,
+          "away_spread": -4.2,
           "projected_winner": "away",
           "margin_sd": 8.0,
           "total_sd": 10.0,
@@ -210,14 +918,14 @@
         },
         "1H": {
           "away_score": 62.1,
-          "home_score": 59.0,
-          "projected_total": 121.1,
-          "home_margin": -3.1,
-          "away_margin": 3.1,
-          "home_win_probability": 39.0,
-          "away_win_probability": 61.0,
-          "home_spread": 3.1,
-          "away_spread": -3.1,
+          "home_score": 53.6,
+          "projected_total": 115.7,
+          "home_margin": -8.5,
+          "away_margin": 8.5,
+          "home_win_probability": 22.6,
+          "away_win_probability": 77.4,
+          "home_spread": 8.5,
+          "away_spread": -8.5,
           "projected_winner": "away",
           "margin_sd": 11.31,
           "total_sd": 14.14,
@@ -225,14 +933,14 @@
         },
         "2H": {
           "away_score": 62.1,
-          "home_score": 59.0,
-          "projected_total": 121.1,
-          "home_margin": -3.1,
-          "away_margin": 3.1,
-          "home_win_probability": 39.0,
-          "away_win_probability": 61.0,
-          "home_spread": 3.1,
-          "away_spread": -3.1,
+          "home_score": 53.6,
+          "projected_total": 115.7,
+          "home_margin": -8.5,
+          "away_margin": 8.5,
+          "home_win_probability": 22.6,
+          "away_win_probability": 77.4,
+          "home_spread": 8.5,
+          "away_spread": -8.5,
           "projected_winner": "away",
           "margin_sd": 11.31,
           "total_sd": 14.14,
@@ -242,34 +950,34 @@
       "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
     },
     {
-      "game_id": "0022600232",
+      "game_id": "0022600240",
       "season": "2026-27",
       "game_type": "REG",
-      "game_date": "2026-11-14",
-      "game_time": "1900-01-01T19:30:00Z",
-      "game_datetime": "2026-11-14T19:30:00Z",
-      "game_datetime_utc": "2026-11-15T00:30:00Z",
-      "status": "7:30 pm ET",
+      "game_date": "2026-11-15",
+      "game_time": "1900-01-01T18:00:00Z",
+      "game_datetime": "2026-11-15T18:00:00Z",
+      "game_datetime_utc": "2026-11-15T23:00:00Z",
+      "status": "6:00 pm ET",
       "status_code": 1,
-      "venue": "Rocket Arena",
-      "arena": "Rocket Arena",
-      "arena_city": "Cleveland",
-      "arena_state": "OH",
+      "venue": "TD Garden",
+      "arena": "TD Garden",
+      "arena_city": "Boston",
+      "arena_state": "MA",
       "week_number": 4,
       "week_name": "Week 4",
       "away_team": "DAL",
-      "home_team": "CLE",
+      "home_team": "BOS",
       "away_record": "7-5",
-      "home_record": "6-6",
+      "home_record": "10-2",
       "model": {
-        "away_score": 112.9,
-        "home_score": 119.1,
-        "projected_total": 232.0,
-        "home_margin": 6.2,
-        "away_margin": -6.2,
-        "projected_winner": "CLE",
-        "away_win_probability": 36.3,
-        "home_win_probability": 63.7,
+        "away_score": 104.2,
+        "home_score": 116.3,
+        "projected_total": 220.5,
+        "home_margin": 12.1,
+        "away_margin": -12.1,
+        "projected_winner": "BOS",
+        "away_win_probability": 24.9,
+        "home_win_probability": 75.1,
         "confidence": 76.0
       },
       "team_profiles": {
@@ -300,13 +1008,13 @@
             "ft_pct": 0.302
           },
           "ratings": {
-            "offense_index": 0.9932,
-            "defense_index": 1.0072
+            "offense_index": 0.9935,
+            "defense_index": 1.0075
           }
         },
         "home": {
-          "team": "CLE",
-          "team_name": "Cleveland Cavaliers",
+          "team": "BOS",
+          "team_name": "Boston Celtics",
           "conference": "East",
           "games": {
             "current": 12,
@@ -317,22 +1025,22 @@
             "last_season": 0.4
           },
           "per_game": {
-            "pts": 117.64,
-            "pts_allowed": 114.74,
-            "point_diff": 2.9,
-            "reb": 17.76,
-            "ast": 11.32,
-            "tov": 5.6,
-            "fg3m": 5.72
+            "pts": 114.48,
+            "pts_allowed": 104.74,
+            "point_diff": 9.8,
+            "reb": 18.56,
+            "ast": 9.84,
+            "tov": 4.96,
+            "fg3m": 6.2
           },
           "percentages": {
-            "fg_pct": 0.193,
-            "fg3_pct": 0.144,
-            "ft_pct": 0.31
+            "fg_pct": 0.187,
+            "fg3_pct": 0.147,
+            "ft_pct": 0.323
           },
           "ratings": {
-            "offense_index": 1.0289,
-            "defense_index": 1.0035
+            "offense_index": 1.0016,
+            "defense_index": 0.9163
           }
         }
       },
@@ -355,20 +1063,20 @@
           "point_differential": -18.0
         },
         "home": {
-          "record": "6-6",
-          "wins": 6,
-          "losses": 6,
-          "win_pct": 0.5,
-          "nba_rank": 20,
-          "conference_rank": 12,
-          "division_rank": 3,
+          "record": "10-2",
+          "wins": 10,
+          "losses": 2,
+          "win_pct": 0.8333333333333334,
+          "nba_rank": 19,
+          "conference_rank": 11,
+          "division_rank": 5,
           "home_record": "0-0",
           "road_record": "0-1",
           "last_10": "0-1",
           "conference_record": "1.5",
-          "division_record": "1.0",
-          "points_per_game": 106.0,
-          "opponent_points_per_game": 114.0,
+          "division_record": "1.5",
+          "points_per_game": 113.0,
+          "opponent_points_per_game": 121.0,
           "point_differential": -8.0
         }
       },
@@ -385,90 +1093,90 @@
       "best_bets": [],
       "periods": {
         "Q1": {
-          "away_score": 28.2,
-          "home_score": 29.8,
-          "projected_total": 58.0,
-          "home_margin": 1.5,
-          "away_margin": -1.5,
-          "home_win_probability": 57.7,
-          "away_win_probability": 42.3,
-          "home_spread": -1.5,
-          "away_spread": 1.5,
+          "away_score": 26.1,
+          "home_score": 29.1,
+          "projected_total": 55.1,
+          "home_margin": 3.0,
+          "away_margin": -3.0,
+          "home_win_probability": 64.7,
+          "away_win_probability": 35.3,
+          "home_spread": -3.0,
+          "away_spread": 3.0,
           "projected_winner": "home",
           "margin_sd": 8.0,
           "total_sd": 10.0,
           "markets": null
         },
         "Q2": {
-          "away_score": 28.2,
-          "home_score": 29.8,
-          "projected_total": 58.0,
-          "home_margin": 1.5,
-          "away_margin": -1.5,
-          "home_win_probability": 57.7,
-          "away_win_probability": 42.3,
-          "home_spread": -1.5,
-          "away_spread": 1.5,
+          "away_score": 26.1,
+          "home_score": 29.1,
+          "projected_total": 55.1,
+          "home_margin": 3.0,
+          "away_margin": -3.0,
+          "home_win_probability": 64.7,
+          "away_win_probability": 35.3,
+          "home_spread": -3.0,
+          "away_spread": 3.0,
           "projected_winner": "home",
           "margin_sd": 8.0,
           "total_sd": 10.0,
           "markets": null
         },
         "Q3": {
-          "away_score": 28.2,
-          "home_score": 29.8,
-          "projected_total": 58.0,
-          "home_margin": 1.5,
-          "away_margin": -1.5,
-          "home_win_probability": 57.7,
-          "away_win_probability": 42.3,
-          "home_spread": -1.5,
-          "away_spread": 1.5,
+          "away_score": 26.1,
+          "home_score": 29.1,
+          "projected_total": 55.1,
+          "home_margin": 3.0,
+          "away_margin": -3.0,
+          "home_win_probability": 64.7,
+          "away_win_probability": 35.3,
+          "home_spread": -3.0,
+          "away_spread": 3.0,
           "projected_winner": "home",
           "margin_sd": 8.0,
           "total_sd": 10.0,
           "markets": null
         },
         "Q4": {
-          "away_score": 28.2,
-          "home_score": 29.8,
-          "projected_total": 58.0,
-          "home_margin": 1.5,
-          "away_margin": -1.5,
-          "home_win_probability": 57.7,
-          "away_win_probability": 42.3,
-          "home_spread": -1.5,
-          "away_spread": 1.5,
+          "away_score": 26.1,
+          "home_score": 29.1,
+          "projected_total": 55.1,
+          "home_margin": 3.0,
+          "away_margin": -3.0,
+          "home_win_probability": 64.7,
+          "away_win_probability": 35.3,
+          "home_spread": -3.0,
+          "away_spread": 3.0,
           "projected_winner": "home",
           "margin_sd": 8.0,
           "total_sd": 10.0,
           "markets": null
         },
         "1H": {
-          "away_score": 56.5,
-          "home_score": 59.5,
-          "projected_total": 116.0,
-          "home_margin": 3.1,
-          "away_margin": -3.1,
-          "home_win_probability": 60.8,
-          "away_win_probability": 39.2,
-          "home_spread": -3.1,
-          "away_spread": 3.1,
+          "away_score": 52.1,
+          "home_score": 58.1,
+          "projected_total": 110.2,
+          "home_margin": 6.0,
+          "away_margin": -6.0,
+          "home_win_probability": 70.4,
+          "away_win_probability": 29.6,
+          "home_spread": -6.0,
+          "away_spread": 6.0,
           "projected_winner": "home",
           "margin_sd": 11.31,
           "total_sd": 14.14,
           "markets": null
         },
         "2H": {
-          "away_score": 56.5,
-          "home_score": 59.5,
-          "projected_total": 116.0,
-          "home_margin": 3.1,
-          "away_margin": -3.1,
-          "home_win_probability": 60.8,
-          "away_win_probability": 39.2,
-          "home_spread": -3.1,
-          "away_spread": 3.1,
+          "away_score": 52.1,
+          "home_score": 58.1,
+          "projected_total": 110.2,
+          "home_margin": 6.0,
+          "away_margin": -6.0,
+          "home_win_probability": 70.4,
+          "away_win_probability": 29.6,
+          "home_spread": -6.0,
+          "away_spread": 6.0,
           "projected_winner": "home",
           "margin_sd": 11.31,
           "total_sd": 14.14,
@@ -478,133 +1186,841 @@
       "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
     },
     {
-      "game_id": "0022600233",
+      "game_id": "0022600241",
       "season": "2026-27",
       "game_type": "REG",
-      "game_date": "2026-11-14",
-      "game_time": "1900-01-01T20:00:00Z",
-      "game_datetime": "2026-11-14T20:00:00Z",
-      "game_datetime_utc": "2026-11-15T01:00:00Z",
-      "status": "8:00 pm ET",
+      "game_date": "2026-11-15",
+      "game_time": "1900-01-01T18:00:00Z",
+      "game_datetime": "2026-11-15T18:00:00Z",
+      "game_datetime_utc": "2026-11-15T23:00:00Z",
+      "status": "6:00 pm ET",
       "status_code": 1,
-      "venue": "Kaseya Center",
-      "arena": "Kaseya Center",
-      "arena_city": "Miami",
-      "arena_state": "FL",
+      "venue": "Scotiabank Arena",
+      "arena": "Scotiabank Arena",
+      "arena_city": "Toronto",
+      "arena_state": "ON",
       "week_number": 4,
       "week_name": "Week 4",
-      "away_team": "DET",
-      "home_team": "MIA",
-      "away_record": "8-3",
-      "home_record": "5-6",
+      "away_team": "NYK",
+      "home_team": "TOR",
+      "away_record": "6-6",
+      "home_record": "5-7",
       "model": {
-        "away_score": 119.6,
-        "home_score": 113.5,
-        "projected_total": 233.1,
-        "home_margin": -6.1,
-        "away_margin": 6.1,
-        "projected_winner": "DET",
-        "away_win_probability": 63.6,
-        "home_win_probability": 36.4,
-        "confidence": 74.2
+        "away_score": 110.0,
+        "home_score": 108.4,
+        "projected_total": 218.3,
+        "home_margin": -1.6,
+        "away_margin": 1.6,
+        "projected_winner": "NYK",
+        "away_win_probability": 53.6,
+        "home_win_probability": 46.4,
+        "confidence": 76.0
       },
       "team_profiles": {
         "away": {
-          "team": "DET",
-          "team_name": "Detroit Pistons",
+          "team": "NYK",
+          "team_name": "New York Knicks",
           "conference": "East",
           "games": {
-            "current": 11,
+            "current": 12,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.55,
-            "last_season": 0.45
+            "current_season": 0.6,
+            "last_season": 0.4
           },
           "per_game": {
-            "pts": 116.53,
-            "pts_allowed": 108.61,
-            "point_diff": 7.92,
-            "reb": 20.52,
-            "ast": 12.51,
-            "tov": 6.79,
-            "fg3m": 4.95
+            "pts": 112.48,
+            "pts_allowed": 106.26,
+            "point_diff": 6.18,
+            "reb": 18.24,
+            "ast": 10.96,
+            "tov": 5.44,
+            "fg3m": 5.68
           },
           "percentages": {
-            "fg_pct": 0.218,
-            "fg3_pct": 0.16,
-            "ft_pct": 0.343
+            "fg_pct": 0.191,
+            "fg3_pct": 0.149,
+            "ft_pct": 0.317
           },
           "ratings": {
-            "offense_index": 1.0192,
-            "defense_index": 0.9499
+            "offense_index": 0.9841,
+            "defense_index": 0.9296
           }
         },
         "home": {
-          "team": "MIA",
-          "team_name": "Miami Heat",
+          "team": "TOR",
+          "team_name": "Toronto Raptors",
           "conference": "East",
           "games": {
-            "current": 11,
+            "current": 12,
             "previous": 82
           },
           "weights": {
-            "current_season": 0.55,
-            "last_season": 0.45
+            "current_season": 0.6,
+            "last_season": 0.4
           },
           "per_game": {
-            "pts": 118.04,
-            "pts_allowed": 119.32,
-            "point_diff": -1.33,
-            "reb": 20.83,
-            "ast": 13.05,
-            "tov": 6.16,
-            "fg3m": 6.16
+            "pts": 114.36,
+            "pts_allowed": 112.4,
+            "point_diff": 1.96,
+            "reb": 16.84,
+            "ast": 11.8,
+            "tov": 5.48,
+            "fg3m": 4.56
           },
           "percentages": {
-            "fg_pct": 0.211,
-            "fg3_pct": 0.162,
-            "ft_pct": 0.356
+            "fg_pct": 0.193,
+            "fg3_pct": 0.142,
+            "ft_pct": 0.308
           },
           "ratings": {
-            "offense_index": 1.0324,
-            "defense_index": 1.0436
+            "offense_index": 1.0005,
+            "defense_index": 0.9834
           }
         }
       },
       "standings": {
         "away": {
-          "record": "8-3",
-          "wins": 8,
+          "record": "6-6",
+          "wins": 6,
+          "losses": 6,
+          "win_pct": 0.5,
+          "nba_rank": 16,
+          "conference_rank": 8,
+          "division_rank": 3,
+          "home_record": "0-1",
+          "road_record": "0-0",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.5",
+          "points_per_game": 100.0,
+          "opponent_points_per_game": 106.0,
+          "point_differential": -6.0
+        },
+        "home": {
+          "record": "5-7",
+          "wins": 5,
+          "losses": 7,
+          "win_pct": 0.4166666666666667,
+          "nba_rank": 1,
+          "conference_rank": 4,
+          "division_rank": 2,
+          "home_record": "1-0",
+          "road_record": "0-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "0.5",
+          "points_per_game": 135.0,
+          "opponent_points_per_game": 92.0,
+          "point_differential": 43.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {
+        "Q1": {
+          "away_score": 27.5,
+          "home_score": 27.1,
+          "projected_total": 54.6,
+          "home_margin": -0.4,
+          "away_margin": 0.4,
+          "home_win_probability": 48.0,
+          "away_win_probability": 52.0,
+          "home_spread": 0.4,
+          "away_spread": -0.4,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q2": {
+          "away_score": 27.5,
+          "home_score": 27.1,
+          "projected_total": 54.6,
+          "home_margin": -0.4,
+          "away_margin": 0.4,
+          "home_win_probability": 48.0,
+          "away_win_probability": 52.0,
+          "home_spread": 0.4,
+          "away_spread": -0.4,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q3": {
+          "away_score": 27.5,
+          "home_score": 27.1,
+          "projected_total": 54.6,
+          "home_margin": -0.4,
+          "away_margin": 0.4,
+          "home_win_probability": 48.0,
+          "away_win_probability": 52.0,
+          "home_spread": 0.4,
+          "away_spread": -0.4,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q4": {
+          "away_score": 27.5,
+          "home_score": 27.1,
+          "projected_total": 54.6,
+          "home_margin": -0.4,
+          "away_margin": 0.4,
+          "home_win_probability": 48.0,
+          "away_win_probability": 52.0,
+          "home_spread": 0.4,
+          "away_spread": -0.4,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "1H": {
+          "away_score": 55.0,
+          "home_score": 54.2,
+          "projected_total": 109.2,
+          "home_margin": -0.8,
+          "away_margin": 0.8,
+          "home_win_probability": 47.2,
+          "away_win_probability": 52.8,
+          "home_spread": 0.8,
+          "away_spread": -0.8,
+          "projected_winner": "away",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        },
+        "2H": {
+          "away_score": 55.0,
+          "home_score": 54.2,
+          "projected_total": 109.2,
+          "home_margin": -0.8,
+          "away_margin": 0.8,
+          "home_win_probability": 47.2,
+          "away_win_probability": 52.8,
+          "home_spread": 0.8,
+          "away_spread": -0.8,
+          "projected_winner": "away",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        }
+      },
+      "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
+    },
+    {
+      "game_id": "0022600242",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-15",
+      "game_time": "1900-01-01T19:00:00Z",
+      "game_datetime": "2026-11-15T19:00:00Z",
+      "game_datetime_utc": "2026-11-16T00:00:00Z",
+      "status": "7:00 pm ET",
+      "status_code": 1,
+      "venue": "Capital One Arena",
+      "arena": "Capital One Arena",
+      "arena_city": "Washington",
+      "arena_state": "DC",
+      "week_number": 4,
+      "week_name": "Week 4",
+      "away_team": "HOU",
+      "home_team": "WAS",
+      "away_record": "10-3",
+      "home_record": "4-9",
+      "model": {
+        "away_score": 118.7,
+        "home_score": 107.4,
+        "projected_total": 226.1,
+        "home_margin": -11.3,
+        "away_margin": 11.3,
+        "projected_winner": "HOU",
+        "away_win_probability": 73.7,
+        "home_win_probability": 26.3,
+        "confidence": 77.8
+      },
+      "team_profiles": {
+        "away": {
+          "team": "HOU",
+          "team_name": "Houston Rockets",
+          "conference": "West",
+          "games": {
+            "current": 13,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.65,
+            "last_season": 0.35
+          },
+          "per_game": {
+            "pts": 115.85,
+            "pts_allowed": 108.31,
+            "point_diff": 7.54,
+            "reb": 16.84,
+            "ast": 8.89,
+            "tov": 5.39,
+            "fg3m": 4.02
+          },
+          "percentages": {
+            "fg_pct": 0.168,
+            "fg3_pct": 0.127,
+            "ft_pct": 0.267
+          },
+          "ratings": {
+            "offense_index": 1.0135,
+            "defense_index": 0.9476
+          }
+        },
+        "home": {
+          "team": "WAS",
+          "team_name": "Washington Wizards",
+          "conference": "East",
+          "games": {
+            "current": 13,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.65,
+            "last_season": 0.35
+          },
+          "per_game": {
+            "pts": 111.02,
+            "pts_allowed": 118.98,
+            "point_diff": -7.97,
+            "reb": 14.66,
+            "ast": 8.75,
+            "tov": 5.49,
+            "fg3m": 4.55
+          },
+          "percentages": {
+            "fg_pct": 0.162,
+            "fg3_pct": 0.126,
+            "ft_pct": 0.268
+          },
+          "ratings": {
+            "offense_index": 0.9712,
+            "defense_index": 1.041
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "10-3",
+          "wins": 10,
           "losses": 3,
-          "win_pct": 0.7272727272727273,
-          "nba_rank": 10,
-          "conference_rank": 2,
+          "win_pct": 0.7692307692307693,
+          "nba_rank": 7,
+          "conference_rank": 3,
           "division_rank": 1,
           "home_record": "1-0",
           "road_record": "0-0",
           "last_10": "1-0",
           "conference_record": "0.5",
           "division_record": "",
-          "points_per_game": 121.0,
-          "opponent_points_per_game": 113.0,
-          "point_differential": 8.0
+          "points_per_game": 128.0,
+          "opponent_points_per_game": 110.0,
+          "point_differential": 18.0
         },
         "home": {
-          "record": "5-6",
-          "wins": 5,
-          "losses": 6,
-          "win_pct": 0.45454545454545453,
-          "nba_rank": 27,
-          "conference_rank": 15,
-          "division_rank": 5,
-          "home_record": "0-1",
+          "record": "4-9",
+          "wins": 4,
+          "losses": 9,
+          "win_pct": 0.3076923076923077,
+          "nba_rank": 9,
+          "conference_rank": 5,
+          "division_rank": 2,
+          "home_record": "1-0",
           "road_record": "0-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 128.0,
+          "opponent_points_per_game": 116.0,
+          "point_differential": 12.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {
+        "Q1": {
+          "away_score": 29.7,
+          "home_score": 26.9,
+          "projected_total": 56.5,
+          "home_margin": -2.8,
+          "away_margin": 2.8,
+          "home_win_probability": 36.2,
+          "away_win_probability": 63.8,
+          "home_spread": 2.8,
+          "away_spread": -2.8,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q2": {
+          "away_score": 29.7,
+          "home_score": 26.9,
+          "projected_total": 56.5,
+          "home_margin": -2.8,
+          "away_margin": 2.8,
+          "home_win_probability": 36.2,
+          "away_win_probability": 63.8,
+          "home_spread": 2.8,
+          "away_spread": -2.8,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q3": {
+          "away_score": 29.7,
+          "home_score": 26.9,
+          "projected_total": 56.5,
+          "home_margin": -2.8,
+          "away_margin": 2.8,
+          "home_win_probability": 36.2,
+          "away_win_probability": 63.8,
+          "home_spread": 2.8,
+          "away_spread": -2.8,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q4": {
+          "away_score": 29.7,
+          "home_score": 26.9,
+          "projected_total": 56.5,
+          "home_margin": -2.8,
+          "away_margin": 2.8,
+          "home_win_probability": 36.2,
+          "away_win_probability": 63.8,
+          "home_spread": 2.8,
+          "away_spread": -2.8,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "1H": {
+          "away_score": 59.4,
+          "home_score": 53.7,
+          "projected_total": 113.1,
+          "home_margin": -5.6,
+          "away_margin": 5.6,
+          "home_win_probability": 30.9,
+          "away_win_probability": 69.1,
+          "home_spread": 5.6,
+          "away_spread": -5.6,
+          "projected_winner": "away",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        },
+        "2H": {
+          "away_score": 59.4,
+          "home_score": 53.7,
+          "projected_total": 113.1,
+          "home_margin": -5.6,
+          "away_margin": 5.6,
+          "home_win_probability": 30.9,
+          "away_win_probability": 69.1,
+          "home_spread": 5.6,
+          "away_spread": -5.6,
+          "projected_winner": "away",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        }
+      },
+      "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
+    },
+    {
+      "game_id": "0022600243",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-15",
+      "game_time": "1900-01-01T20:00:00Z",
+      "game_datetime": "2026-11-15T20:00:00Z",
+      "game_datetime_utc": "2026-11-16T01:00:00Z",
+      "status": "8:00 pm ET",
+      "status_code": 1,
+      "venue": "Fiserv Forum",
+      "arena": "Fiserv Forum",
+      "arena_city": "Milwaukee",
+      "arena_state": "WI",
+      "week_number": 4,
+      "week_name": "Week 4",
+      "away_team": "ATL",
+      "home_team": "MIL",
+      "away_record": "7-6",
+      "home_record": "1-12",
+      "model": {
+        "away_score": 121.0,
+        "home_score": 111.5,
+        "projected_total": 232.5,
+        "home_margin": -9.5,
+        "away_margin": 9.5,
+        "projected_winner": "ATL",
+        "away_win_probability": 70.4,
+        "home_win_probability": 29.6,
+        "confidence": 77.8
+      },
+      "team_profiles": {
+        "away": {
+          "team": "ATL",
+          "team_name": "Atlanta Hawks",
+          "conference": "East",
+          "games": {
+            "current": 13,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.65,
+            "last_season": 0.35
+          },
+          "per_game": {
+            "pts": 118.3,
+            "pts_allowed": 116.52,
+            "point_diff": 1.69,
+            "reb": 15.22,
+            "ast": 10.54,
+            "tov": 4.97,
+            "fg3m": 5.11
+          },
+          "percentages": {
+            "fg_pct": 0.166,
+            "fg3_pct": 0.13,
+            "ft_pct": 0.271
+          },
+          "ratings": {
+            "offense_index": 1.035,
+            "defense_index": 1.0194
+          }
+        },
+        "home": {
+          "team": "MIL",
+          "team_name": "Milwaukee Bucks",
+          "conference": "East",
+          "games": {
+            "current": 13,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.65,
+            "last_season": 0.35
+          },
+          "per_game": {
+            "pts": 107.74,
+            "pts_allowed": 119.01,
+            "point_diff": -11.34,
+            "reb": 14.24,
+            "ast": 9.03,
+            "tov": 5.32,
+            "fg3m": 5.28
+          },
+          "percentages": {
+            "fg_pct": 0.167,
+            "fg3_pct": 0.135,
+            "ft_pct": 0.256
+          },
+          "ratings": {
+            "offense_index": 0.9426,
+            "defense_index": 1.0412
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "7-6",
+          "wins": 7,
+          "losses": 6,
+          "win_pct": 0.5384615384615384,
+          "nba_rank": 11,
+          "conference_rank": 3,
+          "division_rank": 1,
+          "home_record": "0-0",
+          "road_record": "1-0",
+          "last_10": "1-0",
+          "conference_record": "0.5",
+          "division_record": "",
+          "points_per_game": 132.0,
+          "opponent_points_per_game": 125.0,
+          "point_differential": 7.0
+        },
+        "home": {
+          "record": "1-12",
+          "wins": 1,
+          "losses": 12,
+          "win_pct": 0.07692307692307693,
+          "nba_rank": 22,
+          "conference_rank": 13,
+          "division_rank": 4,
+          "home_record": "0-0",
+          "road_record": "0-1",
           "last_10": "0-1",
           "conference_record": "1.5",
           "division_record": "1.0",
+          "points_per_game": 116.0,
+          "opponent_points_per_game": 128.0,
+          "point_differential": -12.0
+        }
+      },
+      "markets": {
+        "moneyline": null,
+        "spread": null,
+        "total": null,
+        "team_totals": null,
+        "quarters": null,
+        "first_basket": null,
+        "player_props": null
+      },
+      "edges": [],
+      "best_bets": [],
+      "periods": {
+        "Q1": {
+          "away_score": 30.2,
+          "home_score": 27.9,
+          "projected_total": 58.1,
+          "home_margin": -2.4,
+          "away_margin": 2.4,
+          "home_win_probability": 38.3,
+          "away_win_probability": 61.7,
+          "home_spread": 2.4,
+          "away_spread": -2.4,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q2": {
+          "away_score": 30.2,
+          "home_score": 27.9,
+          "projected_total": 58.1,
+          "home_margin": -2.4,
+          "away_margin": 2.4,
+          "home_win_probability": 38.3,
+          "away_win_probability": 61.7,
+          "home_spread": 2.4,
+          "away_spread": -2.4,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q3": {
+          "away_score": 30.2,
+          "home_score": 27.9,
+          "projected_total": 58.1,
+          "home_margin": -2.4,
+          "away_margin": 2.4,
+          "home_win_probability": 38.3,
+          "away_win_probability": 61.7,
+          "home_spread": 2.4,
+          "away_spread": -2.4,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "Q4": {
+          "away_score": 30.2,
+          "home_score": 27.9,
+          "projected_total": 58.1,
+          "home_margin": -2.4,
+          "away_margin": 2.4,
+          "home_win_probability": 38.3,
+          "away_win_probability": 61.7,
+          "home_spread": 2.4,
+          "away_spread": -2.4,
+          "projected_winner": "away",
+          "margin_sd": 8.0,
+          "total_sd": 10.0,
+          "markets": null
+        },
+        "1H": {
+          "away_score": 60.5,
+          "home_score": 55.8,
+          "projected_total": 116.2,
+          "home_margin": -4.8,
+          "away_margin": 4.8,
+          "home_win_probability": 33.7,
+          "away_win_probability": 66.3,
+          "home_spread": 4.8,
+          "away_spread": -4.8,
+          "projected_winner": "away",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        },
+        "2H": {
+          "away_score": 60.5,
+          "home_score": 55.8,
+          "projected_total": 116.2,
+          "home_margin": -4.8,
+          "away_margin": 4.8,
+          "home_win_probability": 33.7,
+          "away_win_probability": 66.3,
+          "home_spread": 4.8,
+          "away_spread": -4.8,
+          "projected_winner": "away",
+          "margin_sd": 11.31,
+          "total_sd": 14.14,
+          "markets": null
+        }
+      },
+      "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
+    },
+    {
+      "game_id": "0022600244",
+      "season": "2026-27",
+      "game_type": "REG",
+      "game_date": "2026-11-15",
+      "game_time": "1900-01-01T21:00:00Z",
+      "game_datetime": "2026-11-15T21:00:00Z",
+      "game_datetime_utc": "2026-11-16T02:00:00Z",
+      "status": "9:00 pm ET",
+      "status_code": 1,
+      "venue": "Golden 1 Center",
+      "arena": "Golden 1 Center",
+      "arena_city": "Sacramento",
+      "arena_state": "CA",
+      "week_number": 4,
+      "week_name": "Week 4",
+      "away_team": "OKC",
+      "home_team": "SAC",
+      "away_record": "8-5",
+      "home_record": "1-11",
+      "model": {
+        "away_score": 118.7,
+        "home_score": 105.4,
+        "projected_total": 224.1,
+        "home_margin": -13.3,
+        "away_margin": 13.3,
+        "projected_winner": "OKC",
+        "away_win_probability": 77.1,
+        "home_win_probability": 22.9,
+        "confidence": 76.9
+      },
+      "team_profiles": {
+        "away": {
+          "team": "OKC",
+          "team_name": "Oklahoma City Thunder",
+          "conference": "West",
+          "games": {
+            "current": 13,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.65,
+            "last_season": 0.35
+          },
+          "per_game": {
+            "pts": 113.93,
+            "pts_allowed": 107.58,
+            "point_diff": 6.35,
+            "reb": 15.43,
+            "ast": 9.03,
+            "tov": 4.41,
+            "fg3m": 4.83
+          },
+          "percentages": {
+            "fg_pct": 0.169,
+            "fg3_pct": 0.128,
+            "ft_pct": 0.286
+          },
+          "ratings": {
+            "offense_index": 0.9967,
+            "defense_index": 0.9411
+          }
+        },
+        "home": {
+          "team": "SAC",
+          "team_name": "Sacramento Kings",
+          "conference": "West",
+          "games": {
+            "current": 12,
+            "previous": 82
+          },
+          "weights": {
+            "current_season": 0.6,
+            "last_season": 0.4
+          },
+          "per_game": {
+            "pts": 109.32,
+            "pts_allowed": 120.94,
+            "point_diff": -11.68,
+            "reb": 16.92,
+            "ast": 10.2,
+            "tov": 5.72,
+            "fg3m": 4.12
+          },
+          "percentages": {
+            "fg_pct": 0.187,
+            "fg3_pct": 0.136,
+            "ft_pct": 0.309
+          },
+          "ratings": {
+            "offense_index": 0.9564,
+            "defense_index": 1.0581
+          }
+        }
+      },
+      "standings": {
+        "away": {
+          "record": "8-5",
+          "wins": 8,
+          "losses": 5,
+          "win_pct": 0.6153846153846154,
+          "nba_rank": 8,
+          "conference_rank": 1,
+          "division_rank": 1,
+          "home_record": "1-0",
+          "road_record": "1-0",
+          "last_10": "2-0",
+          "conference_record": "",
+          "division_record": "",
           "points_per_game": 106.0,
-          "opponent_points_per_game": 131.0,
+          "opponent_points_per_game": 94.0,
+          "point_differential": 12.0
+        },
+        "home": {
+          "record": "1-11",
+          "wins": 1,
+          "losses": 11,
+          "win_pct": 0.08333333333333333,
+          "nba_rank": 28,
+          "conference_rank": 13,
+          "division_rank": 4,
+          "home_record": "0-0",
+          "road_record": "0-1",
+          "last_10": "0-1",
+          "conference_record": "1.5",
+          "division_record": "1.0",
+          "points_per_game": 96.0,
+          "opponent_points_per_game": 121.0,
           "point_differential": -25.0
         }
       },
@@ -621,563 +2037,91 @@
       "best_bets": [],
       "periods": {
         "Q1": {
-          "away_score": 29.9,
-          "home_score": 28.4,
-          "projected_total": 58.3,
-          "home_margin": -1.5,
-          "away_margin": 1.5,
-          "home_win_probability": 42.4,
-          "away_win_probability": 57.6,
-          "home_spread": 1.5,
-          "away_spread": -1.5,
+          "away_score": 29.7,
+          "home_score": 26.4,
+          "projected_total": 56.0,
+          "home_margin": -3.3,
+          "away_margin": 3.3,
+          "home_win_probability": 33.9,
+          "away_win_probability": 66.1,
+          "home_spread": 3.3,
+          "away_spread": -3.3,
           "projected_winner": "away",
           "margin_sd": 8.0,
           "total_sd": 10.0,
           "markets": null
         },
         "Q2": {
-          "away_score": 29.9,
-          "home_score": 28.4,
-          "projected_total": 58.3,
-          "home_margin": -1.5,
-          "away_margin": 1.5,
-          "home_win_probability": 42.4,
-          "away_win_probability": 57.6,
-          "home_spread": 1.5,
-          "away_spread": -1.5,
+          "away_score": 29.7,
+          "home_score": 26.4,
+          "projected_total": 56.0,
+          "home_margin": -3.3,
+          "away_margin": 3.3,
+          "home_win_probability": 33.9,
+          "away_win_probability": 66.1,
+          "home_spread": 3.3,
+          "away_spread": -3.3,
           "projected_winner": "away",
           "margin_sd": 8.0,
           "total_sd": 10.0,
           "markets": null
         },
         "Q3": {
-          "away_score": 29.9,
-          "home_score": 28.4,
-          "projected_total": 58.3,
-          "home_margin": -1.5,
-          "away_margin": 1.5,
-          "home_win_probability": 42.4,
-          "away_win_probability": 57.6,
-          "home_spread": 1.5,
-          "away_spread": -1.5,
+          "away_score": 29.7,
+          "home_score": 26.4,
+          "projected_total": 56.0,
+          "home_margin": -3.3,
+          "away_margin": 3.3,
+          "home_win_probability": 33.9,
+          "away_win_probability": 66.1,
+          "home_spread": 3.3,
+          "away_spread": -3.3,
           "projected_winner": "away",
           "margin_sd": 8.0,
           "total_sd": 10.0,
           "markets": null
         },
         "Q4": {
-          "away_score": 29.9,
-          "home_score": 28.4,
-          "projected_total": 58.3,
-          "home_margin": -1.5,
-          "away_margin": 1.5,
-          "home_win_probability": 42.4,
-          "away_win_probability": 57.6,
-          "home_spread": 1.5,
-          "away_spread": -1.5,
+          "away_score": 29.7,
+          "home_score": 26.4,
+          "projected_total": 56.0,
+          "home_margin": -3.3,
+          "away_margin": 3.3,
+          "home_win_probability": 33.9,
+          "away_win_probability": 66.1,
+          "home_spread": 3.3,
+          "away_spread": -3.3,
           "projected_winner": "away",
           "margin_sd": 8.0,
           "total_sd": 10.0,
           "markets": null
         },
         "1H": {
-          "away_score": 59.8,
-          "home_score": 56.8,
-          "projected_total": 116.5,
-          "home_margin": -3.0,
-          "away_margin": 3.0,
-          "home_win_probability": 39.4,
-          "away_win_probability": 60.6,
-          "home_spread": 3.0,
-          "away_spread": -3.0,
+          "away_score": 59.4,
+          "home_score": 52.7,
+          "projected_total": 112.1,
+          "home_margin": -6.6,
+          "away_margin": 6.6,
+          "home_win_probability": 27.8,
+          "away_win_probability": 72.2,
+          "home_spread": 6.6,
+          "away_spread": -6.6,
           "projected_winner": "away",
           "margin_sd": 11.31,
           "total_sd": 14.14,
           "markets": null
         },
         "2H": {
-          "away_score": 59.8,
-          "home_score": 56.8,
-          "projected_total": 116.5,
-          "home_margin": -3.0,
-          "away_margin": 3.0,
-          "home_win_probability": 39.4,
-          "away_win_probability": 60.6,
-          "home_spread": 3.0,
-          "away_spread": -3.0,
+          "away_score": 59.4,
+          "home_score": 52.7,
+          "projected_total": 112.1,
+          "home_margin": -6.6,
+          "away_margin": 6.6,
+          "home_win_probability": 27.8,
+          "away_win_probability": 72.2,
+          "home_spread": 6.6,
+          "away_spread": -6.6,
           "projected_winner": "away",
-          "margin_sd": 11.31,
-          "total_sd": 14.14,
-          "markets": null
-        }
-      },
-      "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
-    },
-    {
-      "game_id": "0022600234",
-      "season": "2026-27",
-      "game_type": "REG",
-      "game_date": "2026-11-14",
-      "game_time": "1900-01-01T20:00:00Z",
-      "game_datetime": "2026-11-14T20:00:00Z",
-      "game_datetime_utc": "2026-11-15T01:00:00Z",
-      "status": "8:00 pm ET",
-      "status_code": 1,
-      "venue": "FedExForum",
-      "arena": "FedExForum",
-      "arena_city": "Memphis",
-      "arena_state": "TN",
-      "week_number": 4,
-      "week_name": "Week 4",
-      "away_team": "BKN",
-      "home_team": "MEM",
-      "away_record": "3-8",
-      "home_record": "7-4",
-      "model": {
-        "away_score": 109.2,
-        "home_score": 118.4,
-        "projected_total": 227.6,
-        "home_margin": 9.2,
-        "away_margin": -9.2,
-        "projected_winner": "MEM",
-        "away_win_probability": 30.1,
-        "home_win_probability": 69.9,
-        "confidence": 74.2
-      },
-      "team_profiles": {
-        "away": {
-          "team": "BKN",
-          "team_name": "Brooklyn Nets",
-          "conference": "East",
-          "games": {
-            "current": 11,
-            "previous": 82
-          },
-          "weights": {
-            "current_season": 0.55,
-            "last_season": 0.45
-          },
-          "per_game": {
-            "pts": 108.27,
-            "pts_allowed": 115.57,
-            "point_diff": -7.3,
-            "reb": 17.68,
-            "ast": 11.25,
-            "tov": 7.11,
-            "fg3m": 5.89
-          },
-          "percentages": {
-            "fg_pct": 0.199,
-            "fg3_pct": 0.153,
-            "ft_pct": 0.351
-          },
-          "ratings": {
-            "offense_index": 0.9469,
-            "defense_index": 1.0108
-          }
-        },
-        "home": {
-          "team": "MEM",
-          "team_name": "Memphis Grizzlies",
-          "conference": "West",
-          "games": {
-            "current": 11,
-            "previous": 82
-          },
-          "weights": {
-            "current_season": 0.55,
-            "last_season": 0.45
-          },
-          "per_game": {
-            "pts": 116.46,
-            "pts_allowed": 115.86,
-            "point_diff": 0.6,
-            "reb": 18.95,
-            "ast": 12.51,
-            "tov": 6.79,
-            "fg3m": 6.25
-          },
-          "percentages": {
-            "fg_pct": 0.205,
-            "fg3_pct": 0.159,
-            "ft_pct": 0.357
-          },
-          "ratings": {
-            "offense_index": 1.0186,
-            "defense_index": 1.0133
-          }
-        }
-      },
-      "standings": {
-        "away": {
-          "record": "3-8",
-          "wins": 3,
-          "losses": 8,
-          "win_pct": 0.2727272727272727,
-          "nba_rank": 17,
-          "conference_rank": 9,
-          "division_rank": 4,
-          "home_record": "0-1",
-          "road_record": "0-0",
-          "last_10": "0-1",
-          "conference_record": "1.5",
-          "division_record": "1.5",
-          "points_per_game": 103.0,
-          "opponent_points_per_game": 110.0,
-          "point_differential": -7.0
-        },
-        "home": {
-          "record": "7-4",
-          "wins": 7,
-          "losses": 4,
-          "win_pct": 0.6363636363636364,
-          "nba_rank": 6,
-          "conference_rank": 6,
-          "division_rank": 2,
-          "home_record": "1-0",
-          "road_record": "0-0",
-          "last_10": "1-0",
-          "conference_record": "0.5",
-          "division_record": "",
-          "points_per_game": 123.0,
-          "opponent_points_per_game": 103.0,
-          "point_differential": 20.0
-        }
-      },
-      "markets": {
-        "moneyline": null,
-        "spread": null,
-        "total": null,
-        "team_totals": null,
-        "quarters": null,
-        "first_basket": null,
-        "player_props": null
-      },
-      "edges": [],
-      "best_bets": [],
-      "periods": {
-        "Q1": {
-          "away_score": 27.3,
-          "home_score": 29.6,
-          "projected_total": 56.9,
-          "home_margin": 2.3,
-          "away_margin": -2.3,
-          "home_win_probability": 61.3,
-          "away_win_probability": 38.7,
-          "home_spread": -2.3,
-          "away_spread": 2.3,
-          "projected_winner": "home",
-          "margin_sd": 8.0,
-          "total_sd": 10.0,
-          "markets": null
-        },
-        "Q2": {
-          "away_score": 27.3,
-          "home_score": 29.6,
-          "projected_total": 56.9,
-          "home_margin": 2.3,
-          "away_margin": -2.3,
-          "home_win_probability": 61.3,
-          "away_win_probability": 38.7,
-          "home_spread": -2.3,
-          "away_spread": 2.3,
-          "projected_winner": "home",
-          "margin_sd": 8.0,
-          "total_sd": 10.0,
-          "markets": null
-        },
-        "Q3": {
-          "away_score": 27.3,
-          "home_score": 29.6,
-          "projected_total": 56.9,
-          "home_margin": 2.3,
-          "away_margin": -2.3,
-          "home_win_probability": 61.3,
-          "away_win_probability": 38.7,
-          "home_spread": -2.3,
-          "away_spread": 2.3,
-          "projected_winner": "home",
-          "margin_sd": 8.0,
-          "total_sd": 10.0,
-          "markets": null
-        },
-        "Q4": {
-          "away_score": 27.3,
-          "home_score": 29.6,
-          "projected_total": 56.9,
-          "home_margin": 2.3,
-          "away_margin": -2.3,
-          "home_win_probability": 61.3,
-          "away_win_probability": 38.7,
-          "home_spread": -2.3,
-          "away_spread": 2.3,
-          "projected_winner": "home",
-          "margin_sd": 8.0,
-          "total_sd": 10.0,
-          "markets": null
-        },
-        "1H": {
-          "away_score": 54.6,
-          "home_score": 59.2,
-          "projected_total": 113.8,
-          "home_margin": 4.6,
-          "away_margin": -4.6,
-          "home_win_probability": 65.8,
-          "away_win_probability": 34.2,
-          "home_spread": -4.6,
-          "away_spread": 4.6,
-          "projected_winner": "home",
-          "margin_sd": 11.31,
-          "total_sd": 14.14,
-          "markets": null
-        },
-        "2H": {
-          "away_score": 54.6,
-          "home_score": 59.2,
-          "projected_total": 113.8,
-          "home_margin": 4.6,
-          "away_margin": -4.6,
-          "home_win_probability": 65.8,
-          "away_win_probability": 34.2,
-          "home_spread": -4.6,
-          "away_spread": 4.6,
-          "projected_winner": "home",
-          "margin_sd": 11.31,
-          "total_sd": 14.14,
-          "markets": null
-        }
-      },
-      "periods_status": "Fallback: full-game model distributed evenly across quarters; no verified quarter history"
-    },
-    {
-      "game_id": "0022600235",
-      "season": "2026-27",
-      "game_type": "REG",
-      "game_date": "2026-11-14",
-      "game_time": "1900-01-01T20:00:00Z",
-      "game_datetime": "2026-11-14T20:00:00Z",
-      "game_datetime_utc": "2026-11-15T01:00:00Z",
-      "status": "8:00 pm ET",
-      "status_code": 1,
-      "venue": "Target Center",
-      "arena": "Target Center",
-      "arena_city": "Minneapolis",
-      "arena_state": "MN",
-      "week_number": 4,
-      "week_name": "Week 4",
-      "away_team": "CHI",
-      "home_team": "MIN",
-      "away_record": "1-9",
-      "home_record": "9-3",
-      "model": {
-        "away_score": 109.3,
-        "home_score": 129.2,
-        "projected_total": 238.5,
-        "home_margin": 20.0,
-        "away_margin": -20.0,
-        "projected_winner": "MIN",
-        "away_win_probability": 14.0,
-        "home_win_probability": 86.0,
-        "confidence": 74.2
-      },
-      "team_profiles": {
-        "away": {
-          "team": "CHI",
-          "team_name": "Chicago Bulls",
-          "conference": "East",
-          "games": {
-            "current": 10,
-            "previous": 82
-          },
-          "weights": {
-            "current_season": 0.5,
-            "last_season": 0.5
-          },
-          "per_game": {
-            "pts": 114.8,
-            "pts_allowed": 125.15,
-            "point_diff": -10.35,
-            "reb": 22.5,
-            "ast": 14.25,
-            "tov": 7.65,
-            "fg3m": 7.15
-          },
-          "percentages": {
-            "fg_pct": 0.234,
-            "fg3_pct": 0.178,
-            "ft_pct": 0.388
-          },
-          "ratings": {
-            "offense_index": 1.0041,
-            "defense_index": 1.0946
-          }
-        },
-        "home": {
-          "team": "MIN",
-          "team_name": "Minnesota Timberwolves",
-          "conference": "West",
-          "games": {
-            "current": 12,
-            "previous": 82
-          },
-          "weights": {
-            "current_season": 0.6,
-            "last_season": 0.4
-          },
-          "per_game": {
-            "pts": 118.78,
-            "pts_allowed": 109.38,
-            "point_diff": 9.4,
-            "reb": 17.64,
-            "ast": 10.44,
-            "tov": 5.92,
-            "fg3m": 5.52
-          },
-          "percentages": {
-            "fg_pct": 0.192,
-            "fg3_pct": 0.148,
-            "ft_pct": 0.301
-          },
-          "ratings": {
-            "offense_index": 1.0389,
-            "defense_index": 0.9566
-          }
-        }
-      },
-      "standings": {
-        "away": {
-          "record": "1-9",
-          "wins": 1,
-          "losses": 9,
-          "win_pct": 0.1,
-          "nba_rank": 30,
-          "conference_rank": 14,
-          "division_rank": 5,
-          "home_record": "0-0",
-          "road_record": "0-1",
-          "last_10": "0-1",
-          "conference_record": "1.5",
-          "division_record": "1.0",
-          "points_per_game": 92.0,
-          "opponent_points_per_game": 135.0,
-          "point_differential": -43.0
-        },
-        "home": {
-          "record": "9-3",
-          "wins": 9,
-          "losses": 3,
-          "win_pct": 0.75,
-          "nba_rank": 4,
-          "conference_rank": 7,
-          "division_rank": 3,
-          "home_record": "0-0",
-          "road_record": "1-0",
-          "last_10": "1-0",
-          "conference_record": "0.5",
-          "division_record": "0.5",
-          "points_per_game": 131.0,
-          "opponent_points_per_game": 106.0,
-          "point_differential": 25.0
-        }
-      },
-      "markets": {
-        "moneyline": null,
-        "spread": null,
-        "total": null,
-        "team_totals": null,
-        "quarters": null,
-        "first_basket": null,
-        "player_props": null
-      },
-      "edges": [],
-      "best_bets": [],
-      "periods": {
-        "Q1": {
-          "away_score": 27.3,
-          "home_score": 32.3,
-          "projected_total": 59.6,
-          "home_margin": 5.0,
-          "away_margin": -5.0,
-          "home_win_probability": 73.3,
-          "away_win_probability": 26.7,
-          "home_spread": -5.0,
-          "away_spread": 5.0,
-          "projected_winner": "home",
-          "margin_sd": 8.0,
-          "total_sd": 10.0,
-          "markets": null
-        },
-        "Q2": {
-          "away_score": 27.3,
-          "home_score": 32.3,
-          "projected_total": 59.6,
-          "home_margin": 5.0,
-          "away_margin": -5.0,
-          "home_win_probability": 73.3,
-          "away_win_probability": 26.7,
-          "home_spread": -5.0,
-          "away_spread": 5.0,
-          "projected_winner": "home",
-          "margin_sd": 8.0,
-          "total_sd": 10.0,
-          "markets": null
-        },
-        "Q3": {
-          "away_score": 27.3,
-          "home_score": 32.3,
-          "projected_total": 59.6,
-          "home_margin": 5.0,
-          "away_margin": -5.0,
-          "home_win_probability": 73.3,
-          "away_win_probability": 26.7,
-          "home_spread": -5.0,
-          "away_spread": 5.0,
-          "projected_winner": "home",
-          "margin_sd": 8.0,
-          "total_sd": 10.0,
-          "markets": null
-        },
-        "Q4": {
-          "away_score": 27.3,
-          "home_score": 32.3,
-          "projected_total": 59.6,
-          "home_margin": 5.0,
-          "away_margin": -5.0,
-          "home_win_probability": 73.3,
-          "away_win_probability": 26.7,
-          "home_spread": -5.0,
-          "away_spread": 5.0,
-          "projected_winner": "home",
-          "margin_sd": 8.0,
-          "total_sd": 10.0,
-          "markets": null
-        },
-        "1H": {
-          "away_score": 54.6,
-          "home_score": 64.6,
-          "projected_total": 119.2,
-          "home_margin": 9.9,
-          "away_margin": -9.9,
-          "home_win_probability": 81.0,
-          "away_win_probability": 19.0,
-          "home_spread": -9.9,
-          "away_spread": 9.9,
-          "projected_winner": "home",
-          "margin_sd": 11.31,
-          "total_sd": 14.14,
-          "markets": null
-        },
-        "2H": {
-          "away_score": 54.6,
-          "home_score": 64.6,
-          "projected_total": 119.2,
-          "home_margin": 9.9,
-          "away_margin": -9.9,
-          "home_win_probability": 81.0,
-          "away_win_probability": 19.0,
-          "home_spread": -9.9,
-          "away_spread": 9.9,
-          "projected_winner": "home",
           "margin_sd": 11.31,
           "total_sd": 14.14,
           "markets": null

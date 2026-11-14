@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T20:57:43.597217+00:00",
+  "generated_at": "2026-11-14T14:59:44.174286+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -11,8 +11,27 @@
       "longitude": -76.6227,
       "roof": "outdoor",
       "kickoff": "2026-11-16T20:15",
-      "available": false,
-      "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-11-16T20:00",
+        "temperature_f": 47.5,
+        "feels_like_f": 42.1,
+        "humidity_pct": 54.0,
+        "precip_probability_pct": 0.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 3.6,
+        "wind_gust_mph": 11.4,
+        "weather_code": 0,
+        "conditions": "Clear"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     }
   ]
 }
