@@ -421,16 +421,6 @@ const ALL_COLUMNS: PlayerColumn[] = [
 
   },
 
-  {
-
-    key: "fantasy_points_per_game",
-
-    label: "Fantasy/G",
-
-    align: "center",
-
-  },
-
 ];
 
 
@@ -514,16 +504,6 @@ const QB_COLUMNS: PlayerColumn[] = [
     key: "rush_tds_per_game",
 
     label: "Rush TD/G",
-
-    align: "center",
-
-  },
-
-  {
-
-    key: "fantasy_points_per_game",
-
-    label: "Fantasy/G",
 
     align: "center",
 
@@ -637,16 +617,6 @@ const RB_COLUMNS: PlayerColumn[] = [
 
   },
 
-  {
-
-    key: "fantasy_points_per_game",
-
-    label: "Fantasy/G",
-
-    align: "center",
-
-  },
-
 ];
 
 
@@ -720,16 +690,6 @@ const RECEIVER_COLUMNS: PlayerColumn[] = [
     key: "receiving_tds_per_game",
 
     label: "Rec TD/G",
-
-    align: "center",
-
-  },
-
-  {
-
-    key: "fantasy_points_per_game",
-
-    label: "Fantasy/G",
 
     align: "center",
 
@@ -1309,7 +1269,7 @@ function defaultSortForPosition(
 
   return {
 
-    key: "fantasy_points_per_game",
+    key: "games_vs_opponent",
 
     direction: "desc",
 
@@ -1833,7 +1793,7 @@ function PlayerMatchupTable({
 
     useState<PlayerSortKey>(
 
-      "fantasy_points_per_game",
+      "games_vs_opponent",
 
     );
 
