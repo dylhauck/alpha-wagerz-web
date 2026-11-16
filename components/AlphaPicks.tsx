@@ -264,7 +264,23 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   const games = [...byGame.values()]
     .map(group => {
       const ranked = [...group].sort((a, b) => b.probability - a.probability);
-      if (!mixed) return ranked.slice(0, 2);
+      if (!mixed) {
+        // Keep several independently priced players per matchup rather than
+        // allowing the two highest-confidence props to monopolize every ticket.
+        const perPlayer = new Map<string, number>();
+        const diversified: Leg[] = [];
+        for (const leg of ranked) {
+          const player = leg.marketType === "player_prop"
+            ? leg.pick.split(/\s+(?:Over|Under)\s+/i)[0].trim().toLowerCase()
+            : leg.id.toLowerCase();
+          const count = perPlayer.get(player) ?? 0;
+          if (count >= 2) continue;
+          diversified.push(leg);
+          perPlayer.set(player, count + 1);
+          if (diversified.length === 12) break;
+        }
+        return diversified;
+      }
       // Preserve representatives of every available market type. The
       // previous top-two-only selection could discard all but player props,
       // making a mixed-market parlay mathematically impossible.
@@ -366,22 +382,31 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     return common / Math.min(ka.size, kb.size);
   };
   const selected: Ticket[] = [];
-  const choose = (maxOverlap: number, confidenceFloor: number) => {
-    for (const t of ranked) {
-      if (selected.length === 6) break;
-      if (t.probability < ranked[0].probability * confidenceFloor) continue;
-      if (selected.some(existing => similarity(existing, t) > maxOverlap)) continue;
-      selected.push(t);
+  const usedPlayers = new Map<string, number>();
+  // Greedily select strong tickets while penalizing repeated players and
+  // overlapping legs. Only relax diversity when the candidate pool demands it.
+  const choose = (maxOverlap: number, maxPlayerUses: number, confidenceFloor: number) => {
+    while (selected.length < 6) {
+      let best: Ticket | undefined;
+      let bestScore = -Infinity;
+      for (const t of ranked) {
+        if (selected.includes(t) || t.probability < ranked[0].probability * confidenceFloor) continue;
+        if (selected.some(existing => similarity(existing, t) > maxOverlap)) continue;
+        const playerNames = [...keys(t)];
+        if (playerNames.some(name => (usedPlayers.get(name) ?? 0) >= maxPlayerUses)) continue;
+        const repeats = playerNames.reduce((sum, name) => sum + (usedPlayers.get(name) ?? 0), 0);
+        const score = Math.log(Math.max(t.probability, 1e-12)) - 0.22 * repeats;
+        if (score > bestScore) { best = t; bestScore = score; }
+      }
+      if (!best) break;
+      selected.push(best);
+      for (const name of keys(best)) usedPlayers.set(name, (usedPlayers.get(name) ?? 0) + 1);
     }
   };
-  choose(0.5, 0.8);
-  choose(0.67, 0.7);
-  // Always fill the six selection slots when six distinct qualifying
-  // tickets exist. Diversity is a preference, not a hard cap.
-  for (const t of ranked) {
-    if (selected.length === 6) break;
-    if (!selected.includes(t)) selected.push(t);
-  }
+  choose(0.34, 2, 0.65);
+  choose(0.5, 3, 0.55);
+  choose(0.67, 4, 0.4);
+  // Never fill remaining slots with near-identical tickets merely to reach six.
   return selected.sort((a, b) => b.probability - a.probability);
 }
 
