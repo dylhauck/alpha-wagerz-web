@@ -254,114 +254,59 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   // A fixed 60% leg threshold incorrectly removes the strongest available
   // selections on balanced slates. Keep the sportsbook + model validation
   // performed by buildCandidates; do not invent legs to meet ticket targets.
-  const qualifyingLegs = legs;
-  const byGame = new Map<string, Leg[]>();
-  for (const leg of qualifyingLegs) {
-    const group = byGame.get(leg.game) || [];
-    group.push(leg);
-    byGame.set(leg.game, group);
-  }
-  const games = [...byGame.values()]
-    .map(group => {
-      const ranked = [...group].sort((a, b) => b.probability - a.probability);
-      if (!mixed) {
-        // Keep several independently priced players per matchup rather than
-        // allowing the two highest-confidence props to monopolize every ticket.
-        const perPlayer = new Map<string, number>();
-        const diversified: Leg[] = [];
-        for (const leg of ranked) {
-          const player = leg.marketType === "player_prop"
-            ? leg.pick.split(/\s+(?:Over|Under)\s+/i)[0].trim().toLowerCase()
-            : leg.id.toLowerCase();
-          const count = perPlayer.get(player) ?? 0;
-          if (count >= 2) continue;
-          diversified.push(leg);
-          perPlayer.set(player, count + 1);
-          if (diversified.length === 12) break;
-        }
-        return diversified;
-      }
-      // Preserve representatives of every available market type. The
-      // previous top-two-only selection could discard all but player props,
-      // making a mixed-market parlay mathematically impossible.
-      const byType = new Map<MarketType, Leg[]>();
-      for (const leg of ranked) {
-        const options = byType.get(leg.marketType) ?? [];
-        if (options.length < 2) options.push(leg);
-        byType.set(leg.marketType, options);
-      }
-      return [...byType.values()].flat();
-    })
-    .sort((a, b) => b[0].probability - a[0].probability)
-    .slice(0, MAX_LEGS);
-  if (games.length < MIN_LEGS) return [];
-
+  // Build from unique legs rather than requiring three different matchups.
+  // A single-game slate can still have multiple distinct player markets.
+  const playerName = (leg: Leg) => leg.marketType === "player_prop"
+    ? leg.pick.split(/\s+(?:Over|Under)\s+/i)[0].trim().toLowerCase() : "";
+  const candidates = [...legs].sort((a, b) => b.probability - a.probability).slice(0, 90);
+  if (candidates.length < MIN_LEGS) return [];
   type State = { legs: Leg[]; decimal: number; probability: number };
   const beams: State[][] = Array.from({ length: MAX_LEGS + 1 }, () => []);
   beams[0] = [{ legs: [], decimal: 1, probability: 1 }];
   const results: Ticket[] = [];
   const seen = new Set<string>();
-  const BEAM_WIDTH = mixed ? 700 : 300;
-
-  for (const group of games) {
+  const BEAM_WIDTH = mixed ? 500 : 350;
+  for (const leg of candidates) {
     for (let count = MAX_LEGS - 1; count >= 0; count--) {
       if (!beams[count].length) continue;
       const expanded: State[] = [];
       for (const state of beams[count]) {
-        for (const leg of group) {
-          const next: State = {
-            legs: [...state.legs, leg],
-            decimal: state.decimal * americanToDecimal(leg.odds),
-            probability: state.probability * leg.probability,
-          };
-          expanded.push(next);
-          if (next.legs.length >= MIN_LEGS && next.legs.length <= MAX_LEGS) {
-            const odds = decimalToAmerican(next.decimal);
-            if (odds >= minOdds && (!mixed || new Set(next.legs.map(l => l.marketType)).size >= 2)) {
-              const signature = next.legs.map(x => x.id).sort().join("|");
-              if (!seen.has(signature)) {
-                seen.add(signature);
-                results.push({ legs: next.legs, odds, probability: next.probability });
-              }
+        // One selection per player, and no opposing game-market outcomes.
+        if (state.legs.some(existing => existing.id === leg.id ||
+          (leg.marketType === "player_prop" && existing.marketType === "player_prop" &&
+            existing.game === leg.game && playerName(existing) === playerName(leg)) ||
+          (leg.marketType !== "player_prop" && existing.game === leg.game &&
+            existing.marketType === leg.marketType))) continue;
+        const next: State = {
+          legs: [...state.legs, leg],
+          decimal: state.decimal * americanToDecimal(leg.odds),
+          probability: state.probability * leg.probability,
+        };
+        expanded.push(next);
+        if (next.legs.length >= MIN_LEGS && next.legs.length <= MAX_LEGS) {
+          const odds = decimalToAmerican(next.decimal);
+          if (odds >= minOdds && (!mixed || new Set(next.legs.map(l => l.marketType)).size >= 2)) {
+            const signature = next.legs.map(x => x.id).sort().join("|");
+            if (!seen.has(signature)) {
+              seen.add(signature);
+              results.push({ legs: next.legs, odds, probability: next.probability });
             }
           }
         }
       }
-      const candidates = [...beams[count + 1], ...expanded];
-      if (mixed) {
-        // Retain diverse market-type combinations in the beam, rather
-        // than pruning every mixed state behind high-probability props.
-        const buckets = new Map<string, State[]>();
-        for (const state of candidates) {
-          const signature = [...new Set(state.legs.map(l => l.marketType))].sort().join("|");
-          const bucket = buckets.get(signature) ?? [];
-          bucket.push(state);
-          buckets.set(signature, bucket);
+      const combined = [...beams[count + 1], ...expanded];
+      const byConfidence = [...combined].sort((a, b) => b.probability - a.probability);
+      const byPrice = [...combined].sort((a, b) => b.decimal - a.decimal);
+      const retained = new Map<string, State>();
+      for (const ranking of [byConfidence, byPrice]) {
+        for (const state of ranking.slice(0, BEAM_WIDTH)) {
+          const signature = state.legs.map(x => x.id).sort().join("|");
+          retained.set(signature, state);
         }
-        const perBucket = Math.max(8, Math.floor(BEAM_WIDTH / Math.max(1, buckets.size)));
-        beams[count + 1] = [...buckets.values()]
-          .flatMap(bucket => bucket.sort((a, b) => b.probability - a.probability).slice(0, perBucket))
-          .sort((a, b) => b.probability - a.probability)
-          .slice(0, BEAM_WIDTH);
-      } else {
-        // Confidence-only pruning keeps short-priced favorites and can
-        // eliminate every path to the lotto odds threshold. Retain both
-        // confident and higher-priced valid combinations at each leg count.
-        const byConfidence = [...candidates].sort((a, b) => b.probability - a.probability);
-        const byPrice = [...candidates].sort((a, b) => b.decimal - a.decimal || b.probability - a.probability);
-        const byBalance = [...candidates].sort((a, b) =>
-          b.probability * Math.sqrt(b.decimal) - a.probability * Math.sqrt(a.decimal));
-        const retained = new Map<string, State>();
-        for (const ranking of [byConfidence, byPrice, byBalance]) {
-          for (const state of ranking.slice(0, BEAM_WIDTH)) {
-            const signature = state.legs.map(leg => leg.id).sort().join("|");
-            if (!retained.has(signature)) retained.set(signature, state);
-          }
-        }
-        beams[count + 1] = [...retained.values()]
-          .sort((a, b) => b.probability * Math.sqrt(b.decimal) - a.probability * Math.sqrt(a.decimal))
-          .slice(0, BEAM_WIDTH);
       }
+      beams[count + 1] = [...retained.values()]
+        .sort((a, b) => b.probability * Math.sqrt(b.decimal) - a.probability * Math.sqrt(a.decimal))
+        .slice(0, BEAM_WIDTH);
     }
   }
   // Rank by confidence, but avoid publishing six near-identical tickets.
