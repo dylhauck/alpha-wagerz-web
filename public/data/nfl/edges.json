@@ -7,10 +7,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 38.1,
+        "total": 42.6,
         "home_margin": "",
-        "away_win_probability": 0.34,
-        "home_win_probability": 0.66,
+        "away_win_probability": 0.32299999999999995,
+        "home_win_probability": 0.677,
         "projection_confidence": 54.2
       },
       "market": {
@@ -25,12 +25,12 @@
         "away_team": "LAC",
         "home_team": "BAL",
         "moneyline": {
-          "away": 184.0,
-          "home": -220.0,
-          "away_implied_probability": 0.3521,
-          "home_implied_probability": 0.6875,
-          "away_no_vig_probability": 0.3387,
-          "home_no_vig_probability": 0.6613
+          "away": 190.0,
+          "home": -230.0,
+          "away_implied_probability": 0.3448,
+          "home_implied_probability": 0.697,
+          "away_no_vig_probability": 0.331,
+          "home_no_vig_probability": 0.669
         },
         "spread": {
           "away": 4.5,
@@ -51,13 +51,13 @@
         "posted_team_totals": {
           "away": {
             "line": 16.5,
-            "over_price": -128.0,
-            "under_price": 100.0
+            "over_price": -122.0,
+            "under_price": -104.0
           },
           "home": {
             "line": 21.5,
-            "over_price": -115.0,
-            "under_price": -111.0
+            "over_price": -120.0,
+            "under_price": -106.0
           },
           "source": "sportsbook"
         },
@@ -81,8 +81,8 @@
             "title": "FanDuel",
             "markets": {
               "moneyline": {
-                "away": 184.0,
-                "home": -220.0
+                "away": 190.0,
+                "home": -230.0
               },
               "spread": {
                 "away": 4.5,
@@ -98,13 +98,13 @@
               "team_total": {
                 "home": {
                   "line": 21.5,
-                  "over_price": -115.0,
-                  "under_price": -111.0
+                  "over_price": -120.0,
+                  "under_price": -106.0
                 },
                 "away": {
                   "line": 16.5,
-                  "over_price": -128.0,
-                  "under_price": 100.0
+                  "over_price": -122.0,
+                  "under_price": -104.0
                 }
               }
             }
@@ -144,14 +144,39 @@
           }
         ]
       },
-      "recommendations": [],
-      "best_bet": ""
+      "recommendations": [
+        {
+          "market": "game_total",
+          "selection": "OVER 38.5",
+          "edge": 4.1,
+          "confidence_score": 52.3,
+          "confidence_label": "LEAN"
+        }
+      ],
+      "best_bet": {
+        "market": "game_total",
+        "selection": "OVER 38.5",
+        "edge": 4.1,
+        "confidence_score": 52.3,
+        "confidence_label": "LEAN"
+      }
     }
   ],
-  "ranked_bets": [],
+  "ranked_bets": [
+    {
+      "game_id": "2026_10_LAC_BAL",
+      "away_team": "LAC",
+      "home_team": "BAL",
+      "market": "game_total",
+      "selection": "OVER 38.5",
+      "edge": 4.1,
+      "confidence_score": 52.3,
+      "confidence_label": "LEAN"
+    }
+  ],
   "counts": {
     "games": 1,
-    "bets": 0,
+    "bets": 1,
     "missing_projection": 0
   },
   "model": {

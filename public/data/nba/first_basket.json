@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T15:24:58.410224+00:00",
+  "generated_at": "2026-11-16T16:00:08.457759+00:00",
   "slate_type": "current",
   "games": [
     {
@@ -1254,11 +1254,10 @@
       "game_id": "0022600251",
       "away_team": "GSW",
       "home_team": "NOP",
-      "lineup_status": "previous_confirmed_lineup",
+      "lineup_status": "projected_by_minutes",
       "lineup_sources": {
         "away": "projected_by_minutes",
-        "home": "previous_confirmed_lineup",
-        "home_previous_game_id": "401909980"
+        "home": "projected_by_minutes"
       },
       "projected_starters": [
         {
@@ -1302,44 +1301,44 @@
           "fg_pct": 1.0
         },
         {
-          "player_id": 1630529,
-          "player_name": "Herbert Jones",
+          "player_id": 1629673,
+          "player_name": "Jordan Poole",
           "team": "NOP",
           "side": "home",
-          "minutes": 0.0,
-          "fg_pct": 0.0
+          "minutes": 34.0,
+          "fg_pct": 0.2
         },
         {
           "player_id": 1629627,
           "player_name": "Zion Williamson",
           "team": "NOP",
           "side": "home",
-          "minutes": 0.0,
-          "fg_pct": 0.0
-        },
-        {
-          "player_id": 1630180,
-          "player_name": "Saddiq Bey",
-          "team": "NOP",
-          "side": "home",
-          "minutes": 0.0,
-          "fg_pct": 0.0
-        },
-        {
-          "player_id": 1642274,
-          "player_name": "Yves Missi",
-          "team": "NOP",
-          "side": "home",
-          "minutes": 0.0,
-          "fg_pct": 0.0
+          "minutes": 32.0,
+          "fg_pct": 0.514
         },
         {
           "player_id": 1642847,
           "player_name": "Jeremiah Fears",
           "team": "NOP",
           "side": "home",
-          "minutes": 0.0,
-          "fg_pct": 0.0
+          "minutes": 29.0,
+          "fg_pct": 0.333
+        },
+        {
+          "player_id": 1630529,
+          "player_name": "Herbert Jones",
+          "team": "NOP",
+          "side": "home",
+          "minutes": 24.0,
+          "fg_pct": 0.444
+        },
+        {
+          "player_id": 1630180,
+          "player_name": "Saddiq Bey",
+          "team": "NOP",
+          "side": "home",
+          "minutes": 24.0,
+          "fg_pct": 0.333
         }
       ],
       "source": "ESPN NBA play-by-play",
@@ -1349,18 +1348,18 @@
           "player_id": 1629627,
           "player_name": "Zion Williamson",
           "team": "NOP",
-          "probability": 18.66,
+          "probability": 20.52,
           "first_shot_rate": 14.29,
           "first_basket_rate": 42.86,
           "starts_sample": 7,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1641764,
           "player_name": "Brandin Podziemski",
           "team": "GSW",
-          "probability": 12.95,
+          "probability": 11.8,
           "first_shot_rate": 20.0,
           "first_basket_rate": 20.0,
           "starts_sample": 5,
@@ -1368,10 +1367,21 @@
           "lineup_status": "projected_by_minutes"
         },
         {
+          "player_id": 1642847,
+          "player_name": "Jeremiah Fears",
+          "team": "NOP",
+          "probability": 9.54,
+          "first_shot_rate": 25.0,
+          "first_basket_rate": 12.5,
+          "starts_sample": 8,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
           "player_id": 1629001,
           "player_name": "De'Anthony Melton",
           "team": "GSW",
-          "probability": 9.57,
+          "probability": 8.71,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 1,
@@ -1382,7 +1392,7 @@
           "player_id": 1630611,
           "player_name": "Gui Santos",
           "team": "GSW",
-          "probability": 8.88,
+          "probability": 8.09,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 2,
@@ -1390,10 +1400,21 @@
           "lineup_status": "projected_by_minutes"
         },
         {
+          "player_id": 1629673,
+          "player_name": "Jordan Poole",
+          "team": "NOP",
+          "probability": 7.95,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
           "player_id": 203110,
           "player_name": "Draymond Green",
           "team": "GSW",
-          "probability": 8.63,
+          "probability": 7.87,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 5,
@@ -1404,7 +1425,7 @@
           "player_id": 1642865,
           "player_name": "Yaxel Lendeborg",
           "team": "GSW",
-          "probability": 8.4,
+          "probability": 7.65,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 5,
@@ -1412,48 +1433,26 @@
           "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1642847,
-          "player_name": "Jeremiah Fears",
-          "team": "NOP",
-          "probability": 7.73,
-          "first_shot_rate": 25.0,
-          "first_basket_rate": 12.5,
-          "starts_sample": 8,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
-        },
-        {
-          "player_id": 1642274,
-          "player_name": "Yves Missi",
-          "team": "NOP",
-          "probability": 4.55,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 1,
-          "estimate_source": "statistical_fallback",
-          "lineup_status": "previous_confirmed_lineup"
-        },
-        {
           "player_id": 1630180,
           "player_name": "Saddiq Bey",
           "team": "NOP",
-          "probability": 3.64,
+          "probability": 6.25,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 3,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1630529,
           "player_name": "Herbert Jones",
           "team": "NOP",
-          "probability": 3.03,
+          "probability": 5.63,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 6,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         }
       ],
       "status": "estimated",
