@@ -857,11 +857,6 @@ function PlayerMatchupTable({
                   "FT%",
                   "text-center",
                 ],
-                [
-                  "fantasy_per_game",
-                  "Fantasy/G",
-                  "text-center",
-                ],
               ].map(
                 ([
                   key,
@@ -967,9 +962,6 @@ function PlayerMatchupTable({
                     {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatPercentage(stats.ft_pct)}
                   </td>
 
-                  <td className="px-4 py-3 text-center font-black text-white">
-                    {(player.matchup_history_unavailable || !stats.games || !stats.min_per_game) ? "—" : formatStat(stats.fantasy_per_game)}
-                  </td>
                 </tr>
               ),
             )}
@@ -977,7 +969,7 @@ function PlayerMatchupTable({
             {!rows.length ? (
               <tr>
                 <td
-                  colSpan={15}
+                  colSpan={14}
                   className="px-6 py-10 text-center text-sm font-bold text-slate-500"
                 >
                   No players available for
