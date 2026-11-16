@@ -1,53 +1,53 @@
 {
   "players": [
     {
-      "player_id": "00-0034796",
-      "player": "Lamar Jackson",
-      "team": "BAL",
-      "opponent": "LAC",
+      "player_id": "00-0039163",
+      "player": "C.J. Stroud",
+      "team": "HOU",
+      "opponent": "IND",
       "position": "QB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 18.9,
-      "touchdown_lambda": 0.2089,
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 10.0,
+      "touchdown_lambda": 0.1053,
       "scoring": {
-        "rushing_td_probability": 18.9,
+        "rushing_td_probability": 10.0,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.2089,
+        "rushing_lambda": 0.1053,
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.075
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.137
       },
       "matchup": {
-        "overall_factor": 0.931,
-        "rushing_factor": 1.003,
-        "passing_factor": 0.92
+        "overall_factor": 0.992,
+        "rushing_factor": 0.998,
+        "passing_factor": 0.991
       },
       "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.2,
+        "current_games": 9,
+        "current_rushing_td_rate": 0.11,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.3,
+        "career_rushing_td_rate": 0.09,
         "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.262,
+        "regressed_rushing_td_rate": 0.101,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.796,
-        "projected_rushing_tds": 0.21,
+        "usage_factor": 0.95,
+        "projected_rushing_tds": 0.12,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 19.6
+        "usage_percentage": 94.6
       },
       "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.2,
+        "current_games": 9,
+        "current_rushing_tds_per_game": 0.11,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.3,
+        "career_rushing_tds_per_game": 0.09,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.21,
+        "projected_rushing_tds": 0.12,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -56,53 +56,53 @@
       }
     },
     {
-      "player_id": "00-0035993",
-      "player": "Tyler Huntley",
-      "team": "BAL",
-      "opponent": "LAC",
+      "player_id": "00-0036898",
+      "player": "Davis Mills",
+      "team": "HOU",
+      "opponent": "IND",
       "position": "QB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 16.8,
-      "touchdown_lambda": 0.1836,
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 6.6,
+      "touchdown_lambda": 0.0678,
       "scoring": {
-        "rushing_td_probability": 16.8,
+        "rushing_td_probability": 6.6,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1836,
+        "rushing_lambda": 0.0678,
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.075
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.084
       },
       "matchup": {
-        "overall_factor": 0.928,
+        "overall_factor": 0.986,
         "rushing_factor": 1.0,
-        "passing_factor": 0.92
+        "passing_factor": 0.986
       },
       "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.2,
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.18,
+        "career_rushing_td_rate": 0.07,
         "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.188,
+        "regressed_rushing_td_rate": 0.062,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 0.884,
-        "projected_rushing_tds": 0.21,
+        "usage_factor": 1.09,
+        "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 22.2
+        "usage_percentage": 5.4
       },
       "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.2,
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.18,
+        "career_rushing_tds_per_game": 0.07,
         "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.21,
+        "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -111,53 +111,163 @@
       }
     },
     {
-      "player_id": "00-0033119",
-      "player": "Jacoby Brissett",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "QB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 13.3,
-      "touchdown_lambda": 0.1431,
+      "player_id": "00-0035685",
+      "player": "David Montgomery",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "RB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 44.4,
+      "touchdown_lambda": 0.5878,
       "scoring": {
-        "rushing_td_probability": 13.3,
+        "rushing_td_probability": 35.4,
+        "receiving_td_probability": 13.9,
+        "rushing_lambda": 0.4377,
+        "receiving_lambda": 0.1501
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.1
+      },
+      "matchup": {
+        "overall_factor": 1.044,
+        "rushing_factor": 1.065,
+        "passing_factor": 1.0
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.4,
+        "current_receiving_td_rate": 0.2,
+        "career_rushing_td_rate": 0.55,
+        "career_receiving_td_rate": 0.05,
+        "regressed_rushing_td_rate": 0.492,
+        "regressed_receiving_td_rate": 0.108,
+        "usage_factor": 0.9,
+        "projected_rushing_tds": 0.43,
+        "projected_receiving_tds": 0.23,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 15.2
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.4,
+        "current_receiving_tds_per_game": 0.2,
+        "career_rushing_tds_per_game": 0.55,
+        "career_receiving_tds_per_game": 0.05,
+        "projected_rushing_tds": 0.43,
+        "projected_receiving_tds": 0.23,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039405",
+      "player": "Jawhar Jordan",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "RB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 44.1,
+      "touchdown_lambda": 0.5819,
+      "scoring": {
+        "rushing_td_probability": 44.1,
         "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.1431,
+        "rushing_lambda": 0.5819,
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.072
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.08
       },
       "matchup": {
-        "overall_factor": 0.921,
-        "rushing_factor": 1.002,
-        "passing_factor": 0.921
+        "overall_factor": 1.058,
+        "rushing_factor": 1.067,
+        "passing_factor": 1.0
       },
       "inputs": {
-        "current_games": 8,
-        "current_rushing_td_rate": 0.12,
+        "current_games": 1,
+        "current_rushing_td_rate": 1.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.2,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.289,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.865,
+        "projected_rushing_tds": 1.08,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 9.1
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 1.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.2,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 1.08,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040583",
+      "player": "Woody Marks",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "RB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 21.7,
+      "touchdown_lambda": 0.2445,
+      "scoring": {
+        "rushing_td_probability": 19.0,
+        "receiving_td_probability": 3.3,
+        "rushing_lambda": 0.2108,
+        "receiving_lambda": 0.0338
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.091
+      },
+      "matchup": {
+        "overall_factor": 1.05,
+        "rushing_factor": 1.066,
+        "passing_factor": 0.995
+      },
+      "inputs": {
+        "current_games": 9,
+        "current_rushing_td_rate": 0.22,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.16,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.14,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.085,
-        "projected_rushing_tds": 0.13,
+        "career_receiving_td_rate": 0.12,
+        "regressed_rushing_td_rate": 0.192,
+        "regressed_receiving_td_rate": 0.056,
+        "usage_factor": 0.997,
+        "projected_rushing_tds": 0.24,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 38.5
+        "usage_percentage": 18.4
       },
       "actual_data": {
-        "current_games": 8,
-        "current_rushing_tds_per_game": 0.12,
+        "current_games": 9,
+        "current_rushing_tds_per_game": 0.22,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.16,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.13,
+        "career_receiving_tds_per_game": 0.12,
+        "projected_rushing_tds": 0.24,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -166,12 +276,122 @@
       }
     },
     {
-      "player_id": "00-0040981",
-      "player": "Joe Fagnano",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "QB",
-      "game_id": "2026_10_LAC_BAL",
+      "player_id": "00-0038705",
+      "player": "Emari Demercado",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "RB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 9.1,
+      "touchdown_lambda": 0.0957,
+      "scoring": {
+        "rushing_td_probability": 6.5,
+        "receiving_td_probability": 2.8,
+        "rushing_lambda": 0.067,
+        "receiving_lambda": 0.0287
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.084
+      },
+      "matchup": {
+        "overall_factor": 1.056,
+        "rushing_factor": 1.069,
+        "passing_factor": 1.0
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.07,
+        "career_receiving_td_rate": 0.03,
+        "regressed_rushing_td_rate": 0.056,
+        "regressed_receiving_td_rate": 0.024,
+        "usage_factor": 1.196,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 10.8
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.07,
+        "career_receiving_tds_per_game": 0.03,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033854",
+      "player": "Dare Ogunbowale",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "RB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 3.7,
+      "touchdown_lambda": 0.0382,
+      "scoring": {
+        "rushing_td_probability": 2.7,
+        "receiving_td_probability": 1.1,
+        "rushing_lambda": 0.0273,
+        "receiving_lambda": 0.0109
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.084
+      },
+      "matchup": {
+        "overall_factor": 1.0,
+        "rushing_factor": 1.045,
+        "passing_factor": 0.994
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.05,
+        "career_receiving_td_rate": 0.02,
+        "regressed_rushing_td_rate": 0.036,
+        "regressed_receiving_td_rate": 0.015,
+        "usage_factor": 0.75,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 1.2
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.05,
+        "career_receiving_tds_per_game": 0.02,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039603",
+      "player": "British Brooks",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "RB",
+      "game_id": "2026_11_IND_HOU",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -181,16 +401,16 @@
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.053
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.084
       },
       "matchup": {
-        "overall_factor": 0.928,
+        "overall_factor": 1.022,
         "rushing_factor": 1.0,
-        "passing_factor": 0.921
+        "passing_factor": 1.051
       },
       "inputs": {
-        "current_games": 2,
+        "current_games": 1,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
@@ -202,17 +422,17 @@
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 19.6
+        "usage_percentage": 0.0
       },
       "actual_data": {
-        "current_games": 2,
+        "current_games": 1,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -221,273 +441,53 @@
       }
     },
     {
-      "player_id": "00-0032764",
-      "player": "Derrick Henry",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "RB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 63.2,
-      "touchdown_lambda": 0.9996,
-      "scoring": {
-        "rushing_td_probability": 59.5,
-        "receiving_td_probability": 9.1,
-        "rushing_lambda": 0.9039,
-        "receiving_lambda": 0.0957
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.06
-      },
-      "matchup": {
-        "overall_factor": 1.061,
-        "rushing_factor": 1.072,
-        "passing_factor": 0.96
-      },
-      "inputs": {
-        "current_games": 9,
-        "current_rushing_td_rate": 0.89,
-        "current_receiving_td_rate": 0.11,
-        "career_rushing_td_rate": 0.81,
-        "career_receiving_td_rate": 0.04,
-        "regressed_rushing_td_rate": 0.852,
-        "regressed_receiving_td_rate": 0.077,
-        "usage_factor": 1.032,
-        "projected_rushing_tds": 0.94,
-        "projected_receiving_tds": 0.12,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 39.6
-      },
-      "actual_data": {
-        "current_games": 9,
-        "current_rushing_tds_per_game": 0.89,
-        "current_receiving_tds_per_game": 0.11,
-        "career_rushing_tds_per_game": 0.81,
-        "career_receiving_tds_per_game": 0.04,
-        "projected_rushing_tds": 0.94,
-        "projected_receiving_tds": 0.12,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0034975",
-      "player": "Justice Hill",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "RB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 12.5,
-      "touchdown_lambda": 0.1336,
-      "scoring": {
-        "rushing_td_probability": 11.1,
-        "receiving_td_probability": 1.6,
-        "rushing_lambda": 0.118,
-        "receiving_lambda": 0.0156
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.091
-      },
-      "matchup": {
-        "overall_factor": 1.038,
-        "rushing_factor": 1.072,
-        "passing_factor": 0.965
-      },
-      "inputs": {
-        "current_games": 9,
-        "current_rushing_td_rate": 0.11,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.1,
-        "career_receiving_td_rate": 0.05,
-        "regressed_rushing_td_rate": 0.105,
-        "regressed_receiving_td_rate": 0.024,
-        "usage_factor": 1.107,
-        "projected_rushing_tds": 0.12,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 12.1
-      },
-      "actual_data": {
-        "current_games": 9,
-        "current_rushing_tds_per_game": 0.11,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.1,
-        "career_receiving_tds_per_game": 0.05,
-        "projected_rushing_tds": 0.12,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039796",
-      "player": "Rasheen Ali",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "RB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 1.7,
-      "touchdown_lambda": 0.0171,
+      "player_id": "00-0034981",
+      "player": "Foster Moreau",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "TE",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 35.0,
+      "touchdown_lambda": 0.4308,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 1.7,
+        "receiving_td_probability": 35.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0171
+        "receiving_lambda": 0.4308
       },
       "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.053
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.14
       },
       "matchup": {
-        "overall_factor": 1.067,
-        "rushing_factor": 1.067,
-        "passing_factor": 1.017
-      },
-      "inputs": {
-        "current_games": 8,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.04,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.02,
-        "usage_factor": 0.855,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 1.4
-      },
-      "actual_data": {
-        "current_games": 8,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.04,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0034753",
-      "player": "Mark Andrews",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "TE",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 18.2,
-      "touchdown_lambda": 0.2014,
-      "scoring": {
-        "rushing_td_probability": 0.3,
-        "receiving_td_probability": 18.0,
-        "rushing_lambda": 0.0027,
-        "receiving_lambda": 0.1988
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.091
-      },
-      "matchup": {
-        "overall_factor": 0.919,
+        "overall_factor": 0.992,
         "rushing_factor": 1.0,
-        "passing_factor": 0.919
-      },
-      "inputs": {
-        "current_games": 9,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.11,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.44,
-        "regressed_rushing_td_rate": 0.005,
-        "regressed_receiving_td_rate": 0.265,
-        "usage_factor": 0.947,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.12,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 7.6
-      },
-      "actual_data": {
-        "current_games": 9,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.11,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.44,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.12,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040879",
-      "player": "Matthew Hibner",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "TE",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 16.0,
-      "touchdown_lambda": 0.174,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 16.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.174
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.059
-      },
-      "matchup": {
-        "overall_factor": 0.92,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.92
+        "passing_factor": 0.992
       },
       "inputs": {
         "current_games": 6,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.17,
+        "current_receiving_td_rate": 0.5,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.17,
+        "career_receiving_td_rate": 0.23,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.17,
-        "usage_factor": 1.0,
+        "regressed_receiving_td_rate": 0.346,
+        "usage_factor": 0.978,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
+        "projected_receiving_tds": 0.57,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 2.1
+        "usage_percentage": 2.7
       },
       "actual_data": {
         "current_games": 6,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.17,
+        "current_receiving_tds_per_game": 0.5,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.17,
+        "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.18,
-        "projected_team_points": 23.7,
+        "projected_receiving_tds": 0.57,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -496,303 +496,28 @@
       }
     },
     {
-      "player_id": "00-0040887",
-      "player": "Josh Cuevas",
-      "team": "BAL",
-      "opponent": "LAC",
+      "player_id": "00-0034383",
+      "player": "Dalton Schultz",
+      "team": "HOU",
+      "opponent": "IND",
       "position": "TE",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 13.4,
-      "touchdown_lambda": 0.144,
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 14.2,
+      "touchdown_lambda": 0.1532,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 13.4,
+        "receiving_td_probability": 14.2,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.144
+        "receiving_lambda": 0.1532
       },
       "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.071
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.182
       },
       "matchup": {
-        "overall_factor": 0.92,
+        "overall_factor": 0.991,
         "rushing_factor": 1.0,
-        "passing_factor": 0.92
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.14,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.14,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.14,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.15,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 3.0
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.14,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.14,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.15,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0034798",
-      "player": "Durham Smythe",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "TE",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 2.2,
-      "touchdown_lambda": 0.0225,
-      "scoring": {
-        "rushing_td_probability": 0.6,
-        "receiving_td_probability": 1.7,
-        "rushing_lambda": 0.0056,
-        "receiving_lambda": 0.0169
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.053
-      },
-      "matchup": {
-        "overall_factor": 0.902,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.902
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.01,
-        "career_receiving_td_rate": 0.03,
-        "regressed_rushing_td_rate": 0.007,
-        "regressed_receiving_td_rate": 0.022,
-        "usage_factor": 0.774,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 1.1
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.01,
-        "career_receiving_tds_per_game": 0.03,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039064",
-      "player": "Zay Flowers",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 32.0,
-      "touchdown_lambda": 0.3855,
-      "scoring": {
-        "rushing_td_probability": 0.9,
-        "receiving_td_probability": 31.3,
-        "rushing_lambda": 0.0095,
-        "receiving_lambda": 0.376
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.079
-      },
-      "matchup": {
-        "overall_factor": 0.849,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.92
-      },
-      "inputs": {
-        "current_games": 8,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.38,
-        "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.29,
-        "regressed_rushing_td_rate": 0.015,
-        "regressed_receiving_td_rate": 0.335,
-        "usage_factor": 1.055,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.41,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 12.8
-      },
-      "actual_data": {
-        "current_games": 8,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.38,
-        "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.29,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.41,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039792",
-      "player": "Devontez Walker",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 23.6,
-      "touchdown_lambda": 0.2694,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 23.6,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2694
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.05
-      },
-      "matchup": {
-        "overall_factor": 0.92,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.92
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.2,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.31,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.268,
-        "usage_factor": 1.154,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.21,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 2.8
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.2,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.31,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.21,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0032398",
-      "player": "Chris Moore",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 20.6,
-      "touchdown_lambda": 0.2307,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 20.6,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2307
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.061
-      },
-      "matchup": {
-        "overall_factor": 0.919,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.919
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.33,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.1,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.163,
-        "usage_factor": 0.929,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.35,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 3.2
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.33,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.1,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.35,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0036550",
-      "player": "Rashod Bateman",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 13.2,
-      "touchdown_lambda": 0.142,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 13.2,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.142
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.091
-      },
-      "matchup": {
-        "overall_factor": 0.921,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.921
+        "passing_factor": 0.991
       },
       "inputs": {
         "current_games": 9,
@@ -802,12 +527,12 @@
         "career_receiving_td_rate": 0.23,
         "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.166,
-        "usage_factor": 0.941,
+        "usage_factor": 1.013,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.12,
+        "projected_receiving_tds": 0.13,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 5.5
+        "usage_percentage": 6.2
       },
       "actual_data": {
         "current_games": 9,
@@ -816,8 +541,8 @@
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.23,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.12,
-        "projected_team_points": 23.7,
+        "projected_receiving_tds": 0.13,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -826,12 +551,122 @@
       }
     },
     {
-      "player_id": "00-0040876",
-      "player": "Elijah Sarratt",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
+      "player_id": "00-0036556",
+      "player": "Brevin Jordan",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "TE",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 6.7,
+      "touchdown_lambda": 0.0692,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 6.7,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0692
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.084
+      },
+      "matchup": {
+        "overall_factor": 1.0,
+        "rushing_factor": 1.0,
+        "passing_factor": 1.0
+      },
+      "inputs": {
+        "current_games": 5,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.15,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.092,
+        "usage_factor": 0.75,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.5
+      },
+      "actual_data": {
+        "current_games": 5,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.15,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039359",
+      "player": "Cade Stover",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "TE",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 1.9,
+      "touchdown_lambda": 0.0192,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 1.9,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0192
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.084
+      },
+      "matchup": {
+        "overall_factor": 0.765,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.989
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.04,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.023,
+        "usage_factor": 0.839,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.6
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.04,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041472",
+      "player": "Marlin Klein",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "TE",
+      "game_id": "2026_11_IND_HOU",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -841,13 +676,13 @@
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.053
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.084
       },
       "matchup": {
-        "overall_factor": 0.923,
+        "overall_factor": 0.994,
         "rushing_factor": 1.0,
-        "passing_factor": 0.923
+        "passing_factor": 0.994
       },
       "inputs": {
         "current_games": 1,
@@ -858,116 +693,6 @@
         "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.0,
         "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 3.2
-      },
-      "actual_data": {
-        "current_games": 1,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040870",
-      "player": "Ja'Kobi Lane",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.053
-      },
-      "matchup": {
-        "overall_factor": 0.921,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.921
-      },
-      "inputs": {
-        "current_games": 5,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 4.4
-      },
-      "actual_data": {
-        "current_games": 5,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040075",
-      "player": "LaJohntay Wester",
-      "team": "BAL",
-      "opponent": "LAC",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
-      },
-      "environment": {
-        "projected_team_points": 23.7,
-        "scoring_factor": 1.053
-      },
-      "matchup": {
-        "overall_factor": 0.916,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.916
-      },
-      "inputs": {
-        "current_games": 9,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.3,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
@@ -975,14 +700,14 @@
         "usage_percentage": 1.1
       },
       "actual_data": {
-        "current_games": 9,
+        "current_games": 1,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 23.7,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -991,53 +716,53 @@
       }
     },
     {
-      "player_id": "00-0036355",
-      "player": "Justin Herbert",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "QB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 7.4,
-      "touchdown_lambda": 0.0774,
+      "player_id": "00-0036554",
+      "player": "Nico Collins",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 48.9,
+      "touchdown_lambda": 0.672,
       "scoring": {
-        "rushing_td_probability": 7.4,
-        "receiving_td_probability": 0.0,
-        "rushing_lambda": 0.0774,
-        "receiving_lambda": 0.0
+        "rushing_td_probability": 0.3,
+        "receiving_td_probability": 48.8,
+        "rushing_lambda": 0.0034,
+        "receiving_lambda": 0.6687
       },
       "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.76
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.141
       },
       "matchup": {
-        "overall_factor": 0.891,
-        "rushing_factor": 0.901,
-        "passing_factor": 0.89
+        "overall_factor": 0.967,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.991
       },
       "inputs": {
-        "current_games": 8,
+        "current_games": 7,
         "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.15,
-        "career_receiving_td_rate": 0.0,
-        "regressed_rushing_td_rate": 0.075,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.031,
+        "current_receiving_td_rate": 0.71,
+        "career_rushing_td_rate": 0.01,
+        "career_receiving_td_rate": 0.4,
+        "regressed_rushing_td_rate": 0.005,
+        "regressed_receiving_td_rate": 0.545,
+        "usage_factor": 1.055,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
+        "projected_receiving_tds": 0.81,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 80.8
+        "usage_percentage": 9.1
       },
       "actual_data": {
-        "current_games": 8,
+        "current_games": 7,
         "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.15,
-        "career_receiving_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.71,
+        "career_rushing_tds_per_game": 0.01,
+        "career_receiving_tds_per_game": 0.4,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
+        "projected_receiving_tds": 0.81,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -1046,12 +771,287 @@
       }
     },
     {
-      "player_id": "00-0040464",
-      "player": "DJ Uiagalelei",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "QB",
-      "game_id": "2026_10_LAC_BAL",
+      "player_id": "00-0038977",
+      "player": "Tank Dell",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 30.5,
+      "touchdown_lambda": 0.3645,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 30.5,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.3645
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.152
+      },
+      "matchup": {
+        "overall_factor": 0.979,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.991
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.41,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.388,
+        "usage_factor": 0.912,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.38,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 5.4
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.41,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.38,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039849",
+      "player": "Marvin Harrison Jr.",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 29.3,
+      "touchdown_lambda": 0.3464,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 29.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.3464
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.152
+      },
+      "matchup": {
+        "overall_factor": 0.99,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.99
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.39,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.374,
+        "usage_factor": 0.867,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.38,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 4.3
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.39,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.38,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038618",
+      "player": "Xavier Hutchinson",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 28.3,
+      "touchdown_lambda": 0.3323,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 28.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.3323
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.152
+      },
+      "matchup": {
+        "overall_factor": 0.947,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.991
+      },
+      "inputs": {
+        "current_games": 9,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.33,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.12,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.231,
+        "usage_factor": 1.3,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.38,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 7.0
+      },
+      "actual_data": {
+        "current_games": 9,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.33,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.12,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.38,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040138",
+      "player": "Jaylin Noel",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 24.8,
+      "touchdown_lambda": 0.2846,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 24.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.2846
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.138
+      },
+      "matchup": {
+        "overall_factor": 0.92,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.992
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.29,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.17,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.226,
+        "usage_factor": 1.126,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.33,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 3.8
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.29,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.17,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.33,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0038608",
+      "player": "Kayshon Boutte",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 21.3,
+      "touchdown_lambda": 0.24,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 21.3,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.24
+      },
+      "environment": {
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.136
+      },
+      "matchup": {
+        "overall_factor": 0.99,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.99
+      },
+      "inputs": {
+        "current_games": 9,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.22,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.27,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.244,
+        "usage_factor": 0.958,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.25,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 3.7
+      },
+      "actual_data": {
+        "current_games": 9,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.22,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.27,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.25,
+        "projected_team_points": 24.4,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041467",
+      "player": "Lewis Bond",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1061,13 +1061,13 @@
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.76
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.084
       },
       "matchup": {
-        "overall_factor": 0.892,
+        "overall_factor": 1.022,
         "rushing_factor": 1.0,
-        "passing_factor": 0.892
+        "passing_factor": 1.051
       },
       "inputs": {
         "current_games": 1,
@@ -1082,7 +1082,7 @@
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 19.2
+        "usage_percentage": 1.1
       },
       "actual_data": {
         "current_games": 1,
@@ -1092,7 +1092,7 @@
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -1101,257 +1101,37 @@
       }
     },
     {
-      "player_id": "00-0040666",
-      "player": "Omarion Hampton",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "RB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 30.3,
-      "touchdown_lambda": 0.3614,
-      "scoring": {
-        "rushing_td_probability": 29.1,
-        "receiving_td_probability": 1.7,
-        "rushing_lambda": 0.3441,
-        "receiving_lambda": 0.0173
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.763
-      },
-      "matchup": {
-        "overall_factor": 0.854,
-        "rushing_factor": 0.837,
-        "passing_factor": 0.952
-      },
-      "inputs": {
-        "current_games": 8,
-        "current_rushing_td_rate": 0.38,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.41,
-        "career_receiving_td_rate": 0.06,
-        "regressed_rushing_td_rate": 0.395,
-        "regressed_receiving_td_rate": 0.03,
-        "usage_factor": 0.962,
-        "projected_rushing_tds": 0.29,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 20.9
-      },
-      "actual_data": {
-        "current_games": 8,
-        "current_rushing_tds_per_game": 0.38,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.41,
-        "career_receiving_tds_per_game": 0.06,
-        "projected_rushing_tds": 0.29,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0039391",
-      "player": "Kimani Vidal",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "RB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 20.6,
-      "touchdown_lambda": 0.2311,
-      "scoring": {
-        "rushing_td_probability": 11.4,
-        "receiving_td_probability": 10.4,
-        "rushing_lambda": 0.1215,
-        "receiving_lambda": 0.1097
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.786
-      },
-      "matchup": {
-        "overall_factor": 0.867,
-        "rushing_factor": 0.838,
-        "passing_factor": 0.95
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.14,
-        "current_receiving_td_rate": 0.14,
-        "career_rushing_td_rate": 0.14,
-        "career_receiving_td_rate": 0.1,
-        "regressed_rushing_td_rate": 0.14,
-        "regressed_receiving_td_rate": 0.119,
-        "usage_factor": 0.922,
-        "projected_rushing_tds": 0.11,
-        "projected_receiving_tds": 0.11,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 11.5
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.14,
-        "current_receiving_tds_per_game": 0.14,
-        "career_rushing_tds_per_game": 0.14,
-        "career_receiving_tds_per_game": 0.1,
-        "projected_rushing_tds": 0.11,
-        "projected_receiving_tds": 0.11,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038454",
-      "player": "Keaton Mitchell",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "RB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 10.9,
-      "touchdown_lambda": 0.115,
-      "scoring": {
-        "rushing_td_probability": 2.9,
-        "receiving_td_probability": 8.2,
-        "rushing_lambda": 0.0296,
-        "receiving_lambda": 0.0854
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.75
-      },
-      "matchup": {
-        "overall_factor": 0.877,
-        "rushing_factor": 0.836,
-        "passing_factor": 0.947
-      },
-      "inputs": {
-        "current_games": 8,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.12,
-        "career_rushing_td_rate": 0.09,
-        "career_receiving_td_rate": 0.03,
-        "regressed_rushing_td_rate": 0.045,
-        "regressed_receiving_td_rate": 0.075,
-        "usage_factor": 1.097,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.09,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 12.7
-      },
-      "actual_data": {
-        "current_games": 8,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.12,
-        "career_rushing_tds_per_game": 0.09,
-        "career_receiving_tds_per_game": 0.03,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.09,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0035125",
-      "player": "Alec Ingold",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "RB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 5.1,
-      "touchdown_lambda": 0.0527,
-      "scoring": {
-        "rushing_td_probability": 2.0,
-        "receiving_td_probability": 3.2,
-        "rushing_lambda": 0.0198,
-        "receiving_lambda": 0.0329
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.84
-      },
-      "matchup": {
-        "overall_factor": 0.951,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.951
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.03,
-        "career_receiving_td_rate": 0.05,
-        "regressed_rushing_td_rate": 0.022,
-        "regressed_receiving_td_rate": 0.036,
-        "usage_factor": 0.906,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 2.2
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.03,
-        "career_receiving_tds_per_game": 0.05,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038614",
-      "player": "Scott Matlock",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "RB",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 3.1,
-      "touchdown_lambda": 0.032,
+      "player_id": "00-0038519",
+      "player": "Nikko Remigio",
+      "team": "HOU",
+      "opponent": "IND",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 3.1,
+        "receiving_td_probability": 0.0,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.032
+        "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.84
+        "projected_team_points": 24.4,
+        "scoring_factor": 1.084
       },
       "matchup": {
-        "overall_factor": 0.934,
+        "overall_factor": 1.022,
         "rushing_factor": 1.0,
-        "passing_factor": 0.9
+        "passing_factor": 1.051
       },
       "inputs": {
-        "current_games": 2,
+        "current_games": 8,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.04,
+        "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.032,
+        "regressed_receiving_td_rate": 0.0,
         "usage_factor": 1.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
@@ -1360,14 +1140,14 @@
         "usage_percentage": 0.0
       },
       "actual_data": {
-        "current_games": 2,
+        "current_games": 8,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.04,
+        "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
+        "projected_team_points": 24.4,
         "injury_status": ""
       },
       "model": {
@@ -1376,53 +1156,53 @@
       }
     },
     {
-      "player_id": "00-0033885",
-      "player": "David Njoku",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "TE",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 19.7,
-      "touchdown_lambda": 0.2198,
+      "player_id": "00-0039164",
+      "player": "Anthony Richardson",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "QB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 31.4,
+      "touchdown_lambda": 0.3763,
       "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 19.7,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2198
+        "rushing_td_probability": 31.4,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.3763,
+        "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.84
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
       },
       "matchup": {
-        "overall_factor": 0.89,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.89
+        "overall_factor": 0.942,
+        "rushing_factor": 1.025,
+        "passing_factor": 0.9
       },
       "inputs": {
-        "current_games": 2,
+        "current_games": 1,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.3,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.24,
-        "usage_factor": 0.916,
+        "career_rushing_td_rate": 0.56,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.498,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.756,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 6.2
+        "usage_percentage": 5.7
       },
       "actual_data": {
-        "current_games": 2,
+        "current_games": 1,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.3,
+        "career_rushing_tds_per_game": 0.56,
+        "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
+        "projected_team_points": 19.9,
         "injury_status": ""
       },
       "model": {
@@ -1431,53 +1211,328 @@
       }
     },
     {
-      "player_id": "00-0039489",
-      "player": "Hayden Rucci",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "TE",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 19.5,
-      "touchdown_lambda": 0.2174,
+      "player_id": "00-0035710",
+      "player": "Daniel Jones",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "QB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 11.2,
+      "touchdown_lambda": 0.1188,
       "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 19.5,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2174
+        "rushing_td_probability": 11.2,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.1188,
+        "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.76
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.786
       },
       "matchup": {
-        "overall_factor": 0.914,
+        "overall_factor": 0.911,
+        "rushing_factor": 1.021,
+        "passing_factor": 0.905
+      },
+      "inputs": {
+        "current_games": 10,
+        "current_rushing_td_rate": 0.1,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.23,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.158,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.875,
+        "projected_rushing_tds": 0.09,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 94.3
+      },
+      "actual_data": {
+        "current_games": 10,
+        "current_rushing_tds_per_game": 0.1,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.23,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.09,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036223",
+      "player": "Jonathan Taylor",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "RB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 54.8,
+      "touchdown_lambda": 0.7949,
+      "scoring": {
+        "rushing_td_probability": 54.0,
+        "receiving_td_probability": 1.9,
+        "rushing_lambda": 0.7761,
+        "receiving_lambda": 0.0188
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.9
+      },
+      "matchup": {
+        "overall_factor": 0.948,
+        "rushing_factor": 0.955,
+        "passing_factor": 0.925
+      },
+      "inputs": {
+        "current_games": 10,
+        "current_rushing_td_rate": 0.8,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.82,
+        "career_receiving_td_rate": 0.07,
+        "regressed_rushing_td_rate": 0.809,
+        "regressed_receiving_td_rate": 0.031,
+        "usage_factor": 1.006,
+        "projected_rushing_tds": 0.72,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 35.1
+      },
+      "actual_data": {
+        "current_games": 10,
+        "current_rushing_tds_per_game": 0.8,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.82,
+        "career_receiving_tds_per_game": 0.07,
+        "projected_rushing_tds": 0.72,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041125",
+      "player": "Seth McGowan",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "RB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 17.5,
+      "touchdown_lambda": 0.192,
+      "scoring": {
+        "rushing_td_probability": 17.5,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.192,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.9
+      },
+      "matchup": {
+        "overall_factor": 0.952,
+        "rushing_factor": 0.954,
+        "passing_factor": 0.889
+      },
+      "inputs": {
+        "current_games": 10,
+        "current_rushing_td_rate": 0.2,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.2,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.2,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.0,
+        "projected_rushing_tds": 0.18,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 9.7
+      },
+      "actual_data": {
+        "current_games": 10,
+        "current_rushing_tds_per_game": 0.2,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.2,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.18,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040179",
+      "player": "DJ Giddens",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "RB",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.956,
+        "rushing_factor": 0.956,
+        "passing_factor": 0.883
+      },
+      "inputs": {
+        "current_games": 1,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.021,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 9.5
+      },
+      "actual_data": {
+        "current_games": 1,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0040128",
+      "player": "Tyler Warren",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "TE",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 25.2,
+      "touchdown_lambda": 0.2909,
+      "scoring": {
+        "rushing_td_probability": 5.9,
+        "receiving_td_probability": 20.5,
+        "rushing_lambda": 0.0611,
+        "receiving_lambda": 0.2297
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.7
+      },
+      "matchup": {
+        "overall_factor": 0.876,
         "rushing_factor": 1.0,
-        "passing_factor": 0.914
+        "passing_factor": 0.904
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.12,
+        "current_receiving_td_rate": 0.25,
+        "career_rushing_td_rate": 0.08,
+        "career_receiving_td_rate": 0.24,
+        "regressed_rushing_td_rate": 0.1,
+        "regressed_receiving_td_rate": 0.245,
+        "usage_factor": 1.019,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.2,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 12.2
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.12,
+        "current_receiving_tds_per_game": 0.25,
+        "career_rushing_tds_per_game": 0.08,
+        "career_receiving_tds_per_game": 0.24,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.2,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033217",
+      "player": "Mo Alie-Cox",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "TE",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 16.8,
+      "touchdown_lambda": 0.1843,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 16.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1843
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.8
+      },
+      "matchup": {
+        "overall_factor": 0.903,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.903
       },
       "inputs": {
         "current_games": 4,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.25,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.2,
+        "career_receiving_td_rate": 0.16,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.217,
-        "usage_factor": 1.087,
+        "regressed_receiving_td_rate": 0.19,
+        "usage_factor": 0.915,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.19,
+        "projected_receiving_tds": 0.2,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 0.3
+        "usage_percentage": 2.5
       },
       "actual_data": {
         "current_games": 4,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.25,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.2,
+        "career_receiving_tds_per_game": 0.16,
         "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.19,
-        "projected_team_points": 18.9,
+        "projected_receiving_tds": 0.2,
+        "projected_team_points": 19.9,
         "injury_status": ""
       },
       "model": {
@@ -1486,108 +1541,53 @@
       }
     },
     {
-      "player_id": "00-0040189",
-      "player": "Oronde Gadsden II",
-      "team": "LAC",
-      "opponent": "BAL",
+      "player_id": "00-0037292",
+      "player": "Andrew Ogletree",
+      "team": "IND",
+      "opponent": "HOU",
       "position": "TE",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 11.2,
-      "touchdown_lambda": 0.1191,
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 4.9,
+      "touchdown_lambda": 0.0506,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 11.2,
+        "receiving_td_probability": 4.9,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1191
+        "receiving_lambda": 0.0506
       },
       "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.75
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
       },
       "matchup": {
-        "overall_factor": 0.878,
+        "overall_factor": 0.9,
         "rushing_factor": 1.0,
-        "passing_factor": 0.888
+        "passing_factor": 0.9
       },
       "inputs": {
-        "current_games": 8,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.12,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.17,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.145,
-        "usage_factor": 0.955,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.09,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 5.6
-      },
-      "actual_data": {
-        "current_games": 8,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.12,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.17,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.09,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038046",
-      "player": "Charlie Kolar",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "TE",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 7.2,
-      "touchdown_lambda": 0.0743,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 7.2,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0743
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.84
-      },
-      "matchup": {
-        "overall_factor": 0.868,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.888
-      },
-      "inputs": {
-        "current_games": 6,
+        "current_games": 7,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
         "career_receiving_td_rate": 0.1,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.057,
-        "usage_factor": 1.3,
+        "regressed_receiving_td_rate": 0.053,
+        "usage_factor": 0.949,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 5.1
+        "usage_percentage": 1.7
       },
       "actual_data": {
-        "current_games": 6,
+        "current_games": 7,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.1,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
+        "projected_team_points": 19.9,
         "injury_status": ""
       },
       "model": {
@@ -1596,26 +1596,26 @@
       }
     },
     {
-      "player_id": "00-0040331",
-      "player": "Patrick Herbert",
-      "team": "LAC",
-      "opponent": "BAL",
+      "player_id": "00-0033439",
+      "player": "Pharaoh Brown",
+      "team": "IND",
+      "opponent": "HOU",
       "position": "TE",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 0.0,
-      "touchdown_lambda": 0.0,
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 3.8,
+      "touchdown_lambda": 0.0387,
       "scoring": {
         "rushing_td_probability": 0.0,
-        "receiving_td_probability": 0.0,
+        "receiving_td_probability": 3.8,
         "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0
+        "receiving_lambda": 0.0387
       },
       "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.84
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
       },
       "matchup": {
-        "overall_factor": 0.934,
+        "overall_factor": 0.9,
         "rushing_factor": 1.0,
         "passing_factor": 0.9
       },
@@ -1624,25 +1624,25 @@
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.0,
+        "career_receiving_td_rate": 0.05,
         "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
+        "regressed_receiving_td_rate": 0.044,
+        "usage_factor": 0.872,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 0.0
+        "usage_percentage": 1.7
       },
       "actual_data": {
         "current_games": 1,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.05,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
+        "projected_team_points": 19.9,
         "injury_status": ""
       },
       "model": {
@@ -1651,342 +1651,12 @@
       }
     },
     {
-      "player_id": "00-0039915",
-      "player": "Ladd McConkey",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 18.2,
-      "touchdown_lambda": 0.2004,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 18.2,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2004
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.765
-      },
-      "matchup": {
-        "overall_factor": 0.889,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.889
-      },
-      "inputs": {
-        "current_games": 6,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.17,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.37,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.284,
-        "usage_factor": 0.87,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.13,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 6.2
-      },
-      "actual_data": {
-        "current_games": 6,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.17,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.37,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.13,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038544",
-      "player": "Quentin Johnston",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 17.7,
-      "touchdown_lambda": 0.1942,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 17.7,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.1942
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.786
-      },
-      "matchup": {
-        "overall_factor": 0.865,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.891
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.14,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.37,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.263,
-        "usage_factor": 0.953,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.11,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 6.5
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.14,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.37,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.11,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040311",
-      "player": "Theo Wease Jr.",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 13.4,
-      "touchdown_lambda": 0.144,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 13.4,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.144
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.84
-      },
-      "matchup": {
-        "overall_factor": 0.892,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.892
-      },
-      "inputs": {
-        "current_games": 2,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.2,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.16,
-        "usage_factor": 0.9,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 3.1
-      },
-      "actual_data": {
-        "current_games": 2,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.2,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0038573",
-      "player": "Derius Davis",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 7.8,
-      "touchdown_lambda": 0.0813,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 7.8,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0813
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.75
-      },
-      "matchup": {
-        "overall_factor": 0.737,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.878
-      },
-      "inputs": {
-        "current_games": 8,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.12,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.06,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.09,
-        "usage_factor": 0.839,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.09,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 0.9
-      },
-      "actual_data": {
-        "current_games": 8,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.12,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.06,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.09,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040184",
-      "player": "KeAndre Lambert-Smith",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 7.3,
-      "touchdown_lambda": 0.0756,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 7.3,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0756
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.84
-      },
-      "matchup": {
-        "overall_factor": 0.889,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.889
-      },
-      "inputs": {
-        "current_games": 3,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.08,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.058,
-        "usage_factor": 1.3,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 6.7
-      },
-      "actual_data": {
-        "current_games": 3,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.08,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0040727",
-      "player": "Tre Harris",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
-      "touchdown_probability": 2.4,
-      "touchdown_lambda": 0.0246,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 2.4,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.0246
-      },
-      "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.84
-      },
-      "matchup": {
-        "overall_factor": 0.89,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.89
-      },
-      "inputs": {
-        "current_games": 7,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.0,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.04,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.021,
-        "usage_factor": 1.153,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 7.6
-      },
-      "actual_data": {
-        "current_games": 7,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.0,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.04,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
-      "player_id": "00-0041550",
-      "player": "Brenen Thompson",
-      "team": "LAC",
-      "opponent": "BAL",
-      "position": "WR",
-      "game_id": "2026_10_LAC_BAL",
+      "player_id": "00-0038394",
+      "player": "Will Mallory",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "TE",
+      "game_id": "2026_11_IND_HOU",
       "touchdown_probability": 0.0,
       "touchdown_lambda": 0.0,
       "scoring": {
@@ -1996,38 +1666,368 @@
         "receiving_lambda": 0.0
       },
       "environment": {
-        "projected_team_points": 18.9,
-        "scoring_factor": 0.84
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
       },
       "matchup": {
-        "overall_factor": 0.892,
+        "overall_factor": 0.9,
         "rushing_factor": 1.0,
-        "passing_factor": 0.892
+        "passing_factor": 0.9
       },
       "inputs": {
-        "current_games": 1,
+        "current_games": 2,
         "current_rushing_td_rate": 0.0,
         "current_receiving_td_rate": 0.0,
         "career_rushing_td_rate": 0.0,
         "career_receiving_td_rate": 0.0,
         "regressed_rushing_td_rate": 0.0,
         "regressed_receiving_td_rate": 0.0,
-        "usage_factor": 1.0,
+        "usage_factor": 1.3,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 4.6
+        "usage_percentage": 7.8
       },
       "actual_data": {
-        "current_games": 1,
+        "current_games": 2,
         "current_rushing_tds_per_game": 0.0,
         "current_receiving_tds_per_game": 0.0,
         "career_rushing_tds_per_game": 0.0,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
-        "projected_team_points": 18.9,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0037664",
+      "player": "Alec Pierce",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 17.4,
+      "touchdown_lambda": 0.1907,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 17.4,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1907
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.906,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.906
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.26,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.208,
+        "usage_factor": 0.917,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 6.1
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.26,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0035021",
+      "player": "Ashton Dulin",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 12.7,
+      "touchdown_lambda": 0.1353,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 12.7,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1353
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.765
+      },
+      "matchup": {
+        "overall_factor": 0.86,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.905
+      },
+      "inputs": {
+        "current_games": 6,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.17,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.07,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.113,
+        "usage_factor": 1.23,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.13,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 3.2
+      },
+      "actual_data": {
+        "current_games": 6,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.17,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.07,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.13,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0036182",
+      "player": "Nick Westbrook-Ikhine",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 11.8,
+      "touchdown_lambda": 0.1255,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 11.8,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.1255
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.961,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.883
+      },
+      "inputs": {
+        "current_games": 3,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.23,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.167,
+        "usage_factor": 0.75,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 1.2
+      },
+      "actual_data": {
+        "current_games": 3,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.23,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0032951",
+      "player": "Laquon Treadwell",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 8.4,
+      "touchdown_lambda": 0.088,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 8.4,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.088
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.8
+      },
+      "matchup": {
+        "overall_factor": 0.904,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.904
+      },
+      "inputs": {
+        "current_games": 10,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.1,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.07,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.087,
+        "usage_factor": 1.077,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.08,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 5.6
+      },
+      "actual_data": {
+        "current_games": 10,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.1,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.07,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.08,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0039816",
+      "player": "Anthony Gould",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.906,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.906
+      },
+      "inputs": {
+        "current_games": 7,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 1.3,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 1.2
+      },
+      "actual_data": {
+        "current_games": 7,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0041132",
+      "player": "Deion Burks",
+      "team": "IND",
+      "opponent": "HOU",
+      "position": "WR",
+      "game_id": "2026_11_IND_HOU",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 19.9,
+        "scoring_factor": 0.884
+      },
+      "matchup": {
+        "overall_factor": 0.7,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.907
+      },
+      "inputs": {
+        "current_games": 8,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.998,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 2.4
+      },
+      "actual_data": {
+        "current_games": 8,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 19.9,
         "injury_status": ""
       },
       "model": {
@@ -2038,10 +2038,10 @@
   ],
   "counts": {
     "total": 37,
-    "QB": 6,
-    "RB": 8,
+    "QB": 4,
+    "RB": 9,
     "WR": 14,
-    "TE": 9
+    "TE": 10
   },
   "diagnostics": {
     "missing_player_metrics": 0

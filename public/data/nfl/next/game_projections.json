@@ -1,20 +1,20 @@
 {
   "games": [
     {
-      "game_id": "2026_10_LAC_BAL",
-      "away_team": "LAC",
-      "home_team": "BAL",
+      "game_id": "2026_11_IND_HOU",
+      "away_team": "IND",
+      "home_team": "HOU",
       "away_projection": {
-        "projected_points": 18.9,
+        "projected_points": 19.9,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": -1.03,
-          "matchup_adjustment": -1.79,
+          "efficiency_adjustment": -0.73,
+          "matchup_adjustment": -1.1,
           "home_field_adjustment": -0.75,
-          "pre_injury_projection": 18.93,
+          "pre_injury_projection": 19.93,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 18.93,
+          "post_injury_projection": 19.93,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
@@ -25,21 +25,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
-          "roof": "outdoor",
-          "stadium": "M&T Bank Stadium",
-          "weather": {
-            "forecast_time": "2026-11-16T20:00",
-            "temperature_f": 39.5,
-            "feels_like_f": 34.1,
-            "humidity_pct": 80.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.4,
-            "wind_gust_mph": 4.5,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "available": false,
+          "roof": "retractable",
+          "stadium": "NRG Stadium",
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -47,28 +36,28 @@
           "rushing_factor": 1.0,
           "kicking_factor": 1.0
         },
-        "matchup_rating": -22.0,
-        "matchup_label": "Poor",
+        "matchup_rating": -12.9,
+        "matchup_label": "Difficult",
         "passing_matchup": {
-          "rating": -25.1,
+          "rating": -29.3,
           "label": "Poor"
         },
         "rushing_matchup": {
-          "rating": -24.8,
-          "label": "Poor"
+          "rating": 5.7,
+          "label": "Favorable"
         }
       },
       "home_projection": {
-        "projected_points": 23.7,
+        "projected_points": 24.4,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": 0.24,
-          "matchup_adjustment": 0.18,
+          "efficiency_adjustment": 0.57,
+          "matchup_adjustment": 0.58,
           "home_field_adjustment": 0.75,
-          "pre_injury_projection": 23.67,
+          "pre_injury_projection": 24.41,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 23.67,
+          "post_injury_projection": 24.41,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
@@ -79,21 +68,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
-          "roof": "outdoor",
-          "stadium": "M&T Bank Stadium",
-          "weather": {
-            "forecast_time": "2026-11-16T20:00",
-            "temperature_f": 39.5,
-            "feels_like_f": 34.1,
-            "humidity_pct": 80.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.4,
-            "wind_gust_mph": 4.5,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
+          "available": false,
+          "roof": "retractable",
+          "stadium": "NRG Stadium",
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -101,33 +79,33 @@
           "rushing_factor": 1.0,
           "kicking_factor": 1.0
         },
-        "matchup_rating": 2.0,
-        "matchup_label": "Neutral",
+        "matchup_rating": 7.3,
+        "matchup_label": "Favorable",
         "passing_matchup": {
-          "rating": 4.2,
-          "label": "Neutral"
+          "rating": 12.8,
+          "label": "Favorable"
         },
         "rushing_matchup": {
-          "rating": 0.6,
+          "rating": 0.0,
           "label": "Neutral"
         }
       },
       "projected_score": {
-        "away": 18.9,
-        "home": 23.7
+        "away": 19.9,
+        "home": 24.4
       },
-      "projected_total": 42.6,
-      "expected_margin": 4.8,
-      "projected_winner": "BAL",
+      "projected_total": 44.3,
+      "expected_margin": 4.5,
+      "projected_winner": "HOU",
       "win_probability": {
-        "away": 32.3,
-        "home": 67.7
+        "away": 33.4,
+        "home": 66.6
       },
-      "projection_confidence": 54.2,
+      "projection_confidence": 53.5,
       "injury_context": {
         "away": {
           "team_context": {
-            "team": "LAC",
+            "team": "IND",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -153,7 +131,7 @@
         },
         "home": {
           "team_context": {
-            "team": "BAL",
+            "team": "HOU",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -179,35 +157,16 @@
         }
       },
       "weather_context": {
-        "game_id": "2026_10_LAC_BAL",
-        "away_team": "LAC",
-        "home_team": "BAL",
-        "stadium": "M&T Bank Stadium",
-        "latitude": 39.278,
-        "longitude": -76.6227,
-        "roof": "outdoor",
-        "kickoff": "2026-11-16T20:15",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-16T20:00",
-          "temperature_f": 39.5,
-          "feels_like_f": 34.1,
-          "humidity_pct": 80.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 4.4,
-          "wind_gust_mph": 4.5,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "game_id": "2026_11_IND_HOU",
+        "away_team": "IND",
+        "home_team": "HOU",
+        "stadium": "NRG Stadium",
+        "latitude": 29.6847,
+        "longitude": -95.4107,
+        "roof": "retractable",
+        "kickoff": "2026-11-19T20:15",
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -218,20 +177,20 @@
   "league_baselines": {
     "points_per_game": 22.5,
     "points_allowed_per_game": 22.5,
-    "offensive_epa": -0.0026875,
-    "defensive_epa": -0.00459375,
-    "offensive_success": 43.35,
-    "defensive_success": 43.328125,
-    "offensive_ypp": 5.41,
-    "defensive_ypp": 5.404375,
-    "offensive_explosive": 9.165625,
-    "defensive_explosive": 9.109375,
-    "offensive_third_down": 39.828125,
-    "defensive_third_down": 39.59375,
-    "offensive_red_zone": 19.5125,
-    "defensive_red_zone": 19.18125,
-    "offensive_turnovers": 1.2221875,
-    "defensive_takeaways": 1.2296875
+    "offensive_epa": -0.0031249999999999993,
+    "defensive_epa": -0.0042499999999999994,
+    "offensive_success": 43.1875,
+    "defensive_success": 43.2125,
+    "offensive_ypp": 5.4140625,
+    "defensive_ypp": 5.41625,
+    "offensive_explosive": 9.275,
+    "defensive_explosive": 9.228125,
+    "offensive_third_down": 39.6,
+    "defensive_third_down": 39.328125,
+    "offensive_red_zone": 19.59375,
+    "defensive_red_zone": 19.384375,
+    "offensive_turnovers": 1.2196875,
+    "defensive_takeaways": 1.2253125
   },
   "model": {
     "name": "Alpha Wagerz NFL Projection Model",

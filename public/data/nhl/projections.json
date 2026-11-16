@@ -1,37 +1,18 @@
 {
   "games": [
     {
-      "game_id": 2026020326,
-      "away": "EDM",
-      "home": "PHI",
-      "away_goals": 3.12,
-      "home_goals": 2.51,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 7,
-      "probabilities": {
-        "away_win_probability": 0.60022,
-        "home_win_probability": 0.39978,
-        "away_puck_line_plus_1_5_probability": 0.81936,
-        "home_puck_line_minus_1_5_probability": 0.18064,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 7,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020327,
-      "away": "FLA",
-      "home": "DAL",
-      "away_goals": 3.37,
-      "home_goals": 3.15,
+      "game_id": 2026020331,
+      "away": "MTL",
+      "home": "NYR",
+      "away_goals": 2.74,
+      "home_goals": 3.01,
       "model": "recent_goals_for_against_baseline",
       "sample_games": 6,
       "probabilities": {
-        "away_win_probability": 0.53278,
-        "home_win_probability": 0.46722,
-        "away_puck_line_plus_1_5_probability": 0.75377,
-        "home_puck_line_minus_1_5_probability": 0.24623,
+        "away_win_probability": 0.45555,
+        "home_win_probability": 0.54445,
+        "away_puck_line_plus_1_5_probability": 0.70165,
+        "home_puck_line_minus_1_5_probability": 0.29835,
         "method": "independent_poisson_goals_regulation_tie_split_equally",
         "calibrated": false,
         "sample_games": 6,
@@ -39,59 +20,21 @@
       }
     },
     {
-      "game_id": 2026020328,
-      "away": "CGY",
-      "home": "ANA",
-      "away_goals": 3.0,
-      "home_goals": 3.64,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 7,
-      "probabilities": {
-        "away_win_probability": 0.40329,
-        "home_win_probability": 0.59671,
-        "away_puck_line_plus_1_5_probability": 0.63585,
-        "home_puck_line_minus_1_5_probability": 0.36415,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 7,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020329,
+      "game_id": 2026020332,
       "away": "VAN",
-      "home": "VGK",
-      "away_goals": 2.08,
-      "home_goals": 3.75,
+      "home": "UTA",
+      "away_goals": 3.4,
+      "home_goals": 3.6,
       "model": "recent_goals_for_against_baseline",
       "sample_games": 6,
       "probabilities": {
-        "away_win_probability": 0.24782,
-        "home_win_probability": 0.75218,
-        "away_puck_line_plus_1_5_probability": 0.48044,
-        "home_puck_line_minus_1_5_probability": 0.51956,
+        "away_win_probability": 0.47183,
+        "home_win_probability": 0.52817,
+        "away_puck_line_plus_1_5_probability": 0.69437,
+        "home_puck_line_minus_1_5_probability": 0.30563,
         "method": "independent_poisson_goals_regulation_tie_split_equally",
         "calibrated": false,
         "sample_games": 6,
-        "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
-      }
-    },
-    {
-      "game_id": 2026020330,
-      "away": "NSH",
-      "home": "SJS",
-      "away_goals": 3.79,
-      "home_goals": 2.04,
-      "model": "recent_goals_for_against_baseline",
-      "sample_games": 7,
-      "probabilities": {
-        "away_win_probability": 0.76196,
-        "home_win_probability": 0.23804,
-        "away_puck_line_plus_1_5_probability": 0.91681,
-        "home_puck_line_minus_1_5_probability": 0.08319,
-        "method": "independent_poisson_goals_regulation_tie_split_equally",
-        "calibrated": false,
-        "sample_games": 7,
         "limitations": "Baseline only: no verified starting goalies, injuries, OT team strengths or probability calibration."
       }
     }
