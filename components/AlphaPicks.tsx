@@ -356,6 +356,9 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
 }
 
 function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: number; category: "parlay" | "straight" | "lotto" }) {
+  // Multiplying leg probabilities and decimal odds is not a valid joint
+  // model or confirmed sportsbook quote for a same-game parlay.
+  const hasSameGameLegs = new Set(t.legs.map(leg => leg.game)).size < t.legs.length;
   const accent = category === "lotto" ? "text-fuchsia-200 border-fuchsia-400/25 bg-fuchsia-400/10" : category === "straight" ? "text-emerald-200 border-emerald-400/25 bg-emerald-400/10" : "text-cyan-200 border-cyan-400/25 bg-cyan-400/10";
   return <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#121d30] via-[#0c1525] to-[#0a1020] shadow-[0_12px_35px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:border-cyan-300/25 hover:shadow-[0_18px_45px_rgba(0,0,0,0.3)]">
     <div className="h-[2px] bg-gradient-to-r from-cyan-400/80 via-fuchsia-400/60 to-transparent" />
@@ -365,7 +368,7 @@ function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: numbe
         <p className="mt-1 text-lg font-black text-white">{t.legs.length === 1 ? "Straight Bet" : t.legs.length + "-Leg " + (category === "lotto" ? "Lotto" : "Parlay")}</p>
       </div>
       <div className="text-right">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Total Odds</p>
+        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{hasSameGameLegs ? "Indicative Odds" : "Total Odds"}</p>
         <span className="mt-1 inline-block rounded-lg border border-fuchsia-300/25 bg-fuchsia-300/10 px-3 py-1 text-lg font-black tabular-nums text-fuchsia-200">{fmtOdds(t.odds)}</span>
       </div>
     </div>
@@ -384,8 +387,8 @@ function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: numbe
     </div>
     <div className="mt-auto flex items-center justify-between gap-3 border-t border-white/10 bg-white/[0.025] px-5 py-4">
       <div>
-        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{t.legs.length === 1 ? "Modeled Probability" : "Combined Model Estimate"}</p>
-        <p className="mt-1 text-xl font-black tabular-nums text-white">{percent(t.probability)}</p>
+        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{hasSameGameLegs ? "Joint Estimate Unavailable" : t.legs.length === 1 ? "Modeled Probability" : "Combined Model Estimate"}</p>
+        <p className="mt-1 text-xl font-black tabular-nums text-white">{hasSameGameLegs ? "—" : percent(t.probability)}</p>
       </div>
       <span className={"rounded-full border px-3 py-1 text-[10px] font-black uppercase tracking-wider " + accent}>{category === "lotto" ? "High Risk" : category === "straight" ? "Straight" : "Parlay"}</span>
     </div>
