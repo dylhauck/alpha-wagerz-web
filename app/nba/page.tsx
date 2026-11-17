@@ -1165,6 +1165,7 @@ export default function NBAPage() {
           teamsResponse,
           matchupResponse,
           firstBasketResponse,
+          nextFirstBasketResponse,
         ] = await Promise.all([
           fetch(
             "/data/nba/slate.json",
@@ -1187,6 +1188,7 @@ export default function NBAPage() {
             },
           ),
           fetch("/data/nba/first_basket.json", { cache: "no-store" }),
+          fetch("/data/nba/next/first_basket.json", { cache: "no-store" }),
         ]);
 
         if (!slateResponse.ok) {
@@ -1232,14 +1234,26 @@ export default function NBAPage() {
           setMatchupGames([]);
         }
 
-        if (firstBasketResponse.ok) {
-          const firstBasketPayload = await firstBasketResponse.json();
-          setFirstBasketGames(
-            Array.isArray(firstBasketPayload?.games) ? firstBasketPayload.games : [],
-          );
-        } else {
-          setFirstBasketGames([]);
+        // The slate can roll forward before the daily model refresh publishes
+        // the current first-basket file. Use already-generated next-slate
+        // forecasts only for exact matching game IDs; never mix slates.
+        const currentFirstBasket = firstBasketResponse.ok
+          ? await firstBasketResponse.json() : {};
+        const nextFirstBasket = nextFirstBasketResponse.ok
+          ? await nextFirstBasketResponse.json() : {};
+        const validGameIds = new Set(loadedGames.map(game => String(game.game_id)));
+        const currentRows: FirstBasketGame[] = Array.isArray(currentFirstBasket?.games)
+          ? currentFirstBasket.games : [];
+        const nextRows: FirstBasketGame[] = Array.isArray(nextFirstBasket?.games)
+          ? nextFirstBasket.games : [];
+        const byGame = new Map<string, FirstBasketGame>();
+        for (const row of nextRows) {
+          if (validGameIds.has(String(row.game_id))) byGame.set(String(row.game_id), row);
         }
+        for (const row of currentRows) {
+          if (validGameIds.has(String(row.game_id))) byGame.set(String(row.game_id), row);
+        }
+        setFirstBasketGames([...byGame.values()]);
 
         if (loadedGames.length) {
           setSelectedGameId(
