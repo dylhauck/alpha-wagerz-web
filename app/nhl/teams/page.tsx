@@ -14,7 +14,7 @@ const NAMES:Record<string,string>={
 const record=(w?:number,l?:number,ot?:number)=>w==null||l==null?"—":`${w}-${l}${ot?", "+ot+" OTL":""}`;
 const cols:[SortKey,string][]=[["team","Team"],["conference","Conference"],["division","Division"],["games","GP"],["wins","W"],["losses","L"],["otLosses","OTL"],["points","PTS"],["winPct","Win %"],["goalsFor","GF"],["goalsAgainst","GA"],["goalDiff","Goal Diff"]];
 const n=(value:unknown)=>typeof value==="number"&&Number.isFinite(value)?value:null;
-export default function NHLTeamsPage(){
+export default function NHLTeamsPage({next=false}:{next?:boolean}={}){
  const [season,setSeason]=useState<Season>("current");
  const [view,setView]=useState<View>("perGame");
  const [conference,setConference]=useState("ALL");
@@ -23,7 +23,7 @@ export default function NHLTeamsPage(){
  const [sort,setSort]=useState<{key:SortKey;desc:boolean}>({key:"winPct",desc:true});
  const [datasets,setDatasets]=useState<Record<Season,TeamStats[]|null>>({current:null,last:null});
  const [loading,setLoading]=useState(true);
- useEffect(()=>{let mounted=true;Promise.all((([["current","teams.json"],["last","teams_last_season.json"]] as const).map(async ([key,file])=>{try{const res=await fetch("/data/nhl/"+file,{cache:"no-store"});if(!res.ok)return [key,null] as const;const payload=await res.json();const rows=Array.isArray(payload)?payload:payload.teams;return [key,Array.isArray(rows)?rows as TeamStats[]:null] as const;}catch{return [key,null] as const;}}))).then(results=>{if(mounted){setDatasets(Object.fromEntries(results) as Record<Season,TeamStats[]|null>);setLoading(false);}});return()=>{mounted=false};},[]);
+ useEffect(()=>{let mounted=true;Promise.all((([["current",next?"next/teams.json":"teams.json"],["last","teams_last_season.json"]] as const).map(async ([key,file])=>{try{const res=await fetch("/data/nhl/"+file,{cache:"no-store"});if(!res.ok)return [key,null] as const;const payload=await res.json();const rows=Array.isArray(payload)?payload:payload.teams;return [key,Array.isArray(rows)?rows as TeamStats[]:null] as const;}catch{return [key,null] as const;}}))).then(results=>{if(mounted){setDatasets(Object.fromEntries(results) as Record<Season,TeamStats[]|null>);setLoading(false);}});return()=>{mounted=false};},[next]);
  const rows=useMemo(()=>{
   const data=datasets[season]||[];
   const metric=(t:TeamStats,key:SortKey):string|number|null=>{
