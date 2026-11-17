@@ -449,30 +449,34 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   const categoryTab = mainTab === "parlay" ? parlayTab : mainTab === "straight" ? straightTab : lottoTab;
   const eligibleLegs = useMemo(() => categoryTab === "combos" ? legs : legs.filter(leg => leg.marketType === categoryTab), [legs, categoryTab]);
   const straights = useMemo(() => {
-    const ranked = eligibleLegs.filter(leg => leg.odds >= -150)
-      .sort((a, b) => b.probability - a.probability);
-    if (categoryTab !== "combos") return ranked.slice(0, 6).map(leg => ticket([leg]));
-    // Combos can draw from every market. Favor variety only when candidates
-    // are genuinely close in model confidence; never force a weak ML/spread.
+    // Never recommend opposite outcomes from the same game/market, or
+    // multiple contradictory props on the same player.
+    // Require the model's probability to exceed the sportsbook break-even
+    // probability; a high win chance alone is not a favorable wager.
+    const ranked = eligibleLegs
+      .filter(leg => leg.odds >= -150 && leg.probability > probabilityFromOdds(leg.odds))
+      .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) -
+                      (a.probability - probabilityFromOdds(a.odds)) ||
+                      b.probability - a.probability);
     const selected: Leg[] = [];
-    const playerCounts = new Map<string, number>();
-    const playerName = (leg: Leg) => leg.pick.split(/\\s+(?:Over|Under)\\s+/i)[0].trim().toLowerCase();
+    const playerName = (leg: Leg) =>
+      leg.pick.split(/\s+(?:Over|Under)\s+/i)[0].trim().toLowerCase();
+    const conflicts = (a: Leg, b: Leg) => {
+      if (a.marketType === "player_prop" && b.marketType === "player_prop") {
+        return a.game === b.game && playerName(a) === playerName(b);
+      }
+      return a.game === b.game && a.marketType === b.marketType;
+    };
     const choose = (options: Leg[]) => {
       for (const leg of options) {
         if (selected.length >= 6) break;
-        if (selected.includes(leg)) continue;
-        if (leg.marketType === "player_prop" && (playerCounts.get(playerName(leg)) ?? 0) >= 2) continue;
+        if (selected.some(existing => conflicts(existing, leg))) continue;
         selected.push(leg);
-        if (leg.marketType === "player_prop") {
-          const name = playerName(leg);
-          playerCounts.set(name, (playerCounts.get(name) ?? 0) + 1);
-        }
       }
     };
     if (categoryTab === "combos") {
-      // Combos must represent different market families, not repeat the
-      // Player Props leaderboard. Reserve one qualifying selection from
-      // each available family, then fill by model confidence.
+      // Represent available market families without inserting negative-edge
+      // bets or opposing outcomes merely to fill six cards.
       const families: MarketType[] = ["moneyline", "spread", "total", "player_prop"];
       for (const family of families) {
         const best = ranked.find(leg => leg.marketType === family);
@@ -480,7 +484,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       }
     }
     choose(ranked);
-    return selected.slice(0, 6).map(leg => ticket([leg]));
+    return selected.map(leg => ticket([leg]));
   }, [eligibleLegs, categoryTab]);
   const parlays = useMemo(() => makeParlays(eligibleLegs, 500, categoryTab === "combos"), [eligibleLegs, categoryTab]);
   const lottos = useMemo(() => makeParlays(eligibleLegs, 7500, categoryTab === "combos"), [eligibleLegs, categoryTab]);
