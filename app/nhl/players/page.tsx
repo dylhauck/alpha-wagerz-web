@@ -10,7 +10,7 @@ const text=(v:unknown)=>String(v??"");
 const columns=[["name","Player"],["team","Team"],["position","Pos"],["games","GP"],["goals","Goals"],["assists","Assists"],["points","Points"],["shots","Shots"],["goals_per_game","Goals/G"],["shots_per_game","Shots/G"]] as const;
 const goalieColumns=[["name","Goalie"],["team","Team"],["games","GP"],["saves","Saves"],["shots_against","Shots Against"],["goals_against","Goals Against"],["save_percentage","Save %"],["goals_against_per_appearance","GA/Game"]] as const;
 type View="current"|"last"|"career";
-export default function NHLPlayersPage(){
+export default function NHLPlayersPage({next=false}:{next?:boolean}={}){
  const [view,setView]=useState<View>("current");
  const [mode,setMode]=useState<"perGame"|"totals">("perGame");
  const [position,setPosition]=useState("ALL");
@@ -21,10 +21,10 @@ export default function NHLPlayersPage(){
  const [sort,setSort]=useState<{key:string;desc:boolean}>({key:"points",desc:true});
  const [goalieSort,setGoalieSort]=useState<{key:string;desc:boolean}>({key:"save_percentage",desc:true});
  useEffect(()=>{let alive=true;(async()=>{
-  const sources:[View,string][]=[["current","players.json"],["last","players_last_season.json"],["career","players_career.json"]];
+  const sources:[View,string][]=[["current",next?"next/players.json":"players.json"],["last","players_last_season.json"],["career","players_career.json"]];
   const result=await Promise.all(sources.map(async ([key,file])=>{try{const response=await fetch("/data/nhl/"+file,{cache:"no-store"});if(!response.ok)return [key,null] as const;const json=await response.json();return [key,{players:Array.isArray(json.players)?json.players:[],goalies:Array.isArray(json.goalies)?json.goalies:[]}] as const;}catch{return [key,null] as const;}}));
   if(alive){setDatasets(Object.fromEntries(result) as Record<View,{players:Row[];goalies:Row[]}|null>);setLoading(false);}
- })();return()=>{alive=false};},[]);
+ })();return()=>{alive=false};},[next]);
  const data=datasets[view];
  const positions=["ALL","C","L","R","D","G"] as const;
  const order=(rows:Row[],key:string,desc:boolean)=>[...rows].sort((a,b)=>{const av=a[key],bv=b[key];const cmp=(typeof av==="number"||typeof bv==="number")?num(av)-num(bv):text(av).localeCompare(text(bv),undefined,{numeric:true});return desc?-cmp:cmp;});
