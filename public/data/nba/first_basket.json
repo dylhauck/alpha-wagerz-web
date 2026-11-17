@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T18:48:56.049887+00:00",
+  "generated_at": "2026-11-17T19:41:17.040042+00:00",
   "slate_type": "current",
   "games": [
     {
@@ -220,8 +220,7 @@
       "lineup_sources": {
         "away": "previous_confirmed_lineup",
         "away_previous_game_id": "401909999",
-        "home": "previous_confirmed_lineup",
-        "home_previous_game_id": "401909999"
+        "home": "projected_by_minutes"
       },
       "projected_starters": [
         {
@@ -265,20 +264,12 @@
           "fg_pct": 0.4
         },
         {
-          "player_id": 1630183,
-          "player_name": "Jaden McDaniels",
+          "player_id": 1630545,
+          "player_name": "Terrence Shannon Jr",
           "team": "MIN",
           "side": "home",
-          "minutes": 31.0,
-          "fg_pct": 0.455
-        },
-        {
-          "player_id": 1630228,
-          "player_name": "Jonathan Kuminga",
-          "team": "MIN",
-          "side": "home",
-          "minutes": 29.0,
-          "fg_pct": 0.417
+          "minutes": 35.0,
+          "fg_pct": 0.727
         },
         {
           "player_id": 203497,
@@ -287,6 +278,14 @@
           "side": "home",
           "minutes": 32.0,
           "fg_pct": 0.5
+        },
+        {
+          "player_id": 1630183,
+          "player_name": "Jaden McDaniels",
+          "team": "MIN",
+          "side": "home",
+          "minutes": 31.0,
+          "fg_pct": 0.455
         },
         {
           "player_id": 1630245,
@@ -312,18 +311,18 @@
           "player_id": 1630163,
           "player_name": "LaMelo Ball",
           "team": "MIN",
-          "probability": 18.17,
+          "probability": 18.09,
           "first_shot_rate": 33.33,
           "first_basket_rate": 50.0,
           "starts_sample": 6,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 203081,
           "player_name": "Damian Lillard",
           "team": "POR",
-          "probability": 12.73,
+          "probability": 12.67,
           "first_shot_rate": 0.0,
           "first_basket_rate": 28.57,
           "starts_sample": 7,
@@ -334,7 +333,7 @@
           "player_id": 1631321,
           "player_name": "Sidy Cissoko",
           "team": "POR",
-          "probability": 11.19,
+          "probability": 11.14,
           "first_shot_rate": 25.0,
           "first_basket_rate": 25.0,
           "starts_sample": 4,
@@ -342,32 +341,32 @@
           "lineup_status": "previous_confirmed_lineup"
         },
         {
+          "player_id": 1630545,
+          "player_name": "Terrence Shannon Jr",
+          "team": "MIN",
+          "probability": 10.48,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
           "player_id": 1630183,
           "player_name": "Jaden McDaniels",
           "team": "MIN",
-          "probability": 10.35,
+          "probability": 10.3,
           "first_shot_rate": 50.0,
           "first_basket_rate": 16.67,
           "starts_sample": 6,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
-        },
-        {
-          "player_id": 1630228,
-          "player_name": "Jonathan Kuminga",
-          "team": "MIN",
-          "probability": 10.08,
-          "first_shot_rate": 16.67,
-          "first_basket_rate": 16.67,
-          "starts_sample": 6,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1641739,
           "player_name": "Toumani Camara",
           "team": "POR",
-          "probability": 8.3,
+          "probability": 8.26,
           "first_shot_rate": 0.0,
           "first_basket_rate": 14.29,
           "starts_sample": 7,
@@ -378,7 +377,7 @@
           "player_id": 1642270,
           "player_name": "Donovan Clingan",
           "team": "POR",
-          "probability": 6.57,
+          "probability": 6.54,
           "first_shot_rate": 28.57,
           "first_basket_rate": 0.0,
           "starts_sample": 7,
@@ -389,18 +388,18 @@
           "player_id": 203497,
           "player_name": "Rudy Gobert",
           "team": "MIN",
-          "probability": 5.92,
+          "probability": 5.89,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 6,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1630166,
           "player_name": "Deni Avdija",
           "team": "POR",
-          "probability": 5.76,
+          "probability": 5.73,
           "first_shot_rate": 28.57,
           "first_basket_rate": 0.0,
           "starts_sample": 7,
@@ -411,12 +410,12 @@
           "player_id": 1630245,
           "player_name": "Ayo Dosunmu",
           "team": "MIN",
-          "probability": 4.94,
+          "probability": 4.91,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 6,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         }
       ],
       "status": "estimated",

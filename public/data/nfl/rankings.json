@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T18:49:38.747484+00:00",
+  "generated_at": "2026-11-17T19:44:53.559713+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -26,13 +26,13 @@
     }
   },
   "counts": {
-    "game_bets": 1,
+    "game_bets": 2,
     "player_props": 0,
-    "all_candidates": 1,
+    "all_candidates": 2,
     "best_bets": 1,
     "strong_plays": 0,
     "leans": 0,
-    "passes": 0
+    "passes": 1
   },
   "best_bets": [
     {
@@ -41,8 +41,8 @@
       "ranking_score": 88.45,
       "confidence": 83.5,
       "upstream_label": "ELITE",
-      "edge_strength": 7.88,
-      "edge": 0.197,
+      "edge_strength": 8.44,
+      "edge": 0.211,
       "market_type": "moneyline",
       "game_id": "2026_11_IND_HOU",
       "matchup": "IND @ HOU",
@@ -62,7 +62,7 @@
         "home_team": "HOU",
         "market": "moneyline",
         "selection": "IND",
-        "edge": 0.197,
+        "edge": 0.211,
         "confidence_score": 83.5,
         "confidence_label": "ELITE"
       }
@@ -70,7 +70,40 @@
   ],
   "strong_plays": [],
   "leans": [],
-  "passes": [],
+  "passes": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 47.58,
+      "confidence": 41.3,
+      "upstream_label": "PASS",
+      "edge_strength": 1.8667,
+      "edge": 2.8,
+      "market_type": "game_total",
+      "game_id": "2026_11_IND_HOU",
+      "matchup": "IND @ HOU",
+      "away_team": "IND",
+      "home_team": "HOU",
+      "team": "",
+      "pick": "UNDER 44.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_11_IND_HOU",
+        "away_team": "IND",
+        "home_team": "HOU",
+        "market": "game_total",
+        "selection": "UNDER 44.5",
+        "edge": 2.8,
+        "confidence_score": 41.3,
+        "confidence_label": "PASS"
+      }
+    }
+  ],
   "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
@@ -78,8 +111,8 @@
       "ranking_score": 88.45,
       "confidence": 83.5,
       "upstream_label": "ELITE",
-      "edge_strength": 7.88,
-      "edge": 0.197,
+      "edge_strength": 8.44,
+      "edge": 0.211,
       "market_type": "moneyline",
       "game_id": "2026_11_IND_HOU",
       "matchup": "IND @ HOU",
@@ -99,7 +132,7 @@
         "home_team": "HOU",
         "market": "moneyline",
         "selection": "IND",
-        "edge": 0.197,
+        "edge": 0.211,
         "confidence_score": 83.5,
         "confidence_label": "ELITE"
       }
@@ -112,8 +145,8 @@
       "ranking_score": 88.45,
       "confidence": 83.5,
       "upstream_label": "ELITE",
-      "edge_strength": 7.88,
-      "edge": 0.197,
+      "edge_strength": 8.44,
+      "edge": 0.211,
       "market_type": "moneyline",
       "game_id": "2026_11_IND_HOU",
       "matchup": "IND @ HOU",
@@ -133,9 +166,41 @@
         "home_team": "HOU",
         "market": "moneyline",
         "selection": "IND",
-        "edge": 0.197,
+        "edge": 0.211,
         "confidence_score": 83.5,
         "confidence_label": "ELITE"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 47.58,
+      "confidence": 41.3,
+      "upstream_label": "PASS",
+      "edge_strength": 1.8667,
+      "edge": 2.8,
+      "market_type": "game_total",
+      "game_id": "2026_11_IND_HOU",
+      "matchup": "IND @ HOU",
+      "away_team": "IND",
+      "home_team": "HOU",
+      "team": "",
+      "pick": "UNDER 44.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_11_IND_HOU",
+        "away_team": "IND",
+        "home_team": "HOU",
+        "market": "game_total",
+        "selection": "UNDER 44.5",
+        "edge": 2.8,
+        "confidence_score": 41.3,
+        "confidence_label": "PASS"
       }
     }
   ],

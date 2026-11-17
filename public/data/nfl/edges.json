@@ -7,10 +7,10 @@
       "model_projection": {
         "away_points": "",
         "home_points": "",
-        "total": 44.3,
+        "total": 41.7,
         "home_margin": "",
-        "away_win_probability": 0.34700000000000003,
-        "home_win_probability": 0.653,
+        "away_win_probability": 0.361,
+        "home_win_probability": 0.639,
         "projection_confidence": 53.0
       },
       "market": {
@@ -148,15 +148,22 @@
         {
           "market": "moneyline",
           "selection": "IND",
-          "edge": 0.197,
+          "edge": 0.211,
           "confidence_score": 83.5,
           "confidence_label": "ELITE"
+        },
+        {
+          "market": "game_total",
+          "selection": "UNDER 44.5",
+          "edge": 2.8,
+          "confidence_score": 41.3,
+          "confidence_label": "PASS"
         }
       ],
       "best_bet": {
         "market": "moneyline",
         "selection": "IND",
-        "edge": 0.197,
+        "edge": 0.211,
         "confidence_score": 83.5,
         "confidence_label": "ELITE"
       }
@@ -169,14 +176,24 @@
       "home_team": "HOU",
       "market": "moneyline",
       "selection": "IND",
-      "edge": 0.197,
+      "edge": 0.211,
       "confidence_score": 83.5,
       "confidence_label": "ELITE"
+    },
+    {
+      "game_id": "2026_11_IND_HOU",
+      "away_team": "IND",
+      "home_team": "HOU",
+      "market": "game_total",
+      "selection": "UNDER 44.5",
+      "edge": 2.8,
+      "confidence_score": 41.3,
+      "confidence_label": "PASS"
     }
   ],
   "counts": {
     "games": 1,
-    "bets": 1,
+    "bets": 2,
     "missing_projection": 0
   },
   "model": {
