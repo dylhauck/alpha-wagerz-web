@@ -171,6 +171,9 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       const quotedUnder = num(prop.under_odds);
       if (quotedOver === null || quotedUnder === null ||
           Math.abs(quotedOver) < 100 || Math.abs(quotedUnder) < 100) continue;
+      // Reported unavailable sportsbook listing: do not publish this player
+      // until the upstream market feed verifies active bettable status.
+      if (injuryKey(prop.player_name) === injuryKey("Trey Lyles")) continue;
       // Quarantine ambiguous 0.5 3PM prices regardless of whether a
       // second market for that player happens to be present in this slate.
       if (String(prop.prop_type) === "fg3m" && num(prop.line) === 0.5) continue;
@@ -270,11 +273,25 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     const edge = leg.probability - probabilityFromOdds(leg.odds);
     if (!prior || edge > prior.probability - probabilityFromOdds(prior.odds)) bestByProp.set(identity, leg);
   }
+  // A single player/stat market should not occupy several tickets through
+  // different alternate thresholds (e.g. Josh Hart 10.5 and 11.5 PA).
+  // Select one positively priced side/line with the largest modeled edge.
+  const bestMarket = new Map<string, Leg>();
+  for (const leg of legs) {
+    if (leg.marketType !== "player_prop") continue;
+    const match = leg.pick.match(/^(.*?)\\s+(Over|Under)\\s+[-\\d.]+\\s+(.+)$/i);
+    if (!match) continue;
+    const identity = [leg.game, match[1].toLowerCase(), match[3].toLowerCase()].join("|");
+    const previous = bestMarket.get(identity);
+    if (!previous || leg.probability - probabilityFromOdds(leg.odds) >
+      previous.probability - probabilityFromOdds(previous.odds)) bestMarket.set(identity, leg);
+  }
   const candidates = legs.filter(leg => {
     if (leg.marketType !== "player_prop") return true;
     const match = leg.pick.match(/^(.*?)\\s+(Over|Under)\\s+[-\\d.]+\\s+(.+)$/i);
     if (!match) return true;
-    return bestByProp.get([leg.game, match[1].toLowerCase(), match[2].toLowerCase(), match[3].toLowerCase()].join("|")) === leg;
+    return bestByProp.get([leg.game, match[1].toLowerCase(), match[2].toLowerCase(), match[3].toLowerCase()].join("|")) === leg &&
+      bestMarket.get([leg.game, match[1].toLowerCase(), match[3].toLowerCase()].join("|")) === leg;
   }).filter(leg => leg.probability > probabilityFromOdds(leg.odds))
     .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)))
     .slice(0, 90);
