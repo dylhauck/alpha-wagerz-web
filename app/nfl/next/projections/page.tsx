@@ -1,7 +1,46 @@
 "use client";
+import { MostConfidentBet, normalOutcomeProbability } from "@/components/projections/MostConfidentBet";
+
 
 import { useEffect, useMemo, useState } from "react";
 import { NFLTeamLogo } from "@/components/nfl/NFLTeamLogo";
+
+const TEAM_NAMES: Record<string, string> = {
+  ARI: "Arizona Cardinals",
+  ATL: "Atlanta Falcons",
+  BAL: "Baltimore Ravens",
+  BUF: "Buffalo Bills",
+  CAR: "Carolina Panthers",
+  CHI: "Chicago Bears",
+  CIN: "Cincinnati Bengals",
+  CLE: "Cleveland Browns",
+  DAL: "Dallas Cowboys",
+  DEN: "Denver Broncos",
+  DET: "Detroit Lions",
+  GB: "Green Bay Packers",
+  HOU: "Houston Texans",
+  IND: "Indianapolis Colts",
+  JAX: "Jacksonville Jaguars",
+  JAC: "Jacksonville Jaguars",
+  KC: "Kansas City Chiefs",
+  LV: "Las Vegas Raiders",
+  LAC: "Los Angeles Chargers",
+  LAR: "Los Angeles Rams",
+  LA: "Los Angeles Rams",
+  MIA: "Miami Dolphins",
+  MIN: "Minnesota Vikings",
+  NE: "New England Patriots",
+  NO: "New Orleans Saints",
+  NYG: "New York Giants",
+  NYJ: "New York Jets",
+  PHI: "Philadelphia Eagles",
+  PIT: "Pittsburgh Steelers",
+  SEA: "Seattle Seahawks",
+  SF: "San Francisco 49ers",
+  TB: "Tampa Bay Buccaneers",
+  TEN: "Tennessee Titans",
+  WAS: "Washington Commanders",
+};
 
 type NFLTeam = {
   abbr?: string;
@@ -20,6 +59,7 @@ type NFLGame = {
   game_datetime_utc?: string;
   game_date?: string;
   game_time?: string;
+  venue?: string;
 };
 
 type ProjectionGame = {
@@ -46,6 +86,8 @@ type ProjectionGame = {
   projected_home_points?: number;
 
   projected_total?: number;
+  margin_sd?: number;
+  total_sd?: number;
 
   expected_margin?: number;
   projected_margin?: number;
@@ -492,7 +534,6 @@ function GameTotalCard({
         <StatCell
           label="Sportsbook Line"
           value={line === null ? "—" : fmt(line)}
-          subtext={sportsbook}
         />
         <StatCell
           label="Alpha Projection"
@@ -569,7 +610,6 @@ function TeamTotalCard({
         <StatCell
           label="Sportsbook Line"
           value={line === null ? "—" : fmt(line)}
-          subtext={sportsbook}
         />
         <StatCell
           label="Alpha Projection"
@@ -650,7 +690,7 @@ function SpreadCard({
 
   return (
     <div className="rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.04] p-5">
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid min-h-[190px] gap-3 md:grid-cols-2">
         <div className="rounded-xl border border-white/[0.07] bg-black/20 p-4">
           <div className="text-[10px] font-black uppercase tracking-[0.17em] text-slate-500">
             Sportsbook Spread
@@ -680,9 +720,6 @@ function SpreadCard({
             </span>
           </div>
 
-          <div className="mt-3 text-[11px] font-bold text-slate-500">
-            {sportsbook}
-          </div>
         </div>
 
         <div className="grid gap-2 sm:grid-cols-2">
@@ -801,7 +838,7 @@ function MoneylineCard({
 
   return (
     <div className="rounded-2xl border border-pink-300/20 bg-pink-300/[0.04] p-5">
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid min-h-[190px] gap-3 md:grid-cols-2">
         {[
           {
             team: away,
@@ -839,7 +876,7 @@ function MoneylineCard({
                 value={percent(row.model)}
               />
               <StatCell
-                label="Probability Edge"
+                label="Margin Edge"
                 value={
                   row.edge === null
                     ? "—"
@@ -849,10 +886,6 @@ function MoneylineCard({
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="mt-3 text-[11px] font-bold text-slate-500">
-        Market probability uses the no-vig probability when available • {sportsbook}
       </div>
 
       <div className="mt-3">
@@ -866,8 +899,11 @@ export default function NFLNextProjectionsPage() {
   const [games, setGames] = useState<NFLGame[]>([]);
   const [projections, setProjections] = useState<ProjectionGame[]>([]);
   const [markets, setMarkets] = useState<MarketGame[]>([]);
+  const [periodMarkets, setPeriodMarkets] = useState<Array<{game_id?:string|number;away_team?:string;home_team?:string;periods?:Record<string,{moneyline?:{away?:number;home?:number};spread?:{away_line?:number;home_line?:number;away_odds?:number;home_odds?:number};total?:{line?:number};team_totals?:{away?:number;home?:number}}>}>>([]);
   const [teams, setTeams] = useState<NFLTeam[]>([]);
   const [selectedGameId, setSelectedGameId] = useState("");
+  const [projectionPeriod, setProjectionPeriod] = useState("Full Game");
+  const [periodGames, setPeriodGames] = useState<Array<{game_id:string|number;away:string;home:string;periods:Record<string,{away_points:number|null;home_points:number|null;away_win_probability?:number|null;home_win_probability?:number|null;sample_games:number}>}>>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -877,12 +913,14 @@ export default function NFLNextProjectionsPage() {
       setLoading(true);
 
       try {
-        const [slateRes, projectionRes, marketRes, teamsRes] =
+        const [slateRes, projectionRes, marketRes, teamsRes, periodRes, periodMarketRes] =
           await Promise.all([
             fetch(SLATE_PATH, { cache: "no-store" }),
             fetch(PROJECTION_PATH, { cache: "no-store" }),
             fetch(MARKET_PATH, { cache: "no-store" }),
             fetch("/data/nfl/teams.json", { cache: "no-store" }),
+            fetch("/data/nfl/next/period_projections.json", { cache: "no-store" }),
+            fetch("/data/nfl/next/period_markets.json", { cache: "no-store" }),
           ]);
 
         const slatePayload = slateRes.ok ? await slateRes.json() : {};
@@ -891,6 +929,8 @@ export default function NFLNextProjectionsPage() {
           : {};
         const marketPayload = marketRes.ok ? await marketRes.json() : {};
         const teamsPayload = teamsRes.ok ? await teamsRes.json() : [];
+        const periodPayload = periodRes.ok ? await periodRes.json() : {};
+        const periodMarketPayload = periodMarketRes.ok ? await periodMarketRes.json() : {};
 
         if (cancelled) {
           return;
@@ -899,6 +939,8 @@ export default function NFLNextProjectionsPage() {
         const loadedGames = getGames<NFLGame>(slatePayload);
 
         setGames(loadedGames);
+        setPeriodGames(Array.isArray(periodPayload.games) ? periodPayload.games : []);
+        setPeriodMarkets(Array.isArray(periodMarketPayload.games) ? periodMarketPayload.games : []);
         setProjections(getGames<ProjectionGame>(projectionPayload));
         setMarkets(getGames<MarketGame>(marketPayload));
         setTeams(
@@ -1084,6 +1126,35 @@ export default function NFLNextProjectionsPage() {
     num(selectedMarket?.moneyline?.home_no_vig_probability) ??
     num(selectedMarket?.moneyline?.home_implied_probability);
 
+  const periodGame = periodGames.find(g => String(g.game_id) === selectedGameId) || periodGames.find(g => sameTeam(g.away, away) && sameTeam(g.home, home));
+  const periodStats = periodGame?.periods?.[projectionPeriod];
+  const isPeriod = projectionPeriod !== "Full Game";
+  const periodAway = num(periodStats?.away_points);
+  const periodHome = num(periodStats?.home_points);
+  const shownAway = isPeriod ? periodAway : awayPoints;
+  const shownHome = isPeriod ? periodHome : homePoints;
+  const shownTotal = isPeriod ? (periodAway !== null && periodHome !== null ? periodAway + periodHome : null) : projectedTotal;
+  const shownMargin = isPeriod ? (periodAway !== null && periodHome !== null ? periodHome - periodAway : null) : projectedMargin;
+  const shownAwayWin = isPeriod ? num(periodStats?.away_win_probability) : awayWin;
+  const shownHomeWin = isPeriod ? num(periodStats?.home_win_probability) : homeWin;
+  const periodMarketGame = periodMarkets.find(g => String(g.game_id) === selectedGameId) || periodMarkets.find(g => sameTeam(g.away_team, away) && sameTeam(g.home_team, home));
+  const periodKey = projectionPeriod === "1st Half" ? "1H" : projectionPeriod === "2nd Half" ? "2H" : projectionPeriod;
+  const periodMarket = periodMarketGame?.periods?.[periodKey];
+  const periodMoneyline = periodMarket?.moneyline;
+  const periodSpread = periodMarket?.spread;
+  const periodTotal = periodMarket?.total;
+  const periodTeamTotals = periodMarket?.team_totals;
+  const impliedOdds = (price: number | null): number | null => price === null || price === 0 ? null : price > 0 ? 100 / (100 + price) : -price / (100 - price);
+  const shownTotalLine = isPeriod ? num(periodTotal?.line) : totalLine;
+  const shownAwayTeamTotal = isPeriod ? num(periodTeamTotals?.away) : awayTeamTotal;
+  const shownHomeTeamTotal = isPeriod ? num(periodTeamTotals?.home) : homeTeamTotal;
+  const shownAwaySpread = isPeriod ? num(periodSpread?.away_line) : awaySpread;
+  const shownHomeSpread = isPeriod ? num(periodSpread?.home_line) : homeSpread;
+  const shownAwayMoneyline = isPeriod ? num(periodMoneyline?.away) : awayMoneyline;
+  const shownHomeMoneyline = isPeriod ? num(periodMoneyline?.home) : homeMoneyline;
+  const shownAwayMarketProbability = isPeriod ? impliedOdds(num(periodMoneyline?.away)) : awayMarketProbability;
+  const shownHomeMarketProbability = isPeriod ? impliedOdds(num(periodMoneyline?.home)) : homeMarketProbability;
+
   return (
     <div className="space-y-5 pt-4">
       <div className="mb-4 flex justify-center">
@@ -1099,143 +1170,69 @@ export default function NFLNextProjectionsPage() {
         onSelect={setSelectedGameId}
       />
 
-      <section className="glass overflow-hidden rounded-3xl">
-        <div className="border-b border-white/10 p-6 text-center">
-          <div className="text-xs font-black uppercase tracking-[0.3em] text-cyan-200/70">
-            Alpha Game Projections
+      <div className="mb-5 flex flex-wrap justify-center gap-3">
+        {["Full Game","Q1","Q2","1st Half","Q3","Q4","2nd Half"].map(period => (
+          <button key={period} type="button" onClick={() => setProjectionPeriod(period)} className={`rounded-xl border px-4 py-2 text-sm font-black transition ${projectionPeriod === period ? "border-cyan-300/70 bg-cyan-300/15 text-cyan-100" : "border-white/10 bg-white/5 text-slate-300 hover:border-pink-300/40"}`}>{period}</button>
+        ))}
+      </div>
+      {isPeriod && !periodStats && <p className="rounded-xl border border-amber-300/20 p-4 text-center text-amber-200">Period model data unavailable for this matchup.</p>}
+      <section className="glass rounded-3xl p-5 sm:p-6">
+        <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h2 className="text-xl font-black text-white">{TEAM_NAMES[away] ?? away} @ {TEAM_NAMES[home] ?? home}{isPeriod ? ` — ${projectionPeriod}` : ""}</h2>
+            <p className="mt-1 text-sm font-bold text-slate-400">{[selectedGame.venue, formatGameCardTime(selectedGame)].filter(value => value && value !== "TBD").join(" · ") || "Game details unavailable"}</p>
+          </div>
+          <div className="shrink-0">
+        <MostConfidentBet candidates={[
+          { label: `${away} ML`, probability: shownAwayWin },
+          { label: `${home} ML`, probability: shownHomeWin },
+          { label: `${home} ${homeSpread != null && homeSpread > 0 ? "+" : ""}${homeSpread} spread`, probability: isPeriod ? null : normalOutcomeProbability(shownMargin, homeSpread == null ? null : -homeSpread, selectedProjection?.margin_sd) },
+          { label: `${away} ${awaySpread != null && awaySpread > 0 ? "+" : ""}${awaySpread} spread`, probability: isPeriod ? null : normalOutcomeProbability(shownMargin == null ? null : -shownMargin, awaySpread == null ? null : -awaySpread, selectedProjection?.margin_sd) },
+          { label: `Over ${totalLine}`, probability: normalOutcomeProbability(shownTotal, shownTotalLine, selectedProjection?.total_sd) },
+          { label: `Under ${totalLine}`, probability: normalOutcomeProbability(shownTotalLine, shownTotal, selectedProjection?.total_sd) },
+        ]} note="Highest modeled win probability among available outcomes. Sportsbook odds and value are not selection factors." />
           </div>
 
-          <h1 className="mx-auto mt-2 pb-2 text-3xl font-black leading-tight neon-text sm:text-5xl">
-            {away} @ {home}
-          </h1>
-
-          <div className="mt-1 text-sm font-bold text-slate-400">
-            Sportsbook lines compared directly with Alpha&apos;s independent model
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+            <div className="mb-3 text-xs font-black uppercase text-slate-400">Projected Score</div>
+            <p className="text-lg font-black text-white">{away}: {shownAway === null ? "Unavailable" : fmt(shownAway)}</p>
+            <p className="text-lg font-black text-white">{home}: {shownHome === null ? "Unavailable" : fmt(shownHome)}</p>
+          </div>
+          <div className="rounded-2xl border border-pink-300/20 bg-pink-300/10 p-4">
+            <div className="mb-3 text-xs font-black uppercase text-slate-400">Win Probability</div>
+            <p className="text-lg font-black text-white">{away}: {shownAwayWin === null ? "Unavailable" : percent(shownAwayWin)}</p>
+            <p className="text-lg font-black text-white">{home}: {shownHomeWin === null ? "Unavailable" : percent(shownHomeWin)}</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.055] p-4">
+            <div className="mb-3 text-xs font-black uppercase text-slate-400">Projected Total</div>
+            <p className="text-3xl font-black text-white">{shownTotal === null ? "Unavailable" : fmt(shownTotal)}</p>
+            <p className="mt-2 text-xs font-black uppercase tracking-wider text-cyan-200">Book total {shownTotalLine === null ? "Unavailable" : fmt(shownTotalLine)}</p>
           </div>
         </div>
-
-        <div className="p-5 sm:p-6">
-          <div className="grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
-            <TeamProjection
-              team={away}
-              teams={teams}
-              points={awayPoints}
-              winProbability={awayWin}
-              side="away"
-            />
-
-            <div className="hidden md:block">
-              <div className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-lg font-black text-slate-400">
-                @
-              </div>
-            </div>
-
-            <TeamProjection
-              team={home}
-              teams={teams}
-              points={homePoints}
-              winProbability={homeWin}
-              side="home"
-            />
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+            <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Moneyline</h3>
+            <MoneylineCard away={away} home={home} teams={teams} awayOdds={shownAwayMoneyline} homeOdds={shownHomeMoneyline} awayMarketProbability={shownAwayMarketProbability} homeMarketProbability={shownHomeMarketProbability} awayModelProbability={shownAwayWin} homeModelProbability={shownHomeWin} sportsbook={sportsbook} />
           </div>
-
-          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <StatCell
-              label="Projected Total"
-              value={fmt(projectedTotal)}
-            />
-            <StatCell
-              label="Projected Margin"
-              value={
-                projectedMargin === null
-                  ? "—"
-                  : projectedMargin > 0
-                    ? `${home} by ${fmt(projectedMargin)}`
-                    : projectedMargin < 0
-                      ? `${away} by ${fmt(Math.abs(projectedMargin))}`
-                      : "PICK"
-              }
-            />
-            <StatCell label={`${away} Win`} value={percent(awayWin)} />
-            <StatCell label={`${home} Win`} value={percent(homeWin)} />
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+            <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Spread</h3>
+            <SpreadCard away={away} home={home} teams={teams} awaySpread={shownAwaySpread} homeSpread={shownHomeSpread} awayPrice={isPeriod ? num(periodSpread?.away_odds) : awaySpreadPrice} homePrice={isPeriod ? num(periodSpread?.home_odds) : homeSpreadPrice} awayPoints={shownAway} homePoints={shownHome} sportsbook={sportsbook} />
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 lg:col-span-2">
+            <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Over / Under</h3>
+            <GameTotalCard line={shownTotalLine} projection={shownTotal} overPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.over)} underPrice={isPeriod ? null : num(selectedMarket?.game_total_prices?.under)} sportsbook={sportsbook} />
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 lg:col-span-2">
+            <h3 className="mb-3 text-xs font-black uppercase tracking-wider text-slate-400">Team Totals</h3>
+            <div className="grid gap-3 lg:grid-cols-2">
+              <TeamTotalCard team={away} teams={teams} line={shownAwayTeamTotal} projection={shownAway} sportsbook={sportsbook} />
+              <TeamTotalCard team={home} teams={teams} line={shownHomeTeamTotal} projection={shownHome} sportsbook={sportsbook} />
+            </div>
           </div>
         </div>
       </section>
-
-      <MarketSection
-        eyebrow="Game Market"
-        title="Game Total"
-        description="Compare the sportsbook total with Alpha's projected combined score."
-      >
-        <GameTotalCard
-          line={totalLine}
-          projection={projectedTotal}
-          overPrice={num(selectedMarket?.game_total_prices?.over)}
-          underPrice={num(selectedMarket?.game_total_prices?.under)}
-          sportsbook={sportsbook}
-        />
-      </MarketSection>
-
-      <MarketSection
-        eyebrow="Team Markets"
-        title="Team Totals"
-        description="The market-implied team totals are compared with Alpha's projected points for each team."
-      >
-        <div className="grid gap-3 lg:grid-cols-2">
-          <TeamTotalCard
-            team={away}
-            teams={teams}
-            line={awayTeamTotal}
-            projection={awayPoints}
-            sportsbook={sportsbook}
-          />
-          <TeamTotalCard
-            team={home}
-            teams={teams}
-            line={homeTeamTotal}
-            projection={homePoints}
-            sportsbook={sportsbook}
-          />
-        </div>
-      </MarketSection>
-
-      <MarketSection
-        eyebrow="Side Market"
-        title="Spread"
-        description="Alpha compares its projected scoring margin with the sportsbook spread and identifies the side the model favors against the number."
-      >
-        <SpreadCard
-          away={away}
-          home={home}
-          teams={teams}
-          awaySpread={awaySpread}
-          homeSpread={homeSpread}
-          awayPrice={awaySpreadPrice}
-          homePrice={homeSpreadPrice}
-          awayPoints={awayPoints}
-          homePoints={homePoints}
-          sportsbook={sportsbook}
-        />
-      </MarketSection>
-
-      <MarketSection
-        eyebrow="Winner Market"
-        title="Moneyline"
-        description="Alpha compares its win probability with the sportsbook's no-vig market probability and favors the side with the stronger probability edge."
-      >
-        <MoneylineCard
-          away={away}
-          home={home}
-          teams={teams}
-          awayOdds={awayMoneyline}
-          homeOdds={homeMoneyline}
-          awayMarketProbability={awayMarketProbability}
-          homeMarketProbability={homeMarketProbability}
-          awayModelProbability={awayWin}
-          homeModelProbability={homeWin}
-          sportsbook={sportsbook}
-        />
-      </MarketSection>
 
       <section className="rounded-3xl border border-white/10 bg-white/[0.025] p-5">
         <div className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200/70">
@@ -1250,6 +1247,7 @@ export default function NFLNextProjectionsPage() {
           no-vig probability. These are model opinions, not guaranteed outcomes.
         </p>
       </section>
+
     </div>
   );
 }
