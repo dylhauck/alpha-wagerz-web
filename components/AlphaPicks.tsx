@@ -258,7 +258,26 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   // A single-game slate can still have multiple distinct player markets.
   const playerName = (leg: Leg) => leg.marketType === "player_prop"
     ? leg.pick.split(/\s+(?:Over|Under)\s+/i)[0].trim().toLowerCase() : "";
-  const candidates = [...legs].sort((a, b) => b.probability - a.probability).slice(0, 90);
+  // Keep only the strongest priced line for each player/stat/direction.
+  // Alternate lines are distinct sportsbook quotes, not distinct players.
+  const bestByProp = new Map<string, Leg>();
+  for (const leg of legs) {
+    if (leg.marketType !== "player_prop") continue;
+    const match = leg.pick.match(/^(.*?)\\s+(Over|Under)\\s+[-\\d.]+\\s+(.+)$/i);
+    if (!match) continue;
+    const identity = [leg.game, match[1].toLowerCase(), match[2].toLowerCase(), match[3].toLowerCase()].join("|");
+    const prior = bestByProp.get(identity);
+    const edge = leg.probability - probabilityFromOdds(leg.odds);
+    if (!prior || edge > prior.probability - probabilityFromOdds(prior.odds)) bestByProp.set(identity, leg);
+  }
+  const candidates = legs.filter(leg => {
+    if (leg.marketType !== "player_prop") return true;
+    const match = leg.pick.match(/^(.*?)\\s+(Over|Under)\\s+[-\\d.]+\\s+(.+)$/i);
+    if (!match) return true;
+    return bestByProp.get([leg.game, match[1].toLowerCase(), match[2].toLowerCase(), match[3].toLowerCase()].join("|")) === leg;
+  }).filter(leg => leg.probability > probabilityFromOdds(leg.odds))
+    .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)))
+    .slice(0, 90);
   if (candidates.length < MIN_LEGS) return [];
   type State = { legs: Leg[]; decimal: number; probability: number };
   const beams: State[][] = Array.from({ length: MAX_LEGS + 1 }, () => []);
@@ -336,6 +355,16 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
       let bestScore = -Infinity;
       for (const t of ranked) {
         if (selected.includes(t) || t.probability < ranked[0].probability * confidenceFloor) continue;
+        // Do not present alternate lines of the same player/stat/direction
+        // as different opportunities across the six published tickets.
+        const propSignature = (leg: Leg) => {
+          const match = leg.pick.match(/^(.*?)\\s+(Over|Under)\\s+[-\\d.]+\\s+(.+)$/i);
+          return leg.marketType === "player_prop" && match
+            ? [leg.game, match[1].toLowerCase(), match[2].toLowerCase(), match[3].toLowerCase()].join("|")
+            : leg.id;
+        };
+        if (selected.some(existing => existing.legs.some(a => t.legs.some(b =>
+          propSignature(a) === propSignature(b) && a.id !== b.id)))) continue;
         if (selected.some(existing => similarity(existing, t) > maxOverlap)) continue;
         const playerNames = [...keys(t)];
         if (playerNames.some(name => (usedPlayers.get(name) ?? 0) >= maxPlayerUses)) continue;
