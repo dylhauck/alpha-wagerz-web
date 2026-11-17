@@ -279,6 +279,16 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)))
     .slice(0, 90);
   if (candidates.length < MIN_LEGS) return [];
+  // The model's raw probability is not a calibration guarantee. Prevent
+  // a single direction from monopolizing the candidate beam when both
+  // directions have independently positive-priced edges.
+  const propDirection = (leg: Leg): "over" | "under" | null => {
+    if (leg.marketType !== "player_prop") return null;
+    const match = leg.pick.match(/\s+(Over|Under)\s+[-\d.]+\s+/i);
+    return match ? (match[1].toLowerCase() as "over" | "under") : null;
+  };
+  const hasViableOvers = candidates.some(leg => propDirection(leg) === "over");
+  const hasViableUnders = candidates.some(leg => propDirection(leg) === "under");
   type State = { legs: Leg[]; decimal: number; probability: number };
   const beams: State[][] = Array.from({ length: MAX_LEGS + 1 }, () => []);
   beams[0] = [{ legs: [], decimal: 1, probability: 1 }];
@@ -296,6 +306,14 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
             existing.game === leg.game && playerName(existing) === playerName(leg)) ||
           (leg.marketType !== "player_prop" && existing.game === leg.game &&
             existing.marketType === leg.marketType))) continue;
+        // For player-prop parlays, require directional variety only when
+        // BOTH sides have qualifying positive-edge opportunities. Never
+        // manufacture an Over selection to satisfy a quota.
+        if (!mixed && hasViableOvers && hasViableUnders && leg.marketType === "player_prop") {
+          const direction = propDirection(leg);
+          const sameDirection = state.legs.filter(x => propDirection(x) === direction).length;
+          if (direction && sameDirection >= Math.max(1, Math.ceil(MAX_LEGS * 0.67))) continue;
+        }
         const next: State = {
           legs: [...state.legs, leg],
           decimal: state.decimal * americanToDecimal(leg.odds),
@@ -330,7 +348,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   }
   // Rank by confidence, but avoid publishing six near-identical tickets.
   // A different prop for the same player still counts as the same player.
-  // No forced leg counts or over/under quotas.
+  // Direction limits apply only when both directions have positive edge.
   const ranked = results.sort((a, b) => b.probability - a.probability);
   if (!ranked.length) return [];
   const playerKey = (leg: Leg) => {
