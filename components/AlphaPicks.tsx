@@ -18,6 +18,7 @@ const normalizeProbability = (x: unknown): number | null => {
 const americanToDecimal = (odds: number) => odds > 0 ? 1 + odds / 100 : 1 + 100 / Math.abs(odds);
 const decimalToAmerican = (decimal: number) => decimal >= 2 ? Math.round((decimal - 1) * 100) : -Math.round(100 / (decimal - 1));
 const fmtOdds = (n: number) => n > 0 ? "+" + Math.round(n).toLocaleString("en-US") : String(Math.round(n));
+const fmtSpread = (line: unknown) => { const n = num(line); return n === null ? String(line ?? "") : n > 0 ? "+" + n : String(n); };
 const percent = (n: number) => (n * 100).toFixed(1) + "%";
 const probabilityFromOdds = (odds: number) => 1 / americanToDecimal(odds);
 // Normal CDF approximation, used only when the model provides a positive SD.
@@ -93,8 +94,8 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       add(game, home + " ML", ml?.home, model.home_win_probability, "NBA model + live sportsbook");
       const spread = full.spread ?? {};
       const homeMargin = num(model.home_margin) ?? (num(model.home_score) !== null && num(model.away_score) !== null ? model.home_score - model.away_score : null);
-      add(game, home + " " + spread.home_line + " spread", spread.home_odds, modeledCover(homeMargin, spread.home_line, model.margin_sd), "NBA model margin distribution", "spread");
-      add(game, away + " " + spread.away_line + " spread", spread.away_odds, modeledCover(homeMargin === null ? null : -homeMargin, spread.away_line, model.margin_sd), "NBA model margin distribution", "spread");
+      add(game, home + " " + fmtSpread(spread.home_line) + " spread", spread.home_odds, modeledCover(homeMargin, spread.home_line, model.margin_sd), "NBA model margin distribution", "spread");
+      add(game, away + " " + fmtSpread(spread.away_line) + " spread", spread.away_odds, modeledCover(homeMargin === null ? null : -homeMargin, spread.away_line, model.margin_sd), "NBA model margin distribution", "spread");
       const total = full.total ?? {};
       const over = modeledOver(model.projected_total, total.line, model.total_sd);
       add(game, "Over " + total.line, total.over_odds, over, "NBA model total distribution", "total");
@@ -103,8 +104,8 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       // Use an explicit approximate game-level variance, never sportsbook-implied odds.
       if (num(model.margin_sd) === null && homeMargin !== null) {
         const estimatedMarginSd = 12;
-        add(game, home + " " + spread.home_line + " spread", spread.home_odds, modeledCover(homeMargin, spread.home_line, estimatedMarginSd), "NBA projection + approximate 12-point margin SD", "spread");
-        add(game, away + " " + spread.away_line + " spread", spread.away_odds, modeledCover(-homeMargin, spread.away_line, estimatedMarginSd), "NBA projection + approximate 12-point margin SD", "spread");
+        add(game, home + " " + fmtSpread(spread.home_line) + " spread", spread.home_odds, modeledCover(homeMargin, spread.home_line, estimatedMarginSd), "NBA projection + approximate 12-point margin SD", "spread");
+        add(game, away + " " + fmtSpread(spread.away_line) + " spread", spread.away_odds, modeledCover(-homeMargin, spread.away_line, estimatedMarginSd), "NBA projection + approximate 12-point margin SD", "spread");
       }
       if (num(model.total_sd) === null && num(model.projected_total) !== null) {
         const approximateOver = modeledOver(model.projected_total, total.line, 17);
@@ -131,7 +132,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
           const spreadLine = num(spread[side + "_line"]);
           if (spreadLine === null || spreadLine % 1 === 0) continue;
           const probability = nhlProbabilities(awayMean, homeMean, spreadLine, side === "home" ? "home_spread" : "away_spread");
-          add(game, (side === "home" ? home : away) + " " + spreadLine + " puck line", spread[side + "_odds"], probability, "NHL independent-Poisson baseline (uncalibrated)", "spread");
+          add(game, (side === "home" ? home : away) + " " + fmtSpread(spreadLine) + " puck line", spread[side + "_odds"], probability, "NHL independent-Poisson baseline (uncalibrated)", "spread");
         }
       }
     } else if (sport === "nfl") {
@@ -142,16 +143,16 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       const spread = market.spread ?? {};
       const homeMargin = num(game.expected_margin) ?? num(game.projected_margin) ??
         (num(game.projected_score?.home) !== null && num(game.projected_score?.away) !== null ? game.projected_score.home - game.projected_score.away : null);
-      add(game, home + " " + spread.home + " spread", spread.home_price, modeledCover(homeMargin, spread.home, game.margin_sd), "NFL model margin distribution", "spread");
-      add(game, away + " " + spread.away + " spread", spread.away_price, modeledCover(homeMargin === null ? null : -homeMargin, spread.away, game.margin_sd), "NFL model margin distribution", "spread");
+      add(game, home + " " + fmtSpread(spread.home) + " spread", spread.home_price, modeledCover(homeMargin, spread.home, game.margin_sd), "NFL model margin distribution", "spread");
+      add(game, away + " " + fmtSpread(spread.away) + " spread", spread.away_price, modeledCover(homeMargin === null ? null : -homeMargin, spread.away, game.margin_sd), "NFL model margin distribution", "spread");
       const total = num(market.game_total);
       const over = modeledOver(game.projected_total, total, game.total_sd);
       add(game, "Over " + total, market.game_total_prices?.over, over, "NFL model total distribution", "total");
       add(game, "Under " + total, market.game_total_prices?.under, over === null ? null : 1 - over, "NFL model total distribution", "total");
       // NFL outputs contain projected margins/totals but no distribution SD.
       if (num(game.margin_sd) === null && homeMargin !== null) {
-        add(game, home + " " + spread.home + " spread", spread.home_price, modeledCover(homeMargin, spread.home, 13.5), "NFL projection + approximate 13.5-point margin SD", "spread");
-        add(game, away + " " + spread.away + " spread", spread.away_price, modeledCover(-homeMargin, spread.away, 13.5), "NFL projection + approximate 13.5-point margin SD", "spread");
+        add(game, home + " " + fmtSpread(spread.home) + " spread", spread.home_price, modeledCover(homeMargin, spread.home, 13.5), "NFL projection + approximate 13.5-point margin SD", "spread");
+        add(game, away + " " + fmtSpread(spread.away) + " spread", spread.away_price, modeledCover(-homeMargin, spread.away, 13.5), "NFL projection + approximate 13.5-point margin SD", "spread");
       }
       if (num(game.total_sd) === null) {
         const approximateOver = modeledOver(game.projected_total, total, 14);
