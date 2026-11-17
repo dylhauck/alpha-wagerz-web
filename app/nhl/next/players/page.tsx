@@ -1,2 +1,2 @@
-import NHLView from "@/components/nhl/NHLView";
-export default function Page() { return <NHLView mode="players" next />; }
+import NHLPlayersPage from "../../players/page";
+export default function Page() { return <NHLPlayersPage next />; }
