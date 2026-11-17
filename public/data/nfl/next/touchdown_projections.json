@@ -14081,61 +14081,6 @@
       }
     },
     {
-      "player_id": "00-0039489",
-      "player": "Hayden Rucci",
-      "team": "LAC",
-      "opponent": "NYJ",
-      "position": "TE",
-      "game_id": "2026_11_NYJ_LAC",
-      "touchdown_probability": 20.5,
-      "touchdown_lambda": 0.2294,
-      "scoring": {
-        "rushing_td_probability": 0.0,
-        "receiving_td_probability": 20.5,
-        "rushing_lambda": 0.0,
-        "receiving_lambda": 0.2294
-      },
-      "environment": {
-        "projected_team_points": 21.6,
-        "scoring_factor": 0.88
-      },
-      "matchup": {
-        "overall_factor": 0.914,
-        "rushing_factor": 1.0,
-        "passing_factor": 0.914
-      },
-      "inputs": {
-        "current_games": 4,
-        "current_rushing_td_rate": 0.0,
-        "current_receiving_td_rate": 0.25,
-        "career_rushing_td_rate": 0.0,
-        "career_receiving_td_rate": 0.2,
-        "regressed_rushing_td_rate": 0.0,
-        "regressed_receiving_td_rate": 0.217,
-        "usage_factor": 1.087,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.22,
-        "availability_factor": 1.0,
-        "injury_status": "",
-        "usage_percentage": 0.3
-      },
-      "actual_data": {
-        "current_games": 4,
-        "current_rushing_tds_per_game": 0.0,
-        "current_receiving_tds_per_game": 0.25,
-        "career_rushing_tds_per_game": 0.0,
-        "career_receiving_tds_per_game": 0.2,
-        "projected_rushing_tds": 0.0,
-        "projected_receiving_tds": 0.22,
-        "projected_team_points": 21.6,
-        "injury_status": ""
-      },
-      "model": {
-        "method": "blended_poisson",
-        "passing_touchdowns_count": false
-      }
-    },
-    {
       "player_id": "00-0033885",
       "player": "David Njoku",
       "team": "LAC",
@@ -14447,7 +14392,7 @@
         "projected_receiving_tds": 0.11,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 5.9
+        "usage_percentage": 6.0
       },
       "actual_data": {
         "current_games": 8,
@@ -16446,6 +16391,61 @@
       }
     },
     {
+      "player_id": "00-0039489",
+      "player": "Hayden Rucci",
+      "team": "PHI",
+      "opponent": "PIT",
+      "position": "TE",
+      "game_id": "2026_11_PIT_PHI",
+      "touchdown_probability": 20.2,
+      "touchdown_lambda": 0.2254,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 20.2,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.2254
+      },
+      "environment": {
+        "projected_team_points": 20.7,
+        "scoring_factor": 0.84
+      },
+      "matchup": {
+        "overall_factor": 0.857,
+        "rushing_factor": 1.0,
+        "passing_factor": 0.857
+      },
+      "inputs": {
+        "current_games": 4,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.25,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.2,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.217,
+        "usage_factor": 1.087,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.21,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 0.2
+      },
+      "actual_data": {
+        "current_games": 4,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.25,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.2,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.21,
+        "projected_team_points": 20.7,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
       "player_id": "00-0030061",
       "player": "Zach Ertz",
       "team": "PHI",
@@ -16702,7 +16702,7 @@
         "projected_receiving_tds": 0.42,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 10.6
+        "usage_percentage": 10.5
       },
       "actual_data": {
         "current_games": 4,
@@ -16812,7 +16812,7 @@
         "projected_receiving_tds": 0.14,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 5.6
+        "usage_percentage": 5.5
       },
       "actual_data": {
         "current_games": 6,
@@ -19067,7 +19067,7 @@
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 54.7
+        "usage_percentage": 37.7
       },
       "actual_data": {
         "current_games": 6,
@@ -19076,6 +19076,61 @@
         "career_rushing_tds_per_game": 0.09,
         "career_receiving_tds_per_game": 0.0,
         "projected_rushing_tds": 0.16,
+        "projected_receiving_tds": 0.0,
+        "projected_team_points": 20.8,
+        "injury_status": ""
+      },
+      "model": {
+        "method": "blended_poisson",
+        "passing_touchdowns_count": false
+      }
+    },
+    {
+      "player_id": "00-0033662",
+      "player": "Cooper Rush",
+      "team": "TB",
+      "opponent": "DET",
+      "position": "QB",
+      "game_id": "2026_11_TB_DET",
+      "touchdown_probability": 0.0,
+      "touchdown_lambda": 0.0,
+      "scoring": {
+        "rushing_td_probability": 0.0,
+        "receiving_td_probability": 0.0,
+        "rushing_lambda": 0.0,
+        "receiving_lambda": 0.0
+      },
+      "environment": {
+        "projected_team_points": 20.8,
+        "scoring_factor": 0.84
+      },
+      "matchup": {
+        "overall_factor": 0.933,
+        "rushing_factor": 1.03,
+        "passing_factor": 0.925
+      },
+      "inputs": {
+        "current_games": 2,
+        "current_rushing_td_rate": 0.0,
+        "current_receiving_td_rate": 0.0,
+        "career_rushing_td_rate": 0.0,
+        "career_receiving_td_rate": 0.0,
+        "regressed_rushing_td_rate": 0.0,
+        "regressed_receiving_td_rate": 0.0,
+        "usage_factor": 0.863,
+        "projected_rushing_tds": 0.0,
+        "projected_receiving_tds": 0.0,
+        "availability_factor": 1.0,
+        "injury_status": "",
+        "usage_percentage": 31.1
+      },
+      "actual_data": {
+        "current_games": 2,
+        "current_rushing_tds_per_game": 0.0,
+        "current_receiving_tds_per_game": 0.0,
+        "career_rushing_tds_per_game": 0.0,
+        "career_receiving_tds_per_game": 0.0,
+        "projected_rushing_tds": 0.0,
         "projected_receiving_tds": 0.0,
         "projected_team_points": 20.8,
         "injury_status": ""
@@ -19122,7 +19177,7 @@
         "projected_receiving_tds": 0.0,
         "availability_factor": 1.0,
         "injury_status": "",
-        "usage_percentage": 45.3
+        "usage_percentage": 31.2
       },
       "actual_data": {
         "current_games": 5,
@@ -21837,8 +21892,8 @@
     }
   ],
   "counts": {
-    "total": 397,
-    "QB": 47,
+    "total": 398,
+    "QB": 48,
     "RB": 109,
     "WR": 156,
     "TE": 85

@@ -36346,136 +36346,6 @@
       }
     },
     {
-      "player_id": "00-0039489",
-      "player": "Hayden Rucci",
-      "team": "LAC",
-      "opponent": "NYJ",
-      "position": "TE",
-      "game_id": "2026_11_NYJ_LAC",
-      "projection": {
-        "receiving": {
-          "targets": 0.2,
-          "receptions": 0.2,
-          "yards": 1.6,
-          "touchdowns": 0.22
-        }
-      },
-      "fantasy": {
-        "standard": 1.48,
-        "ppr": 1.68
-      },
-      "environment": {
-        "projected_team_points": 21.6,
-        "projected_game_total": 43.5,
-        "win_probability": 48.8,
-        "scoring_factor": 0.96,
-        "total_factor": 0.967
-      },
-      "matchup": {
-        "overall_rating": -12.8,
-        "passing_rating": -17.4,
-        "rushing_rating": -7.7,
-        "overall_factor": 0.962,
-        "passing_factor": 0.93,
-        "rushing_factor": 0.969
-      },
-      "injury_context": {
-        "team": {
-          "team_context": {
-            "team": "LAC",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "availability_factor": 1.0,
-        "player_injury": ""
-      },
-      "weather_context": {
-        "available": true,
-        "roof": "fixed",
-        "stadium": "SoFi Stadium",
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "classification": "INDOOR",
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "kicking_factor": 1.0
-      },
-      "sample": {
-        "games": 4,
-        "label": "Moderate"
-      },
-      "baseline": {
-        "games": 4,
-        "passing": {
-          "completions": 0.0,
-          "attempts": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "interceptions": 0.0,
-          "attempts_per_game": 0.0,
-          "completions_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "interceptions_per_game": 0.0,
-          "completion_rate": 0.0,
-          "yards_per_attempt": 0.0,
-          "touchdown_rate": 0.0,
-          "interception_rate": 0.0
-        },
-        "rushing": {
-          "carries": 0.0,
-          "yards": 0.0,
-          "touchdowns": 0.0,
-          "carries_per_game": 0.0,
-          "yards_per_game": 0.0,
-          "touchdowns_per_game": 0.0,
-          "yards_per_carry": 0.0,
-          "touchdown_rate": 0.0
-        },
-        "receiving": {
-          "targets": 1.0,
-          "receptions": 1.0,
-          "yards": 7.0,
-          "touchdowns": 1.0,
-          "targets_per_game": 0.25,
-          "receptions_per_game": 0.25,
-          "yards_per_game": 1.75,
-          "touchdowns_per_game": 0.25,
-          "catch_rate": 100.0,
-          "yards_per_target": 7.0,
-          "yards_per_reception": 7.0,
-          "touchdown_rate": 100.0
-        }
-      },
-      "model": {
-        "sportsbook_independent": true
-      }
-    },
-    {
       "player_id": "00-0040189",
       "player": "Oronde Gadsden II",
       "team": "LAC",
@@ -42136,6 +42006,145 @@
           "yards_per_target": 0.0,
           "yards_per_reception": 0.0,
           "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0039489",
+      "player": "Hayden Rucci",
+      "team": "PHI",
+      "opponent": "PIT",
+      "position": "TE",
+      "game_id": "2026_11_PIT_PHI",
+      "projection": {
+        "receiving": {
+          "targets": 0.2,
+          "receptions": 0.2,
+          "yards": 1.5,
+          "touchdowns": 0.21
+        }
+      },
+      "fantasy": {
+        "standard": 1.41,
+        "ppr": 1.61
+      },
+      "environment": {
+        "projected_team_points": 20.7,
+        "projected_game_total": 42.4,
+        "win_probability": 46.2,
+        "scoring_factor": 0.92,
+        "total_factor": 0.942
+      },
+      "matchup": {
+        "overall_rating": -16.6,
+        "passing_rating": -18.9,
+        "rushing_rating": -19.2,
+        "overall_factor": 0.95,
+        "passing_factor": 0.907,
+        "rushing_factor": 0.928
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "PHI",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "outdoor",
+        "stadium": "Lincoln Financial Field",
+        "weather": {
+          "forecast_time": "2026-11-22T16:00",
+          "temperature_f": 55.6,
+          "feels_like_f": 53.8,
+          "humidity_pct": 96.0,
+          "precip_probability_pct": 35.0,
+          "precipitation_in": 0.071,
+          "wind_mph": 7.6,
+          "wind_gust_mph": 18.6,
+          "weather_code": 61,
+          "conditions": "Light Rain"
+        },
+        "classification": "MINOR",
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "kicking_factor": 0.98
+      },
+      "sample": {
+        "games": 4,
+        "label": "Moderate"
+      },
+      "baseline": {
+        "games": 4,
+        "passing": {
+          "completions": 0.0,
+          "attempts": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 0.0,
+          "completions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 0.0,
+          "yards_per_attempt": 0.0,
+          "touchdown_rate": 0.0,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 0.0,
+          "touchdown_rate": 0.0
+        },
+        "receiving": {
+          "targets": 1.0,
+          "receptions": 1.0,
+          "yards": 7.0,
+          "touchdowns": 1.0,
+          "targets_per_game": 0.25,
+          "receptions_per_game": 0.25,
+          "yards_per_game": 1.75,
+          "touchdowns_per_game": 0.25,
+          "catch_rate": 100.0,
+          "yards_per_target": 7.0,
+          "yards_per_reception": 7.0,
+          "touchdown_rate": 100.0
         }
       },
       "model": {
@@ -48443,6 +48452,142 @@
           "touchdowns_per_game": 0.17,
           "yards_per_carry": 4.71,
           "touchdown_rate": 5.9
+        },
+        "receiving": {
+          "targets": 0.0,
+          "receptions": 0.0,
+          "yards": 0.0,
+          "touchdowns": 0.0,
+          "targets_per_game": 0.0,
+          "receptions_per_game": 0.0,
+          "yards_per_game": 0.0,
+          "touchdowns_per_game": 0.0,
+          "catch_rate": 0.0,
+          "yards_per_target": 0.0,
+          "yards_per_reception": 0.0,
+          "touchdown_rate": 0.0
+        }
+      },
+      "model": {
+        "sportsbook_independent": true
+      }
+    },
+    {
+      "player_id": "00-0033662",
+      "player": "Cooper Rush",
+      "team": "TB",
+      "opponent": "DET",
+      "position": "QB",
+      "game_id": "2026_11_TB_DET",
+      "projection": {
+        "passing": {
+          "attempts": 19.6,
+          "completions": 10.6,
+          "yards": 105.9,
+          "touchdowns": 0.42,
+          "interceptions": 0.0
+        },
+        "rushing": {
+          "carries": 1.0,
+          "yards": 10.3,
+          "touchdowns": 0.0
+        }
+      },
+      "fantasy": {
+        "standard": 6.95,
+        "ppr": 6.95
+      },
+      "environment": {
+        "projected_team_points": 20.8,
+        "projected_game_total": 44.2,
+        "win_probability": 40.1,
+        "scoring_factor": 0.924,
+        "total_factor": 0.982
+      },
+      "matchup": {
+        "overall_rating": -6.1,
+        "passing_rating": -20.3,
+        "rushing_rating": 7.1,
+        "overall_factor": 0.982,
+        "passing_factor": 0.919,
+        "rushing_factor": 1.028
+      },
+      "injury_context": {
+        "team": {
+          "team_context": {
+            "team": "TB",
+            "injuries": [],
+            "offense": {
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
+            },
+            "defense": {
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
+            },
+            "key_absences": []
+          },
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
+        },
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "availability_factor": 1.0,
+        "player_injury": ""
+      },
+      "weather_context": {
+        "available": true,
+        "roof": "fixed",
+        "stadium": "Ford Field",
+        "weather": {
+          "conditions": "Indoor"
+        },
+        "classification": "INDOOR",
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "kicking_factor": 1.0
+      },
+      "sample": {
+        "games": 2,
+        "label": "Small"
+      },
+      "baseline": {
+        "games": 2,
+        "passing": {
+          "completions": 22.0,
+          "attempts": 39.0,
+          "yards": 229.0,
+          "touchdowns": 1.0,
+          "interceptions": 0.0,
+          "attempts_per_game": 19.5,
+          "completions_per_game": 11.0,
+          "yards_per_game": 114.5,
+          "touchdowns_per_game": 0.5,
+          "interceptions_per_game": 0.0,
+          "completion_rate": 56.4,
+          "yards_per_attempt": 5.87,
+          "touchdown_rate": 2.6,
+          "interception_rate": 0.0
+        },
+        "rushing": {
+          "carries": 2.0,
+          "yards": 20.0,
+          "touchdowns": 0.0,
+          "carries_per_game": 1.0,
+          "yards_per_game": 10.0,
+          "touchdowns_per_game": 0.0,
+          "yards_per_carry": 10.0,
+          "touchdown_rate": 0.0
         },
         "receiving": {
           "targets": 0.0,
@@ -55364,15 +55509,15 @@
     }
   ],
   "counts": {
-    "total": 397,
-    "QB": 47,
+    "total": 398,
+    "QB": 48,
     "RB": 109,
     "WR": 156,
     "TE": 85
   },
   "diagnostics": {
     "slate_players": 659,
-    "missing_player_metrics": 262,
+    "missing_player_metrics": 261,
     "missing_game_projection": 0,
     "missing_matchup_metrics": 0,
     "missing_injury_context": 0,
