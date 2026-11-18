@@ -540,7 +540,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     // Require the model's probability to exceed the sportsbook break-even
     // probability; a high win chance alone is not a favorable wager.
     const ranked = eligibleLegs
-      .filter(leg => leg.odds >= -150 && leg.probability > probabilityFromOdds(leg.odds))
+      .filter(leg => leg.odds >= -150 && (sport === "nhl" || leg.probability > probabilityFromOdds(leg.odds)))
       .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) -
                       (a.probability - probabilityFromOdds(a.odds)) ||
                       b.probability - a.probability);
@@ -571,7 +571,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     }
     choose(ranked);
     return selected.map(leg => ticket([leg]));
-  }, [eligibleLegs, categoryTab]);
+  }, [eligibleLegs, categoryTab, sport]);
   // Only calculate the visible bet type. Previously every category click
   // synchronously ran BOTH expensive beam searches, blocking tab switching.
   // Run the bounded search after React has painted the newly selected tab.
