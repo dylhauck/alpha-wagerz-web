@@ -290,15 +290,20 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     if (!previous || leg.probability - probabilityFromOdds(leg.odds) >
       previous.probability - probabilityFromOdds(previous.odds)) bestMarket.set(identity, leg);
   }
-  const candidates = legs.filter(leg => {
+  const rankedCandidates = legs.filter(leg => {
     if (leg.marketType !== "player_prop") return true;
     const match = leg.pick.match(/^(.*?)\\s+(Over|Under)\\s+[-\\d.]+\\s+(.+)$/i);
     if (!match) return true;
     return bestByProp.get([leg.game, match[1].toLowerCase(), match[2].toLowerCase(), match[3].toLowerCase()].join("|")) === leg &&
       bestMarket.get([leg.game, match[1].toLowerCase(), match[3].toLowerCase()].join("|")) === leg;
   }).filter(leg => leg.probability > probabilityFromOdds(leg.odds))
-    .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)))
-    .slice(0, 36);
+    .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)));
+  // Mixed tickets must retain every available market family before beam
+  // pruning. Otherwise 36 player props can crowd out all team markets.
+  const candidates = mixed
+    ? (["moneyline", "spread", "total", "player_prop"] as MarketType[])
+        .flatMap(type => rankedCandidates.filter(leg => leg.marketType === type).slice(0, 12))
+    : rankedCandidates.slice(0, 36);
   if (candidates.length < MIN_LEGS) return [];
   // The model's raw probability is not a calibration guarantee. Prevent
   // a single direction from monopolizing the candidate beam when both
@@ -356,9 +361,17 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
           retained.set(signature, state);
         }
       }
-      beams[count + 1] = [...retained.values()]
-        .sort((a, b) => b.probability * Math.sqrt(b.decimal) - a.probability * Math.sqrt(a.decimal))
-        .slice(0, BEAM_WIDTH);
+      const scored = [...retained.values()]
+        .sort((a, b) => b.probability * Math.sqrt(b.decimal) - a.probability * Math.sqrt(a.decimal));
+      if (mixed) {
+        // Preserve market-diverse states so qualifying combos survive pruning.
+        const diverse = scored.filter(state => new Set(state.legs.map(l => l.marketType)).size >= 2);
+        const single = scored.filter(state => new Set(state.legs.map(l => l.marketType)).size < 2);
+        beams[count + 1] = [...diverse.slice(0, Math.floor(BEAM_WIDTH * 0.75)),
+          ...single.slice(0, Math.ceil(BEAM_WIDTH * 0.25))].slice(0, BEAM_WIDTH);
+      } else {
+        beams[count + 1] = scored.slice(0, BEAM_WIDTH);
+      }
     }
   }
   // Rank by confidence, but avoid publishing six near-identical tickets.
