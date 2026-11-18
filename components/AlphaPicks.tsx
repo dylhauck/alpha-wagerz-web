@@ -254,7 +254,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
 
 function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20): Ticket[] {
   const MIN_LEGS = minLegs;
-  const MAX_LEGS = maxLegs;
+  const MAX_LEGS = Math.min(maxLegs, minOdds >= 10000 ? 12 : 8);
   // Keep one outcome per matchup, and consider as many as 20 distinct games.
   // Beam search avoids the exponential cost of enumerating all combinations.
   // Rank all independently modeled selections by their relative confidence.
@@ -298,7 +298,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
       bestMarket.get([leg.game, match[1].toLowerCase(), match[3].toLowerCase()].join("|")) === leg;
   }).filter(leg => leg.probability > probabilityFromOdds(leg.odds))
     .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)))
-    .slice(0, 90);
+    .slice(0, 36);
   if (candidates.length < MIN_LEGS) return [];
   // The model's raw probability is not a calibration guarantee. Prevent
   // a single direction from monopolizing the candidate beam when both
@@ -313,7 +313,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   beams[0] = [{ legs: [], decimal: 1, probability: 1 }];
   const results: Ticket[] = [];
   const seen = new Set<string>();
-  const BEAM_WIDTH = mixed ? 500 : 350;
+  const BEAM_WIDTH = mixed ? 64 : 48;
   for (const leg of candidates) {
     for (let count = MAX_LEGS - 1; count >= 0; count--) {
       if (!beams[count].length) continue;
@@ -550,12 +550,29 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   }, [eligibleLegs, categoryTab]);
   // Only calculate the visible bet type. Previously every category click
   // synchronously ran BOTH expensive beam searches, blocking tab switching.
-  const parlays = useMemo(() => mainTab === "parlay"
-    ? makeParlays(eligibleLegs, 500, categoryTab === "combos") : [],
-    [eligibleLegs, categoryTab, mainTab]);
-  const lottos = useMemo(() => mainTab === "lotto"
-    ? makeParlays(eligibleLegs, 10000, categoryTab === "combos") : [],
-    [eligibleLegs, categoryTab, mainTab]);
+  // Run the bounded search after React has painted the newly selected tab.
+  // A synchronous useMemo search blocked the click handler/render for props
+  // and combos, even when only one bet type was active.
+  const [computedTickets, setComputedTickets] = useState<{
+    signature: string; tickets: Ticket[];
+  }>({ signature: "", tickets: [] });
+  const searchSignature = sport + "|" + mainTab + "|" + categoryTab;
+  useEffect(() => {
+    setComputedTickets({ signature: "", tickets: [] });
+    if (mainTab === "straight" || categoryTab === "first_basket") return;
+    const handle = window.setTimeout(() => {
+      const tickets = makeParlays(
+        eligibleLegs, mainTab === "lotto" ? 10000 : 500,
+        categoryTab === "combos"
+      );
+      setComputedTickets({ signature: searchSignature, tickets });
+    }, 0);
+    return () => window.clearTimeout(handle);
+  }, [eligibleLegs, mainTab, categoryTab, sport, searchSignature]);
+  const parlays = mainTab === "parlay" && computedTickets.signature === searchSignature
+    ? computedTickets.tickets : [];
+  const lottos = mainTab === "lotto" && computedTickets.signature === searchSignature
+    ? computedTickets.tickets : [];
   // First-basket combinations use 2–4 distinct games. The source has
   // modeled probabilities but NO sportsbook first-basket odds.
   // Show projections only, never invent parlay prices or claim eligibility.
