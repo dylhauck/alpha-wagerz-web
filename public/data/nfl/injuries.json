@@ -1,31 +1,31 @@
 {
   "season": 2026,
-  "generated_at": "2026-11-17T19:41:35.688398+00:00",
+  "generated_at": "2026-11-18T14:05:42.767086+00:00",
   "source": {
     "primary": "ESPN NFL injuries page",
     "fallback": "processed NFL roster reserve designations",
     "url": "https://www.espn.com/nfl/injuries",
     "errors": []
   },
-  "injury_count": 460,
+  "injury_count": 461,
   "team_count": 32,
   "provider_counts": {
-    "espn_raw": 460,
+    "espn_raw": 461,
     "roster_reserve_raw": 0,
-    "final": 460
+    "final": 461
   },
   "status_counts": {
-    "OUT": 55,
+    "OUT": 52,
     "DOUBTFUL": 9,
-    "QUESTIONABLE": 108,
-    "IR": 288,
+    "QUESTIONABLE": 106,
+    "IR": 294,
     "PUP": 0,
     "NFI": 0,
     "INJURY": 0,
     "OTHER": 0
   },
   "source_counts": {
-    "ESPN": 460,
+    "ESPN": 461,
     "NFL roster": 0,
     "OTHER": 0
   },
@@ -33,10 +33,10 @@
     "ARI": {
       "team": "ARI",
       "total": 19,
-      "out": 3,
+      "out": 1,
       "doubtful": 0,
       "questionable": 3,
-      "ir": 13,
+      "ir": 15,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -65,11 +65,11 @@
     },
     "BUF": {
       "team": "BUF",
-      "total": 7,
+      "total": 8,
       "out": 2,
       "doubtful": 0,
       "questionable": 3,
-      "ir": 2,
+      "ir": 3,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -109,11 +109,11 @@
     },
     "CLE": {
       "team": "CLE",
-      "total": 11,
+      "total": 10,
       "out": 3,
       "doubtful": 0,
       "questionable": 0,
-      "ir": 8,
+      "ir": 7,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -164,10 +164,10 @@
     },
     "HOU": {
       "team": "HOU",
-      "total": 18,
+      "total": 19,
       "out": 1,
       "doubtful": 1,
-      "questionable": 4,
+      "questionable": 5,
       "ir": 12,
       "pup": 0,
       "nfi": 0,
@@ -178,8 +178,8 @@
       "total": 18,
       "out": 0,
       "doubtful": 1,
-      "questionable": 9,
-      "ir": 8,
+      "questionable": 8,
+      "ir": 9,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -242,10 +242,10 @@
     "MIA": {
       "team": "MIA",
       "total": 14,
-      "out": 2,
+      "out": 1,
       "doubtful": 0,
-      "questionable": 5,
-      "ir": 7,
+      "questionable": 4,
+      "ir": 9,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -365,8 +365,8 @@
       "total": 15,
       "out": 0,
       "doubtful": 0,
-      "questionable": 5,
-      "ir": 10,
+      "questionable": 4,
+      "ir": 11,
       "pup": 0,
       "nfi": 0,
       "other": 0
@@ -384,6 +384,20 @@
     }
   },
   "injuries": [
+    {
+      "player_id": "3918331",
+      "espn_id": "3918331",
+      "player": "Andrew Wingard",
+      "team": "ARI",
+      "position": "S",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Wrist",
+      "detail": "Nov 17: Wingard (wrist) was placed on injured reserve by the Cardinals on Tuesday.",
+      "estimated_return_date": "Dec 27",
+      "source": "ESPN",
+      "source_updated": ""
+    },
     {
       "player_id": "4870596",
       "espn_id": "4870596",
@@ -406,8 +420,8 @@
       "position": "QB",
       "status": "IR",
       "practice_status": "",
-      "injury": "Torn UCL",
-      "detail": "Nov 15: Minshew suffered a torn UCL in his right throwing elbow last Sunday at Seattle and is slated to undergo season-ending surgery, Adam Schefter of ESPN reports.",
+      "injury": "Elbow",
+      "detail": "Nov 17: Minshew (elbow) underwent UCL reconstructive surgery Monday, Jeremy Fowler of ESPN.com reports.",
       "estimated_return_date": "Feb 15",
       "source": "ESPN",
       "source_updated": ""
@@ -464,6 +478,20 @@
       "practice_status": "",
       "injury": "Undisclosed",
       "detail": "",
+      "estimated_return_date": "Feb 15",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
+      "player_id": "4428996",
+      "espn_id": "4428996",
+      "player": "Jordan Burch",
+      "team": "ARI",
+      "position": "LB",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Knee",
+      "detail": "Nov 17: The Cardinals placed Burch (knee) on injured reserve Tuesday.",
       "estimated_return_date": "Feb 15",
       "source": "ESPN",
       "source_updated": ""
@@ -563,34 +591,6 @@
       "injury": "Knee",
       "detail": "Nov 13: Carter (knee) has been ruled out ahead of Sunday's game against the Rams, Zach Gershman of the Cardinals' official site reports.",
       "estimated_return_date": "Nov 22",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "3918331",
-      "espn_id": "3918331",
-      "player": "Andrew Wingard",
-      "team": "ARI",
-      "position": "S",
-      "status": "OUT",
-      "practice_status": "",
-      "injury": "Wrist/hand",
-      "detail": "Nov 16: Head coach Mike LaFleur said Monday that Wingard (wrist/hand) will be \"out for an extended period of time,\" Dani Sureck of the Cardinals' official site reports.",
-      "estimated_return_date": "Dec 20",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4428996",
-      "espn_id": "4428996",
-      "player": "Jordan Burch",
-      "team": "ARI",
-      "position": "LB",
-      "status": "OUT",
-      "practice_status": "",
-      "injury": "Knee",
-      "detail": "Nov 16: Head coach Mike LaFleur said Monday that Burch (knee) will be sidelined for the rest of the 2026 season, Dani Sureck of the Cardinals' official site reports.",
-      "estimated_return_date": "Feb 15",
       "source": "ESPN",
       "source_updated": ""
     },
@@ -1039,6 +1039,20 @@
       "injury": "Shoulder",
       "detail": "Nov 16: Ioane (shoulder) is questionable to return to Monday night's contest against the Chargers.",
       "estimated_return_date": "Nov 22",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
+      "player_id": "4606712",
+      "espn_id": "4606712",
+      "player": "Ar'maj Reed-Adams",
+      "team": "BUF",
+      "position": "G",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Back",
+      "detail": "Nov 17: The Bills placed Reed-Adams (back) on injured reserve Tuesday.",
+      "estimated_return_date": "Dec 19",
       "source": "ESPN",
       "source_updated": ""
     },
@@ -1512,8 +1526,8 @@
       "position": "RB",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Thumb/toe",
-      "detail": "Nov 16: Monangai (thumb/toe) said Monday that he's \"on track\" to return to action Sunday against the Saints, Courtney Cronin of ESPN reports.",
+      "injury": "Toe/thumb",
+      "detail": "Nov 17: Monangai (toe/thumb) was seen wearing full pads for the Bears' unofficial practice Tuesday, Adam Jahns of AllCHGO.com reports.",
       "estimated_return_date": "Nov 22",
       "source": "ESPN",
       "source_updated": ""
@@ -1526,8 +1540,8 @@
       "position": "CB",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
+      "injury": "Shoulder",
+      "detail": "Nov 17: Bears coach Ben Johnson said Monday that Gordon has a shoulder injury and is day-to-day, Courtney Cronin of ESPN.com reports.",
       "estimated_return_date": "Nov 22",
       "source": "ESPN",
       "source_updated": ""
@@ -1766,20 +1780,6 @@
       "practice_status": "",
       "injury": "Biceps",
       "detail": "Aug 31: Ulofoshio (biceps) reverted to the Browns' IR on Monday, per the NFL's transaction log.",
-      "estimated_return_date": "Feb 15",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4429392",
-      "espn_id": "4429392",
-      "player": "Elijah Chatman",
-      "team": "CLE",
-      "position": "DT",
-      "status": "IR",
-      "practice_status": "",
-      "injury": "Quadriceps",
-      "detail": "Aug 31: The Browns reverted Chatman (quadriceps) to IR on Monday, per the NFL's transaction log.",
       "estimated_return_date": "Feb 15",
       "source": "ESPN",
       "source_updated": ""
@@ -2493,7 +2493,7 @@
       "status": "OUT",
       "practice_status": "",
       "injury": "Knee",
-      "detail": "Nov 12: Joseph (knee) did not travel to Munich with the Lions and is ruled out for Sunday's matchup against the Patriots.",
+      "detail": "Nov 17: Lions head coach Dan Campbell said Tuesday that he plans to get Joseph (knee) going in Week 11 against Tampa Bay, Dave Birkett of the Detroit Free Press reports.",
       "estimated_return_date": "Nov 22",
       "source": "ESPN",
       "source_updated": ""
@@ -2506,8 +2506,8 @@
       "position": "C",
       "status": "DOUBTFUL",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
+      "injury": "Ankle",
+      "detail": "Nov 17: Mays (ankle) isn't expected to return to action Sunday versus Tampa Bay, Dave Birkett of the Detroit Free Press reports.",
       "estimated_return_date": "Nov 22",
       "source": "ESPN",
       "source_updated": ""
@@ -2829,7 +2829,7 @@
       "status": "IR",
       "practice_status": "",
       "injury": "Groin",
-      "detail": "Nov 17: The Texans placed Al-Shaair (groin) on injured reserve Tuesday.",
+      "detail": "Nov 16: Al-Shaair (groin) did not participate in Monday's walkthrough practice.",
       "estimated_return_date": "Dec 20",
       "source": "ESPN",
       "source_updated": ""
@@ -2913,7 +2913,7 @@
       "status": "IR",
       "practice_status": "",
       "injury": "Hamstring",
-      "detail": "Nov 11: The Texans designated Smith (hamstring) to return from injured reserve Wednesday.",
+      "detail": "Nov 17: Smith (hamstring) was a full participant at practice Tuesday.",
       "estimated_return_date": "Nov 19",
       "source": "ESPN",
       "source_updated": ""
@@ -2997,7 +2997,7 @@
       "status": "DOUBTFUL",
       "practice_status": "",
       "injury": "Concussion",
-      "detail": "Nov 16: Marks (concussion) missed Monday's walkthrough.",
+      "detail": "Nov 17: Marks (concussion) didn't practice Tuesday.",
       "estimated_return_date": "Nov 19",
       "source": "ESPN",
       "source_updated": ""
@@ -3010,8 +3010,8 @@
       "position": "TE",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
+      "injury": "Foot/illness",
+      "detail": "Nov 17: Jordan (foot/illness) did not participate at practice Tuesday.",
       "estimated_return_date": "Nov 19",
       "source": "ESPN",
       "source_updated": ""
@@ -3024,8 +3024,8 @@
       "position": "DE",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
+      "injury": "Hamstring",
+      "detail": "Nov 17: Hunter (hamstring) did not participate at practice Tuesday.",
       "estimated_return_date": "Nov 19",
       "source": "ESPN",
       "source_updated": ""
@@ -3045,6 +3045,20 @@
       "source_updated": ""
     },
     {
+      "player_id": "4602699",
+      "espn_id": "4602699",
+      "player": "Kamari Lassiter",
+      "team": "HOU",
+      "position": "CB",
+      "status": "QUESTIONABLE",
+      "practice_status": "",
+      "injury": "Wrist",
+      "detail": "Nov 17: Lassiter (wrist) did not participate at practice Tuesday.",
+      "estimated_return_date": "Nov 19",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
       "player_id": "4432708",
       "espn_id": "4432708",
       "player": "Marvin Harrison Jr.",
@@ -3053,7 +3067,7 @@
       "status": "QUESTIONABLE",
       "practice_status": "",
       "injury": "Hamstring",
-      "detail": "Nov 16: Harrison (hamstring) was estimated as a non-participant on Monday's practice report.",
+      "detail": "Nov 17: Harrison (hamstring) was a non-participant in Tuesday's practice.",
       "estimated_return_date": "Nov 19",
       "source": "ESPN",
       "source_updated": ""
@@ -3143,6 +3157,20 @@
       "source_updated": ""
     },
     {
+      "player_id": "4601021",
+      "espn_id": "4601021",
+      "player": "Jaylon Carlies",
+      "team": "IND",
+      "position": "LB",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Neck",
+      "detail": "Nov 17: Indianapolis placed Carlies (neck) on injured reserve Tuesday.",
+      "estimated_return_date": "Dec 27",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
       "player_id": "4240896",
       "espn_id": "4240896",
       "player": "Micheal Clemons",
@@ -3193,7 +3221,7 @@
       "status": "QUESTIONABLE",
       "practice_status": "",
       "injury": "Toe",
-      "detail": "Nov 16: Gould (toe) was estimated as limited in Monday's walkthrough practice.",
+      "detail": "Nov 17: The Colts listed Gould (toe) as a limited participant in Tuesday's walk-through practice.",
       "estimated_return_date": "Nov 19",
       "source": "ESPN",
       "source_updated": ""
@@ -3222,20 +3250,6 @@
       "practice_status": "",
       "injury": "Shin",
       "detail": "Nov 16: Colts head coach Shane Steichen said that Ward (shin) is uncertain to be available for Thursday's game against the Texans after exiting Sunday's 24-22 win over the Dolphins, James Boyd of The Athletic reports.",
-      "estimated_return_date": "Nov 19",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4601021",
-      "espn_id": "4601021",
-      "player": "Jaylon Carlies",
-      "team": "IND",
-      "position": "LB",
-      "status": "QUESTIONABLE",
-      "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "",
       "estimated_return_date": "Nov 19",
       "source": "ESPN",
       "source_updated": ""
@@ -3276,8 +3290,8 @@
       "position": "CB",
       "status": "QUESTIONABLE",
       "practice_status": "",
-      "injury": "Left Calf",
-      "detail": "Nov 16: Colts head coach Shane Steichen reported Gardner suffered a left calf injury during Sunday's 24-22 win over the Dolphins and may not play Thursday versus Houston, James Boyd of The Athletic reports.",
+      "injury": "Calf",
+      "detail": "Nov 16: Gardner (calf) was listed as a DNP for Monday's walkthrough practice.",
       "estimated_return_date": "Nov 19",
       "source": "ESPN",
       "source_updated": ""
@@ -3305,7 +3319,7 @@
       "status": "QUESTIONABLE",
       "practice_status": "",
       "injury": "Hamstring",
-      "detail": "Nov 16: Mallory (hamstring) did not participate in Monday's walkthrough practice.",
+      "detail": "Nov 17: Mallory (hamstring) was estimated as a non-participant for Tuesday's practice walkthrough.",
       "estimated_return_date": "Nov 19",
       "source": "ESPN",
       "source_updated": ""
@@ -3990,8 +4004,8 @@
       "position": "C",
       "status": "IR",
       "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "Nov 16: McMahon was placed on injured reserve Monday due to a partially torn patella tear that he suffered during the Rams' 34-6 win over the Cardinals on Sunday, Gary Klein of the Los Angeles Times reports.",
+      "injury": "Knee",
+      "detail": "Nov 16: The Rams placed McMahon (knee) on injured reserve Monday, Aaron Wilson of KPRC 2 Houston reports.",
       "estimated_return_date": "Dec 25",
       "source": "ESPN",
       "source_updated": ""
@@ -4319,6 +4333,20 @@
       "source_updated": ""
     },
     {
+      "player_id": "4837188",
+      "espn_id": "4837188",
+      "player": "Jordan Phillips",
+      "team": "MIA",
+      "position": "DT",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Biceps",
+      "detail": "Nov 17: Phillips (biceps) was placed on injured reserve by the Dolphins on Tuesday.",
+      "estimated_return_date": "Feb 15",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
       "player_id": "4242512",
       "espn_id": "4242512",
       "player": "Malik Willis",
@@ -4389,6 +4417,20 @@
       "source_updated": ""
     },
     {
+      "player_id": "4683276",
+      "espn_id": "4683276",
+      "player": "Zeek Biggers",
+      "team": "MIA",
+      "position": "DT",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Knee",
+      "detail": "Nov 17: Biggers (knee) was placed on injured reserve by the Dolphins on Tuesday.",
+      "estimated_return_date": "Feb 15",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
       "player_id": "4036660",
       "espn_id": "4036660",
       "player": "Darrell Baker Jr.",
@@ -4399,20 +4441,6 @@
       "injury": "Knee",
       "detail": "Nov 14: Baker (knee) was not activated from the reserve/PUP list ahead of Sunday's clash against Indianapolis.",
       "estimated_return_date": "Nov 22",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4683276",
-      "espn_id": "4683276",
-      "player": "Zeek Biggers",
-      "team": "MIA",
-      "position": "DT",
-      "status": "OUT",
-      "practice_status": "",
-      "injury": "Meniscus Tear",
-      "detail": "Nov 16: Biggers sustained a lateral meniscus tear during Sunday's 24-22 loss to the Colts and will require season-ending surgery on his right knee, Ian Rapoport of NFL Network reports.",
-      "estimated_return_date": "Feb 15",
       "source": "ESPN",
       "source_updated": ""
     },
@@ -4468,20 +4496,6 @@
       "practice_status": "",
       "injury": "Undisclosed",
       "detail": "",
-      "estimated_return_date": "Nov 22",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4837188",
-      "espn_id": "4837188",
-      "player": "Jordan Phillips",
-      "team": "MIA",
-      "position": "DT",
-      "status": "QUESTIONABLE",
-      "practice_status": "",
-      "injury": "Undisclosed",
-      "detail": "Nov 16: Phillips underwent further tests Monday on the arm he injured in Sunday's 24-22 loss to the Colts, Barry Jackson of the Miami Herald reports.",
       "estimated_return_date": "Nov 22",
       "source": "ESPN",
       "source_updated": ""
@@ -6441,7 +6455,7 @@
       "status": "QUESTIONABLE",
       "practice_status": "",
       "injury": "Foot",
-      "detail": "Nov 17: The Buccaneers appear to be preparing for the possibility of Mayfield (foot) being sidelined for Sunday's game against the Lions, after the team signed Cooper Rush to the practice squad and signed Easton Stick to the 53-man roster Monday, Rick Stroud of the Tampa Bay Times reports.",
+      "detail": "Nov 17: Mayfield (foot) \"seems to be trending\" toward sitting out Sunday's game against the Lions, with Jalon Daniels likely to draw the Week 11 start, Ian Rapoport of NFL Network reports.",
       "estimated_return_date": "Nov 22",
       "source": "ESPN",
       "source_updated": ""
@@ -6587,6 +6601,20 @@
       "source_updated": ""
     },
     {
+      "player_id": "4569587",
+      "espn_id": "4569587",
+      "player": "Wan'Dale Robinson",
+      "team": "TEN",
+      "position": "WR",
+      "status": "IR",
+      "practice_status": "",
+      "injury": "Ankle",
+      "detail": "Nov 17: The Titans placed Robinson (ankle) on injured reserve Tuesday, Jim Wyatt of the team's official site reports.",
+      "estimated_return_date": "Dec 20",
+      "source": "ESPN",
+      "source_updated": ""
+    },
+    {
       "player_id": "4870805",
       "espn_id": "4870805",
       "player": "Anthony Hill Jr.",
@@ -6638,20 +6666,6 @@
       "practice_status": "",
       "injury": "Concussion",
       "detail": "Nov 15: Adams has entered the league's concussion protocol and has been ruled out for the rest of Sunday's game against the Jaguars.",
-      "estimated_return_date": "Nov 22",
-      "source": "ESPN",
-      "source_updated": ""
-    },
-    {
-      "player_id": "4569587",
-      "espn_id": "4569587",
-      "player": "Wan'Dale Robinson",
-      "team": "TEN",
-      "position": "WR",
-      "status": "QUESTIONABLE",
-      "practice_status": "",
-      "injury": "Ankle",
-      "detail": "Nov 15: Robinson is questionable to return to Sunday's game against the Jaguars due to an ankle injury.",
       "estimated_return_date": "Nov 22",
       "source": "ESPN",
       "source_updated": ""
