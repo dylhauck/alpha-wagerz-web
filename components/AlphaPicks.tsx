@@ -263,7 +263,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
   return out.sort((a, b) => b.probability - a.probability);
 }
 
-function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20): Ticket[] {
+function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20, requirePositiveEdge = true): Ticket[] {
   const MIN_LEGS = minLegs;
   const MAX_LEGS = Math.min(maxLegs, minOdds >= 10000 ? 12 : 8);
   // Keep one outcome per matchup, and consider as many as 20 distinct games.
@@ -307,7 +307,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     if (!match) return true;
     return bestByProp.get([leg.game, match[1].toLowerCase(), match[2].toLowerCase(), match[3].toLowerCase()].join("|")) === leg &&
       bestMarket.get([leg.game, match[1].toLowerCase(), match[3].toLowerCase()].join("|")) === leg;
-  }).filter(leg => leg.probability > probabilityFromOdds(leg.odds))
+  }).filter(leg => !requirePositiveEdge || leg.probability > probabilityFromOdds(leg.odds))
     .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)));
   // Mixed tickets must retain every available market family before beam
   // pruning. Otherwise 36 player props can crowd out all team markets.
@@ -587,7 +587,11 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     const handle = window.setTimeout(() => {
       const tickets = makeParlays(
         eligibleLegs, mainTab === "lotto" ? 10000 : 500,
-        categoryTab === "combos"
+        categoryTab === "combos", 3, 20,
+        // NHL baseline is uncalibrated; retain genuinely priced outcomes
+        // rather than discarding every single-market leg on a small slate.
+        // Model probabilities still rank tickets; never fabricate odds.
+        sport !== "nhl"
       );
       setComputedTickets({ signature: searchSignature, tickets });
     }, 0);
@@ -641,7 +645,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     { id: "total", label: "Over / Unders" },
     { id: "player_prop", label: "Player Props" },
     { id: "combos", label: "Combos" },
-    ...(sport === "nhl" ? [{ id: "anytime_goal" as const, label: "Anytime Goal Scorers" }] : []),
+
     ...(sport === "mlb" ? [{ id: "home_run" as const, label: "Home Runs" }] : []),
     ...(sport === "nfl" ? [{ id: "anytime_td" as const, label: "Anytime TD Scorers" }, { id: "first_td" as const, label: "First TD Scorers" }] : []),
   ];
