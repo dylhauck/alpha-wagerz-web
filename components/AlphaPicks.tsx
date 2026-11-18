@@ -308,8 +308,6 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     const match = leg.pick.match(/\s+(Over|Under)\s+[-\d.]+\s+/i);
     return match ? (match[1].toLowerCase() as "over" | "under") : null;
   };
-  const hasViableOvers = candidates.some(leg => propDirection(leg) === "over");
-  const hasViableUnders = candidates.some(leg => propDirection(leg) === "under");
   type State = { legs: Leg[]; decimal: number; probability: number };
   const beams: State[][] = Array.from({ length: MAX_LEGS + 1 }, () => []);
   beams[0] = [{ legs: [], decimal: 1, probability: 1 }];
@@ -327,14 +325,10 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
             existing.game === leg.game && playerName(existing) === playerName(leg)) ||
           (leg.marketType !== "player_prop" && existing.game === leg.game &&
             existing.marketType === leg.marketType))) continue;
-        // For player-prop parlays, require directional variety only when
-        // BOTH sides have qualifying positive-edge opportunities. Never
-        // manufacture an Over selection to satisfy a quota.
-        if (!mixed && hasViableOvers && hasViableUnders && leg.marketType === "player_prop") {
-          const direction = propDirection(leg);
-          const sameDirection = state.legs.filter(x => propDirection(x) === direction).length;
-          if (direction && sameDirection >= Math.max(1, Math.ceil(MAX_LEGS * 0.67))) continue;
-        }
+        // Hard limit: at most one Under leg on every player-prop ticket.
+        // This applies to parlays and lottos, including mixed-category tickets.
+        if (propDirection(leg) === "under" &&
+            state.legs.some(existing => propDirection(existing) === "under")) continue;
         const next: State = {
           legs: [...state.legs, leg],
           decimal: state.decimal * americanToDecimal(leg.odds),
