@@ -551,8 +551,14 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     choose(ranked);
     return selected.map(leg => ticket([leg]));
   }, [eligibleLegs, categoryTab]);
-  const parlays = useMemo(() => makeParlays(eligibleLegs, 500, categoryTab === "combos"), [eligibleLegs, categoryTab]);
-  const lottos = useMemo(() => makeParlays(eligibleLegs, 7500, categoryTab === "combos"), [eligibleLegs, categoryTab]);
+  // Only calculate the visible bet type. Previously every category click
+  // synchronously ran BOTH expensive beam searches, blocking tab switching.
+  const parlays = useMemo(() => mainTab === "parlay"
+    ? makeParlays(eligibleLegs, 500, categoryTab === "combos") : [],
+    [eligibleLegs, categoryTab, mainTab]);
+  const lottos = useMemo(() => mainTab === "lotto"
+    ? makeParlays(eligibleLegs, 10000, categoryTab === "combos") : [],
+    [eligibleLegs, categoryTab, mainTab]);
   // First-basket combinations use 2–4 distinct games. The source has
   // modeled probabilities but NO sportsbook first-basket odds.
   // Show projections only, never invent parlay prices or claim eligibility.
@@ -582,15 +588,15 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     }
     return results.sort((a, b) => b.probability - a.probability);
   }, [basketGames, basketPrices]);
-  const basketTickets = useMemo(() => mainTab === "straight"
+  const basketTickets = useMemo(() => categoryTab !== "first_basket" ? [] : mainTab === "straight"
     ? basketLegs.filter(leg => leg.odds >= -150).slice(0, 6).map(leg => ticket([leg]))
-    : makeParlays(basketLegs, mainTab === "lotto" ? 7500 : 500, false, 2, 4),
-    [basketLegs, mainTab]);
+    : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4),
+    [basketLegs, mainTab, categoryTab]);
   const section = mainTab === "parlay"
     ? { title: "Most Confident Parlays", subtitle: "Six highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
     : mainTab === "straight"
     ? { title: "Most Confident Straight Bets", subtitle: "Six highest-confidence qualifying straight bets per market", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
-    : { title: "Lotto Parlays", subtitle: "Six highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+7,500 minimum · 3–20 legs" };
+    : { title: "Lotto Parlays", subtitle: "Six highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
   const pickTabs: { id: PickTab; label: string }[] = [
     { id: "moneyline", label: "Moneylines" },
     { id: "spread", label: "Spreads" },
