@@ -182,6 +182,17 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       if (!game) continue;
       const players = [...(game.player_projections?.away ?? []), ...(game.player_projections?.home ?? [])];
       const player = players.find((p: any) => String(p.player_name).toLowerCase() === String(prop.player_name).toLowerCase());
+      // Conservative projected-starter proxy until confirmed lineups are
+      // supplied by the pipeline: top five projected minutes on each team.
+      // Do not infer starter status from an existing sportsbook quote.
+      const projectedRotation = (game.player_projections?.away ?? []).some((p: any) => p === player)
+        ? (game.player_projections?.away ?? [])
+        : (game.player_projections?.home ?? []);
+      const topFive = [...projectedRotation]
+        .filter((p: any) => num(p.projection?.min) !== null)
+        .sort((a: any, b: any) => (num(b.projection?.min) ?? 0) - (num(a.projection?.min) ?? 0))
+        .slice(0, 5);
+      if (!topFive.includes(player)) continue;
       if (!player) continue;
       const status = injuries.get(injuryKey(player.team) + ":" + injuryKey(player.player_name));
       // Exclude injured or uncertain players rather than making up minutes or
@@ -194,7 +205,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       // Do not treat a zero-minute or inactive player's baseline as a
       // confident under. A valid active-minute projection is required.
       const projectedMinutes = num(projection.min);
-      if (projectedMinutes === null || projectedMinutes < 12 || mean === null || mean <= 0) continue;
+      if (projectedMinutes === null || projectedMinutes < 28 || mean === null || mean <= 0) continue;
       // A guessed variance is not a calibrated betting probability.
       const sd = num(projection[metric + "_sd"]) ?? num(player.distribution?.[metric]?.sd);
       const explicitOver = normalizeProbability(player.probabilities?.[metric]?.over);
