@@ -6,272 +6,306 @@ import {
   useState,
 } from "react";
 
-function NHLTeamLogo({team,size=28}:{team:string;teams?:NHLTeam[];size?:number}) {return <img src={`https://assets.nhle.com/logos/nhl/svg/${team.toUpperCase()}_light.svg`} alt={`${team} logo`} width={size} height={size} className="object-contain" onError={e=>{const img=e.currentTarget;if(img.dataset.fallback!=="1"){img.dataset.fallback="1";img.src=`https://a.espncdn.com/i/teamlogos/nhl/500/${team.toLowerCase()}.png`;}else img.style.display="none";}}/>;}
+
+// ============================================================
+// TYPES
+// ============================================================
 
 type NHLTeam = {
   abbr?: string;
+  abbreviation?: string;
   name?: string;
+  full_name?: string;
   logo?: string;
 };
 
 type NHLGame = {
-  game_id?: string | number;
-  game?: string;
-
-  away?: string;
-  home?: string;
-  start_time_utc?: string;
-  away_team?: string;
-  home_team?: string;
-
+  game_id: string | number;
+  away_team: string;
+  home_team: string;
   away_abbr?: string;
   home_abbr?: string;
-
-  game_datetime?: string;
-  game_datetime_utc?: string;
-
   game_date?: string;
   game_time?: string;
+  game_datetime?: string;
+  game_datetime_utc?: string;
+  start_time_utc?: string;
 };
 
-type Injury = {
+type NHLInjury = {
   player_id?: string;
-  player_name?: string;
-  player?: string;
-  name?: string;
-
-  team?: string;
-  team_abbr?: string;
-
+  player_name: string;
+  team: string;
   position?: string;
-  status?: string;
-
+  status: string;
   injury?: string;
-  description?: string;
   detail?: string;
-
   estimated_return_date?: string;
-
+  reported_date?: string;
   source?: string;
 };
 
-function getRows(
-  payload: any,
-): Injury[] {
-  if (Array.isArray(payload)) {
-    return payload;
-  }
+type InjuryPayload = {
+  generated_at?: string;
+  source?: string;
+  status?: string;
+  injuries?: NHLInjury[];
+};
 
-  for (const key of [
-    "injuries",
-    "players",
-    "data",
-    "rows",
-  ]) {
-    if (Array.isArray(payload?.[key])) {
-      return payload[key];
-    }
-  }
+type SlatePayload = {
+  games?: NHLGame[];
+};
 
-  return [];
+type TeamPayload = {
+  teams?: NHLTeam[];
+};
+
+
+// ============================================================
+// HELPERS
+// ============================================================
+
+function normalizeTeam(value: unknown) {
+  const team = String(value || "")
+    .trim()
+    .toUpperCase();
+
+  const aliases: Record<string, string> = {
+    NJ: "NJD",
+    TB: "TBL",
+    LA: "LAK",
+    SJ: "SJS",
+    MON: "MTL",
+    UTAH: "UTA",
+  };
+
+  return aliases[team] || team;
 }
 
-function getGames(
-  payload: any,
-): NHLGame[] {
+function sameTeam(a: unknown, b: unknown) {
+  return normalizeTeam(a) === normalizeTeam(b);
+}
+
+function getGames(payload: unknown): NHLGame[] {
   if (Array.isArray(payload)) {
     return payload;
   }
 
-  return Array.isArray(payload?.games)
-    ? payload.games
+  const data = payload as SlatePayload | null;
+
+  return Array.isArray(data?.games)
+    ? data.games.map((g: any) => ({...g, away_team: g.away_team || g.away || "", home_team: g.home_team || g.home || "", away_abbr: g.away_abbr || g.away, home_abbr: g.home_abbr || g.home}))
     : [];
 }
 
-function normalizeTeam(
-  value?: string,
-) {
-  return String(value || "")
-    .trim()
-    .toUpperCase();
-}
-
-function sameTeam(
-  a?: string,
-  b?: string,
-) {
-  const left =
-    normalizeTeam(a);
-
-  const right =
-    normalizeTeam(b);
-
-  if (left === right) {
-    return true;
+function getTeams(payload: unknown): NHLTeam[] {
+  if (Array.isArray(payload)) {
+    return payload;
   }
 
-  const aliases: Record<
-    string,
-    string
-  > = {
-    JAC: "JAX",
-    JAX: "JAX",
-    LA: "LAR",
-    LAR: "LAR",
-    WSH: "WAS",
-    WAS: "WAS",
-  };
+  const data = payload as TeamPayload | null;
 
-  return (
-    aliases[left] &&
-    aliases[left] === aliases[right]
-  );
+  return Array.isArray(data?.teams)
+    ? data.teams
+    : [];
 }
 
-function statusOrder(
-  status: string,
-) {
-  const key =
-    status.toUpperCase();
+function getInjuries(payload: unknown): NHLInjury[] {
+  const data = payload as InjuryPayload | null;
+
+  return Array.isArray(data?.injuries)
+    ? data.injuries.map((row: any) => ({...row, player_name: row.player_name || row.player || row.name || "Unknown", team: row.team || row.team_abbr || ""}))
+    : [];
+}
+
+function formatTime(game: NHLGame) {
+  // Use the actual game datetime when available.
+  const raw =
+    game.start_time_utc ||
+    game.game_datetime_utc ||
+    game.game_datetime;
+
+  if (raw) {
+    const date = new Date(raw);
+
+    if (!Number.isNaN(date.getTime())) {
+      return date.toLocaleTimeString("en-US", {
+        timeZone: "America/Chicago",
+        hour: "numeric",
+        minute: "2-digit",
+      });
+    }
+  }
+
+  // Fallback: game_time comes from the NHL's
+  // Eastern Time schedule field.
+  const value = game.game_time || "";
+
+  const match = value.match(
+    /(?:T|^)(\d{1,2}):(\d{2})/
+  );
+
+  if (match) {
+    const easternHour = Number(match[1]);
+    const minute = match[2];
+
+    // Eastern is one hour ahead of Central.
+    const centralHour = (easternHour + 23) % 24;
+
+    return `${centralHour % 12 || 12}:${minute} ${
+      centralHour >= 12 ? "PM" : "AM"
+    }`;
+  }
+
+  return "TBD";
+}
+
+function formatUpdated(value?: string) {
+  if (!value) {
+    return "Unavailable";
+  }
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return "Unavailable";
+  }
+
+  return date.toLocaleString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short",
+  });
+}
+
+function statusOrder(status: string) {
+  const value = status.toUpperCase();
 
   if (
-    key.includes("OUT") ||
-    key.includes("IR") ||
-    key.includes("PUP")
+    value.includes("OUT") ||
+    value.includes("INJURED RESERVE")
   ) {
     return 0;
   }
 
-  if (
-    key.includes("DOUBTFUL")
-  ) {
+  if (value.includes("DOUBTFUL")) {
     return 1;
   }
 
-  if (
-    key.includes("QUESTION")
-  ) {
+  if (value.includes("QUESTIONABLE")) {
     return 2;
   }
 
-  if (
-    key.includes("LIMIT")
-  ) {
+  if (value.includes("DAY-TO-DAY")) {
     return 3;
   }
 
-  if (
-    key.includes("PROBABLE")
-  ) {
+  if (value.includes("PROBABLE")) {
     return 4;
   }
 
   return 5;
 }
 
-function statusClass(
-  status: string,
-) {
-  const key =
-    status.toUpperCase();
+function statusClass(status: string) {
+  const value = status.toUpperCase();
 
   if (
-    key.includes("OUT") ||
-    key.includes("IR") ||
-    key.includes("PUP")
+    value.includes("OUT") ||
+    value.includes("INJURED RESERVE")
   ) {
-    return "border-red-400/30 bg-red-500/10 text-red-300";
+    return (
+      "border-red-400/30 " +
+      "bg-red-500/10 text-red-300"
+    );
   }
 
-  if (
-    key.includes("DOUBTFUL")
-  ) {
-    return "border-orange-400/30 bg-orange-500/10 text-orange-300";
-  }
-
-  if (
-    key.includes("QUESTION")
-  ) {
-    return "border-amber-300/30 bg-amber-400/10 text-amber-200";
+  if (value.includes("DOUBTFUL")) {
+    return (
+      "border-orange-400/30 " +
+      "bg-orange-500/10 text-orange-300"
+    );
   }
 
   if (
-    key.includes("LIMIT")
+    value.includes("QUESTIONABLE") ||
+    value.includes("DAY-TO-DAY")
   ) {
-    return "border-cyan-300/30 bg-cyan-300/10 text-cyan-200";
+    return (
+      "border-amber-300/30 " +
+      "bg-amber-400/10 text-amber-200"
+    );
   }
 
-  if (
-    key.includes("PROBABLE")
-  ) {
-    return "border-emerald-300/30 bg-emerald-400/10 text-emerald-200";
+  if (value.includes("PROBABLE")) {
+    return (
+      "border-emerald-300/30 " +
+      "bg-emerald-400/10 text-emerald-200"
+    );
   }
 
-  return "border-white/10 bg-white/[0.04] text-slate-300";
-}
-
-function formatGameCardTime(
-  game: NHLGame,
-) {
-  if (game.game_time) {
-    const [
-      hourString,
-      minuteString,
-    ] =
-      game.game_time.split(":");
-
-    const hour =
-      Number(hourString);
-
-    const minute =
-      Number(minuteString);
-
-    if (
-      Number.isFinite(hour) &&
-      Number.isFinite(minute)
-    ) {
-      const period =
-        hour >= 12
-          ? "PM"
-          : "AM";
-
-      const displayHour =
-        hour % 12 || 12;
-
-      return `${displayHour}:${String(
-        minute,
-      ).padStart(2, "0")} ${period}`;
-    }
-  }
-
-  const raw =
-    game.start_time_utc || game.game_datetime_utc ||
-    game.game_datetime;
-
-  if (!raw) {
-    return "TBD";
-  }
-
-  const date =
-    new Date(raw);
-
-  if (
-    Number.isNaN(
-      date.getTime(),
-    )
-  ) {
-    return "TBD";
-  }
-
-  return date.toLocaleTimeString(
-    "en-US",
-    {
-      hour: "numeric",
-      minute: "2-digit",
-      timeZone: "America/Chicago",
-    },
+  return (
+    "border-white/10 " +
+    "bg-white/[0.04] text-slate-300"
   );
 }
+
+
+// ============================================================
+// NHL TEAM LOGO
+// ============================================================
+
+function NHLTeamLogo({
+  team,
+  teams,
+  size = 44,
+}: {
+  team: string;
+  teams: NHLTeam[];
+  size?: number;
+}) {
+  const code = normalizeTeam(team);
+
+  const info = teams.find((item) => {
+    return (
+      sameTeam(
+        item.abbr || item.abbreviation,
+        code
+      ) ||
+      sameTeam(
+        item.name || item.full_name,
+        code
+      )
+    );
+  });
+
+  return (
+    <img
+      src={info?.logo || `https://assets.nhle.com/logos/nhl/svg/${code}_light.svg`}
+      alt={team}
+      width={size}
+      height={size}
+      className="shrink-0 object-contain"
+      onError={(event) => {
+        const img = event.currentTarget;
+        if (img.dataset.fallback !== "1") {
+          img.dataset.fallback = "1";
+          img.src = `https://a.espncdn.com/i/teamlogos/nhl/500/${code.toLowerCase()}.png`;
+        } else {
+          img.style.display = "none";
+        }
+      }}
+    />
+  );
+}
+
+
+// ============================================================
+// TICKER LOGOS
+// ============================================================
 
 function NHLLogoGlow({
   team,
@@ -295,6 +329,11 @@ function NHLLogoGlow({
   );
 }
 
+
+// ============================================================
+// GAME SELECTOR
+// ============================================================
+
 function GameSelector({
   games,
   teams,
@@ -309,90 +348,78 @@ function GameSelector({
   return (
     <div className="table-scroll mt-2 pb-2">
       <div className="flex min-w-max gap-2">
-        {games.map(
-          (game, index) => {
-            const id = String(
-              game.game_id ??
-                `${game.away || game.away_team}-${game.home || game.home_team}-${index}`,
-            );
+        {games.map((game, index) => {
+          const id = String(
+            game.game_id ??
+              `${game.away_team}-${game.home_team}-${index}`
+          );
 
-            const selected =
-              id === selectedId;
+          const selected = id === selectedId;
 
-            const awayCode =
-              game.away || game.away_abbr ||
-              game.away_team ||
-              "AWAY";
+          const away =
+            game.away_abbr || game.away_team;
 
-            const homeCode =
-              game.home || game.home_abbr ||
-              game.home_team ||
-              "HOME";
+          const home =
+            game.home_abbr || game.home_team;
 
-            return (
-              <button
-                key={id}
-                type="button"
-                onClick={() =>
-                  onSelect(id)
-                }
-                className={`min-w-[150px] rounded-xl border bg-slate-950/80 px-3 py-2 transition ${
-                  selected
-                    ? "border-cyan-300/70 bg-cyan-300/15 shadow-[0_0_20px_rgba(35,216,255,0.25)]"
-                    : "border-white/10 bg-white/[0.035] hover:border-pink-300/40"
-                }`}
-              >
-                <div className="flex items-center justify-center gap-2">
-                  <NHLLogoGlow
-                    team={awayCode}
-                    teams={teams}
-                  />
+          return (
+            <button
+              key={id}
+              type="button"
+              onClick={() => onSelect(id)}
+              className={`min-w-[150px] rounded-xl border px-3 py-2 transition ${
+                selected
+                  ? "border-cyan-300/70 bg-cyan-300/15 shadow-[0_0_20px_rgba(35,216,255,0.25)]"
+                  : "border-white/10 bg-slate-950/80 hover:border-pink-300/40"
+              }`}
+            >
+              <div className="flex items-center justify-center gap-2">
+                <NHLLogoGlow
+                  team={away}
+                  teams={teams}
+                />
 
-                  <span className="text-xs font-black text-slate-400">
-                    @
-                  </span>
+                <span className="text-xs font-black text-slate-400">
+                  @
+                </span>
 
-                  <NHLLogoGlow
-                    team={homeCode}
-                    teams={teams}
-                  />
-                </div>
+                <NHLLogoGlow
+                  team={home}
+                  teams={teams}
+                />
+              </div>
 
-                <div className="mt-2 text-center text-sm font-black tracking-wide text-white">
-                  {formatGameCardTime(
-                    game,
-                  )}
-                </div>
-              </button>
-            );
-          },
-        )}
+              <div className="mt-2 text-center text-sm font-black text-white">
+                {formatTime(game)}
+              </div>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
 }
 
+
+// ============================================================
+// SUMMARY CARD
+// ============================================================
+
 function SummaryBox({
   label,
   value,
-  tone = "slate",
+  tone = "cyan",
 }: {
   label: string;
   value: number;
-  tone?:
-    | "red"
-    | "amber"
-    | "cyan"
-    | "slate";
+  tone?: "cyan" | "red" | "amber";
 }) {
-  const valueClass =
+  const color =
     tone === "red"
       ? "text-red-300"
       : tone === "amber"
         ? "text-amber-200"
-        : tone === "cyan"
-          ? "text-cyan-200"
-          : "text-white";
+        : "text-cyan-200";
 
   return (
     <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-4">
@@ -401,7 +428,7 @@ function SummaryBox({
       </div>
 
       <div
-        className={`mt-2 text-2xl font-black ${valueClass}`}
+        className={`mt-2 text-2xl font-black ${color}`}
       >
         {value}
       </div>
@@ -409,16 +436,21 @@ function SummaryBox({
   );
 }
 
+
+// ============================================================
+// TEAM INJURY TABLE
+// ============================================================
+
 function InjuryTable({
   team,
   teams,
   injuries,
-  feedStatus = "verified",
+  dataAvailable,
 }: {
   team: string;
   teams: NHLTeam[];
-  injuries: Injury[];
-  feedStatus?: string;
+  injuries: NHLInjury[];
+  dataAvailable: boolean;
 }) {
   return (
     <section className="glass overflow-hidden rounded-3xl">
@@ -430,12 +462,9 @@ function InjuryTable({
             size={44}
           />
 
-          <div>
-
-            <h2 className="mt-1 text-xl font-black text-white">
-              {team}
-            </h2>
-          </div>
+          <h2 className="text-xl font-black text-white">
+            {team}
+          </h2>
         </div>
 
         <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-cyan-200">
@@ -446,14 +475,17 @@ function InjuryTable({
         </div>
       </div>
 
-      {injuries.length === 0 ? (
+      {!dataAvailable ? (
         <div className="p-6 text-sm text-slate-400">
-          {feedStatus !== "verified" ? "Verified injury data unavailable for " : "No injuries are listed for "}
-          {team} on this slate.
+          Injury report data is currently unavailable.
+        </div>
+      ) : injuries.length === 0 ? (
+        <div className="p-6 text-sm text-slate-400">
+          No injuries currently listed for {team}.
         </div>
       ) : (
         <div className="table-scroll overflow-x-auto">
-          <table className="min-w-[900px] w-full text-left">
+          <table className="w-full min-w-[610px] text-left">
             <thead className="bg-white/[0.04]">
               <tr className="border-b border-white/10 text-[10px] font-black uppercase tracking-[0.14em] text-slate-500">
                 <th className="px-4 py-3">
@@ -476,73 +508,50 @@ function InjuryTable({
                   Est. Return
                 </th>
 
-                <th className="px-4 py-3">
-                  Detail
-                </th>
-              </tr>
+
+</tr>
             </thead>
 
             <tbody>
-              {injuries.map(
-                (row, index) => {
-                  const name =
-                    row.player_name ||
-                    row.player ||
-                    row.name ||
-                    "Unknown Player";
+              {injuries.map((row, index) => (
+                <tr
+                  key={
+                    row.player_id ||
+                    `${team}-${row.player_name}-${index}`
+                  }
+                  className="border-b border-white/[0.06] last:border-b-0"
+                >
+                  <td className="px-4 py-4">
+                    <div className="font-black text-white">
+                      {row.player_name}
+                    </div>
+                  </td>
 
-                  const status =
-                    row.status ||
-                    "Unknown";
+                  <td className="px-4 py-4 text-sm font-bold text-slate-300">
+                    {row.position || "—"}
+                  </td>
 
-                  return (
-                    <tr
-                      key={
-                        row.player_id ||
-                        `${team}-${name}-${index}`
-                      }
-                      className="border-b border-white/[0.06] last:border-b-0"
+                  <td className="px-4 py-4">
+                    <span
+                      className={`inline-flex rounded-full border px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] ${statusClass(
+                        row.status
+                      )}`}
                     >
-                      <td className="px-4 py-4">
-                        <div className="font-black text-white">
-                          {name}
-                        </div>
-                      </td>
+                      {row.status || "Unknown"}
+                    </span>
+                  </td>
 
-                      <td className="px-4 py-4 text-sm font-bold text-slate-300">
-                        {row.position ||
-                          "—"}
-                      </td>
+                  <td className="px-4 py-4 text-sm font-bold text-slate-300">
+                    {row.injury || "—"}
+                  </td>
 
-                      <td className="px-4 py-4">
-                        <span
-                          className={`inline-flex rounded-full border px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] ${statusClass(
-                            status,
-                          )}`}
-                        >
-                          {status}
-                        </span>
-                      </td>
+                  <td className="px-4 py-4 text-sm font-bold text-slate-300">
+                    {row.estimated_return_date || "—"}
+                  </td>
 
-                      <td className="px-4 py-4 text-sm font-bold text-slate-300">
-                        {row.injury ||
-                          row.description ||
-                          "—"}
-                      </td>
 
-                      <td className="px-4 py-4 text-sm font-bold text-slate-300">
-  {row.estimated_return_date || "—"}
-</td>
-
-                      <td className="max-w-xl px-4 py-4 text-sm text-slate-400">
-                        {row.detail ||
-                          "—"}
-                      </td>
-
-                    </tr>
-                  );
-                },
-              )}
+</tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -551,24 +560,33 @@ function InjuryTable({
   );
 }
 
+
+// ============================================================
+// MAIN PAGE
+// ============================================================
+
 export default function NHLInjuryReportPage() {
-  const [feedStatus, setFeedStatus] = useState("unavailable");
-  const [rows, setRows] =
-    useState<Injury[]>([]);
+  const [rows, setRows] = useState<NHLInjury[]>([]);
 
-  const [games, setGames] =
-    useState<NHLGame[]>([]);
+  const [games, setGames] = useState<NHLGame[]>([]);
 
-  const [teams, setTeams] =
-    useState<NHLTeam[]>([]);
+  const [teams, setTeams] = useState<NHLTeam[]>([]);
 
-  const [
-    selectedGameId,
-    setSelectedGameId,
-  ] = useState("");
+  const [selectedGameId, setSelectedGameId] =
+    useState("");
+
+  const [generatedAt, setGeneratedAt] =
+    useState("");
+
+  const [dataAvailable, setDataAvailable] =
+    useState(false);
 
   const [loading, setLoading] =
     useState(true);
+
+  // ----------------------------------------------------------
+  // LOAD DATA
+  // ----------------------------------------------------------
 
   useEffect(() => {
     let cancelled = false;
@@ -578,94 +596,77 @@ export default function NHLInjuryReportPage() {
 
       try {
         const [
-          injuryRes,
-          slateRes,
-          teamsRes,
+          injuryResponse,
+          slateResponse,
+          teamsResponse,
         ] = await Promise.all([
-          fetch(
-            "/data/nhl/injuries.json",
-            {
-              cache: "no-store",
-            },
-          ),
+          fetch("/data/nhl/injuries.json", {
+            cache: "no-store",
+          }),
 
-          fetch(
-            "/data/nhl/slate.json",
-            {
-              cache: "no-store",
-            },
-          ),
+          fetch("/data/nhl/slate.json", {
+            cache: "no-store",
+          }),
 
-          fetch(
-            "/data/nhl/teams.json",
-            {
-              cache: "no-store",
-            },
-          ),
+          fetch("/data/nhl/teams.json", {
+            cache: "no-store",
+          }),
         ]);
 
-        const injuryPayload =
-          injuryRes.ok
-            ? await injuryRes.json()
+        const injuryPayload: InjuryPayload =
+          injuryResponse.ok
+            ? await injuryResponse.json()
             : {};
 
         const slatePayload =
-          slateRes.ok
-            ? await slateRes.json()
-            : [];
+          slateResponse.ok
+            ? await slateResponse.json()
+            : {};
 
         const teamsPayload =
-          teamsRes.ok
-            ? await teamsRes.json()
-            : [];
+          teamsResponse.ok
+            ? await teamsResponse.json()
+            : {};
 
-        if (!cancelled) {
-          const loadedGames =
-            getGames(
-              slatePayload,
-            );
-
-          setFeedStatus(String(injuryPayload?.status || "unavailable"));
-          setRows(
-            getRows(
-              injuryPayload,
-            ),
-          );
-
-          setGames(
-            loadedGames,
-          );
-
-          setTeams(
-            Array.isArray(
-              teamsPayload,
-            )
-              ? teamsPayload
-              : Array.isArray(
-                    teamsPayload?.teams,
-                  )
-                ? teamsPayload.teams
-                : [],
-          );
-
-          if (
-            loadedGames.length
-          ) {
-            setSelectedGameId(
-              String(
-                loadedGames[0]
-                  .game_id ??
-                  `${loadedGames[0].away || loadedGames[0].away_team}-${loadedGames[0].home || loadedGames[0].home_team}-0`,
-              ),
-            );
-          }
+        if (cancelled) {
+          return;
         }
-      } catch {
+
+        const loadedGames =
+          getGames(slatePayload);
+
+        const loadedRows =
+          getInjuries(injuryPayload);
+
+        setGames(loadedGames);
+
+        setRows(loadedRows);
+
+        setTeams(getTeams(teamsPayload));
+
+        setGeneratedAt(
+          injuryPayload.generated_at || ""
+        );
+
+        setDataAvailable(
+          injuryResponse.ok &&
+            (injuryPayload.status === "ok" || injuryPayload.status === "verified") &&
+            Array.isArray(injuryPayload.injuries)
+        );
+
+        if (loadedGames.length) {
+          setSelectedGameId(
+            String(loadedGames[0].game_id)
+          );
+        }
+      } catch (error) {
+        console.error(
+          "NHL injury report loading failed:",
+          error
+        );
+
         if (!cancelled) {
-          setFeedStatus("unavailable");
-          setRows([]);
-          setGames([]);
-          setTeams([]);
+          setDataAvailable(false);
         }
       } finally {
         if (!cancelled) {
@@ -681,219 +682,168 @@ export default function NHLInjuryReportPage() {
     };
   }, []);
 
-  const selectedGame =
-    useMemo(() => {
-      if (!games.length) {
-        return null;
+  // ----------------------------------------------------------
+  // SELECTED MATCHUP
+  // ----------------------------------------------------------
+
+  const selectedGame = useMemo(() => {
+    return (
+      games.find(
+        (game) =>
+          String(game.game_id) ===
+          selectedGameId
+      ) ||
+      games[0] ||
+      null
+    );
+  }, [games, selectedGameId]);
+
+  const selectedAway = selectedGame
+    ? selectedGame.away_abbr ||
+      selectedGame.away_team
+    : "";
+
+  const selectedHome = selectedGame
+    ? selectedGame.home_abbr ||
+      selectedGame.home_team
+    : "";
+
+  // ----------------------------------------------------------
+  // SORT INJURIES
+  // ----------------------------------------------------------
+
+  const sortedRows = useMemo(() => {
+    return [...rows].sort((a, b) => {
+      const statusDifference =
+        statusOrder(a.status || "") -
+        statusOrder(b.status || "");
+
+      if (statusDifference !== 0) {
+        return statusDifference;
       }
 
-      return (
-        games.find(
-          (game, index) =>
-            String(
-              game.game_id ??
-                `${game.away_team}-${game.home_team}-${index}`,
-            ) ===
-            selectedGameId,
-        ) || games[0]
+      return a.player_name.localeCompare(
+        b.player_name
       );
-    }, [
-      games,
-      selectedGameId,
-    ]);
+    });
+  }, [rows]);
 
-  const sortedRows =
-    useMemo(
-      () =>
-        [...rows].sort(
-          (a, b) => {
-            const statusDiff =
-              statusOrder(
-                a.status || "",
-              ) -
-              statusOrder(
-                b.status || "",
-              );
+  // ----------------------------------------------------------
+  // TEAM INJURIES
+  // ----------------------------------------------------------
 
-            if (
-              statusDiff !== 0
-            ) {
-              return statusDiff;
-            }
-
-            const teamA =
-              normalizeTeam(
-                a.team ||
-                  a.team_abbr,
-              );
-
-            const teamB =
-              normalizeTeam(
-                b.team ||
-                  b.team_abbr,
-              );
-
-            return (
-              teamA.localeCompare(
-                teamB,
-              ) ||
-              (
-                a.player_name ||
-                a.name ||
-                ""
-              ).localeCompare(
-                b.player_name ||
-                  b.name ||
-                  "",
-              )
-            );
-          },
-        ),
-      [rows],
+  const awayInjuries = useMemo(() => {
+    return sortedRows.filter((row) =>
+      sameTeam(row.team, selectedAway)
     );
+  }, [sortedRows, selectedAway]);
 
-  const selectedAway =
-    selectedGame
-      ? selectedGame.away || selectedGame.away_abbr ||
-        selectedGame.away_team ||
-        "AWAY"
-      : "AWAY";
-
-  const selectedHome =
-    selectedGame
-      ? selectedGame.home || selectedGame.home_abbr ||
-        selectedGame.home_team ||
-        "HOME"
-      : "HOME";
-
-  const awayInjuries =
-    useMemo(
-      () =>
-        sortedRows.filter(
-          (row) =>
-            sameTeam(
-              row.team ||
-                row.team_abbr,
-              selectedAway,
-            ),
-        ),
-      [
-        sortedRows,
-        selectedAway,
-      ],
+  const homeInjuries = useMemo(() => {
+    return sortedRows.filter((row) =>
+      sameTeam(row.team, selectedHome)
     );
+  }, [sortedRows, selectedHome]);
 
-  const homeInjuries =
-    useMemo(
-      () =>
-        sortedRows.filter(
-          (row) =>
-            sameTeam(
-              row.team ||
-                row.team_abbr,
-              selectedHome,
-            ),
-        ),
-      [
-        sortedRows,
-        selectedHome,
-      ],
-    );
+  const selectedInjuries = useMemo(() => {
+    return [
+      ...awayInjuries,
+      ...homeInjuries,
+    ];
+  }, [awayInjuries, homeInjuries]);
 
-  const selectedInjuries =
-    useMemo(
-      () => [
-        ...awayInjuries,
-        ...homeInjuries,
-      ],
-      [
-        awayInjuries,
-        homeInjuries,
-      ],
-    );
+  // ----------------------------------------------------------
+  // SUMMARY COUNTS
+  // ----------------------------------------------------------
 
-  const outCount =
-    selectedInjuries.filter(
-      (row) => {
-        const status =
-          String(
-            row.status || "",
-          ).toUpperCase();
+  const outCount = selectedInjuries.filter(
+    (row) =>
+      row.status
+        .toUpperCase()
+        .includes("OUT")
+  ).length;
 
-        return (
-          status.includes(
-            "OUT",
-          ) ||
-          status.includes("IR") ||
-          status.includes("PUP")
-        );
-      },
-    ).length;
-
-  const doubtfulCount =
-    selectedInjuries.filter(
-      (row) =>
-        String(
-          row.status || "",
-        )
-          .toUpperCase()
-          .includes("DOUBTFUL"),
-    ).length;
+  const doubtfulCount = selectedInjuries.filter(
+    (row) =>
+      row.status
+        .toUpperCase()
+        .includes("DOUBTFUL")
+  ).length;
 
   const questionableCount =
-    selectedInjuries.filter(
-      (row) =>
-        String(
-          row.status || "",
-        )
-          .toUpperCase()
-          .includes("QUESTION"),
+    selectedInjuries.filter((row) =>
+      row.status
+        .toUpperCase()
+        .includes("QUESTIONABLE")
     ).length;
+
+  // ----------------------------------------------------------
+  // LOADING STATE
+  // ----------------------------------------------------------
 
   if (loading) {
     return (
       <section className="glass rounded-3xl p-8 text-center text-slate-400">
-        Loading NHL injuries...
+        Loading NHL injury reports...
       </section>
     );
   }
+
+  // ----------------------------------------------------------
+  // NO SLATE
+  // ----------------------------------------------------------
 
   if (!selectedGame) {
     return (
-      <section className="glass rounded-3xl p-8 text-center">
-        <div className="text-lg font-black text-white">
-          No NHL Injury Data
-        </div>
+      <div className="space-y-5">
+        <h1 className="text-center text-3xl font-black neon-text">
+          NHL Injury Report
+        </h1>
 
-        <div className="mt-2 text-sm text-slate-400">
-          No NHL slate is available
-          yet.
-        </div>
-      </section>
+        <section className="glass rounded-3xl p-8 text-center">
+          <div className="text-lg font-black text-white">
+            No NHL Games Available
+          </div>
+
+          <p className="mt-2 text-sm text-slate-400">
+            The current NHL slate has not been loaded.
+          </p>
+        </section>
+      </div>
     );
   }
 
+  // ----------------------------------------------------------
+  // PAGE
+  // ----------------------------------------------------------
+
   return (
     <div className="space-y-5">
-      <div className="mb-4 flex justify-center">
-        <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-          {feedStatus === "verified" ? `${rows.length} NHL ${rows.length === 1 ? "Injury" : "Injuries"} Loaded For Current Slate` : "NHL Injury Report — Feed Unavailable"}
+      {/* PAGE TITLE */}
+
+      <div className="flex flex-col items-center justify-center gap-3 text-center">
+        <h1 className="text-3xl font-black neon-text">
+          NHL Injury Report
+        </h1>
+
+        <div className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
+          {dataAvailable
+            ? `${rows.length} NHL Injuries Loaded`
+            : "Injury Data Unavailable"}
         </div>
       </div>
 
-      {feedStatus !== "verified" && <div className="rounded-xl border border-amber-300/30 bg-amber-300/10 p-4 text-center text-sm font-semibold text-amber-200">Verified NHL injury feed is unavailable. Missing reports are not treated as healthy players.</div>}
+      {/* GAME TICKER */}
+
       <section className="glass rounded-3xl p-4">
         <GameSelector
           games={games}
           teams={teams}
-          selectedId={
-            selectedGameId
-          }
-          onSelect={
-            setSelectedGameId
-          }
+          selectedId={selectedGameId}
+          onSelect={setSelectedGameId}
         />
       </section>
+
+      {/* MATCHUP SUMMARY */}
 
       <section className="glass rounded-3xl p-5">
         <div className="text-center">
@@ -901,28 +851,28 @@ export default function NHLInjuryReportPage() {
             NHL Injury Report
           </div>
 
-          <h1 className="mx-auto mt-2 pb-2 text-3xl font-black leading-tight neon-text sm:text-5xl">
-            {selectedAway} @{" "}
-            {selectedHome}
-          </h1>
+          <h2 className="mx-auto mt-2 pb-2 text-3xl font-black leading-tight neon-text sm:text-5xl">
+            {selectedAway} @ {selectedHome}
+          </h2>
 
           <p className="mt-1 text-sm font-bold text-slate-400">
-            Current injury status
-            for the selected matchup
+            Current injury status for the selected matchup
+          </p>
+
+          <p className="mt-2 text-xs text-slate-500">
+            Last updated: {formatUpdated(generatedAt)}
           </p>
         </div>
 
         <div className="mt-5 grid gap-3 sm:grid-cols-4">
           <SummaryBox
             label="Total Injuries"
-            value={
-              selectedInjuries.length
-            }
+            value={selectedInjuries.length}
             tone="cyan"
           />
 
           <SummaryBox
-            label="Out / IR / PUP"
+            label="Out"
             value={outCount}
             tone="red"
           />
@@ -935,32 +885,35 @@ export default function NHLInjuryReportPage() {
 
           <SummaryBox
             label="Questionable"
-            value={
-              questionableCount
-            }
+            value={questionableCount}
             tone="amber"
           />
         </div>
       </section>
 
+      {/* TEAM REPORTS */}
+
       <div className="grid gap-5 2xl:grid-cols-2">
         <InjuryTable
           team={selectedAway}
           teams={teams}
-          injuries={
-            awayInjuries
-          }
-          feedStatus={feedStatus}
+          injuries={awayInjuries}
+          dataAvailable={dataAvailable}
         />
 
         <InjuryTable
           team={selectedHome}
           teams={teams}
-          injuries={
-            homeInjuries
-          }
-          feedStatus={feedStatus}
+          injuries={homeInjuries}
+          dataAvailable={dataAvailable}
         />
+      </div>
+
+      {/* DATA SOURCE */}
+
+      <div className="pb-4 text-center text-xs text-slate-500">
+        Injury information sourced from ESPN.
+        Player availability may change before tipoff.
       </div>
     </div>
   );
