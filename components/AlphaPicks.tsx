@@ -219,6 +219,41 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
       add(game, prop.player_name + " Under " + line + " " + metric.toUpperCase(), prop.under_odds, 1 - over, "NBA player model distribution + sportsbook", "player_prop");
     }
   }
+  if (sport === "nhl") {
+    // Only verified two-sided sportsbook shots-on-goal quotes qualify.
+    // Recent player shots per game are a transparent, uncalibrated Poisson baseline.
+    for (const prop of propMarkets) {
+      if (prop.prop_type !== "shots_on_goal" || num(prop.over_odds) === null ||
+          num(prop.under_odds) === null) continue;
+      const game = projections.find(g => key(g) === String(prop.game_id));
+      const graph = nflPlayers.find(g => key(g) === String(prop.game_id));
+      if (!game || !graph) continue;
+      const candidates = Array.isArray(graph.players) ? graph.players : [];
+      const player = candidates.find((p: any) => injuryKey(p.name) === injuryKey(prop.player_name) ||
+        (String(p.name ?? "").includes(".") &&
+         injuryKey(p.name).split(" ").slice(-1)[0] === injuryKey(prop.player_name).split(" ").slice(-1)[0] &&
+         injuryKey(p.name).charAt(0) === injuryKey(prop.player_name).charAt(0) &&
+         candidates.filter((q: any) => injuryKey(q.name).split(" ").slice(-1)[0] === injuryKey(p.name).split(" ").slice(-1)[0]).length === 1));
+      if (!player || num(player.games) === null || player.games < 3) continue;
+      const status = injuries.get(injuryKey(player.team) + ":" + injuryKey(prop.player_name));
+      if (status && (isUnavailable(status) || isUncertain(status))) continue;
+      const mean = num(player.shots_per_game), line = num(prop.line);
+      if (mean === null || mean <= 0 || line === null || line % 1 !== 0.5) continue;
+      // For a half-goal line, P(Over n+0.5) = P(X >= n+1).
+      const maxUnder = Math.floor(line);
+      let mass = Math.exp(-mean), under = mass;
+      for (let n = 1; n <= maxUnder; n++) {
+        mass *= mean / n;
+        under += mass;
+      }
+      const over = Math.max(0, Math.min(1, 1 - under));
+      if (over <= 0 || over >= 1) continue;
+      add(game, prop.player_name + " Over " + line + " SHOTS ON GOAL",
+        prop.over_odds, over, "NHL recent shots Poisson baseline (uncalibrated) + sportsbook", "player_prop");
+      add(game, prop.player_name + " Under " + line + " SHOTS ON GOAL",
+        prop.under_odds, 1 - over, "NHL recent shots Poisson baseline (uncalibrated) + sportsbook", "player_prop");
+    }
+  }
   if (sport === "nfl") {
     // NFL player-prop projections live in a separate file, not inside game projections.
     // Match verified sportsbook prices to independent player means; never infer odds.
@@ -503,20 +538,20 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       ufc: ["/data/ufc/game_projections.json", "/data/ufc/market.json"],
     };
     setLoading(true);
-    Promise.all([...paths[sport], ...(sport === "nba" ? ["/data/nba/player_prop_markets.json", "/data/nba/first_basket.json", "/data/nba/first_basket_markets.json"] : sport === "nfl" ? ["/data/nfl/player_props.json", "/data/nfl/player_projections.json"] : []), "/data/" + sport + "/injuries.json"].map(async path => {
+    Promise.all([...paths[sport], ...(sport === "nba" ? ["/data/nba/player_prop_markets.json", "/data/nba/first_basket.json", "/data/nba/first_basket_markets.json"] : sport === "nfl" ? ["/data/nfl/player_props.json", "/data/nfl/player_projections.json"] : sport === "nhl" ? ["/data/nhl/player_prop_markets.json", "/data/nhl/anytime_goals.json"] : []), "/data/" + sport + "/injuries.json"].map(async path => {
       if (next) path = path.replace(`/data/${sport}/`, `/data/${sport}/next/`);
       const res = await fetch(path, { cache: "no-store" });
       if (!res.ok) { if (path.includes("player_prop") || path.includes("first_basket") || path.includes("injuries")) return {}; throw new Error("Missing " + path); }
       return res.json();
     })).then((payloads) => {
       const [p, m] = payloads;
-      const props = sport === "nba" || sport === "nfl" ? payloads[2] : {};
+      const props = sport === "nba" || sport === "nfl" || sport === "nhl" ? payloads[2] : {};
       const baskets = sport === "nba" ? payloads[3] : {};
       const basketOdds = sport === "nba" ? payloads[4] : {};
       const injuryData = payloads[payloads.length - 1];
       const injuryRows: InjuryRow[] = Array.isArray(injuryData?.injuries) ? injuryData.injuries : [];
       if (!active) return;
-      const candidates = buildCandidates(sport, list(p), list(m), Array.isArray(props?.props) ? props.props : [], injuryRows, sport === "nfl" && Array.isArray(payloads[3]?.players) ? payloads[3].players : []);
+      const candidates = buildCandidates(sport, list(p), list(m), Array.isArray(props?.props) ? props.props : [], injuryRows, sport === "nfl" && Array.isArray(payloads[3]?.players) ? payloads[3].players : sport === "nhl" && Array.isArray(payloads[3]?.games) ? payloads[3].games : []);
       setLegs(candidates);
       const injuryLookup = new Map(injuryRows.filter(row => row.team).map(row => [injuryKey(row.team) + ":" + injuryKey(row.player_name ?? row.player ?? row.name), injuryStatus(row)]));
       setBasketGames(Array.isArray(baskets?.games) ? baskets.games.map((game: any) => ({
