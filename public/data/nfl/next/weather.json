@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T15:13:39.460167+00:00",
+  "generated_at": "2026-11-18T16:53:41.294690+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -11,8 +11,27 @@
       "longitude": -78.7868,
       "roof": "outdoor",
       "kickoff": "2026-11-22T13:00",
-      "available": false,
-      "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-11-22T13:00",
+        "temperature_f": 62.9,
+        "feels_like_f": 54.8,
+        "humidity_pct": 31.0,
+        "precip_probability_pct": 6.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 10.1,
+        "wind_gust_mph": 15.7,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 1.0,
+        "passing_factor": 0.982,
+        "rushing_factor": 1.005,
+        "scoring_factor": 0.987,
+        "kicking_factor": 0.98,
+        "classification": "MINOR"
+      }
     },
     {
       "game_id": "2026_11_BAL_CAR",
@@ -23,8 +42,27 @@
       "longitude": -80.8528,
       "roof": "outdoor",
       "kickoff": "2026-11-22T13:00",
-      "available": false,
-      "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-11-22T13:00",
+        "temperature_f": 64.3,
+        "feels_like_f": 59.5,
+        "humidity_pct": 54.0,
+        "precip_probability_pct": 26.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 9.8,
+        "wind_gust_mph": 15.4,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     },
     {
       "game_id": "2026_11_NO_CHI",
@@ -35,8 +73,27 @@
       "longitude": -87.6167,
       "roof": "outdoor",
       "kickoff": "2026-11-22T13:00",
-      "available": false,
-      "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+      "available": true,
+      "weather": {
+        "forecast_time": "2026-11-22T13:00",
+        "temperature_f": 52.9,
+        "feels_like_f": 47.3,
+        "humidity_pct": 69.0,
+        "precip_probability_pct": 37.0,
+        "precipitation_in": 0.0,
+        "wind_mph": 9.2,
+        "wind_gust_mph": 14.3,
+        "weather_code": 3,
+        "conditions": "Overcast"
+      },
+      "context": {
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "NEUTRAL"
+      }
     },
     {
       "game_id": "2026_11_TEN_DAL",
