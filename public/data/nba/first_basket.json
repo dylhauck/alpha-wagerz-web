@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T17:41:07.182049+00:00",
+  "generated_at": "2026-11-18T21:30:45.013509+00:00",
   "slate_type": "current",
   "games": [
     {
@@ -431,7 +431,7 @@
         "away": "previous_confirmed_lineup",
         "away_previous_game_id": "401909992",
         "home": "previous_confirmed_lineup",
-        "home_previous_game_id": "401909998"
+        "home_previous_game_id": "401909963"
       },
       "projected_starters": [
         {
@@ -483,14 +483,6 @@
           "fg_pct": 0.0
         },
         {
-          "player_id": 1642066,
-          "player_name": "Myron Gardner",
-          "team": "MIA",
-          "side": "home",
-          "minutes": 12.3,
-          "fg_pct": 0.455
-        },
-        {
           "player_id": 1628389,
           "player_name": "Bam Adebayo",
           "team": "MIA",
@@ -513,6 +505,14 @@
           "side": "home",
           "minutes": 28.0,
           "fg_pct": 0.6
+        },
+        {
+          "player_id": 1641796,
+          "player_name": "Pelle Larsson",
+          "team": "MIA",
+          "side": "home",
+          "minutes": 31.7,
+          "fg_pct": 0.5
         }
       ],
       "source": "ESPN NBA play-by-play",
@@ -522,7 +522,7 @@
           "player_id": 1628389,
           "player_name": "Bam Adebayo",
           "team": "MIA",
-          "probability": 11.74,
+          "probability": 11.73,
           "first_shot_rate": 16.67,
           "first_basket_rate": 16.67,
           "starts_sample": 6,
@@ -533,7 +533,7 @@
           "player_id": 1626167,
           "player_name": "Myles Turner",
           "team": "MIL",
-          "probability": 11.65,
+          "probability": 11.64,
           "first_shot_rate": 16.67,
           "first_basket_rate": 16.67,
           "starts_sample": 6,
@@ -544,7 +544,7 @@
           "player_id": 1630579,
           "player_name": "Jericho Sims",
           "team": "MIL",
-          "probability": 11.6,
+          "probability": 11.59,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 1,
@@ -555,7 +555,7 @@
           "player_id": 1628398,
           "player_name": "Kyle Kuzma",
           "team": "MIL",
-          "probability": 10.73,
+          "probability": 10.72,
           "first_shot_rate": 28.57,
           "first_basket_rate": 14.29,
           "starts_sample": 7,
@@ -563,10 +563,21 @@
           "lineup_status": "previous_confirmed_lineup"
         },
         {
+          "player_id": 1641796,
+          "player_name": "Pelle Larsson",
+          "team": "MIA",
+          "probability": 10.53,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 2,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
           "player_id": 1629639,
           "player_name": "Tyler Herro",
           "team": "MIL",
-          "probability": 8.59,
+          "probability": 8.58,
           "first_shot_rate": 16.67,
           "first_basket_rate": 16.67,
           "starts_sample": 6,
@@ -577,7 +588,7 @@
           "player_id": 203507,
           "player_name": "Giannis Antetokounmpo",
           "team": "MIA",
-          "probability": 8.59,
+          "probability": 8.58,
           "first_shot_rate": 16.67,
           "first_basket_rate": 16.67,
           "starts_sample": 6,
@@ -588,7 +599,7 @@
           "player_id": 1643415,
           "player_name": "Brayden Burries",
           "team": "MIL",
-          "probability": 8.14,
+          "probability": 8.13,
           "first_shot_rate": 28.57,
           "first_basket_rate": 14.29,
           "starts_sample": 7,
@@ -603,17 +614,6 @@
           "first_shot_rate": 16.67,
           "first_basket_rate": 0.0,
           "starts_sample": 6,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
-        },
-        {
-          "player_id": 1642066,
-          "player_name": "Myron Gardner",
-          "team": "MIA",
-          "probability": 6.37,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 3,
           "estimate_source": "historical_blend",
           "lineup_status": "previous_confirmed_lineup"
         },
@@ -1060,7 +1060,7 @@
         "away": "previous_confirmed_lineup",
         "away_previous_game_id": "401909996",
         "home": "previous_confirmed_lineup",
-        "home_previous_game_id": "401910002"
+        "home_previous_game_id": "401909976"
       },
       "projected_starters": [
         {
@@ -1112,20 +1112,20 @@
           "fg_pct": 0.562
         },
         {
-          "player_id": 1630567,
-          "player_name": "Scottie Barnes",
-          "team": "TOR",
-          "side": "home",
-          "minutes": 37.0,
-          "fg_pct": 0.462
-        },
-        {
           "player_id": 1642867,
           "player_name": "Collin Murray-Boyles",
           "team": "TOR",
           "side": "home",
           "minutes": 18.0,
           "fg_pct": 0.5
+        },
+        {
+          "player_id": 1627751,
+          "player_name": "Jakob Poeltl",
+          "team": "TOR",
+          "side": "home",
+          "minutes": 27.0,
+          "fg_pct": 0.667
         },
         {
           "player_id": 1630193,
@@ -1148,13 +1148,13 @@
       "history_games": 100,
       "players": [
         {
-          "player_id": 1630567,
-          "player_name": "Scottie Barnes",
+          "player_id": 1627751,
+          "player_name": "Jakob Poeltl",
           "team": "TOR",
-          "probability": 15.3,
-          "first_shot_rate": 66.67,
-          "first_basket_rate": 33.33,
-          "starts_sample": 3,
+          "probability": 14.53,
+          "first_shot_rate": 25.0,
+          "first_basket_rate": 25.0,
+          "starts_sample": 4,
           "estimate_source": "historical_blend",
           "lineup_status": "previous_confirmed_lineup"
         },
