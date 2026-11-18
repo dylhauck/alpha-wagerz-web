@@ -123,6 +123,8 @@ export default function InjuryReportPage() {
   const [query, setQuery] =
     useState("");
 
+  const [selectedTeam, setSelectedTeam] = useState("ALL");
+
   const [status, setStatus] =
     useState<
       "ALL" | "DTD" | "OUT"
@@ -262,6 +264,18 @@ export default function InjuryReportPage() {
     status,
   ]);
 
+  const teams = [...new Set((report?.players ?? []).map((player) => player.team))].sort();
+  const visiblePlayers = players.filter((player) => selectedTeam === "ALL" || player.team === selectedTeam);
+  const outCount = visiblePlayers.filter((player) => player.availability === "OUT").length;
+  const dtdCount = visiblePlayers.filter((player) => player.availability === "DTD").length;
+  const summary = [
+    {label: "Total Injuries", value: visiblePlayers.length, tone: "text-cyan-200"},
+    {label: "Out / Injured List", value: outCount, tone: "text-rose-300"},
+    {label: "Day-to-Day", value: dtdCount, tone: "text-amber-200"},
+    {label: "Teams Affected", value: new Set(visiblePlayers.map((player) => player.team)).size, tone: "text-white"},
+  ];
+  const teamGroups = selectedTeam === "ALL" ? [...new Set(visiblePlayers.map((player) => player.team))].sort() : [selectedTeam];
+
   if (loading) {
     return (
       <AppShell>
@@ -293,217 +307,84 @@ export default function InjuryReportPage() {
           </div>
         </div>
 
-        {/* Injury Report Controls */}
-        <section className="glass overflow-hidden rounded-3xl p-5">
-          <div className="mb-5 flex justify-center">
-            <div className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-center text-xs font-black uppercase tracking-[0.2em] text-cyan-200">
-              MLB Injury Report
-            </div>
+        <div className="flex flex-col items-center justify-center gap-3 text-center">
+          <h1 className="text-3xl font-black neon-text">MLB Injury Report</h1>
+          <div className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-5 py-2 text-xs font-black uppercase tracking-widest text-cyan-200">
+            {report?.primary_source || "Injury Report"} · {report?.generated_at ? `Updated ${new Date(report.generated_at).toLocaleString("en-US", {timeZone: "America/Chicago", timeZoneName: "short"})}` : "Update unavailable"}
           </div>
-
-          <div className="flex flex-col gap-3 md:flex-row">
-            <input
-              value={query}
-              onChange={(
-                event,
-              ) =>
-                setQuery(
-                  event.target
-                    .value,
-                )
-              }
+        </div>
+        <section className="glass rounded-3xl p-4 sm:p-5">
+          <div className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-slate-400">Select Team</div>
+          <div className="table-scroll flex gap-2 overflow-x-auto pb-2">
+            {["ALL", ...teams].map((team) => (
+              <button key={team} type="button" onClick={() => setSelectedTeam(team)}
+                className={`shrink-0 rounded-xl border px-4 py-3 text-xs font-black transition ${selectedTeam === team ? "border-cyan-300/70 bg-cyan-300/15 text-cyan-100 shadow-[0_0_20px_rgba(35,216,255,0.2)]" : "border-white/10 bg-slate-950/80 text-slate-300 hover:border-pink-300/40"}`}>
+                {team === "ALL" ? "All Teams" : team}
+              </button>
+            ))}
+          </div>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <input value={query} onChange={(event) => setQuery(event.target.value)}
               placeholder="Search player, team, position, or injury"
-              className="min-h-11 flex-1 rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-white outline-none placeholder:text-slate-500 focus:border-cyan-300/40"
-            />
-
+              className="min-h-11 flex-1 rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-white outline-none placeholder:text-slate-500 focus:border-cyan-300/40"/>
             <div className="flex gap-2">
-              {(
-                [
-                  "ALL",
-                  "OUT",
-                ] as const
-              ).map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  onClick={() =>
-                    setStatus(
-                      item,
-                    )
-                  }
-                  className={`rounded-xl border px-4 py-2 text-xs font-black tracking-wider transition ${
-                    status ===
-                    item
-                      ? "border-cyan-300/35 bg-cyan-300/15 text-cyan-100"
-                      : "border-white/10 bg-white/[0.03] text-slate-400 hover:text-white"
-                  }`}
-                >
+              {(["ALL", "OUT", "DTD"] as const).map((item) => (
+                <button key={item} type="button" onClick={() => setStatus(item)}
+                  className={`rounded-xl border px-4 py-2 text-xs font-black tracking-wider transition ${status === item ? "border-cyan-300/35 bg-cyan-300/15 text-cyan-100" : "border-white/10 bg-white/[0.03] text-slate-400 hover:text-white"}`}>
                   {item}
                 </button>
               ))}
             </div>
           </div>
-
-          <div className="mt-4 text-xs font-semibold text-slate-500">
-            Showing{" "}
-            {players.length}{" "}
-            players
-            {report?.primary_source
-              ? ` · Source: ${report.primary_source}`
-              : ""}
-            {report?.generated_at
-              ? ` · Updated ${new Date(
-                  report.generated_at,
-                ).toLocaleString()}`
-              : ""}
+        </section>
+        <section className="glass rounded-3xl p-5 sm:p-7 text-center">
+          <div className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">MLB Injury Report</div>
+          <h2 className="mx-auto mt-2 pb-2 text-3xl font-black leading-tight neon-text sm:text-5xl">{selectedTeam === "ALL" ? "All MLB Teams" : selectedTeam}</h2>
+          <p className="text-sm text-slate-400">Current injury status for the selected team</p>
+          <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {summary.map((item) => (
+              <div key={item.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-left">
+                <div className="text-[11px] font-black uppercase tracking-widest text-slate-500">{item.label}</div>
+                <div className={`mt-2 text-3xl font-black ${item.tone}`}>{item.value}</div>
+              </div>
+            ))}
           </div>
         </section>
-
-        {/* Injury Table */}
-        <section className="glass overflow-hidden rounded-3xl">
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[1120px]">
-              <thead className="bg-white/[0.04] text-left text-[11px] font-black uppercase tracking-[0.16em] text-slate-500">
-                <tr>
-                  <th className="px-5 py-4">
-                    Player
-                  </th>
-
-                  <th className="px-4 py-4">
-                    Team
-                  </th>
-
-                  <th className="px-4 py-4">
-                    Pos
-                  </th>
-
-                  <th className="px-4 py-4">
-                    Status
-                  </th>
-
-                  <th className="px-4 py-4">
-                    Injury / Reason
-                  </th>
-
-                  <th className="px-4 py-4">
-                    Estimated Return
-                  </th>
-
-                  <th className="px-4 py-4">
-                    Source Status
-                  </th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {players.length ===
-                0 ? (
-                  <tr>
-                    <td
-                      colSpan={7}
-                      className="px-5 py-12 text-center text-sm font-bold text-slate-400"
-                    >
-                      No matching
-                      injury records
-                      were found.
-                    </td>
-                  </tr>
-                ) : (
-                  players.map(
-                    (player) => (
-                      <tr
-                        key={`${player.team}-${player.player}`}
-                        className="border-t border-white/[0.06]"
-                      >
-                        <td className="px-5 py-4">
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setSelectedPlayer(
-                                {
-                                  playerId:
-                                    player.player_id,
-                                  playerName:
-                                    player.player,
-                                  teamName:
-                                    player.team,
-                                  teamId:
-                                    player.team_id,
-                                  playerType:
-                                    isPitcherPosition(
-                                      player.position,
-                                    )
-                                      ? "pitcher"
-                                      : "hitter",
-                                },
-                              )
-                            }
-                            className="font-black text-white transition hover:text-cyan-300 hover:underline"
-                          >
-                            {
-                              player.player
-                            }
-                          </button>
-
-                          {player.source_type ===
-                            "suspension" && (
-                            <div className="mt-1 text-[11px] font-black uppercase tracking-widest text-amber-300">
-                              Suspended
-                            </div>
-                          )}
-                        </td>
-
-                        <td className="px-4 py-4 text-sm font-bold text-slate-300">
-                          {
-                            player.team
-                          }
-                        </td>
-
-                        <td className="px-4 py-4 text-sm font-bold text-slate-300">
-                          {player.position ||
-                            "—"}
-                        </td>
-
-                        <td className="px-4 py-4">
-                          <StatusBadge
-                            status={
-                              player.availability
-                            }
-                          />
-                        </td>
-
-                        <td className="max-w-[360px] px-4 py-4">
-                          <div className="text-sm font-bold text-slate-100">
-                            {getInjuryLabel(
-                              player,
-                            )}
+        {teamGroups.length === 0 && <section className="glass rounded-3xl p-8 text-center text-sm text-slate-400">No matching injury records were found.</section>}
+        <div className="grid gap-5 lg:grid-cols-2">
+          {teamGroups.map((team) => {
+            const teamPlayers = visiblePlayers.filter((player) => player.team === team);
+            return (
+              <section key={team} className="glass overflow-hidden rounded-3xl">
+                <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                  <h3 className="text-lg font-black text-white">{team}</h3>
+                  <span className="rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1 text-xs font-black text-cyan-200">{teamPlayers.length} INJURIES</span>
+                </div>
+                {teamPlayers.length === 0 ? <p className="p-5 text-sm text-slate-400">No injuries listed for this team.</p> :
+                  <div className="divide-y divide-white/[0.06]">
+                    {teamPlayers.map((player) => (
+                      <div key={`${player.team}-${player.player}`} className="p-5">
+                        <div className="flex flex-wrap items-start justify-between gap-3">
+                          <div>
+                            <button type="button" onClick={() => setSelectedPlayer({
+                              playerId: player.player_id, playerName: player.player,
+                              teamName: player.team, teamId: player.team_id,
+                              playerType: isPitcherPosition(player.position) ? "pitcher" : "hitter",
+                            })} className="font-black text-white hover:text-cyan-300 hover:underline">{player.player}</button>
+                            <div className="mt-1 text-xs text-slate-400">{player.position || "—"} · {player.espn_status || player.availability}</div>
                           </div>
-                        </td>
-
-                        <td className="px-4 py-4 text-sm font-bold text-cyan-200">
-                          {player.estimated_return ||
-                            "Unknown"}
-                        </td>
-
-                        <td className="px-4 py-4">
-                          <div className="text-sm font-bold text-slate-300">
-                            {player.espn_status ||
-                              player.availability}
-                          </div>
-
-                          <div className="mt-1 text-[11px] font-semibold text-slate-500">
-                            {player.source ||
-                              ""}
-                          </div>
-                        </td>
-                      </tr>
-                    ),
-                  )
-                )}
-              </tbody>
-            </table>
-          </div>
-        </section>
+                          <StatusBadge status={player.availability}/>
+                        </div>
+                        <div className="mt-3 text-sm font-semibold text-slate-200">{getInjuryLabel(player)}</div>
+                        <div className="mt-2 text-xs text-cyan-200">Estimated Return: {player.estimated_return || "Unknown"}</div>
+                        {player.source && <div className="mt-1 text-xs text-slate-500">Source: {player.source}</div>}
+                      </div>
+                    ))}
+                  </div>}
+              </section>
+            );
+          })}
+        </div>
       </div>
 
       <PlayerProfileModal
