@@ -25,10 +25,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Highmark Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 63.9,
+            "feels_like_f": 58.4,
+            "humidity_pct": 50.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 9.8,
+            "wind_gust_mph": 14.5,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -68,10 +79,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Highmark Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 63.9,
+            "feels_like_f": 58.4,
+            "humidity_pct": 50.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 9.8,
+            "wind_gust_mph": 14.5,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -165,8 +187,27 @@
         "longitude": -78.7868,
         "roof": "outdoor",
         "kickoff": "2026-11-22T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-22T13:00",
+          "temperature_f": 63.9,
+          "feels_like_f": 58.4,
+          "humidity_pct": 50.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 9.8,
+          "wind_gust_mph": 14.5,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -178,7 +219,7 @@
       "away_team": "BAL",
       "home_team": "CAR",
       "away_projection": {
-        "projected_points": 21.6,
+        "projected_points": 20.8,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.05,
@@ -188,8 +229,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 21.6,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.961,
+          "weather_adjustment_points": -0.84
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -198,16 +239,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Bank of America Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 55.4,
+            "feels_like_f": 48.4,
+            "humidity_pct": 54.0,
+            "precip_probability_pct": 24.0,
+            "precipitation_in": 0.008,
+            "wind_mph": 10.5,
+            "wind_gust_mph": 28.9,
+            "weather_code": 51,
+            "conditions": "Light Drizzle"
+          },
+          "classification": "MODERATE",
+          "severity_score": 3.0,
+          "scoring_factor": 0.961,
+          "passing_factor": 0.946,
+          "rushing_factor": 1.015,
+          "kicking_factor": 0.94
         },
         "matchup_rating": -0.8,
         "matchup_label": "Neutral",
@@ -221,7 +273,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.5,
+        "projected_points": 22.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.05,
@@ -231,8 +283,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 23.46,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.961,
+          "weather_adjustment_points": -0.91
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -241,16 +293,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Bank of America Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 55.4,
+            "feels_like_f": 48.4,
+            "humidity_pct": 54.0,
+            "precip_probability_pct": 24.0,
+            "precipitation_in": 0.008,
+            "wind_mph": 10.5,
+            "wind_gust_mph": 28.9,
+            "weather_code": 51,
+            "conditions": "Light Drizzle"
+          },
+          "classification": "MODERATE",
+          "severity_score": 3.0,
+          "scoring_factor": 0.961,
+          "passing_factor": 0.946,
+          "rushing_factor": 1.015,
+          "kicking_factor": 0.94
         },
         "matchup_rating": 1.4,
         "matchup_label": "Neutral",
@@ -264,15 +327,15 @@
         }
       },
       "projected_score": {
-        "away": 21.6,
-        "home": 23.5
+        "away": 20.8,
+        "home": 22.5
       },
-      "projected_total": 45.1,
-      "expected_margin": 1.9,
+      "projected_total": 43.3,
+      "expected_margin": 1.7,
       "projected_winner": "CAR",
       "win_probability": {
-        "away": 42.7,
-        "home": 57.3
+        "away": 43.5,
+        "home": 56.5
       },
       "projection_confidence": 50.4,
       "injury_context": {
@@ -338,8 +401,27 @@
         "longitude": -80.8528,
         "roof": "outdoor",
         "kickoff": "2026-11-22T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-22T13:00",
+          "temperature_f": 55.4,
+          "feels_like_f": 48.4,
+          "humidity_pct": 54.0,
+          "precip_probability_pct": 24.0,
+          "precipitation_in": 0.008,
+          "wind_mph": 10.5,
+          "wind_gust_mph": 28.9,
+          "weather_code": 51,
+          "conditions": "Light Drizzle"
+        },
+        "context": {
+          "severity_score": 3.0,
+          "passing_factor": 0.946,
+          "rushing_factor": 1.015,
+          "scoring_factor": 0.961,
+          "kicking_factor": 0.94,
+          "classification": "MODERATE"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -351,7 +433,7 @@
       "away_team": "NO",
       "home_team": "CHI",
       "away_projection": {
-        "projected_points": 20.6,
+        "projected_points": 20.0,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.37,
@@ -361,8 +443,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 20.57,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.974,
+          "weather_adjustment_points": -0.53
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -371,16 +453,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Soldier Field",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 52.7,
+            "feels_like_f": 47.4,
+            "humidity_pct": 90.0,
+            "precip_probability_pct": 50.0,
+            "precipitation_in": 0.031,
+            "wind_mph": 12.4,
+            "wind_gust_mph": 22.4,
+            "weather_code": 53,
+            "conditions": "Drizzle"
+          },
+          "classification": "MODERATE",
+          "severity_score": 2.0,
+          "scoring_factor": 0.974,
+          "passing_factor": 0.964,
+          "rushing_factor": 1.01,
+          "kicking_factor": 0.96
         },
         "matchup_rating": -10.2,
         "matchup_label": "Difficult",
@@ -394,7 +487,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 24.4,
+        "projected_points": 23.8,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.38,
@@ -404,8 +497,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 24.4,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.974,
+          "weather_adjustment_points": -0.63
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -414,16 +507,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Soldier Field",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 52.7,
+            "feels_like_f": 47.4,
+            "humidity_pct": 90.0,
+            "precip_probability_pct": 50.0,
+            "precipitation_in": 0.031,
+            "wind_mph": 12.4,
+            "wind_gust_mph": 22.4,
+            "weather_code": 53,
+            "conditions": "Drizzle"
+          },
+          "classification": "MODERATE",
+          "severity_score": 2.0,
+          "scoring_factor": 0.974,
+          "passing_factor": 0.964,
+          "rushing_factor": 1.01,
+          "kicking_factor": 0.96
         },
         "matchup_rating": 9.3,
         "matchup_label": "Favorable",
@@ -437,10 +541,10 @@
         }
       },
       "projected_score": {
-        "away": 20.6,
-        "home": 24.4
+        "away": 20.0,
+        "home": 23.8
       },
-      "projected_total": 45.0,
+      "projected_total": 43.8,
       "expected_margin": 3.8,
       "projected_winner": "CHI",
       "win_probability": {
@@ -511,8 +615,27 @@
         "longitude": -87.6167,
         "roof": "outdoor",
         "kickoff": "2026-11-22T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-22T13:00",
+          "temperature_f": 52.7,
+          "feels_like_f": 47.4,
+          "humidity_pct": 90.0,
+          "precip_probability_pct": 50.0,
+          "precipitation_in": 0.031,
+          "wind_mph": 12.4,
+          "wind_gust_mph": 22.4,
+          "weather_code": 53,
+          "conditions": "Drizzle"
+        },
+        "context": {
+          "severity_score": 2.0,
+          "passing_factor": 0.964,
+          "rushing_factor": 1.01,
+          "scoring_factor": 0.974,
+          "kicking_factor": 0.96,
+          "classification": "MODERATE"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -524,7 +647,7 @@
       "away_team": "TEN",
       "home_team": "DAL",
       "away_projection": {
-        "projected_points": 22.4,
+        "projected_points": 22.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.27,
@@ -534,8 +657,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 22.41,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.994,
+          "weather_adjustment_points": -0.13
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -544,16 +667,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "AT&T Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 63.5,
+            "feels_like_f": 57.3,
+            "humidity_pct": 54.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 12.5,
+            "wind_gust_mph": 13.9,
+            "weather_code": 1,
+            "conditions": "Mainly Clear"
+          },
+          "classification": "MINOR",
+          "severity_score": 0.45,
+          "scoring_factor": 0.994,
+          "passing_factor": 0.992,
+          "rushing_factor": 1.002,
+          "kicking_factor": 0.991
         },
         "matchup_rating": 4.8,
         "matchup_label": "Neutral",
@@ -567,7 +701,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 25.6,
+        "projected_points": 25.5,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.86,
@@ -577,8 +711,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 25.63,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.994,
+          "weather_adjustment_points": -0.15
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -587,16 +721,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "retractable",
           "stadium": "AT&T Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 63.5,
+            "feels_like_f": 57.3,
+            "humidity_pct": 54.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 12.5,
+            "wind_gust_mph": 13.9,
+            "weather_code": 1,
+            "conditions": "Mainly Clear"
+          },
+          "classification": "MINOR",
+          "severity_score": 0.45,
+          "scoring_factor": 0.994,
+          "passing_factor": 0.992,
+          "rushing_factor": 1.002,
+          "kicking_factor": 0.991
         },
         "matchup_rating": 18.5,
         "matchup_label": "Strong",
@@ -610,10 +755,10 @@
         }
       },
       "projected_score": {
-        "away": 22.4,
-        "home": 25.6
+        "away": 22.3,
+        "home": 25.5
       },
-      "projected_total": 48.0,
+      "projected_total": 47.8,
       "expected_margin": 3.2,
       "projected_winner": "DAL",
       "win_probability": {
@@ -684,8 +829,27 @@
         "longitude": -97.0945,
         "roof": "retractable",
         "kickoff": "2026-11-22T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-22T13:00",
+          "temperature_f": 63.5,
+          "feels_like_f": 57.3,
+          "humidity_pct": 54.0,
+          "precip_probability_pct": 0.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 12.5,
+          "wind_gust_mph": 13.9,
+          "weather_code": 1,
+          "conditions": "Mainly Clear"
+        },
+        "context": {
+          "severity_score": 0.45,
+          "passing_factor": 0.992,
+          "rushing_factor": 1.002,
+          "scoring_factor": 0.994,
+          "kicking_factor": 0.991,
+          "classification": "MINOR"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -884,7 +1048,7 @@
       "away_team": "ARI",
       "home_team": "KC",
       "away_projection": {
-        "projected_points": 19.5,
+        "projected_points": 19.2,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.92,
@@ -894,8 +1058,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 19.48,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.25
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -904,16 +1068,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "GEHA Field at Arrowhead Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 52.4,
+            "feels_like_f": 43.2,
+            "humidity_pct": 52.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 14.1,
+            "wind_gust_mph": 18.1,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": -17.1,
         "matchup_label": "Poor",
@@ -927,7 +1102,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 26.2,
+        "projected_points": 25.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 1.17,
@@ -937,8 +1112,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 26.25,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.34
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -947,16 +1122,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "GEHA Field at Arrowhead Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 52.4,
+            "feels_like_f": 43.2,
+            "humidity_pct": 52.0,
+            "precip_probability_pct": 1.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 14.1,
+            "wind_gust_mph": 18.1,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": 21.9,
         "matchup_label": "Strong",
@@ -970,10 +1156,10 @@
         }
       },
       "projected_score": {
-        "away": 19.5,
-        "home": 26.2
+        "away": 19.2,
+        "home": 25.9
       },
-      "projected_total": 45.7,
+      "projected_total": 45.1,
       "expected_margin": 6.7,
       "projected_winner": "KC",
       "win_probability": {
@@ -1044,8 +1230,27 @@
         "longitude": -94.4839,
         "roof": "outdoor",
         "kickoff": "2026-11-22T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-22T13:00",
+          "temperature_f": 52.4,
+          "feels_like_f": 43.2,
+          "humidity_pct": 52.0,
+          "precip_probability_pct": 1.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 14.1,
+          "wind_gust_mph": 18.1,
+          "weather_code": 0,
+          "conditions": "Clear"
+        },
+        "context": {
+          "severity_score": 1.0,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "scoring_factor": 0.987,
+          "kicking_factor": 0.98,
+          "classification": "MINOR"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1077,10 +1282,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 59.0,
+            "feels_like_f": 58.0,
+            "humidity_pct": 87.0,
+            "precip_probability_pct": 20.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 6.0,
+            "wind_gust_mph": 11.0,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1120,10 +1336,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "MetLife Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-11-22T13:00",
+            "temperature_f": 59.0,
+            "feels_like_f": 58.0,
+            "humidity_pct": 87.0,
+            "precip_probability_pct": 20.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 6.0,
+            "wind_gust_mph": 11.0,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1217,8 +1444,27 @@
         "longitude": -74.0745,
         "roof": "outdoor",
         "kickoff": "2026-11-22T13:00",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-22T13:00",
+          "temperature_f": 59.0,
+          "feels_like_f": 58.0,
+          "humidity_pct": 87.0,
+          "precip_probability_pct": 20.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 6.0,
+          "wind_gust_mph": 11.0,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1437,10 +1683,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Empower Field at Mile High",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-11-22T16:00",
+            "temperature_f": 47.3,
+            "feels_like_f": 38.8,
+            "humidity_pct": 18.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.9,
+            "wind_gust_mph": 4.0,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1480,10 +1737,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Empower Field at Mile High",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-11-22T16:00",
+            "temperature_f": 47.3,
+            "feels_like_f": 38.8,
+            "humidity_pct": 18.0,
+            "precip_probability_pct": 0.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 4.9,
+            "wind_gust_mph": 4.0,
+            "weather_code": 0,
+            "conditions": "Clear"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1577,8 +1845,27 @@
         "longitude": -105.0201,
         "roof": "outdoor",
         "kickoff": "2026-11-22T16:25",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-22T16:00",
+          "temperature_f": 47.3,
+          "feels_like_f": 38.8,
+          "humidity_pct": 18.0,
+          "precip_probability_pct": 0.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 4.9,
+          "wind_gust_mph": 4.0,
+          "weather_code": 0,
+          "conditions": "Clear"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1590,7 +1877,7 @@
       "away_team": "PIT",
       "home_team": "PHI",
       "away_projection": {
-        "projected_points": 22.0,
+        "projected_points": 21.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.0,
@@ -1600,8 +1887,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 22.02,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.29
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1610,16 +1897,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Lincoln Financial Field",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T16:00",
+            "temperature_f": 57.3,
+            "feels_like_f": 56.1,
+            "humidity_pct": 98.0,
+            "precip_probability_pct": 66.0,
+            "precipitation_in": 0.035,
+            "wind_mph": 8.1,
+            "wind_gust_mph": 19.2,
+            "weather_code": 53,
+            "conditions": "Drizzle"
+          },
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": 2.4,
         "matchup_label": "Neutral",
@@ -1633,7 +1931,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 21.0,
+        "projected_points": 20.7,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.89,
@@ -1643,8 +1941,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 21.0,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.27
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -1653,16 +1951,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Lincoln Financial Field",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-22T16:00",
+            "temperature_f": 57.3,
+            "feels_like_f": 56.1,
+            "humidity_pct": 98.0,
+            "precip_probability_pct": 66.0,
+            "precipitation_in": 0.035,
+            "wind_mph": 8.1,
+            "wind_gust_mph": 19.2,
+            "weather_code": 53,
+            "conditions": "Drizzle"
+          },
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": -16.6,
         "matchup_label": "Poor",
@@ -1676,10 +1985,10 @@
         }
       },
       "projected_score": {
-        "away": 22.0,
-        "home": 21.0
+        "away": 21.7,
+        "home": 20.7
       },
-      "projected_total": 43.0,
+      "projected_total": 42.4,
       "expected_margin": -1.0,
       "projected_winner": "PIT",
       "win_probability": {
@@ -1750,8 +2059,27 @@
         "longitude": -75.1675,
         "roof": "outdoor",
         "kickoff": "2026-11-22T16:25",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-22T16:00",
+          "temperature_f": 57.3,
+          "feels_like_f": 56.1,
+          "humidity_pct": 98.0,
+          "precip_probability_pct": 66.0,
+          "precipitation_in": 0.035,
+          "wind_mph": 8.1,
+          "wind_gust_mph": 19.2,
+          "weather_code": 53,
+          "conditions": "Drizzle"
+        },
+        "context": {
+          "severity_score": 1.0,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "scoring_factor": 0.987,
+          "kicking_factor": 0.98,
+          "classification": "MINOR"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
@@ -1783,10 +2111,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Levi's Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-11-22T20:00",
+            "temperature_f": 52.7,
+            "feels_like_f": 51.3,
+            "humidity_pct": 83.0,
+            "precip_probability_pct": 15.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 2.0,
+            "wind_gust_mph": 2.9,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1826,10 +2165,21 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Levi's Stadium",
-          "weather": {},
+          "weather": {
+            "forecast_time": "2026-11-22T20:00",
+            "temperature_f": 52.7,
+            "feels_like_f": 51.3,
+            "humidity_pct": 83.0,
+            "precip_probability_pct": 15.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 2.0,
+            "wind_gust_mph": 2.9,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -1923,8 +2273,27 @@
         "longitude": -121.97,
         "roof": "outdoor",
         "kickoff": "2026-11-22T20:20",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-22T20:00",
+          "temperature_f": 52.7,
+          "feels_like_f": 51.3,
+          "humidity_pct": 83.0,
+          "precip_probability_pct": 15.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 2.0,
+          "wind_gust_mph": 2.9,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "context": {
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "NEUTRAL"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
