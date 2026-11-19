@@ -25,21 +25,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "NRG Stadium",
-          "weather": {
-            "forecast_time": "2026-11-19T20:00",
-            "temperature_f": 64.9,
-            "feels_like_f": 63.9,
-            "humidity_pct": 65.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.6,
-            "wind_gust_mph": 8.3,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -79,21 +68,10 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": true,
+          "available": false,
           "roof": "retractable",
           "stadium": "NRG Stadium",
-          "weather": {
-            "forecast_time": "2026-11-19T20:00",
-            "temperature_f": 64.9,
-            "feels_like_f": 63.9,
-            "humidity_pct": 65.0,
-            "precip_probability_pct": 0.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 4.6,
-            "wind_gust_mph": 8.3,
-            "weather_code": 3,
-            "conditions": "Overcast"
-          },
+          "weather": {},
           "classification": "NEUTRAL",
           "severity_score": 0.0,
           "scoring_factor": 1.0,
@@ -187,27 +165,8 @@
         "longitude": -95.4107,
         "roof": "retractable",
         "kickoff": "2026-11-19T20:15",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-19T20:00",
-          "temperature_f": 64.9,
-          "feels_like_f": 63.9,
-          "humidity_pct": 65.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 4.6,
-          "wind_gust_mph": 8.3,
-          "weather_code": 3,
-          "conditions": "Overcast"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "NEUTRAL"
-        }
+        "available": false,
+        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
       },
       "model": {
         "uses_sportsbook_lines": false,
