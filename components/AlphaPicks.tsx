@@ -298,7 +298,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
   return out.sort((a, b) => b.probability - a.probability);
 }
 
-function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20, requirePositiveEdge = true): Ticket[] {
+function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20, requirePositiveEdge = true, rankByConfidence = false): Ticket[] {
   const MIN_LEGS = minLegs;
   const MAX_LEGS = Math.min(maxLegs, minOdds >= 10000 ? 12 : 8);
   // Keep one outcome per matchup, and consider as many as 20 distinct games.
@@ -343,7 +343,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     return bestByProp.get([leg.game, match[1].toLowerCase(), match[2].toLowerCase(), match[3].toLowerCase()].join("|")) === leg &&
       bestMarket.get([leg.game, match[1].toLowerCase(), match[3].toLowerCase()].join("|")) === leg;
   }).filter(leg => !requirePositiveEdge || leg.probability > probabilityFromOdds(leg.odds))
-    .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)));
+    .sort((a, b) => rankByConfidence ? b.probability - a.probability : (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)));
   // Mixed tickets must retain every available market family before beam
   // pruning. Otherwise 36 player props can crowd out all team markets.
   const candidates = mixed
@@ -518,6 +518,7 @@ function PickCard({ ticket: t, index, category }: { ticket: Ticket; index: numbe
 
 export default function AlphaPicks({ sport, next = false }: { sport: Sport; next?: boolean }) {
   const [legs, setLegs] = useState<Leg[]>([]);
+  const [slateGameCount, setSlateGameCount] = useState(0);
   const [basketGames, setBasketGames] = useState<any[]>([]);
   const [basketPrices, setBasketPrices] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -553,6 +554,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       if (!active) return;
       const candidates = buildCandidates(sport, list(p), list(m), Array.isArray(props?.props) ? props.props : [], injuryRows, sport === "nfl" && Array.isArray(payloads[3]?.players) ? payloads[3].players : sport === "nhl" && Array.isArray(payloads[3]?.games) ? payloads[3].games : []);
       setLegs(candidates);
+      setSlateGameCount(list(p).length);
       const injuryLookup = new Map(injuryRows.filter(row => row.team).map(row => [injuryKey(row.team) + ":" + injuryKey(row.player_name ?? row.player ?? row.name), injuryStatus(row)]));
       setBasketGames(Array.isArray(baskets?.games) ? baskets.games.map((game: any) => ({
         ...game, players: (game.players ?? []).filter((player: any) => {
@@ -563,7 +565,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       setBasketPrices(Array.isArray(basketOdds?.props) ? basketOdds.props : []);
       setStatus(candidates.length ? "" : "No verified sportsbook odds and model-probability pairs are available for this slate.");
     }).catch(() => {
-      if (active) { setLegs([]); setBasketGames([]); setBasketPrices([]); setStatus("Current slate projection or sportsbook data is unavailable."); }
+      if (active) { setLegs([]); setSlateGameCount(0); setBasketGames([]); setBasketPrices([]); setStatus("Current slate projection or sportsbook data is unavailable."); }
     }).finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
   }, [sport, next]);
@@ -615,23 +617,23 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   const [computedTickets, setComputedTickets] = useState<{
     signature: string; tickets: Ticket[];
   }>({ signature: "", tickets: [] });
-  const searchSignature = sport + "|" + mainTab + "|" + categoryTab;
+  const smallSlateTeamParlay = mainTab === "parlay" && slateGameCount > 0 && slateGameCount <= 4 &&
+    (categoryTab === "moneyline" || categoryTab === "spread" || categoryTab === "total");
+  const searchSignature = sport + "|" + mainTab + "|" + categoryTab + "|" + slateGameCount;
   useEffect(() => {
     setComputedTickets({ signature: "", tickets: [] });
     if (mainTab === "straight" || categoryTab === "first_basket") return;
     const handle = window.setTimeout(() => {
       const tickets = makeParlays(
-        eligibleLegs, mainTab === "lotto" ? 10000 : 500,
-        categoryTab === "combos", 3, 20,
-        // NHL baseline is uncalibrated; retain genuinely priced outcomes
-        // rather than discarding every single-market leg on a small slate.
-        // Model probabilities still rank tickets; never fabricate odds.
-        sport !== "nhl"
+        eligibleLegs, mainTab === "lotto" ? 10000 : smallSlateTeamParlay ? -100000 : 500,
+        categoryTab === "combos", smallSlateTeamParlay ? Math.min(3, slateGameCount) : 3, 20,
+        !smallSlateTeamParlay && sport !== "nhl",
+        smallSlateTeamParlay
       );
       setComputedTickets({ signature: searchSignature, tickets });
     }, 0);
     return () => window.clearTimeout(handle);
-  }, [eligibleLegs, mainTab, categoryTab, sport, searchSignature]);
+  }, [eligibleLegs, mainTab, categoryTab, sport, searchSignature, smallSlateTeamParlay, slateGameCount]);
   const parlays = mainTab === "parlay" && computedTickets.signature === searchSignature
     ? computedTickets.tickets : [];
   const lottos = mainTab === "lotto" && computedTickets.signature === searchSignature
@@ -670,7 +672,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4),
     [basketLegs, mainTab, categoryTab]);
   const section = mainTab === "parlay"
-    ? { title: "Most Confident Parlays", subtitle: "Six highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: "+500 minimum · 3–20 legs" }
+    ? { title: "Most Confident Parlays", subtitle: "Six highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: smallSlateTeamParlay ? "No minimum odds · " + Math.min(3, slateGameCount) + "–20 legs" : "+500 minimum · 3–20 legs" }
     : mainTab === "straight"
     ? { title: "Most Confident Straight Bets", subtitle: "Six highest-confidence qualifying straight bets per market", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
     : { title: "Lotto Parlays", subtitle: "Six highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
