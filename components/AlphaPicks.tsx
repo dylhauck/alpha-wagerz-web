@@ -298,7 +298,7 @@ function buildCandidates(sport: Sport, projections: any[], markets: any[], propM
   return out.sort((a, b) => b.probability - a.probability);
 }
 
-function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20, requirePositiveEdge = true, rankByConfidence = false): Ticket[] {
+function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, maxLegs = 20, requirePositiveEdge = true, rankByConfidence = false, ticketLimit = 6): Ticket[] {
   const MIN_LEGS = minLegs;
   const MAX_LEGS = Math.min(maxLegs, minOdds >= 10000 ? 12 : 8);
   // Keep one outcome per matchup, and consider as many as 20 distinct games.
@@ -320,8 +320,8 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     if (!match) continue;
     const identity = [leg.game, match[1].toLowerCase(), match[2].toLowerCase(), match[3].toLowerCase()].join("|");
     const prior = bestByProp.get(identity);
-    const edge = leg.probability - probabilityFromOdds(leg.odds);
-    if (!prior || edge > prior.probability - probabilityFromOdds(prior.odds)) bestByProp.set(identity, leg);
+    const score = rankByConfidence ? leg.probability : leg.probability - probabilityFromOdds(leg.odds);
+    if (!prior || score > (rankByConfidence ? prior.probability : prior.probability - probabilityFromOdds(prior.odds))) bestByProp.set(identity, leg);
   }
   // A single player/stat market should not occupy several tickets through
   // different alternate thresholds (e.g. Josh Hart 10.5 and 11.5 PA).
@@ -333,8 +333,8 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     if (!match) continue;
     const identity = [leg.game, match[1].toLowerCase(), match[3].toLowerCase()].join("|");
     const previous = bestMarket.get(identity);
-    if (!previous || leg.probability - probabilityFromOdds(leg.odds) >
-      previous.probability - probabilityFromOdds(previous.odds)) bestMarket.set(identity, leg);
+    if (!previous || (rankByConfidence ? leg.probability : leg.probability - probabilityFromOdds(leg.odds)) >
+      (rankByConfidence ? previous.probability : previous.probability - probabilityFromOdds(previous.odds))) bestMarket.set(identity, leg);
   }
   const rankedCandidates = legs.filter(leg => {
     if (leg.marketType !== "player_prop") return true;
@@ -348,8 +348,8 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   // pruning. Otherwise 36 player props can crowd out all team markets.
   const candidates = mixed
     ? (["moneyline", "spread", "total", "player_prop"] as MarketType[])
-        .flatMap(type => rankedCandidates.filter(leg => leg.marketType === type).slice(0, 12))
-    : rankedCandidates.slice(0, 36);
+        .flatMap(type => rankedCandidates.filter(leg => leg.marketType === type).slice(0, ticketLimit === 9 ? 24 : 12))
+    : rankedCandidates.slice(0, ticketLimit === 9 ? 72 : 36);
   if (candidates.length < MIN_LEGS) return [];
   // The model's raw probability is not a calibration guarantee. Prevent
   // a single direction from monopolizing the candidate beam when both
@@ -364,7 +364,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   beams[0] = [{ legs: [], decimal: 1, probability: 1 }];
   const results: Ticket[] = [];
   const seen = new Set<string>();
-  const BEAM_WIDTH = mixed ? 64 : 48;
+  const BEAM_WIDTH = ticketLimit === 9 ? 96 : mixed ? 64 : 48;
   for (const leg of candidates) {
     for (let count = MAX_LEGS - 1; count >= 0; count--) {
       if (!beams[count].length) continue;
@@ -432,6 +432,7 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
     return leg.marketType === "player_prop" ? name : leg.id.toLowerCase();
   };
   const keys = (t: Ticket) => new Set(t.legs.map(playerKey));
+  const people = (t: Ticket) => new Set(t.legs.filter(l => l.marketType === "player_prop").map(playerKey));
   const similarity = (a: Ticket, b: Ticket) => {
     const ka = keys(a), kb = keys(b);
     const common = [...ka].filter(k => kb.has(k)).length;
@@ -439,10 +440,11 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
   };
   const selected: Ticket[] = [];
   const usedPlayers = new Map<string, number>();
+  const usedPeople = new Map<string, number>();
   // Greedily select strong tickets while penalizing repeated players and
   // overlapping legs. Only relax diversity when the candidate pool demands it.
   const choose = (maxOverlap: number, maxPlayerUses: number, confidenceFloor: number) => {
-    while (selected.length < 6) {
+    while (selected.length < ticketLimit) {
       let best: Ticket | undefined;
       let bestScore = -Infinity;
       for (const t of ranked) {
@@ -461,17 +463,21 @@ function makeParlays(legs: Leg[], minOdds: number, mixed = false, minLegs = 3, m
         const playerNames = [...keys(t)];
         if (playerNames.some(name => (usedPlayers.get(name) ?? 0) >= maxPlayerUses)) continue;
         const repeats = playerNames.reduce((sum, name) => sum + (usedPlayers.get(name) ?? 0), 0);
-        const score = Math.log(Math.max(t.probability, 1e-12)) - 0.22 * repeats;
+        const peopleRepeats = [...people(t)].reduce((sum, name) => sum + (usedPeople.get(name) ?? 0), 0);
+        const score = Math.log(Math.max(t.probability, 1e-12)) - 0.22 * repeats -
+          (ticketLimit === 9 ? 0.5 : 0) * peopleRepeats;
         if (score > bestScore) { best = t; bestScore = score; }
       }
       if (!best) break;
       selected.push(best);
       for (const name of keys(best)) usedPlayers.set(name, (usedPlayers.get(name) ?? 0) + 1);
+      for (const name of people(best)) usedPeople.set(name, (usedPeople.get(name) ?? 0) + 1);
     }
   };
   choose(0.34, 2, 0.65);
   choose(0.5, 3, 0.55);
   choose(0.67, 4, 0.4);
+  if (ticketLimit === 9) choose(0.8, 5, 0.25);
   // Never fill remaining slots with near-identical tickets merely to reach six.
   return selected.sort((a, b) => b.probability - a.probability);
 }
@@ -576,11 +582,12 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     // multiple contradictory props on the same player.
     // Require the model's probability to exceed the sportsbook break-even
     // probability; a high win chance alone is not a favorable wager.
+    const expandedCategory = categoryTab === "player_prop" || categoryTab === "combos";
     const ranked = eligibleLegs
-      .filter(leg => leg.odds >= -150 && (sport === "nhl" || leg.probability > probabilityFromOdds(leg.odds)))
-      .sort((a, b) => (b.probability - probabilityFromOdds(b.odds)) -
-                      (a.probability - probabilityFromOdds(a.odds)) ||
-                      b.probability - a.probability);
+      .filter(leg => leg.odds >= -150 && (expandedCategory || sport === "nhl" || leg.probability > probabilityFromOdds(leg.odds)))
+      .sort((a, b) => expandedCategory ? b.probability - a.probability :
+        (b.probability - probabilityFromOdds(b.odds)) - (a.probability - probabilityFromOdds(a.odds)) ||
+        b.probability - a.probability);
     const selected: Leg[] = [];
     const playerName = (leg: Leg) =>
       leg.pick.split(/\s+(?:Over|Under)\s+/i)[0].trim().toLowerCase();
@@ -592,8 +599,10 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     };
     const choose = (options: Leg[]) => {
       for (const leg of options) {
-        if (selected.length >= 6) break;
+        if (selected.length >= (expandedCategory ? 9 : 6)) break;
         if (selected.some(existing => conflicts(existing, leg))) continue;
+        if (expandedCategory && leg.marketType === "player_prop" &&
+          selected.some(existing => existing.marketType === "player_prop" && playerName(existing) === playerName(leg))) continue;
         selected.push(leg);
       }
     };
@@ -617,6 +626,7 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
   const [computedTickets, setComputedTickets] = useState<{
     signature: string; tickets: Ticket[];
   }>({ signature: "", tickets: [] });
+  const expandedParlayCategory = categoryTab === "player_prop" || categoryTab === "combos";
   const smallSlateTeamParlay = mainTab === "parlay" && slateGameCount > 0 && slateGameCount <= 4 &&
     (categoryTab === "moneyline" || categoryTab === "spread" || categoryTab === "total");
   const searchSignature = sport + "|" + mainTab + "|" + categoryTab + "|" + slateGameCount;
@@ -627,13 +637,14 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
       const tickets = makeParlays(
         eligibleLegs, mainTab === "lotto" ? 10000 : smallSlateTeamParlay ? -100000 : 500,
         categoryTab === "combos", smallSlateTeamParlay ? Math.min(3, slateGameCount) : 3, 20,
-        !smallSlateTeamParlay && sport !== "nhl",
-        smallSlateTeamParlay
+        !smallSlateTeamParlay && !expandedParlayCategory && sport !== "nhl",
+        smallSlateTeamParlay || expandedParlayCategory,
+        expandedParlayCategory ? 9 : 6
       );
       setComputedTickets({ signature: searchSignature, tickets });
     }, 0);
     return () => window.clearTimeout(handle);
-  }, [eligibleLegs, mainTab, categoryTab, sport, searchSignature, smallSlateTeamParlay, slateGameCount]);
+  }, [eligibleLegs, mainTab, categoryTab, sport, searchSignature, smallSlateTeamParlay, slateGameCount, expandedParlayCategory]);
   const parlays = mainTab === "parlay" && computedTickets.signature === searchSignature
     ? computedTickets.tickets : [];
   const lottos = mainTab === "lotto" && computedTickets.signature === searchSignature
@@ -672,10 +683,10 @@ export default function AlphaPicks({ sport, next = false }: { sport: Sport; next
     : makeParlays(basketLegs, mainTab === "lotto" ? 10000 : 500, false, 2, 4),
     [basketLegs, mainTab, categoryTab]);
   const section = mainTab === "parlay"
-    ? { title: "Most Confident Parlays", subtitle: "Six highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: smallSlateTeamParlay ? "No minimum odds · " + Math.min(3, slateGameCount) + "–20 legs" : "+500 minimum · 3–20 legs" }
+    ? { title: "Most Confident Parlays", subtitle: (expandedParlayCategory ? "Nine" : "Six") + " highest-confidence qualifying tickets per market", tickets: parlays, category: "parlay" as const, threshold: smallSlateTeamParlay ? "No minimum odds · " + Math.min(3, slateGameCount) + "–20 legs" : "+500 minimum · 3–20 legs" }
     : mainTab === "straight"
-    ? { title: "Most Confident Straight Bets", subtitle: "Six highest-confidence qualifying straight bets per market", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
-    : { title: "Lotto Parlays", subtitle: "Six highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
+    ? { title: "Most Confident Straight Bets", subtitle: (expandedParlayCategory ? "Nine" : "Six") + " highest-confidence qualifying straight bets per market", tickets: straights, category: "straight" as const, threshold: "-150 or better · 1 leg" }
+    : { title: "Lotto Parlays", subtitle: (expandedParlayCategory ? "Nine" : "Six") + " highest-confidence qualifying long shots per market", tickets: lottos, category: "lotto" as const, threshold: "+10,000 minimum · 3–20 legs" };
   const pickTabs: { id: PickTab; label: string }[] = [
     { id: "moneyline", label: "Moneylines" },
     { id: "spread", label: "Spreads" },
