@@ -5,23 +5,23 @@
       "away_team": "CIN",
       "home_team": "WAS",
       "away_projection": {
-        "projected_points": 24.4,
+        "projected_points": 23.1,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 1.05,
           "matchup_adjustment": 1.58,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 24.38,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 24.38,
+          "injury_scoring_factor": 0.948,
+          "injury_adjustment_points": -1.27,
+          "post_injury_projection": 23.11,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
+          "scoring_factor": 0.948,
+          "passing_factor": 0.895,
+          "rushing_factor": 1.051,
           "key_absences": []
         },
         "weather_context": {
@@ -33,7 +33,7 @@
             "temperature_f": 52.0,
             "feels_like_f": 46.4,
             "humidity_pct": 59.0,
-            "precip_probability_pct": 1.0,
+            "precip_probability_pct": 4.0,
             "precipitation_in": 0.0,
             "wind_mph": 6.8,
             "wind_gust_mph": 18.3,
@@ -59,23 +59,23 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.2,
+        "projected_points": 21.8,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.01,
           "matchup_adjustment": -0.03,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 23.23,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 23.23,
+          "injury_scoring_factor": 0.94,
+          "injury_adjustment_points": -1.39,
+          "post_injury_projection": 21.83,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
+          "scoring_factor": 0.94,
+          "passing_factor": 0.989,
+          "rushing_factor": 0.998,
           "key_absences": []
         },
         "weather_context": {
@@ -87,7 +87,7 @@
             "temperature_f": 52.0,
             "feels_like_f": 46.4,
             "humidity_pct": 59.0,
-            "precip_probability_pct": 1.0,
+            "precip_probability_pct": 4.0,
             "precipitation_in": 0.0,
             "wind_mph": 6.8,
             "wind_gust_mph": 18.3,
@@ -113,69 +113,497 @@
         }
       },
       "projected_score": {
-        "away": 24.4,
-        "home": 23.2
+        "away": 23.1,
+        "home": 21.8
       },
-      "projected_total": 47.6,
-      "expected_margin": -1.2,
+      "projected_total": 44.9,
+      "expected_margin": -1.3,
       "projected_winner": "CIN",
       "win_probability": {
-        "away": 54.6,
-        "home": 45.4
+        "away": 55.0,
+        "home": 45.0
       },
       "projection_confidence": 53.7,
       "injury_context": {
         "away": {
           "team_context": {
             "team": "CIN",
-            "injuries": [],
+            "injuries": [
+              {
+                "player_id": "4710752",
+                "player": "Cashius Howell",
+                "team": "CIN",
+                "position": "DE",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Wrist",
+                "unit": "defense",
+                "position_weight": 3.5,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.5
+              },
+              {
+                "player_id": "4240434",
+                "player": "Ja'Sir Taylor",
+                "team": "CIN",
+                "position": "CB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.4
+              },
+              {
+                "player_id": "3125356",
+                "player": "Jalen Davis",
+                "team": "CIN",
+                "position": "CB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Hamstring",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.4
+              },
+              {
+                "player_id": "4689117",
+                "player": "Brian Parker II",
+                "team": "CIN",
+                "position": "OT",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.2
+              },
+              {
+                "player_id": "4368003",
+                "player": "Andrei Iosivas",
+                "team": "CIN",
+                "position": "WR",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Thumb",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.0
+              },
+              {
+                "player_id": "4570546",
+                "player": "Swayze Bozeman",
+                "team": "CIN",
+                "position": "LB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Forearm",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4427834",
+                "player": "Erick All Jr.",
+                "team": "CIN",
+                "position": "TE",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Torn ACL",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.2
+              },
+              {
+                "player_id": "3050481",
+                "player": "Tanner Hudson",
+                "team": "CIN",
+                "position": "TE",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Pectoral",
+                "unit": "offense",
+                "position_weight": 2.2,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.2
+              },
+              {
+                "player_id": "4426422",
+                "player": "Dax Hill",
+                "team": "CIN",
+                "position": "CB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Illness",
+                "unit": "defense",
+                "position_weight": 3.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.36
+              },
+              {
+                "player_id": "4401811",
+                "player": "Kyle Dugger",
+                "team": "CIN",
+                "position": "S",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.0
+              },
+              {
+                "player_id": "3051746",
+                "player": "Oren Burks",
+                "team": "CIN",
+                "position": "LB",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Groin",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.96
+              },
+              {
+                "player_id": "3125082",
+                "player": "Dalton Risner",
+                "team": "CIN",
+                "position": "OG",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Knees",
+                "unit": "offense",
+                "position_weight": 2.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.8
+              },
+              {
+                "player_id": "4646773",
+                "player": "Dylan Fairchild",
+                "team": "CIN",
+                "position": "OG",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 2.0,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 0.8
+              }
+            ],
             "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
+              "impact": 12.2,
+              "factor": 0.854,
+              "passing_impact": 12.2,
+              "passing_factor": 0.841,
+              "rushing_impact": 4.8,
+              "rushing_factor": 0.947
             },
             "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
+              "impact": 16.02,
+              "factor": 1.16,
+              "pass_defense_impact": 16.02,
+              "pass_defense_factor": 1.176,
+              "rush_defense_impact": 7.86,
+              "rush_defense_factor": 1.079
             },
-            "key_absences": []
+            "key_absences": [
+              {
+                "player_id": "4710752",
+                "player": "Cashius Howell",
+                "position": "DE",
+                "status": "IR",
+                "injury": "Wrist",
+                "impact": 3.5
+              },
+              {
+                "player_id": "4240434",
+                "player": "Ja'Sir Taylor",
+                "position": "CB",
+                "status": "IR",
+                "injury": "Undisclosed",
+                "impact": 3.4
+              },
+              {
+                "player_id": "3125356",
+                "player": "Jalen Davis",
+                "position": "CB",
+                "status": "IR",
+                "injury": "Hamstring",
+                "impact": 3.4
+              },
+              {
+                "player_id": "4689117",
+                "player": "Brian Parker II",
+                "position": "OT",
+                "status": "IR",
+                "injury": "Undisclosed",
+                "impact": 3.2
+              },
+              {
+                "player_id": "4368003",
+                "player": "Andrei Iosivas",
+                "position": "WR",
+                "status": "IR",
+                "injury": "Thumb",
+                "impact": 3.0
+              }
+            ]
           },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
+          "scoring_factor": 0.948,
+          "passing_factor": 0.895,
+          "rushing_factor": 1.051
         },
         "home": {
           "team_context": {
             "team": "WAS",
-            "injuries": [],
+            "injuries": [
+              {
+                "player_id": "3051890",
+                "player": "Laremy Tunsil",
+                "team": "WAS",
+                "position": "OT",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Triceps",
+                "unit": "offense",
+                "position_weight": 3.2,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.2
+              },
+              {
+                "player_id": "4361577",
+                "player": "Dyami Brown",
+                "team": "WAS",
+                "position": "WR",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Calf",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.0
+              },
+              {
+                "player_id": "4602667",
+                "player": "Jaylin Lane",
+                "team": "WAS",
+                "position": "WR",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.0
+              },
+              {
+                "player_id": "3121422",
+                "player": "Terry McLaurin",
+                "team": "WAS",
+                "position": "WR",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Knee",
+                "unit": "offense",
+                "position_weight": 3.0,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 3.0
+              },
+              {
+                "player_id": "3925354",
+                "player": "Daron Payne",
+                "team": "WAS",
+                "position": "DT",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Foot",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.6
+              },
+              {
+                "player_id": "4259491",
+                "player": "Javon Kinlaw",
+                "team": "WAS",
+                "position": "DT",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Undisclosed",
+                "unit": "defense",
+                "position_weight": 2.6,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.6
+              },
+              {
+                "player_id": "4361357",
+                "player": "Javontae Jean-Baptiste",
+                "team": "WAS",
+                "position": "LB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Pectoral",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4426901",
+                "player": "Leo Chenal",
+                "team": "WAS",
+                "position": "LB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Neck",
+                "unit": "defense",
+                "position_weight": 2.4,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 2.4
+              },
+              {
+                "player_id": "4575131",
+                "player": "Jacory Croskey-Merritt",
+                "team": "WAS",
+                "position": "RB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Groin",
+                "unit": "offense",
+                "position_weight": 1.8,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 1.8
+              },
+              {
+                "player_id": "3127586",
+                "player": "Jeremy McNichols",
+                "team": "WAS",
+                "position": "RB",
+                "status": "IR",
+                "practice_status": "",
+                "injury": "Foot",
+                "unit": "offense",
+                "position_weight": 1.8,
+                "status_weight": 1.0,
+                "usage_importance": 1.0,
+                "impact": 1.8
+              },
+              {
+                "player_id": "4360378",
+                "player": "Quan Martin",
+                "team": "WAS",
+                "position": "S",
+                "status": "QUESTIONABLE",
+                "practice_status": "",
+                "injury": "Shoulder",
+                "unit": "defense",
+                "position_weight": 2.5,
+                "status_weight": 0.4,
+                "usage_importance": 1.0,
+                "impact": 1.0
+              }
+            ],
             "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
+              "impact": 15.8,
+              "factor": 0.81,
+              "passing_impact": 12.2,
+              "passing_factor": 0.841,
+              "rushing_impact": 6.8,
+              "rushing_factor": 0.925
             },
             "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
+              "impact": 11.0,
+              "factor": 1.11,
+              "pass_defense_impact": 5.8,
+              "pass_defense_factor": 1.064,
+              "rush_defense_impact": 11.0,
+              "rush_defense_factor": 1.11
             },
-            "key_absences": []
+            "key_absences": [
+              {
+                "player_id": "3051890",
+                "player": "Laremy Tunsil",
+                "position": "OT",
+                "status": "IR",
+                "injury": "Triceps",
+                "impact": 3.2
+              },
+              {
+                "player_id": "4361577",
+                "player": "Dyami Brown",
+                "position": "WR",
+                "status": "IR",
+                "injury": "Calf",
+                "impact": 3.0
+              },
+              {
+                "player_id": "4602667",
+                "player": "Jaylin Lane",
+                "position": "WR",
+                "status": "IR",
+                "injury": "Undisclosed",
+                "impact": 3.0
+              },
+              {
+                "player_id": "3121422",
+                "player": "Terry McLaurin",
+                "position": "WR",
+                "status": "IR",
+                "injury": "Knee",
+                "impact": 3.0
+              },
+              {
+                "player_id": "3925354",
+                "player": "Daron Payne",
+                "position": "DT",
+                "status": "IR",
+                "injury": "Foot",
+                "impact": 2.6
+              },
+              {
+                "player_id": "4259491",
+                "player": "Javon Kinlaw",
+                "position": "DT",
+                "status": "IR",
+                "injury": "Undisclosed",
+                "impact": 2.6
+              }
+            ]
           },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
+          "scoring_factor": 0.94,
+          "passing_factor": 0.989,
+          "rushing_factor": 0.998
         }
       },
       "weather_context": {
@@ -193,7 +621,7 @@
           "temperature_f": 52.0,
           "feels_like_f": 46.4,
           "humidity_pct": 59.0,
-          "precip_probability_pct": 1.0,
+          "precip_probability_pct": 4.0,
           "precipitation_in": 0.0,
           "wind_mph": 6.8,
           "wind_gust_mph": 18.3,
