@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T12:53:45.885999+00:00",
+  "generated_at": "2026-11-22T16:11:59.865302+00:00",
   "slate_type": "next",
   "games": [
     {
@@ -1060,8 +1060,7 @@
       "lineup_sources": {
         "away": "previous_confirmed_lineup",
         "away_previous_game_id": "401909307",
-        "home": "previous_confirmed_lineup",
-        "home_previous_game_id": "401909309"
+        "home": "projected_by_minutes"
       },
       "projected_starters": [
         {
@@ -1121,20 +1120,12 @@
           "fg_pct": 0.571
         },
         {
-          "player_id": 1629651,
-          "player_name": "Nic Claxton",
+          "player_id": 1630188,
+          "player_name": "Jalen Smith",
           "team": "CHI",
           "side": "home",
-          "minutes": 17.0,
-          "fg_pct": 0.5
-        },
-        {
-          "player_id": 1626181,
-          "player_name": "Norman Powell",
-          "team": "CHI",
-          "side": "home",
-          "minutes": 33.0,
-          "fg_pct": 0.556
+          "minutes": 28.0,
+          "fg_pct": 0.667
         },
         {
           "player_id": 1630581,
@@ -1143,22 +1134,19 @@
           "side": "home",
           "minutes": 24.0,
           "fg_pct": 0.2
+        },
+        {
+          "player_id": 1630200,
+          "player_name": "Tre Jones",
+          "team": "CHI",
+          "side": "home",
+          "minutes": 23.0,
+          "fg_pct": 0.545
         }
       ],
       "source": "ESPN NBA play-by-play",
       "history_games": 100,
       "players": [
-        {
-          "player_id": 1626181,
-          "player_name": "Norman Powell",
-          "team": "CHI",
-          "probability": 13.7,
-          "first_shot_rate": 40.0,
-          "first_basket_rate": 20.0,
-          "starts_sample": 5,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
-        },
         {
           "player_id": 1628378,
           "player_name": "Donovan Mitchell",
@@ -1190,18 +1178,29 @@
           "first_basket_rate": 14.29,
           "starts_sample": 7,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1629651,
-          "player_name": "Nic Claxton",
+          "player_id": 1630200,
+          "player_name": "Tre Jones",
           "team": "CHI",
-          "probability": 8.77,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 1,
+          "probability": 9.76,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
           "estimate_source": "statistical_fallback",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1630188,
+          "player_name": "Jalen Smith",
+          "team": "CHI",
+          "probability": 7.89,
+          "first_shot_rate": 20.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 5,
+          "estimate_source": "historical_blend",
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1642878,
@@ -1223,7 +1222,7 @@
           "first_basket_rate": 0.0,
           "starts_sample": 7,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1631212,
@@ -1256,7 +1255,7 @@
           "first_basket_rate": 0.0,
           "starts_sample": 7,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         }
       ],
       "status": "estimated",

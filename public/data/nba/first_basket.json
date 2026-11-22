@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T12:53:44.454777+00:00",
+  "generated_at": "2026-11-22T16:11:57.153662+00:00",
   "slate_type": "current",
   "games": [
     {
@@ -640,8 +640,7 @@
       "lineup_sources": {
         "away": "previous_confirmed_lineup",
         "away_previous_game_id": "401909312",
-        "home": "previous_confirmed_lineup",
-        "home_previous_game_id": "401909309"
+        "home": "projected_by_minutes"
       },
       "projected_starters": [
         {
@@ -685,12 +684,20 @@
           "fg_pct": 0.167
         },
         {
-          "player_id": 1630171,
-          "player_name": "Isaac Okoro",
+          "player_id": 1629651,
+          "player_name": "Nic Claxton",
           "team": "CHI",
           "side": "home",
-          "minutes": 13.0,
-          "fg_pct": 1.0
+          "minutes": 31.0,
+          "fg_pct": 0.571
+        },
+        {
+          "player_id": 1630581,
+          "player_name": "Josh Giddey",
+          "team": "CHI",
+          "side": "home",
+          "minutes": 24.0,
+          "fg_pct": 0.333
         },
         {
           "player_id": 1641824,
@@ -701,28 +708,20 @@
           "fg_pct": 0.5
         },
         {
-          "player_id": 1629651,
-          "player_name": "Nic Claxton",
+          "player_id": 1642855,
+          "player_name": "Noa Essengue",
           "team": "CHI",
           "side": "home",
-          "minutes": 31.0,
-          "fg_pct": 0.571
+          "minutes": 23.0,
+          "fg_pct": 0.444
         },
         {
-          "player_id": 1626181,
-          "player_name": "Norman Powell",
+          "player_id": 1631159,
+          "player_name": "Leonard Miller",
           "team": "CHI",
           "side": "home",
-          "minutes": 29.5,
-          "fg_pct": 0.452
-        },
-        {
-          "player_id": 1630581,
-          "player_name": "Josh Giddey",
-          "team": "CHI",
-          "side": "home",
-          "minutes": 24.0,
-          "fg_pct": 0.333
+          "minutes": 22.0,
+          "fg_pct": 0.786
         }
       ],
       "source": "ESPN NBA play-by-play",
@@ -740,26 +739,15 @@
           "lineup_status": "previous_confirmed_lineup"
         },
         {
-          "player_id": 1626181,
-          "player_name": "Norman Powell",
+          "player_id": 1631159,
+          "player_name": "Leonard Miller",
           "team": "CHI",
-          "probability": 12.91,
-          "first_shot_rate": 40.0,
-          "first_basket_rate": 20.0,
-          "starts_sample": 5,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
-        },
-        {
-          "player_id": 1630171,
-          "player_name": "Isaac Okoro",
-          "team": "CHI",
-          "probability": 12.18,
-          "first_shot_rate": 14.29,
-          "first_basket_rate": 14.29,
-          "starts_sample": 7,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "probability": 11.1,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1629651,
@@ -770,7 +758,7 @@
           "first_basket_rate": 0.0,
           "starts_sample": 1,
           "estimate_source": "statistical_fallback",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1631128,
@@ -782,6 +770,17 @@
           "starts_sample": 6,
           "estimate_source": "historical_blend",
           "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 1642855,
+          "player_name": "Noa Essengue",
+          "team": "CHI",
+          "probability": 9.15,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 203932,
@@ -825,7 +824,7 @@
           "first_basket_rate": 0.0,
           "starts_sample": 7,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1630581,
@@ -836,7 +835,7 @@
           "first_basket_rate": 0.0,
           "starts_sample": 7,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         }
       ],
       "status": "estimated",
