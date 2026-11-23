@@ -1,22 +1,22 @@
 {
   "games": [
     {
-      "game_id": "2026_11_CIN_WAS",
-      "away_team": "CIN",
-      "home_team": "WAS",
+      "game_id": "2026_12_GB_LA",
+      "away_team": "GB",
+      "home_team": "LAR",
       "away_projection": {
-        "projected_points": 23.7,
+        "projected_points": 20.0,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": 1.05,
-          "matchup_adjustment": 1.58,
+          "efficiency_adjustment": -0.58,
+          "matchup_adjustment": -1.13,
           "home_field_adjustment": -0.75,
-          "pre_injury_projection": 24.38,
+          "pre_injury_projection": 20.05,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 24.38,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.63
+          "post_injury_projection": 20.05,
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -26,108 +26,90 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "outdoor",
-          "stadium": "Northwest Stadium",
+          "roof": "fixed",
+          "stadium": "SoFi Stadium",
           "weather": {
-            "forecast_time": "2026-11-23T20:00",
-            "temperature_f": 49.0,
-            "feels_like_f": 40.9,
-            "humidity_pct": 55.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.8,
-            "wind_gust_mph": 28.4,
-            "weather_code": 0,
-            "conditions": "Clear"
+            "conditions": "Indoor"
           },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
-        },
-        "matchup_rating": 20.6,
-        "matchup_label": "Strong",
-        "passing_matchup": {
-          "rating": 27.0,
-          "label": "Strong"
-        },
-        "rushing_matchup": {
-          "rating": 9.4,
-          "label": "Favorable"
-        }
-      },
-      "home_projection": {
-        "projected_points": 22.6,
-        "components": {
-          "base_scoring": 22.5,
-          "efficiency_adjustment": 0.01,
-          "matchup_adjustment": -0.03,
-          "home_field_adjustment": 0.75,
-          "pre_injury_projection": 23.23,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 23.23,
-          "weather_scoring_factor": 0.974,
-          "weather_adjustment_points": -0.6
-        },
-        "injury_context": {
+          "classification": "INDOOR",
+          "severity_score": 0.0,
           "scoring_factor": 1.0,
           "passing_factor": 1.0,
           "rushing_factor": 1.0,
-          "key_absences": []
+          "kicking_factor": 1.0
         },
-        "weather_context": {
-          "available": true,
-          "roof": "outdoor",
-          "stadium": "Northwest Stadium",
-          "weather": {
-            "forecast_time": "2026-11-23T20:00",
-            "temperature_f": 49.0,
-            "feels_like_f": 40.9,
-            "humidity_pct": 55.0,
-            "precip_probability_pct": 1.0,
-            "precipitation_in": 0.0,
-            "wind_mph": 10.8,
-            "wind_gust_mph": 28.4,
-            "weather_code": 0,
-            "conditions": "Clear"
-          },
-          "classification": "MODERATE",
-          "severity_score": 2.0,
-          "scoring_factor": 0.974,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "kicking_factor": 0.96
-        },
-        "matchup_rating": -0.3,
-        "matchup_label": "Neutral",
+        "matchup_rating": -13.8,
+        "matchup_label": "Difficult",
         "passing_matchup": {
-          "rating": -6.2,
+          "rating": -7.7,
           "label": "Difficult"
         },
         "rushing_matchup": {
-          "rating": 8.6,
+          "rating": -29.2,
+          "label": "Poor"
+        }
+      },
+      "home_projection": {
+        "projected_points": 23.7,
+        "components": {
+          "base_scoring": 22.5,
+          "efficiency_adjustment": 0.13,
+          "matchup_adjustment": 0.28,
+          "home_field_adjustment": 0.75,
+          "pre_injury_projection": 23.66,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 23.66,
+          "weather_scoring_factor": 1.0,
+          "weather_adjustment_points": 0.0
+        },
+        "injury_context": {
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "key_absences": []
+        },
+        "weather_context": {
+          "available": true,
+          "roof": "fixed",
+          "stadium": "SoFi Stadium",
+          "weather": {
+            "conditions": "Indoor"
+          },
+          "classification": "INDOOR",
+          "severity_score": 0.0,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "kicking_factor": 1.0
+        },
+        "matchup_rating": 3.9,
+        "matchup_label": "Neutral",
+        "passing_matchup": {
+          "rating": -0.4,
+          "label": "Neutral"
+        },
+        "rushing_matchup": {
+          "rating": 9.2,
           "label": "Favorable"
         }
       },
       "projected_score": {
-        "away": 23.7,
-        "home": 22.6
+        "away": 20.0,
+        "home": 23.7
       },
-      "projected_total": 46.3,
-      "expected_margin": -1.1,
-      "projected_winner": "CIN",
+      "projected_total": 43.7,
+      "expected_margin": 3.7,
+      "projected_winner": "LAR",
       "win_probability": {
-        "away": 54.2,
-        "home": 45.8
+        "away": 36.1,
+        "home": 63.9
       },
-      "projection_confidence": 53.7,
+      "projection_confidence": 53.1,
       "injury_context": {
         "away": {
           "team_context": {
-            "team": "CIN",
+            "team": "GB",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -153,7 +135,7 @@
         },
         "home": {
           "team_context": {
-            "team": "WAS",
+            "team": "LAR",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -179,34 +161,25 @@
         }
       },
       "weather_context": {
-        "game_id": "2026_11_CIN_WAS",
-        "away_team": "CIN",
-        "home_team": "WAS",
-        "stadium": "Northwest Stadium",
-        "latitude": 38.9076,
-        "longitude": -76.8645,
-        "roof": "outdoor",
-        "kickoff": "2026-11-23T20:15",
+        "game_id": "2026_12_GB_LA",
+        "away_team": "GB",
+        "home_team": "LAR",
+        "stadium": "SoFi Stadium",
+        "latitude": 33.9535,
+        "longitude": -118.3392,
+        "roof": "fixed",
+        "kickoff": "2026-11-25T20:00",
         "available": true,
         "weather": {
-          "forecast_time": "2026-11-23T20:00",
-          "temperature_f": 49.0,
-          "feels_like_f": 40.9,
-          "humidity_pct": 55.0,
-          "precip_probability_pct": 1.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 10.8,
-          "wind_gust_mph": 28.4,
-          "weather_code": 0,
-          "conditions": "Clear"
+          "conditions": "Indoor"
         },
         "context": {
-          "severity_score": 2.0,
-          "passing_factor": 0.964,
-          "rushing_factor": 1.01,
-          "scoring_factor": 0.974,
-          "kicking_factor": 0.96,
-          "classification": "MODERATE"
+          "severity_score": 0.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
+          "scoring_factor": 1.0,
+          "kicking_factor": 1.0,
+          "classification": "INDOOR"
         }
       },
       "model": {
@@ -218,20 +191,20 @@
   "league_baselines": {
     "points_per_game": 22.5,
     "points_allowed_per_game": 22.5,
-    "offensive_epa": 0.005625000000000001,
-    "defensive_epa": 0.00378125,
-    "offensive_success": 43.153125,
-    "defensive_success": 43.171875,
-    "offensive_ypp": 5.4121875,
-    "defensive_ypp": 5.4084375,
-    "offensive_explosive": 9.29375,
-    "defensive_explosive": 9.2375,
-    "offensive_third_down": 39.546875,
-    "defensive_third_down": 39.275,
-    "offensive_red_zone": 19.578125,
-    "defensive_red_zone": 19.353125,
-    "offensive_turnovers": 1.2134375,
-    "defensive_takeaways": 1.225
+    "offensive_epa": 0.007000000000000001,
+    "defensive_epa": 0.004968749999999999,
+    "offensive_success": 43.2375,
+    "defensive_success": 43.203125,
+    "offensive_ypp": 5.4053125,
+    "defensive_ypp": 5.394375,
+    "offensive_explosive": 9.24375,
+    "defensive_explosive": 9.1875,
+    "offensive_third_down": 39.88125,
+    "defensive_third_down": 39.675,
+    "offensive_red_zone": 19.70625,
+    "defensive_red_zone": 19.5125,
+    "offensive_turnovers": 1.1934375,
+    "defensive_takeaways": 1.20125
   },
   "model": {
     "name": "Alpha Wagerz NFL Projection Model",
