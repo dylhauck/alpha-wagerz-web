@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T17:13:28.594916+00:00",
+  "generated_at": "2026-11-23T20:05:23.708394+00:00",
   "slate_type": "current",
   "games": [
     {
@@ -430,8 +430,7 @@
       "lineup_sources": {
         "away": "previous_confirmed_lineup",
         "away_previous_game_id": "401910030",
-        "home": "previous_confirmed_lineup",
-        "home_previous_game_id": "401910034"
+        "home": "projected_by_minutes"
       },
       "projected_starters": [
         {
@@ -475,28 +474,28 @@
           "fg_pct": 0.556
         },
         {
-          "player_id": 1627783,
-          "player_name": "Pascal Siakam",
+          "player_id": 1641771,
+          "player_name": "Jalen Slawson",
           "team": "IND",
           "side": "home",
-          "minutes": 21.0,
-          "fg_pct": 0.182
+          "minutes": 33.0,
+          "fg_pct": 0.0
         },
         {
-          "player_id": 1627826,
-          "player_name": "Ivica Zubac",
+          "player_id": 1641716,
+          "player_name": "Jarace Walker",
           "team": "IND",
           "side": "home",
-          "minutes": 18.0,
-          "fg_pct": 0.857
+          "minutes": 30.7,
+          "fg_pct": 0.472
         },
         {
-          "player_id": 1626162,
-          "player_name": "Kelly Oubre Jr.",
+          "player_id": 1641738,
+          "player_name": "Kobe Brown",
           "team": "IND",
           "side": "home",
-          "minutes": 20.0,
-          "fg_pct": 0.444
+          "minutes": 30.0,
+          "fg_pct": 0.5
         },
         {
           "player_id": 1629614,
@@ -507,28 +506,17 @@
           "fg_pct": 0.476
         },
         {
-          "player_id": 1630174,
-          "player_name": "Aaron Nesmith",
+          "player_id": 1627783,
+          "player_name": "Pascal Siakam",
           "team": "IND",
           "side": "home",
-          "minutes": 31.5,
-          "fg_pct": 0.429
+          "minutes": 21.0,
+          "fg_pct": 0.182
         }
       ],
       "source": "ESPN NBA play-by-play",
       "history_games": 100,
       "players": [
-        {
-          "player_id": 1626162,
-          "player_name": "Kelly Oubre Jr.",
-          "team": "IND",
-          "probability": 16.98,
-          "first_shot_rate": 16.67,
-          "first_basket_rate": 33.33,
-          "starts_sample": 6,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
-        },
         {
           "player_id": 1642349,
           "player_name": "Ajay Mitchell",
@@ -549,29 +537,40 @@
           "first_basket_rate": 20.0,
           "starts_sample": 5,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1627826,
-          "player_name": "Ivica Zubac",
+          "player_id": 1641738,
+          "player_name": "Kobe Brown",
           "team": "IND",
-          "probability": 12.17,
-          "first_shot_rate": 14.29,
-          "first_basket_rate": 14.29,
-          "starts_sample": 7,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "probability": 10.33,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
         },
         {
-          "player_id": 1630174,
-          "player_name": "Aaron Nesmith",
+          "player_id": 1641716,
+          "player_name": "Jarace Walker",
           "team": "IND",
-          "probability": 11.6,
-          "first_shot_rate": 14.29,
-          "first_basket_rate": 14.29,
-          "starts_sample": 7,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "probability": 10.23,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
+        },
+        {
+          "player_id": 1641771,
+          "player_name": "Jalen Slawson",
+          "team": "IND",
+          "probability": 7.24,
+          "first_shot_rate": null,
+          "first_basket_rate": null,
+          "starts_sample": 0,
+          "estimate_source": "statistical_fallback",
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": 1629026,
@@ -615,7 +614,7 @@
           "first_basket_rate": 0.0,
           "starts_sample": 7,
           "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
+          "lineup_status": "projected_by_minutes"
         },
         {
           "player_id": null,

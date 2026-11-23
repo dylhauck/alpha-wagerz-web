@@ -5,7 +5,7 @@
       "away_team": "CIN",
       "home_team": "WAS",
       "away_projection": {
-        "projected_points": 24.4,
+        "projected_points": 24.0,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 1.04,
@@ -15,8 +15,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 24.35,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.32
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -25,16 +25,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Northwest Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-23T20:00",
+            "temperature_f": 56.2,
+            "feels_like_f": 48.8,
+            "humidity_pct": 52.0,
+            "precip_probability_pct": 6.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 11.3,
+            "wind_gust_mph": 22.8,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": 20.3,
         "matchup_label": "Strong",
@@ -48,7 +59,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.2,
+        "projected_points": 22.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.01,
@@ -58,8 +69,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 23.2,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "weather_scoring_factor": 0.987,
+          "weather_adjustment_points": -0.3
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -68,16 +79,27 @@
           "key_absences": []
         },
         "weather_context": {
-          "available": false,
+          "available": true,
           "roof": "outdoor",
           "stadium": "Northwest Stadium",
-          "weather": {},
-          "classification": "NEUTRAL",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
+          "weather": {
+            "forecast_time": "2026-11-23T20:00",
+            "temperature_f": 56.2,
+            "feels_like_f": 48.8,
+            "humidity_pct": 52.0,
+            "precip_probability_pct": 6.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 11.3,
+            "wind_gust_mph": 22.8,
+            "weather_code": 3,
+            "conditions": "Overcast"
+          },
+          "classification": "MINOR",
+          "severity_score": 1.0,
+          "scoring_factor": 0.987,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "kicking_factor": 0.98
         },
         "matchup_rating": -0.6,
         "matchup_label": "Neutral",
@@ -91,15 +113,15 @@
         }
       },
       "projected_score": {
-        "away": 24.4,
-        "home": 23.2
+        "away": 24.0,
+        "home": 22.9
       },
-      "projected_total": 47.6,
-      "expected_margin": -1.2,
+      "projected_total": 46.9,
+      "expected_margin": -1.1,
       "projected_winner": "CIN",
       "win_probability": {
-        "away": 54.6,
-        "home": 45.4
+        "away": 54.2,
+        "home": 45.8
       },
       "projection_confidence": 53.7,
       "injury_context": {
@@ -165,8 +187,27 @@
         "longitude": -76.8645,
         "roof": "outdoor",
         "kickoff": "2026-11-23T20:15",
-        "available": false,
-        "reason": "forecast_error: <urlopen error _ssl.c:994: The handshake operation timed out>"
+        "available": true,
+        "weather": {
+          "forecast_time": "2026-11-23T20:00",
+          "temperature_f": 56.2,
+          "feels_like_f": 48.8,
+          "humidity_pct": 52.0,
+          "precip_probability_pct": 6.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 11.3,
+          "wind_gust_mph": 22.8,
+          "weather_code": 3,
+          "conditions": "Overcast"
+        },
+        "context": {
+          "severity_score": 1.0,
+          "passing_factor": 0.982,
+          "rushing_factor": 1.005,
+          "scoring_factor": 0.987,
+          "kicking_factor": 0.98,
+          "classification": "MINOR"
+        }
       },
       "model": {
         "uses_sportsbook_lines": false,
