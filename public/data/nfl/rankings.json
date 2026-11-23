@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T13:40:00.929783+00:00",
+  "generated_at": "2026-11-23T17:14:30.724126+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -29,8 +29,8 @@
     "game_bets": 2,
     "player_props": 0,
     "all_candidates": 2,
-    "best_bets": 2,
-    "strong_plays": 0,
+    "best_bets": 1,
+    "strong_plays": 1,
     "leans": 0,
     "passes": 0
   },
@@ -41,8 +41,8 @@
       "ranking_score": 88.66,
       "confidence": 83.8,
       "upstream_label": "ELITE",
-      "edge_strength": 7.0,
-      "edge": 0.175,
+      "edge_strength": 6.72,
+      "edge": 0.168,
       "market_type": "moneyline",
       "game_id": "2026_11_CIN_WAS",
       "matchup": "CIN @ WAS",
@@ -62,19 +62,21 @@
         "home_team": "WAS",
         "market": "moneyline",
         "selection": "WAS",
-        "edge": 0.175,
+        "edge": 0.168,
         "confidence_score": 83.8,
         "confidence_label": "ELITE"
       }
-    },
+    }
+  ],
+  "strong_plays": [
     {
       "ranking_type": "game_bet",
-      "tier": "BEST BET",
-      "ranking_score": 86.35,
-      "confidence": 80.5,
-      "upstream_label": "ELITE",
-      "edge_strength": 5.0667,
-      "edge": 7.6,
+      "tier": "STRONG PLAY",
+      "ranking_score": 82.43,
+      "confidence": 74.9,
+      "upstream_label": "STRONG",
+      "edge_strength": 4.6,
+      "edge": 6.9,
       "market_type": "game_total",
       "game_id": "2026_11_CIN_WAS",
       "matchup": "CIN @ WAS",
@@ -94,13 +96,12 @@
         "home_team": "WAS",
         "market": "game_total",
         "selection": "UNDER 54.5",
-        "edge": 7.6,
-        "confidence_score": 80.5,
-        "confidence_label": "ELITE"
+        "edge": 6.9,
+        "confidence_score": 74.9,
+        "confidence_label": "STRONG"
       }
     }
   ],
-  "strong_plays": [],
   "leans": [],
   "passes": [],
   "ranked_recommendations": [
@@ -110,8 +111,8 @@
       "ranking_score": 88.66,
       "confidence": 83.8,
       "upstream_label": "ELITE",
-      "edge_strength": 7.0,
-      "edge": 0.175,
+      "edge_strength": 6.72,
+      "edge": 0.168,
       "market_type": "moneyline",
       "game_id": "2026_11_CIN_WAS",
       "matchup": "CIN @ WAS",
@@ -131,19 +132,19 @@
         "home_team": "WAS",
         "market": "moneyline",
         "selection": "WAS",
-        "edge": 0.175,
+        "edge": 0.168,
         "confidence_score": 83.8,
         "confidence_label": "ELITE"
       }
     },
     {
       "ranking_type": "game_bet",
-      "tier": "BEST BET",
-      "ranking_score": 86.35,
-      "confidence": 80.5,
-      "upstream_label": "ELITE",
-      "edge_strength": 5.0667,
-      "edge": 7.6,
+      "tier": "STRONG PLAY",
+      "ranking_score": 82.43,
+      "confidence": 74.9,
+      "upstream_label": "STRONG",
+      "edge_strength": 4.6,
+      "edge": 6.9,
       "market_type": "game_total",
       "game_id": "2026_11_CIN_WAS",
       "matchup": "CIN @ WAS",
@@ -163,9 +164,9 @@
         "home_team": "WAS",
         "market": "game_total",
         "selection": "UNDER 54.5",
-        "edge": 7.6,
-        "confidence_score": 80.5,
-        "confidence_label": "ELITE"
+        "edge": 6.9,
+        "confidence_score": 74.9,
+        "confidence_label": "STRONG"
       }
     }
   ],
@@ -176,8 +177,8 @@
       "ranking_score": 88.66,
       "confidence": 83.8,
       "upstream_label": "ELITE",
-      "edge_strength": 7.0,
-      "edge": 0.175,
+      "edge_strength": 6.72,
+      "edge": 0.168,
       "market_type": "moneyline",
       "game_id": "2026_11_CIN_WAS",
       "matchup": "CIN @ WAS",
@@ -197,19 +198,19 @@
         "home_team": "WAS",
         "market": "moneyline",
         "selection": "WAS",
-        "edge": 0.175,
+        "edge": 0.168,
         "confidence_score": 83.8,
         "confidence_label": "ELITE"
       }
     },
     {
       "ranking_type": "game_bet",
-      "tier": "BEST BET",
-      "ranking_score": 86.35,
-      "confidence": 80.5,
-      "upstream_label": "ELITE",
-      "edge_strength": 5.0667,
-      "edge": 7.6,
+      "tier": "STRONG PLAY",
+      "ranking_score": 82.43,
+      "confidence": 74.9,
+      "upstream_label": "STRONG",
+      "edge_strength": 4.6,
+      "edge": 6.9,
       "market_type": "game_total",
       "game_id": "2026_11_CIN_WAS",
       "matchup": "CIN @ WAS",
@@ -229,9 +230,9 @@
         "home_team": "WAS",
         "market": "game_total",
         "selection": "UNDER 54.5",
-        "edge": 7.6,
-        "confidence_score": 80.5,
-        "confidence_label": "ELITE"
+        "edge": 6.9,
+        "confidence_score": 74.9,
+        "confidence_label": "STRONG"
       }
     }
   ],
