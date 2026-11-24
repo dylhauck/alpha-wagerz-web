@@ -1,36 +1,27 @@
 {
-  "generated_at": "2026-11-23T20:05:54.027117+00:00",
+  "generated_at": "2026-11-24T13:32:58.284711+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_11_CIN_WAS",
-      "away_team": "CIN",
-      "home_team": "WAS",
-      "stadium": "Northwest Stadium",
-      "latitude": 38.9076,
-      "longitude": -76.8645,
-      "roof": "outdoor",
-      "kickoff": "2026-11-23T20:15",
+      "game_id": "2026_12_GB_LA",
+      "away_team": "GB",
+      "home_team": "LAR",
+      "stadium": "SoFi Stadium",
+      "latitude": 33.9535,
+      "longitude": -118.3392,
+      "roof": "fixed",
+      "kickoff": "2026-11-25T20:00",
       "available": true,
       "weather": {
-        "forecast_time": "2026-11-23T20:00",
-        "temperature_f": 56.2,
-        "feels_like_f": 48.8,
-        "humidity_pct": 52.0,
-        "precip_probability_pct": 6.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 11.3,
-        "wind_gust_mph": 22.8,
-        "weather_code": 3,
-        "conditions": "Overcast"
+        "conditions": "Indoor"
       },
       "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
+        "severity_score": 0.0,
+        "passing_factor": 1.0,
+        "rushing_factor": 1.0,
+        "scoring_factor": 1.0,
+        "kicking_factor": 1.0,
+        "classification": "INDOOR"
       }
     }
   ]
