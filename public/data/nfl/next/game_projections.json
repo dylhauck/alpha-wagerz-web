@@ -5,23 +5,23 @@
       "away_team": "CHI",
       "home_team": "DET",
       "away_projection": {
-        "projected_points": 21.6,
+        "projected_points": 22.4,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.14,
           "matchup_adjustment": 0.55,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 22.45,
-          "injury_scoring_factor": 0.962,
-          "injury_adjustment_points": -0.85,
-          "post_injury_projection": 21.59,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 22.45,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.962,
-          "passing_factor": 1.027,
-          "rushing_factor": 1.047,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
           "key_absences": []
         },
         "weather_context": {
@@ -50,23 +50,23 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.4,
+        "projected_points": 24.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.63,
           "matchup_adjustment": 0.73,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 24.61,
-          "injury_scoring_factor": 0.95,
-          "injury_adjustment_points": -1.23,
-          "post_injury_projection": 23.38,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 24.61,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.95,
-          "passing_factor": 0.973,
-          "rushing_factor": 1.039,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
           "key_absences": []
         },
         "weather_context": {
@@ -95,659 +95,69 @@
         }
       },
       "projected_score": {
-        "away": 21.6,
-        "home": 23.4
+        "away": 22.4,
+        "home": 24.6
       },
-      "projected_total": 45.0,
-      "expected_margin": 1.8,
+      "projected_total": 47.0,
+      "expected_margin": 2.2,
       "projected_winner": "DET",
       "win_probability": {
-        "away": 43.1,
-        "home": 56.9
+        "away": 41.6,
+        "home": 58.4
       },
       "projection_confidence": 52.6,
       "injury_context": {
         "away": {
           "team_context": {
             "team": "CHI",
-            "injuries": [
-              {
-                "player_id": "4242659",
-                "player": "Dayo Odeyingbo",
-                "team": "CHI",
-                "position": "DE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Quadriceps",
-                "unit": "defense",
-                "position_weight": 3.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.5
-              },
-              {
-                "player_id": "4917592",
-                "player": "Dallis Flowers",
-                "team": "CHI",
-                "position": "CB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.4
-              },
-              {
-                "player_id": "4251007",
-                "player": "Braxton Jones",
-                "team": "CHI",
-                "position": "OT",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.2
-              },
-              {
-                "player_id": "3116726",
-                "player": "Kentavius Street",
-                "team": "CHI",
-                "position": "DT",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.6
-              },
-              {
-                "player_id": "4239094",
-                "player": "Coby Bryant",
-                "team": "CHI",
-                "position": "S",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.5
-              },
-              {
-                "player_id": "4241611",
-                "player": "Nephi Sewell",
-                "team": "CHI",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Concussion",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4429970",
-                "player": "Ruben Hyppolite II",
-                "team": "CHI",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Shoulder",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4245655",
-                "player": "Tony Fields II",
-                "team": "CHI",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4258595",
-                "player": "Cole Kmet",
-                "team": "CHI",
-                "position": "TE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.2
-              },
-              {
-                "player_id": "5150662",
-                "player": "Hayden Large",
-                "team": "CHI",
-                "position": "TE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.2
-              },
-              {
-                "player_id": "4916349",
-                "player": "Nikola Kalinic",
-                "team": "CHI",
-                "position": "TE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.2
-              },
-              {
-                "player_id": "4036032",
-                "player": "Brittain Brown",
-                "team": "CHI",
-                "position": "RB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 1.8
-              },
-              {
-                "player_id": "4257364",
-                "player": "Zavier Scott",
-                "team": "CHI",
-                "position": "RB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Wrist",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 1.8
-              },
-              {
-                "player_id": "4361093",
-                "player": "Kyler Gordon",
-                "team": "CHI",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
-                "player_id": "5125873",
-                "player": "Theo Benedet",
-                "team": "CHI",
-                "position": "OT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.28
-              },
-              {
-                "player_id": "4426386",
-                "player": "Roschon Johnson",
-                "team": "CHI",
-                "position": "RB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.72
-              }
-            ],
+            "injuries": [],
             "offense": {
-              "impact": 15.4,
-              "factor": 0.815,
-              "passing_impact": 11.08,
-              "passing_factor": 0.856,
-              "rushing_impact": 8.8,
-              "rushing_factor": 0.903
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
             },
             "defense": {
-              "impact": 18.0,
-              "factor": 1.18,
-              "pass_defense_impact": 17.96,
-              "pass_defense_factor": 1.198,
-              "rush_defense_impact": 15.8,
-              "rush_defense_factor": 1.158
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
             },
-            "key_absences": [
-              {
-                "player_id": "4242659",
-                "player": "Dayo Odeyingbo",
-                "position": "DE",
-                "status": "IR",
-                "injury": "Quadriceps",
-                "impact": 3.5
-              },
-              {
-                "player_id": "4917592",
-                "player": "Dallis Flowers",
-                "position": "CB",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 3.4
-              },
-              {
-                "player_id": "4251007",
-                "player": "Braxton Jones",
-                "position": "OT",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 3.2
-              },
-              {
-                "player_id": "3116726",
-                "player": "Kentavius Street",
-                "position": "DT",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 2.6
-              },
-              {
-                "player_id": "4239094",
-                "player": "Coby Bryant",
-                "position": "S",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 2.5
-              }
-            ]
+            "key_absences": []
           },
-          "scoring_factor": 0.962,
-          "passing_factor": 1.027,
-          "rushing_factor": 1.047
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
         },
         "home": {
           "team_context": {
             "team": "DET",
-            "injuries": [
-              {
-                "player_id": "4372099",
-                "player": "Aidan Hutchinson",
-                "team": "DET",
-                "position": "DE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "defense",
-                "position_weight": 3.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.5
-              },
-              {
-                "player_id": "4240269",
-                "player": "Payton Turner",
-                "team": "DET",
-                "position": "DE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.5
-              },
-              {
-                "player_id": "3123938",
-                "player": "Avonte Maddox",
-                "team": "DET",
-                "position": "CB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Foot",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.4
-              },
-              {
-                "player_id": "5209589",
-                "player": "Giovanni Manu",
-                "team": "DET",
-                "position": "OT",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.2
-              },
-              {
-                "player_id": "4685441",
-                "player": "Kendrick Law",
-                "team": "DET",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "3126997",
-                "player": "Tom Kennedy",
-                "team": "DET",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "4569323",
-                "player": "Thomas Harper",
-                "team": "DET",
-                "position": "S",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.5
-              },
-              {
-                "player_id": "4361788",
-                "player": "Cade Mays",
-                "team": "DET",
-                "position": "C",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4362636",
-                "player": "Damone Clark",
-                "team": "DET",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4035434",
-                "player": "Devin White",
-                "team": "DET",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Forearm",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4569465",
-                "player": "Jack Campbell",
-                "team": "DET",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Neck",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4896353",
-                "player": "Jimmy Rolder",
-                "team": "DET",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Hamstring",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4611506",
-                "player": "Ben Bartch",
-                "team": "DET",
-                "position": "OG",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Foot",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.0
-              },
-              {
-                "player_id": "4361529",
-                "player": "Isiah Pacheco",
-                "team": "DET",
-                "position": "RB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Back",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 1.8
-              },
-              {
-                "player_id": "4566092",
-                "player": "Ennis Rakestraw Jr.",
-                "team": "DET",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
-                "player_id": "5103940",
-                "player": "Skyler Gill-Howard",
-                "team": "DET",
-                "position": "DT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.04
-              },
-              {
-                "player_id": "3045463",
-                "player": "Chuck Clark",
-                "team": "DET",
-                "position": "S",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Hamstring",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.0
-              },
-              {
-                "player_id": "4038849",
-                "player": "DJ Wonnum",
-                "team": "DET",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Back",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4430027",
-                "player": "Sam LaPorta",
-                "team": "DET",
-                "position": "TE",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.88
-              }
-            ],
+            "injuries": [],
             "offense": {
-              "impact": 16.28,
-              "factor": 0.805,
-              "passing_impact": 14.48,
-              "passing_factor": 0.812,
-              "rushing_impact": 9.4,
-              "rushing_factor": 0.897
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
             },
             "defense": {
-              "impact": 18.0,
-              "factor": 1.18,
-              "pass_defense_impact": 20.0,
-              "pass_defense_factor": 1.2,
-              "rush_defense_impact": 16.0,
-              "rush_defense_factor": 1.16
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
             },
-            "key_absences": [
-              {
-                "player_id": "4372099",
-                "player": "Aidan Hutchinson",
-                "position": "DE",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 3.5
-              },
-              {
-                "player_id": "4240269",
-                "player": "Payton Turner",
-                "position": "DE",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 3.5
-              },
-              {
-                "player_id": "3123938",
-                "player": "Avonte Maddox",
-                "position": "CB",
-                "status": "IR",
-                "injury": "Foot",
-                "impact": 3.4
-              },
-              {
-                "player_id": "5209589",
-                "player": "Giovanni Manu",
-                "position": "OT",
-                "status": "OUT",
-                "injury": "Knee",
-                "impact": 3.2
-              },
-              {
-                "player_id": "4685441",
-                "player": "Kendrick Law",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 3.0
-              },
-              {
-                "player_id": "3126997",
-                "player": "Tom Kennedy",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 3.0
-              },
-              {
-                "player_id": "4569323",
-                "player": "Thomas Harper",
-                "position": "S",
-                "status": "IR",
-                "injury": "Ankle",
-                "impact": 2.5
-              }
-            ]
+            "key_absences": []
           },
-          "scoring_factor": 0.95,
-          "passing_factor": 0.973,
-          "rushing_factor": 1.039
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
         }
       },
       "weather_context": {
@@ -782,23 +192,23 @@
       "away_team": "PHI",
       "home_team": "DAL",
       "away_projection": {
-        "projected_points": 19.9,
+        "projected_points": 21.2,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.18,
           "matchup_adjustment": -0.32,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 21.25,
-          "injury_scoring_factor": 0.938,
-          "injury_adjustment_points": -1.32,
-          "post_injury_projection": 19.93,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 21.25,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.938,
-          "passing_factor": 0.906,
-          "rushing_factor": 0.91,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
           "key_absences": []
         },
         "weather_context": {
@@ -807,13 +217,13 @@
           "stadium": "AT&T Stadium",
           "weather": {
             "forecast_time": "2026-11-26T16:00",
-            "temperature_f": 56.1,
-            "feels_like_f": 48.5,
+            "temperature_f": 55.4,
+            "feels_like_f": 47.5,
             "humidity_pct": 27.0,
             "precip_probability_pct": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 6.1,
-            "wind_gust_mph": 8.5,
+            "wind_mph": 6.7,
+            "wind_gust_mph": 9.4,
             "weather_code": 0,
             "conditions": "Clear"
           },
@@ -836,23 +246,23 @@
         }
       },
       "home_projection": {
-        "projected_points": 23.8,
+        "projected_points": 24.9,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.53,
           "matchup_adjustment": 1.15,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 24.93,
-          "injury_scoring_factor": 0.955,
-          "injury_adjustment_points": -1.12,
-          "post_injury_projection": 23.8,
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 24.93,
           "weather_scoring_factor": 1.0,
           "weather_adjustment_points": 0.0
         },
         "injury_context": {
-          "scoring_factor": 0.955,
-          "passing_factor": 1.004,
-          "rushing_factor": 0.997,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
           "key_absences": []
         },
         "weather_context": {
@@ -861,13 +271,13 @@
           "stadium": "AT&T Stadium",
           "weather": {
             "forecast_time": "2026-11-26T16:00",
-            "temperature_f": 56.1,
-            "feels_like_f": 48.5,
+            "temperature_f": 55.4,
+            "feels_like_f": 47.5,
             "humidity_pct": 27.0,
             "precip_probability_pct": 0.0,
             "precipitation_in": 0.0,
-            "wind_mph": 6.1,
-            "wind_gust_mph": 8.5,
+            "wind_mph": 6.7,
+            "wind_gust_mph": 9.4,
             "weather_code": 0,
             "conditions": "Clear"
           },
@@ -890,573 +300,69 @@
         }
       },
       "projected_score": {
-        "away": 19.9,
-        "home": 23.8
+        "away": 21.2,
+        "home": 24.9
       },
-      "projected_total": 43.7,
-      "expected_margin": 3.9,
+      "projected_total": 46.1,
+      "expected_margin": 3.7,
       "projected_winner": "DAL",
       "win_probability": {
-        "away": 35.4,
-        "home": 64.6
+        "away": 36.1,
+        "home": 63.9
       },
       "projection_confidence": 53.0,
       "injury_context": {
         "away": {
           "team_context": {
             "team": "PHI",
-            "injuries": [
-              {
-                "player_id": "4040715",
-                "player": "Jalen Hurts",
-                "team": "PHI",
-                "position": "QB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Calf",
-                "unit": "offense",
-                "position_weight": 10.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 10.0
-              },
-              {
-                "player_id": "4685201",
-                "player": "Tanner McKee",
-                "team": "PHI",
-                "position": "QB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ribs",
-                "unit": "offense",
-                "position_weight": 10.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 4.0
-              },
-              {
-                "player_id": "4428850",
-                "player": "Dontayvion Wicks",
-                "team": "PHI",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Ankle/foot",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "4686104",
-                "player": "Johnny Wilson",
-                "team": "PHI",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "4250510",
-                "player": "Andre' Sam",
-                "team": "PHI",
-                "position": "S",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Foot",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.5
-              },
-              {
-                "player_id": "4878896",
-                "player": "Tucker Large",
-                "team": "PHI",
-                "position": "S",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.5
-              },
-              {
-                "player_id": "3917657",
-                "player": "Zack Baun",
-                "team": "PHI",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Back",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4429013",
-                "player": "Tank Bigsby",
-                "team": "PHI",
-                "position": "RB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Abdomen",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 1.8
-              },
-              {
-                "player_id": "2971027",
-                "player": "Jonathan Jones",
-                "team": "PHI",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
-                "player_id": "4686273",
-                "player": "Quinyon Mitchell",
-                "team": "PHI",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Hamstring",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
-                "player_id": "4257591",
-                "player": "Arnold Ebiketie",
-                "team": "PHI",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4431573",
-                "player": "Smael Mondon Jr.",
-                "team": "PHI",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "3121023",
-                "player": "Dallas Goedert",
-                "team": "PHI",
-                "position": "TE",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Shin",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.88
-              },
-              {
-                "player_id": "3929630",
-                "player": "Saquon Barkley",
-                "team": "PHI",
-                "position": "RB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Neck",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.72
-              },
-              {
-                "player_id": "4431545",
-                "player": "Will Shipley",
-                "team": "PHI",
-                "position": "RB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Foot/illness",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.72
-              }
-            ],
+            "injuries": [],
             "offense": {
-              "impact": 18.0,
-              "factor": 0.8,
-              "passing_impact": 20.0,
-              "passing_factor": 0.78,
-              "rushing_impact": 16.0,
-              "rushing_factor": 0.824
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
             },
             "defense": {
-              "impact": 12.04,
-              "factor": 1.12,
-              "pass_defense_impact": 12.04,
-              "pass_defense_factor": 1.132,
-              "rush_defense_impact": 9.32,
-              "rush_defense_factor": 1.093
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
             },
-            "key_absences": [
-              {
-                "player_id": "4040715",
-                "player": "Jalen Hurts",
-                "position": "QB",
-                "status": "IR",
-                "injury": "Calf",
-                "impact": 10.0
-              },
-              {
-                "player_id": "4685201",
-                "player": "Tanner McKee",
-                "position": "QB",
-                "status": "QUESTIONABLE",
-                "injury": "Ribs",
-                "impact": 4.0
-              },
-              {
-                "player_id": "4428850",
-                "player": "Dontayvion Wicks",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Ankle/foot",
-                "impact": 3.0
-              },
-              {
-                "player_id": "4686104",
-                "player": "Johnny Wilson",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 3.0
-              },
-              {
-                "player_id": "4250510",
-                "player": "Andre' Sam",
-                "position": "S",
-                "status": "IR",
-                "injury": "Foot",
-                "impact": 2.5
-              },
-              {
-                "player_id": "4878896",
-                "player": "Tucker Large",
-                "position": "S",
-                "status": "OUT",
-                "injury": "Undisclosed",
-                "impact": 2.5
-              }
-            ]
+            "key_absences": []
           },
-          "scoring_factor": 0.938,
-          "passing_factor": 0.906,
-          "rushing_factor": 0.91
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
         },
         "home": {
           "team_context": {
             "team": "DAL",
-            "injuries": [
-              {
-                "player_id": "4248911",
-                "player": "DaRon Bland",
-                "team": "DAL",
-                "position": "CB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.4
-              },
-              {
-                "player_id": "4702577",
-                "player": "Devin Moore",
-                "team": "DAL",
-                "position": "CB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Hip",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.4
-              },
-              {
-                "player_id": "4431547",
-                "player": "Kelvin Gilliam Jr.",
-                "team": "DAL",
-                "position": "DT",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Triceps",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.6
-              },
-              {
-                "player_id": "4043089",
-                "player": "Jalen Thompson",
-                "team": "DAL",
-                "position": "S",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Hamstring",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.5
-              },
-              {
-                "player_id": "4710067",
-                "player": "Malachi Lawrence",
-                "team": "DAL",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4044138",
-                "player": "Matt Hennessy",
-                "team": "DAL",
-                "position": "C",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4242442",
-                "player": "Princeton Fant",
-                "team": "DAL",
-                "position": "TE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.2
-              },
-              {
-                "player_id": "4685263",
-                "player": "Tyler Booker",
-                "team": "DAL",
-                "position": "OG",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.0
-              },
-              {
-                "player_id": "4240603",
-                "player": "Malik Davis",
-                "team": "DAL",
-                "position": "RB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Hip",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 1.8
-              },
-              {
-                "player_id": "4429676",
-                "player": "Tyler Goodson",
-                "team": "DAL",
-                "position": "RB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 1.8
-              },
-              {
-                "player_id": "4426485",
-                "player": "Jonathan Mingo",
-                "team": "DAL",
-                "position": "WR",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.2
-              },
-              {
-                "player_id": "3929850",
-                "player": "P.J. Locke",
-                "team": "DAL",
-                "position": "S",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.0
-              },
-              {
-                "player_id": "4428914",
-                "player": "Dee Winters",
-                "team": "DAL",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4685266",
-                "player": "Jaishawn Barham",
-                "team": "DAL",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4242355",
-                "player": "Jake Ferguson",
-                "team": "DAL",
-                "position": "TE",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Knee/ankle",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.88
-              }
-            ],
+            "injuries": [],
             "offense": {
-              "impact": 12.28,
-              "factor": 0.853,
-              "passing_impact": 8.68,
-              "passing_factor": 0.887,
-              "rushing_impact": 8.0,
-              "rushing_factor": 0.912
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
             },
             "defense": {
-              "impact": 17.22,
-              "factor": 1.172,
-              "pass_defense_impact": 14.62,
-              "pass_defense_factor": 1.161,
-              "rush_defense_impact": 10.42,
-              "rush_defense_factor": 1.104
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
             },
-            "key_absences": [
-              {
-                "player_id": "4248911",
-                "player": "DaRon Bland",
-                "position": "CB",
-                "status": "IR",
-                "injury": "Ankle",
-                "impact": 3.4
-              },
-              {
-                "player_id": "4702577",
-                "player": "Devin Moore",
-                "position": "CB",
-                "status": "IR",
-                "injury": "Hip",
-                "impact": 3.4
-              },
-              {
-                "player_id": "4431547",
-                "player": "Kelvin Gilliam Jr.",
-                "position": "DT",
-                "status": "IR",
-                "injury": "Triceps",
-                "impact": 2.6
-              },
-              {
-                "player_id": "4043089",
-                "player": "Jalen Thompson",
-                "position": "S",
-                "status": "IR",
-                "injury": "Hamstring",
-                "impact": 2.5
-              }
-            ]
+            "key_absences": []
           },
-          "scoring_factor": 0.955,
-          "passing_factor": 1.004,
-          "rushing_factor": 0.997
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
         }
       },
       "weather_context": {
@@ -1471,13 +377,13 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-11-26T16:00",
-          "temperature_f": 56.1,
-          "feels_like_f": 48.5,
+          "temperature_f": 55.4,
+          "feels_like_f": 47.5,
           "humidity_pct": 27.0,
           "precip_probability_pct": 0.0,
           "precipitation_in": 0.0,
-          "wind_mph": 6.1,
-          "wind_gust_mph": 8.5,
+          "wind_mph": 6.7,
+          "wind_gust_mph": 9.4,
           "weather_code": 0,
           "conditions": "Clear"
         },
@@ -1500,23 +406,23 @@
       "away_team": "KC",
       "home_team": "BUF",
       "away_projection": {
-        "projected_points": 19.0,
+        "projected_points": 21.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.63,
           "matchup_adjustment": 0.92,
           "home_field_adjustment": -0.75,
           "pre_injury_projection": 23.3,
-          "injury_scoring_factor": 0.89,
-          "injury_adjustment_points": -2.56,
-          "post_injury_projection": 20.73,
-          "weather_scoring_factor": 0.915,
-          "weather_adjustment_points": -1.76
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 23.3,
+          "weather_scoring_factor": 0.928,
+          "weather_adjustment_points": -1.68
         },
         "injury_context": {
-          "scoring_factor": 0.89,
-          "passing_factor": 0.846,
-          "rushing_factor": 0.928,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
           "key_absences": []
         },
         "weather_context": {
@@ -1525,22 +431,22 @@
           "stadium": "Highmark Stadium",
           "weather": {
             "forecast_time": "2026-11-26T20:00",
-            "temperature_f": 36.5,
-            "feels_like_f": 25.9,
-            "humidity_pct": 96.0,
-            "precip_probability_pct": 98.0,
-            "precipitation_in": 0.008,
-            "wind_mph": 17.5,
-            "wind_gust_mph": 34.2,
-            "weather_code": 51,
-            "conditions": "Light Drizzle"
+            "temperature_f": 36.2,
+            "feels_like_f": 25.3,
+            "humidity_pct": 94.0,
+            "precip_probability_pct": 96.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 17.6,
+            "wind_gust_mph": 40.5,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "SEVERE",
-          "severity_score": 6.5,
-          "scoring_factor": 0.915,
-          "passing_factor": 0.883,
-          "rushing_factor": 1.032,
-          "kicking_factor": 0.87
+          "classification": "SIGNIFICANT",
+          "severity_score": 5.5,
+          "scoring_factor": 0.928,
+          "passing_factor": 0.901,
+          "rushing_factor": 1.028,
+          "kicking_factor": 0.89
         },
         "matchup_rating": 11.2,
         "matchup_label": "Favorable",
@@ -1554,23 +460,23 @@
         }
       },
       "home_projection": {
-        "projected_points": 20.7,
+        "projected_points": 22.0,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": 0.16,
           "matchup_adjustment": 0.24,
           "home_field_adjustment": 0.75,
           "pre_injury_projection": 23.66,
-          "injury_scoring_factor": 0.956,
-          "injury_adjustment_points": -1.04,
-          "post_injury_projection": 22.61,
-          "weather_scoring_factor": 0.915,
-          "weather_adjustment_points": -1.92
+          "injury_scoring_factor": 1.0,
+          "injury_adjustment_points": 0.0,
+          "post_injury_projection": 23.66,
+          "weather_scoring_factor": 0.928,
+          "weather_adjustment_points": -1.7
         },
         "injury_context": {
-          "scoring_factor": 0.956,
-          "passing_factor": 0.954,
-          "rushing_factor": 0.978,
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0,
           "key_absences": []
         },
         "weather_context": {
@@ -1579,22 +485,22 @@
           "stadium": "Highmark Stadium",
           "weather": {
             "forecast_time": "2026-11-26T20:00",
-            "temperature_f": 36.5,
-            "feels_like_f": 25.9,
-            "humidity_pct": 96.0,
-            "precip_probability_pct": 98.0,
-            "precipitation_in": 0.008,
-            "wind_mph": 17.5,
-            "wind_gust_mph": 34.2,
-            "weather_code": 51,
-            "conditions": "Light Drizzle"
+            "temperature_f": 36.2,
+            "feels_like_f": 25.3,
+            "humidity_pct": 94.0,
+            "precip_probability_pct": 96.0,
+            "precipitation_in": 0.0,
+            "wind_mph": 17.6,
+            "wind_gust_mph": 40.5,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "SEVERE",
-          "severity_score": 6.5,
-          "scoring_factor": 0.915,
-          "passing_factor": 0.883,
-          "rushing_factor": 1.032,
-          "kicking_factor": 0.87
+          "classification": "SIGNIFICANT",
+          "severity_score": 5.5,
+          "scoring_factor": 0.928,
+          "passing_factor": 0.901,
+          "rushing_factor": 1.028,
+          "kicking_factor": 0.89
         },
         "matchup_rating": 2.8,
         "matchup_label": "Neutral",
@@ -1608,523 +514,69 @@
         }
       },
       "projected_score": {
-        "away": 19.0,
-        "home": 20.7
+        "away": 21.6,
+        "home": 22.0
       },
-      "projected_total": 39.7,
-      "expected_margin": 1.7,
+      "projected_total": 43.6,
+      "expected_margin": 0.4,
       "projected_winner": "BUF",
       "win_probability": {
-        "away": 43.5,
-        "home": 56.5
+        "away": 48.5,
+        "home": 51.5
       },
       "projection_confidence": 52.5,
       "injury_context": {
         "away": {
           "team_context": {
             "team": "KC",
-            "injuries": [
-              {
-                "player_id": "4040432",
-                "player": "L'Jarius Sneed",
-                "team": "KC",
-                "position": "CB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.4
-              },
-              {
-                "player_id": "4569659",
-                "player": "Josh Simmons",
-                "team": "KC",
-                "position": "OT",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Lower Back",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.2
-              },
-              {
-                "player_id": "4370876",
-                "player": "Matt Waletzko",
-                "team": "KC",
-                "position": "OT",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.2
-              },
-              {
-                "player_id": "4885466",
-                "player": "Jeff Caldwell",
-                "team": "KC",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "4431142",
-                "player": "Jimmy Holiday",
-                "team": "KC",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "4362921",
-                "player": "Tyquan Thornton",
-                "team": "KC",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "4431534",
-                "player": "Ethan Downs",
-                "team": "KC",
-                "position": "LB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Downs",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.4
-              },
-              {
-                "player_id": "4430723",
-                "player": "Jared Wiley",
-                "team": "KC",
-                "position": "TE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Ankle",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.2
-              },
-              {
-                "player_id": "4708490",
-                "player": "John Michael Gyllenborg",
-                "team": "KC",
-                "position": "TE",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.2
-              },
-              {
-                "player_id": "4596602",
-                "player": "Brashard Smith",
-                "team": "KC",
-                "position": "RB",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Hamstring",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 1.8
-              },
-              {
-                "player_id": "4043041",
-                "player": "Jaylon Moore",
-                "team": "KC",
-                "position": "OT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.28
-              },
-              {
-                "player_id": "4240472",
-                "player": "Noah Gray",
-                "team": "KC",
-                "position": "TE",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Ribs",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.88
-              },
-              {
-                "player_id": "4242459",
-                "player": "Trey Smith",
-                "team": "KC",
-                "position": "OG",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.8
-              },
-              {
-                "player_id": "4372070",
-                "player": "Ben VanSumeren",
-                "team": "KC",
-                "position": "RB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Knee",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.72
-              },
-              {
-                "player_id": "4567048",
-                "player": "Kenneth Walker III",
-                "team": "KC",
-                "position": "RB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Groin",
-                "unit": "offense",
-                "position_weight": 1.8,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.72
-              }
-            ],
+            "injuries": [],
             "offense": {
-              "impact": 18.0,
-              "factor": 0.8,
-              "passing_impact": 20.0,
-              "passing_factor": 0.78,
-              "rushing_impact": 11.72,
-              "rushing_factor": 0.871
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
             },
             "defense": {
-              "impact": 5.8,
-              "factor": 1.058,
-              "pass_defense_impact": 5.8,
-              "pass_defense_factor": 1.064,
-              "rush_defense_impact": 2.4,
-              "rush_defense_factor": 1.024
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
             },
-            "key_absences": [
-              {
-                "player_id": "4040432",
-                "player": "L'Jarius Sneed",
-                "position": "CB",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 3.4
-              },
-              {
-                "player_id": "4569659",
-                "player": "Josh Simmons",
-                "position": "OT",
-                "status": "IR",
-                "injury": "Lower Back",
-                "impact": 3.2
-              },
-              {
-                "player_id": "4370876",
-                "player": "Matt Waletzko",
-                "position": "OT",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 3.2
-              },
-              {
-                "player_id": "4885466",
-                "player": "Jeff Caldwell",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Knee",
-                "impact": 3.0
-              },
-              {
-                "player_id": "4431142",
-                "player": "Jimmy Holiday",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 3.0
-              },
-              {
-                "player_id": "4362921",
-                "player": "Tyquan Thornton",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Ankle",
-                "impact": 3.0
-              }
-            ]
+            "key_absences": []
           },
-          "scoring_factor": 0.89,
-          "passing_factor": 0.846,
-          "rushing_factor": 0.928
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
         },
         "home": {
           "team_context": {
             "team": "BUF",
-            "injuries": [
-              {
-                "player_id": "4568703",
-                "player": "Dorian Strong",
-                "team": "BUF",
-                "position": "CB",
-                "status": "OUT",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.4
-              },
-              {
-                "player_id": "4242433",
-                "player": "Joshua Palmer",
-                "team": "BUF",
-                "position": "WR",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Hamstring",
-                "unit": "offense",
-                "position_weight": 3.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 3.0
-              },
-              {
-                "player_id": "4685347",
-                "player": "Zane Durant",
-                "team": "BUF",
-                "position": "DT",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.6
-              },
-              {
-                "player_id": "4606712",
-                "player": "Ar'maj Reed-Adams",
-                "team": "BUF",
-                "position": "OG",
-                "status": "IR",
-                "practice_status": "",
-                "injury": "Back",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 1.0,
-                "usage_importance": 1.0,
-                "impact": 2.0
-              },
-              {
-                "player_id": "4379778",
-                "player": "Christian Benford",
-                "team": "BUF",
-                "position": "CB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Groin",
-                "unit": "defense",
-                "position_weight": 3.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.36
-              },
-              {
-                "player_id": "4030899",
-                "player": "Spencer Brown",
-                "team": "BUF",
-                "position": "OT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 3.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.28
-              },
-              {
-                "player_id": "4684527",
-                "player": "T.J. Sanders",
-                "team": "BUF",
-                "position": "DT",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.6,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.04
-              },
-              {
-                "player_id": "4036060",
-                "player": "Damar Hamlin",
-                "team": "BUF",
-                "position": "S",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "defense",
-                "position_weight": 2.5,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 1.0
-              },
-              {
-                "player_id": "4568624",
-                "player": "Dorian Williams",
-                "team": "BUF",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Calf",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4362506",
-                "player": "Greg Rousseau",
-                "team": "BUF",
-                "position": "LB",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Back",
-                "unit": "defense",
-                "position_weight": 2.4,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.96
-              },
-              {
-                "player_id": "4385690",
-                "player": "Dalton Kincaid",
-                "team": "BUF",
-                "position": "TE",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Thumb/ankle",
-                "unit": "offense",
-                "position_weight": 2.2,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.88
-              },
-              {
-                "player_id": "4428696",
-                "player": "O'Cyrus Torrence",
-                "team": "BUF",
-                "position": "OG",
-                "status": "QUESTIONABLE",
-                "practice_status": "",
-                "injury": "Undisclosed",
-                "unit": "offense",
-                "position_weight": 2.0,
-                "status_weight": 0.4,
-                "usage_importance": 1.0,
-                "impact": 0.8
-              }
-            ],
+            "injuries": [],
             "offense": {
-              "impact": 7.96,
-              "factor": 0.904,
-              "passing_impact": 7.96,
-              "passing_factor": 0.897,
-              "rushing_impact": 4.08,
-              "rushing_factor": 0.955
+              "impact": 0,
+              "factor": 1.0,
+              "passing_impact": 0,
+              "passing_factor": 1.0,
+              "rushing_impact": 0,
+              "rushing_factor": 1.0
             },
             "defense": {
-              "impact": 11.32,
-              "factor": 1.113,
-              "pass_defense_impact": 7.68,
-              "pass_defense_factor": 1.084,
-              "rush_defense_impact": 6.56,
-              "rush_defense_factor": 1.066
+              "impact": 0,
+              "factor": 1.0,
+              "pass_defense_impact": 0,
+              "pass_defense_factor": 1.0,
+              "rush_defense_impact": 0,
+              "rush_defense_factor": 1.0
             },
-            "key_absences": [
-              {
-                "player_id": "4568703",
-                "player": "Dorian Strong",
-                "position": "CB",
-                "status": "OUT",
-                "injury": "Undisclosed",
-                "impact": 3.4
-              },
-              {
-                "player_id": "4242433",
-                "player": "Joshua Palmer",
-                "position": "WR",
-                "status": "IR",
-                "injury": "Hamstring",
-                "impact": 3.0
-              },
-              {
-                "player_id": "4685347",
-                "player": "Zane Durant",
-                "position": "DT",
-                "status": "IR",
-                "injury": "Undisclosed",
-                "impact": 2.6
-              }
-            ]
+            "key_absences": []
           },
-          "scoring_factor": 0.956,
-          "passing_factor": 0.954,
-          "rushing_factor": 0.978
+          "scoring_factor": 1.0,
+          "passing_factor": 1.0,
+          "rushing_factor": 1.0
         }
       },
       "weather_context": {
@@ -2139,23 +591,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-11-26T20:00",
-          "temperature_f": 36.5,
-          "feels_like_f": 25.9,
-          "humidity_pct": 96.0,
-          "precip_probability_pct": 98.0,
-          "precipitation_in": 0.008,
-          "wind_mph": 17.5,
-          "wind_gust_mph": 34.2,
-          "weather_code": 51,
-          "conditions": "Light Drizzle"
+          "temperature_f": 36.2,
+          "feels_like_f": 25.3,
+          "humidity_pct": 94.0,
+          "precip_probability_pct": 96.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 17.6,
+          "wind_gust_mph": 40.5,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "context": {
-          "severity_score": 6.5,
-          "passing_factor": 0.883,
-          "rushing_factor": 1.032,
-          "scoring_factor": 0.915,
-          "kicking_factor": 0.87,
-          "classification": "SEVERE"
+          "severity_score": 5.5,
+          "passing_factor": 0.901,
+          "rushing_factor": 1.028,
+          "scoring_factor": 0.928,
+          "kicking_factor": 0.89,
+          "classification": "SIGNIFICANT"
         }
       },
       "model": {
