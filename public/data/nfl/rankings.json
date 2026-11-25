@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T14:12:45.065520+00:00",
+  "generated_at": "2026-11-25T18:38:55.869582+00:00",
   "model": "nfl_rankings",
   "model_version": "1.0",
   "philosophy": {
@@ -26,13 +26,13 @@
     }
   },
   "counts": {
-    "game_bets": 1,
+    "game_bets": 2,
     "player_props": 0,
-    "all_candidates": 1,
+    "all_candidates": 2,
     "best_bets": 0,
     "strong_plays": 0,
     "leans": 1,
-    "passes": 0
+    "passes": 1
   },
   "best_bets": [],
   "strong_plays": [],
@@ -40,11 +40,11 @@
     {
       "ranking_type": "game_bet",
       "tier": "LEAN",
-      "ranking_score": 76.27,
-      "confidence": 66.1,
+      "ranking_score": 74.17,
+      "confidence": 63.1,
       "upstream_label": "GOOD",
-      "edge_strength": 3.52,
-      "edge": 0.088,
+      "edge_strength": 3.28,
+      "edge": 0.082,
       "market_type": "moneyline",
       "game_id": "2026_12_GB_LA",
       "matchup": "GB @ LAR",
@@ -64,22 +64,55 @@
         "home_team": "LAR",
         "market": "moneyline",
         "selection": "LAR",
-        "edge": 0.088,
-        "confidence_score": 66.1,
+        "edge": 0.082,
+        "confidence_score": 63.1,
         "confidence_label": "GOOD"
       }
     }
   ],
-  "passes": [],
+  "passes": [
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 43.97,
+      "confidence": 39.0,
+      "upstream_label": "PASS",
+      "edge_strength": 1.6667,
+      "edge": 2.5,
+      "market_type": "game_total",
+      "game_id": "2026_12_GB_LA",
+      "matchup": "GB @ LAR",
+      "away_team": "GB",
+      "home_team": "LAR",
+      "team": "",
+      "pick": "UNDER 43.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_12_GB_LA",
+        "away_team": "GB",
+        "home_team": "LAR",
+        "market": "game_total",
+        "selection": "UNDER 43.5",
+        "edge": 2.5,
+        "confidence_score": 39.0,
+        "confidence_label": "PASS"
+      }
+    }
+  ],
   "ranked_recommendations": [
     {
       "ranking_type": "game_bet",
       "tier": "LEAN",
-      "ranking_score": 76.27,
-      "confidence": 66.1,
+      "ranking_score": 74.17,
+      "confidence": 63.1,
       "upstream_label": "GOOD",
-      "edge_strength": 3.52,
-      "edge": 0.088,
+      "edge_strength": 3.28,
+      "edge": 0.082,
       "market_type": "moneyline",
       "game_id": "2026_12_GB_LA",
       "matchup": "GB @ LAR",
@@ -99,8 +132,8 @@
         "home_team": "LAR",
         "market": "moneyline",
         "selection": "LAR",
-        "edge": 0.088,
-        "confidence_score": 66.1,
+        "edge": 0.082,
+        "confidence_score": 63.1,
         "confidence_label": "GOOD"
       }
     }
@@ -109,11 +142,11 @@
     {
       "ranking_type": "game_bet",
       "tier": "LEAN",
-      "ranking_score": 76.27,
-      "confidence": 66.1,
+      "ranking_score": 74.17,
+      "confidence": 63.1,
       "upstream_label": "GOOD",
-      "edge_strength": 3.52,
-      "edge": 0.088,
+      "edge_strength": 3.28,
+      "edge": 0.082,
       "market_type": "moneyline",
       "game_id": "2026_12_GB_LA",
       "matchup": "GB @ LAR",
@@ -133,9 +166,41 @@
         "home_team": "LAR",
         "market": "moneyline",
         "selection": "LAR",
-        "edge": 0.088,
-        "confidence_score": 66.1,
+        "edge": 0.082,
+        "confidence_score": 63.1,
         "confidence_label": "GOOD"
+      }
+    },
+    {
+      "ranking_type": "game_bet",
+      "tier": "PASS",
+      "ranking_score": 43.97,
+      "confidence": 39.0,
+      "upstream_label": "PASS",
+      "edge_strength": 1.6667,
+      "edge": 2.5,
+      "market_type": "game_total",
+      "game_id": "2026_12_GB_LA",
+      "matchup": "GB @ LAR",
+      "away_team": "GB",
+      "home_team": "LAR",
+      "team": "",
+      "pick": "UNDER 43.5",
+      "line": "",
+      "odds": "",
+      "sportsbook": "",
+      "projection": "",
+      "projection_confidence": "",
+      "source": "nfl_game_edges",
+      "raw": {
+        "game_id": "2026_12_GB_LA",
+        "away_team": "GB",
+        "home_team": "LAR",
+        "market": "game_total",
+        "selection": "UNDER 43.5",
+        "edge": 2.5,
+        "confidence_score": 39.0,
+        "confidence_label": "PASS"
       }
     }
   ],
