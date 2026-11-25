@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T19:31:48.272018+00:00",
+  "generated_at": "2026-11-25T14:12:42.236730+00:00",
   "source": "Open-Meteo",
   "games": [
     {
@@ -36,23 +36,23 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-11-26T16:00",
-        "temperature_f": 55.4,
-        "feels_like_f": 47.5,
-        "humidity_pct": 27.0,
+        "temperature_f": 49.7,
+        "feels_like_f": 40.2,
+        "humidity_pct": 46.0,
         "precip_probability_pct": 0.0,
         "precipitation_in": 0.0,
-        "wind_mph": 6.7,
-        "wind_gust_mph": 9.4,
+        "wind_mph": 12.6,
+        "wind_gust_mph": 21.7,
         "weather_code": 0,
         "conditions": "Clear"
       },
       "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "NEUTRAL"
+        "severity_score": 0.45,
+        "passing_factor": 0.992,
+        "rushing_factor": 1.002,
+        "scoring_factor": 0.994,
+        "kicking_factor": 0.991,
+        "classification": "MINOR"
       }
     },
     {
@@ -67,23 +67,23 @@
       "available": true,
       "weather": {
         "forecast_time": "2026-11-26T20:00",
-        "temperature_f": 36.2,
-        "feels_like_f": 25.3,
-        "humidity_pct": 94.0,
-        "precip_probability_pct": 96.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 17.6,
-        "wind_gust_mph": 40.5,
-        "weather_code": 3,
-        "conditions": "Overcast"
+        "temperature_f": 37.1,
+        "feels_like_f": 25.4,
+        "humidity_pct": 90.0,
+        "precip_probability_pct": 92.0,
+        "precipitation_in": 0.228,
+        "wind_mph": 19.4,
+        "wind_gust_mph": 44.5,
+        "weather_code": 63,
+        "conditions": "Rain"
       },
       "context": {
-        "severity_score": 5.5,
-        "passing_factor": 0.901,
-        "rushing_factor": 1.028,
-        "scoring_factor": 0.928,
-        "kicking_factor": 0.89,
-        "classification": "SIGNIFICANT"
+        "severity_score": 7.5,
+        "passing_factor": 0.865,
+        "rushing_factor": 1.038,
+        "scoring_factor": 0.902,
+        "kicking_factor": 0.85,
+        "classification": "SEVERE"
       }
     }
   ]
