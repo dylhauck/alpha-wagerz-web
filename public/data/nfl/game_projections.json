@@ -1,22 +1,22 @@
 {
   "games": [
     {
-      "game_id": "2026_12_CHI_DET",
-      "away_team": "CHI",
-      "home_team": "DET",
+      "game_id": "2026_12_DEN_PIT",
+      "away_team": "DEN",
+      "home_team": "PIT",
       "away_projection": {
-        "projected_points": 22.4,
+        "projected_points": 19.8,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": 0.14,
-          "matchup_adjustment": 0.55,
+          "efficiency_adjustment": -0.45,
+          "matchup_adjustment": -0.65,
           "home_field_adjustment": -0.75,
-          "pre_injury_projection": 22.45,
+          "pre_injury_projection": 20.65,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 22.45,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
+          "post_injury_projection": 20.65,
+          "weather_scoring_factor": 0.961,
+          "weather_adjustment_points": -0.81
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -26,238 +26,51 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "fixed",
-          "stadium": "Ford Field",
+          "roof": "outdoor",
+          "stadium": "Acrisure Stadium",
           "weather": {
-            "conditions": "Indoor"
-          },
-          "classification": "INDOOR",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
-        },
-        "matchup_rating": 6.5,
-        "matchup_label": "Favorable",
-        "passing_matchup": {
-          "rating": 13.9,
-          "label": "Favorable"
-        },
-        "rushing_matchup": {
-          "rating": -1.3,
-          "label": "Neutral"
-        }
-      },
-      "home_projection": {
-        "projected_points": 24.6,
-        "components": {
-          "base_scoring": 22.5,
-          "efficiency_adjustment": 0.63,
-          "matchup_adjustment": 0.73,
-          "home_field_adjustment": 0.75,
-          "pre_injury_projection": 24.62,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 24.62,
-          "weather_scoring_factor": 1.0,
-          "weather_adjustment_points": 0.0
-        },
-        "injury_context": {
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "key_absences": []
-        },
-        "weather_context": {
-          "available": true,
-          "roof": "fixed",
-          "stadium": "Ford Field",
-          "weather": {
-            "conditions": "Indoor"
-          },
-          "classification": "INDOOR",
-          "severity_score": 0.0,
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "kicking_factor": 1.0
-        },
-        "matchup_rating": 8.5,
-        "matchup_label": "Favorable",
-        "passing_matchup": {
-          "rating": 11.2,
-          "label": "Favorable"
-        },
-        "rushing_matchup": {
-          "rating": 10.5,
-          "label": "Favorable"
-        }
-      },
-      "projected_score": {
-        "away": 22.4,
-        "home": 24.6
-      },
-      "projected_total": 47.0,
-      "expected_margin": 2.2,
-      "projected_winner": "DET",
-      "win_probability": {
-        "away": 41.6,
-        "home": 58.4
-      },
-      "projection_confidence": 52.6,
-      "injury_context": {
-        "away": {
-          "team_context": {
-            "team": "CHI",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "home": {
-          "team_context": {
-            "team": "DET",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        }
-      },
-      "weather_context": {
-        "game_id": "2026_12_CHI_DET",
-        "away_team": "CHI",
-        "home_team": "DET",
-        "stadium": "Ford Field",
-        "latitude": 42.34,
-        "longitude": -83.0456,
-        "roof": "fixed",
-        "kickoff": "2026-11-26T13:00",
-        "available": true,
-        "weather": {
-          "conditions": "Indoor"
-        },
-        "context": {
-          "severity_score": 0.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "scoring_factor": 1.0,
-          "kicking_factor": 1.0,
-          "classification": "INDOOR"
-        }
-      },
-      "model": {
-        "uses_sportsbook_lines": false,
-        "description": "Independent Alpha Wagerz NFL game projection"
-      }
-    },
-    {
-      "game_id": "2026_12_PHI_DAL",
-      "away_team": "PHI",
-      "home_team": "DAL",
-      "away_projection": {
-        "projected_points": 21.1,
-        "components": {
-          "base_scoring": 22.5,
-          "efficiency_adjustment": -0.18,
-          "matchup_adjustment": -0.32,
-          "home_field_adjustment": -0.75,
-          "pre_injury_projection": 21.25,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 21.25,
-          "weather_scoring_factor": 0.994,
-          "weather_adjustment_points": -0.13
-        },
-        "injury_context": {
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "key_absences": []
-        },
-        "weather_context": {
-          "available": true,
-          "roof": "retractable",
-          "stadium": "AT&T Stadium",
-          "weather": {
-            "forecast_time": "2026-11-26T16:00",
-            "temperature_f": 52.3,
-            "feels_like_f": 42.9,
-            "humidity_pct": 37.0,
-            "precip_probability_pct": 0.0,
+            "forecast_time": "2026-11-27T15:00",
+            "temperature_f": 39.6,
+            "feels_like_f": 30.8,
+            "humidity_pct": 88.0,
+            "precip_probability_pct": 38.0,
             "precipitation_in": 0.0,
-            "wind_mph": 11.5,
-            "wind_gust_mph": 19.7,
-            "weather_code": 0,
-            "conditions": "Clear"
+            "wind_mph": 13.7,
+            "wind_gust_mph": 30.4,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MINOR",
-          "severity_score": 0.45,
-          "scoring_factor": 0.994,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "kicking_factor": 0.991
+          "classification": "MODERATE",
+          "severity_score": 3.0,
+          "scoring_factor": 0.961,
+          "passing_factor": 0.946,
+          "rushing_factor": 1.015,
+          "kicking_factor": 0.94
         },
-        "matchup_rating": -3.6,
-        "matchup_label": "Neutral",
+        "matchup_rating": -8.5,
+        "matchup_label": "Difficult",
         "passing_matchup": {
-          "rating": -5.6,
+          "rating": -5.3,
           "label": "Difficult"
         },
         "rushing_matchup": {
-          "rating": -4.0,
-          "label": "Neutral"
+          "rating": -13.2,
+          "label": "Difficult"
         }
       },
       "home_projection": {
-        "projected_points": 24.8,
+        "projected_points": 21.6,
         "components": {
           "base_scoring": 22.5,
-          "efficiency_adjustment": 0.53,
-          "matchup_adjustment": 1.15,
+          "efficiency_adjustment": -0.34,
+          "matchup_adjustment": -0.47,
           "home_field_adjustment": 0.75,
-          "pre_injury_projection": 24.93,
+          "pre_injury_projection": 22.44,
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
-          "post_injury_projection": 24.93,
-          "weather_scoring_factor": 0.994,
-          "weather_adjustment_points": -0.15
+          "post_injury_projection": 22.44,
+          "weather_scoring_factor": 0.961,
+          "weather_adjustment_points": -0.88
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -267,268 +80,54 @@
         },
         "weather_context": {
           "available": true,
-          "roof": "retractable",
-          "stadium": "AT&T Stadium",
+          "roof": "outdoor",
+          "stadium": "Acrisure Stadium",
           "weather": {
-            "forecast_time": "2026-11-26T16:00",
-            "temperature_f": 52.3,
-            "feels_like_f": 42.9,
-            "humidity_pct": 37.0,
-            "precip_probability_pct": 0.0,
+            "forecast_time": "2026-11-27T15:00",
+            "temperature_f": 39.6,
+            "feels_like_f": 30.8,
+            "humidity_pct": 88.0,
+            "precip_probability_pct": 38.0,
             "precipitation_in": 0.0,
-            "wind_mph": 11.5,
-            "wind_gust_mph": 19.7,
-            "weather_code": 0,
-            "conditions": "Clear"
+            "wind_mph": 13.7,
+            "wind_gust_mph": 30.4,
+            "weather_code": 3,
+            "conditions": "Overcast"
           },
-          "classification": "MINOR",
-          "severity_score": 0.45,
-          "scoring_factor": 0.994,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "kicking_factor": 0.991
+          "classification": "MODERATE",
+          "severity_score": 3.0,
+          "scoring_factor": 0.961,
+          "passing_factor": 0.946,
+          "rushing_factor": 1.015,
+          "kicking_factor": 0.94
         },
-        "matchup_rating": 13.5,
-        "matchup_label": "Favorable",
+        "matchup_rating": -6.0,
+        "matchup_label": "Difficult",
         "passing_matchup": {
-          "rating": 18.1,
-          "label": "Strong"
+          "rating": -19.6,
+          "label": "Poor"
         },
         "rushing_matchup": {
-          "rating": 15.1,
+          "rating": 15.8,
           "label": "Strong"
         }
       },
       "projected_score": {
-        "away": 21.1,
-        "home": 24.8
+        "away": 19.8,
+        "home": 21.6
       },
-      "projected_total": 45.9,
-      "expected_margin": 3.7,
-      "projected_winner": "DAL",
+      "projected_total": 41.4,
+      "expected_margin": 1.8,
+      "projected_winner": "PIT",
       "win_probability": {
-        "away": 36.1,
-        "home": 63.9
-      },
-      "projection_confidence": 53.0,
-      "injury_context": {
-        "away": {
-          "team_context": {
-            "team": "PHI",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        },
-        "home": {
-          "team_context": {
-            "team": "DAL",
-            "injuries": [],
-            "offense": {
-              "impact": 0,
-              "factor": 1.0,
-              "passing_impact": 0,
-              "passing_factor": 1.0,
-              "rushing_impact": 0,
-              "rushing_factor": 1.0
-            },
-            "defense": {
-              "impact": 0,
-              "factor": 1.0,
-              "pass_defense_impact": 0,
-              "pass_defense_factor": 1.0,
-              "rush_defense_impact": 0,
-              "rush_defense_factor": 1.0
-            },
-            "key_absences": []
-          },
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0
-        }
-      },
-      "weather_context": {
-        "game_id": "2026_12_PHI_DAL",
-        "away_team": "PHI",
-        "home_team": "DAL",
-        "stadium": "AT&T Stadium",
-        "latitude": 32.7473,
-        "longitude": -97.0945,
-        "roof": "retractable",
-        "kickoff": "2026-11-26T16:30",
-        "available": true,
-        "weather": {
-          "forecast_time": "2026-11-26T16:00",
-          "temperature_f": 52.3,
-          "feels_like_f": 42.9,
-          "humidity_pct": 37.0,
-          "precip_probability_pct": 0.0,
-          "precipitation_in": 0.0,
-          "wind_mph": 11.5,
-          "wind_gust_mph": 19.7,
-          "weather_code": 0,
-          "conditions": "Clear"
-        },
-        "context": {
-          "severity_score": 0.45,
-          "passing_factor": 0.992,
-          "rushing_factor": 1.002,
-          "scoring_factor": 0.994,
-          "kicking_factor": 0.991,
-          "classification": "MINOR"
-        }
-      },
-      "model": {
-        "uses_sportsbook_lines": false,
-        "description": "Independent Alpha Wagerz NFL game projection"
-      }
-    },
-    {
-      "game_id": "2026_12_KC_BUF",
-      "away_team": "KC",
-      "home_team": "BUF",
-      "away_projection": {
-        "projected_points": 21.0,
-        "components": {
-          "base_scoring": 22.5,
-          "efficiency_adjustment": 0.63,
-          "matchup_adjustment": 0.92,
-          "home_field_adjustment": -0.75,
-          "pre_injury_projection": 23.3,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 23.3,
-          "weather_scoring_factor": 0.902,
-          "weather_adjustment_points": -2.28
-        },
-        "injury_context": {
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "key_absences": []
-        },
-        "weather_context": {
-          "available": true,
-          "roof": "outdoor",
-          "stadium": "Highmark Stadium",
-          "weather": {
-            "forecast_time": "2026-11-26T20:00",
-            "temperature_f": 35.6,
-            "feels_like_f": 24.4,
-            "humidity_pct": 93.0,
-            "precip_probability_pct": 100.0,
-            "precipitation_in": 0.268,
-            "wind_mph": 18.1,
-            "wind_gust_mph": 37.6,
-            "weather_code": 63,
-            "conditions": "Rain"
-          },
-          "classification": "SEVERE",
-          "severity_score": 7.5,
-          "scoring_factor": 0.902,
-          "passing_factor": 0.865,
-          "rushing_factor": 1.038,
-          "kicking_factor": 0.85
-        },
-        "matchup_rating": 11.2,
-        "matchup_label": "Favorable",
-        "passing_matchup": {
-          "rating": 12.5,
-          "label": "Favorable"
-        },
-        "rushing_matchup": {
-          "rating": 13.5,
-          "label": "Favorable"
-        }
-      },
-      "home_projection": {
-        "projected_points": 21.3,
-        "components": {
-          "base_scoring": 22.5,
-          "efficiency_adjustment": 0.16,
-          "matchup_adjustment": 0.25,
-          "home_field_adjustment": 0.75,
-          "pre_injury_projection": 23.66,
-          "injury_scoring_factor": 1.0,
-          "injury_adjustment_points": 0.0,
-          "post_injury_projection": 23.66,
-          "weather_scoring_factor": 0.902,
-          "weather_adjustment_points": -2.32
-        },
-        "injury_context": {
-          "scoring_factor": 1.0,
-          "passing_factor": 1.0,
-          "rushing_factor": 1.0,
-          "key_absences": []
-        },
-        "weather_context": {
-          "available": true,
-          "roof": "outdoor",
-          "stadium": "Highmark Stadium",
-          "weather": {
-            "forecast_time": "2026-11-26T20:00",
-            "temperature_f": 35.6,
-            "feels_like_f": 24.4,
-            "humidity_pct": 93.0,
-            "precip_probability_pct": 100.0,
-            "precipitation_in": 0.268,
-            "wind_mph": 18.1,
-            "wind_gust_mph": 37.6,
-            "weather_code": 63,
-            "conditions": "Rain"
-          },
-          "classification": "SEVERE",
-          "severity_score": 7.5,
-          "scoring_factor": 0.902,
-          "passing_factor": 0.865,
-          "rushing_factor": 1.038,
-          "kicking_factor": 0.85
-        },
-        "matchup_rating": 2.9,
-        "matchup_label": "Neutral",
-        "passing_matchup": {
-          "rating": 0.1,
-          "label": "Neutral"
-        },
-        "rushing_matchup": {
-          "rating": 9.7,
-          "label": "Favorable"
-        }
-      },
-      "projected_score": {
-        "away": 21.0,
-        "home": 21.3
-      },
-      "projected_total": 42.3,
-      "expected_margin": 0.3,
-      "projected_winner": "BUF",
-      "win_probability": {
-        "away": 48.8,
-        "home": 51.2
+        "away": 43.1,
+        "home": 56.9
       },
       "projection_confidence": 52.5,
       "injury_context": {
         "away": {
           "team_context": {
-            "team": "KC",
+            "team": "DEN",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -554,7 +153,7 @@
         },
         "home": {
           "team_context": {
-            "team": "BUF",
+            "team": "PIT",
             "injuries": [],
             "offense": {
               "impact": 0,
@@ -580,34 +179,34 @@
         }
       },
       "weather_context": {
-        "game_id": "2026_12_KC_BUF",
-        "away_team": "KC",
-        "home_team": "BUF",
-        "stadium": "Highmark Stadium",
-        "latitude": 42.7738,
-        "longitude": -78.7868,
+        "game_id": "2026_12_DEN_PIT",
+        "away_team": "DEN",
+        "home_team": "PIT",
+        "stadium": "Acrisure Stadium",
+        "latitude": 40.4468,
+        "longitude": -80.0158,
         "roof": "outdoor",
-        "kickoff": "2026-11-26T20:20",
+        "kickoff": "2026-11-27T15:00",
         "available": true,
         "weather": {
-          "forecast_time": "2026-11-26T20:00",
-          "temperature_f": 35.6,
-          "feels_like_f": 24.4,
-          "humidity_pct": 93.0,
-          "precip_probability_pct": 100.0,
-          "precipitation_in": 0.268,
-          "wind_mph": 18.1,
-          "wind_gust_mph": 37.6,
-          "weather_code": 63,
-          "conditions": "Rain"
+          "forecast_time": "2026-11-27T15:00",
+          "temperature_f": 39.6,
+          "feels_like_f": 30.8,
+          "humidity_pct": 88.0,
+          "precip_probability_pct": 38.0,
+          "precipitation_in": 0.0,
+          "wind_mph": 13.7,
+          "wind_gust_mph": 30.4,
+          "weather_code": 3,
+          "conditions": "Overcast"
         },
         "context": {
-          "severity_score": 7.5,
-          "passing_factor": 0.865,
-          "rushing_factor": 1.038,
-          "scoring_factor": 0.902,
-          "kicking_factor": 0.85,
-          "classification": "SEVERE"
+          "severity_score": 3.0,
+          "passing_factor": 0.946,
+          "rushing_factor": 1.015,
+          "scoring_factor": 0.961,
+          "kicking_factor": 0.94,
+          "classification": "MODERATE"
         }
       },
       "model": {
@@ -620,19 +219,19 @@
     "points_per_game": 22.5,
     "points_allowed_per_game": 22.5,
     "offensive_epa": 0.01053125,
-    "defensive_epa": 0.00934375,
-    "offensive_success": 44.225,
-    "defensive_success": 44.2125,
-    "offensive_ypp": 5.4065625,
-    "defensive_ypp": 5.4009375,
-    "offensive_explosive": 9.253125,
-    "defensive_explosive": 9.203125,
-    "offensive_third_down": 39.80625,
-    "defensive_third_down": 39.6125,
-    "offensive_red_zone": 19.64375,
-    "defensive_red_zone": 19.503125,
-    "offensive_turnovers": 1.1909375,
-    "defensive_takeaways": 1.194375
+    "defensive_epa": 0.010593749999999999,
+    "offensive_success": 44.24375,
+    "defensive_success": 44.2875,
+    "offensive_ypp": 5.4090625,
+    "defensive_ypp": 5.4103125,
+    "offensive_explosive": 9.26875,
+    "defensive_explosive": 9.228125,
+    "offensive_third_down": 39.78125,
+    "defensive_third_down": 39.6625,
+    "offensive_red_zone": 19.690625,
+    "defensive_red_zone": 19.590625,
+    "offensive_turnovers": 1.19,
+    "defensive_takeaways": 1.19375
   },
   "model": {
     "name": "Alpha Wagerz NFL Projection Model",

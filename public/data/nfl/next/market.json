@@ -1,48 +1,167 @@
 {
   "games": [
     {
-      "game_id": "2026_12_DEN_PIT",
-      "event_id": 71516060,
+      "game_id": "2026_12_NO_CIN",
+      "event_id": 71516062,
       "season": 2026,
       "week": 12,
       "game_type": "REG",
-      "game_date": "2026-11-27",
-      "game_time": "15:00",
-      "commence_time": "2026-11-27T20:00:00Z",
-      "away_team": "DEN",
-      "home_team": "PIT",
+      "game_date": "2026-11-29",
+      "game_time": "13:00",
+      "commence_time": "2026-11-29T18:00:00Z",
+      "away_team": "NO",
+      "home_team": "CIN",
       "moneyline": {
-        "away": -235.0,
-        "home": 194.0,
-        "away_implied_probability": 0.7015,
-        "home_implied_probability": 0.3401,
-        "away_no_vig_probability": 0.6735,
-        "home_no_vig_probability": 0.3265
+        "away": 420.0,
+        "home": -559.0,
+        "away_implied_probability": 0.1923,
+        "home_implied_probability": 0.8483,
+        "away_no_vig_probability": 0.1848,
+        "home_no_vig_probability": 0.8152
       },
       "spread": {
-        "away": -4.5,
-        "home": 4.5,
+        "away": 9.5,
+        "home": -9.5,
+        "away_price": 100.0,
+        "home_price": -120.0
+      },
+      "game_total": 49.5,
+      "game_total_prices": {
+        "over": -110.0,
+        "under": -110.0
+      },
+      "team_totals": {
+        "away": 19.5,
+        "home": 30.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 19.5,
+          "over_price": -115.0,
+          "under_price": -111.0
+        },
+        "home": {
+          "line": 30.5,
+          "over_price": -108.0,
+          "under_price": -115.0
+        },
+        "source": "sportsbook"
+      },
+      "available_markets": [
+        "moneyline",
+        "spread",
+        "game_total",
+        "team_total",
+        "implied_team_total"
+      ],
+      "source": {
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": 420.0,
+              "home": -559.0
+            },
+            "spread": {
+              "away": 9.5,
+              "home": -9.5,
+              "away_price": 100.0,
+              "home_price": -120.0
+            },
+            "game_total": {
+              "line": 49.5,
+              "over_price": -110.0,
+              "under_price": -110.0
+            },
+            "team_total": {
+              "home": {
+                "line": 30.5,
+                "over_price": -108.0,
+                "under_price": -115.0
+              },
+              "away": {
+                "line": 19.5,
+                "over_price": -115.0,
+                "under_price": -111.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": 423.0,
+              "home": -562.0
+            },
+            "spread": {
+              "away": 10.0,
+              "home": -10.0,
+              "away_price": -113.0,
+              "home_price": -106.0
+            },
+            "game_total": {
+              "line": 49.5,
+              "over_price": -106.0,
+              "under_price": -113.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "game_id": "2026_12_BAL_HOU",
+      "event_id": 71516066,
+      "season": 2026,
+      "week": 12,
+      "game_type": "REG",
+      "game_date": "2026-11-29",
+      "game_time": "13:00",
+      "commence_time": "2026-11-29T18:00:00Z",
+      "away_team": "BAL",
+      "home_team": "HOU",
+      "moneyline": {
+        "away": 240.0,
+        "home": -295.0,
+        "away_implied_probability": 0.2941,
+        "home_implied_probability": 0.7468,
+        "away_no_vig_probability": 0.2825,
+        "home_no_vig_probability": 0.7175
+      },
+      "spread": {
+        "away": 6.5,
+        "home": -6.5,
         "away_price": -110.0,
         "home_price": -110.0
       },
-      "game_total": 36.5,
+      "game_total": 47.5,
       "game_total_prices": {
-        "over": -114.0,
-        "under": -106.0
+        "over": -105.0,
+        "under": -115.0
       },
       "team_totals": {
         "away": 20.5,
-        "home": 16.5,
+        "home": 27.5,
         "source": "sportsbook"
       },
       "posted_team_totals": {
         "away": {
           "line": 20.5,
-          "over_price": -111.0,
-          "under_price": -115.0
+          "over_price": -102.0,
+          "under_price": -125.0
         },
         "home": {
-          "line": 16.5,
+          "line": 27.5,
           "over_price": 100.0,
           "under_price": -128.0
         },
@@ -68,30 +187,30 @@
           "title": "FanDuel",
           "markets": {
             "moneyline": {
-              "away": -235.0,
-              "home": 194.0
+              "away": 240.0,
+              "home": -295.0
             },
             "spread": {
-              "away": -4.5,
-              "home": 4.5,
+              "away": 6.5,
+              "home": -6.5,
               "away_price": -110.0,
               "home_price": -110.0
             },
             "game_total": {
-              "line": 36.5,
-              "over_price": -114.0,
-              "under_price": -106.0
+              "line": 47.5,
+              "over_price": -105.0,
+              "under_price": -115.0
             },
             "team_total": {
               "home": {
-                "line": 16.5,
+                "line": 27.5,
                 "over_price": 100.0,
                 "under_price": -128.0
               },
               "away": {
                 "line": 20.5,
-                "over_price": -111.0,
-                "under_price": -115.0
+                "over_price": -102.0,
+                "under_price": -125.0
               }
             }
           }
@@ -101,30 +220,1066 @@
           "title": "DraftKings",
           "markets": {
             "moneyline": {
-              "away": -228.0,
-              "home": 190.0
+              "away": 267.0,
+              "home": -332.0
             },
             "spread": {
-              "away": -4.5,
-              "home": 4.5,
-              "away_price": -109.0,
-              "home_price": -110.0
+              "away": 6.5,
+              "home": -6.5,
+              "away_price": -107.0,
+              "home_price": -112.0
             },
             "game_total": {
-              "line": 36.5,
-              "over_price": -119.0,
-              "under_price": -101.0
+              "line": 47.5,
+              "over_price": -106.0,
+              "under_price": -113.0
             },
             "team_total": {
               "home": {
-                "line": 16.5,
+                "line": 27.5,
                 "over_price": -105.0,
                 "under_price": -125.0
               },
               "away": {
                 "line": 20.5,
+                "over_price": 100.0,
+                "under_price": -130.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "game_id": "2026_12_NYG_IND",
+      "event_id": 71516068,
+      "season": 2026,
+      "week": 12,
+      "game_type": "REG",
+      "game_date": "2026-11-29",
+      "game_time": "13:00",
+      "commence_time": "2026-11-29T18:00:00Z",
+      "away_team": "NYG",
+      "home_team": "IND",
+      "moneyline": {
+        "away": -295.0,
+        "home": 240.0,
+        "away_implied_probability": 0.7468,
+        "home_implied_probability": 0.2941,
+        "away_no_vig_probability": 0.7175,
+        "home_no_vig_probability": 0.2825
+      },
+      "spread": {
+        "away": -6.5,
+        "home": 6.5,
+        "away_price": -105.0,
+        "home_price": -115.0
+      },
+      "game_total": 41.5,
+      "game_total_prices": {
+        "over": -113.0,
+        "under": -113.0
+      },
+      "team_totals": {
+        "away": 23.5,
+        "home": 17.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 23.5,
+          "over_price": -128.0,
+          "under_price": 100.0
+        },
+        "home": {
+          "line": 17.5,
+          "over_price": 102.0,
+          "under_price": -130.0
+        },
+        "source": "sportsbook"
+      },
+      "available_markets": [
+        "moneyline",
+        "spread",
+        "game_total",
+        "team_total",
+        "implied_team_total"
+      ],
+      "source": {
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": -295.0,
+              "home": 240.0
+            },
+            "spread": {
+              "away": -6.5,
+              "home": 6.5,
+              "away_price": -105.0,
+              "home_price": -115.0
+            },
+            "game_total": {
+              "line": 41.5,
+              "over_price": -113.0,
+              "under_price": -113.0
+            },
+            "team_total": {
+              "home": {
+                "line": 17.5,
+                "over_price": 102.0,
+                "under_price": -130.0
+              },
+              "away": {
+                "line": 23.5,
+                "over_price": -128.0,
+                "under_price": 100.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": -287.0,
+              "home": 236.0
+            },
+            "spread": {
+              "away": -6.0,
+              "home": 6.0,
+              "away_price": -109.0,
+              "home_price": -110.0
+            },
+            "game_total": {
+              "line": 41.5,
+              "over_price": -111.0,
+              "under_price": -108.0
+            },
+            "team_total": {
+              "home": {
+                "line": 17.5,
                 "over_price": -110.0,
+                "under_price": -120.0
+              },
+              "away": {
+                "line": 23.5,
+                "over_price": -120.0,
+                "under_price": -110.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "game_id": "2026_12_TEN_JAX",
+      "event_id": 71516074,
+      "season": 2026,
+      "week": 12,
+      "game_type": "REG",
+      "game_date": "2026-11-29",
+      "game_time": "13:00",
+      "commence_time": "2026-11-29T18:00:00Z",
+      "away_team": "TEN",
+      "home_team": "JAX",
+      "moneyline": {
+        "away": 730.0,
+        "home": -1149.0,
+        "away_implied_probability": 0.1205,
+        "home_implied_probability": 0.9199,
+        "away_no_vig_probability": 0.1158,
+        "home_no_vig_probability": 0.8842
+      },
+      "spread": {
+        "away": 14.5,
+        "home": -14.5,
+        "away_price": -115.0,
+        "home_price": -105.0
+      },
+      "game_total": 49.5,
+      "game_total_prices": {
+        "over": -110.0,
+        "under": -110.0
+      },
+      "team_totals": {
+        "away": 17.5,
+        "home": 31.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 17.5,
+          "over_price": 102.0,
+          "under_price": -130.0
+        },
+        "home": {
+          "line": 31.5,
+          "over_price": -108.0,
+          "under_price": -120.0
+        },
+        "source": "sportsbook"
+      },
+      "available_markets": [
+        "moneyline",
+        "spread",
+        "game_total",
+        "team_total",
+        "implied_team_total"
+      ],
+      "source": {
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": 730.0,
+              "home": -1149.0
+            },
+            "spread": {
+              "away": 14.5,
+              "home": -14.5,
+              "away_price": -115.0,
+              "home_price": -105.0
+            },
+            "game_total": {
+              "line": 49.5,
+              "over_price": -110.0,
+              "under_price": -110.0
+            },
+            "team_total": {
+              "home": {
+                "line": 31.5,
+                "over_price": -108.0,
+                "under_price": -120.0
+              },
+              "away": {
+                "line": 17.5,
+                "over_price": 102.0,
+                "under_price": -130.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": 780.0,
+              "home": -1266.0
+            },
+            "spread": {
+              "away": 14.5,
+              "home": -14.5,
+              "away_price": -116.0,
+              "home_price": -104.0
+            },
+            "game_total": {
+              "line": 49.5,
+              "over_price": -106.0,
+              "under_price": -113.0
+            },
+            "team_total": {
+              "home": {
+                "line": 32.5,
+                "over_price": -115.0,
                 "under_price": -115.0
+              },
+              "away": {
+                "line": 16.5,
+                "over_price": -125.0,
+                "under_price": -105.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "game_id": "2026_12_NYJ_MIA",
+      "event_id": 71516070,
+      "season": 2026,
+      "week": 12,
+      "game_type": "REG",
+      "game_date": "2026-11-29",
+      "game_time": "13:00",
+      "commence_time": "2026-11-29T18:00:00Z",
+      "away_team": "NYJ",
+      "home_team": "MIA",
+      "moneyline": {
+        "away": -255.0,
+        "home": 210.0,
+        "away_implied_probability": 0.7183,
+        "home_implied_probability": 0.3226,
+        "away_no_vig_probability": 0.6901,
+        "home_no_vig_probability": 0.3099
+      },
+      "spread": {
+        "away": -5.5,
+        "home": 5.5,
+        "away_price": -110.0,
+        "home_price": -110.0
+      },
+      "game_total": 39.5,
+      "game_total_prices": {
+        "over": -122.0,
+        "under": -104.0
+      },
+      "team_totals": {
+        "away": 22.5,
+        "home": 16.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 22.5,
+          "over_price": -128.0,
+          "under_price": 100.0
+        },
+        "home": {
+          "line": 16.5,
+          "over_price": -130.0,
+          "under_price": 102.0
+        },
+        "source": "sportsbook"
+      },
+      "available_markets": [
+        "moneyline",
+        "spread",
+        "game_total",
+        "team_total",
+        "implied_team_total"
+      ],
+      "source": {
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": -255.0,
+              "home": 210.0
+            },
+            "spread": {
+              "away": -5.5,
+              "home": 5.5,
+              "away_price": -110.0,
+              "home_price": -110.0
+            },
+            "game_total": {
+              "line": 39.5,
+              "over_price": -122.0,
+              "under_price": -104.0
+            },
+            "team_total": {
+              "home": {
+                "line": 16.5,
+                "over_price": -130.0,
+                "under_price": 102.0
+              },
+              "away": {
+                "line": 22.5,
+                "over_price": -128.0,
+                "under_price": 100.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": -246.0,
+              "home": 204.0
+            },
+            "spread": {
+              "away": -5.5,
+              "home": 5.5,
+              "away_price": -106.0,
+              "home_price": -113.0
+            },
+            "game_total": {
+              "line": 39.5,
+              "over_price": -117.0,
+              "under_price": -103.0
+            },
+            "team_total": {
+              "home": {
+                "line": 16.5,
+                "over_price": -130.0,
+                "under_price": 100.0
+              },
+              "away": {
+                "line": 22.5,
+                "over_price": -120.0,
+                "under_price": -105.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "game_id": "2026_12_ATL_MIN",
+      "event_id": 71516072,
+      "season": 2026,
+      "week": 12,
+      "game_type": "REG",
+      "game_date": "2026-11-29",
+      "game_time": "13:00",
+      "commence_time": "2026-11-29T18:00:00Z",
+      "away_team": "ATL",
+      "home_team": "MIN",
+      "moneyline": {
+        "away": 265.0,
+        "home": -330.0,
+        "away_implied_probability": 0.274,
+        "home_implied_probability": 0.7674,
+        "away_no_vig_probability": 0.2631,
+        "home_no_vig_probability": 0.7369
+      },
+      "spread": {
+        "away": 7.0,
+        "home": -7.0,
+        "away_price": -115.0,
+        "home_price": -105.0
+      },
+      "game_total": 41.5,
+      "game_total_prices": {
+        "over": -110.0,
+        "under": -110.0
+      },
+      "team_totals": {
+        "away": 16.5,
+        "home": 24.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 16.5,
+          "over_price": -128.0,
+          "under_price": 100.0
+        },
+        "home": {
+          "line": 24.5,
+          "over_price": -104.0,
+          "under_price": -122.0
+        },
+        "source": "sportsbook"
+      },
+      "available_markets": [
+        "moneyline",
+        "spread",
+        "game_total",
+        "team_total",
+        "implied_team_total"
+      ],
+      "source": {
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": 265.0,
+              "home": -330.0
+            },
+            "spread": {
+              "away": 7.0,
+              "home": -7.0,
+              "away_price": -115.0,
+              "home_price": -105.0
+            },
+            "game_total": {
+              "line": 41.5,
+              "over_price": -110.0,
+              "under_price": -110.0
+            },
+            "team_total": {
+              "home": {
+                "line": 24.5,
+                "over_price": -104.0,
+                "under_price": -122.0
+              },
+              "away": {
+                "line": 16.5,
+                "over_price": -128.0,
+                "under_price": 100.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": 253.0,
+              "home": -311.0
+            },
+            "spread": {
+              "away": 7.0,
+              "home": -7.0,
+              "away_price": -119.0,
+              "home_price": -101.0
+            },
+            "game_total": {
+              "line": 41.5,
+              "over_price": -109.0,
+              "under_price": -110.0
+            },
+            "team_total": {
+              "home": {
+                "line": 24.5,
+                "over_price": -105.0,
+                "under_price": -125.0
+              },
+              "away": {
+                "line": 16.5,
+                "over_price": -125.0,
+                "under_price": -105.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "game_id": "2026_12_NE_LAC",
+      "event_id": 71516080,
+      "season": 2026,
+      "week": 12,
+      "game_type": "REG",
+      "game_date": "2026-11-29",
+      "game_time": "16:05",
+      "commence_time": "2026-11-29T21:05:00Z",
+      "away_team": "NE",
+      "home_team": "LAC",
+      "moneyline": {
+        "away": -120.0,
+        "home": 102.0,
+        "away_implied_probability": 0.5455,
+        "home_implied_probability": 0.495,
+        "away_no_vig_probability": 0.5242,
+        "home_no_vig_probability": 0.4758
+      },
+      "spread": {
+        "away": -1.5,
+        "home": 1.5,
+        "away_price": -110.0,
+        "home_price": -110.0
+      },
+      "game_total": 35.5,
+      "game_total_prices": {
+        "over": -112.0,
+        "under": -108.0
+      },
+      "team_totals": {
+        "away": 17.5,
+        "home": 17.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 17.5,
+          "over_price": -115.0,
+          "under_price": -111.0
+        },
+        "home": {
+          "line": 17.5,
+          "over_price": 100.0,
+          "under_price": -128.0
+        },
+        "source": "sportsbook"
+      },
+      "available_markets": [
+        "moneyline",
+        "spread",
+        "game_total",
+        "team_total",
+        "implied_team_total"
+      ],
+      "source": {
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": -120.0,
+              "home": 102.0
+            },
+            "spread": {
+              "away": -1.5,
+              "home": 1.5,
+              "away_price": -110.0,
+              "home_price": -110.0
+            },
+            "game_total": {
+              "line": 35.5,
+              "over_price": -112.0,
+              "under_price": -108.0
+            },
+            "team_total": {
+              "home": {
+                "line": 17.5,
+                "over_price": 100.0,
+                "under_price": -128.0
+              },
+              "away": {
+                "line": 17.5,
+                "over_price": -115.0,
+                "under_price": -111.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": -137.0,
+              "home": 115.0
+            },
+            "spread": {
+              "away": -2.5,
+              "home": 2.5,
+              "away_price": -108.0,
+              "home_price": -111.0
+            },
+            "game_total": {
+              "line": 35.5,
+              "over_price": -109.0,
+              "under_price": -110.0
+            },
+            "team_total": {
+              "home": {
+                "line": 16.5,
+                "over_price": -115.0,
+                "under_price": -110.0
+              },
+              "away": {
+                "line": 18.5,
+                "over_price": -115.0,
+                "under_price": -115.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "game_id": "2026_12_WAS_ARI",
+      "event_id": 71516076,
+      "season": 2026,
+      "week": 12,
+      "game_type": "REG",
+      "game_date": "2026-11-29",
+      "game_time": "16:25",
+      "commence_time": "2026-11-29T21:25:00Z",
+      "away_team": "WAS",
+      "home_team": "ARI",
+      "moneyline": {
+        "away": -350.0,
+        "home": 280.0,
+        "away_implied_probability": 0.7778,
+        "home_implied_probability": 0.2632,
+        "away_no_vig_probability": 0.7472,
+        "home_no_vig_probability": 0.2528
+      },
+      "spread": {
+        "away": -7.0,
+        "home": 7.0,
+        "away_price": -105.0,
+        "home_price": -115.0
+      },
+      "game_total": 41.5,
+      "game_total_prices": {
+        "over": -110.0,
+        "under": -110.0
+      },
+      "team_totals": {
+        "away": 24.5,
+        "home": 16.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 24.5,
+          "over_price": -104.0,
+          "under_price": -120.0
+        },
+        "home": {
+          "line": 16.5,
+          "over_price": -125.0,
+          "under_price": -102.0
+        },
+        "source": "sportsbook"
+      },
+      "available_markets": [
+        "moneyline",
+        "spread",
+        "game_total",
+        "team_total",
+        "implied_team_total"
+      ],
+      "source": {
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": -350.0,
+              "home": 280.0
+            },
+            "spread": {
+              "away": -7.0,
+              "home": 7.0,
+              "away_price": -105.0,
+              "home_price": -115.0
+            },
+            "game_total": {
+              "line": 41.5,
+              "over_price": -110.0,
+              "under_price": -110.0
+            },
+            "team_total": {
+              "home": {
+                "line": 16.5,
+                "over_price": -125.0,
+                "under_price": -102.0
+              },
+              "away": {
+                "line": 24.5,
+                "over_price": -104.0,
+                "under_price": -120.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": -351.0,
+              "home": 282.0
+            },
+            "spread": {
+              "away": -6.5,
+              "home": 6.5,
+              "away_price": -118.0,
+              "home_price": -102.0
+            },
+            "game_total": {
+              "line": 41.5,
+              "over_price": -111.0,
+              "under_price": -108.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "game_id": "2026_12_SEA_SF",
+      "event_id": 71516078,
+      "season": 2026,
+      "week": 12,
+      "game_type": "REG",
+      "game_date": "2026-11-29",
+      "game_time": "16:25",
+      "commence_time": "2026-11-29T21:25:00Z",
+      "away_team": "SEA",
+      "home_team": "SF",
+      "moneyline": {
+        "away": 124.0,
+        "home": -146.0,
+        "away_implied_probability": 0.4464,
+        "home_implied_probability": 0.5935,
+        "away_no_vig_probability": 0.4293,
+        "home_no_vig_probability": 0.5707
+      },
+      "spread": {
+        "away": 2.5,
+        "home": -2.5,
+        "away_price": 100.0,
+        "home_price": -120.0
+      },
+      "game_total": 43.5,
+      "game_total_prices": {
+        "over": -120.0,
+        "under": -106.0
+      },
+      "team_totals": {
+        "away": 20.5,
+        "home": 23.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 20.5,
+          "over_price": -113.0,
+          "under_price": -113.0
+        },
+        "home": {
+          "line": 23.5,
+          "over_price": -104.0,
+          "under_price": -122.0
+        },
+        "source": "sportsbook"
+      },
+      "available_markets": [
+        "moneyline",
+        "spread",
+        "game_total",
+        "team_total",
+        "implied_team_total"
+      ],
+      "source": {
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": 124.0,
+              "home": -146.0
+            },
+            "spread": {
+              "away": 2.5,
+              "home": -2.5,
+              "away_price": 100.0,
+              "home_price": -120.0
+            },
+            "game_total": {
+              "line": 43.5,
+              "over_price": -120.0,
+              "under_price": -106.0
+            },
+            "team_total": {
+              "home": {
+                "line": 23.5,
+                "over_price": -104.0,
+                "under_price": -122.0
+              },
+              "away": {
+                "line": 20.5,
+                "over_price": -113.0,
+                "under_price": -113.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": 129.0,
+              "home": -152.0
+            },
+            "spread": {
+              "away": 3.0,
+              "home": -3.0,
+              "away_price": -117.0,
+              "home_price": -102.0
+            },
+            "game_total": {
+              "line": 43.5,
+              "over_price": -112.0,
+              "under_price": -107.0
+            },
+            "team_total": {
+              "home": {
+                "line": 23.5,
+                "over_price": -105.0,
+                "under_price": -120.0
+              },
+              "away": {
+                "line": 20.5,
+                "over_price": -105.0,
+                "under_price": -120.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "game_id": "2026_12_LV_CLE",
+      "event_id": 71516064,
+      "season": 2026,
+      "week": 12,
+      "game_type": "REG",
+      "game_date": "2026-11-29",
+      "game_time": "20:20",
+      "commence_time": "2026-11-30T01:20:00Z",
+      "away_team": "LV",
+      "home_team": "CLE",
+      "moneyline": {
+        "away": 190.0,
+        "home": -230.0,
+        "away_implied_probability": 0.3448,
+        "home_implied_probability": 0.697,
+        "away_no_vig_probability": 0.331,
+        "home_no_vig_probability": 0.669
+      },
+      "spread": {
+        "away": 4.5,
+        "home": -4.5,
+        "away_price": -105.0,
+        "home_price": -115.0
+      },
+      "game_total": 39.5,
+      "game_total_prices": {
+        "over": -116.0,
+        "under": -104.0
+      },
+      "team_totals": {
+        "away": 17.5,
+        "home": 22.5,
+        "source": "sportsbook"
+      },
+      "posted_team_totals": {
+        "away": {
+          "line": 17.5,
+          "over_price": 100.0,
+          "under_price": -128.0
+        },
+        "home": {
+          "line": 22.5,
+          "over_price": -125.0,
+          "under_price": -102.0
+        },
+        "source": "sportsbook"
+      },
+      "available_markets": [
+        "moneyline",
+        "spread",
+        "game_total",
+        "team_total",
+        "implied_team_total"
+      ],
+      "source": {
+        "provider": "the_odds_api",
+        "sportsbook": "FanDuel",
+        "sportsbook_key": "FanDuel",
+        "last_update": "",
+        "note": "Live sportsbook market selected from the configured bookmaker preference. Projection models do not consume this file."
+      },
+      "bookmakers": [
+        {
+          "key": "FanDuel",
+          "title": "FanDuel",
+          "markets": {
+            "moneyline": {
+              "away": 190.0,
+              "home": -230.0
+            },
+            "spread": {
+              "away": 4.5,
+              "home": -4.5,
+              "away_price": -105.0,
+              "home_price": -115.0
+            },
+            "game_total": {
+              "line": 39.5,
+              "over_price": -116.0,
+              "under_price": -104.0
+            },
+            "team_total": {
+              "home": {
+                "line": 22.5,
+                "over_price": -125.0,
+                "under_price": -102.0
+              },
+              "away": {
+                "line": 17.5,
+                "over_price": 100.0,
+                "under_price": -128.0
+              }
+            }
+          }
+        },
+        {
+          "key": "DraftKings",
+          "title": "DraftKings",
+          "markets": {
+            "moneyline": {
+              "away": 201.0,
+              "home": -244.0
+            },
+            "spread": {
+              "away": 4.5,
+              "home": -4.5,
+              "away_price": -114.0,
+              "home_price": -105.0
+            },
+            "game_total": {
+              "line": 40.5,
+              "over_price": -103.0,
+              "under_price": -117.0
+            },
+            "team_total": {
+              "home": {
+                "line": 22.5,
+                "over_price": -120.0,
+                "under_price": -110.0
+              },
+              "away": {
+                "line": 17.5,
+                "over_price": 100.0,
+                "under_price": -130.0
               }
             }
           }
@@ -133,13 +1288,13 @@
     }
   ],
   "counts": {
-    "games": 1,
-    "live_games": 1,
+    "games": 10,
+    "live_games": 10,
     "fallback_games": 0,
-    "moneyline": 1,
-    "spread": 1,
-    "game_total": 1,
-    "team_total": 1
+    "moneyline": 10,
+    "spread": 10,
+    "game_total": 10,
+    "team_total": 10
   },
   "model": {
     "name": "Alpha Wagerz NFL Market Normalizer",

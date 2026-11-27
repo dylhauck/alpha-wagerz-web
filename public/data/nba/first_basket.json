@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T18:21:49.364801+00:00",
+  "generated_at": "2026-11-27T08:22:22.464346+00:00",
   "slate_type": "current",
   "games": [
     {
@@ -429,7 +429,7 @@
       "lineup_status": "previous_confirmed_lineup",
       "lineup_sources": {
         "away": "previous_confirmed_lineup",
-        "away_previous_game_id": "401909317",
+        "away_previous_game_id": "401910023",
         "home": "previous_confirmed_lineup",
         "home_previous_game_id": "401910038"
       },
@@ -443,20 +443,20 @@
           "fg_pct": 0.5
         },
         {
-          "player_id": 1631133,
-          "player_name": "Jabari Walker",
+          "player_id": 203954,
+          "player_name": "Joel Embiid",
           "team": "PHI",
           "side": "away",
-          "minutes": 25.0,
-          "fg_pct": 0.5
+          "minutes": 39.0,
+          "fg_pct": 0.529
         },
         {
-          "player_id": 1627759,
-          "player_name": "Jaylen Brown",
+          "player_id": 203484,
+          "player_name": "Kentavious Caldwell-Pope",
           "team": "PHI",
           "side": "away",
-          "minutes": 33.0,
-          "fg_pct": 0.613
+          "minutes": 21.5,
+          "fg_pct": 0.333
         },
         {
           "player_id": 1630178,
@@ -522,7 +522,7 @@
           "player_id": 1630178,
           "player_name": "Tyrese Maxey",
           "team": "PHI",
-          "probability": 19.38,
+          "probability": 19.23,
           "first_shot_rate": 50.0,
           "first_basket_rate": 50.0,
           "starts_sample": 6,
@@ -533,7 +533,7 @@
           "player_id": 2544,
           "player_name": "LeBron James",
           "team": "PHI",
-          "probability": 15.7,
+          "probability": 15.58,
           "first_shot_rate": 60.0,
           "first_basket_rate": 40.0,
           "starts_sample": 5,
@@ -544,7 +544,7 @@
           "player_id": 1629614,
           "player_name": "Andrew Nembhard",
           "team": "IND",
-          "probability": 10.94,
+          "probability": 10.86,
           "first_shot_rate": 25.0,
           "first_basket_rate": 25.0,
           "starts_sample": 4,
@@ -555,7 +555,7 @@
           "player_id": 1626162,
           "player_name": "Kelly Oubre Jr.",
           "team": "IND",
-          "probability": 10.17,
+          "probability": 10.09,
           "first_shot_rate": 16.67,
           "first_basket_rate": 16.67,
           "starts_sample": 6,
@@ -566,7 +566,7 @@
           "player_id": 1627826,
           "player_name": "Ivica Zubac",
           "team": "IND",
-          "probability": 9.59,
+          "probability": 9.52,
           "first_shot_rate": 16.67,
           "first_basket_rate": 16.67,
           "starts_sample": 6,
@@ -574,21 +574,32 @@
           "lineup_status": "previous_confirmed_lineup"
         },
         {
-          "player_id": 1627759,
-          "player_name": "Jaylen Brown",
+          "player_id": 203954,
+          "player_name": "Joel Embiid",
           "team": "PHI",
-          "probability": 6.58,
-          "first_shot_rate": 20.0,
+          "probability": 6.81,
+          "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
-          "starts_sample": 5,
+          "starts_sample": 4,
           "estimate_source": "historical_blend",
+          "lineup_status": "previous_confirmed_lineup"
+        },
+        {
+          "player_id": 203484,
+          "player_name": "Kentavious Caldwell-Pope",
+          "team": "PHI",
+          "probability": 6.7,
+          "first_shot_rate": 0.0,
+          "first_basket_rate": 0.0,
+          "starts_sample": 2,
+          "estimate_source": "statistical_fallback",
           "lineup_status": "previous_confirmed_lineup"
         },
         {
           "player_id": 1627783,
           "player_name": "Pascal Siakam",
           "team": "IND",
-          "probability": 6.39,
+          "probability": 6.34,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 6,
@@ -596,21 +607,10 @@
           "lineup_status": "previous_confirmed_lineup"
         },
         {
-          "player_id": 1631133,
-          "player_name": "Jabari Walker",
-          "team": "PHI",
-          "probability": 6.33,
-          "first_shot_rate": 0.0,
-          "first_basket_rate": 0.0,
-          "starts_sample": 3,
-          "estimate_source": "historical_blend",
-          "lineup_status": "previous_confirmed_lineup"
-        },
-        {
           "player_id": 1642845,
           "player_name": "VJ Edgecombe",
           "team": "PHI",
-          "probability": 4.9,
+          "probability": 4.86,
           "first_shot_rate": 0.0,
           "first_basket_rate": 0.0,
           "starts_sample": 7,
@@ -621,7 +621,7 @@
           "player_id": 1643552,
           "player_name": "Braden Smith",
           "team": "IND",
-          "probability": 4.03,
+          "probability": 4.0,
           "first_shot_rate": 100.0,
           "first_basket_rate": 0.0,
           "starts_sample": 1,

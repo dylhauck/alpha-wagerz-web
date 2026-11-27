@@ -3,51 +3,492 @@
   "season": 2026,
   "games": [
     {
-      "game_id": "2026_12_DEN_PIT",
-      "away": "DEN",
-      "home": "PIT",
+      "game_id": "2026_12_NO_CIN",
+      "away": "NO",
+      "home": "CIN",
       "periods": {
         "Q1": {
-          "away_points": 4.25,
-          "home_points": 3.25,
-          "home_win_probability": 0.4358,
-          "away_win_probability": 0.5642,
+          "away_points": 3.3,
+          "home_points": 4.25,
+          "home_win_probability": 0.5607,
+          "away_win_probability": 0.4393,
           "sample_games": 10
         },
         "Q2": {
-          "away_points": 7.1,
-          "home_points": 6.3,
-          "home_win_probability": 0.459,
-          "away_win_probability": 0.541,
+          "away_points": 4.8,
+          "home_points": 8.75,
+          "home_win_probability": 0.6956,
+          "away_win_probability": 0.3044,
           "sample_games": 10
         },
         "1st Half": {
-          "away_points": 11.35,
-          "home_points": 9.55,
-          "home_win_probability": 0.4281,
-          "away_win_probability": 0.5719,
+          "away_points": 8.1,
+          "home_points": 13.0,
+          "home_win_probability": 0.6895,
+          "away_win_probability": 0.3105,
           "sample_games": 10
         },
         "Q3": {
-          "away_points": 3.55,
-          "home_points": 4.6,
-          "home_win_probability": 0.5625,
-          "away_win_probability": 0.4375,
+          "away_points": 5.7,
+          "home_points": 6.15,
+          "home_win_probability": 0.5269,
+          "away_win_probability": 0.4731,
+          "sample_games": 10
+        },
+        "Q4": {
+          "away_points": 7.05,
+          "home_points": 7.6,
+          "home_win_probability": 0.5311,
+          "away_win_probability": 0.4689,
+          "sample_games": 10
+        },
+        "2nd Half": {
+          "away_points": 12.75,
+          "home_points": 13.75,
+          "home_win_probability": 0.5411,
+          "away_win_probability": 0.4589,
+          "sample_games": 10
+        }
+      }
+    },
+    {
+      "game_id": "2026_12_BAL_HOU",
+      "away": "BAL",
+      "home": "HOU",
+      "periods": {
+        "Q1": {
+          "away_points": 4.75,
+          "home_points": 5.9,
+          "home_win_probability": 0.5731,
+          "away_win_probability": 0.4269,
+          "sample_games": 11
+        },
+        "Q2": {
+          "away_points": 7.85,
+          "home_points": 7.19,
+          "home_win_probability": 0.4655,
+          "away_win_probability": 0.5345,
+          "sample_games": 11
+        },
+        "1st Half": {
+          "away_points": 12.6,
+          "home_points": 13.08,
+          "home_win_probability": 0.5192,
+          "away_win_probability": 0.4808,
+          "sample_games": 11
+        },
+        "Q3": {
+          "away_points": 3.2,
+          "home_points": 5.08,
+          "home_win_probability": 0.611,
+          "away_win_probability": 0.389,
+          "sample_games": 11
+        },
+        "Q4": {
+          "away_points": 5.68,
+          "home_points": 8.15,
+          "home_win_probability": 0.6376,
+          "away_win_probability": 0.3624,
+          "sample_games": 11
+        },
+        "2nd Half": {
+          "away_points": 8.88,
+          "home_points": 13.23,
+          "home_win_probability": 0.6734,
+          "away_win_probability": 0.3266,
+          "sample_games": 11
+        }
+      }
+    },
+    {
+      "game_id": "2026_12_NYG_IND",
+      "away": "NYG",
+      "home": "IND",
+      "periods": {
+        "Q1": {
+          "away_points": 4.75,
+          "home_points": 3.82,
+          "home_win_probability": 0.4405,
+          "away_win_probability": 0.5595,
+          "sample_games": 10
+        },
+        "Q2": {
+          "away_points": 7.45,
+          "home_points": 6.35,
+          "home_win_probability": 0.4433,
+          "away_win_probability": 0.5567,
+          "sample_games": 10
+        },
+        "1st Half": {
+          "away_points": 12.2,
+          "home_points": 10.17,
+          "home_win_probability": 0.4188,
+          "away_win_probability": 0.5812,
+          "sample_games": 10
+        },
+        "Q3": {
+          "away_points": 5.07,
+          "home_points": 4.69,
+          "home_win_probability": 0.4774,
+          "away_win_probability": 0.5226,
+          "sample_games": 10
+        },
+        "Q4": {
+          "away_points": 6.95,
+          "home_points": 5.29,
+          "home_win_probability": 0.4066,
+          "away_win_probability": 0.5934,
+          "sample_games": 10
+        },
+        "2nd Half": {
+          "away_points": 12.02,
+          "home_points": 9.98,
+          "home_win_probability": 0.4166,
+          "away_win_probability": 0.5834,
+          "sample_games": 10
+        }
+      }
+    },
+    {
+      "game_id": "2026_12_TEN_JAX",
+      "away": "TEN",
+      "home": "JAX",
+      "periods": {
+        "Q1": {
+          "away_points": 3.8,
+          "home_points": 4.9,
+          "home_win_probability": 0.5702,
+          "away_win_probability": 0.4298,
+          "sample_games": 10
+        },
+        "Q2": {
+          "away_points": 3.3,
+          "home_points": 10.35,
+          "home_win_probability": 0.8195,
+          "away_win_probability": 0.1805,
+          "sample_games": 10
+        },
+        "1st Half": {
+          "away_points": 7.1,
+          "home_points": 15.25,
+          "home_win_probability": 0.7945,
+          "away_win_probability": 0.2055,
+          "sample_games": 10
+        },
+        "Q3": {
+          "away_points": 4.2,
+          "home_points": 5.85,
+          "home_win_probability": 0.5979,
+          "away_win_probability": 0.4021,
+          "sample_games": 10
+        },
+        "Q4": {
+          "away_points": 6.9,
+          "home_points": 7.4,
+          "home_win_probability": 0.5283,
+          "away_win_probability": 0.4717,
+          "sample_games": 10
+        },
+        "2nd Half": {
+          "away_points": 11.1,
+          "home_points": 13.25,
+          "home_win_probability": 0.5878,
+          "away_win_probability": 0.4122,
+          "sample_games": 10
+        }
+      }
+    },
+    {
+      "game_id": "2026_12_NYJ_MIA",
+      "away": "NYJ",
+      "home": "MIA",
+      "periods": {
+        "Q1": {
+          "away_points": 4.27,
+          "home_points": 4.02,
+          "home_win_probability": 0.4837,
+          "away_win_probability": 0.5163,
+          "sample_games": 11
+        },
+        "Q2": {
+          "away_points": 6.61,
+          "home_points": 5.46,
+          "home_win_probability": 0.4408,
+          "away_win_probability": 0.5592,
+          "sample_games": 11
+        },
+        "1st Half": {
+          "away_points": 10.89,
+          "home_points": 9.48,
+          "home_win_probability": 0.4437,
+          "away_win_probability": 0.5563,
+          "sample_games": 11
+        },
+        "Q3": {
+          "away_points": 6.65,
+          "home_points": 4.45,
+          "home_win_probability": 0.3706,
+          "away_win_probability": 0.6294,
+          "sample_games": 11
+        },
+        "Q4": {
+          "away_points": 5.01,
+          "home_points": 6.42,
+          "home_win_probability": 0.5793,
+          "away_win_probability": 0.4207,
+          "sample_games": 11
+        },
+        "2nd Half": {
+          "away_points": 11.66,
+          "home_points": 10.87,
+          "home_win_probability": 0.4675,
+          "away_win_probability": 0.5325,
+          "sample_games": 11
+        }
+      }
+    },
+    {
+      "game_id": "2026_12_ATL_MIN",
+      "away": "ATL",
+      "home": "MIN",
+      "periods": {
+        "Q1": {
+          "away_points": 4.35,
+          "home_points": 5.15,
+          "home_win_probability": 0.5512,
+          "away_win_probability": 0.4488,
+          "sample_games": 10
+        },
+        "Q2": {
+          "away_points": 5.15,
+          "home_points": 6.45,
+          "home_win_probability": 0.5669,
+          "away_win_probability": 0.4331,
+          "sample_games": 10
+        },
+        "1st Half": {
+          "away_points": 9.5,
+          "home_points": 11.6,
+          "home_win_probability": 0.5839,
+          "away_win_probability": 0.4161,
+          "sample_games": 10
+        },
+        "Q3": {
+          "away_points": 3.75,
+          "home_points": 3.55,
+          "home_win_probability": 0.488,
+          "away_win_probability": 0.512,
+          "sample_games": 10
+        },
+        "Q4": {
+          "away_points": 4.85,
+          "home_points": 6.7,
+          "home_win_probability": 0.6037,
+          "away_win_probability": 0.3963,
+          "sample_games": 10
+        },
+        "2nd Half": {
+          "away_points": 8.6,
+          "home_points": 10.25,
+          "home_win_probability": 0.5676,
+          "away_win_probability": 0.4324,
+          "sample_games": 10
+        }
+      }
+    },
+    {
+      "game_id": "2026_12_NE_LAC",
+      "away": "NE",
+      "home": "LAC",
+      "periods": {
+        "Q1": {
+          "away_points": 4.35,
+          "home_points": 4.3,
+          "home_win_probability": 0.4968,
+          "away_win_probability": 0.5032,
+          "sample_games": 10
+        },
+        "Q2": {
+          "away_points": 8.1,
+          "home_points": 5.85,
+          "home_win_probability": 0.3853,
+          "away_win_probability": 0.6147,
+          "sample_games": 10
+        },
+        "1st Half": {
+          "away_points": 12.45,
+          "home_points": 10.15,
+          "home_win_probability": 0.4082,
+          "away_win_probability": 0.5918,
+          "sample_games": 10
+        },
+        "Q3": {
+          "away_points": 5.1,
+          "home_points": 5.3,
+          "home_win_probability": 0.512,
+          "away_win_probability": 0.488,
           "sample_games": 10
         },
         "Q4": {
           "away_points": 6.8,
-          "home_points": 6.7,
-          "home_win_probability": 0.4943,
-          "away_win_probability": 0.5057,
+          "home_points": 5.05,
+          "home_win_probability": 0.4018,
+          "away_win_probability": 0.5982,
           "sample_games": 10
         },
         "2nd Half": {
-          "away_points": 10.35,
-          "home_points": 11.3,
-          "home_win_probability": 0.5392,
-          "away_win_probability": 0.4608,
+          "away_points": 11.9,
+          "home_points": 10.35,
+          "home_win_probability": 0.4364,
+          "away_win_probability": 0.5636,
           "sample_games": 10
+        }
+      }
+    },
+    {
+      "game_id": "2026_12_WAS_ARI",
+      "away": "WAS",
+      "home": "ARI",
+      "periods": {
+        "Q1": {
+          "away_points": 4.14,
+          "home_points": 3.77,
+          "home_win_probability": 0.4761,
+          "away_win_probability": 0.5239,
+          "sample_games": 10
+        },
+        "Q2": {
+          "away_points": 8.35,
+          "home_points": 5.4,
+          "home_win_probability": 0.3514,
+          "away_win_probability": 0.6486,
+          "sample_games": 10
+        },
+        "1st Half": {
+          "away_points": 12.49,
+          "home_points": 9.17,
+          "home_win_probability": 0.3689,
+          "away_win_probability": 0.6311,
+          "sample_games": 10
+        },
+        "Q3": {
+          "away_points": 6.09,
+          "home_points": 5.06,
+          "home_win_probability": 0.4387,
+          "away_win_probability": 0.5613,
+          "sample_games": 10
+        },
+        "Q4": {
+          "away_points": 7.0,
+          "home_points": 6.46,
+          "home_win_probability": 0.4694,
+          "away_win_probability": 0.5306,
+          "sample_games": 10
+        },
+        "2nd Half": {
+          "away_points": 13.1,
+          "home_points": 11.53,
+          "home_win_probability": 0.4357,
+          "away_win_probability": 0.5643,
+          "sample_games": 10
+        }
+      }
+    },
+    {
+      "game_id": "2026_12_SEA_SF",
+      "away": "SEA",
+      "home": "SF",
+      "periods": {
+        "Q1": {
+          "away_points": 3.2,
+          "home_points": 5.3,
+          "home_win_probability": 0.6322,
+          "away_win_probability": 0.3678,
+          "sample_games": 10
+        },
+        "Q2": {
+          "away_points": 5.75,
+          "home_points": 7.85,
+          "home_win_probability": 0.6072,
+          "away_win_probability": 0.3928,
+          "sample_games": 10
+        },
+        "1st Half": {
+          "away_points": 8.95,
+          "home_points": 13.15,
+          "home_win_probability": 0.6641,
+          "away_win_probability": 0.3359,
+          "sample_games": 10
+        },
+        "Q3": {
+          "away_points": 5.35,
+          "home_points": 4.95,
+          "home_win_probability": 0.4761,
+          "away_win_probability": 0.5239,
+          "sample_games": 10
+        },
+        "Q4": {
+          "away_points": 7.15,
+          "home_points": 6.3,
+          "home_win_probability": 0.4519,
+          "away_win_probability": 0.5481,
+          "sample_games": 10
+        },
+        "2nd Half": {
+          "away_points": 12.5,
+          "home_points": 11.25,
+          "home_win_probability": 0.4487,
+          "away_win_probability": 0.5513,
+          "sample_games": 10
+        }
+      }
+    },
+    {
+      "game_id": "2026_12_LV_CLE",
+      "away": "LV",
+      "home": "CLE",
+      "periods": {
+        "Q1": {
+          "away_points": 6.08,
+          "home_points": 3.7,
+          "home_win_probability": 0.3506,
+          "away_win_probability": 0.6494,
+          "sample_games": 11
+        },
+        "Q2": {
+          "away_points": 5.5,
+          "home_points": 7.8,
+          "home_win_probability": 0.6174,
+          "away_win_probability": 0.3826,
+          "sample_games": 11
+        },
+        "1st Half": {
+          "away_points": 11.58,
+          "home_points": 11.5,
+          "home_win_probability": 0.4967,
+          "away_win_probability": 0.5033,
+          "sample_games": 11
+        },
+        "Q3": {
+          "away_points": 4.1,
+          "home_points": 5.72,
+          "home_win_probability": 0.596,
+          "away_win_probability": 0.404,
+          "sample_games": 11
+        },
+        "Q4": {
+          "away_points": 7.47,
+          "home_points": 6.75,
+          "home_win_probability": 0.4591,
+          "away_win_probability": 0.5409,
+          "sample_games": 11
+        },
+        "2nd Half": {
+          "away_points": 11.57,
+          "home_points": 12.47,
+          "home_win_probability": 0.5368,
+          "away_win_probability": 0.4632,
+          "sample_games": 11
         }
       }
     }
