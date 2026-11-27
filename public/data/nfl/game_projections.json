@@ -5,7 +5,7 @@
       "away_team": "DEN",
       "home_team": "PIT",
       "away_projection": {
-        "projected_points": 19.8,
+        "projected_points": 19.6,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.45,
@@ -15,8 +15,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 20.65,
-          "weather_scoring_factor": 0.961,
-          "weather_adjustment_points": -0.81
+          "weather_scoring_factor": 0.948,
+          "weather_adjustment_points": -1.07
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -30,22 +30,22 @@
           "stadium": "Acrisure Stadium",
           "weather": {
             "forecast_time": "2026-11-27T15:00",
-            "temperature_f": 39.0,
-            "feels_like_f": 30.7,
+            "temperature_f": 37.5,
+            "feels_like_f": 28.4,
             "humidity_pct": 90.0,
-            "precip_probability_pct": 38.0,
-            "precipitation_in": 0.028,
-            "wind_mph": 12.4,
-            "wind_gust_mph": 28.4,
-            "weather_code": 53,
-            "conditions": "Drizzle"
+            "precip_probability_pct": 41.0,
+            "precipitation_in": 0.016,
+            "wind_mph": 13.5,
+            "wind_gust_mph": 30.9,
+            "weather_code": 51,
+            "conditions": "Light Drizzle"
           },
-          "classification": "MODERATE",
-          "severity_score": 3.0,
-          "scoring_factor": 0.961,
-          "passing_factor": 0.946,
-          "rushing_factor": 1.015,
-          "kicking_factor": 0.94
+          "classification": "SIGNIFICANT",
+          "severity_score": 4.0,
+          "scoring_factor": 0.948,
+          "passing_factor": 0.928,
+          "rushing_factor": 1.02,
+          "kicking_factor": 0.92
         },
         "matchup_rating": -8.5,
         "matchup_label": "Difficult",
@@ -59,7 +59,7 @@
         }
       },
       "home_projection": {
-        "projected_points": 21.6,
+        "projected_points": 21.3,
         "components": {
           "base_scoring": 22.5,
           "efficiency_adjustment": -0.34,
@@ -69,8 +69,8 @@
           "injury_scoring_factor": 1.0,
           "injury_adjustment_points": 0.0,
           "post_injury_projection": 22.44,
-          "weather_scoring_factor": 0.961,
-          "weather_adjustment_points": -0.88
+          "weather_scoring_factor": 0.948,
+          "weather_adjustment_points": -1.17
         },
         "injury_context": {
           "scoring_factor": 1.0,
@@ -84,22 +84,22 @@
           "stadium": "Acrisure Stadium",
           "weather": {
             "forecast_time": "2026-11-27T15:00",
-            "temperature_f": 39.0,
-            "feels_like_f": 30.7,
+            "temperature_f": 37.5,
+            "feels_like_f": 28.4,
             "humidity_pct": 90.0,
-            "precip_probability_pct": 38.0,
-            "precipitation_in": 0.028,
-            "wind_mph": 12.4,
-            "wind_gust_mph": 28.4,
-            "weather_code": 53,
-            "conditions": "Drizzle"
+            "precip_probability_pct": 41.0,
+            "precipitation_in": 0.016,
+            "wind_mph": 13.5,
+            "wind_gust_mph": 30.9,
+            "weather_code": 51,
+            "conditions": "Light Drizzle"
           },
-          "classification": "MODERATE",
-          "severity_score": 3.0,
-          "scoring_factor": 0.961,
-          "passing_factor": 0.946,
-          "rushing_factor": 1.015,
-          "kicking_factor": 0.94
+          "classification": "SIGNIFICANT",
+          "severity_score": 4.0,
+          "scoring_factor": 0.948,
+          "passing_factor": 0.928,
+          "rushing_factor": 1.02,
+          "kicking_factor": 0.92
         },
         "matchup_rating": -6.0,
         "matchup_label": "Difficult",
@@ -113,15 +113,15 @@
         }
       },
       "projected_score": {
-        "away": 19.8,
-        "home": 21.6
+        "away": 19.6,
+        "home": 21.3
       },
-      "projected_total": 41.4,
-      "expected_margin": 1.8,
+      "projected_total": 40.9,
+      "expected_margin": 1.7,
       "projected_winner": "PIT",
       "win_probability": {
-        "away": 43.1,
-        "home": 56.9
+        "away": 43.5,
+        "home": 56.5
       },
       "projection_confidence": 52.5,
       "injury_context": {
@@ -190,23 +190,23 @@
         "available": true,
         "weather": {
           "forecast_time": "2026-11-27T15:00",
-          "temperature_f": 39.0,
-          "feels_like_f": 30.7,
+          "temperature_f": 37.5,
+          "feels_like_f": 28.4,
           "humidity_pct": 90.0,
-          "precip_probability_pct": 38.0,
-          "precipitation_in": 0.028,
-          "wind_mph": 12.4,
-          "wind_gust_mph": 28.4,
-          "weather_code": 53,
-          "conditions": "Drizzle"
+          "precip_probability_pct": 41.0,
+          "precipitation_in": 0.016,
+          "wind_mph": 13.5,
+          "wind_gust_mph": 30.9,
+          "weather_code": 51,
+          "conditions": "Light Drizzle"
         },
         "context": {
-          "severity_score": 3.0,
-          "passing_factor": 0.946,
-          "rushing_factor": 1.015,
-          "scoring_factor": 0.961,
-          "kicking_factor": 0.94,
-          "classification": "MODERATE"
+          "severity_score": 4.0,
+          "passing_factor": 0.928,
+          "rushing_factor": 1.02,
+          "scoring_factor": 0.948,
+          "kicking_factor": 0.92,
+          "classification": "SIGNIFICANT"
         }
       },
       "model": {
