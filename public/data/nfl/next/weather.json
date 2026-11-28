@@ -1,119 +1,26 @@
 {
-  "generated_at": "2026-11-27T18:06:16.643417+00:00",
+  "generated_at": "2026-11-28T16:50:01.261771+00:00",
   "source": "Open-Meteo",
   "games": [
     {
-      "game_id": "2026_12_NO_CIN",
-      "away_team": "NO",
-      "home_team": "CIN",
-      "stadium": "Paycor Stadium",
-      "latitude": 39.0954,
-      "longitude": -84.516,
+      "game_id": "2026_12_CAR_TB",
+      "away_team": "CAR",
+      "home_team": "TB",
+      "stadium": "Raymond James Stadium",
+      "latitude": 27.9759,
+      "longitude": -82.5033,
       "roof": "outdoor",
-      "kickoff": "2026-11-29T13:00",
+      "kickoff": "2026-11-30T20:15",
       "available": true,
       "weather": {
-        "forecast_time": "2026-11-29T13:00",
-        "temperature_f": 53.2,
-        "feels_like_f": 48.0,
-        "humidity_pct": 85.0,
-        "precip_probability_pct": 80.0,
-        "precipitation_in": 0.008,
-        "wind_mph": 11.4,
-        "wind_gust_mph": 32.4,
-        "weather_code": 51,
-        "conditions": "Light Drizzle"
-      },
-      "context": {
-        "severity_score": 5.0,
-        "passing_factor": 0.91,
-        "rushing_factor": 1.025,
-        "scoring_factor": 0.935,
-        "kicking_factor": 0.9,
-        "classification": "SIGNIFICANT"
-      }
-    },
-    {
-      "game_id": "2026_12_BAL_HOU",
-      "away_team": "BAL",
-      "home_team": "HOU",
-      "stadium": "NRG Stadium",
-      "latitude": 29.6847,
-      "longitude": -95.4107,
-      "roof": "retractable",
-      "kickoff": "2026-11-29T13:00",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-29T13:00",
-        "temperature_f": 67.5,
-        "feels_like_f": 57.9,
-        "humidity_pct": 36.0,
-        "precip_probability_pct": 0.0,
+        "forecast_time": "2026-11-30T20:00",
+        "temperature_f": 67.8,
+        "feels_like_f": 70.0,
+        "humidity_pct": 87.0,
+        "precip_probability_pct": 17.0,
         "precipitation_in": 0.0,
-        "wind_mph": 17.5,
-        "wind_gust_mph": 22.6,
-        "weather_code": 3,
-        "conditions": "Overcast"
-      },
-      "context": {
-        "severity_score": 1.12,
-        "passing_factor": 0.98,
-        "rushing_factor": 1.006,
-        "scoring_factor": 0.985,
-        "kicking_factor": 0.978,
-        "classification": "MINOR"
-      }
-    },
-    {
-      "game_id": "2026_12_NYG_IND",
-      "away_team": "NYG",
-      "home_team": "IND",
-      "stadium": "Lucas Oil Stadium",
-      "latitude": 39.7601,
-      "longitude": -86.1639,
-      "roof": "retractable",
-      "kickoff": "2026-11-29T13:00",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-29T13:00",
-        "temperature_f": 46.1,
-        "feels_like_f": 42.2,
-        "humidity_pct": 98.0,
-        "precip_probability_pct": 99.0,
-        "precipitation_in": 0.169,
-        "wind_mph": 6.4,
-        "wind_gust_mph": 16.8,
-        "weather_code": 63,
-        "conditions": "Rain"
-      },
-      "context": {
-        "severity_score": 1.35,
-        "passing_factor": 0.976,
-        "rushing_factor": 1.007,
-        "scoring_factor": 0.982,
-        "kicking_factor": 0.973,
-        "classification": "MINOR"
-      }
-    },
-    {
-      "game_id": "2026_12_TEN_JAX",
-      "away_team": "TEN",
-      "home_team": "JAX",
-      "stadium": "EverBank Stadium",
-      "latitude": 30.3239,
-      "longitude": -81.6373,
-      "roof": "outdoor",
-      "kickoff": "2026-11-29T13:00",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-29T13:00",
-        "temperature_f": 68.8,
-        "feels_like_f": 66.3,
-        "humidity_pct": 53.0,
-        "precip_probability_pct": 3.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 6.5,
-        "wind_gust_mph": 10.5,
+        "wind_mph": 6.3,
+        "wind_gust_mph": 9.2,
         "weather_code": 3,
         "conditions": "Overcast"
       },
@@ -124,174 +31,6 @@
         "scoring_factor": 1.0,
         "kicking_factor": 1.0,
         "classification": "NEUTRAL"
-      }
-    },
-    {
-      "game_id": "2026_12_NYJ_MIA",
-      "away_team": "NYJ",
-      "home_team": "MIA",
-      "stadium": "Hard Rock Stadium",
-      "latitude": 25.958,
-      "longitude": -80.2389,
-      "roof": "outdoor",
-      "kickoff": "2026-11-29T13:00",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-29T13:00",
-        "temperature_f": 77.6,
-        "feels_like_f": 79.9,
-        "humidity_pct": 70.0,
-        "precip_probability_pct": 1.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 9.8,
-        "wind_gust_mph": 9.6,
-        "weather_code": 3,
-        "conditions": "Overcast"
-      },
-      "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "NEUTRAL"
-      }
-    },
-    {
-      "game_id": "2026_12_ATL_MIN",
-      "away_team": "ATL",
-      "home_team": "MIN",
-      "stadium": "U.S. Bank Stadium",
-      "latitude": 44.9736,
-      "longitude": -93.2575,
-      "roof": "fixed",
-      "kickoff": "2026-11-29T13:00",
-      "available": true,
-      "weather": {
-        "conditions": "Indoor"
-      },
-      "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "INDOOR"
-      }
-    },
-    {
-      "game_id": "2026_12_NE_LAC",
-      "away_team": "NE",
-      "home_team": "LAC",
-      "stadium": "SoFi Stadium",
-      "latitude": 33.9535,
-      "longitude": -118.3392,
-      "roof": "fixed",
-      "kickoff": "2026-11-29T16:05",
-      "available": true,
-      "weather": {
-        "conditions": "Indoor"
-      },
-      "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "INDOOR"
-      }
-    },
-    {
-      "game_id": "2026_12_WAS_ARI",
-      "away_team": "WAS",
-      "home_team": "ARI",
-      "stadium": "State Farm Stadium",
-      "latitude": 33.5276,
-      "longitude": -112.2626,
-      "roof": "retractable",
-      "kickoff": "2026-11-29T16:25",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-29T16:00",
-        "temperature_f": 74.6,
-        "feels_like_f": 67.8,
-        "humidity_pct": 17.0,
-        "precip_probability_pct": 0.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 5.4,
-        "wind_gust_mph": 5.4,
-        "weather_code": 3,
-        "conditions": "Overcast"
-      },
-      "context": {
-        "severity_score": 0.0,
-        "passing_factor": 1.0,
-        "rushing_factor": 1.0,
-        "scoring_factor": 1.0,
-        "kicking_factor": 1.0,
-        "classification": "NEUTRAL"
-      }
-    },
-    {
-      "game_id": "2026_12_SEA_SF",
-      "away_team": "SEA",
-      "home_team": "SF",
-      "stadium": "Levi's Stadium",
-      "latitude": 37.403,
-      "longitude": -121.97,
-      "roof": "outdoor",
-      "kickoff": "2026-11-29T16:25",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-29T16:00",
-        "temperature_f": 63.2,
-        "feels_like_f": 59.5,
-        "humidity_pct": 67.0,
-        "precip_probability_pct": 61.0,
-        "precipitation_in": 0.0,
-        "wind_mph": 10.5,
-        "wind_gust_mph": 23.0,
-        "weather_code": 3,
-        "conditions": "Overcast"
-      },
-      "context": {
-        "severity_score": 1.0,
-        "passing_factor": 0.982,
-        "rushing_factor": 1.005,
-        "scoring_factor": 0.987,
-        "kicking_factor": 0.98,
-        "classification": "MINOR"
-      }
-    },
-    {
-      "game_id": "2026_12_LV_CLE",
-      "away_team": "LV",
-      "home_team": "CLE",
-      "stadium": "Huntington Bank Field",
-      "latitude": 41.5061,
-      "longitude": -81.6995,
-      "roof": "outdoor",
-      "kickoff": "2026-11-29T20:20",
-      "available": true,
-      "weather": {
-        "forecast_time": "2026-11-29T20:00",
-        "temperature_f": 49.0,
-        "feels_like_f": 42.7,
-        "humidity_pct": 90.0,
-        "precip_probability_pct": 100.0,
-        "precipitation_in": 0.051,
-        "wind_mph": 12.7,
-        "wind_gust_mph": 28.4,
-        "weather_code": 61,
-        "conditions": "Light Rain"
-      },
-      "context": {
-        "severity_score": 4.0,
-        "passing_factor": 0.928,
-        "rushing_factor": 1.02,
-        "scoring_factor": 0.948,
-        "kicking_factor": 0.92,
-        "classification": "SIGNIFICANT"
       }
     }
   ]
